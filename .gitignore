@@ -1,0 +1,15 @@
+.cache-loader
+.DS_Store
+node_modules
+npm-debug.log
+yarn-error.log
+/vendor
+tests/_output
+.audit
+.phpdocs
+.phpunit.result.*
+dist/scripts/*.php
+package-dev.json
+composer.lock
+coverage
+.idea
