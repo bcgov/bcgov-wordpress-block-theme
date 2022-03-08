@@ -1,0 +1,102 @@
+{
+	"version": 1,
+	"templateParts": [
+		{
+			"name": "header",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"area": "footer"
+		}
+	],
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"palette": [
+				{
+					"slug": "primary-brand-blue",
+					"color": "#003366",
+					"name": "Primary Brand Blue"
+				},
+				{
+					"slug": "primary-brandy-yellow",
+					"color": "#FCBA19",
+					"name": "Primary Brand Yellow"
+				},
+				{
+					"slug": "text-colour",
+					"color": "#313132",
+					"name": "Text Colour"
+				},
+				{
+					"slug": "links",
+					"color": "#1A5A96",
+					"name": "Link Colour"
+				},
+				{
+					"slug": "blue-background",
+					"color": "#38598A",
+					"name": "Blue Background"
+				},
+				{
+					"slug": "light-background",
+					"color": "#F2F2F2",
+					"name": "Light Background"
+				},
+				{
+					"slug": "components",
+					"color": "#606060",
+					"name": "Components"
+				}
+			],
+			"gradients": [
+			
+			]
+		},
+		"layout": {
+			"contentSize": "610px",
+			"wideSize": "1240px"
+		},
+		"typography": {
+			"fontSizes": [
+				{
+					"slug": "extra-small",
+					"size": "16px",
+					"name": "Extra small"
+				},
+				{
+					"slug": "small",
+					"size": "18px",
+					"name": "Small"
+				},
+				{
+					"slug": "normal",
+					"size": "20px",
+					"name": "Normal"
+				},
+				{
+					"slug": "large",
+					"size": "24px",
+					"name": "Large"
+				},
+				{
+					"slug": "extra-large",
+					"size": "40px",
+					"name": "Extra large"
+				}
+			],
+			"fontFamilies": [
+				
+			]
+		},
+		"custom": {
+		
+		}
+	},
+	"styles": {
+		
+	},
+	"customTemplates": [
+	]
+}
