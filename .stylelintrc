@@ -1,0 +1,9 @@
+{
+    "extends": "@wordpress/stylelint-config/scss",
+    "ignoreFontFamilies": [ "BCSans" ],
+    "rules" : {
+        "max-line-length": null,
+        "font-weight-notation": "named-where-possible",
+        "selector-id-pattern": null
+    }
+}

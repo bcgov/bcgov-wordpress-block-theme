@@ -9,7 +9,7 @@ tests/_output
 .phpdocs
 .phpunit.result.*
 dist/scripts/*.php
-package-dev.json
+package-lock.json
 composer.lock
 coverage
 .idea
