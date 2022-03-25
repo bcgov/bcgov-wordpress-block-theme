@@ -47,14 +47,64 @@ if ( ! function_exists( 'bcgov_blocks_theme' ) ) {
 add_action( 'after_setup_theme', 'bcgov_blocks_theme' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue scripts and styles for public website.
  *
  * @since 0.1
  *
  * @return void
  */
-function bcgov_blocks_theme_enqueue_styles(): void {
-	wp_enqueue_style( 'bcgov-blocks-theme-style', get_template_directory_uri() . '/style.css', [], wp_get_theme()->get( 'Version' ) );
-	wp_enqueue_style( 'bcgov-blocks-theme-blocks', get_template_directory_uri() . '/assets/css/blocks.css', [], wp_get_theme()->get( 'Version' ) );
+function bcgov_blocks_theme_enqueue_scripts(): void {
+    $public_assets  = include plugin_dir_path( __FILE__ ) . 'dist/public.asset.php';
+    $font_assets    = include plugin_dir_path( __FILE__ ) . 'dist/font.asset.php';
+    $public_version = $public_assets['version'] ?? wp_get_theme()->get( 'Version' );
+    $font_version   = $font_assets['version'] ?? wp_get_theme()->get( 'Version' );
+    wp_enqueue_script(
+        'bcgov-blocks-theme-public',
+        get_template_directory_uri() . '/dist/public.js',
+        $public_assets['dependencies'] ?? [],
+        $public_version,
+        true
+    );
+	wp_enqueue_style(
+        'bcgov-blocks-theme-public',
+        get_template_directory_uri() . '/dist/public.css',
+        [],
+        $public_version
+    );
+    wp_enqueue_style(
+        'bcgov-blocks-theme-font',
+        get_template_directory_uri() . '/dist/font.css',
+        [],
+        $font_version
+    );
 }
-add_action( 'wp_enqueue_scripts', 'bcgov_blocks_theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'bcgov_blocks_theme_enqueue_scripts' );
+
+
+/**
+ * Enqueue scripts and styles for admin.
+ *
+ * @since 0.1
+ *
+ * @return void
+ */
+function bcgov_blocks_theme_enqueue_admin_scripts(): void {
+    $admin_assets  = include plugin_dir_path( __FILE__ ) . 'dist/admin.asset.php';
+    $admin_version = $admin_assets['version'] ?? wp_get_theme()->get( 'Version' );
+
+    wp_enqueue_script(
+        'bcgov-blocks-theme-admin',
+        get_template_directory_uri() . '/dist/admin.js',
+        $admin_assets['dependencies'] ?? [],
+        $admin_version,
+        true
+    );
+	wp_enqueue_style(
+        'bcgov-blocks-theme-admin',
+        get_template_directory_uri() . '/dist/admin.css',
+        [],
+        $admin_version
+    );
+}
+
+add_action( 'admin_enqueue_scripts', 'bcgov_blocks_theme_enqueue_admin_scripts' );

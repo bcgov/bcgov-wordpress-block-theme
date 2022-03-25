@@ -48,6 +48,11 @@
 					"slug": "components",
 					"color": "#606060",
 					"name": "Components"
+				},
+                {
+					"slug": "white",
+					"color": "#ffffff",
+					"name": "White"
 				}
 			],
 			"gradients": [
