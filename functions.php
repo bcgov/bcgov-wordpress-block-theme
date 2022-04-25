@@ -33,6 +33,9 @@ if ( ! function_exists( 'bcgov_blocks_theme' ) ) {
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
+        // Add support for custom logos.
+        add_theme_support( 'custom-logo' );
+
 		// Enqueue editor styles.
 		add_editor_style(
 			[
@@ -108,3 +111,27 @@ function bcgov_blocks_theme_enqueue_admin_scripts(): void {
 }
 
 add_action( 'admin_enqueue_scripts', 'bcgov_blocks_theme_enqueue_admin_scripts' );
+
+/**
+ * If no custom logo has been chosen, sets up a default logo.
+ *
+ * @param string $html Markup from original get_custom_logo call.
+ * @since 1.0.0
+ *
+ * @return string
+ */
+function get_custom_logo_callback( $html ) {
+    if ( has_custom_logo() ) {
+        return $html;
+    }
+    $image = '<img src="' . get_stylesheet_directory_uri() . '/dist/images/bc_gov_logo_transparent.ced9da43.png">';
+    $html  = sprintf(
+        '<a href="%1$s" class="custom-logo-link" rel="home"%2$s>%3$s</a>',
+        esc_url( home_url( '/' ) ),
+        is_front_page() && ! is_paged() ? ' aria-current="page"' : '',
+        $image
+    );
+    return $html;
+}
+
+add_filter( 'get_custom_logo', 'get_custom_logo_callback' );
