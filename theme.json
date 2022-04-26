@@ -6,6 +6,10 @@
 			"area": "header"
 		},
 		{
+			"name": "navigation",
+			"area": "header"
+		},
+		{
 			"name": "footer",
 			"area": "footer"
 		}
@@ -20,7 +24,7 @@
 					"name": "Primary Brand Blue"
 				},
 				{
-					"slug": "primary-brandy-yellow",
+					"slug": "primary-brand-yellow",
 					"color": "#FCBA19",
 					"name": "Primary Brand Yellow"
 				},
@@ -96,11 +100,19 @@
 			]
 		},
 		"custom": {
-		
 		}
 	},
 	"styles": {
-		
+		"blocks": {
+			"core/heading": {
+				"elements": {
+					"link": {
+						"typography": {
+						}
+					}
+				}
+			}
+		}
 	},
 	"customTemplates": [
 	]
