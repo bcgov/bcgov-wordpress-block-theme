@@ -120,7 +120,7 @@ add_action( 'admin_enqueue_scripts', 'bcgov_blocks_theme_enqueue_admin_scripts' 
  *
  * @return string
  */
-function get_custom_logo_callback( $html ) {
+function bcgov_blocks_theme_custom_logo( $html ) {
     if ( has_custom_logo() ) {
         return $html;
     }
@@ -134,4 +134,4 @@ function get_custom_logo_callback( $html ) {
     return $html;
 }
 
-add_filter( 'get_custom_logo', 'get_custom_logo_callback' );
+add_filter( 'get_custom_logo', 'bcgov_blocks_theme_custom_logo' );
