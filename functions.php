@@ -33,14 +33,14 @@ if ( ! function_exists( 'bcgov_blocks_theme' ) ) {
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
-        // Add support for custom logos.
-        add_theme_support( 'custom-logo' );
+		// Add support for custom logos.
+		add_theme_support( 'custom-logo' );
 
 		// Enqueue editor styles.
 		add_editor_style(
 			[
 				'./assets/css/blocks.css',
-            ]
+			]
 		);
 
 		// Add support for responsive embedded content.
