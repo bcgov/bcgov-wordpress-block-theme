@@ -113,7 +113,8 @@ function bcgov_blocks_theme_enqueue_admin_scripts(): void {
 add_action( 'admin_enqueue_scripts', 'bcgov_blocks_theme_enqueue_admin_scripts' );
 
 /**
- * If no custom logo has been chosen, sets up a default logo.
+ * Filter the results of get_custom_logo() if no custom logo has been chosen by injecting a default image.
+ * <-- wp:site-logo --> uses this result internally, and so can be easily used with or without choosing a custom logo.
  *
  * @param string $html Markup from original get_custom_logo call.
  * @since 1.0.0
@@ -121,9 +122,11 @@ add_action( 'admin_enqueue_scripts', 'bcgov_blocks_theme_enqueue_admin_scripts' 
  * @return string
  */
 function bcgov_blocks_theme_custom_logo( $html ) {
+    // If the site owner has selected a site logo using the theme customizer, use it.
     if ( has_custom_logo() ) {
         return $html;
     }
+    // Otherwise, inject a default logo markup for use in wp-site-logo blocks.
     $image = '<img src="' . get_stylesheet_directory_uri() . '/dist/images/bc_gov_logo_transparent.ced9da43.png">';
     $html  = sprintf(
         '<a href="%1$s" class="custom-logo-link" rel="home"%2$s>%3$s</a>',
