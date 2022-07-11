@@ -138,3 +138,19 @@ function bcgov_blocks_theme_custom_logo( $html ) {
 }
 
 add_filter( 'get_custom_logo', 'bcgov_blocks_theme_custom_logo' );
+
+/**
+ * Sets admin notice for missing plugin dependencies.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function bcgov_blocks_theme_dependencies() {
+    // Checks for AIOSEO breadcrumb specific function.
+    if( ! function_exists('aioseo_breadcrumbs') ) {
+        echo '<div class="error"><p>' . __( 'Warning: The BCGov Block Theme needs the <strong>All in One SEO</strong> plugin activated to page specific enable breadcrumb navigation.', 'bcgov_blocks_theme' ) . '</p></div>';
+    }
+}
+
+add_action( 'admin_notices', 'bcgov_blocks_theme_dependencies' );
