@@ -6,6 +6,8 @@
  *
  * @package Bcgov/Theme/Block
  * @since 1.0.0
+ *
+ * @return void
  */
 
 if ( ! function_exists( 'bcgov_blocks_theme' ) ) {
@@ -52,7 +54,7 @@ add_action( 'after_setup_theme', 'bcgov_blocks_theme' );
 /**
  * Enqueue scripts and styles for public website.
  *
- * @since 0.1
+ * @since 1.0.0
  *
  * @return void
  */
@@ -87,7 +89,7 @@ add_action( 'wp_enqueue_scripts', 'bcgov_blocks_theme_enqueue_scripts' );
 /**
  * Enqueue scripts and styles for admin.
  *
- * @since 0.1
+ * @since 1.0.0
  *
  * @return void
  */
@@ -138,3 +140,19 @@ function bcgov_blocks_theme_custom_logo( $html ) {
 }
 
 add_filter( 'get_custom_logo', 'bcgov_blocks_theme_custom_logo' );
+
+/**
+ * Sets admin notice for missing plugin dependencies.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function bcgov_blocks_theme_dependencies() {
+    // Checks for AIOSEO breadcrumb specific function.
+    if ( ! function_exists( 'aioseo_breadcrumbs' ) ) {
+        echo esc_html( '<div class="error"><p>' . __( 'Warning: The BCGov Block Theme needs the <strong>All in One SEO</strong> plugin activated to page specific enable breadcrumb navigation.', 'bcgov_blocks_theme' ) . '</p></div>' );
+    }
+}
+
+add_action( 'admin_notices', 'bcgov_blocks_theme_dependencies' );

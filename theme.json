@@ -1,5 +1,6 @@
 {
-	"version": 1,
+	"version": 2,
+	"customTemplates": [],
 	"templateParts": [
 		{
 			"name": "header",
@@ -8,6 +9,10 @@
 		{
 			"name": "navigation",
 			"area": "header"
+		},
+		{
+			"name": "breadcrumb-nav",
+			"title": "Breadcrumb Nav – requires AIOSEO plugin"
 		},
 		{
 			"name": "footer",
@@ -53,67 +58,59 @@
 					"color": "#606060",
 					"name": "Components"
 				},
-                {
+				{
 					"slug": "white",
 					"color": "#ffffff",
 					"name": "White"
 				}
 			],
-			"gradients": [
-			
-			]
+			"gradients": []
 		},
 		"layout": {
-			"contentSize": "610px",
-			"wideSize": "1240px"
+			"contentSize": "840px",
+			"wideSize": "1440px"
 		},
 		"typography": {
 			"fontSizes": [
 				{
 					"slug": "extra-small",
-					"size": "16px",
+					"size": "1rem",
 					"name": "Extra small"
 				},
 				{
 					"slug": "small",
-					"size": "18px",
+					"size": "1.125rem",
 					"name": "Small"
 				},
 				{
 					"slug": "normal",
-					"size": "20px",
+					"size": "1.25rem",
 					"name": "Normal"
 				},
 				{
 					"slug": "large",
-					"size": "24px",
+					"size": "1.5rem",
 					"name": "Large"
 				},
 				{
 					"slug": "extra-large",
-					"size": "40px",
+					"size": "2rem",
 					"name": "Extra large"
 				}
 			],
-			"fontFamilies": [
-				
-			]
+			"fontFamilies": []
 		},
-		"custom": {
-		}
+		"custom": {}
 	},
 	"styles": {
 		"blocks": {
 			"core/heading": {
 				"elements": {
 					"link": {
-						"typography": {
-						}
+						"typography": {}
 					}
 				}
 			}
 		}
-	},
-	"customTemplates": [
-	]
+	}
 }
