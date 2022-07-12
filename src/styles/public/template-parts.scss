@@ -18,6 +18,23 @@
 			
 		}
 
+		.wp-block-search {
+
+			.wp-block-search {
+
+				&__inside-wrapper {
+					border: none;
+
+					button {
+						margin-left: 1px;
+					}
+
+				}
+
+			}
+			
+		}
+
 	}
 
 }

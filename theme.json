@@ -11,6 +11,10 @@
 			"area": "header"
 		},
 		{
+			"name": "search-field",
+			"title": "Search Field"
+		},
+		{
 			"name": "breadcrumb-nav",
 			"title": "Breadcrumb Nav – requires AIOSEO plugin"
 		},
