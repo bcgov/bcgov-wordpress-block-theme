@@ -1,7 +1,7 @@
 .wp-block-template-part {
-	
+
 	&.site-header {
-	
+
 		.bcgov-header-group {
 			border-top: 0;
 			border-left: 0;
@@ -9,13 +9,13 @@
 		}
 
 		nav.wp-block-navigation {
-			 
+
 			button {
 				background: svg($hamburger-svg);
 				flex: 1 auto;
 				flex-direction: row-reverse;
-			}	
-			
+			}
+
 		}
 
 		.wp-block-search {
@@ -32,7 +32,7 @@
 				}
 
 			}
-			
+
 		}
 
 	}

@@ -1,1 +1,34 @@
-body{color:#313132;font-family:BCSans,Noto Sans,Verdana,Arial,sans-serif}.bcgov-header-group{border-bottom:2px solid}.wp-site-blocks .site-banner{margin-top:0}.wp-block-template-part.site-header .bcgov-header-group{border-left:0;border-right:0;border-top:0}.wp-block-template-part.site-header nav.wp-block-navigation button{background:svg(url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiCgl4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgYXJpYS1oaWRkZW49InRydWUiIGZvY3VzYWJsZT0iZmFsc2UiPgoJPHJlY3QgaGVpZ2h0PSIxLjUiIHdpZHRoPSIyNCIgeD0iMCIgeT0iMiI+PC9yZWN0PgoJPHJlY3QgaGVpZ2h0PSIxLjUiIHdpZHRoPSIyNCIgeD0iMCIgeT0iMTEiPjwvcmVjdD4KCTxyZWN0IGhlaWdodD0iMS41IiB3aWR0aD0iMjQiIHg9IjAiIHk9IjIwIj48L3JlY3Q+Cjwvc3ZnPg==));flex:1 auto;flex-direction:row-reverse}.wp-block-template-part.site-header .wp-block-search .wp-block-search__inside-wrapper{border:none}.wp-block-template-part.site-header .wp-block-search .wp-block-search__inside-wrapper button{margin-left:1px}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/@wordpress/scripts/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/styles/public/index.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************/
+body {
+  font-family: BCSans, "Noto Sans", Verdana, Arial, sans-serif;
+  color: #313132;
+}
+
+.bcgov-header-group {
+  border-bottom: 2px solid;
+}
+
+.wp-site-blocks .site-banner {
+  margin-top: 0;
+}
+
+.wp-block-template-part.site-header .bcgov-header-group {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+.wp-block-template-part.site-header nav.wp-block-navigation button {
+  background: svg(url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiCgl4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgYXJpYS1oaWRkZW49InRydWUiIGZvY3VzYWJsZT0iZmFsc2UiPgoJPHJlY3QgaGVpZ2h0PSIxLjUiIHdpZHRoPSIyNCIgeD0iMCIgeT0iMiI+PC9yZWN0PgoJPHJlY3QgaGVpZ2h0PSIxLjUiIHdpZHRoPSIyNCIgeD0iMCIgeT0iMTEiPjwvcmVjdD4KCTxyZWN0IGhlaWdodD0iMS41IiB3aWR0aD0iMjQiIHg9IjAiIHk9IjIwIj48L3JlY3Q+Cjwvc3ZnPg==));
+  flex: 1 auto;
+  flex-direction: row-reverse;
+}
+.wp-block-template-part.site-header .wp-block-search .wp-block-search__inside-wrapper {
+  border: none;
+}
+.wp-block-template-part.site-header .wp-block-search .wp-block-search__inside-wrapper button {
+  margin-left: 1px;
+}
+
+/*# sourceMappingURL=public.css.map*/
