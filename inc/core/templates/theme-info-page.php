@@ -1,4 +1,3 @@
-
 <h1 class="is-medium is-sub">BCGov Block Theme Core Features</h1>
 
 <div class="auth-app-card card">
@@ -19,7 +18,7 @@
 	<li><span class="dashicons dashicons-yes"></span> Header – Standard Blue: adds typical BC Gov blue header with site logo, title, navigation and search</li>
 	<li><span class="dashicons dashicons-yes"></span> Navigation: adds standard menu navigation to the header</li>
 	<li><span class="dashicons dashicons-yes"></span> Search Field: adds standard search field to the header</li>
-	<li><span class="dashicons dashicons-yes"></span> Breadcrumb Nav: adds the breadcrumb navigation, <a href="<?php echo admin_url( 'plugins.php' ); ?>" rel="noreferrer">requires AIOSEO plugin activation</a></li>
+	<li><span class="dashicons dashicons-yes"></span> Breadcrumb Nav: adds the breadcrumb navigation, <a href="<?php echoadmin_url( esc_html_e( 'plugins.php' ) ); ?>" rel="noreferrer">requires AIOSEO plugin activation</a></li>
 	<li><span class="dashicons dashicons-yes"></span> Footer: adds typical BC Gov blue footer</li>
 </ul>
 <p>Template Parts Instructions TBD</p>

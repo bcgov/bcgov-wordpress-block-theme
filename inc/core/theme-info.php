@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Add theme page to the admin mmenu.
