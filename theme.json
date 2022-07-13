@@ -1,6 +1,15 @@
 {
 	"version": 2,
-	"customTemplates": [],
+	"customTemplates": [
+		{
+			"name": "blank",
+			"title": "Blank page or post",
+			"postTypes": [
+				"page",
+				"post"
+			]
+		}
+	],
 	"templateParts": [
 		{
 			"name": "header",
