@@ -1,6 +1,5 @@
-
 <?php
 /**
- * Bootstrap file to initiate core files.
+ * Bootstrap file to initialise core files.
  */
-include 'theme-info.php';
+require 'theme-info.php';
