@@ -35,6 +35,9 @@ if ( ! function_exists( 'bcgov_blocks_theme' ) ) {
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
 
+        // Add alignment option to toolbar options.
+        add_theme_support( 'align-wide' );
+
 		// Add support for custom logos.
 		add_theme_support( 'custom-logo' );
 

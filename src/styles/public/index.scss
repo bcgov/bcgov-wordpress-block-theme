@@ -1,11 +1,6 @@
+// SCSS variables for styles
+@import "./variables";
+
 // Public Styles
-$body-color: #313132;
-
-body {
-	font-family: BCSans, "Noto Sans", Verdana, Arial, sans-serif;
-	color: $body-color;
-}
-
-.bcgov-header-group {
-	border-bottom: 2px solid;
-}
+@import "./blocks";
+@import "./template-parts";
