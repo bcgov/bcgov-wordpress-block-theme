@@ -2,6 +2,13 @@
 	"version": 2,
 	"customTemplates": [
 		{
+			"name": "page-no-title",
+			"title": "Page – no title",
+			"postTypes": [
+				"page"
+			]
+		},
+		{
 			"name": "blank",
 			"title": "Blank page or post",
 			"postTypes": [
