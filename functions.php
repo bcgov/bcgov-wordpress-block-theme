@@ -159,3 +159,10 @@ function bcgov_blocks_theme_dependencies() {
 }
 
 add_action( 'admin_notices', 'bcgov_blocks_theme_dependencies' );
+
+/**
+ * Load core file.
+ * 
+ * @since 1.0.0
+ */
+require_once get_template_directory() . '/inc/core/theme-bootstrap.php';
