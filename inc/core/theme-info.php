@@ -1,6 +1,6 @@
 <?php
 /**
- * Add theme page to the admin mmenu.
+ * BCGov Blocks Theme: Add theme page to the admin mmenu.
  *
  * @since 1.0.0
  *
