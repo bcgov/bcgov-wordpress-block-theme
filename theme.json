@@ -19,22 +19,25 @@
 	],
 	"templateParts": [
 		{
+			"title": "BCGov Header",
 			"name": "header",
 			"area": "header"
 		},
 		{
+			"title": "Main Menu",
 			"name": "navigation",
 			"area": "header"
 		},
 		{
-			"name": "search-field",
-			"title": "Search Field"
+			"title": "Search Field",
+			"name": "search-field"
 		},
 		{
-			"name": "breadcrumb-nav",
-			"title": "Breadcrumb Nav – requires AIOSEO plugin"
+			"title": "Breadcrumb Nav – requires AIOSEO plugin",
+			"name": "breadcrumb-nav"
 		},
 		{
+			"title": "BCGov Footer",
 			"name": "footer",
 			"area": "footer"
 		}

@@ -154,7 +154,10 @@ add_filter( 'get_custom_logo', 'bcgov_blocks_theme_custom_logo' );
 function bcgov_blocks_theme_dependencies() {
     // Checks for AIOSEO breadcrumb specific function.
     if ( ! function_exists( 'aioseo_breadcrumbs' ) ) {
-        echo esc_html( '<div class="error"><p>' . __( 'Warning: The BCGov Block Theme needs the <strong>All in One SEO</strong> plugin activated to page specific enable breadcrumb navigation.', 'bcgov_blocks_theme' ) . '</p></div>' );
+        $className = 'error';
+        $message   = __( 'Warning: The BCGov Block Theme needs the All in One SEO plugin activated to page specific enable breadcrumb navigation.', 'bcgov_blocks_theme' );
+
+        printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $className ), esc_html( $message ) );
     }
 }
 
