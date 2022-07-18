@@ -1,10 +1,14 @@
 <?php
 /**
- * Bootstrap file to initialise Wordpress admin features.
+ * Bootstrap file to initialise admin features.
+ *
+ * @since 1.0.0
+ *
+ * @package Bcgov/Theme/Block
  */
 
-// Add BC Gov Blocks Theme information page
+// Add BC Gov Blocks Theme information page.
 require 'theme-info.php';
 
-// Add BC Gov Blocks Theme block patterns
+// Add BC Gov Blocks Theme block patterns.
 require 'theme-block-patterns.php';

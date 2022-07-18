@@ -1,20 +1,22 @@
 {
     "name": "bcgov-theme/bcgov-wordpress-block-theme",
-	"version": "1.0.0",
+    "version": "1.0.0",
     "type": "wordpress-theme",
     "repositories": [
-       {
-         "type": "composer",
-         "url": "https://apps.itsm.gov.bc.ca/satis"
-       }
+        {
+            "type": "composer",
+            "url": "https://apps.itsm.gov.bc.ca/satis"
+        }
     ],
     "require-dev": {
         "bcgov/wordpress-scripts": "@dev"
     },
-
-    "autoload" : {
-        "psr-4" : {
-            "Bcgov\\Theme\\Block\\": "src"
+    "autoload": {
+        "psr-4": {
+            "Bcgov\\Theme\\Block\\": [
+                "src",
+                "inc"
+            ]
         }
     },
     "autoload-dev": {
@@ -22,13 +24,13 @@
             "Bcgov\\Theme\\Block\\Tests\\": "Tests/"
         }
     },
-    "scripts" : {
-        "production" : [
+    "scripts": {
+        "production": [
             "npm run format:js",
             "npm run build:production",
             "Bcgov\\Script\\Checklists::postProductionChecks"
         ],
-        "checklist" : [
+        "checklist": [
             "Bcgov\\Script\\Checklists::postProductionChecks"
         ],
         "phpcs": [
