@@ -3,11 +3,11 @@
 <div class="auth-app-card card">
 <h2>Customisable Templates</h2>
 <ul>
-	<li><span class="dashicons dashicons-yes"></span> Page: displays a single page with the standard layout</li>
-	<li><span class="dashicons dashicons-yes"></span> Page – no title: allows for custom banners</li>
-	<li><span class="dashicons dashicons-yes"></span> Blank: no default header, content or footer – for use in creating custom landing pages</li>
-	<li><span class="dashicons dashicons-yes"></span> Search: display results page</li>
-	<li><span class="dashicons dashicons-yes"></span> 404: displays when no content is found, provides customisable 404 information</li>
+	<li><span class="dashicons dashicons-yes"></span> <strong>Page</strong>: displays a single page with the standard layout</li>
+	<li><span class="dashicons dashicons-yes"></span> <strong>Page – Content only</strong>: allows for custom banners, requires in-page breadcrumb navigation block if used on site</li>
+	<li><span class="dashicons dashicons-yes"></span> <strong>Blank</strong>: no default header, content or footer – for use in creating custom landing pages</li>
+	<li><span class="dashicons dashicons-yes"></span> <strong>Search</strong>: display results page</li>
+	<li><span class="dashicons dashicons-yes"></span> <strong>404</strong>: displays when no content is found, provides customisable 404 information</li>
 </ul>
 <p>Templates Instructions TBD</p>
 </div>
@@ -15,11 +15,11 @@
 <div class="auth-app-card card">
 <h2>Customisable Template Parts</h2>
 <ul>
-	<li><span class="dashicons dashicons-yes"></span> Header – Standard Blue: adds typical BC Gov blue header with site logo, title, navigation and search</li>
-	<li><span class="dashicons dashicons-yes"></span> Navigation: adds standard menu navigation to the header</li>
-	<li><span class="dashicons dashicons-yes"></span> Search Field: adds standard search field to the header</li>
-	<li><span class="dashicons dashicons-yes"></span> Breadcrumb Nav: adds the breadcrumb navigation, <a href="<?php echo esc_html( admin_url( 'plugins.php' ) ); ?>" rel="noreferrer">requires AIOSEO plugin activation</a></li>
-	<li><span class="dashicons dashicons-yes"></span> Footer: adds typical BC Gov blue footer</li>
+	<li><span class="dashicons dashicons-yes"></span> <strong>BCGov Header (Standard)</strong>: adds typical BC Gov blue header with site logo, title, navigation and search</li>
+	<li><span class="dashicons dashicons-yes"></span> <strong>Navigation</strong>: adds menu navigation to the header</li>
+	<li><span class="dashicons dashicons-yes"></span> <strong>Search Field</strong>: adds search field to the header</li>
+	<li><span class="dashicons dashicons-yes"></span> <strong>Breadcrumb Nav</strong>: adds breadcrumb navigation, <a href="<?php echo esc_html( admin_url( 'plugins.php' ) ); ?>" rel="noreferrer">requires AIOSEO plugin activation</a></li>
+	<li><span class="dashicons dashicons-yes"></span> <strong>BCGov Footer (Standard)</strong>: adds typical BC Gov blue footer</li>
 </ul>
 <p>Template Parts Instructions TBD</p>
 </div>

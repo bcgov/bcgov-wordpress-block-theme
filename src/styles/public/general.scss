@@ -1,0 +1,16 @@
+.wp-site-blocks {
+
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	body.admin-bar & {
+		min-height: calc(100vh - 32px);
+	}
+
+	main,
+	#post-content {
+		flex: 1;
+	}
+
+}

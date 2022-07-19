@@ -1,0 +1,59 @@
+// Template editor specific styles.
+html :where(.editor-styles-wrapper) {
+
+	li {
+
+		border-left: 1px solid #4b5e73;
+
+		&:first-of-type {
+			border: none;
+		}
+
+		a {
+			font-size: 0.813rem;
+			margin-right: 1.5rem;
+			text-decoration: none;
+
+		}
+
+		&:not(:first-of-type) {
+			padding-left: 1.5rem;
+		}
+
+	}
+
+}
+
+// General footer styles.
+.wp-block-template-part {
+
+	&.site-footer {
+
+		.is-footer-menu {
+
+			li {
+
+				border-left: 1px solid #4b5e73;
+
+				&:first-of-type {
+					border: none;
+				}
+
+				a {
+					font-size: 0.813rem;
+					margin-right: 1.5rem;
+					text-decoration: none;
+
+				}
+
+				&:not(:first-of-type) {
+					padding-left: 1.5rem;
+				}
+			}
+
+		}
+
+	}
+
+}
+
