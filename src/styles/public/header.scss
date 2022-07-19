@@ -1,11 +1,12 @@
 .wp-block-template-part {
 
-	&.site-header {
+	.site-header {
 
-		.bcgov-header-group {
+		&.bcgov-header-group {
 			border-top: 0;
 			border-left: 0;
 			border-right: 0;
+			border-bottom: 4px solid var(--wp--preset--color--primary-brand-yellow);
 		}
 
 		nav.wp-block-navigation {
@@ -35,6 +36,18 @@
 
 		}
 
+	}
+
+}
+
+// Template editor specific styles.
+html :where(.editor-styles-wrapper) {
+
+	.bcgov-header-group {
+		border-top: 0;
+		border-left: 0;
+		border-right: 0;
+		border-bottom: 4px solid var(--wp--preset--color--primary-brand-yellow);
 	}
 
 }

@@ -90,7 +90,8 @@ function bcgov_blocks_theme_register_block_patterns() {
 		*
 		* @package Bcgov/Theme/Block
 		*/
-		'cleanbc/header-cleanbc',
+		'cleanbc/goelectric-banner',
+		'cleanbc/goelectric-cards',
 	);
 
 	/**
