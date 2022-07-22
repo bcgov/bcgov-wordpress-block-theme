@@ -39,3 +39,11 @@
 </ul>
 <p>Site Specific Instructions TBD</p>
 </div>
+
+<div class="auth-app-card card">
+<h2>Colour Palette</h2>
+<ul>
+	<li><span class="dashicons dashicons-yes"></span> ...coming soon</li>
+</ul>
+<p>Colour Palette details TBD</p>
+</div>
