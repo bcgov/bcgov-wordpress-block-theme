@@ -1,4 +1,7 @@
 <?php
+
+namespace BCGov\BlocksTheme;
+
 /**
  * BCGov Blocks Theme: Add theme page to the admin mmenu.
  *
@@ -9,7 +12,7 @@
 function bcgov_blocks_theme_menu() {
 	add_theme_page( esc_html__( 'BCGov Blocks Theme', 'bcgov-blocks-theme' ), esc_html__( 'BCGov Blocks Theme', 'bcgov-blocks-theme' ), 'edit_theme_options', 'bcgov-blocks-theme-info', 'bcgov_blocks_theme_page_display' );
 }
-add_action( 'admin_menu', 'bcgov_blocks_theme_menu' );
+add_action( 'admin_menu', __NAMESPACE__ . '\bcgov_blocks_theme_menu' );
 
 /**
  * Display BCGov Block Theme features and instructions page.

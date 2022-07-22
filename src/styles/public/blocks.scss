@@ -1,20 +1,107 @@
+/* stylelint-disable no-descending-specificity */
+
+/* Block styles
+*
+*/
+
+// Use when editor specific style specificity is required.
+html :where(.editor-styles-wrapper) {
+
+	.is-bcgov {
+
+		.wp-block-button {
+
+			&__link {
+				background-color: var(--wp--preset--color--primary-brand-blue);
+				border-radius: 0.33rem;
+				color: var(--wp--preset--color--white);
+			}
+
+			&.is-style-outline {
+
+				.wp-block-button {
+
+					&__link {
+						background-color: var(--wp--preset--color--white);
+						border-color: var(--wp--preset--color--primary-brand-blue);
+						border-radius: 0.33rem;
+						color: var(--wp--preset--color--primary-brand-blue);
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
 body {
 	font-family: BCSans, "Noto Sans", Verdana, Arial, sans-serif;
 	color: $body-color;
 }
 
+// General block styles.
 .bcgov-header-group {
 	border-bottom: 2px solid;
 }
 
-.wp-site-blocks {
+.site-banner {
+	margin-top: 0;
+}
 
-	.site-banner {
-		margin-top: 0;
+#post-content {
+	margin-top: 0;
+}
+
+.is-bcgov,
+.wp-block-button {
+
+	&.has-size-large .wp-block-button {
+
+		&__link {
+			padding: 1.5rem 3rem;
+		}
 	}
 
-	#post-content {
-		margin-top: 0;
+	&.has-size-small .wp-block-button {
+
+		&__link {
+			padding: 0.25rem 1.5rem;
+		}
+	}
+
+	.is-bcgov,
+	&.is-bcgov {
+
+		.wp-block-button {
+
+			&__link {
+				background-color: var(--wp--preset--color--primary-brand-blue);
+				border-radius: 0.33rem;
+				color: var(--wp--preset--color--white);
+			}
+
+			&.is-style-outline {
+
+				.wp-block-button {
+
+					&__link {
+						background-color: var(--wp--preset--color--white);
+						border-color: var(--wp--preset--color--primary-brand-blue);
+						border-radius: 0.33rem;
+						color: var(--wp--preset--color--primary-brand-blue);
+					}
+
+				}
+
+			}
+
+		}
+
 	}
 
 }
+

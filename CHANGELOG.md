@@ -7,3 +7,4 @@
 - Breadcrumbs for MVP ([DESCW-468](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-468))
 – Determine SCSS/style structure for theme elements ([DESCW-465](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-465))
 - Essential template files ([DESCW-467](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-467))
+- Initial set up of Block Pattern integration ([DESCW-463]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-463)
