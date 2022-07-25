@@ -1,4 +1,7 @@
 <?php
+
+namespace BCGov\BlocksTheme;
+
 /**
  * BCGov Blocks Theme: Block Patterns.
  *
@@ -90,7 +93,8 @@ function bcgov_blocks_theme_register_block_patterns() {
 		*
 		* @package Bcgov/Theme/Block
 		*/
-		'cleanbc/header-cleanbc',
+		'cleanbc/goelectric-banner',
+		'cleanbc/goelectric-cards',
 	);
 
 	/**
@@ -112,4 +116,4 @@ function bcgov_blocks_theme_register_block_patterns() {
 	}
 }
 
-add_action( 'init', 'bcgov_blocks_theme_register_block_patterns', 9 );
+add_action( 'init', __NAMESPACE__ . '\bcgov_blocks_theme_register_block_patterns', 9 );

@@ -1,6 +1,8 @@
 // SCSS variables for styles
-@import "./variables";
+@import "../variables";
 
 // Public Styles
+@import "./header";
+@import "./footer";
 @import "./blocks";
-@import "./template-parts";
+@import "./general";
