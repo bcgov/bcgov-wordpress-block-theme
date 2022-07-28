@@ -17,4 +17,6 @@ npm run start
 * ``` npm run build:production ```
 * ``` composer checklist ```
 
+## Admin User Documentation
 
+Added to the site admin under Appearance > BCGov Block Theme and can be modified in /inc/core/templates/theme-info-page.php

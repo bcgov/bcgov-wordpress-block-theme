@@ -1,33 +1,45 @@
 /* stylelint-disable no-descending-specificity */
 
-/* Block styles
-*
-*/
+/*
+ * Block Styles.
+ */
 
-// Use when editor specific style specificity is required.
+/*
+ * Editor Styles – use when editor specific style specificity is required.
+ */
 html :where(.editor-styles-wrapper) {
 
-	.is-bcgov {
+	.wp-block-button {
 
-		.wp-block-button {
+		&__link {
+			background-color: var(--wp--preset--color--primary-brand-blue);
+			border-radius: 0.33rem;
+			color: var(--wp--preset--color--white);
 
-			&__link {
-				background-color: var(--wp--preset--color--primary-brand-blue);
-				border-radius: 0.33rem;
-				color: var(--wp--preset--color--white);
+			&:hover,
+			&:focus {
+				filter: contrast(150%);
+				outline: 2px solid var(--wp--preset--color--primary-brand-blue);
+				outline-offset: 2px;
 			}
+		}
 
-			&.is-style-outline {
+		&.is-style-outline {
 
-				.wp-block-button {
+			.wp-block-button {
 
-					&__link {
-						background-color: var(--wp--preset--color--white);
-						border-color: var(--wp--preset--color--primary-brand-blue);
-						border-radius: 0.33rem;
-						color: var(--wp--preset--color--primary-brand-blue);
+				&__link {
+					background-color: var(--wp--preset--color--white);
+					border-color: var(--wp--preset--color--primary-brand-blue);
+					border-radius: 0.33rem;
+					color: var(--wp--preset--color--primary-brand-blue);
+
+					&:hover,
+					&:focus {
+						filter: contrast(150%);
+						outline: 2px solid var(--wp--preset--color--primary-brand-blue);
+						outline-offset: 2px;
 					}
-
 				}
 
 			}
@@ -38,25 +50,10 @@ html :where(.editor-styles-wrapper) {
 
 }
 
-body {
-	font-family: BCSans, "Noto Sans", Verdana, Arial, sans-serif;
-	color: $body-color;
-}
 
-// General block styles.
-.bcgov-header-group {
-	border-bottom: 2px solid;
-}
-
-.site-banner {
-	margin-top: 0;
-}
-
-#post-content {
-	margin-top: 0;
-}
-
-.is-bcgov,
+/*
+ *  Button Block.
+ */
 .wp-block-button {
 
 	&.has-size-large .wp-block-button {
@@ -73,30 +70,38 @@ body {
 		}
 	}
 
-	.is-bcgov,
-	&.is-bcgov {
+	.wp-block-button {
+
+		&__link {
+			background-color: var(--wp--preset--color--primary-brand-blue);
+			border-radius: 0.33rem;
+			color: var(--wp--preset--color--white);
+
+			&:hover,
+			&:focus {
+				filter: contrast(150%);
+				outline: 2px solid var(--wp--preset--color--primary-brand-blue);
+				outline-offset: 2px;
+			}
+		}
+	}
+
+	&.is-style-outline {
 
 		.wp-block-button {
 
 			&__link {
-				background-color: var(--wp--preset--color--primary-brand-blue);
+				background-color: var(--wp--preset--color--white);
+				border-color: var(--wp--preset--color--primary-brand-blue);
 				border-radius: 0.33rem;
-				color: var(--wp--preset--color--white);
-			}
+				color: var(--wp--preset--color--primary-brand-blue);
 
-			&.is-style-outline {
-
-				.wp-block-button {
-
-					&__link {
-						background-color: var(--wp--preset--color--white);
-						border-color: var(--wp--preset--color--primary-brand-blue);
-						border-radius: 0.33rem;
-						color: var(--wp--preset--color--primary-brand-blue);
-					}
-
+				&:hover,
+				&:focus {
+					filter: contrast(150%);
+					outline: 2px solid var(--wp--preset--color--primary-brand-blue);
+					outline-offset: 2px;
 				}
-
 			}
 
 		}
@@ -105,3 +110,228 @@ body {
 
 }
 
+/*
+ *  Card Container + Cards Blocks and breakpoint flex wrapping.
+ */
+.wp-block-bcgov-card-container {
+	margin: 1rem;
+	padding: 0;
+	list-style: none;
+}
+
+.wp-block-bcgov-card {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		margin: 0;
+		line-height: 1.3;
+	}
+
+	figure {
+		padding: 0 !important;
+
+		&.wp-block-image {
+			margin: 0 !important;
+		}
+	}
+
+	p {
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media screen {
+
+	.wp-block-bcgov-card-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		.wp-block-bcgov-card {
+
+			@media screen and (min-width: $cards-mobile-breakpoint) {
+				position: relative;
+			}
+			position: static;
+
+			.align-to-bottom {
+
+				@media screen and (min-width: $cards-mobile-breakpoint) {
+					position: absolute;
+					bottom: 0;
+				}
+
+				position: static;
+				bottom: inherit;
+			}
+
+			.wp-block-button.align-to-bottom {
+
+				@media screen and (min-width: $cards-mobile-breakpoint) {
+					right: 50%;
+					transform: translateX(50%);
+				}
+
+				right: inherit;
+				transform: inherit;
+			}
+
+			> * {
+				padding: 0 1rem 1rem;
+
+				&:first-child {
+					padding-top: 1rem;
+				}
+			}
+		}
+
+		&.no-margin {
+
+			> * {
+				margin: 0 !important;
+			}
+		}
+
+		&.no-border {
+
+			> * {
+				border-width: 0 !important;
+			}
+		}
+
+		&.thick-border {
+
+			> * {
+				border-width: 2px !important;
+			}
+		}
+	}
+
+	.wp-block-bcgov-card {
+		margin: 1%;
+		border-width: 0;
+		border-style: solid;
+		max-width: 650px;
+
+		box-shadow: 5px 4px 18px -6px rgba($black, 0.3);
+
+		> * {
+			padding: 0 1rem 1rem;
+
+			&:first-child {
+				padding-top: 1rem;
+			}
+		}
+
+		&.align-right {
+			text-align: right;
+		}
+
+		&.align-left {
+			text-align: left;
+		}
+
+		&.align-center {
+			text-align: center;
+		}
+	}
+}
+
+*[data-type="bcgov/card"] {
+	border: 1px solid var(--wp--preset--color--primary-brand-blue);
+	padding: 0.5rem;
+	background-color: var(--wp--preset--color--white);
+}
+
+.wp-admin {
+
+	.wp-block-bcgov-card-container {
+		border: 2px solid var(--wp--preset--color--primary-brand-blue);
+		list-style: none;
+		padding: 1rem;
+		margin: 0.5rem 0;
+
+		> * {
+			width: 100%;
+		}
+
+		&::before {
+			content: "Card Container";
+			position: absolute;
+			top: 0.25rem;
+			left: 0.25rem;
+			color: var(--wp--preset--color--components);
+		}
+	}
+}
+
+@media print {
+
+	.wp-block-bcgov-card {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		break-inside: avoid;
+		border-bottom-style: dotted;
+		border-bottom-width: 1px;
+		border-bottom-color: #ccc;
+
+		> * {
+			margin-left: 1rem !important;
+		}
+
+		img {
+			max-width: 100px;
+		}
+
+	}
+
+}
+
+
+/*
+ *  Media + Text Cards.
+ */
+.wp-block-media-text {
+
+	&.is-style-dropshadow {
+		box-shadow: 0 0 12px rgba($black, 33%);
+	}
+
+}
+
+
+/*
+ *  Quote Block.
+ */
+.is-quote {
+
+	.wp-block-quote {
+		border-left: none;
+
+		&::before {
+			display: block;
+			background-image: url(/assets/images/block-theme/quote-marks.svg);
+			background-size: cover;
+			content: "";
+			height: 100px;
+			width: 100px;
+			left: -100px;
+			overflow: visible;
+			position: relative;
+			margin-bottom: -70px;
+		}
+	}
+}

@@ -7,8 +7,7 @@
  * @package Bcgov/Theme/Block
  */
 
-// Add BC Gov Blocks Theme information page.
-require 'theme-info.php';
+namespace Bcgov\Theme\Block;
 
 // Add BC Gov Blocks Theme block filters.
 require 'filters/button-enhanced.php';

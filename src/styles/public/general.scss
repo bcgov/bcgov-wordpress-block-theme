@@ -3,6 +3,23 @@
 /* General styles.
 *
 */
+body {
+	font-family: BCSans, "Noto Sans", Verdana, Arial, sans-serif;
+	color: $body-color;
+}
+
+.bcgov-header-group {
+	border-bottom: 2px solid;
+}
+
+.site-banner {
+	margin-top: 0;
+}
+
+#post-content {
+	margin-top: 0;
+}
+
 .wp-site-blocks {
 
 	display: flex;
