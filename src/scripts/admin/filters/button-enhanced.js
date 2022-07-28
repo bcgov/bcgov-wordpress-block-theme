@@ -1,8 +1,8 @@
-/* eslint-disable react/jsx-props-no-spreading, react/prop-types */
 import classnames from 'classnames';
 
 const { assign, merge } = require('lodash');
 
+const { registerBlockStyle, unregisterBlockStyle } = wp.blocks;
 const { __ } = wp.i18n;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
@@ -10,19 +10,21 @@ const { Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor;
 const { PanelBody, SelectControl } = wp.components;
 
-wp.blocks.registerBlockVariation('core/buttons', {
-	name: 'bcgov-buttons',
-	title: 'BCGov Buttons',
-	attributes: {
-		className: 'is-bcgov',
-	},
+/**
+ * Modify Button style options.
+ */
+registerBlockStyle('core/button', {
+	name: 'fill',
+	label: 'BCGov Fill',
+	default: 'is-style-fill',
 });
-wp.blocks.registerBlockVariation('core/button', {
-	name: 'bcgov-button',
-	title: 'BCGov Button',
-	attributes: {
-		className: 'is-bcgov',
-	},
+registerBlockStyle('core/button', {
+	name: 'outline',
+	label: 'BCGov Outline',
+});
+
+wp.domReady(() => {
+	unregisterBlockStyle('core/button', 'default');
 });
 
 /**
@@ -84,10 +86,10 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 									label: __('Default', 'bcgov-block-theme'),
 									value: 'regular',
 								},
-								{
-									label: __('Small', 'bcgov-block-theme'),
-									value: 'small',
-								},
+								// {
+								// 	label: __('Small', 'bcgov-block-theme'),
+								// 	value: 'small',
+								// },
 								{
 									label: __('Large', 'bcgov-block-theme'),
 									value: 'large',

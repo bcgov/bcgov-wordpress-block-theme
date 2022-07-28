@@ -1,6 +1,6 @@
 <?php
 
-namespace BCGov\BlocksTheme;
+namespace Bcgov\Theme\Block;
 
 /**
  * BCGov Blocks Theme: Block Patterns.
@@ -78,6 +78,9 @@ function bcgov_blocks_theme_register_block_patterns() {
 		'footer-default',
 
 		// General patterns: not site specific.
+		'bcgov-alternating-cards',
+		'bcgov-long-card',
+		'bcgov-quote',
 		'general-breadcrumb-nav',
 		'general-hero',
 
@@ -111,7 +114,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 	foreach ( $block_patterns as $block_pattern ) {
 		register_block_pattern(
 			'bcgov-wordpress-block-theme/' . $block_pattern,
-			require plugin_dir_path( __FILE__ ) . '/patterns/' . $block_pattern . '.php'
+			require plugin_dir_path( __FILE__ ) . 'patterns/' . $block_pattern . '.php'
 		);
 	}
 }

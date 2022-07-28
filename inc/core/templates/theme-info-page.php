@@ -1,3 +1,9 @@
+<?php
+
+namespace Bcgov\Theme\Block;
+
+?>
+
 <h1 class="is-medium is-sub">BCGov Block Theme Core Features</h1>
 
 <div class="auth-app-card card">

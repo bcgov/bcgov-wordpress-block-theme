@@ -1,6 +1,6 @@
 <?php
 
-namespace BCGov\BlocksTheme;
+namespace Bcgov\Theme\Block;
 
 /**
  * Improve button block by adding additional attribtes: size class and tabindex.

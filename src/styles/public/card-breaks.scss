@@ -1,0 +1,252 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+
+/*
+ * Card Column Breakpoint Styles.
+ */
+
+/*
+ * Editor Styles – use when editor specific style specificity is required.
+ */
+html :where(.editor-styles-wrapper) {
+
+	@media only screen and (min-width: 768px) {
+
+		.lg-break-4 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 2)-2%};
+				}
+			}
+		}
+
+		.lg-break-6 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 2)-2%};
+				}
+			}
+		}
+
+		.lg-break-5 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 2)-2%};
+				}
+			}
+		}
+
+		.lg-break-3 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 2)-2%};
+				}
+			}
+		}
+	}
+
+	@media only screen and (min-width: 992px) {
+
+		.lg-break-6 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 3)-2%};
+				}
+			}
+		}
+
+		.lg-break-5 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 3)-2%};
+				}
+			}
+		}
+	}
+
+	@media only screen and (min-width: 1200px) {
+
+		.lg-break-6 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 6)-2%};
+				}
+			}
+		}
+
+		.lg-break-5 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 5)-2%};
+				}
+			}
+		}
+
+		.lg-break-4 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 4)-2%};
+				}
+			}
+		}
+
+		.lg-break-3 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 3)-2%};
+				}
+			}
+		}
+
+		.lg-break-2 > .block-editor-inner-blocks > .block-editor-block-list {
+
+			&__layout:not(.lg-break-3 li ~ .block-editor-block-list__layout) {
+				display: flex;
+				flex-direction: row;
+
+				> * {
+					width: #{(100 / 2)-2%};
+				}
+			}
+		}
+	}
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+	.lg-break-4 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 2)-2%};
+		}
+	}
+
+	.lg-break-6 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 2)-2%};
+		}
+	}
+
+	.lg-break-5 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 2)-2%};
+		}
+	}
+
+	.lg-break-3 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 2)-2%};
+		}
+	}
+}
+
+@media only screen and (min-width: 992px) {
+
+	.lg-break-6 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 3)-2%};
+		}
+	}
+
+	.lg-break-5 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 3)-2%};
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+
+	.lg-break-6 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 6)-2%};
+		}
+	}
+
+	.lg-break-5 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 5)-2%};
+		}
+	}
+
+	.lg-break-4 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 4)-2%};
+		}
+	}
+
+	.lg-break-3 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 3)-2%};
+		}
+	}
+
+	.lg-break-2 {
+		flex-direction: row;
+
+		> * {
+			width: #{(100 / 2)-2%};
+		}
+	}
+}
