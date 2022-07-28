@@ -12,7 +12,6 @@
 
 namespace Bcgov\Theme\Block;
 
-require_once get_template_directory() . '/inc/Loader.php';
 require_once get_template_directory() . '/src/Setup.php';
 
 if ( class_exists( 'Bcgov\\Theme\\Block\\Setup' ) ) {

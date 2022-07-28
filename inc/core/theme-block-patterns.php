@@ -50,6 +50,10 @@ function bcgov_blocks_theme_register_block_patterns() {
 	/**
 	 * BCGov Blocks Theme: Filters the theme block pattern categories.
 	 *
+	 * Site specific patterns: use the project identifier as part of the naming.
+	 * This is reflected in the /inc/core/patterns/[project]/[pattern-name] directory.
+	 * Eg: for CleanBC patterns – 'cleanbc/header'.
+	 *
 	 * @since 1.0.0
 	 *
 	 * @package Bcgov/Theme/Block
@@ -79,6 +83,9 @@ function bcgov_blocks_theme_register_block_patterns() {
 
 		// General patterns: not site specific.
 		'bcgov-alternating-cards',
+		'bcgov-card-image-overlay',
+		'bcgov-card-image-under-2-up',
+		'bcgov-detail-card-with-icons',
 		'bcgov-long-card',
 		'bcgov-quote',
 		'general-breadcrumb-nav',
@@ -87,15 +94,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		// Full page patterns.
 		'page-front',
 
-		/**
-	 	* Site specific patterns: use the project identifier as part of the naming.
-		* This is reflected in the /inc/core/patterns/[project]/[pattern-name] directory.
-		* Eg: for CleanBC patterns – 'cleanbc/header'.
-		*
-		* @since 1.0.0
-		*
-		* @package Bcgov/Theme/Block
-		*/
+		// Site specific patterns.
 		'cleanbc/goelectric-banner',
 		'cleanbc/goelectric-cards',
 	);
