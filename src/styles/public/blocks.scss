@@ -311,27 +311,3 @@ html :where(.editor-styles-wrapper) {
 	}
 
 }
-
-
-/*
- *  Quote Block.
- */
-.is-quote {
-
-	.wp-block-quote {
-		border-left: none;
-
-		&::before {
-			display: block;
-			background-image: url(/assets/images/block-theme/quote-marks.svg);
-			background-size: cover;
-			content: "";
-			height: 100px;
-			width: 100px;
-			left: -100px;
-			overflow: visible;
-			position: relative;
-			margin-bottom: -70px;
-		}
-	}
-}

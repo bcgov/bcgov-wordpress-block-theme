@@ -27,14 +27,12 @@ class Setup {
      * @return void
      */
     private function hook() {
-        $loader = new Loader();
-		$loader->add_action( 'after_setup_theme', $this, 'bcgov_block_theme' );
-		$loader->add_action( 'wp_enqueue_scripts', $this, 'bcgov_block_theme_enqueue_scripts' );
-		$loader->add_action( 'admin_enqueue_scripts', $this, 'bcgov_block_theme_enqueue_admin_scripts' );
-		$loader->add_filter( 'get_custom_logo', $this, 'bcgov_block_theme_custom_logo' );
-		$loader->add_action( 'admin_notices', $this, 'bcgov_block_theme_dependencies' );
-		$loader->add_action( 'admin_menu', $this, 'bcgov_block_theme_menu' );
-        $loader->run();
+		add_action( 'after_setup_theme', [ $this, 'bcgov_block_theme' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_scripts' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_admin_scripts' ] );
+		add_filter( 'get_custom_logo', [ $this, 'bcgov_block_theme_custom_logo' ] );
+		add_action( 'admin_notices', [ $this, 'bcgov_block_theme_dependencies' ] );
+		add_action( 'admin_menu', [ $this, 'bcgov_block_theme_menu' ] );
     }
 
 	/**
