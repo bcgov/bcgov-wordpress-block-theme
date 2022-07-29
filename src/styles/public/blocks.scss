@@ -302,6 +302,18 @@ html :where(.editor-styles-wrapper) {
 
 
 /*
+ *  Column.
+ */
+.wp-block-column {
+
+	&.is-style-dropshadow {
+		box-shadow: 0 0 12px rgba($black, 33%);
+	}
+
+}
+
+
+/*
  *  Media + Text Cards.
  */
 .wp-block-media-text {
