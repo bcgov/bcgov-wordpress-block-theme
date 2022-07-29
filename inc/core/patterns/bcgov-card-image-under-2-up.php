@@ -1,4 +1,7 @@
 <?php
+
+namespace Bcgov\Theme\Block;
+
 /**
  * General Card with Under Image Portrait 2-Up pattern.
  *

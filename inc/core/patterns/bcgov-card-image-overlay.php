@@ -1,4 +1,7 @@
 <?php
+
+namespace Bcgov\Theme\Block;
+
 /**
  * General Card with Image Overlay pattern.
  *

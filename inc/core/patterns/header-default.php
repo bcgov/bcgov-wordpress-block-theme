@@ -1,4 +1,7 @@
 <?php
+
+namespace Bcgov\Theme\Block;
+
 /**
  * Default header block pattern.
  *

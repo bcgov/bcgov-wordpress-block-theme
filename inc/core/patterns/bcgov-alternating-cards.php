@@ -1,4 +1,7 @@
 <?php
+
+namespace Bcgov\Theme\Block;
+
 /**
  * General Alternating Cards block pattern.
  *

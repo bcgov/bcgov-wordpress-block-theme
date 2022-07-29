@@ -1,4 +1,7 @@
 <?php
+
+namespace Bcgov\Theme\Block;
+
 /**
  * General Detail Card with Icons pattern.
  *
@@ -9,10 +12,10 @@
 return array(
 	'title'      => __( 'Detail Card with Icons', 'bcgov_blocks_theme' ),
 	'categories' => array( 'bcgov-blocks-theme-general' ),
-	'content'    => '<!-- wp:group {"align":"wide","className":"is-card-portrait-image-over"} -->
-	<div class="wp-block-group alignwide is-card-portrait-image-over"><!-- wp:columns {"style":{"spacing":{"padding":{"top":"3rem","bottom":"3rem"}}}} -->
-	<div class="wp-block-columns" style="padding-top:3rem;padding-bottom:3rem"><!-- wp:column {"layout":{"inherit":false}} -->
-	<div class="wp-block-column"><!-- wp:image {"align":"center","id":594,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
+	'content'    => '<!-- wp:group {"align":"wide"} -->
+	<div class="wp-block-group alignwide"><!-- wp:columns {"style":{"spacing":{"padding":{"top":"3rem","bottom":"3rem"}}},"className":"is-card-portrait-image-over"} -->
+	<div class="wp-block-columns is-card-portrait-image-over" style="padding-top:3rem;padding-bottom:3rem"><!-- wp:column {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"2rem","left":"0px"}}},"className":"is-style-dropshadow","layout":{"inherit":false}} -->
+	<div class="wp-block-column is-style-dropshadow" style="padding-top:0px;padding-right:0px;padding-bottom:2rem;padding-left:0px"><!-- wp:image {"align":"center","id":594,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_05.jpg" alt="" class="wp-image-594"/></figure>
 	<!-- /wp:image -->
 	
@@ -31,8 +34,8 @@ return array(
 	<!-- /wp:buttons --></div>
 	<!-- /wp:column -->
 	
-	<!-- wp:column -->
-	<div class="wp-block-column"><!-- wp:image {"align":"center","id":599,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
+	<!-- wp:column {"style":{"spacing":{"padding":{"top":"0px","right":"0px","left":"0px","bottom":"2rem"}}},"className":"is-style-dropshadow"} -->
+	<div class="wp-block-column is-style-dropshadow" style="padding-top:0px;padding-right:0px;padding-bottom:2rem;padding-left:0px"><!-- wp:image {"align":"center","id":599,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_04.jpg" alt="" class="wp-image-599"/></figure>
 	<!-- /wp:image -->
 	
@@ -51,8 +54,8 @@ return array(
 	<!-- /wp:buttons --></div>
 	<!-- /wp:column -->
 	
-	<!-- wp:column -->
-	<div class="wp-block-column"><!-- wp:image {"align":"center","id":593,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
+	<!-- wp:column {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"2rem","left":"0px"}}},"className":"is-style-dropshadow"} -->
+	<div class="wp-block-column is-style-dropshadow" style="padding-top:0px;padding-right:0px;padding-bottom:2rem;padding-left:0px"><!-- wp:image {"align":"center","id":593,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_01.jpg" alt="" class="wp-image-593"/></figure>
 	<!-- /wp:image -->
 	
