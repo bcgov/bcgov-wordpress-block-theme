@@ -12,7 +12,8 @@ namespace Bcgov\Theme\Block;
 return array(
 	'title'      => __( 'Alternating Cards', 'bcgov_blocks_theme' ),
 	'categories' => array( 'bcgov-blocks-theme-general' ),
-	'content'    => '<!-- wp:media-text {"mediaPosition":"right","mediaId":305,"mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_10.jpg","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#0033661a"}}} -->
+	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"3rem","bottom":"3rem"}}}} -->
+	<div class="wp-block-group alignwide" style="margin-top:3rem;margin-bottom:3rem"><!-- wp:media-text {"mediaPosition":"right","mediaId":305,"mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_10.jpg","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#0033661a"}}} -->
 	<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center has-background" style="background-color:#0033661a"><figure class="wp-block-media-text__media"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_10.jpg" alt="" class="wp-image-305 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:group {"style":{"spacing":{"padding":{"top":"2em","right":"2em","bottom":"2em","left":"2em"}}}} -->
 	<div class="wp-block-group" style="padding-top:2em;padding-right:2em;padding-bottom:2em;padding-left:2em"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.2","fontSize":"36px"}}} -->
 	<p style="font-size:36px;line-height:1.2"><strong>Lorem sociis natoque penatibus et magnis</strong></p>
@@ -28,9 +29,11 @@ return array(
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div></div>
-	<!-- /wp:media-text -->
+	<!-- /wp:media-text --></div>
+	<!-- /wp:group -->
 
-	<!-- wp:media-text {"mediaId":185,"mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_03.png","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#fbbb181a"}}} -->
+	<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"3rem","bottom":"3rem"}}}} -->
+	<div class="wp-block-group alignwide" style="margin-top:3rem;margin-bottom:3rem"><!-- wp:media-text {"mediaId":185,"mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_03.png","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#fbbb181a"}}} -->
 	<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center has-background" style="background-color:#fbbb181a"><figure class="wp-block-media-text__media"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_03.png" alt="" class="wp-image-185 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:group {"style":{"spacing":{"padding":{"top":"2em","right":"2em","bottom":"2em","left":"2em"}}}} -->
 	<div class="wp-block-group" style="padding-top:2em;padding-right:2em;padding-bottom:2em;padding-left:2em"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.2","fontSize":"36px"}}} -->
 	<p style="font-size:36px;line-height:1.2"><strong>Lorem sociis natoque penatibus et magnis</strong></p>
@@ -46,5 +49,6 @@ return array(
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div></div>
-	<!-- /wp:media-text -->',
+	<!-- /wp:media-text --></div>
+	<!-- /wp:group -->',
 );

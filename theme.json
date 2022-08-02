@@ -1,5 +1,8 @@
 {
 	"version": 2,
+	"patterns": [
+		"bcgov-hero-banner"
+	],
 	"customTemplates": [
 		{
 			"name": "page-no-title",
@@ -44,6 +47,19 @@
 	],
 	"settings": {
 		"appearanceTools": true,
+		"blocks": {
+			"core/column": {
+				"spacing": {
+					"padding": true
+				}
+			},
+			"core/media-text": {
+				"spacing": {
+					"padding": true,
+					"margin": true
+				}
+			}
+		},
 		"color": {
 			"palette": [
 				{
@@ -92,6 +108,9 @@
 		"layout": {
 			"contentSize": "840px",
 			"wideSize": "1440px"
+		},
+		"spacing": {
+			"blockGap": null
 		},
 		"typography": {
 			"fontSizes": [

@@ -33,6 +33,7 @@ class Setup {
 		add_filter( 'get_custom_logo', [ $this, 'bcgov_block_theme_custom_logo' ] );
 		add_action( 'admin_notices', [ $this, 'bcgov_block_theme_dependencies' ] );
 		add_action( 'admin_menu', [ $this, 'bcgov_block_theme_menu' ] );
+		remove_theme_support( 'core-block-patterns' );
     }
 
 	/**

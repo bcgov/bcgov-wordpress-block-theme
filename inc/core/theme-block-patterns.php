@@ -85,14 +85,19 @@ function bcgov_blocks_theme_register_block_patterns() {
 		'bcgov-alternating-cards',
 		'bcgov-card-image-overlay',
 		'bcgov-card-image-under-2-up',
+		'bcgov-card-with-two-images',
 		'bcgov-cards-portrait-3-up',
 		'bcgov-detail-card-with-icons',
+		'bcgov-general-banner',
+		'bcgov-hero-banner',
 		'bcgov-long-card',
 		'bcgov-quote',
+		'bcgov-small-quote-image',
 		'general-breadcrumb-nav',
 		'general-hero',
 
 		// Full page patterns.
+		'bcgov-page-layout-example',
 		'page-front',
 
 		// Site specific patterns.
