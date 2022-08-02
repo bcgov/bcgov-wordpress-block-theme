@@ -11,12 +11,12 @@ const { InspectorControls } = wp.blockEditor;
 const { PanelBody, SelectControl } = wp.components;
 
 /**
- * Modify Button style options.
+ * Add Size control to Button block.
  */
 registerBlockStyle('core/button', {
 	name: 'fill',
 	label: 'BCGov Fill',
-	default: 'is-style-fill',
+	default: 'is-bcgov-fill',
 });
 registerBlockStyle('core/button', {
 	name: 'outline',
@@ -86,10 +86,6 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 									label: __('Default', 'bcgov-block-theme'),
 									value: 'regular',
 								},
-								// {
-								// 	label: __('Small', 'bcgov-block-theme'),
-								// 	value: 'small',
-								// },
 								{
 									label: __('Large', 'bcgov-block-theme'),
 									value: 'large',
