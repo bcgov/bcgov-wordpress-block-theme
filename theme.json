@@ -32,6 +32,11 @@
 			"area": "header"
 		},
 		{
+			"title": "Takeover Menu (Main)",
+			"name": "takeover-navigation",
+			"area": "header"
+		},
+		{
 			"title": "Search Field",
 			"name": "search-field"
 		},
