@@ -1,0 +1,104 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable font-weight-notation */
+
+
+/*
+ * Editor Styles – use when editor specific style specificity is required.
+ */
+html :where(.editor-styles-wrapper) {
+
+	/*
+	*  Takeover Menu Template Part.
+	*/
+	.is-style-takeover-menu {
+		background-color: transparent;
+	}
+
+	button.components-button {
+
+		svg {
+			content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSI+PHJlY3QgeD0iMCIgeT0iMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEuNSI+PC9yZWN0PjxyZWN0IHg9IjAiIHk9IjciIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjUiPjwvcmVjdD48cmVjdCB4PSIwIiB5PSIxMyIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEuNSI+PC9yZWN0Pjwvc3ZnPg==);
+		}
+
+	}
+}
+
+/*
+ *  Takeover Menu Template Part.
+ */
+.is-style-takeover-menu {
+
+	.wp-block-navigation {
+
+		&__responsive-container {
+			display: flex;
+			left: 200vw;
+			padding: 2rem;
+			transition: all 0.3s ease-in-out;
+
+			.wp-block-navigation-item {
+				opacity: 0;
+			}
+
+			&.is-menu-open {
+				left: 0%;
+
+				.wp-block-navigation-item {
+					opacity: 1;
+				}
+			}
+
+		}
+
+		&__responsive-dialog {
+			max-width: 1440px;
+			margin: auto;
+		}
+
+		&__container {
+			flex-direction: row !important;
+			flex-wrap: wrap;
+			max-width: 1440px;
+			justify-content: center !important;
+			align-items: center;
+			height: auto;
+			margin: 0;
+			padding: 0;
+
+			.wp-block-navigation-item {
+				justify-content: flex-start !important;
+				align-items: flex-start !important;
+				margin: 0 0 auto 0;
+
+				a {
+					font-weight: 700;
+				}
+
+				ul {
+					padding-left: 0 !important;
+				}
+			}
+
+			> .wp-block-navigation-item {
+				flex: 1;
+				width: 100%;
+				max-width: 26.66%;
+				min-width: 26.66%;
+				min-height: 15vh;
+
+				ul,
+				.wp-block-navigation {
+
+					&__submenu-container {
+						padding-left: 0 !important;
+
+						a {
+							font-weight: 400 !important;
+							line-height: 1.5;
+						}
+					}
+				}
+			}
+		}
+	}
+}
