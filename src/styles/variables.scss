@@ -1,7 +1,33 @@
+/* @media Breakpoints */
+$breakpoint-xxs: 0;
+$breakpoint-xs: 479px;
+$breakpoint-sm: 767px;
+$breakpoint-sm-md: 840px;
+$breakpoint-wp-content-sm: $breakpoint-sm-md;
+$breakpoint-md: 991px;
+$breakpoint-md-lg: 1024px;
+$breakpoint-lg: 1199px;
+$breakpoint-xl: 1440px;
+$breakpoint-wp-content-wide: $breakpoint-xl;
+
+/* Legacy breakpoint variables. */
+$cards-mobile-breakpoint: 767px;
+
+// SCSS Colours.
 $black: #000;
 $body-color: #313132;
 
+/* FOR REFERENCE: Go Electric v1 Project colours. */
+$sushigreen: #61a744;
+$eucalyptus: #1d8045;
+$bondiblue: #0090b5;
+$bahamablue: #005d99;
+$prussianblue: #002a4e;
+$weborange: #f2a900;
+$sunorange: #fdb414;
+$anchororange: #eb7d3b;
+$dawngray: #a49e99;
+$gallerygray: #edebeb;
+
+/* SCSS SVG files. */
 $hamburger-svg: url(../../../assets/images/bcgov-hamburger.svg);
-
-
-$cards-mobile-breakpoint: 768px;
