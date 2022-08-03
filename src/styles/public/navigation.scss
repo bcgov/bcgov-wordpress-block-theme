@@ -82,9 +82,17 @@ html :where(.editor-styles-wrapper) {
 			> .wp-block-navigation-item {
 				flex: 1;
 				width: 100%;
-				max-width: 26.66%;
-				min-width: 26.66%;
 				min-height: 15vh;
+
+				@media (min-width: $breakpoint-sm) {
+					max-width: 48%;
+					min-width: 48%;
+				}
+
+				@media (min-width: $breakpoint-md) {
+					max-width: 26.66%;
+					min-width: 26.66%;
+				}
 
 				ul,
 				.wp-block-navigation {
