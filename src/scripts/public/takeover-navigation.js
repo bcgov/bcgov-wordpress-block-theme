@@ -70,7 +70,7 @@ const domReady = () => {
 	}
 };
 
-if (document.readyState === 'complete') {
+if ('complete' === document.readyState) {
 	domReady();
 } else {
 	document.addEventListener('DOMContentLoaded', domReady);

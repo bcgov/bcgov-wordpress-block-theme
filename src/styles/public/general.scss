@@ -1,5 +1,46 @@
 /* stylelint-disable no-descending-specificity */
 
+
+:root html :where(.editor-styles-wrapper) {
+
+
+	h1:not(.is-style-custom) {
+		font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.5rem) !important;
+		min-height: 0;
+
+	}
+
+	h2:not(.is-style-custom) {
+		font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 3rem) !important;
+		min-height: 0;
+	}
+
+	h3:not(.is-style-custom) {
+		font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.5rem) !important;
+		min-height: 0;
+	}
+
+	h4:not(.is-style-custom) {
+		font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 2.25rem) !important;
+		min-height: 0;
+	}
+
+	h5:not(.is-style-custom) {
+		font-size: clamp(1.1rem, 0.25rem + 3.3333vw, 2rem) !important;
+		min-height: 0;
+	}
+
+	h6:not(.is-style-custom) {
+		font-size: clamp(1.05rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+		min-height: 0;
+	}
+
+	p:not(.is-style-custom) {
+		font-size: clamp(1rem, 0.25rem + 3.3333vw, 1rem) !important;
+		min-height: 0;
+	}
+}
+
 /* General styles.
 *
 */
@@ -7,22 +48,47 @@ body {
 	font-family: BCSans, "Noto Sans", Verdana, Arial, sans-serif;
 	color: $body-color;
 
+	/*
+ 	* Clamping text as a default.
+	* Warning: This allows the option to use custom styles.
+	* Editor Styles do not account for class which may be removed in FSE template.
+	* Clamp adjusts between viewport sizes of 320px to 840px
+ 	*/
 	.bcgov-body-content {
 
-		h1:not(.custom) {
+		h1:not(.is-style-custom) {
 			font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.5rem) !important;
+			min-height: 0;
 		}
 
-		h2:not(.custom) {
+		h2:not(.is-style-custom) {
 			font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 3rem) !important;
+			min-height: 0;
 		}
 
-		h3:not(.custom) {
-			font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 2.5rem) !important;
+		h3:not(.is-style-custom) {
+			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.5rem) !important;
+			min-height: 0;
 		}
 
-		p:not(.custom) {
+		h4:not(.is-style-custom) {
+			font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 2.25rem) !important;
+			min-height: 0;
+		}
+
+		h5:not(.is-style-custom) {
+			font-size: clamp(1.1rem, 0.25rem + 3.3333vw, 2rem) !important;
+			min-height: 0;
+		}
+
+		h6:not(.is-style-custom) {
+			font-size: clamp(1.05rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+			min-height: 0;
+		}
+
+		p:not(.is-style-custom) {
 			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1rem) !important;
+			min-height: 0;
 		}
 	}
 }

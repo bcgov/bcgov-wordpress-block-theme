@@ -5,8 +5,9 @@ const domReady = () => {
 	if (document.querySelectorAll('.is-style-ribbon-menu').length) {
 		document.querySelector('body').classList.add('has-ribbon-menu');
 
-		// Check for menu items being out of viewport and class is needed.
-
+		/*
+		 * Check for menu items being out of viewport and class is needed.
+		 */
 		function doBoundsCheck(t) {
 			const container = t.closest('ul');
 			const childContainer = container.querySelector('ul');
@@ -35,20 +36,17 @@ const domReady = () => {
 
 		const elem = document.querySelectorAll('li.wp-block-navigation-item');
 		elem.forEach((i) => {
-			// console.log("listener set up", i);
 			i.addEventListener('mousemove', (e) => {
-				// console.log("mousemove listener triggered", e);
 				doBoundsCheck(e.target);
 			});
 			i.addEventListener('keypress', (e) => {
-				// console.log("keypress listener triggered");
 				doBoundsCheck(e.target);
 			});
 		});
 	}
 };
 
-if (document.readyState === 'complete') {
+if ('complete' === document.readyState) {
 	domReady();
 } else {
 	document.addEventListener('DOMContentLoaded', domReady);
