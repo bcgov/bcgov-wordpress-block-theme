@@ -13,3 +13,4 @@
 – Includes MVP patterns for Alternating Cards, Card with Image Overlay, Card with Under Image Portrait 2-Up, Cards Portrait 3-up, Detail Card with Icons, Hero Banner
 Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-494)
 – Documentation with instructions on Patterns and templates/parts ([DESCW-493]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-493)
+– Navigation (takeover and ribbon styles – js & css) for general block theme use (some CleanBC crossover). Additional template & patterns (html) updates. ([DESCW-511]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-511)

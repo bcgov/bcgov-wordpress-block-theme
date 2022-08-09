@@ -44,8 +44,8 @@ return array(
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons {"className":"is-bcgov"} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-yellow","className":"is-style-outline"} -->
-	<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-primary-brand-yellow-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-alt","className":"is-style-outline"} -->
+	<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-primary-brand-alt-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div></div>

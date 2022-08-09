@@ -1,5 +1,6 @@
 {
 	"version": 2,
+	"title": "Dark",
 	"patterns": [
 		"bcgov-hero-banner"
 	],
@@ -22,7 +23,7 @@
 	],
 	"templateParts": [
 		{
-			"title": "BCGov Header (general with ribbon navigation)",
+			"title": "BCGov Header (general)",
 			"name": "header",
 			"area": "header"
 		},
@@ -34,11 +35,6 @@
 		{
 			"title": "Main Menu",
 			"name": "navigation",
-			"area": "header"
-		},
-		{
-			"title": "Ribbon Menu (Main)",
-			"name": "ribbon-navigation",
 			"area": "header"
 		},
 		{
@@ -73,11 +69,6 @@
 					"padding": true,
 					"margin": true
 				}
-			},
-			"core/navigation": {
-				"__experimentalLayout": {
-					"allowSwitching": false
-				}
 			}
 		},
 		"color": {
@@ -104,17 +95,17 @@
 				},
 				{
 					"slug": "foreground",
-					"color": "#121212",
+					"color": "#F1F1F1",
 					"name": "Foreground"
 				},
 				{
 					"slug": "foreground-alt",
-					"color": "#121212",
+					"color": "#F2F2F2",
 					"name": "Foreground Alt"
 				},
 				{
 					"slug": "background",
-					"color": "#F2F2F2",
+					"color": "#121212",
 					"name": "Background"
 				},
 				{
@@ -139,10 +130,6 @@
 				}
 			],
 			"gradients": []
-		},
-		"layout": {
-			"contentSize": "840px",
-			"wideSize": "1440px"
 		},
 		"spacing": {
 			"blockGap": null

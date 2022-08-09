@@ -29,8 +29,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons -->
-	<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary-brand-yellow","textColor":"primary-brand-blue","style":{"border":{"radius":"3px"}},"className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-color has-primary-brand-yellow-background-color has-text-color has-background" style="border-radius:3px">Learn More at Go Electric BC</a></div>
+	<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary-brand-alt","textColor":"primary-brand","style":{"border":{"radius":"3px"}},"className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-color has-primary-brand-alt-background-color has-text-color has-background" style="border-radius:3px">Learn More at Go Electric BC</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:column -->
@@ -57,8 +57,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons -->
-	<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary-brand-blue","textColor":"white","style":{"border":{"radius":"3px"}},"className":"is-style-outline","fontSize":"normal"} -->
-	<div class="wp-block-button has-custom-font-size is-style-outline has-normal-font-size"><a class="wp-block-button__link has-white-color has-primary-brand-blue-background-color has-text-color has-background" style="border-radius:3px">Learn More</a></div>
+	<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary-brand","textColor":"white","style":{"border":{"radius":"3px"}},"className":"is-style-outline","fontSize":"normal"} -->
+	<div class="wp-block-button has-custom-font-size is-style-outline has-normal-font-size"><a class="wp-block-button__link has-white-color has-primary-brand-background-color has-text-color has-background" style="border-radius:3px">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div></div>
@@ -75,8 +75,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons -->
-	<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary-brand-blue","textColor":"white","style":{"border":{"radius":"3px"}},"className":"is-style-outline","fontSize":"normal"} -->
-	<div class="wp-block-button has-custom-font-size is-style-outline has-normal-font-size"><a class="wp-block-button__link has-white-color has-primary-brand-blue-background-color has-text-color has-background" style="border-radius:3px">Learn More</a></div>
+	<div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"primary-brand","textColor":"white","style":{"border":{"radius":"3px"}},"className":"is-style-outline","fontSize":"normal"} -->
+	<div class="wp-block-button has-custom-font-size is-style-outline has-normal-font-size"><a class="wp-block-button__link has-white-color has-primary-brand-background-color has-text-color has-background" style="border-radius:3px">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div></div>
