@@ -6,8 +6,42 @@
 body {
 	font-family: BCSans, "Noto Sans", Verdana, Arial, sans-serif;
 	color: $body-color;
+
+	.bcgov-body-content {
+
+		h1:not(.custom) {
+			font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.5rem) !important;
+		}
+
+		h2:not(.custom) {
+			font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 3rem) !important;
+		}
+
+		h3:not(.custom) {
+			font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 2.5rem) !important;
+		}
+
+		p:not(.custom) {
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1rem) !important;
+		}
+	}
 }
 
+main {
+
+	@media (max-width: $breakpoint-xl) {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+
+	.alignfull {
+
+		@media (max-width: $breakpoint-xl) {
+			margin-left: -2rem !important;
+			width: 100vw;
+		}
+	}
+}
 
 .site-banner {
 	margin-top: 0;
