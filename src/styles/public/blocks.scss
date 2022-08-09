@@ -12,14 +12,14 @@ html :where(.editor-styles-wrapper) {
 	.wp-block-button {
 
 		&__link {
-			background-color: var(--wp--preset--color--primary-brand-blue);
+			background-color: var(--wp--preset--color--primary-brand);
 			border-radius: 0.33rem;
 			color: var(--wp--preset--color--white);
 
 			&:hover,
 			&:focus {
 				filter: contrast(150%);
-				outline: 2px solid var(--wp--preset--color--primary-brand-blue);
+				outline: 2px solid var(--wp--preset--color--primary-brand);
 				outline-offset: 2px;
 			}
 		}
@@ -30,14 +30,14 @@ html :where(.editor-styles-wrapper) {
 
 				&__link {
 					background-color: var(--wp--preset--color--white);
-					border-color: var(--wp--preset--color--primary-brand-blue);
+					border-color: var(--wp--preset--color--primary-brand);
 					border-radius: 0.33rem;
-					color: var(--wp--preset--color--primary-brand-blue);
+					color: var(--wp--preset--color--primary-brand);
 
 					&:hover,
 					&:focus {
 						filter: contrast(150%);
-						outline: 2px solid var(--wp--preset--color--primary-brand-blue);
+						outline: 2px solid var(--wp--preset--color--primary-brand);
 						outline-offset: 2px;
 					}
 				}
@@ -73,14 +73,14 @@ html :where(.editor-styles-wrapper) {
 	.wp-block-button {
 
 		&__link {
-			background-color: var(--wp--preset--color--primary-brand-blue);
+			background-color: var(--wp--preset--color--primary-brand);
 			border-radius: 0.33rem;
 			color: var(--wp--preset--color--white);
 
 			&:hover,
 			&:focus {
 				filter: contrast(150%);
-				outline: 2px solid var(--wp--preset--color--primary-brand-blue);
+				outline: 2px solid var(--wp--preset--color--primary-brand);
 				outline-offset: 2px;
 			}
 		}
@@ -92,14 +92,14 @@ html :where(.editor-styles-wrapper) {
 
 			&__link {
 				background-color: var(--wp--preset--color--white);
-				border-color: var(--wp--preset--color--primary-brand-blue);
+				border-color: var(--wp--preset--color--primary-brand);
 				border-radius: 0.33rem;
-				color: var(--wp--preset--color--primary-brand-blue);
+				color: var(--wp--preset--color--primary-brand);
 
 				&:hover,
 				&:focus {
 					filter: contrast(150%);
-					outline: 2px solid var(--wp--preset--color--primary-brand-blue);
+					outline: 2px solid var(--wp--preset--color--primary-brand);
 					outline-offset: 2px;
 				}
 			}
@@ -250,7 +250,7 @@ html :where(.editor-styles-wrapper) {
 }
 
 *[data-type="bcgov/card"] {
-	border: 1px solid var(--wp--preset--color--primary-brand-blue);
+	border: 1px solid var(--wp--preset--color--primary-brand);
 	padding: 0.5rem;
 	background-color: var(--wp--preset--color--white);
 }
@@ -258,7 +258,7 @@ html :where(.editor-styles-wrapper) {
 .wp-admin {
 
 	.wp-block-bcgov-card-container {
-		border: 2px solid var(--wp--preset--color--primary-brand-blue);
+		border: 2px solid var(--wp--preset--color--primary-brand);
 		list-style: none;
 		padding: 1rem;
 		margin: 0.5rem 0;

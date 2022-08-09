@@ -7,7 +7,7 @@ html :where(.editor-styles-wrapper) {
 		border-top: 0;
 		border-left: 0;
 		border-right: 0;
-		border-bottom: 4px solid var(--wp--preset--color--primary-brand-yellow);
+		border-bottom: 4px solid var(--wp--preset--color--primary-brand-alt);
 	}
 
 }
@@ -15,34 +15,102 @@ html :where(.editor-styles-wrapper) {
 // General header styles.
 .wp-block-template-part {
 
-	.site-header {
+	.bcgov-header-group {
 
-		&.bcgov-header-group {
-			border-top: 0;
-			border-left: 0;
-			border-right: 0;
-			border-bottom: 4px solid var(--wp--preset--color--primary-brand-yellow);
-		}
+		border-top: 0;
+		border-left: 0;
+		border-right: 0;
+		border-bottom: 4px solid var(--wp--preset--color--primary-brand-alt);
 
-		nav.wp-block-navigation {
+		.bcgov-site-header {
 
-			button {
-				background: svg($hamburger-svg);
-				flex: 1 auto;
-				flex-direction: row-reverse;
+			padding-top: 0;
+			padding-right: 20px;
+			padding-bottom: 0;
+			padding-left: 20px;
+
+
+			&.fixed {
+
+				@media (min-width: $breakpoint-sm) {
+					position: fixed;
+					z-index: 9;
+					width: 100%;
+				}
 			}
 
-		}
+			&.bcgov-header-group {
 
-		.wp-block-search {
+				.wp-block-columns {
+
+					gap: 1.5rem;
+					justify-content: space-between;
+					margin: auto;
+					margin-right: auto;
+					margin-left: auto;
+
+					.wp-block-column:first-of-type {
+						padding-right: 0;
+						padding-left: 0;
+						padding-bottom: 0;
+
+						@media (min-width: $breakpoint-sm) {
+							padding-bottom: 20px;
+						}
+						width: 60%;
+						max-width: 182px;
+					}
+
+					.wp-block-column:nth-of-type(2) {
+						order: 2;
+
+						@media (min-width: $breakpoint-sm) {
+							order: unset;
+						}
+
+						h1,
+						h2,
+						h3,
+						h4,
+						h5,
+						h6,
+						p {
+							margin: 0 0 1rem 0;
+
+							@media (min-width: $breakpoint-sm) {
+								margin: 1rem 0;
+							}
+						}
+					}
+
+					.wp-block-column:nth-of-type(3) {
+						max-width: 30px;
+						margin: 32px 0 auto 30px;
+					}
+				}
+			}
+
+			nav.wp-block-navigation {
+
+				button {
+					background: svg($hamburger-svg);
+					flex: 1 auto;
+					flex-direction: row-reverse;
+				}
+
+			}
 
 			.wp-block-search {
 
-				&__inside-wrapper {
-					border: none;
+				.wp-block-search {
 
-					button {
-						margin-left: 1px;
+					&__inside-wrapper {
+						border: none;
+
+						button {
+							margin-left: 1px;
+						}
+
 					}
 
 				}
@@ -50,7 +118,6 @@ html :where(.editor-styles-wrapper) {
 			}
 
 		}
-
 	}
 
 }

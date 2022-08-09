@@ -12,11 +12,11 @@ namespace Bcgov\Theme\Block;
 return array(
 	'title'      => __( 'Long Cards', 'bcgov_blocks_theme' ),
 	'categories' => array( 'bcgov-blocks-theme-general' ),
-	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem","right":"6rem","left":"6rem"},"blockGap":"3rem"},"border":{"style":"solid","width":"2px"}},"borderColor":"primary-brand-blue"} -->
-	<div class="wp-block-group alignwide has-border-color has-primary-brand-blue-border-color" style="border-style:solid;border-width:2px;padding-top:6rem;padding-right:6rem;padding-bottom:6rem;padding-left:6rem"><!-- wp:columns -->
+	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem","right":"6rem","left":"6rem"},"blockGap":"3rem"},"border":{"style":"solid","width":"2px"}},"borderColor":"primary-brand"} -->
+	<div class="wp-block-group alignwide has-border-color has-primary-brand-border-color" style="border-style:solid;border-width:2px;padding-top:6rem;padding-right:6rem;padding-bottom:6rem;padding-left:6rem"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
-	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"style":{"typography":{"fontSize":"3rem"}},"textColor":"primary-brand-blue"} -->
-	<h2 class="has-primary-brand-blue-color has-text-color" style="font-size:3rem"><strong>Lorem sociis natoque penatibus et magnis</strong></h2>
+	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"style":{"typography":{"fontSize":"3rem"}},"textColor":"primary-brand"} -->
+	<h2 class="has-primary-brand-color has-text-color" style="font-size:3rem"><strong>Lorem sociis natoque penatibus et magnis</strong></h2>
 	<!-- /wp:heading --></div>
 	<!-- /wp:column -->
 	
@@ -27,8 +27,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov"} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-blue","className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand","className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div>

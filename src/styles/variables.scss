@@ -1,7 +1,7 @@
 /* @media Breakpoints */
 $breakpoint-xxs: 0;
 $breakpoint-xs: 479px;
-$breakpoint-sm: 767px;
+$breakpoint-sm: 782px;
 $breakpoint-sm-md: 840px;
 $breakpoint-wp-content-sm: $breakpoint-sm-md;
 $breakpoint-md: 991px;
@@ -31,3 +31,5 @@ $gallerygray: #edebeb;
 
 /* SCSS SVG files. */
 $hamburger-svg: url(../../../assets/images/bcgov-hamburger.svg);
+
+$menu-arrow: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgNCA4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMCA4VjBMNCA0TDAgOFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==);

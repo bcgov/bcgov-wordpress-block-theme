@@ -16,8 +16,8 @@ return array(
 	<div class="wp-block-cover alignfull is-light has-parallax" style="background-image:url(' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_05.jpg);min-height:50vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#000000"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"inherit":true}} -->
 	<div class="wp-block-group"><!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column {"width":"30%","style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"}},"color":{"background":"#f2f2f2e6"}},"className":"is-style-dropshadow"} -->
-	<div class="wp-block-column is-style-dropshadow has-background" style="background-color:#f2f2f2e6;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem;flex-basis:30%"><!-- wp:heading {"align":"wide","style":{"typography":{"fontSize":"3rem","lineHeight":"1.2"}},"textColor":"primary-brand-blue","className":"alignwide has-white-color has-text-color"} -->
-	<h2 class="alignwide has-white-color has-text-color has-primary-brand-blue-color" style="font-size:3rem;line-height:1.2">Ullamcorper Ultricies Ridiculus Consectetur Ligula</h2>
+	<div class="wp-block-column is-style-dropshadow has-background" style="background-color:#f2f2f2e6;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem;flex-basis:30%"><!-- wp:heading {"align":"wide","style":{"typography":{"fontSize":"3rem","lineHeight":"1.2"}},"textColor":"primary-brand","className":"alignwide has-white-color has-text-color"} -->
+	<h2 class="alignwide has-white-color has-text-color has-primary-brand-color" style="font-size:3rem;line-height:1.2">Ullamcorper Ultricies Ridiculus Consectetur Ligula</h2>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"textColor":"text-colour","fontSize":"normal"} -->
@@ -49,8 +49,8 @@ return array(
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_05.jpg" alt="" class="wp-image-594"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand-blue","fontSize":"large"} -->
-	<h3 class="has-text-align-center has-primary-brand-blue-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
+	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand","fontSize":"large"} -->
+	<h3 class="has-text-align-center has-primary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"text-colour","fontSize":"normal"} -->
@@ -58,8 +58,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov","layout":{"type":"flex","justifyContent":"center"}} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-blue","className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand","className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:column -->
@@ -69,8 +69,8 @@ return array(
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_04.jpg" alt="" class="wp-image-599"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand-blue","fontSize":"large"} -->
-	<h3 class="has-text-align-center has-primary-brand-blue-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
+	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand","fontSize":"large"} -->
+	<h3 class="has-text-align-center has-primary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"text-colour","fontSize":"normal"} -->
@@ -78,8 +78,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov","layout":{"type":"flex","justifyContent":"center"}} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-blue","className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand","className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:column -->
@@ -89,8 +89,8 @@ return array(
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_01.jpg" alt="" class="wp-image-593"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand-blue","fontSize":"large"} -->
-	<h3 class="has-text-align-center has-primary-brand-blue-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
+	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand","fontSize":"large"} -->
+	<h3 class="has-text-align-center has-primary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"text-colour","fontSize":"normal"} -->
@@ -98,8 +98,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov","layout":{"type":"flex","justifyContent":"center"}} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-blue","className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand","className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:column --></div>
@@ -109,8 +109,8 @@ return array(
 	<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"2rem","bottom":"2rem"}}}} -->
 	<div class="wp-block-group alignwide" style="margin-top:2rem;margin-bottom:2rem"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column -->
-	<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"6rem","right":"2rem","bottom":"1rem","left":"2rem"}},"border":{"width":"2px","radius":"0.66rem"},"color":{"background":"#0033661a"}},"borderColor":"primary-brand-blue"} -->
-	<div class="wp-block-group has-border-color has-primary-brand-blue-border-color has-background" style="background-color:#0033661a;border-radius:0.66rem;border-width:2px;padding-top:6rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:heading {"textAlign":"center","fontSize":"small"} -->
+	<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"6rem","right":"2rem","bottom":"1rem","left":"2rem"}},"border":{"width":"2px","radius":"0.66rem"},"color":{"background":"#0033661a"}},"borderColor":"primary-brand"} -->
+	<div class="wp-block-group has-border-color has-primary-brand-border-color has-background" style="background-color:#0033661a;border-radius:0.66rem;border-width:2px;padding-top:6rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:heading {"textAlign":"center","fontSize":"small"} -->
 	<h2 class="has-text-align-center has-small-font-size">small title for card</h2>
 	<!-- /wp:heading -->
 	
@@ -131,8 +131,8 @@ return array(
 	<!-- /wp:column -->
 	
 	<!-- wp:column -->
-	<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"6rem","right":"2rem","bottom":"1rem","left":"2rem"}},"border":{"width":"2px","radius":"0.66rem"},"color":{"background":"#0033661a"}},"borderColor":"primary-brand-blue"} -->
-	<div class="wp-block-group has-border-color has-primary-brand-blue-border-color has-background" style="background-color:#0033661a;border-radius:0.66rem;border-width:2px;padding-top:6rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:heading {"textAlign":"center","fontSize":"small"} -->
+	<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"top":"6rem","right":"2rem","bottom":"1rem","left":"2rem"}},"border":{"width":"2px","radius":"0.66rem"},"color":{"background":"#0033661a"}},"borderColor":"primary-brand"} -->
+	<div class="wp-block-group has-border-color has-primary-brand-border-color has-background" style="background-color:#0033661a;border-radius:0.66rem;border-width:2px;padding-top:6rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:heading {"textAlign":"center","fontSize":"small"} -->
 	<h2 class="has-text-align-center has-small-font-size">small title for card</h2>
 	<!-- /wp:heading -->
 	
@@ -168,9 +168,9 @@ return array(
 	<!-- /wp:media-text --></div>
 	<!-- /wp:group -->
 	
-	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"6rem","right":"2rem","bottom":"2rem","left":"2rem"},"blockGap":"2rem"},"border":{"style":"solid","width":"2px","radius":"0.66rem"}},"borderColor":"primary-brand-blue"} -->
-	<div class="wp-block-group alignwide has-border-color has-primary-brand-blue-border-color" style="border-radius:0.66rem;border-style:solid;border-width:2px;padding-top:6rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontSize":"3rem","fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand-blue"} -->
-	<h2 class="has-text-align-center has-primary-brand-blue-color has-text-color" style="font-size:3rem;font-style:normal;font-weight:300">Headline Lorem Ipsum?</h2>
+	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"6rem","right":"2rem","bottom":"2rem","left":"2rem"},"blockGap":"2rem"},"border":{"style":"solid","width":"2px","radius":"0.66rem"}},"borderColor":"primary-brand"} -->
+	<div class="wp-block-group alignwide has-border-color has-primary-brand-border-color" style="border-radius:0.66rem;border-style:solid;border-width:2px;padding-top:6rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontSize":"3rem","fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand"} -->
+	<h2 class="has-text-align-center has-primary-brand-color has-text-color" style="font-size:3rem;font-style:normal;font-weight:300">Headline Lorem Ipsum?</h2>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"text-colour","fontSize":"extra-large"} -->
@@ -183,8 +183,8 @@ return array(
 	<figure class="wp-block-image aligncenter size-full is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/svg/cleanbc/icon-01.svg" alt="" class="wp-image-493"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand-blue","fontSize":"large"} -->
-	<h3 class="has-text-align-center has-primary-brand-blue-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
+	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand","fontSize":"large"} -->
+	<h3 class="has-text-align-center has-primary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"text-colour","fontSize":"normal"} -->
@@ -197,8 +197,8 @@ return array(
 	<figure class="wp-block-image aligncenter size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/svg/cleanbc/icon-02.svg" alt="" class="wp-image-495"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand-blue","fontSize":"large"} -->
-	<h3 class="has-text-align-center has-primary-brand-blue-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
+	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand","fontSize":"large"} -->
+	<h3 class="has-text-align-center has-primary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"text-colour","fontSize":"normal"} -->
@@ -211,8 +211,8 @@ return array(
 	<figure class="wp-block-image aligncenter size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/svg/cleanbc/icon-03.svg" alt="" class="wp-image-496"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand-blue","fontSize":"large"} -->
-	<h3 class="has-text-align-center has-primary-brand-blue-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
+	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand","fontSize":"large"} -->
+	<h3 class="has-text-align-center has-primary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"text-colour","fontSize":"normal"} -->
@@ -226,11 +226,11 @@ return array(
 	<!-- /wp:columns --></div>
 	<!-- /wp:group -->
 	
-	<!-- wp:group {"style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem","right":"6rem","left":"6rem"},"blockGap":"3rem","margin":{"top":"6rem","bottom":"6rem"}},"border":{"style":"solid","width":"2px"}},"borderColor":"primary-brand-blue","className":"is-quote"} -->
-	<div class="wp-block-group is-quote has-border-color has-primary-brand-blue-border-color" style="border-style:solid;border-width:2px;margin-top:6rem;margin-bottom:6rem;padding-top:6rem;padding-right:6rem;padding-bottom:6rem;padding-left:6rem"><!-- wp:columns -->
+	<!-- wp:group {"style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem","right":"6rem","left":"6rem"},"blockGap":"3rem","margin":{"top":"6rem","bottom":"6rem"}},"border":{"style":"solid","width":"2px"}},"borderColor":"primary-brand","className":"is-quote"} -->
+	<div class="wp-block-group is-quote has-border-color has-primary-brand-border-color" style="border-style:solid;border-width:2px;margin-top:6rem;margin-bottom:6rem;padding-top:6rem;padding-right:6rem;padding-bottom:6rem;padding-left:6rem"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"1rem","right":"2rem","bottom":"1rem","left":"2rem"}}}} -->
-	<div class="wp-block-column is-vertically-aligned-center" style="padding-top:1rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:quote {"textColor":"primary-brand-blue","fontSize":"extra-large"} -->
-	<blockquote class="wp-block-quote has-primary-brand-blue-color has-text-color has-extra-large-font-size"><p>Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p><cite>~ Speaker or citation</cite></blockquote>
+	<div class="wp-block-column is-vertically-aligned-center" style="padding-top:1rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:quote {"textColor":"primary-brand","fontSize":"extra-large"} -->
+	<blockquote class="wp-block-quote has-primary-brand-color has-text-color has-extra-large-font-size"><p>Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p><cite>~ Speaker or citation</cite></blockquote>
 	<!-- /wp:quote --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>
@@ -268,19 +268,19 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov"} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-yellow","className":"is-style-outline"} -->
-	<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-primary-brand-yellow-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-alt","className":"is-style-outline"} -->
+	<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-primary-brand-alt-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div></div>
 	<!-- /wp:media-text --></div>
 	<!-- /wp:group -->
 	
-	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem","right":"6rem","left":"6rem"},"blockGap":"3rem","margin":{"top":"3rem","bottom":"3rem"}},"border":{"style":"solid","width":"2px"}},"borderColor":"primary-brand-blue"} -->
-	<div class="wp-block-group alignwide has-border-color has-primary-brand-blue-border-color" style="border-style:solid;border-width:2px;margin-top:3rem;margin-bottom:3rem;padding-top:6rem;padding-right:6rem;padding-bottom:6rem;padding-left:6rem"><!-- wp:columns -->
+	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem","right":"6rem","left":"6rem"},"blockGap":"3rem","margin":{"top":"3rem","bottom":"3rem"}},"border":{"style":"solid","width":"2px"}},"borderColor":"primary-brand"} -->
+	<div class="wp-block-group alignwide has-border-color has-primary-brand-border-color" style="border-style:solid;border-width:2px;margin-top:3rem;margin-bottom:3rem;padding-top:6rem;padding-right:6rem;padding-bottom:6rem;padding-left:6rem"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
-	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"style":{"typography":{"fontSize":"3rem"}},"textColor":"primary-brand-blue"} -->
-	<h2 class="has-primary-brand-blue-color has-text-color" style="font-size:3rem"><strong>Lorem sociis natoque penatibus et magnis</strong></h2>
+	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"style":{"typography":{"fontSize":"3rem"}},"textColor":"primary-brand"} -->
+	<h2 class="has-primary-brand-color has-text-color" style="font-size:3rem"><strong>Lorem sociis natoque penatibus et magnis</strong></h2>
 	<!-- /wp:heading --></div>
 	<!-- /wp:column -->
 	
@@ -291,8 +291,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov"} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-blue","className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand","className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div>
@@ -300,8 +300,8 @@ return array(
 	<!-- /wp:columns --></div>
 	<!-- /wp:group -->
 	
-	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"80px","bottom":"80px"}}},"backgroundColor":"primary-brand-blue","layout":{"inherit":true}} -->
-	<div class="wp-block-group alignfull has-primary-brand-blue-background-color has-background" style="padding-top:80px;padding-bottom:80px"><!-- wp:columns {"align":"wide"} -->
+	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"80px","bottom":"80px"}}},"backgroundColor":"primary-brand","layout":{"inherit":true}} -->
+	<div class="wp-block-group alignfull has-primary-brand-background-color has-background" style="padding-top:80px;padding-bottom:80px"><!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column -->
 	<div class="wp-block-column"><!-- wp:image {"id":2891,"sizeSlug":"large","linkDestination":"none","className":" animated animated-fadeInUp"} -->
 	<figure class="wp-block-image size-large  animated animated-fadeInUp"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_07.png" alt="" class="wp-image-2891"/></figure>

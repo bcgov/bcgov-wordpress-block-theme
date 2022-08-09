@@ -24,8 +24,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov"} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-blue","className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand","className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div></div>
@@ -43,8 +43,8 @@ return array(
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons {"className":"is-bcgov"} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-blue","className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand","className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div></div>

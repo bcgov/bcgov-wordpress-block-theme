@@ -19,8 +19,8 @@ return array(
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_05.jpg" alt="" class="wp-image-594"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand-blue","fontSize":"large"} -->
-	<h3 class="has-text-align-center has-primary-brand-blue-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
+	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand","fontSize":"large"} -->
+	<h3 class="has-text-align-center has-primary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"text-colour","fontSize":"normal"} -->
@@ -28,8 +28,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov","layout":{"type":"flex","justifyContent":"center"}} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-blue","className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand","className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:column -->
@@ -39,8 +39,8 @@ return array(
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_04.jpg" alt="" class="wp-image-599"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand-blue","fontSize":"large"} -->
-	<h3 class="has-text-align-center has-primary-brand-blue-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
+	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand","fontSize":"large"} -->
+	<h3 class="has-text-align-center has-primary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"text-colour","fontSize":"normal"} -->
@@ -48,8 +48,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov","layout":{"type":"flex","justifyContent":"center"}} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-blue","className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand","className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:column -->
@@ -59,8 +59,8 @@ return array(
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_01.jpg" alt="" class="wp-image-593"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand-blue","fontSize":"large"} -->
-	<h3 class="has-text-align-center has-primary-brand-blue-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
+	<!-- wp:heading {"textAlign":"center","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand","fontSize":"large"} -->
+	<h3 class="has-text-align-center has-primary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Headling specific talking point</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"text-colour","fontSize":"normal"} -->
@@ -68,8 +68,8 @@ return array(
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov","layout":{"type":"flex","justifyContent":"center"}} -->
-	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand-blue","className":"is-style-fill"} -->
-	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-blue-background-color has-background">Learn More</a></div>
+	<div class="wp-block-buttons is-bcgov"><!-- wp:button {"backgroundColor":"primary-brand","className":"is-style-fill"} -->
+	<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-primary-brand-background-color has-background">Learn More</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:column --></div>
