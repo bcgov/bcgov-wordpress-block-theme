@@ -1,5 +1,6 @@
 {
 	"version": 2,
+	"title": "BCGov Default",
 	"patterns": [
 		"bcgov-hero-banner"
 	],
@@ -84,58 +85,123 @@
 			"palette": [
 				{
 					"slug": "primary-brand",
-					"color": "#003366",
-					"name": "Primary Brand"
+					"color": "#0E3468",
+					"name": "Primary (Brand)"
 				},
 				{
-					"slug": "primary-brand-alt",
-					"color": "#FCBA19",
-					"name": "Primary Brand Alt"
+					"slug": "secondary-brand",
+					"color": "#3B5A94",
+					"name": "Secondary (Brand)"
 				},
 				{
-					"slug": "text-colour",
-					"color": "#313132",
+					"slug": "accent",
+					"color": "#F6B900",
+					"name": "Accent (Brand)"
+				},
+				{
+					"slug": "headline-color",
+					"color": "#0E3468",
+					"name": "Headline Colour"
+				},
+				{
+					"slug": "text-color",
+					"color": "#111111",
 					"name": "Text Colour"
 				},
 				{
-					"slug": "links",
-					"color": "#1A5A96",
-					"name": "Link Colour"
+					"slug": "transparent",
+					"color": "transparent",
+					"name": "Transparent"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#BDCC6F",
+					"name": "Tertiary"
+				},
+				{
+					"slug": "quarternary",
+					"color": "#5A8F8E",
+					"name": "Quarternary"
+				},
+				{
+					"slug": "quinary",
+					"color": "#BCCFC9",
+					"name": "Quinary"
+				},
+				{
+					"slug": "senary",
+					"color": "#9FA08B",
+					"name": "Senary"
+				},
+				{
+					"slug": "septenary",
+					"color": "#6C5F4E",
+					"name": "Septenary"
+				},
+				{
+					"slug": "octonary",
+					"color": "#F26D6F",
+					"name": "Octonary"
+				},
+				{
+					"slug": "nonary",
+					"color": "#F2A488",
+					"name": "Nonary"
+				},
+				{
+					"slug": "denary",
+					"color": "#05A6D1",
+					"name": "Denary"
+				},
+				{
+					"slug": "ondenary",
+					"color": "#DA9901",
+					"name": "Ondenary"
+				},
+				{
+					"slug": "duodenary",
+					"color": "#2E585D",
+					"name": "Duodenary"
+				},
+				{
+					"slug": "tridenary",
+					"color": "#FFC48B",
+					"name": "Tridenary"
+				},
+				{
+					"slug": "quadenary",
+					"color": "#D4BA87",
+					"name": "Quadenary"
+				},
+				{
+					"slug": "gray-80",
+					"color": "#656565",
+					"name": "Gray 80"
+				},
+				{
+					"slug": "gray-60",
+					"color": "#A1A1A1",
+					"name": "Gray 60"
+				},
+				{
+					"slug": "gray-40",
+					"color": "#C7C7C7",
+					"name": "Gray 40"
+				},
+				{
+					"slug": "gray-05",
+					"color": "#E4E4E4",
+					"name": "Gray 05"
 				},
 				{
 					"slug": "foreground",
-					"color": "#121212",
+					"color": "#222222",
 					"name": "Foreground"
 				},
 				{
-					"slug": "foreground-alt",
-					"color": "#121212",
-					"name": "Foreground Alt"
-				},
-				{
 					"slug": "background",
-					"color": "#F2F2F2",
+					"color": "#f9f9f9",
 					"name": "Background"
-				},
-				{
-					"slug": "blue-background",
-					"color": "#38598A",
-					"name": "Blue Background"
-				},
-				{
-					"slug": "background-alt",
-					"color": "#1E1F24",
-					"name": "Background Alt"
-				},
-				{
-					"slug": "components",
-					"color": "#606060",
-					"name": "Components"
-				},
-				{
-					"slug": "white",
-					"color": "#ffffff",
-					"name": "White"
 				}
 			],
 			"gradients": []

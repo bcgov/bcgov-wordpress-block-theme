@@ -9,6 +9,7 @@ import './filters/column-enhanced';
 import './filters/heading-enhanced';
 import './filters/media-text-enhanced';
 import './filters/paragraph-enhanced';
+import './filters/query-loop-enhanced';
 
 /**
  * Custom Blocks.

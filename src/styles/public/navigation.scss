@@ -44,6 +44,14 @@ body.has-ribbon-menu {
 
 	.wp-block-navigation {
 
+		a {
+
+			&:hover,
+			&:focus {
+				background-color: rgba($black, 33%);
+			}
+		}
+
 		&.has-background {
 
 			.has-child {
@@ -54,9 +62,10 @@ body.has-ribbon-menu {
 
 						border: none;
 
-						@media (min-width: $breakpoint-sm) {
 
-							border: 1px solid var(--wp--preset--color--background);
+						@media (min-width: $breakpoint-xs-sm) {
+
+							border: 1px solid var(--wp--preset--color--foreground);
 
 							a {
 
@@ -130,6 +139,18 @@ body.has-ribbon-menu {
 
 				.wp-block-navigation-item {
 					opacity: 1;
+				}
+			}
+
+			.wp-block-navigation {
+
+				&__responsive-container-close {
+					top: 5px;
+					right: 0;
+
+					@media (min-width: $breakpoint-lg) {
+						right: 5px;
+					}
 				}
 			}
 		}

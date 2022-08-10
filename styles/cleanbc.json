@@ -1,33 +1,33 @@
 {
 	"version": 2,
-	"title": "Dark (Beta)",
+	"title": "CleanBC",
 	"settings": {
 		"appearanceTools": true,
 		"color": {
 			"palette": [
 				{
 					"slug": "primary-brand",
-					"color": "#0E3468",
-					"name": "Primary (Brand)"
+					"color": "#002A4E",
+					"name": "River 1 – Primary (Brand)"
 				},
 				{
 					"slug": "secondary-brand",
-					"color": "#3B5A94",
-					"name": "Secondary (Brand)"
+					"color": "#005C97",
+					"name": "River 2 – Secondary (Brand)"
 				},
 				{
 					"slug": "accent",
-					"color": "#F6B900",
-					"name": "Accent (Brand)"
+					"color": "#833238",
+					"name": "Forest Bioeconomy – Accent (Brand)"
 				},
 				{
 					"slug": "headline-color",
-					"color": "#E4E4E4",
+					"color": "var(--wp--preset--color--primary-brand)",
 					"name": "Headline Colour"
 				},
 				{
 					"slug": "text-color",
-					"color": "#E4E4E4",
+					"color": "#111111",
 					"name": "Text Colour"
 				},
 				{
@@ -37,23 +37,23 @@
 				},
 				{
 					"slug": "tertiary",
-					"color": "#3BAF94",
-					"name": "Tertiary"
+					"color": "#008FB4",
+					"name": "Sky – Tertiary"
 				},
 				{
 					"slug": "quarternary",
-					"color": "#568FB5",
-					"name": "Quarternary"
+					"color": "#61A744",
+					"name": "Douglas Fir – Quarternary"
 				},
 				{
 					"slug": "quinary",
-					"color": "#FEFEFE",
-					"name": "Quinary"
+					"color": "#91ADFA",
+					"name": "Leaf green – Quinary"
 				},
 				{
 					"slug": "senary",
-					"color": "#DAD9DE",
-					"name": "Senary"
+					"color": "#ED3F45",
+					"name": "Personal Travel – Senary"
 				},
 				{
 					"slug": "septenary",
@@ -117,12 +117,12 @@
 				},
 				{
 					"slug": "foreground",
-					"color": "#f9f9f9",
+					"color": "#222222",
 					"name": "Foreground"
 				},
 				{
 					"slug": "background",
-					"color": "#222222",
+					"color": "#f9f9f9",
 					"name": "Background"
 				}
 			],
