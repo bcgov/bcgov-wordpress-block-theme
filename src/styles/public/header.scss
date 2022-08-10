@@ -22,6 +22,7 @@ html :where(.editor-styles-wrapper) {
 		border-right: 0;
 		border-bottom: 4px solid var(--wp--preset--color--primary-brand-alt);
 
+		&.bcgov-site-header,
 		.bcgov-site-header {
 
 			padding-top: 0;
@@ -83,7 +84,11 @@ html :where(.editor-styles-wrapper) {
 						}
 					}
 
-					.wp-block-column:nth-of-type(3) {
+					body.has-ribbon-menu & .wp-block-column:nth-of-type(3) {
+						order: 3;
+					}
+
+					body.has-takeover-menu & .wp-block-column:nth-of-type(3) {
 						max-width: 30px;
 						margin: 32px 0 auto 30px;
 					}
@@ -106,6 +111,8 @@ html :where(.editor-styles-wrapper) {
 
 					&__inside-wrapper {
 						border: none;
+						margin: 0;
+						padding: 0;
 
 						button {
 							margin-left: 1px;

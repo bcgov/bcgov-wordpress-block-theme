@@ -14,3 +14,4 @@
 Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-494)
 – Documentation with instructions on Patterns and templates/parts ([DESCW-493]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-493)
 – Navigation (takeover and ribbon styles – js & css) for general block theme use (some CleanBC crossover). Additional template & patterns (html) updates. ([DESCW-511]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-511)
+– Added CleanBC colour options to site style selector + updated default theme and dark mode (beta) options. Added Query Loop pattern for dynamic post grid view. Additional template & patterns (html) updates for responsiveness. ([DESCW-513]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-513)

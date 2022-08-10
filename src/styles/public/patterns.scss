@@ -7,12 +7,123 @@
 html :where(.editor-styles-wrapper) {
 
 	/*
+	*  Query: Is Grid of Posts Pattern.
+	*/
+	li:not(:first-of-type) {
+		padding-left: 0;
+		border-left: unset;
+	}
+
+
+	h2.wp-block-post-title a {
+		font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.5rem) !important;
+		min-height: 0;
+	}
+
+	/*
 	*  Quote Pattern.
 	*/
 	.is-card-portrait-image-over {
 		background-color: transparent;
 	}
 }
+
+
+/*
+ *  Query: Is Grid of Posts Pattern.
+ */
+.wp-block-query {
+
+	&.is-style-dropshadow {
+
+		.wp-block-post {
+			box-shadow: 0 0 12px rgba($black, 33%);
+		}
+	}
+}
+
+.is-grid-of-posts {
+
+	.wp-block-post-template {
+
+		&.is-flex-container {
+
+			gap: 2rem;
+
+			> li {
+
+				&.wp-block-post {
+
+					width: 100%;
+
+					@media (min-width: $breakpoint-sm) {
+						width: calc(50% - 1.3333rem);
+					}
+
+					@media (min-width: $breakpoint-md) {
+						width: calc(33.33% - 1.3333rem);
+					}
+				}
+			}
+		}
+	}
+
+
+	.wp-block-post {
+		border-top: 1rem solid var(--wp--preset--color--primary-brand);
+		border-radius: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		> * {
+			margin: 0 2rem;
+		}
+
+		.wp-block-post-featured-image {
+			margin: 0;
+			padding: 0;
+		}
+
+		h2.wp-block-post-title {
+			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.5rem) !important;
+			min-height: 0;
+			flex: 0 1 auto;
+		}
+
+
+		.wp-block-post-excerpt {
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			flex: 1 auto;
+
+			&__more-link {
+				background-color: var(--wp--preset--color--primary-brand);
+				border-radius: 0.33rem;
+				box-shadow: none;
+				color: var(--wp--preset--color--white);
+				cursor: pointer;
+				display: inline-block;
+				font-size: 1.125em;
+				padding: calc(0.667em + 2px) calc(1.333em + 2px);
+				text-align: center;
+				text-decoration: none;
+				word-break: break-word;
+				box-sizing: border-box;
+
+				&:hover,
+				&:focus {
+					filter: contrast(150%);
+					outline: 2px solid var(--wp--preset--color--primary-brand);
+					outline-offset: 2px;
+				}
+			}
+		}
+	}
+}
+
 
 /*
  *  Quote Pattern.
@@ -30,21 +141,38 @@ html :where(.editor-styles-wrapper) {
  *  Quote Pattern.
  */
 .is-quote {
+	padding: 5rem 4rem;
+
+	@media (min-width: $breakpoint-xs) {
+		padding: 5rem;
+	}
+
+	@media (min-width: $breakpoint-sm) {
+		padding: 6rem;
+	}
 
 	.wp-block-quote {
 		border-left: none;
+		position: relative;
+		margin: 0;
+		padding: 2rem 0 0;
 
 		&::before {
 			display: block;
 			background-image: url(/assets/images/block-theme/quote-marks.svg);
 			background-size: cover;
 			content: "";
-			height: 100px;
-			width: 100px;
-			left: -100px;
+			height: clamp(4rem, 6vw, 10rem);
+			width: clamp(4rem, 6vw, 10rem);
+			top: -2rem;
+			left: -2rem;
+
+			@media (min-width: $breakpoint-sm) {
+				top: -3rem;
+				left: -4rem;
+			}
 			overflow: visible;
-			position: relative;
-			margin-bottom: -70px;
+			position: absolute;
 		}
 	}
 }

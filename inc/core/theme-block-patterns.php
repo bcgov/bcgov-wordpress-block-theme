@@ -34,6 +34,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		'bcgov-blocks-theme-headers' => array( 'label' => __( 'BCGov Headers', 'bcgov_blocks_theme' ) ),
 		'bcgov-blocks-theme-footers' => array( 'label' => __( 'BCGov Footers', 'bcgov_blocks_theme' ) ),
 		'bcgov-blocks-theme-pages'   => array( 'label' => __( 'BCGov Pages', 'bcgov_blocks_theme' ) ),
+		'bcgov-blocks-theme-query'   => array( 'label' => __( 'BCGov Post Query', 'bcgov_blocks_theme' ) ),
 	);
 	/**
 	 * Site specific patterns.
@@ -95,6 +96,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		'bcgov-small-quote-image',
 		'general-breadcrumb-nav',
 		'general-hero',
+		'query-grid',
 
 		// Full page patterns.
 		'bcgov-page-layout-example',

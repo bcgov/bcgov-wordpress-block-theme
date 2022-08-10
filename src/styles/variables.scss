@@ -1,6 +1,7 @@
 /* @media Breakpoints */
 $breakpoint-xxs: 0;
 $breakpoint-xs: 479px;
+$breakpoint-xs-sm: 600px;
 $breakpoint-sm: 782px;
 $breakpoint-sm-md: 840px;
 $breakpoint-wp-content-sm: $breakpoint-sm-md;
@@ -14,7 +15,7 @@ $breakpoint-wp-content-wide: $breakpoint-xl;
 $cards-mobile-breakpoint: 767px;
 
 // SCSS Colours.
-$black: #000;
+$black: #111;
 $body-color: #313132;
 
 /* FOR REFERENCE: Go Electric v1 Project colours. */

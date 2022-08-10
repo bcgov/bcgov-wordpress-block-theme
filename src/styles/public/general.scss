@@ -93,7 +93,8 @@ body {
 	}
 }
 
-main {
+main,
+.post-content {
 
 	@media (max-width: $breakpoint-xl) {
 		margin-left: 2rem;
