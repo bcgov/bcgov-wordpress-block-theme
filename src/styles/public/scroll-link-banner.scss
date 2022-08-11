@@ -3,7 +3,7 @@
 // Template editor specific styles.
 html :where(.editor-styles-wrapper) {
 
-	.hero-banner {
+	.scroll-link-banner {
 
 		max-width: 100% !important;
 		padding-bottom: 0;
@@ -51,7 +51,7 @@ html :where(.editor-styles-wrapper) {
 }
 
 // General header styles.
-.hero-banner {
+.scroll-link-banner {
 
 	display: flex;
 	flex-direction: column;

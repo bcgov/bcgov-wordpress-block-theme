@@ -30,23 +30,16 @@ function bcgov_blocks_theme_register_block_patterns() {
 	 */
 
 	$block_pattern_categories = array(
-		'bcgov-blocks-theme-general' => array( 'label' => __( 'BCGov General', 'bcgov_blocks_theme' ) ),
-		'bcgov-blocks-theme-headers' => array( 'label' => __( 'BCGov Headers', 'bcgov_blocks_theme' ) ),
-		'bcgov-blocks-theme-footers' => array( 'label' => __( 'BCGov Footers', 'bcgov_blocks_theme' ) ),
-		'bcgov-blocks-theme-pages'   => array( 'label' => __( 'BCGov Pages', 'bcgov_blocks_theme' ) ),
-		'bcgov-blocks-theme-query'   => array( 'label' => __( 'BCGov Post Query', 'bcgov_blocks_theme' ) ),
+		'bcgov-blocks-theme-general' 		=>  [ 'label' => __( 'BCGov: General', 'bcgov_blocks_theme' ) ],
+		'bcgov-blocks-theme-header-footer' 	=>  [ 'label' => __( 'BCGov: Header/Footer', 'bcgov_blocks_theme' ) ],
+		'bcgov-blocks-theme-page-layouts'   =>  [ 'label' => __( 'BCGov: Page Layouts', 'bcgov_blocks_theme' ) ],
+		'bcgov-blocks-theme-query'   		=>  [ 'label' => __( 'BCGov: Post Query', 'bcgov_blocks_theme' ) ],
+		// ClenBC site specific patterns.
+		'cleanbc-patterns-general'			=>  [ 'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ) ],
+		'cleanbc-patterns-header-footer'	=>  [ 'label' => __( 'CleanBC: Header/Footer', 'bcgov_blocks_theme' ) ],
+		'cleanbc-patterns-page-layouts'		=>  [ 'label' => __( 'CleanBC: Page Layouts', 'bcgov_blocks_theme' ) ],
+		'cleanbc-patterns-query'			=>  [ 'label' => __( 'CleanBC: Post Query', 'bcgov_blocks_theme' ) ],
 	);
-	/**
-	 * Site specific patterns.
-	 *
-	 * Assign site specific theme elements such as full page layouts to their own category.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @package Bcgov/Theme/Block
-	 */
-	// CleanBC categories.
-	$block_pattern_categories['bcgov-blocks-theme-patterns-cleanbc'] = array( 'label' => __( 'BCGov Site: CleanBC', 'bcgov_blocks_theme' ) );
 
 	/**
 	 * BCGov Blocks Theme: Filters the theme block pattern categories.
@@ -76,6 +69,9 @@ function bcgov_blocks_theme_register_block_patterns() {
 	}
 
 	$block_patterns = array(
+		/* 
+		* BCGov default patterns.
+		*/
 		// Header patterns.
 		'header-default',
 
@@ -100,12 +96,15 @@ function bcgov_blocks_theme_register_block_patterns() {
 
 		// Full page patterns.
 		'bcgov-page-layout-example',
-		'page-front',
 
-		// Site specific patterns.
-		'cleanbc/cleanbc-hero-banner',
-		'cleanbc/goelectric-banner',
-		'cleanbc/goelectric-cards',
+		/* 
+		* CleanBC site specific patterns.
+		*/
+		// CleanBC header/footer patterns.
+		'cleanbc/cleanbc-scroll-link-banner',
+
+		// CleanBC full page patterns.
+		'cleanbc/goelectric-landing-page',
 	);
 
 	/**

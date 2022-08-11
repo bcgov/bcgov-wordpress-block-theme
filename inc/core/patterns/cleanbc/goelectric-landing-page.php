@@ -11,7 +11,7 @@ namespace Bcgov\Theme\Block;
  */
 return array(
 	'title'      => __( 'Go Electric page', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-pages' ),
+	'categories' => array( 'cleanbc-patterns-page-layouts' ),
 	'content'    => '<!-- wp:paragraph -->
 	<p></p>
 	<!-- /wp:paragraph -->

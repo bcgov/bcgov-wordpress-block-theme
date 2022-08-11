@@ -1,16 +1,16 @@
 <?php
 /**
- * CleanBC Hero Banner pattern.
+ * CleanBC Scrolling Link Banner pattern.
  *
  * @since 1.0.0
  *
  * @package Bcgov/Theme/Block
  */
 return array(
-	'title'      => __( 'CleanBC Hero Banner', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-patterns-cleanbc' ),
-	'content'    => '<!-- wp:group {"align":"full","backgroundColor":"primary-brand","className":"hero-banner","layout":{"inherit":false}} -->
-	<div class="wp-block-group alignfull hero-banner has-primary-brand-background-color has-background"><!-- wp:group {"align":"wide","textColor":"background","layout":{"inherit":false}} -->
+	'title'      => __( 'Scrolling Link Banner', 'bcgov_blocks_theme' ),
+	'categories' => array( 'cleanbc-patterns-header-footer' ),
+	'content'    => '<!-- wp:group {"align":"full","backgroundColor":"primary-brand","className":"scroll-link-banner","layout":{"inherit":false}} -->
+	<div class="wp-block-group alignfull scroll-link-banner has-primary-brand-background-color has-background"><!-- wp:group {"align":"wide","textColor":"background","layout":{"inherit":false}} -->
 	<div class="wp-block-group alignwide has-background-color has-text-color"><!-- wp:aioseo/breadcrumbs /--></div>
 	<!-- /wp:group -->
 	
