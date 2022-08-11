@@ -1,0 +1,201 @@
+/* stylelint-disable no-descending-specificity */
+
+// Template editor specific styles.
+html :where(.editor-styles-wrapper) {
+
+	.hero-banner {
+
+		max-width: 100% !important;
+		padding-bottom: 0;
+
+		.wp-block-group {
+			width: 100%;
+
+			.wp-block-columns {
+				margin-bottom: 0;
+				max-width: 1440px;
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+
+				.wp-block-column {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					align-content: flex-start;
+					height: auto;
+					min-height: 250px;
+
+					> * {
+						width: 100%;
+					}
+				}
+
+			}
+		}
+
+		.wp-block-buttons {
+
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-end;
+
+			.wp-block-button {
+
+				&__link {
+					flex: 1 0 auto;
+				}
+			}
+		}
+	}
+}
+
+// General header styles.
+.hero-banner {
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	background-color: var(--wp--preset--color--primary-brand);
+	background-position: right center;
+	position: relative;
+	min-height: 0;
+
+	.wp-block-group.alignwide {
+		margin: 0 auto;
+		max-width: 1440px;
+		width: 100%;
+	}
+
+	&.top {
+		background-position: right top;
+	}
+
+	&.bottom {
+		background-position: right bottom;
+	}
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+	@media (max-width: $breakpoint-md) {
+		background-size: cover;
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		background-position: center;
+
+		&.top {
+			background-position: center top;
+		}
+
+		&.bottom {
+			background-position: center bottom;
+		}
+	}
+
+	width: 100vw;
+
+
+	.wp-block-group {
+
+		&__inner-container {
+
+			display: flex;
+			flex-direction: column;
+			align-items: normal;
+			justify-content: space-between;
+			position: relative;
+			min-height: 380px;
+		}
+	}
+
+	.wp-block-buttons {
+
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-end;
+
+		@media (max-width: $breakpoint-sm) {
+
+			flex-direction: column;
+		}
+		gap: 1rem;
+		position: absolute;
+		bottom: 0;
+		width: 90%;
+
+		@media (min-width: $breakpoint-sm) {
+			width: 100%;
+		}
+
+		.wp-block-button {
+
+			display: flex;
+			align-items: flex-end;
+			flex: 1;
+			margin: 0;
+			max-width: 40%;
+
+			@media (max-width: $breakpoint-sm) {
+				min-width: 40%;
+			}
+
+			.wp-block-button {
+
+				&__link {
+
+					border: none;
+					border-radius: 0;
+					border-bottom: 4px solid currentcolor;
+
+					@media (min-width: $breakpoint-sm) {
+						border-bottom: 12px solid currentcolor;
+					}
+					padding: 0.75rem;
+
+					@media (max-width: $breakpoint-sm) {
+						padding: 0.5rem;
+					}
+					text-align: left;
+					width: 100%;
+
+					&:hover,
+					&:focus {
+						filter: contrast(200%);
+					}
+
+					@media (max-width: $breakpoint-sm) {
+						font-size: 3vw !important;
+					}
+
+					@media (max-width: $breakpoint-xs) {
+						font-size: 3.66vw !important;
+					}
+				}
+			}
+		}
+	}
+
+
+	&.large {
+		min-height: 66vh;
+	}
+
+	max-width: 100%;
+
+	h1 {
+		color: var(--wp--preset--color--white) !important;
+		font-size: 3.5rem;
+		line-height: 1.5;
+		margin: 0 50% 2rem 0 !important;
+
+		text-shadow: 0 0 4px rgba($black, 0.8);
+		background-clip: text;
+		background-color: var(--wp--preset--color--tertiary);
+
+		@media (max-width: $breakpoint-sm) {
+			font-size: 8vw;
+		}
+	}
+}

@@ -103,6 +103,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		'page-front',
 
 		// Site specific patterns.
+		'cleanbc/cleanbc-hero-banner',
 		'cleanbc/goelectric-banner',
 		'cleanbc/goelectric-cards',
 	);
