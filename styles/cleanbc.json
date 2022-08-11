@@ -22,7 +22,7 @@
 				},
 				{
 					"slug": "headline-color",
-					"color": "var(--wp--preset--color--primary-brand)",
+					"color": "#002A4E",
 					"name": "Headline Colour"
 				},
 				{
@@ -92,7 +92,7 @@
 				},
 				{
 					"slug": "quadenary",
-					"color": "185282",
+					"color": "#185282",
 					"name": "Industry Oil and Gas – Quadenary"
 				},
 				{

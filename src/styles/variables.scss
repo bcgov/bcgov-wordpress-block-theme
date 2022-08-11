@@ -18,6 +18,35 @@ $cards-mobile-breakpoint: 767px;
 $black: #111;
 $body-color: #313132;
 
+// To do: make this dynamic based on current root colour palette options.
+// Currently overrides these values as needed in ./[site]/variables.scss
+:root {
+	--primary-brand-rgb: 14, 52, 104;
+	--secondary-brand-rgb: 59, 90, 148;
+	--accent-rgb: 246, 185, 0;
+	--headline-color-rgb: 14, 52, 104;
+	--text-color-rgb: 17, 17, 17;
+	--tertiary-rgb: 189, 205, 112;
+	--quarternary-rgb: 90, 143, 142;
+	--quinary-rgb: 188, 207, 201;
+	--senary-rgb: 159, 160, 139;
+	--septenary-rgb: 108, 95, 78;
+	--octonary-rgb: 242, 109, 111;
+	--nonary-rgb: 242, 164, 136;
+	--denary-rgb: 5, 166, 209;
+	--ondenary-rgb: 218, 153, 1;
+	--duodenary-rgb: 46, 88, 93;
+	--tridenary-rgb: 255, 196, 139;
+	--quadenary-rgb: 212, 186, 135;
+	--gray-80-rgb: 101, 101, 101;
+	--gray-60-rgb: 161, 161, 161;
+	--gray-40-rgb: 199, 199, 199;
+	--gray-05-rgb: 228, 228, 228;
+	--foreground-rgb: 34, 34, 34;
+	--background-rgb: 249, 249, 249;
+}
+
+
 /* FOR REFERENCE: Go Electric v1 Project colours. */
 $sushigreen: #61a744;
 $eucalyptus: #1d8045;

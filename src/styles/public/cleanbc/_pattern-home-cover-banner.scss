@@ -1,0 +1,88 @@
+/* stylelint-disable no-descending-specificity */
+
+// Template editor specific styles.
+html :where(.editor-styles-wrapper) {
+
+	.home-cover-banner {
+
+		.wp-block-button {
+
+			&__link {
+				background-color: var(--wp--preset--color--secondary-brand);
+				border-bottom: 12px solid var(--wp--preset--color--denary);
+			}
+		}
+
+		.wp-block-button:nth-of-type(2) {
+
+			.wp-block-button {
+
+				&__link {
+					border-bottom: 12px solid var(--wp--preset--color--tertiary);
+				}
+			}
+		}
+	}
+}
+
+// General header styles.
+.home-cover-banner {
+
+	.wp-block-cover {
+
+		&__background {
+
+			&.has-background-background-color {
+				background: linear-gradient(100deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 55%, rgba(255, 255, 255, 0) 55%) !important;
+
+				@media (min-width: $breakpoint-sm-md) {
+					background: linear-gradient(105deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0) 50%) !important;
+				}
+				opacity: 1;
+			}
+		}
+
+		&__inner-container {
+			box-sizing: border-box;
+			max-width: 720px;
+			width: 50%;
+			margin: 0 50% 0 auto;
+			padding-right: 0;
+
+			@media (min-width: $breakpoint-sm-md) {
+				padding-right: 6rem;
+			}
+
+			body .bcgov-body-content & {
+
+				h1 {
+					font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem) !important;
+					line-height: 1.25;
+					margin-bottom: 0;
+				}
+
+				h2 {
+					font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+				}
+
+				.wp-block-button {
+
+					&__link {
+						background-color: var(--wp--preset--color--secondary-brand);
+						border-bottom: 12px solid var(--wp--preset--color--denary);
+					}
+				}
+
+				.wp-block-button:nth-of-type(2) {
+
+					.wp-block-button {
+
+						&__link {
+							border-bottom: 12px solid var(--wp--preset--color--tertiary);
+						}
+					}
+				}
+			}
+		}
+	}
+}
