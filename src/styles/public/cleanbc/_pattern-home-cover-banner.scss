@@ -22,6 +22,15 @@ html :where(.editor-styles-wrapper) {
 				}
 			}
 		}
+
+		h1 {
+			font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem);
+			line-height: 1.25;
+		}
+
+		h2 {
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem);
+		}
 	}
 }
 

@@ -2,3 +2,10 @@
 
 // Load Public Styles
 @import "../public/index";
+
+html :where(.editor-styles-wrapper) {
+
+	* {
+		font-family: BCSans, "Noto Sans", Verdana, Arial, sans-serif;
+	}
+}

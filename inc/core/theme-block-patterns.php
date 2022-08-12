@@ -103,6 +103,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		*/
 		// CleanBC header/footer patterns.
 		'cleanbc/cleanbc-home-cover-banner',
+		'cleanbc/cleanbc-info-cover-banner',
 		'cleanbc/cleanbc-landing-cover-banner',
 		'cleanbc/cleanbc-scroll-link-banner',
 
