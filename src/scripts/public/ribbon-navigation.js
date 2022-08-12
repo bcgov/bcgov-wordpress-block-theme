@@ -2,9 +2,7 @@
  * Ribbon navigation manipulation.
  */
 const domReady = () => {
-
 	if (document.querySelectorAll('.is-style-ribbon-menu').length) {
-
 		document.querySelector('body').classList.add('has-ribbon-menu');
 
 		/*
@@ -23,7 +21,7 @@ const domReady = () => {
 			if (
 				null !== bounding &&
 				bounding.right >
-				(window.innerWidth || document.documentElement.clientWidth)
+					(window.innerWidth || document.documentElement.clientWidth)
 			) {
 				if (null !== childContainer) {
 					childContainer.classList.add('is-offscreen');
@@ -37,8 +35,9 @@ const domReady = () => {
 		}
 
 		if (document.querySelectorAll('li.wp-block-navigation-item').length) {
-
-			const elem = document.querySelectorAll('li.wp-block-navigation-item');
+			const elem = document.querySelectorAll(
+				'li.wp-block-navigation-item'
+			);
 			elem.forEach((i) => {
 				i.addEventListener('mousemove', (e) => {
 					doBoundsCheck(e.target);
@@ -47,7 +46,6 @@ const domReady = () => {
 					doBoundsCheck(e.target);
 				});
 			});
-
 		}
 	}
 };
