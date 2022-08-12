@@ -1,12 +1,23 @@
+/* stylelint-disable scss/at-import-no-partial-leading-underscore */
+
 // SCSS variables for styles
 @import "../variables";
 
-// Public Styles
+// SCSS variables for specific sites
+@import "./cleanbc/variables";
+
+// Base Public Styles
 @import "./header";
 @import "./footer";
-@import "./blocks";
-@import "./card-breaks";
-@import "./general";
 @import "./navigation";
+@import "./general";
+@import "./blocks";
 @import "./patterns";
-@import "./scroll-link-banner";
+
+// Specific Block Styles
+@import "./blocks/_block-card-breaks";
+
+// Specific CleanBC Pattern Styles
+@import "./cleanbc/_pattern-home-cover-banner";
+@import "./cleanbc/_pattern-landing-cover-banner";
+@import "./cleanbc/_pattern-scroll-link-banner";

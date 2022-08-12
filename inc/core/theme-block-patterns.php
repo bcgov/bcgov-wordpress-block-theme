@@ -29,17 +29,17 @@ function bcgov_blocks_theme_register_block_patterns() {
 	 * @package Bcgov/Theme/Block
 	 */
 
-	$block_pattern_categories = array(
-		'bcgov-blocks-theme-general' 		=>  [ 'label' => __( 'BCGov: General', 'bcgov_blocks_theme' ) ],
-		'bcgov-blocks-theme-header-footer' 	=>  [ 'label' => __( 'BCGov: Header/Footer', 'bcgov_blocks_theme' ) ],
-		'bcgov-blocks-theme-page-layouts'   =>  [ 'label' => __( 'BCGov: Page Layouts', 'bcgov_blocks_theme' ) ],
-		'bcgov-blocks-theme-query'   		=>  [ 'label' => __( 'BCGov: Post Query', 'bcgov_blocks_theme' ) ],
+	$block_pattern_categories = [
+		'bcgov-blocks-theme-general'       => [ 'label' => __( 'BCGov: General', 'bcgov_blocks_theme' ) ],
+		'bcgov-blocks-theme-header-footer' => [ 'label' => __( 'BCGov: Header/Footer', 'bcgov_blocks_theme' ) ],
+		'bcgov-blocks-theme-page-layouts'  => [ 'label' => __( 'BCGov: Page Layouts', 'bcgov_blocks_theme' ) ],
+		'bcgov-blocks-theme-query'         => [ 'label' => __( 'BCGov: Post Query', 'bcgov_blocks_theme' ) ],
 		// ClenBC site specific patterns.
-		'cleanbc-patterns-general'			=>  [ 'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ) ],
-		'cleanbc-patterns-header-footer'	=>  [ 'label' => __( 'CleanBC: Header/Footer', 'bcgov_blocks_theme' ) ],
-		'cleanbc-patterns-page-layouts'		=>  [ 'label' => __( 'CleanBC: Page Layouts', 'bcgov_blocks_theme' ) ],
-		'cleanbc-patterns-query'			=>  [ 'label' => __( 'CleanBC: Post Query', 'bcgov_blocks_theme' ) ],
-	);
+		'cleanbc-patterns-general'         => [ 'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ) ],
+		'cleanbc-patterns-header-footer'   => [ 'label' => __( 'CleanBC: Header/Footer', 'bcgov_blocks_theme' ) ],
+		'cleanbc-patterns-page-layouts'    => [ 'label' => __( 'CleanBC: Page Layouts', 'bcgov_blocks_theme' ) ],
+		'cleanbc-patterns-query'           => [ 'label' => __( 'CleanBC: Post Query', 'bcgov_blocks_theme' ) ],
+	];
 
 	/**
 	 * BCGov Blocks Theme: Filters the theme block pattern categories.
@@ -68,8 +68,9 @@ function bcgov_blocks_theme_register_block_patterns() {
 		register_block_pattern_category( $name, $properties );
 	}
 
-	$block_patterns = array(
-		/* 
+	$block_patterns = [
+
+		/*
 		* BCGov default patterns.
 		*/
 		// Header patterns.
@@ -97,15 +98,17 @@ function bcgov_blocks_theme_register_block_patterns() {
 		// Full page patterns.
 		'bcgov-page-layout-example',
 
-		/* 
+		/*
 		* CleanBC site specific patterns.
 		*/
 		// CleanBC header/footer patterns.
+		'cleanbc/cleanbc-home-cover-banner',
+		'cleanbc/cleanbc-landing-cover-banner',
 		'cleanbc/cleanbc-scroll-link-banner',
 
 		// CleanBC full page patterns.
 		'cleanbc/goelectric-landing-page',
-	);
+	];
 
 	/**
 	 * BCGov Blocks Theme: Filters the theme block patterns.

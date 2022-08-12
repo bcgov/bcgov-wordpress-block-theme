@@ -17,3 +17,8 @@ import './filters/query-loop-enhanced';
  */
 import './blocks/card/container';
 import './blocks/card/item';
+
+/**
+ * Pattern scripts.
+ */
+import '../public/cleanbc/patterns/landing-cover-banner';
