@@ -17,3 +17,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 – Added CleanBC colour options to site style selector + updated default theme and dark mode (beta) options. Added Query Loop pattern for dynamic post grid view. Additional template & patterns (html) updates for responsiveness. ([DESCW-513]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-513)
 – Initial CleanBC "No image" banner with in-page links ([DESCW-514]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-514)
 - Two new banners (home + landing) and related scripts/styles. Added static SCSS readable RGB root values for colour palette integration (needs to be generated dynamically). Further break out of CleanBC site scripts/styles/patterns/etc. ([DESCW-514]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-514)
+- New Info banner + scripts and style fixes [DESCW-514]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-514)
