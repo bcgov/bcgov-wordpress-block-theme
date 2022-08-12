@@ -7,9 +7,9 @@ const domReady = () => {
 	 */
 	setTimeout(function () {
 
-		const el = document.querySelector('.landing-cover-banner');
+		if (document.querySelectorAll('.landing-cover-banner').length) {
 
-		if (null !== el) {
+			const el = document.querySelector('.landing-cover-banner');
 
 			const elSpan = el.querySelector('.wp-block-cover__background');
 
