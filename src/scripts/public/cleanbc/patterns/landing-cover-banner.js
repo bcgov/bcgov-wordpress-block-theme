@@ -5,19 +5,25 @@ const domReady = () => {
 	/*
 	 * SafarIE bug requires 0ms timeout.
 	 */
-	setTimeout(function() {
+	setTimeout(function () {
+
 		const el = document.querySelector('.landing-cover-banner');
-		const elSpan = el.querySelector('.wp-block-cover__background');
 
-		updateOverlay(elSpan);
+		if (null !== el) {
 
-		const observer = new window.MutationObserver(function() {
+			const elSpan = el.querySelector('.wp-block-cover__background');
+
 			updateOverlay(elSpan);
-		});
 
-		observer.observe(elSpan, {
-			attributeFilter: ['class', 'style'],
-		});
+			const observer = new window.MutationObserver(function () {
+				updateOverlay(elSpan);
+			});
+
+			observer.observe(elSpan, {
+				attributeFilter: ['class', 'style'],
+			});
+		}
+
 	}, 0);
 
 	function updateOverlay(eS) {
@@ -37,7 +43,7 @@ const domReady = () => {
 				'--landing-cover-banner-bg',
 				eS.style.backgroundColor.replace(
 					/\brgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/g,
-					function($0, $1, $2, $3) {
+					function ($0, $1, $2, $3) {
 						return Number($1) + ',' + Number($2) + ',' + Number($3);
 					}
 				)
