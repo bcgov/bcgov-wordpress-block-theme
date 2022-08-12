@@ -1,30 +1,51 @@
-<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
-<!-- wp:template-part {"slug":"navigation","tagName":"navigation","className":"site-navigation"} /-->
+<!-- wp:template-part {"slug":"header","theme":"bcgov-wordpress-block-theme","tagName":"header","className":"site-header"} /-->
 
-<!-- wp:group {"tagName":"main","layout":{"inherit":true}} -->
-<main class="wp-block-group">
-	<!-- wp:heading {"level":1,"align":"wide"} -->
-	<h1 class="alignwide">Page not found</h1>
+<!-- wp:template-part {"slug":"navigation","theme":"bcgov-wordpress-block-theme","tagName":"navigation","className":"site-navigation"} /-->
+
+<!-- wp:group {"tagName":"main","className":"bcgov-body-content","layout":{"inherit":true}} -->
+<main class="wp-block-group bcgov-body-content"><!-- wp:heading {"level":1} -->
+	<h1>404</h1>
 	<!-- /wp:heading -->
-
-	<!-- wp:separator {"align":"wide","className":"is-style-bcgov-block-theme-separator-thick"} -->
-	<hr class="wp-block-separator alignwide is-style-bcgov-block-theme-separator-thick"/>
-	<!-- /wp:separator -->
-
-	<!-- wp:spacer {"height":70} -->
-	<div style="height:70px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
-
+	
+	<!-- wp:heading -->
+	<h2>The page you are looking for cannot be found.</h2>
+	<!-- /wp:heading -->
+	
 	<!-- wp:paragraph -->
 	<p>The page you’re looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
 	<!-- /wp:paragraph -->
-
-
-
-	<!-- wp:spacer {"height":70} -->
+	
+	<!-- wp:paragraph -->
+	<p>Suggestions to help you find what you’re looking for:</p>
+	<!-- /wp:paragraph -->
+	
+	<!-- wp:list -->
+	<ul><li>Check that the web URL has been entered correctly</li><li>Go to our <a href="https://www2.gov.bc.ca/gov/content/home">Home Page</a> and browse through our topics for the information you want</li><li>Look for <a href="https://www2.gov.bc.ca/gov/content/home/services-a-z">Services</a> or <a href="https://www2.gov.bc.ca/gov/content/home/forms-a-z">Forms</a></li><li>Use the Search function at the top of this page</li></ul>
+	<!-- /wp:list -->
+	
+	<!-- wp:paragraph -->
+	<p>Alternatively, you can contact the&nbsp;<a href="https://www2.gov.bc.ca/StaticWebResources/static/gov3/html/contact-form.html">Service BC Contact Centre</a>&nbsp;for general enquires Monday through Friday from 7:30am to 5pm Pacific Time.</p>
+	<!-- /wp:paragraph -->
+	
+	<!-- wp:list -->
+	<ul><li>Vancouver:&nbsp;<a href="tel:6046602421">604 660-2421</a></li><li>Victoria:&nbsp;<a href="tel:2503876121">250 387-6121</a></li><li>Toll-free within Canada and USA:&nbsp;<a href="tel:18006637867">1 800 663-7867</a></li><li>Outside of Canada/USA:&nbsp;<a href="tel:6046602421">604 660-2421</a></li></ul>
+	<!-- /wp:list -->
+	
+	<!-- wp:paragraph -->
+	<p>Telephone Device for the Deaf (TDD )</p>
+	<!-- /wp:paragraph -->
+	
+	<!-- wp:list -->
+	<ul><li>Across B.C.:&nbsp;<a href="tel:711">711</a></li></ul>
+	<!-- /wp:list -->
+	
+	<!-- wp:paragraph -->
+	<p>If you would like to email us,&nbsp;please contact&nbsp;<a href="mailto:servicebc@gov.bc.ca">servicebc@gov.bc.ca</a>.</p>
+	<!-- /wp:paragraph -->
+	
+	<!-- wp:spacer {"height":"70px"} -->
 	<div style="height:70px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
-</main>
-<!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->
+	<!-- /wp:spacer --></main>
+	<!-- /wp:group -->
+	
+	<!-- wp:template-part {"slug":"footer","theme":"bcgov-wordpress-block-theme","tagName":"footer","className":"site-footer"} /-->
