@@ -8,21 +8,34 @@ const domReady = () => {
 	setTimeout(function() {
 		const el = document.querySelector('.landing-cover-banner');
 		const elSpan = el.querySelector('.wp-block-cover__background');
+
+		updateOverlay(elSpan);
+
+		const observer = new window.MutationObserver(function() {
+			updateOverlay(elSpan);
+		});
+
+		observer.observe(elSpan, {
+			attributeFilter: ['class', 'style'],
+		});
+	}, 0);
+
+	function updateOverlay(eS) {
 		const classSubstring = '-background-color';
 		let hasPaletteColor = false;
 		let className = '';
 
-		elSpan.classList.forEach((target) => {
+		eS.classList.forEach((target) => {
 			if (target.includes(classSubstring)) {
 				hasPaletteColor = true;
 				className = target;
 			}
 		});
 
-		if (!hasPaletteColor && '' !== elSpan.style.backgroundColor) {
+		if (!hasPaletteColor && '' !== eS.style.backgroundColor) {
 			document.documentElement.style.setProperty(
 				'--landing-cover-banner-bg',
-				elSpan.style.backgroundColor.replace(
+				eS.style.backgroundColor.replace(
 					/\brgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/g,
 					function($0, $1, $2, $3) {
 						return Number($1) + ',' + Number($2) + ',' + Number($3);
@@ -38,7 +51,7 @@ const domReady = () => {
 				'var(--' + targetEl + '-rgb)'
 			);
 		}
-	}, 0);
+	}
 };
 
 if ('complete' === document.readyState) {
