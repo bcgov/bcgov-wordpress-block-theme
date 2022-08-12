@@ -8,6 +8,4 @@ jest.config.js	    export-ignore
 package-lock.json	export-ignore
 package.json	    export-ignore
 README.md	        export-ignore
-assets              export-ignore
 scripts             export-ignore
-styles              export-ignore
