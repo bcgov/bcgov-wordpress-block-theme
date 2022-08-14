@@ -34,12 +34,27 @@ function bcgov_blocks_theme_register_block_patterns() {
 		'bcgov-blocks-theme-header-footer' => [ 'label' => __( 'BCGov: Header/Footer', 'bcgov_blocks_theme' ) ],
 		'bcgov-blocks-theme-page-layouts'  => [ 'label' => __( 'BCGov: Page Layouts', 'bcgov_blocks_theme' ) ],
 		'bcgov-blocks-theme-query'         => [ 'label' => __( 'BCGov: Post Query', 'bcgov_blocks_theme' ) ],
-		// ClenBC site specific patterns.
-		'cleanbc-patterns-general'         => [ 'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ) ],
-		'cleanbc-patterns-header-footer'   => [ 'label' => __( 'CleanBC: Header/Footer', 'bcgov_blocks_theme' ) ],
-		'cleanbc-patterns-page-layouts'    => [ 'label' => __( 'CleanBC: Page Layouts', 'bcgov_blocks_theme' ) ],
-		'cleanbc-patterns-query'           => [ 'label' => __( 'CleanBC: Post Query', 'bcgov_blocks_theme' ) ],
 	];
+
+	/*
+	* CleanBC site specific patterns.
+	*/
+	if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) {
+
+		$block_pattern_categories['cleanbc-patterns-general']       = [
+			'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ),
+		];
+		$block_pattern_categories['cleanbc-patterns-header-footer'] = [
+			'label' => __( 'CleanBC: Header/Footer', 'bcgov_blocks_theme' ),
+		];
+		$block_pattern_categories['cleanbc-patterns-page-layouts']  = [
+			'label' => __( 'CleanBC: Page Layouts', 'bcgov_blocks_theme' ),
+		];
+		$block_pattern_categories['cleanbc-patterns-query']         = [
+			'label' => __( 'CleanBC: Post Query', 'bcgov_blocks_theme' ),
+		];
+
+	}
 
 	/**
 	 * BCGov Blocks Theme: Filters the theme block pattern categories.
@@ -102,7 +117,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 	/*
 	* CleanBC site specific patterns.
 	*/
-	if ( defined( 'Bcgov\\Theme\\Block\\CLEANBCPATTERNS' ) && CLEANBCPATTERNS ) {
+	if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) {
 		// CleanBC header/footer patterns.
 		$block_patterns[] = 'cleanbc/cleanbc-home-cover-banner';
 		$block_patterns[] = 'cleanbc/cleanbc-info-cover-banner';
