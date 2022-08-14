@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Detail Card with Icons', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-general' ),
+	'categories' => [ 'bcgov-blocks-theme-general' ],
 	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"6rem","right":"2rem","bottom":"2rem","left":"2rem"},"blockGap":"2rem"},"border":{"style":"solid","width":"2px","radius":"0.66rem"}},"borderColor":"primary-brand"} -->
 	<div class="wp-block-group alignwide has-border-color has-primary-brand-border-color" style="border-radius:0.66rem;border-style:solid;border-width:2px;padding-top:6rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontSize":"3rem","fontStyle":"normal","fontWeight":"300"}},"textColor":"primary-brand"} -->
 	<h2 class="has-text-align-center has-primary-brand-color has-text-color" style="font-size:3rem;font-style:normal;font-weight:300">Headline Lorem Ipsum?</h2>
@@ -69,4 +69,4 @@ return array(
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>
 	<!-- /wp:group -->',
-);
+];

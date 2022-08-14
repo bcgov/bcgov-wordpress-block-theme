@@ -6,9 +6,9 @@
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'CleanBC Go Electric Cards', 'bcgov_blocks_theme' ),
-	'categories' => array( 'cleanbc-patterns-page-layouts' ),
+	'categories' => [ 'cleanbc-patterns-page-layouts' ],
 	'content'    => '<!-- wp:cover {"url":"https://bcgov-block-theme.local/wp-content/uploads/2022/07/goElectricBC-shareable-01.jpg","id":306,"dimRatio":0,"customOverlayColor":"#000000","focalPoint":{"x":"0.49","y":"0.50"},"minHeight":50,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full"} -->
 <div class="wp-block-cover alignfull is-light" style="min-height:50vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#000000"></span><img class="wp-block-cover__image-background wp-image-306" alt="" src="https://bcgov-block-theme.local/wp-content/uploads/2022/07/goElectricBC-shareable-01.jpg" style="object-position:49% 50%" data-object-fit="cover" data-object-position="49% 50%"/><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"inherit":true}} -->
 <div class="wp-block-group"><!-- wp:columns {"align":"wide"} -->
@@ -34,4 +34,4 @@ return array(
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover -->',
-);
+];

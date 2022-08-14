@@ -14,6 +14,7 @@ namespace Bcgov\Theme\Block;
  */
 class Setup {
 
+
     /**
      * Constructor.
      */
@@ -30,11 +31,31 @@ class Setup {
 		add_action( 'after_setup_theme', [ $this, 'bcgov_block_theme' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_scripts' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_admin_scripts' ] );
-		add_filter( 'get_custom_logo', [ $this, 'bcgov_block_theme_custom_logo' ] );
 		add_action( 'admin_notices', [ $this, 'bcgov_block_theme_dependencies' ] );
 		add_action( 'admin_menu', [ $this, 'bcgov_block_theme_menu' ] );
+		add_action( 'init', [ $this, 'bcgov_register_custom_types' ], 99 );
+		add_filter( 'get_custom_logo', [ $this, 'bcgov_block_theme_custom_logo' ] );
 		remove_theme_support( 'core-block-patterns' );
     }
+
+	/**
+	 * Requires custom post/page types for specific sites.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function bcgov_register_custom_types() {
+
+		/**
+	 	* Load CleanBC Custom Posts and Taxonomy.
+	 	*/
+		if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC' ) && CLEANBC ) {
+			require_once get_template_directory() . '/src/custom-types/cleanbc/cleanbc-action.php';
+			require_once get_template_directory() . '/src/custom-types/cleanbc/cleanbc-taxonomy.php';
+		}
+
+	}
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -187,11 +208,11 @@ class Setup {
 	 */
 	public function bcgov_block_theme_menu() {
 		add_theme_page(
-			esc_html__( 'BCGov Blocks Theme', 'bcgov-block-theme' ), // Page title.
-			esc_html__( 'BCGov Blocks Theme', 'bcgov-block-theme' ), // Menu title.
-			'edit_theme_options',                                     // Capability.
-			'bcgov-block-theme-info',                                // Menu slug.
-			array( &$this, 'bcgov_block_theme_page_display' )        // Callback.
+			esc_html__( 'BCGov Blocks Theme', 'bcgov-block-theme' ),
+			esc_html__( 'BCGov Blocks Theme', 'bcgov-block-theme' ),
+			'edit_theme_options',
+			'bcgov-block-theme-info',
+			[ &$this, 'bcgov_block_theme_page_display' ]
 		);
 	}
 

@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Hero Banner (alternate)', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-general' ),
+	'categories' => [ 'bcgov-blocks-theme-general' ],
 	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"80px","bottom":"80px"}}},"backgroundColor":"primary-brand","layout":{"inherit":true}} -->
 	<div class="wp-block-group alignfull has-primary-brand-background-color has-background" style="padding-top:80px;padding-bottom:80px"><!-- wp:columns {"align":"wide"} -->
 	<div class="wp-block-columns alignwide"><!-- wp:column -->
@@ -43,4 +43,4 @@ return array(
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>
 	<!-- /wp:group -->',
-);
+];

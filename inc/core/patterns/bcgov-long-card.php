@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Long Cards', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-general' ),
+	'categories' => [ 'bcgov-blocks-theme-general' ],
 	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem","right":"6rem","left":"6rem"},"blockGap":"3rem"},"border":{"style":"solid","width":"2px"}},"borderColor":"primary-brand"} -->
 	<div class="wp-block-group alignwide has-border-color has-primary-brand-border-color" style="border-style:solid;border-width:2px;padding-top:6rem;padding-right:6rem;padding-bottom:6rem;padding-left:6rem"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
@@ -35,4 +35,4 @@ return array(
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>
 	<!-- /wp:group -->',
-);
+];

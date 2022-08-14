@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Landing Page', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-page-layouts' ),
+	'categories' => [ 'bcgov-blocks-theme-page-layouts' ],
 	'content'    => '<!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_05.jpg","id":594,"hasParallax":true,"dimRatio":0,"customOverlayColor":"#000000","minHeight":50,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full"} -->
 	<div class="wp-block-cover alignfull is-light has-parallax" style="background-image:url(' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_05.jpg);min-height:50vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#000000"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"inherit":true}} -->
 	<div class="wp-block-group"><!-- wp:columns {"align":"wide"} -->
@@ -331,4 +331,4 @@ return array(
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>
 	<!-- /wp:group -->',
-);
+];

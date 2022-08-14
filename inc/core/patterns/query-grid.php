@@ -9,10 +9,10 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Grid of posts (Query Loop)', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-general', 'bcgov-blocks-theme-query' ),
-	'blockTypes' => array( 'core/query' ),
+	'categories' => [ 'bcgov-blocks-theme-general', 'bcgov-blocks-theme-query' ],
+	'blockTypes' => [ 'core/query' ],
 	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"3rem","bottom":"3rem"}}}} -->
 	<div class="wp-block-group alignwide" style="margin-top:3rem;margin-bottom:3rem"><!-- wp:query {"queryId":2,"query":{"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","sticky":"","perPage":12},"displayLayout":{"type":"flex","columns":3},"align":"wide","className":"is-grid-of-posts is-style-dropshadow","layout":{"inherit":true}} -->
 	<div class="wp-block-query alignwide is-grid-of-posts is-style-dropshadow"><!-- wp:post-template {"align":"wide"} -->
@@ -38,4 +38,4 @@ return array(
 	<!-- /wp:query-pagination --></div>
 	<!-- /wp:query --></div>
 	<!-- /wp:group -->',
-);
+];

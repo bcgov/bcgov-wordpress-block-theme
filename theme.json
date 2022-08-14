@@ -16,8 +16,21 @@
 			"name": "blank",
 			"title": "Blank page or post",
 			"postTypes": [
-				"page",
+				"page"
+			]
+		},
+		{
+			"name": "single",
+			"title": "Single Post",
+			"postTypes": [
 				"post"
+			]
+		},
+		{
+			"name": "single-cleanbc-actions",
+			"title": "CleanBC Action Post",
+			"postTypes": [
+				"cleanbc-actions"
 			]
 		}
 	],

@@ -6,9 +6,9 @@
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Scrolling Link Banner', 'bcgov_blocks_theme' ),
-	'categories' => array( 'cleanbc-patterns-header-footer' ),
+	'categories' => [ 'cleanbc-patterns-header-footer' ],
 	'content'    => '<!-- wp:group {"align":"full","backgroundColor":"primary-brand","className":"scroll-link-banner","layout":{"inherit":false}} -->
 	<div class="wp-block-group alignfull scroll-link-banner has-primary-brand-background-color has-background"><!-- wp:group {"align":"wide","textColor":"background","layout":{"inherit":false}} -->
 	<div class="wp-block-group alignwide has-background-color has-text-color"><!-- wp:aioseo/breadcrumbs /--></div>
@@ -46,4 +46,4 @@ return array(
 	<!-- /wp:columns --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:group -->',
-);
+];

@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Alternating Cards', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-general' ),
+	'categories' => [ 'bcgov-blocks-theme-general' ],
 	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"3rem","bottom":"3rem"}}}} -->
 	<div class="wp-block-group alignwide" style="margin-top:3rem;margin-bottom:3rem"><!-- wp:media-text {"mediaPosition":"right","mediaId":305,"mediaLink":"' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_10.jpg","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#0033661a"}}} -->
 	<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center has-background" style="background-color:#0033661a"><figure class="wp-block-media-text__media"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_10.jpg" alt="" class="wp-image-305 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:group {"style":{"spacing":{"padding":{"top":"2em","right":"2em","bottom":"2em","left":"2em"}}}} -->
@@ -51,4 +51,4 @@ return array(
 	<!-- /wp:group --></div></div>
 	<!-- /wp:media-text --></div>
 	<!-- /wp:group -->',
-);
+];

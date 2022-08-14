@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Card with Under Image Portrait 2-Up', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-general' ),
+	'categories' => [ 'bcgov-blocks-theme-general' ],
 	'content'    => '<!-- wp:group {"align":"wide"} -->
 	<div class="wp-block-group alignwide"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column -->
@@ -59,4 +59,4 @@ return array(
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>
 	<!-- /wp:group -->',
-);
+];
