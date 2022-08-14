@@ -51,10 +51,9 @@ class Setup {
 	 	* Load CleanBC Custom Posts and Taxonomy.
 	 	*/
 		if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC' ) && CLEANBC ) {
-			require_once get_template_directory() . '/src/custom-types/cleanbc/cleanbc-action.php';
+			require_once get_template_directory() . '/src/custom-types/cleanbc/cleanbc-actions.php';
 			require_once get_template_directory() . '/src/custom-types/cleanbc/cleanbc-taxonomy.php';
 		}
-
 	}
 
 	/**
@@ -98,6 +97,25 @@ class Setup {
 		add_theme_support( 'responsive-embeds' );
 	}
 
+ 	/**
+     * Enqueue JS variables.
+     *
+     * @example Sets array values for use in globally scoped JS.
+     * @return array
+     */
+    public function set_javascript_variables() {
+		$javascript_variables = array(
+			'domain'    => home_url(),
+			'site-name' => 'bcgov',
+		);
+
+		if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC' ) ) {
+			$javascript_variables['cleanbc'] = CLEANBC;
+		}
+
+		return $javascript_variables;
+	}
+
 	/**
 	 * Enqueue scripts and styles for public website.
 	 *
@@ -110,6 +128,7 @@ class Setup {
 		$font_assets    = require_once get_template_directory() . '/dist/font.asset.php';
 		$public_version = $public_assets['version'] ?? wp_get_theme()->get( 'Version' );
 		$font_version   = $font_assets['version'] ?? wp_get_theme()->get( 'Version' );
+
 		wp_enqueue_script(
 			'bcgov-block-theme-public',
 			get_template_directory_uri() . '/dist/public.js',
@@ -117,6 +136,10 @@ class Setup {
 			$public_version,
 			true
 		);
+
+		$javascript_variables = $this->set_javascript_variables();
+		wp_localize_script( 'bcgov-block-theme-public', 'site', $javascript_variables );
+
 		wp_enqueue_style(
 			'bcgov-block-theme-public',
 			get_template_directory_uri() . '/dist/public.css',
@@ -149,6 +172,10 @@ class Setup {
 			$admin_version,
 			true
 		);
+
+		$javascript_variables = $this->set_javascript_variables();
+		wp_localize_script( 'bcgov-block-theme-admin', 'site', $javascript_variables );
+
 		wp_enqueue_style(
 			'bcgov-block-theme-admin',
 			get_template_directory_uri() . '/dist/admin.css',

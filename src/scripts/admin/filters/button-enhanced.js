@@ -18,10 +18,18 @@ registerBlockStyle('core/button', {
 	label: 'BCGov Fill',
 	default: 'is-bcgov-fill',
 });
+
 registerBlockStyle('core/button', {
 	name: 'outline',
 	label: 'BCGov Outline',
 });
+
+if (window.site.cleanbc) {
+	registerBlockStyle('core/button', {
+		name: 'underline',
+		label: 'CleanBC Default',
+	});
+}
 
 wp.domReady(() => {
 	unregisterBlockStyle('core/button', 'default');

@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 defined( 'CLEANBC' ) || define( 'Bcgov\\Theme\\Block\\CLEANBC', true );
-defined( 'CLEANBCPATTERNS' ) || define( 'Bcgov\\Theme\\Block\\CLEANBCPATTERNS', true );
+defined( 'CLEANBC\\PATTERNS' ) || define( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS', true );
 
 require_once get_template_directory() . '/src/Setup.php';
 
