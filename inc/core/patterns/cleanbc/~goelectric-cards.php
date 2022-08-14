@@ -6,9 +6,9 @@
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'CleanBC Go Electric Cards', 'bcgov_blocks_theme' ),
-	'categories' => array( 'cleanbc-patterns-general' ),
+	'categories' => [ 'cleanbc-patterns-general' ],
 	'content'    => '<!-- wp:media-text {"mediaPosition":"right","mediaId":284,"mediaLink":"https://bcgov-block-theme.local/bcgov/polestar-2-2022/","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#0033660a"}}} -->
 <div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center has-background" style="background-color:#0033660a"><figure class="wp-block-media-text__media"><img src="https://bcgov-block-theme.local/wp-content/uploads/2022/07/polestar-2-2022-1024x520.png" alt="" class="wp-image-284 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:group {"style":{"spacing":{"padding":{"top":"2em","right":"2em","bottom":"2em","left":"2em"}}}} -->
 <div class="wp-block-group" style="padding-top:2em;padding-right:2em;padding-bottom:2em;padding-left:2em"><!-- wp:paragraph {"style":{"typography":{"lineHeight":"1.2","fontSize":"3rem"}}} -->
@@ -44,4 +44,4 @@ return array(
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:media-text -->',
-);
+];

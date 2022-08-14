@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Hero Banner', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-general' ),
+	'categories' => [ 'bcgov-blocks-theme-general' ],
 	'content'    => '<!-- wp:cover {"url":"' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_05.jpg","id":594,"dimRatio":0,"customOverlayColor":"#000000","focalPoint":{"x":"0.50","y":"0.33"},"minHeight":50,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full"} -->
 	<div class="wp-block-cover alignfull is-light" style="min-height:50vh"><span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#000000"></span><img class="wp-block-cover__image-background wp-image-594" alt="" src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_05.jpg" style="object-position:50% 33%" data-object-fit="cover" data-object-position="50% 33%"/><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"inherit":true}} -->
 	<div class="wp-block-group"><!-- wp:columns {"align":"wide"} -->
@@ -37,4 +37,4 @@ return array(
 	<!-- /wp:columns --></div>
 	<!-- /wp:group --></div></div>
 	<!-- /wp:cover -->',
-);
+];

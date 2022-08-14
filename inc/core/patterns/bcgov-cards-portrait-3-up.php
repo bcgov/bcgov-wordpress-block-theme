@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Cards Portrait 3-up', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-general' ),
+	'categories' => [ 'bcgov-blocks-theme-general' ],
 	'content'    => '<!-- wp:group {"align":"wide"} -->
 	<div class="wp-block-group alignwide"><!-- wp:columns {"style":{"spacing":{"padding":{"top":"3rem","bottom":"3rem"}}},"className":"is-card-portrait-image-over"} -->
 	<div class="wp-block-columns is-card-portrait-image-over" style="padding-top:3rem;padding-bottom:3rem"><!-- wp:column {"style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"2rem","left":"0px"}}},"backgroundColor":"background","className":"is-style-dropshadow","layout":{"inherit":false}} -->
@@ -81,4 +81,4 @@ return array(
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>
 	<!-- /wp:group -->',
-);
+];

@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Go Electric page', 'bcgov_blocks_theme' ),
-	'categories' => array( 'cleanbc-patterns-page-layouts' ),
+	'categories' => [ 'cleanbc-patterns-page-layouts' ],
 	'content'    => '<!-- wp:paragraph -->
 	<p></p>
 	<!-- /wp:paragraph -->
@@ -81,4 +81,4 @@ return array(
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div></div>
 	<!-- /wp:media-text -->',
-);
+];

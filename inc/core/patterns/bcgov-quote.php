@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Quote', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-general' ),
+	'categories' => [ 'bcgov-blocks-theme-general' ],
 	'content'    => '<!-- wp:group {"style":{"spacing":{"blockGap":"3rem","margin":{"top":"3rem","bottom":"3rem"}},"border":{"style":"solid","width":"2px"}},"borderColor":"primary-brand-blue","className":"is-quote"} -->
 	<div class="wp-block-group is-quote has-border-color has-primary-brand-blue-border-color" style="border-style:solid;border-width:2px;margin-top:3rem;margin-bottom:3rem"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center"} -->
@@ -21,4 +21,4 @@ return array(
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>
 	<!-- /wp:group -->',
-);
+];

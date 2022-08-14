@@ -9,9 +9,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
-return array(
+return [
 	'title'      => __( 'Default footer', 'bcgov_blocks_theme' ),
-	'categories' => array( 'bcgov-blocks-theme-header-footer' ),
-	'blockTypes' => array( 'core/template-part/footer' ),
+	'categories' => [ 'bcgov-blocks-theme-header-footer' ],
+	'blockTypes' => [ 'core/template-part/footer' ],
 	'content'    => 'WP template content goes here',
-);
+];
