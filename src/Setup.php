@@ -199,7 +199,7 @@ class Setup {
 			return $html;
 		}
 		// Otherwise, inject a default logo markup for use in wp-site-logo blocks.
-		$image = '<img src="' . get_stylesheet_directory_uri() . '/dist/images/bc_gov_logo_transparent.ced9da43.png">';
+		$image = '<img class="bcgov-logo" src="' . get_stylesheet_directory_uri() . '/assets/images/bc_gov_logo_transparent.svg">';
 		$html  = sprintf(
 			'<a href="%1$s" class="custom-logo-link" rel="home"%2$s>%3$s</a>',
 			esc_url( home_url( '/' ) ),

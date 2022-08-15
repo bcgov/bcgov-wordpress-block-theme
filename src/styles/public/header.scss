@@ -50,6 +50,14 @@ html :where(.editor-styles-wrapper) {
 					margin-right: auto;
 					margin-left: auto;
 
+					.wp-block-site-logo {
+
+						img {
+							min-height: 2.66rem;
+							margin-top: 0.33rem;
+						}
+					}
+
 					.wp-block-column:first-of-type {
 						padding-right: 0;
 						padding-left: 0;

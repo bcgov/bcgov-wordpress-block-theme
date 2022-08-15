@@ -15,6 +15,7 @@ import './filters/query-loop-enhanced';
  * Custom Blocks.
  * PHP render functions are used and defined in inc/core/blocks directory.
  */
+// import './blocks/accordion-item';
 import './blocks/card/container';
 import './blocks/card/item';
 
