@@ -20,3 +20,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 - New Info banner + scripts and style fixes [DESCW-514]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-514)
 - Core Templates update [DESCW-512]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-512)
 - Enabled CleanBC Custom Post Type and default template. Enabled Site constants to enable/disable embedded site features eg: CleanBC. Replaced array() with [] throughout. Added JS-based site variables and checks. Updated Readme with developer notes. [DESCW-512]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-512)
+- Various CleanBC patterns + scripts and styles [DESCW-514]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-514)
