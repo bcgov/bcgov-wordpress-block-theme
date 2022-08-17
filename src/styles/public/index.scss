@@ -18,7 +18,7 @@
 @import "./blocks/_block-card-breaks";
 
 // Specific CleanBC Pattern Styles
-@import "./cleanbc/_pattern-home-cover-banner";
-@import "./cleanbc/_pattern-info-cover-banner";
-@import "./cleanbc/_pattern-landing-cover-banner";
-@import "./cleanbc/_pattern-scroll-link-banner";
+@import "./cleanbc/_cleanbc--general";
+@import "./cleanbc/_cleanbc--patterns-banners";
+@import "./cleanbc/_cleanbc--patterns-general";
+@import "./cleanbc/_cleanbc--patterns-header-footer";

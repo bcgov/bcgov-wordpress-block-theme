@@ -108,6 +108,31 @@ html :where(.editor-styles-wrapper) {
 
 	}
 
+
+	&.is-style-underline {
+
+		.wp-block-button {
+
+			&__link {
+				background-color: var(--wp--preset--color--transparent);
+				border-color: currentcolor;
+				border-bottom: 2px solid;
+				border-radius: 0;
+				color: var(--wp--preset--color--primary-brand);
+				padding: calc(0.667em + 2px) 0 calc(0.33em + 2px);
+
+				&:hover,
+				&:focus {
+					filter: contrast(150%);
+					outline: 2px solid currentcolor;
+					outline-offset: 6px;
+				}
+			}
+
+		}
+
+	}
+
 }
 
 /*

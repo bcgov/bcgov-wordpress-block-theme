@@ -1,0 +1,19 @@
+/* stylelint-disable no-descending-specificity */
+
+/* General styles.
+*
+*/
+body {
+
+	.bcgov-body-content {
+
+		h1:not(.is-style-custom),
+		h2:not(.is-style-custom),
+		h3:not(.is-style-custom),
+		h4:not(.is-style-custom),
+		h5:not(.is-style-custom),
+		h6:not(.is-style-custom) {
+			font-weight: 300;
+		}
+	}
+}
