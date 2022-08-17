@@ -1,0 +1,462 @@
+/* stylelint-disable no-descending-specificity */
+
+// Template editor specific styles.
+html :where(.editor-styles-wrapper) {
+
+	.home-cover-banner {
+
+		.wp-block-button {
+
+			&__link {
+				background-color: var(--wp--preset--color--secondary-brand);
+				border-bottom: 12px solid var(--wp--preset--color--denary);
+			}
+		}
+
+		.wp-block-button:nth-of-type(2) {
+
+			.wp-block-button {
+
+				&__link {
+					border-bottom: 12px solid var(--wp--preset--color--tertiary);
+				}
+			}
+		}
+
+		h1 {
+			font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem);
+			line-height: 1.25;
+		}
+
+		h2 {
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem);
+		}
+	}
+
+
+	.info-cover-banner {
+
+		h1 {
+			font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem);
+			line-height: 1.25;
+		}
+
+		h2 {
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem);
+		}
+	}
+
+	.landing-cover-banner {
+
+		h1:not(.is-style-custom) {
+			color: var(--wp--preset--color--white);
+			font-size: clamp(2rem, 0.25rem + 3.3333vw, 3rem) !important;
+			line-height: 1.25;
+			margin-bottom: 0;
+		}
+
+		h2:not(.is-style-custom) {
+			color: var(--wp--preset--color--white);
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+			font-weight: 300;
+			line-height: 1.5;
+		}
+	}
+
+	.scroll-link-banner {
+
+		max-width: 100% !important;
+		padding-bottom: 0;
+
+		.wp-block-group {
+			width: 100%;
+
+			.wp-block-columns {
+				margin-bottom: 0;
+				max-width: 1440px;
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+
+				.wp-block-column {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					align-content: flex-start;
+					height: auto;
+					min-height: 250px;
+
+					> * {
+						width: 100%;
+					}
+				}
+
+			}
+		}
+
+		.wp-block-buttons {
+
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-end;
+
+			.wp-block-button {
+
+				&__link {
+					flex: 1 0 auto;
+				}
+			}
+		}
+	}
+
+	.wp-block-cover {
+		overflow: clip;
+	}
+}
+
+// Home Cover Banner header styles.
+.home-cover-banner {
+
+	.wp-block-cover {
+
+		&__background {
+
+			&.has-background-background-color {
+				background: linear-gradient(100deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 55%, rgba(255, 255, 255, 0) 55%) !important;
+
+				@media (min-width: $breakpoint-sm-md) {
+					background: linear-gradient(105deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0) 50%) !important;
+				}
+				opacity: 1;
+			}
+		}
+
+		&__inner-container {
+			box-sizing: border-box;
+			max-width: 720px;
+			width: 50%;
+			margin: 0 50% 0 auto;
+			padding-right: 0;
+
+			@media (min-width: $breakpoint-sm-md) {
+				padding-right: 6rem;
+			}
+
+			body .bcgov-body-content & {
+
+				h1 {
+					font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem) !important;
+					line-height: 1.25;
+					margin-bottom: 0;
+				}
+
+				h2 {
+					font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+				}
+
+				.wp-block-button {
+
+					&__link {
+						background-color: var(--wp--preset--color--secondary-brand);
+						border-bottom: 12px solid var(--wp--preset--color--tertiary);
+					}
+				}
+
+				.wp-block-button:nth-of-type(2) {
+
+					.wp-block-button {
+
+						&__link {
+							border-bottom: 12px solid var(--wp--preset--color--quarternary);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Info Cover Banner header styles.
+.info-cover-banner {
+
+	.wp-block-columns {
+		margin-bottom: 0;
+		max-width: 1440px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
+		h1 {
+			font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem);
+			line-height: 1.25;
+		}
+
+		h2 {
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem);
+		}
+	}
+}
+
+// Landing Cover Banner header styles.
+.landing-cover-banner {
+
+	overflow: clip;
+
+	.wp-block-cover {
+
+
+		&__background {
+
+			&.has-background-color,
+			&.has-background-dim {
+				filter: drop-shadow(16px 16px 20px var(--wp--preset--color--foreground));
+				background: linear-gradient(100deg, rgba(var(--landing-cover-banner-bg), 1) 0%, rgba(var(--landing-cover-banner-bg), 1) 60%, rgba(var(--landing-cover-banner-bg), 0.33) 60%) !important;
+				overflow: hidden;
+
+				@media (min-width: $breakpoint-sm-md) {
+					filter: drop-shadow(16px 16px 16px var(--wp--preset--color--foreground));
+					background: linear-gradient(105deg, rgba(var(--landing-cover-banner-bg), 1) 0%, rgba(var(--landing-cover-banner-bg), 1) 50%, rgba(var(--landing-cover-banner-bg), 0.33) 50%) !important;
+				}
+				opacity: 1;
+			}
+		}
+
+		&__inner-container {
+			box-sizing: border-box;
+			max-width: 720px;
+			width: 50%;
+			margin: 0 50% 0 auto;
+			padding-right: 0;
+
+			@media (min-width: $breakpoint-sm-md) {
+				padding-right: 6rem;
+			}
+
+			body .bcgov-body-content & {
+
+				h1:not(.is-style-custom) {
+					color: var(--wp--preset--color--white);
+					font-size: clamp(2rem, 0.25rem + 3.3333vw, 3rem) !important;
+					line-height: 1.25;
+					margin-bottom: 0;
+				}
+
+				h2:not(.is-style-custom) {
+					color: var(--wp--preset--color--white);
+					font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+					font-weight: 300;
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+}
+
+// Scroll Link Banner header styles.
+.scroll-link-banner {
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	background-color: var(--wp--preset--color--primary-brand);
+	background-position: right center;
+	position: relative;
+	min-height: 0;
+
+	.wp-block-group.alignwide {
+		margin: 0 auto;
+		max-width: 1440px;
+		width: 100%;
+	}
+
+	&.top {
+		background-position: right top;
+	}
+
+	&.bottom {
+		background-position: right bottom;
+	}
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+	@media (max-width: $breakpoint-md) {
+		background-size: cover;
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		background-position: center;
+
+		&.top {
+			background-position: center top;
+		}
+
+		&.bottom {
+			background-position: center bottom;
+		}
+	}
+
+	width: 100vw;
+
+
+	.wp-block-group {
+
+		&__inner-container {
+
+			display: flex;
+			flex-direction: column;
+			align-items: normal;
+			justify-content: space-between;
+			position: relative;
+			min-height: 380px;
+		}
+	}
+
+	.wp-block-buttons {
+
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-end;
+
+		@media (max-width: $breakpoint-sm) {
+
+			flex-direction: column;
+		}
+		gap: 1rem;
+		position: absolute;
+		bottom: 0;
+		width: 90%;
+
+		@media (min-width: $breakpoint-sm) {
+			width: 100%;
+		}
+
+		.wp-block-button {
+
+			display: flex;
+			align-items: flex-end;
+			flex: 1;
+			margin: 0;
+			max-width: 40%;
+
+			@media (max-width: $breakpoint-sm) {
+				min-width: 40%;
+			}
+
+			.wp-block-button {
+
+				&__link {
+
+					border: none;
+					border-radius: 0;
+					border-bottom: 4px solid currentcolor;
+
+					@media (min-width: $breakpoint-sm) {
+						border-bottom: 12px solid currentcolor;
+					}
+					padding: 0.75rem;
+
+					@media (max-width: $breakpoint-sm) {
+						padding: 0.5rem;
+					}
+					text-align: left;
+					width: 100%;
+
+					&:hover,
+					&:focus {
+						filter: contrast(200%);
+					}
+
+					@media (max-width: $breakpoint-sm) {
+						font-size: 3vw !important;
+					}
+
+					@media (max-width: $breakpoint-xs) {
+						font-size: 3.66vw !important;
+					}
+				}
+			}
+		}
+	}
+
+
+	&.large {
+		min-height: 66vh;
+	}
+
+	max-width: 100%;
+
+	h1 {
+		color: var(--wp--preset--color--white) !important;
+		font-size: 3.5rem;
+		line-height: 1.5;
+		margin: 0 50% 2rem 0 !important;
+
+		text-shadow: 0 0 4px rgba($black, 0.8);
+		background-clip: text;
+		background-color: var(--wp--preset--color--tertiary);
+
+		@media (max-width: $breakpoint-sm) {
+			font-size: 8vw;
+		}
+	}
+}
+
+
+// In-page Cloud Banner with rounded icon styles.
+.in-page-cloud-banner {
+
+	.wp-block-cover {
+		border-radius: 1rem;
+
+		img {
+			border-radius: 1rem;
+		}
+
+		.wp-block-cover {
+
+			&__background {
+				border-radius: 1rem;
+			}
+		}
+	}
+
+	.image-column {
+		background-color: var(--wp--preset--color--accent);
+		border-radius: 50%;
+	}
+}
+
+// In-page Impact Banner with side image styles.
+.in-page-impact-banner {
+
+	.wp-block-media-text {
+		border-radius: 1rem;
+
+		> figure {
+			height: 100%;
+
+			img {
+				border-radius: 1rem 1rem 0 0;
+
+				@media (min-width: calc($breakpoint-xs-sm + 1px)) {
+					border-radius: 1rem 0 0 1rem;
+				}
+				object-fit: cover;
+				height: 100%;
+			}
+		}
+
+		&.has-media-on-the-right > figure {
+
+			img {
+				border-radius: 1rem 1rem 0 0;
+
+				@media (min-width: calc($breakpoint-xs-sm + 1px)) {
+					border-radius: 0 1rem 1rem 0;
+				}
+			}
+		}
+	}
+}

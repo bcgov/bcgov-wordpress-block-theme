@@ -1,0 +1,16 @@
+
+
+.cleanbc-info-cards {
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+
+		body .bcgov-body-content &:not(.is-style-custom) {
+
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+		}
+	}
+}

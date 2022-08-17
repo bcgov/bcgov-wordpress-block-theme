@@ -17,7 +17,7 @@
 				},
 				{
 					"slug": "accent",
-					"color": "#833238",
+					"color": "#F79F31",
 					"name": "Forest Bioeconomy – Accent (Brand)"
 				},
 				{
@@ -67,7 +67,7 @@
 				},
 				{
 					"slug": "nonary",
-					"color": "#F79F31",
+					"color": "#833238",
 					"name": "Communities – Nonary"
 				},
 				{
@@ -122,7 +122,7 @@
 				},
 				{
 					"slug": "background",
-					"color": "#f9f9f9",
+					"color": "#ffffff",
 					"name": "Background"
 				}
 			],

@@ -119,10 +119,17 @@ function bcgov_blocks_theme_register_block_patterns() {
 	*/
 	if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) {
 		// CleanBC header/footer patterns.
+		$block_patterns[] = 'cleanbc/cleanbc-footer-01';
+		$block_patterns[] = 'cleanbc/cleanbc-footer-stack-01';
 		$block_patterns[] = 'cleanbc/cleanbc-home-cover-banner';
 		$block_patterns[] = 'cleanbc/cleanbc-info-cover-banner';
 		$block_patterns[] = 'cleanbc/cleanbc-landing-cover-banner';
 		$block_patterns[] = 'cleanbc/cleanbc-scroll-link-banner';
+		// CleanBC general patterns.
+		$block_patterns[] = 'cleanbc/cleanbc-alternating-home-cards';
+		$block_patterns[] = 'cleanbc/cleanbc-in-page-cloud-banner';
+		$block_patterns[] = 'cleanbc/cleanbc-in-page-impact-banner';
+		$block_patterns[] = 'cleanbc/cleanbc-info-cards';
 		// CleanBC full page patterns.
 		$block_patterns[] = 'cleanbc/goelectric-landing-page';
 	}

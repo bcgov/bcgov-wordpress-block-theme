@@ -36,7 +36,8 @@
 	}
 
 	p:not(.is-style-custom) {
-		font-size: clamp(1rem, 0.25rem + 3.3333vw, 1rem) !important;
+		font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.25rem) !important;
+		line-height: 1.5;
 		min-height: 0;
 	}
 }
@@ -87,7 +88,8 @@ body {
 		}
 
 		p:not(.is-style-custom) {
-			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1rem) !important;
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.25rem) !important;
+			line-height: 1.5;
 			min-height: 0;
 		}
 	}
@@ -117,6 +119,7 @@ main,
 #post-content {
 	margin-top: 0;
 }
+
 
 .wp-site-blocks {
 
