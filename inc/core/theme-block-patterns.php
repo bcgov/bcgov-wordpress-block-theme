@@ -129,9 +129,12 @@ function bcgov_blocks_theme_register_block_patterns() {
 		$block_patterns[] = 'cleanbc/cleanbc-alternating-home-cards';
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-cloud-banner';
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-impact-banner';
+		$block_patterns[] = 'cleanbc/cleanbc-in-page-strategies-banner';
 		$block_patterns[] = 'cleanbc/cleanbc-info-cards';
 		// CleanBC full page patterns.
 		$block_patterns[] = 'cleanbc/goelectric-landing-page';
+		// CleanBC query patterns.
+		$block_patterns[] = 'cleanbc/cleanbc-actions-query';
 	}
 
 	/**

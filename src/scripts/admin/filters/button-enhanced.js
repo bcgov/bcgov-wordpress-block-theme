@@ -1,4 +1,5 @@
 import classnames from 'classnames';
+import iconsObj from '../utils/button-icons';
 
 const { assign, merge } = require('lodash');
 
@@ -15,19 +16,24 @@ const { PanelBody, SelectControl } = wp.components;
  */
 registerBlockStyle('core/button', {
 	name: 'fill',
-	label: 'BCGov Fill',
+	label: 'BCGov',
 	default: 'is-bcgov-fill',
 });
 
 registerBlockStyle('core/button', {
 	name: 'outline',
-	label: 'BCGov Outline',
+	label: 'Outline',
+});
+
+registerBlockStyle('core/button', {
+	name: 'underline',
+	label: 'Underline',
 });
 
 if (window.site.cleanbc) {
 	registerBlockStyle('core/button', {
-		name: 'underline',
-		label: 'CleanBC Default',
+		name: 'blank',
+		label: 'Icon',
 	});
 }
 
@@ -51,6 +57,18 @@ function addAttributes(settings, name) {
 					type: 'string',
 					default: 'regular',
 				},
+				svgIcon: {
+					type: 'string',
+					default: '',
+				},
+				iconsList: {
+					type: 'array',
+					default: iconsObj,
+				},
+				clickFlag: {
+					type: 'boolean',
+					default: false,
+				},
 			}),
 		});
 	}
@@ -64,12 +82,12 @@ addFilter(
 );
 
 /**
- * Add Size control to Button block.
+ * Add Size and Icons control to Button block.
  */
 const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const {
-			attributes: { size },
+			attributes: { size, svgIcon, iconsList, clickFlag },
 			setAttributes,
 			name,
 		} = props;
@@ -78,10 +96,53 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 			return <BlockEdit {...props} />;
 		}
 
+		const handleClick = () => {
+			setAttributes({ clickFlag: true });
+		};
+
 		return (
 			<Fragment>
 				<BlockEdit {...props} />
 				<InspectorControls>
+					<PanelBody
+						title={__('Icon options', 'bcgov-block-theme')}
+						initialOpen={false}
+					>
+						{clickFlag && (
+							<SelectControl
+								label={__('Icon', 'bcgov-block-theme')}
+								value={svgIcon}
+								options={iconsList}
+								onChange={(value) => {
+									setAttributes({ svgIcon: value });
+								}}
+							/>
+						)}
+						{!clickFlag && (
+							<>
+								<h3>Instructions (for CleanBC only):</h3>
+								<p>
+									To change the colour of an icon use the
+									Color ▶ Background setting below.
+								</p>
+								<p>
+									Note that the{' '}
+									<em>
+										icon color change will only work with
+										the Theme palette
+									</em>{' '}
+									of colours.
+								</p>
+								<p>
+									<strong>Enable the Icon style</strong>{' '}
+									button to use list of icon options.
+								</p>
+								<button onClick={handleClick}>
+									Show icons
+								</button>
+							</>
+						)}
+					</PanelBody>
 					<PanelBody
 						title={__('Size options', 'bcgov-block-theme')}
 						initialOpen={true}
@@ -117,12 +178,12 @@ addFilter(
 );
 
 /**
- * Add size class to the block in the editor.
+ * Add additional classes to the block in the editor.
  */
-const addSizeClassEditor = createHigherOrderComponent((BlockListBlock) => {
+const addClassesToEditor = createHigherOrderComponent((BlockListBlock) => {
 	return (props) => {
 		const {
-			attributes: { size },
+			attributes: { size, svgIcon },
 			className,
 			name,
 		} = props;
@@ -136,7 +197,8 @@ const addSizeClassEditor = createHigherOrderComponent((BlockListBlock) => {
 				{...props}
 				className={classnames(
 					className,
-					size ? `has-size-${size}` : ''
+					size ? `has-size-${size}` : '',
+					svgIcon ? `icon-${svgIcon}` : ''
 				)}
 			/>
 		);
@@ -146,5 +208,5 @@ const addSizeClassEditor = createHigherOrderComponent((BlockListBlock) => {
 addFilter(
 	'editor.BlockListBlock',
 	'bcgov-block-theme/button-block/add-editor-class',
-	addSizeClassEditor
+	addClassesToEditor
 );

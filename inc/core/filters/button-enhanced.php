@@ -15,19 +15,27 @@ function add_button_attributes( $block_content = '', $block = [] ) {
 
 	if ( isset( $block['blockName'] ) && 'core/button' === $block['blockName'] ) {
 		$defaults = [
-			'size' => 'regular',
+			'size'    => 'regular',
+			'svgIcon' => 'none',
 		];
 
 		$args = wp_parse_args( $block['attrs'], $defaults );
 
+		if ( 'none' !== $args['svgIcon'] ) {
+			$icon = ' icon icon-' . esc_attr( $args['svgIcon'] );
+		} else {
+			$icon = '';
+		}
+
+		$html = substr_replace( $block_content, $str_to_insert, $pos, 0 );
 		$html = str_replace(
 			[
 				'<div class="wp-block-button',
-				'<a ',
+				'<a class="wp-block-button__link',
 			],
 			[
-				'<div class="wp-block-button has-size-' . esc_attr( $args['size'] ) . ' ',
-				'<a tabindex="0" ',
+				'<div class="wp-block-button has-size-' . esc_attr( $args['size'] ),
+				'<a tabindex="0" class="wp-block-button__link' . $icon,
 			],
 			$block_content
 		);

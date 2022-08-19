@@ -177,6 +177,44 @@ html :where(.editor-styles-wrapper) {
 }
 
 
+// In-page Impact Banner with side image styles.
+.in-page-impact-banner {
+
+	.wp-block-media-text {
+		border-radius: 1rem;
+
+		> figure {
+			height: 100%;
+
+			img {
+				border-radius: 1rem 1rem 0 0;
+
+				@media (min-width: calc($breakpoint-xs-sm + 1px)) {
+					border-radius: 1rem 0 0 1rem;
+				}
+				object-fit: cover;
+				height: 100%;
+			}
+		}
+
+		&.has-media-on-the-right > figure {
+
+			img {
+				border-radius: 1rem 1rem 0 0;
+
+				@media (min-width: calc($breakpoint-xs-sm + 1px)) {
+					border-radius: 0 1rem 1rem 0;
+				}
+			}
+		}
+	}
+}
+
+// In-page Strategies Banner with side image.
+.in-page-strategies-banner {
+	position: relative;
+}
+
 // Info Cover Banner header styles.
 .info-cover-banner {
 
@@ -210,12 +248,12 @@ html :where(.editor-styles-wrapper) {
 
 			&.has-background-color,
 			&.has-background-dim {
-				filter: drop-shadow(16px 16px 20px var(--wp--preset--color--foreground));
+				filter: drop-shadow(16px -8px 20px var(--wp--preset--color--foreground));
 				background: linear-gradient(100deg, rgba(var(--landing-cover-banner-bg), 1) 0%, rgba(var(--landing-cover-banner-bg), 1) 60%, rgba(var(--landing-cover-banner-bg), 0.33) 60%) !important;
 				overflow: hidden;
 
 				@media (min-width: $breakpoint-sm-md) {
-					filter: drop-shadow(16px 16px 16px var(--wp--preset--color--foreground));
+					filter: drop-shadow(16px -8px 16px var(--wp--preset--color--foreground));
 					background: linear-gradient(105deg, rgba(var(--landing-cover-banner-bg), 1) 0%, rgba(var(--landing-cover-banner-bg), 1) 50%, rgba(var(--landing-cover-banner-bg), 0.33) 50%) !important;
 				}
 				opacity: 1;
@@ -425,38 +463,5 @@ html :where(.editor-styles-wrapper) {
 	.image-column {
 		background-color: var(--wp--preset--color--accent);
 		border-radius: 50%;
-	}
-}
-
-// In-page Impact Banner with side image styles.
-.in-page-impact-banner {
-
-	.wp-block-media-text {
-		border-radius: 1rem;
-
-		> figure {
-			height: 100%;
-
-			img {
-				border-radius: 1rem 1rem 0 0;
-
-				@media (min-width: calc($breakpoint-xs-sm + 1px)) {
-					border-radius: 1rem 0 0 1rem;
-				}
-				object-fit: cover;
-				height: 100%;
-			}
-		}
-
-		&.has-media-on-the-right > figure {
-
-			img {
-				border-radius: 1rem 1rem 0 0;
-
-				@media (min-width: calc($breakpoint-xs-sm + 1px)) {
-					border-radius: 0 1rem 1rem 0;
-				}
-			}
-		}
 	}
 }
