@@ -1,0 +1,46 @@
+/* stylelint-disable no-descending-specificity */
+
+
+// Template editor specific styles.
+html :where(.editor-styles-wrapper) {
+
+	.wp-block-query {
+
+		.block-editor-block-list {
+
+			&__layout {
+				padding: 0;
+
+				figure {
+					border-right: 10px solid var(--wp--preset--color--accent);
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+/* CleanBC Query styles
+*
+*/
+.wp-block-group {
+
+	&.is-actions-query-loop {
+
+		.cleanbc-actions {
+
+			.wp-block-columns {
+				padding: 0;
+
+				h2 {
+					margin: 0;
+				}
+
+				.wp-block-post-featured-image {
+					border-right: 10px solid var(--wp--preset--color--accent);
+					margin: 0;
+				}
+			}
+		}
+	}
+}

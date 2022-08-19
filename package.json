@@ -39,5 +39,7 @@
     "test:unit": "wp-scripts test-unit-js --passWithNoTests",
     "test": "npm run test:unit"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@wordpress/icons": "^9.6.0"
+  }
 }
