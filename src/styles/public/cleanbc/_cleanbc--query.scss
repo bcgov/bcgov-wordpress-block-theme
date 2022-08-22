@@ -4,21 +4,174 @@
 // Template editor specific styles.
 html :where(.editor-styles-wrapper) {
 
-	.wp-block-query {
+	.is-actions-query-loop {
 
-		.block-editor-block-list {
+		.wp-block-query {
 
-			&__layout {
-				padding: 0;
+			.block-editor-block-list {
 
-				figure {
-					border-right: 10px solid var(--wp--preset--color--accent);
-					margin: 0;
+				&__layout {
+					padding: 0;
+
+					figure {
+						border-right: 10px solid var(--wp--preset--color--accent);
+						margin: 0;
+					}
 				}
 			}
 		}
 	}
 }
+
+/* CleanBC Actions Toggle Query styles
+*
+*/
+.actions-accordion-header {
+
+	.collapse-header {
+
+		.collapse-title {
+
+
+			span {
+				display: inline-block !important;
+
+				&.count {
+					background-color: rgba(var(--quinary-rgb), 20%);
+					width: 2rem;
+					height: 2rem;
+					text-align: center;
+					border-radius: 50%;
+					font-size: 1.5rem;
+					vertical-align: middle;
+					padding: 0.4rem 0.33rem 0.2rem;
+				}
+			}
+		}
+	}
+
+	body .bcgov-body-content & {
+
+		h2:not(.is-style-custom),
+		h3:not(.is-style-custom),
+		h4:not(.is-style-custom) {
+			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+			color: var(--wp--preset--color--headline-color);
+			margin-bottom: 1rem;
+			padding-bottom: 1rem;
+		}
+
+		.collapse-header {
+
+			h2:not(.is-style-custom),
+			h3:not(.is-style-custom),
+			h4:not(.is-style-custom) {
+				font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.25rem) !important;
+				border-bottom: 4px solid var(--wp--preset--color--tertiary);
+			}
+		}
+	}
+
+	.taxonomy-post {
+
+		&_tag {
+
+			a {
+				background-color: rgba(var(--primary-brand-rgb), 20%);
+				border-radius: 0.25rem;
+				display: inline-block;
+				padding: 0.5rem 1rem;
+				pointer-events: none;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+
+/* CleanBC Actions Toggle Query styles
+*
+*/
+.actions-toggle-header {
+
+	.active {
+		background-color: var(--wp--preset--color--primary-brand) !important;
+		color: var(--wp--preset--color--white) !important;
+	}
+
+	.wp-block-buttons {
+		gap: 0.75rem;
+
+		.wp-block-button {
+
+			.wp-block-button {
+
+				&__link {
+
+					padding: 0.5rem 1rem;
+
+					@media (min-width: $breakpoint-sm) {
+						padding: calc(0.667em + 2px) calc(1.333em + 2px);
+					}
+				}
+			}
+		}
+
+	}
+}
+
+.actions-toggle-query-loop {
+	padding: 0;
+
+	.hidden {
+		display: none;
+	}
+
+	.is-content-column {
+		padding: 0 2rem;
+
+		@media (min-width: $breakpoint-xl) {
+			padding: 0;
+		}
+	}
+
+	.wp-block-post-title {
+		margin: 1rem 0;
+	}
+
+	.wp-block-group {
+		border-left: 10px solid var(--wp--preset--color--tertiary);
+		padding: 1rem 2rem 2rem;
+
+
+	}
+
+	.wp-block-post-featured-image {
+		margin: 0;
+		padding: 0;
+		min-height: 300px;
+		max-height: 450px;
+
+		@media (min-width: $breakpoint-sm) {
+			max-height: 100%;
+		}
+		justify-content: stretch;
+		display: flex;
+
+		img {
+			max-width: 100%;
+			width: 100%;
+			vertical-align: middle;
+			object-fit: cover;
+			border-top: 10px solid var(--wp--preset--color--accent);
+
+			@media (min-width: $breakpoint-sm) {
+				border: none;
+			}
+		}
+	}
+}
+
 
 /* CleanBC Query styles
 *
@@ -31,10 +184,6 @@ html :where(.editor-styles-wrapper) {
 
 			.wp-block-columns {
 				padding: 0;
-
-				h2 {
-					margin: 0;
-				}
 
 				.wp-block-post-featured-image {
 					border-right: 10px solid var(--wp--preset--color--accent);

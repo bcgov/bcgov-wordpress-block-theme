@@ -26,3 +26,19 @@ export const defaults = (value, defaultValue) => {
 	}
 	return value;
 };
+
+/**
+ * Simulate a click trigger event.
+ *
+ * @param {Element} el  the element to simulate a click on
+ */
+/* eslint-disable no-unused-vars */
+export const triggerClick = (el) => {
+	const evt = new window.MouseEvent('click', {
+		bubbles: true,
+		cancelable: true,
+		view: window,
+	});
+	const canceled = !el.dispatchEvent(evt);
+};
+/* eslint-disable no-unused-vars */

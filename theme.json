@@ -32,6 +32,13 @@
 			"postTypes": [
 				"cleanbc-actions"
 			]
+		},
+		{
+			"name": "single-cleanbc-projects",
+			"title": "CleanBC Project Post",
+			"postTypes": [
+				"cleanbc-projects"
+			]
 		}
 	],
 	"templateParts": [

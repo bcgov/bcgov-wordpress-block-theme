@@ -135,6 +135,8 @@ function bcgov_blocks_theme_register_block_patterns() {
 		$block_patterns[] = 'cleanbc/goelectric-landing-page';
 		// CleanBC query patterns.
 		$block_patterns[] = 'cleanbc/cleanbc-actions-query';
+		$block_patterns[] = 'cleanbc/cleanbc-actions-toggle-query';
+		$block_patterns[] = 'cleanbc/cleanbc-ongoing-projects-query';
 	}
 
 	/**
