@@ -16,6 +16,7 @@
 
 // Specific Block Styles
 @import "./blocks/_block-card-breaks";
+@import "../../scripts/admin/blocks/collapse/container";
 
 // Specific CleanBC Pattern Styles
 @import "./cleanbc/_cleanbc--general";
@@ -23,3 +24,4 @@
 @import "./cleanbc/_cleanbc--patterns-general";
 @import "./cleanbc/_cleanbc--patterns-header-footer";
 @import "./cleanbc/_cleanbc--query";
+

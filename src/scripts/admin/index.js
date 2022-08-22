@@ -18,6 +18,9 @@ import './filters/query-loop-enhanced';
 // import './blocks/accordion-item';
 import './blocks/card/container';
 import './blocks/card/item';
+import './blocks/collapse/app.js';
+import './blocks/collapse/container';
+import './blocks/collapse/item';
 
 /**
  * Pattern scripts.

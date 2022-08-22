@@ -22,3 +22,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 - Enabled CleanBC Custom Post Type and default template. Enabled Site constants to enable/disable embedded site features eg: CleanBC. Replaced array() with [] throughout. Added JS-based site variables and checks. Updated Readme with developer notes. [DESCW-512]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-512)
 - Various CleanBC patterns + scripts and styles [DESCW-514]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-514)
 - CleanBC added icon buttons, updated CPT, Added patterns and related imagery/icons, Added Allow list for blocks in editor [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
+- Added Projects CPT, two querys: toggle for Actions and accordion for Projects, added BCGov Accordion to theme, refactored away from jQuery/Bootstrap, now functions with ES6, various styles and patterns updated/added. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)

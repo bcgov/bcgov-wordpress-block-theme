@@ -27,7 +27,6 @@ function add_button_attributes( $block_content = '', $block = [] ) {
 			$icon = '';
 		}
 
-		$html = substr_replace( $block_content, $str_to_insert, $pos, 0 );
 		$html = str_replace(
 			[
 				'<div class="wp-block-button',

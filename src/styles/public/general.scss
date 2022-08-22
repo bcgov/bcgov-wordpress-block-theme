@@ -5,33 +5,38 @@
 
 
 	h1:not(.is-style-custom) {
-		font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.5rem) !important;
+		font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.25rem) !important;
+		line-height: 1.25;
 		min-height: 0;
-
 	}
 
 	h2:not(.is-style-custom) {
-		font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 3rem) !important;
+		font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 2.75rem) !important;
+		line-height: 1.25;
 		min-height: 0;
 	}
 
 	h3:not(.is-style-custom) {
-		font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.5rem) !important;
+		font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.25rem) !important;
+		line-height: 1.25;
 		min-height: 0;
 	}
 
 	h4:not(.is-style-custom) {
-		font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 2.25rem) !important;
+		font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 2rem) !important;
+		line-height: 1.25;
 		min-height: 0;
 	}
 
 	h5:not(.is-style-custom) {
-		font-size: clamp(1.1rem, 0.25rem + 3.3333vw, 2rem) !important;
+		font-size: clamp(1.1rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+		line-height: 1.25;
 		min-height: 0;
 	}
 
 	h6:not(.is-style-custom) {
-		font-size: clamp(1.05rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+		font-size: clamp(1.05rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+		line-height: 1.25;
 		min-height: 0;
 	}
 
@@ -58,32 +63,38 @@ body {
 	.bcgov-body-content {
 
 		h1:not(.is-style-custom) {
-			font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.5rem) !important;
+			font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.25rem) !important;
+			line-height: 1.25;
 			min-height: 0;
 		}
 
 		h2:not(.is-style-custom) {
-			font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 3rem) !important;
+			font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 2.75rem) !important;
+			line-height: 1.25;
 			min-height: 0;
 		}
 
 		h3:not(.is-style-custom) {
-			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.5rem) !important;
+			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.25rem) !important;
+			line-height: 1.25;
 			min-height: 0;
 		}
 
 		h4:not(.is-style-custom) {
-			font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 2.25rem) !important;
+			font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 2rem) !important;
+			line-height: 1.25;
 			min-height: 0;
 		}
 
 		h5:not(.is-style-custom) {
-			font-size: clamp(1.1rem, 0.25rem + 3.3333vw, 2rem) !important;
+			font-size: clamp(1.1rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+			line-height: 1.25;
 			min-height: 0;
 		}
 
 		h6:not(.is-style-custom) {
-			font-size: clamp(1.05rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+			font-size: clamp(1.05rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+			line-height: 1.25;
 			min-height: 0;
 		}
 

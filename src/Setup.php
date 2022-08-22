@@ -52,7 +52,7 @@ class Setup {
 	 	*/
 		if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC' ) && CLEANBC ) {
 			require_once get_template_directory() . '/src/custom-types/cleanbc/cleanbc-actions.php';
-			require_once get_template_directory() . '/src/custom-types/cleanbc/cleanbc-taxonomy.php';
+			require_once get_template_directory() . '/src/custom-types/cleanbc/cleanbc-projects.php';
 		}
 	}
 
