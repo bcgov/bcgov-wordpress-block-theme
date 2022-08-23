@@ -4,6 +4,28 @@
 // Template editor specific styles.
 html :where(.editor-styles-wrapper) {
 
+	.actions-accordion-header {
+
+		h2:not(.is-style-custom),
+		h3:not(.is-style-custom),
+		h4:not(.is-style-custom) {
+			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+			color: var(--wp--preset--color--headline-color);
+			margin-bottom: 1rem;
+			padding-bottom: 1rem;
+		}
+
+		.collapse-header {
+
+			h2:not(.is-style-custom),
+			h3:not(.is-style-custom),
+			h4:not(.is-style-custom) {
+				font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.25rem) !important;
+				border-bottom: 4px solid var(--wp--preset--color--tertiary);
+			}
+		}
+	}
+
 	.is-actions-query-loop {
 
 		.wp-block-query {
@@ -136,21 +158,19 @@ html :where(.editor-styles-wrapper) {
 	}
 
 	.wp-block-post-title {
-		margin: 1rem 0;
+		margin: 2rem 0 1rem;
 	}
 
 	.wp-block-group {
 		border-left: 10px solid var(--wp--preset--color--tertiary);
 		padding: 1rem 2rem 2rem;
-
-
+		margin-bottom: 2rem;
 	}
 
 	.wp-block-post-featured-image {
 		margin: 0;
 		padding: 0;
-		min-height: 300px;
-		max-height: 450px;
+		min-height: 350px;
 
 		@media (min-width: $breakpoint-sm) {
 			max-height: 100%;

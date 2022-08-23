@@ -74,6 +74,16 @@ const domReady = () => {
 					linkAddition.innerText = `${
 						linkAddition.innerText
 					} ${heading.toLowerCase()}`;
+					linkAddition.setAttribute(
+						'src',
+						`${window.site.domain}/actions/${heading
+							.toLowerCase()
+							.replace(/ /g, '-')
+							.replace(/[^\w-]+/g, '')}`
+					);
+					linkAddition.addEventListener('click', (e) => {
+						window.location.href = e.target.getAttribute('src');
+					});
 				}
 
 				const newClass = heading

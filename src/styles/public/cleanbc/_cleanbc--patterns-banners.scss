@@ -465,3 +465,67 @@ html :where(.editor-styles-wrapper) {
 		border-radius: 50%;
 	}
 }
+
+// In-page Full width with image Banner.
+.in-page-full-width-constrained-section {
+
+	padding: 0;
+
+	.wp-block-media-text {
+		max-width: 1440px;
+		margin: 0 auto;
+
+		.wp-block-media-text {
+
+			&__content {
+				padding: 0;
+
+				.wp-block-group {
+					padding: 0;
+
+					.content-group {
+						border-left: 10px solid var(--wp--preset--color--tertiary);
+						padding: 0 2rem;
+						margin-bottom: 2rem;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+// Level 3 Dark Banner.
+.level-3-banner {
+
+	display: flex;
+	min-height: 600px;
+	height: 50vh;
+
+	.wp-block-columns {
+		margin: auto;
+		margin-bottom: 0;
+		max-width: 1440px;
+		width: 100%;
+	}
+
+	.content-column {
+		max-width: 50%;
+	}
+
+	.image-column {
+		display: flex;
+		background-color: var(--wp--preset--color--accent);
+		border-radius: 50%;
+		height: auto;
+		min-height: 35vh;
+		max-width: 35vw;
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+
+		figure {
+			margin: auto;
+		}
+	}
+}
