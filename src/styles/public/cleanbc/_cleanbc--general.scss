@@ -26,6 +26,29 @@ body {
 	}
 }
 
+.wp-block-media-text {
+
+	.wp-block-media-text {
+
+		&__media {
+
+
+			height: 100%;
+
+			img,
+			video {
+				max-width: unset;
+				object-fit: cover;
+				vertical-align: middle;
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+	}
+}
+
+
 .on-this-page {
 	border-width: 8px 0 0 0 !important;
 	margin-bottom: 3rem;
@@ -93,6 +116,15 @@ body {
 				border-bottom-width: 0 !important;
 				border-left-width: 0 !important;
 				border-right-width: 0 !important;
+			}
+
+			body & {
+
+				h2:not(.is-style-custom),
+				h3:not(.is-style-custom),
+				h4:not(.is-style-custom) {
+					font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+				}
 			}
 		}
 	}

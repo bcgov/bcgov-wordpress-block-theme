@@ -106,7 +106,7 @@ class Setup {
     public function set_javascript_variables() {
 		$javascript_variables = array(
 			'domain'    => home_url(),
-			'site-name' => 'bcgov',
+			'siteName' => 'cleanbc',
 		);
 
 		if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC' ) ) {

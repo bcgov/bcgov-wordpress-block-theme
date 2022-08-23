@@ -126,7 +126,13 @@
 					"name": "Background"
 				}
 			],
-			"gradients": []
+			"gradients": [
+				{
+					"name": "Blue Opacity",
+					"slug": "blue-opacity",
+					"gradient": "linear-gradient(180deg,rgba(#005C97, 0.8) 0%,rgba(#005C97, 1) 100%)",
+				}
+			]
 		},
 		"spacing": {
 			"blockGap": null
