@@ -39,6 +39,13 @@
 			"postTypes": [
 				"cleanbc-projects"
 			]
+		},
+		{
+			"name": "single-cleanbc-thing",
+			"title": "CleanBC Thing Post",
+			"postTypes": [
+				"thing"
+			]
 		}
 	],
 	"templateParts": [
@@ -224,7 +231,23 @@
 					"name": "Background"
 				}
 			],
-			"gradients": []
+			"gradients": [
+				{
+					"name": "Primary (Brand) Opacity",
+					"slug": "primary-brand-opacity",
+					"gradient": "linear-gradient(180deg, rgba(0,42,78,0.8) 0%, rgba(0,42,78,1) 100%)"
+				},
+				{
+					"name": "Secondary (Brand) Opacity",
+					"slug": "secondary-brand-opacity",
+					"gradient": "linear-gradient(180deg, rgba(0,92,151,1) 0%, rgba(0,92,151,1) 100%;"
+				},
+				{
+					"name": "Accent (Brand) Opacity",
+					"slug": "accent-brand-opacity",
+					"gradient": "linear-gradient(180deg, rgba(247,159,49,1) 0%, rgba(247,159,49,1) 100%)"
+				}
+			]
 		},
 		"layout": {
 			"contentSize": "840px",

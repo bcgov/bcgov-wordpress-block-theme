@@ -233,6 +233,12 @@ html :where(.editor-styles-wrapper) {
 		h2 {
 			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem);
 		}
+
+		.image-column {
+			flex-basis: calc(33.333% - 2rem) !important;
+			border-radius: 50%;
+			margin-right: 2rem;
+		}
 	}
 }
 
@@ -478,7 +484,7 @@ html :where(.editor-styles-wrapper) {
 		.wp-block-media-text {
 
 			&__content {
-				padding: 0;
+				padding: 0 0 0 2rem;
 
 				.wp-block-group {
 					padding: 0;
@@ -488,10 +494,74 @@ html :where(.editor-styles-wrapper) {
 						padding: 0 2rem;
 						margin-bottom: 2rem;
 					}
+
+					img {
+
+						@media ($breakpoint-lg) {
+							aspect-ratio: 1 / 1;
+						}
+					}
 				}
 			}
 		}
+	}
 
+	.has-media-on-the-right {
+
+		&.wp-block-media-text {
+
+			.wp-block-media-text {
+
+				&__content {
+					padding: 0 2rem 0 0;
+				}
+			}
+		}
+	}
+}
+
+.in-page-level-4-top-banner {
+
+	padding: 0;
+
+	.wp-block-media-text {
+		max-width: 1440px;
+		margin: 0 auto;
+
+		.wp-block-media-text {
+
+			&__content {
+				padding: 0 0 0 2rem;
+
+				.wp-block-group {
+					padding: 0;
+
+					.content-group {
+						margin-bottom: 2rem;
+					}
+
+					img {
+
+						@media ($breakpoint-lg) {
+							aspect-ratio: 1 / 1;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.has-media-on-the-right {
+
+		&.wp-block-media-text {
+
+			.wp-block-media-text {
+
+				&__content {
+					padding: 0 2rem 0 0;
+				}
+			}
+		}
 	}
 }
 

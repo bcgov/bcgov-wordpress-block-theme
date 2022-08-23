@@ -1,0 +1,103 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+
+/*
+ * Editor Styles – use when editor specific style specificity is required.
+ */
+html :where(.editor-styles-wrapper) {
+
+	/*
+	*  Takeover Menu Template Part.
+	*/
+	.is-style-takeover-menu {
+		background-color: transparent;
+	}
+
+}
+
+/*
+ *  Takeover Menu Template Part.
+ */
+body.cleanbc {
+
+	.is-style-takeover-menu {
+
+		.wp-block-navigation {
+
+			&__responsive-container-content {
+
+				ul:not(.wp-block-navigation__submenu-container) {
+
+					border: 1px dashed var(--wp--preset--color--senary);
+					display: flex;
+					justify-content: space-between !important;
+					flex-direction: column !important;
+					height: 40vh;
+					width: 90vw;
+					max-height: 500px;
+
+					li {
+
+						&:nth-child(1) a {
+							border-bottom: 8px solid var(--wp--preset--color--tertiary);
+						}
+
+						&:nth-child(2) a {
+							border-bottom: 8px solid var(--wp--preset--color--accent);
+						}
+
+						&:nth-child(3) a {
+							border-bottom: 8px solid var(--wp--preset--color--quarternary);
+						}
+
+						&:nth-child(4) a {
+							border-bottom: 8px solid var(--wp--preset--color--tridenary);
+						}
+
+						&:nth-child(5) a {
+							border-bottom: 8px solid var(--wp--preset--color--octonary);
+						}
+
+						&:nth-child(6) a {
+							border-bottom: 8px solid var(--wp--preset--color--senary);
+						}
+
+						a {
+							margin-bottom: 1rem;
+
+							&:hover,
+							&:focus {
+								border-bottom: 8px solid var(--wp--preset--color--background);
+							}
+						}
+					}
+				}
+
+				ul.wp-block-navigation__submenu-container {
+
+					a {
+						border-bottom: 2px solid var(--wp--preset--color--transparent) !important;
+						/* stylelint-disable font-weight-notation */
+						font-weight: 700 !important;
+						margin: 1rem 0 0 !important;
+						width: 100%;
+						min-width: 300px;
+
+						&:hover,
+						&:focus {
+							border-bottom: 2px solid var(--wp--preset--color--background) !important;
+						}
+					}
+
+					ul.wp-block-navigation__submenu-container {
+
+						a {
+							font-weight: 300 !important;
+							margin: 0 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
