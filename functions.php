@@ -38,12 +38,3 @@ if ( class_exists( 'Bcgov\\Theme\\Block\\Setup' ) ) {
  * @since 1.0.0
  */
 require_once get_template_directory() . '/inc/core/theme-bootstrap.php';
-
-/**
- * Load options admin page.
- *
- * @since 1.0.0
- */
-if ( function_exists( 'acf_add_options_page' ) ) {
-	acf_add_options_page();
-}

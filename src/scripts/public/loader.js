@@ -6,7 +6,7 @@ const domReady = () => {
 	 * SafarIE bug requires 0ms timeout.
 	 */
 	setTimeout(function() {
-		if ('cleanbc' === window.site.siteName) {
+		if (null !== window.site.siteName) {
 			document.querySelector('body').classList.add(window.site.siteName);
 		}
 	}, 0);
