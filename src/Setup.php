@@ -46,13 +46,26 @@ class Setup {
 	 */
 	public function bcgov_block_theme(): void {
 
+		// Load options admin page. Requires ACF Pro plugin.
+		if ( function_exists( 'acf_add_options_page' ) ) {
+
+			acf_add_options_page(
+                [
+					'page_title'  => 'BCGov Block Theme Options',
+					'menu_title'  => 'Theme Options',
+					'menu_slug'   => 'theme-options',
+					'capabaility' => 'edit_posts',
+					'parent_slug' => false,
+					'icon_url'    => false,
+					'redirect'    => false,
+				]
+            );
+
+		}
+
 		load_theme_textdomain( 'bcgov-block-theme', get_template_directory() . '/languages' );
 
-		/*
-			* Enable support for Post Thumbnails on posts and pages.
-			*
-			* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-			*/
+		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails' );
 
 		// Add support for Block Styles.
@@ -76,6 +89,23 @@ class Setup {
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
+
+		// Pre-populate body class options with sites developed with this theme.
+		if ( function_exists( 'acf_add_options_page' ) ) {
+			add_filter(
+                'acf/load_field/name=active_site',
+                function( $field ) {
+					$choices                = [
+						'bcgov'   => __( 'Default (BCGov)', 'bcgov-block-theme' ),
+						'buybc'   => __( 'BuyBC', 'bcgov-block-theme' ),
+						'cleanbc' => __( 'CleanBC', 'bcgov-block-theme' ),
+					];
+					$field['choices']       = $choices;
+					$field['default_value'] = 'bcgov';
+					return $field;
+				}
+            );
+		}
 	}
 
  	/**
@@ -85,13 +115,15 @@ class Setup {
      * @return array
      */
     public function set_javascript_variables() {
+
 		$javascript_variables = array(
 			'domain'   => home_url(),
 			'siteName' => 'bcgov',
 		);
 
-		if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC' ) ) {
-			$javascript_variables['cleanbc'] = CLEANBC;
+		// Overwrite default with options value set in the Theme Option admin.
+		if ( function_exists( 'acf_add_options_page' ) ) {
+			$javascript_variables['siteName'] = get_field( 'active_site', 'option' );
 		}
 
 		return $javascript_variables;
@@ -216,19 +248,19 @@ class Setup {
 	 */
 	public function bcgov_block_theme_dependencies() {
 		// Checks for AIOSEO breadcrumb specific function.
+		$message_intro = __( 'Warning: The BCGov Block Theme needs the', 'bcgov_block_theme' );
+
 		if ( ! function_exists( 'aioseo_breadcrumbs' ) ) {
-			$className     = 'error';
 			$plugin        = 'All in One SEO';
-			$message_intro = __( 'Warning: The BCGov Block Theme needs the', 'bcgov_block_theme' );
+			$className     = 'error';
 			$message_extro = __( 'plugin activated to enable to page specific breadcrumb navigation.', 'bcgov_block_theme' );
 
 			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
 		}
 
 		if ( ! function_exists( 'acf_add_options_page' ) ) {
-			$className     = 'error';
 			$plugin        = 'Advanced Custom Fields PRO';
-			$message_intro = __( 'Warning: The BCGov Block Theme needs the', 'bcgov_block_theme' );
+			$className     = 'error';
 			$message_extro = __( 'plugin activated to enable admin options page.', 'bcgov_block_theme' );
 
 			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
