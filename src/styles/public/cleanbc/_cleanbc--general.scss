@@ -31,8 +31,6 @@ body {
 	.wp-block-media-text {
 
 		&__media {
-
-
 			height: 100%;
 
 			img,
@@ -122,6 +120,57 @@ body {
 
 				h2:not(.is-style-custom),
 				h3:not(.is-style-custom),
+				h4:not(.is-style-custom) {
+					font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+				}
+			}
+		}
+	}
+}
+
+
+.two-up-card-feature {
+
+	.wp-block-columns {
+		max-width: 1440px;
+		margin: 0 auto;
+
+		.wp-block-column {
+			border-radius: 1rem;
+		}
+
+		.wp-block-image {
+			margin: 0;
+			aspect-ratio: 16 / 7;
+			width: 100%;
+			border-radius: 1rem 1rem 0 0;
+
+			img {
+				width: 100%;
+				aspect-ratio: 16 / 7;
+				object-fit: cover;
+				border-radius: 1rem 1rem 0 0;
+			}
+		}
+
+		.wp-block-group {
+
+			&.has-border-color {
+				border-bottom-width: 0 !important;
+				border-left-width: 0 !important;
+				border-right-width: 0 !important;
+			}
+
+			body & {
+
+				h2:not(.is-style-custom) {
+					font-size: clamp(1.35rem, 0.25rem + 3.3333vw, 2rem) !important;
+				}
+
+				h3:not(.is-style-custom) {
+					font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+				}
+
 				h4:not(.is-style-custom) {
 					font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 1.5rem) !important;
 				}

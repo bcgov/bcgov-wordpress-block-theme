@@ -10,9 +10,9 @@ return [
 	'title'      => __( 'Level 3 Dark Banner', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-header-footer' ],
 	'content'    => '<!-- wp:group {"align":"full","backgroundColor":"secondary-brand","className":"level-3-banner"} -->
-	<div class="wp-block-group alignfull level-3-banner has-secondary-brand-background-color has-background"><!-- wp:columns {"verticalAlignment":null,"className":"info-cover-banner"} -->
-	<div class="wp-block-columns info-cover-banner"><!-- wp:column {"verticalAlignment":"center","width":"66.66%","className":"content-column"} -->
-	<div class="wp-block-column is-vertically-aligned-center content-column" style="flex-basis:66.66%"><!-- wp:heading {"level":1,"textColor":"background"} -->
+	<div class="wp-block-group alignfull level-3-banner has-secondary-brand-background-color has-background"><!-- wp:columns -->
+	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","width":"","className":"content-column"} -->
+	<div class="wp-block-column is-vertically-aligned-center content-column"><!-- wp:heading {"level":1,"textColor":"background"} -->
 	<h1 class="has-background-color has-text-color">Sources of Climate Change</h1>
 	<!-- /wp:heading -->
 	
