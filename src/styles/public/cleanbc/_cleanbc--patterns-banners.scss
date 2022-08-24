@@ -483,6 +483,22 @@ html :where(.editor-styles-wrapper) {
 
 		.wp-block-media-text {
 
+			&__media {
+				aspect-ratio: initial;
+
+				@media (min-width: $breakpoint-sm) {
+					aspect-ratio: 1 / 1;
+				}
+
+				img {
+					aspect-ratio: initial;
+
+					@media (min-width: $breakpoint-sm) {
+						aspect-ratio: 1 / 1;
+					}
+				}
+			}
+
 			&__content {
 				padding: 0 0 0 2rem;
 
@@ -494,15 +510,9 @@ html :where(.editor-styles-wrapper) {
 						padding: 0 2rem;
 						margin-bottom: 2rem;
 					}
-
-					img {
-
-						@media ($breakpoint-lg) {
-							aspect-ratio: 1 / 1;
-						}
-					}
 				}
 			}
+
 		}
 	}
 
@@ -518,11 +528,31 @@ html :where(.editor-styles-wrapper) {
 			}
 		}
 	}
+
+	&.floating {
+
+		.wp-block-media-text {
+
+			&__media {
+				aspect-ratio: initial;
+				border-radius: 2rem;
+
+				img {
+					aspect-ratio: initial;
+					border-radius: 2rem;
+				}
+			}
+		}
+	}
 }
 
 .in-page-level-4-top-banner {
 
 	padding: 0;
+
+	.wp-block-cover {
+		padding: 0 0 1rem;
+	}
 
 	.wp-block-media-text {
 		max-width: 1440px;
@@ -573,25 +603,38 @@ html :where(.editor-styles-wrapper) {
 	height: 50vh;
 
 	.wp-block-columns {
-		margin: auto;
 		margin-bottom: 0;
 		max-width: 1440px;
 		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
+
 	}
 
 	.content-column {
 		max-width: 50%;
+
+		h1 {
+			font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem);
+			line-height: 1.25;
+		}
+
+		h2 {
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem);
+		}
 	}
 
 	.image-column {
+		aspect-ratio: 1 / 1;
 		display: flex;
+		flex-basis: calc(33.333% - 4rem) !important;
 		background-color: var(--wp--preset--color--accent);
 		border-radius: 50%;
 		height: auto;
-		min-height: 35vh;
 		max-width: 35vw;
 		width: 100%;
-		margin-right: auto;
+		margin-right: 2rem;
 		margin-left: auto;
 
 		figure {
