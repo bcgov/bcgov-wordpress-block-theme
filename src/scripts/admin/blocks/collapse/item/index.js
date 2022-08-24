@@ -1,13 +1,25 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks, RichText } from '@wordpress/block-editor';
-import { attributes } from './attributes';
 
 registerBlockType('bcgov-block-theme/collapse-item', {
 	title: __('Collapse Item', 'bcgov-blocks'),
 	icon: 'welcome-add-page',
 	category: 'layout',
-	attributes,
+	attributes: {
+		title: {
+			type: 'string',
+			selector: '.bcgov-collapse-title',
+		},
+		itemId: {
+			type: 'string',
+			default: '',
+		},
+		headingId: {
+			type: 'string',
+			default: '',
+		},
+	},
 	example: {},
 	edit: (props) => {
 		const {

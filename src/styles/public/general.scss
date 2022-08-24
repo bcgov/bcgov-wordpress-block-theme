@@ -65,6 +65,7 @@ body {
 	* Clamp adjusts between viewport sizes of 320px to 840px
  	*/
 	.bcgov-body-content {
+		flex: 1;
 
 		h1:not(.is-style-custom) {
 			font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.25rem) !important;

@@ -25,27 +25,6 @@
 			"postTypes": [
 				"post"
 			]
-		},
-		{
-			"name": "single-cleanbc-actions",
-			"title": "CleanBC Action Post",
-			"postTypes": [
-				"cleanbc-actions"
-			]
-		},
-		{
-			"name": "single-cleanbc-projects",
-			"title": "CleanBC Project Post",
-			"postTypes": [
-				"cleanbc-projects"
-			]
-		},
-		{
-			"name": "single-cleanbc-thing",
-			"title": "CleanBC Thing Post",
-			"postTypes": [
-				"thing"
-			]
 		}
 	],
 	"templateParts": [

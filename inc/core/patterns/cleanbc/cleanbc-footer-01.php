@@ -25,12 +25,12 @@ return [
 	
 	<!-- wp:column {"verticalAlignment":"bottom","width":""} -->
 	<div class="wp-block-column is-vertically-aligned-bottom"><!-- wp:group {"style":{"border":{"radius":{"topLeft":"1rem","topRight":"1rem","bottomLeft":"0px","bottomRight":"0px"}}},"backgroundColor":"secondary-brand","className":"help"} -->
-	<div class="wp-block-group help has-secondary-brand-background-color has-background" style="border-top-left-radius:1rem;border-top-right-radius:1rem;border-bottom-left-radius:0px;border-bottom-right-radius:0px"><!-- wp:paragraph {"align":"center","textColor":"white"} -->
-	<p class="has-text-align-center has-white-color has-text-color"><strong>Help us improve our digital services<br>by participating in design research.</strong></p>
+	<div class="wp-block-group help has-secondary-brand-background-color has-background" style="border-top-left-radius:1rem;border-top-right-radius:1rem;border-bottom-left-radius:0px;border-bottom-right-radius:0px"><!-- wp:paragraph {"align":"center","textColor":"white","className":"is-style-custom","fontSize":"extra-small"} -->
+	<p class="has-text-align-center is-style-custom has-white-color has-text-color has-extra-small-font-size"><strong>Help us improve our digital services<br>by participating in design research.</strong></p>
 	<!-- /wp:paragraph -->
 	
-	<!-- wp:paragraph {"align":"center","textColor":"white"} -->
-	<p class="has-text-align-center has-white-color has-text-color"><a href="#">Sign up and share your experience!</a></p>
+	<!-- wp:paragraph {"align":"center","textColor":"white","className":"is-style-custom","fontSize":"extra-small"} -->
+	<p class="has-text-align-center is-style-custom has-white-color has-text-color has-extra-small-font-size"><a href="#">Sign up and share your experience!</a></p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:column --></div>
