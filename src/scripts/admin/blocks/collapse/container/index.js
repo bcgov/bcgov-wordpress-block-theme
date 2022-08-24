@@ -1,13 +1,17 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/block-editor';
-import { attributes } from './attributes';
 
 registerBlockType('bcgov-block-theme/collapse', {
 	title: __('Collapse Container', 'bcgov-blocks'),
 	icon: 'admin-page',
 	category: 'layout',
-	attributes,
+	attributes: {
+		collapseId: {
+			type: 'string',
+			default: '',
+		},
+	},
 	supports: {
 		align: ['wide'],
 	},
@@ -18,7 +22,7 @@ registerBlockType('bcgov-block-theme/collapse', {
 			className,
 			clientId,
 		} = props;
-		const ALLOWED_BLOCKS = ['bcgov/collapse-item'];
+		const ALLOWED_BLOCKS = ['bcgov-block-theme/collapse-item'];
 		props.setAttributes({ collapseId: `collapse-container-${clientId}` });
 
 		return (

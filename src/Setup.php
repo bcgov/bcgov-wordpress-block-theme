@@ -33,28 +33,9 @@ class Setup {
 		add_action( 'admin_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_admin_scripts' ] );
 		add_action( 'admin_notices', [ $this, 'bcgov_block_theme_dependencies' ] );
 		add_action( 'admin_menu', [ $this, 'bcgov_block_theme_menu' ] );
-		add_action( 'init', [ $this, 'bcgov_register_custom_types' ], 99 );
 		add_filter( 'get_custom_logo', [ $this, 'bcgov_block_theme_custom_logo' ] );
 		remove_theme_support( 'core-block-patterns' );
     }
-
-	/**
-	 * Requires custom post/page types for specific sites.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	public function bcgov_register_custom_types() {
-
-		/**
-	 	* Load CleanBC Custom Posts and Taxonomy.
-	 	*/
-		if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC' ) && CLEANBC ) {
-			require_once get_template_directory() . '/src/custom-types/cleanbc/cleanbc-actions.php';
-			require_once get_template_directory() . '/src/custom-types/cleanbc/cleanbc-projects.php';
-		}
-	}
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

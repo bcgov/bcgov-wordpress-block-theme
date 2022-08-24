@@ -48,7 +48,7 @@ const domReady = () => {
 							.replace(/[^\w-]+/g, '');
 						document
 							.querySelectorAll(
-								'.actions-toggle-query-loop .cleanbc-actions'
+								'.actions-toggle-query-loop .category-actions'
 							)
 							.forEach((el) => {
 								el.classList.add('hidden');
@@ -61,7 +61,7 @@ const domReady = () => {
 			});
 
 			const elActions = document.querySelectorAll(
-				'.type-cleanbc-actions'
+				'.type-post.category-actions'
 			);
 
 			elActions.forEach((element, index) => {
