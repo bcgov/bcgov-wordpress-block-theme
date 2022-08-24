@@ -660,14 +660,14 @@ html :where(.editor-styles-wrapper) {
 
 			&__link {
 				background-color: var(--wp--preset--color--white);
-				border-color: var(--wp--preset--color--primary-brand);
+				border-color: currentcolor;
 				border-radius: 0.33rem;
 				color: var(--wp--preset--color--primary-brand);
 
 				&:hover,
 				&:focus {
 					filter: contrast(150%);
-					outline: 2px solid var(--wp--preset--color--primary-brand);
+					outline: 2px solid currentcolor;
 					outline-offset: 2px;
 				}
 			}
