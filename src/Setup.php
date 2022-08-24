@@ -105,7 +105,7 @@ class Setup {
      */
     public function set_javascript_variables() {
 		$javascript_variables = array(
-			'domain'    => home_url(),
+			'domain'   => home_url(),
 			'siteName' => 'cleanbc',
 		);
 

@@ -1,10 +1,9 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/block-editor';
-import { deprecated } from './deprecated';
 import { attributes } from './attributes';
 
-registerBlockType('bcgov/collapse', {
+registerBlockType('bcgov-block-theme/collapse', {
 	title: __('Collapse Container', 'bcgov-blocks'),
 	icon: 'admin-page',
 	category: 'layout',
@@ -28,7 +27,6 @@ registerBlockType('bcgov/collapse', {
 			</div>
 		);
 	},
-	deprecated,
 	save: (props) => {
 		const {
 			attributes: { collapseId },

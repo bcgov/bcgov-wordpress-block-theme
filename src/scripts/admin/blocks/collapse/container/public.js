@@ -1,8 +1,7 @@
 import { triggerClick } from '../../../utils/common.js';
 
 /**
- *
- * Click event handlers for collapse and expand.
+ * Click event handlers for collapse and expand all.
  */
 export function collapseControlsClick() {
 	const target = this.getAttribute('data-target');
@@ -51,6 +50,9 @@ export function collapseControlsClick() {
 	}
 }
 
+/**
+ * Function to handle collapse and expand when clicking on collapse header.
+ */
 export function collapseItemsButtonClick() {
 	const target = this.getAttribute('data-target');
 
@@ -89,6 +91,9 @@ export function collapseItemsButtonClick() {
 	}, 300);
 }
 
+/**
+ * Function to handle collapse and expand when clicking on collapse link in body of item.
+ */
 export function collapseItemsLinkClick() {
 	const target = this.getAttribute('data-target');
 

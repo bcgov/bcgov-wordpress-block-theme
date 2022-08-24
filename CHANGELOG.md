@@ -23,3 +23,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 - Various CleanBC patterns + scripts and styles [DESCW-514]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-514)
 - CleanBC added icon buttons, updated CPT, Added patterns and related imagery/icons, Added Allow list for blocks in editor [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 - Added Projects CPT, two querys: toggle for Actions and accordion for Projects, added BCGov Accordion to theme, refactored away from jQuery/Bootstrap, now functions with ES6, various styles and patterns updated/added. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
+- A series of CleanBC patterns. Namespace and other fixes to previous PR. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
