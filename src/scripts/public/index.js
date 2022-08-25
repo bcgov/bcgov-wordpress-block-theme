@@ -12,3 +12,4 @@ import './sites/cleanbc/cleanbc-loader.js';
 import './sites/cleanbc/patterns/actions-accordion-query.js';
 import './sites/cleanbc/patterns/actions-toggle-query.js';
 import './sites/cleanbc/patterns/landing-cover-banner.js';
+import './sites/cleanbc/patterns/sectors-section-cards.js';
