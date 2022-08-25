@@ -130,77 +130,77 @@
 				{
 					"name": "Primary (Brand) Opacity",
 					"slug": "primary-brand-opacity",
-					"gradient": "linear-gradient(180deg, rgba(0,42,78,0.8) 0%, rgba(0,42,78,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(0,42,78,0.12) 0%, rgba(0,42,78,0.36) 100%)"
 				},
 				{
 					"name": "Secondary (Brand) Opacity",
 					"slug": "secondary-brand-opacity",
-					"gradient": "linear-gradient(180deg, rgba(0,92,151,0.8) 0%, rgba(0,92,151,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(0,92,151,0.12) 0%, rgba(0,92,151,0.36) 100%)"
 				},
 				{
 					"name": "Accent (Brand) Opacity",
 					"slug": "accent-brand-opacity",
-					"gradient": "linear-gradient(180deg, rgba(247,159,49,0.8) 0%, rgba(247,159,49,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(247,159,49,0.12) 0%, rgba(247,159,49,0.36) 100%)"
 				},
 				{
 					"name": "Sky Opacity",
 					"slug": "tertiary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(0,143,180,0.8) 0%, rgba(0,143,180,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(0,143,180,0.12) 0%, rgba(0,143,180,0.36) 100%)"
 				},
 				{
 					"name": "Douglas Fir  Opacity",
 					"slug": "quarternary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(97,167,68,0.8) 0%, rgba(97,167,68,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(97,167,68,0.12) 0%, rgba(97,167,68,0.36) 100%)"
 				},
 				{
 					"name": "Leaf green Opacity",
 					"slug": "quinary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(145,173,250,0.8) 0%, rgba(145,173,250,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(145,173,250,0.12) 0%, rgba(145,173,250,0.36) 100%)"
 				},
 				{
 					"name": "Personal Travel Opacity",
 					"slug": "senary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(237,63,69,0.8) 0%, rgba(237,63,69,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(237,63,69,0.12) 0%, rgba(237,63,69,0.36) 100%)"
 				},
 				{
 					"name": "Low Carbon Energy Opacity",
 					"slug": "septenary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(20,139,97,0.8) 0%, rgba(20,139,97,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(20,139,97,0.12) 0%, rgba(20,139,97,0.36) 100%)"
 				},
 				{
 					"name": "Circular Economy Opacity",
 					"slug": "octonary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(35,160,168,0.8) 0%, rgba(35,160,168,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(35,160,168,0.12) 0%, rgba(35,160,168,0.36) 100%)"
 				},
 				{
 					"name": "Communities Opacity",
 					"slug": "nonary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(131,50,56,0.8) 0%, rgba(131,50,56,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(131,50,56,0.12) 0%, rgba(131,50,56,0.36) 100%)"
 				},
 				{
 					"name": "Electricity Opacity",
 					"slug": "denary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(235,125,59,0.8) 0%, rgba(235,125,59,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(235,125,59,0.12) 0%, rgba(235,125,59,0.36) 100%)"
 				},
 				{
 					"name": "Forest Bioeconomy Opacity",
 					"slug": "ondenary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(131,50,56,0.8) 0%, rgba(131,50,56,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(131,50,56,0.12) 0%, rgba(131,50,56,0.36) 100%)"
 				},
 				{
 					"name": "Buildings Opacity",
 					"slug": "duodenary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(124,126,129,0.8) 0%, rgba(124,126,129,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(124,126,129,0.12) 0%, rgba(124,126,129,0.36) 100%)"
 				},
 				{
 					"name": "Negative Emissions Tech Opacity",
 					"slug": "tridenary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(144,62,136,0.8) 0%, rgba(144,62,136,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(144,62,136,0.12) 0%, rgba(144,62,136,0.36) 100%)"
 				},
 				{
 					"name": "Industry Oil and Gas Opacity",
 					"slug": "quadenary-opacity",
-					"gradient": "linear-gradient(180deg, rgba(24,82,130,0.8) 0%, rgba(24,82,130,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(24,82,130,0.12) 0%, rgba(24,82,130,0.36) 100%)"
 				}
 			]
 		},

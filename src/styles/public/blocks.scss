@@ -287,6 +287,19 @@ html :where(.editor-styles-wrapper) {
 					}
 				}
 
+				&-group {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-group;
+							}
+						}
+					}
+				}
+
 				&-tag {
 
 					.wp-block-button {
@@ -415,6 +428,18 @@ html :where(.editor-styles-wrapper) {
 						mask: $icon-gear;
 					}
 				}
+
+				&-group {
+
+					&::before {
+						max-width: 34px;
+						mask: $icon-group;
+						position: relative;
+						left: -4px;
+						margin-right: 6px;
+					}
+				}
+
 
 				&-tag {
 
