@@ -24,6 +24,10 @@ body.cleanbc {
 
 		.wp-block-navigation {
 
+			&__responsive-dialog {
+				
+			}
+
 			&__responsive-container-content {
 
 				ul:not(.wp-block-navigation__submenu-container) {
@@ -31,10 +35,6 @@ body.cleanbc {
 					border: 1px dashed var(--wp--preset--color--senary);
 					display: flex;
 					justify-content: space-between !important;
-					flex-direction: column !important;
-					height: 40vh;
-					width: 90vw;
-					max-height: 500px;
 
 					li {
 

@@ -180,7 +180,7 @@
 				{
 					"name": "Communities Opacity",
 					"slug": "nonary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(247,159,49),0.12) 0%, rgba(247,159,49),0.36) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(247,159,49,0.12) 0%, rgba(247,159,49,0.36) 100%)"
 				},
 				{
 					"name": "Electricity Opacity",
