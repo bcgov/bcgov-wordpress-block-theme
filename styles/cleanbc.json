@@ -17,8 +17,13 @@
 				},
 				{
 					"slug": "accent",
-					"color": "#F79F31",
-					"name": "Forest Bioeconomy – Accent (Brand)"
+					"color": "#7FBC42",
+					"name": "Leaf Green – Accent (Brand)"
+				},
+				{
+					"slug": "secondary-accent",
+					"color": "#61A744",
+					"name": "Douglas Fir – Secondary Accent"
 				},
 				{
 					"slug": "headline-color",
@@ -31,24 +36,19 @@
 					"name": "Text Colour"
 				},
 				{
-					"slug": "transparent",
-					"color": "transparent",
-					"name": "Transparent"
-				},
-				{
 					"slug": "tertiary",
 					"color": "#008FB4",
 					"name": "Sky – Tertiary"
 				},
 				{
 					"slug": "quarternary",
-					"color": "#61A744",
-					"name": "Douglas Fir – Quarternary"
+					"color": "#80946D",
+					"name": "Public Sector – Quarternary"
 				},
 				{
 					"slug": "quinary",
-					"color": "#91ADFA",
-					"name": "Leaf green – Quinary"
+					"color": "#fdb813",
+					"name": "BC Yellow – Quinary"
 				},
 				{
 					"slug": "senary",
@@ -67,7 +67,7 @@
 				},
 				{
 					"slug": "nonary",
-					"color": "#833238",
+					"color": "#F79F31",
 					"name": "Communities – Nonary"
 				},
 				{
@@ -111,11 +111,6 @@
 					"name": "Gray 40"
 				},
 				{
-					"slug": "gray-05",
-					"color": "#F6F6F6",
-					"name": "Gray 05"
-				},
-				{
 					"slug": "foreground",
 					"color": "#222222",
 					"name": "Foreground"
@@ -124,6 +119,11 @@
 					"slug": "background",
 					"color": "#ffffff",
 					"name": "Background"
+				},
+				{
+					"slug": "transparent",
+					"color": "transparent",
+					"name": "Transparent"
 				}
 			],
 			"gradients": [
@@ -138,9 +138,14 @@
 					"gradient": "linear-gradient(0deg, rgba(0,92,151,0.12) 0%, rgba(0,92,151,0.36) 100%)"
 				},
 				{
-					"name": "Accent (Brand) Opacity",
+					"name": "Leaf Green Accent (Brand) Opacity",
 					"slug": "accent-brand-opacity",
-					"gradient": "linear-gradient(0deg, rgba(247,159,49,0.12) 0%, rgba(247,159,49,0.36) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(127, 188, 66,0.12) 0%, rgba(127, 188, 66,0.36) 100%)"
+				},
+				{
+					"name": "Douglas Fir Secondary Accent Opacity",
+					"slug": "secondary-accent-opacity",
+					"gradient": "linear-gradient(0deg, rgba(97, 167, 68,0.12) 0%, rgba(97, 167, 68,0.36) 100%)"
 				},
 				{
 					"name": "Sky Opacity",
@@ -148,12 +153,12 @@
 					"gradient": "linear-gradient(0deg, rgba(0,143,180,0.12) 0%, rgba(0,143,180,0.36) 100%)"
 				},
 				{
-					"name": "Douglas Fir  Opacity",
+					"name": "Public Sector Opacity",
 					"slug": "quarternary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(97,167,68,0.12) 0%, rgba(97,167,68,0.36) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(128, 148, 109,0.12) 0%, rgba(128, 148, 109,0.36) 100%)"
 				},
 				{
-					"name": "Leaf green Opacity",
+					"name": "BC Yellow Opacity",
 					"slug": "quinary-opacity",
 					"gradient": "linear-gradient(0deg, rgba(145,173,250,0.12) 0%, rgba(145,173,250,0.36) 100%)"
 				},
@@ -175,7 +180,7 @@
 				{
 					"name": "Communities Opacity",
 					"slug": "nonary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(131,50,56,0.12) 0%, rgba(131,50,56,0.36) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(247,159,49),0.12) 0%, rgba(247,159,49),0.36) 100%)"
 				},
 				{
 					"name": "Electricity Opacity",

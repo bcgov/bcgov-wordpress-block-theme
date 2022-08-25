@@ -4,7 +4,7 @@
 @import "../variables";
 
 // SCSS variables for specific sites
-@import "./cleanbc/variables";
+@import "./sites/cleanbc/variables";
 
 // Base Public Styles
 @import "./header";
@@ -19,10 +19,10 @@
 @import "../../scripts/admin/blocks/collapse/container";
 
 // Specific CleanBC Pattern Styles
-@import "./cleanbc/_cleanbc--general";
-@import "./cleanbc/_cleanbc--navigation-override";
-@import "./cleanbc/_cleanbc--patterns-banners";
-@import "./cleanbc/_cleanbc--patterns-general";
-@import "./cleanbc/_cleanbc--patterns-header-footer";
-@import "./cleanbc/_cleanbc--query";
+@import "./sites/cleanbc/_cleanbc--general";
+@import "./sites/cleanbc/_cleanbc--navigation-override";
+@import "./sites/cleanbc/_cleanbc--patterns-banners";
+@import "./sites/cleanbc/_cleanbc--patterns-general";
+@import "./sites/cleanbc/_cleanbc--patterns-header-footer";
+@import "./sites/cleanbc/_cleanbc--query";
 

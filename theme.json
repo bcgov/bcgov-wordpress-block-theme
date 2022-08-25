@@ -105,6 +105,11 @@
 					"name": "Accent (Brand)"
 				},
 				{
+					"slug": "secondary-accent",
+					"color": "#ecc51d",
+					"name": "Secondary Accent"
+				},
+				{
 					"slug": "headline-color",
 					"color": "#0E3469",
 					"name": "Headline Colour"
@@ -113,11 +118,6 @@
 					"slug": "text-color",
 					"color": "#111111",
 					"name": "Text Colour"
-				},
-				{
-					"slug": "transparent",
-					"color": "transparent",
-					"name": "Transparent"
 				},
 				{
 					"slug": "tertiary",
@@ -195,11 +195,6 @@
 					"name": "Gray 40"
 				},
 				{
-					"slug": "gray-05",
-					"color": "#E4E4E4",
-					"name": "Gray 05"
-				},
-				{
 					"slug": "foreground",
 					"color": "#222222",
 					"name": "Foreground"
@@ -208,23 +203,93 @@
 					"slug": "background",
 					"color": "#f9f9f9",
 					"name": "Background"
+				},
+				{
+					"slug": "transparent",
+					"color": "transparent",
+					"name": "Transparent"
 				}
 			],
 			"gradients": [
 				{
 					"name": "Primary (Brand) Opacity",
 					"slug": "primary-brand-opacity",
-					"gradient": "linear-gradient(180deg, rgba(0,42,78,0.8) 0%, rgba(0,42,78,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(14, 52, 104,0.12) 0%, rgba(14, 52, 104,0.36) 100%)"
 				},
 				{
 					"name": "Secondary (Brand) Opacity",
 					"slug": "secondary-brand-opacity",
-					"gradient": "linear-gradient(180deg, rgba(0,92,151,1) 0%, rgba(0,92,151,1) 100%;"
+					"gradient": "linear-gradient(0deg, rgba(59, 90, 148,0.12) 0%, rgba(59, 90, 148,0.36) 100%)"
 				},
 				{
 					"name": "Accent (Brand) Opacity",
 					"slug": "accent-brand-opacity",
-					"gradient": "linear-gradient(180deg, rgba(247,159,49,1) 0%, rgba(247,159,49,1) 100%)"
+					"gradient": "linear-gradient(0deg, rgba(246, 185, 0,0.12) 0%, rgba(246, 185, 0,0.36) 100%)"
+				},
+				{
+					"name": "Secondary Accent Opacity",
+					"slug": "secondary-accent-opacity",
+					"gradient": "linear-gradient(0deg, rgba(236, 197, 29,0.12) 0%, rgba(236, 197, 29,0.36) 100%)"
+				},
+				{
+					"name": "Tertiary Opacity",
+					"slug": "tertiary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(189, 204, 111,0.12) 0%, rgba(189, 204, 111,0.36) 100%)"
+				},
+				{
+					"name": "Quarternary Opacity",
+					"slug": "quarternary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(90, 143, 142,0.12) 0%, rgba(90, 143, 142,0.36) 100%)"
+				},
+				{
+					"name": "Quinary Opacity",
+					"slug": "quinary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(188, 207, 201,0.12) 0%, rgba(188, 207, 201,0.36) 100%)"
+				},
+				{
+					"name": "Senary Opacity",
+					"slug": "senary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(159, 160, 139,0.12) 0%, rgba(159, 160, 139,0.36) 100%)"
+				},
+				{
+					"name": "Septenary Opacity",
+					"slug": "septenary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(108, 95, 78,0.12) 0%, rgba(108, 95, 78,0.36) 100%)"
+				},
+				{
+					"name": "Octonary Opacity",
+					"slug": "octonary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(242, 109, 111,0.12) 0%, rgba(242, 109, 111,0.36) 100%)"
+				},
+				{
+					"name": "Nonary Opacity",
+					"slug": "nonary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(242, 164, 136,0.12) 0%, rgba(242, 164, 136,0.36) 100%)"
+				},
+				{
+					"name": "Denary Opacity",
+					"slug": "denary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(5, 166, 209,0.12) 0%, rgba(5, 166, 209,0.36) 100%)"
+				},
+				{
+					"name": "Ondenary Opacity",
+					"slug": "ondenary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(218, 153, 1,0.12) 0%, rgba(218, 153, 1,0.36) 100%)"
+				},
+				{
+					"name": "Duodenary Opacity",
+					"slug": "duodenary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(5, 166, 209,0.12) 0%, rgba(5, 166, 209,0.36) 100%)"
+				},
+				{
+					"name": "Tridenary Opacity",
+					"slug": "tridenary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(255, 196, 139,0.12) 0%, rgba(255, 196, 139,0.36) 100%)"
+				},
+				{
+					"name": "Quadenary Opacity",
+					"slug": "quadenary-opacity",
+					"gradient": "linear-gradient(0deg, rgba(212, 186, 135,0.12) 0%, rgba(212, 186, 135,0.36) 100%)"
 				}
 			]
 		},

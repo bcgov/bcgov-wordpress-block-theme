@@ -25,4 +25,4 @@ import './blocks/collapse/item';
 /**
  * Pattern scripts.
  */
-import '../public/cleanbc/patterns/landing-cover-banner';
+import '../public/sites/cleanbc/patterns/landing-cover-banner';
