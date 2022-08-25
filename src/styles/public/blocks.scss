@@ -295,6 +295,10 @@ html :where(.editor-styles-wrapper) {
 
 							&::before {
 								mask: $icon-group;
+								max-width: 34px;
+								position: relative;
+								left: -4px;
+								margin-right: 6px;
 							}
 						}
 					}
@@ -370,7 +374,6 @@ html :where(.editor-styles-wrapper) {
 		&__link {
 
 			&.icon {
-				pointer-events: none;
 				display: flex;
 				text-align: left;
 				padding: 0;

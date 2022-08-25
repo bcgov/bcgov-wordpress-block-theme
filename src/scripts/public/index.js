@@ -8,6 +8,7 @@ import './ribbon-navigation.js';
 
 import '../admin/blocks/collapse/app.js';
 
-import './cleanbc/patterns/actions-accordion-query.js';
-import './cleanbc/patterns/actions-toggle-query.js';
-import './cleanbc/patterns/landing-cover-banner.js';
+import './sites/cleanbc/cleanbc-loader.js';
+import './sites/cleanbc/patterns/actions-accordion-query.js';
+import './sites/cleanbc/patterns/actions-toggle-query.js';
+import './sites/cleanbc/patterns/landing-cover-banner.js';

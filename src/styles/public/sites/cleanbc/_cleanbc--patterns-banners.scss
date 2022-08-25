@@ -9,17 +9,6 @@ html :where(.editor-styles-wrapper) {
 
 			&__link {
 				background-color: var(--wp--preset--color--secondary-brand);
-				border-bottom: 12px solid var(--wp--preset--color--denary);
-			}
-		}
-
-		.wp-block-button:nth-of-type(2) {
-
-			.wp-block-button {
-
-				&__link {
-					border-bottom: 12px solid var(--wp--preset--color--tertiary);
-				}
 			}
 		}
 
@@ -158,17 +147,6 @@ html :where(.editor-styles-wrapper) {
 
 					&__link {
 						background-color: var(--wp--preset--color--secondary-brand);
-						border-bottom: 12px solid var(--wp--preset--color--tertiary);
-					}
-				}
-
-				.wp-block-button:nth-of-type(2) {
-
-					.wp-block-button {
-
-						&__link {
-							border-bottom: 12px solid var(--wp--preset--color--quarternary);
-						}
 					}
 				}
 			}
