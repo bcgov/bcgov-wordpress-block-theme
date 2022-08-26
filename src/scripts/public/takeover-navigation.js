@@ -11,12 +11,19 @@ const domReady = () => {
 		/**
 		 * Clone site logo node and insert copy inside modal overlay.
 		 */
-		const elem = document.querySelector('.wp-block-site-logo');
-		const clone = elem.cloneNode(true);
-		clone.id = 'nav-logo';
+		const elLogo = document.querySelector('.wp-block-site-logo');
+		const cloneLogo = elLogo.cloneNode(true);
+		cloneLogo.id = 'nav-logo';
 		document
 			.querySelector('.wp-block-navigation__responsive-container-close')
-			.before(clone);
+			.before(cloneLogo);
+
+		const elSiteName = document.querySelector('.wp-block-site-title a');
+		const cloneSiteName = elSiteName.cloneNode(true);
+		cloneSiteName.id = 'nav-title';
+		document
+			.querySelector('#nav-logo .custom-logo-link')
+			.after(cloneSiteName);
 	}
 
 	/**

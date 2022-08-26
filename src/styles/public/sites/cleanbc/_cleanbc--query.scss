@@ -36,7 +36,7 @@ html :where(.editor-styles-wrapper) {
 					padding: 0;
 
 					figure {
-						border-right: 10px solid var(--wp--preset--color--accent);
+						border-right: 10px solid var(--wp--preset--color--quinary);
 						margin: 0;
 					}
 				}
@@ -185,7 +185,7 @@ html :where(.editor-styles-wrapper) {
 			width: 100%;
 			vertical-align: middle;
 			object-fit: cover;
-			border-top: 10px solid var(--wp--preset--color--accent);
+			border-top: 10px solid var(--wp--preset--color--quinary);
 			border-radius: 1rem;
 			margin: 2rem auto;
 			aspect-ratio: 16 / 9;
@@ -219,7 +219,7 @@ html :where(.editor-styles-wrapper) {
 				}
 
 				.wp-block-post-featured-image {
-					border-right: 10px solid var(--wp--preset--color--accent);
+					border-right: 10px solid var(--wp--preset--color--quinary);
 					margin: 0;
 					object-fit: cover;
 
