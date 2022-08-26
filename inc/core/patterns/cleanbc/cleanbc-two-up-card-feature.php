@@ -12,11 +12,12 @@ namespace Bcgov\Theme\Block;
 return [
 	'title'      => __( 'Two-up Card Feature', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-general' ],
-	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"6rem","right":"2rem","bottom":"6rem","left":"2rem"},"blockGap":"2rem","margin":{"top":"3rem"}}},"className":"two-up-card-feature"} -->
-	<div class="wp-block-group alignfull two-up-card-feature" style="margin-top:3rem;padding-top:6rem;padding-right:2rem;padding-bottom:6rem;padding-left:2rem"><!-- wp:columns -->
-	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"2rem","left":"0px"}}},"backgroundColor":"gray-05","className":"is-style-default","layout":{"inherit":false}} -->
-	<div class="wp-block-column is-vertically-aligned-top is-style-default has-gray-05-background-color has-background" style="padding-top:0px;padding-right:0px;padding-bottom:2rem;padding-left:0px"><!-- wp:image {"id":1768,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://bcgov-block-theme.local/wp-content/uploads/2022/08/two-up-placeholder-01-1024x377.jpg" alt="" class="wp-image-1768"/></figure>
+	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"2rem"}},"className":"two-up-card-feature"} -->
+	<div class="wp-block-group alignfull two-up-card-feature"><!-- wp:columns -->
+	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"2rem","left":"0px"}}},"backgroundColor":"background","className":"is-style-default","layout":{"inherit":false}} -->
+	<div class="wp-block-column is-vertically-aligned-top is-style-default has-background-background-color has-background" style="padding-top:0px;padding-right:0px;padding-bottom:2rem;padding-left:0px"><!-- wp:group -->
+	<div class="wp-block-group"><!-- wp:image {"id":1768,"sizeSlug":"large","linkDestination":"none"} -->
+	<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/two-up-placeholder-01.jpg" alt="" class="wp-image-1768"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"0rem","right":"2rem","bottom":"1rem","left":"2rem"}},"border":{"width":"8px"}},"borderColor":"octonary"} -->
@@ -34,11 +35,13 @@ return [
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div>
+	<!-- /wp:group --></div>
 	<!-- /wp:column -->
 	
-	<!-- wp:column {"style":{"spacing":{"padding":{"top":"0px","right":"0px","left":"0px","bottom":"2rem"}}},"backgroundColor":"gray-05","className":"is-style-default"} -->
-	<div class="wp-block-column is-style-default has-gray-05-background-color has-background" style="padding-top:0px;padding-right:0px;padding-bottom:2rem;padding-left:0px"><!-- wp:image {"id":1769,"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://bcgov-block-theme.local/wp-content/uploads/2022/08/two-up-placeholder-02-1024x377.jpg" alt="" class="wp-image-1769"/></figure>
+	<!-- wp:column {"style":{"spacing":{"padding":{"top":"0px","right":"0px","left":"0px","bottom":"2rem"}}},"backgroundColor":"background","className":"is-style-default"} -->
+	<div class="wp-block-column is-style-default has-background-background-color has-background" style="padding-top:0px;padding-right:0px;padding-bottom:2rem;padding-left:0px"><!-- wp:group -->
+	<div class="wp-block-group"><!-- wp:image {"id":1769,"sizeSlug":"large","linkDestination":"none"} -->
+	<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/two-up-placeholder-02.jpg" alt="" class="wp-image-1769"/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"0rem","right":"2rem","bottom":"1rem","left":"2rem"}},"border":{"width":"8px"}},"borderColor":"accent"} -->
@@ -55,6 +58,7 @@ return [
 	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link has-secondary-brand-color has-text-color">More about energy</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
+	<!-- /wp:group --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>

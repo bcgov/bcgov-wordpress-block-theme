@@ -145,6 +145,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		$block_patterns[] = 'cleanbc/cleanbc-three-up-card-feature';
 		$block_patterns[] = 'cleanbc/cleanbc-three-up-icon-items';
 		$block_patterns[] = 'cleanbc/cleanbc-two-up-card-feature';
+		$block_patterns[] = 'cleanbc/cleanbc-four-up-cover-card-feature';
 
 		// CleanBC full page patterns.
 		$block_patterns[] = 'cleanbc/goelectric-landing-page';
