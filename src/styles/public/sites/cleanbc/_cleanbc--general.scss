@@ -104,24 +104,47 @@ body {
 		max-width: 1440px;
 		margin: 0 auto;
 
+		.wp-block-column {
+			display: flex;
+			align-self: inherit;
+		}
+
 		.wp-block-image {
 			margin: 0;
 		}
 
-		.wp-block-group {
 
-			&.has-border-color {
-				border-bottom-width: 0 !important;
-				border-left-width: 0 !important;
-				border-right-width: 0 !important;
+		.wp-block-group {
+			display: flex;
+			flex-direction: column;
+
+			.wp-block-group {
+
+				&.has-border-color {
+					border-bottom-width: 0 !important;
+					border-left-width: 0 !important;
+					border-right-width: 0 !important;
+				}
 			}
 
 			body & {
 
-				h2:not(.is-style-custom),
-				h3:not(.is-style-custom),
+				h2:not(.is-style-custom) {
+					font-size: clamp(1.35rem, 0.25rem + 3.3333vw, 2rem) !important;
+					line-height: 1.2;
+					margin-bottom: 0;
+				}
+
+				h3:not(.is-style-custom) {
+					font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+					line-height: 1.2;
+					margin-bottom: 0;
+				}
+
 				h4:not(.is-style-custom) {
 					font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+					line-height: 1.2;
+					margin-bottom: 0;
 				}
 			}
 		}
@@ -137,6 +160,8 @@ body {
 
 		.wp-block-column {
 			border-radius: 1rem;
+			display: flex;
+			align-self: inherit;
 		}
 
 		.wp-block-image {
@@ -154,27 +179,42 @@ body {
 		}
 
 		.wp-block-group {
+			display: flex;
+			flex-direction: column;
 
-			&.has-border-color {
-				border-bottom-width: 0 !important;
-				border-left-width: 0 !important;
-				border-right-width: 0 !important;
-			}
+			.wp-block-group {
 
-			body & {
-
-				h2:not(.is-style-custom) {
-					font-size: clamp(1.35rem, 0.25rem + 3.3333vw, 2rem) !important;
+				&.has-border-color {
+					border-bottom-width: 0 !important;
+					border-left-width: 0 !important;
+					border-right-width: 0 !important;
 				}
 
-				h3:not(.is-style-custom) {
-					font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
-				}
+				body & {
 
-				h4:not(.is-style-custom) {
-					font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+					h2:not(.is-style-custom) {
+						font-size: clamp(1.35rem, 0.25rem + 3.3333vw, 2rem) !important;
+						line-height: 1.2;
+						margin-bottom: 0;
+					}
+
+					h3:not(.is-style-custom) {
+						font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+						line-height: 1.2;
+						margin-bottom: 0;
+					}
+
+					h4:not(.is-style-custom) {
+						font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+						line-height: 1.2;
+						margin-bottom: 0;
+					}
 				}
 			}
 		}
 	}
+}
+
+.four-up-cover-card-feature {
+	position: relative;
 }
