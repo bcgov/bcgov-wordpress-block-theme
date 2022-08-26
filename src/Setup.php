@@ -119,7 +119,7 @@ class Setup {
 		$javascript_variables = array(
 			'domain'      => home_url(),
 			'siteName'    => 'bcgov',
-			'templateDir' =>  get_template_directory_uri()
+			'templateDir' => get_template_directory_uri(),
 		);
 
 		// Overwrite default with options value set in the Theme Option admin.
