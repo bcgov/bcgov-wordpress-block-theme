@@ -55,6 +55,7 @@ html :where(.editor-styles-wrapper) {
 						img {
 							min-height: 2.66rem;
 							margin-top: 0.33rem;
+							height: 100%;
 						}
 					}
 
@@ -98,7 +99,7 @@ html :where(.editor-styles-wrapper) {
 
 					body.has-takeover-menu & .wp-block-column:nth-of-type(3) {
 						max-width: 30px;
-						margin: 32px 0 auto 30px;
+						margin: 20px 0 auto 30px;
 					}
 				}
 			}
