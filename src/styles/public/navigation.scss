@@ -15,7 +15,22 @@ html :where(.editor-styles-wrapper) {
 
 }
 
+.wp-container-2 {
+	display: none;
+
+	@media (min-width: $breakpoint-sm) {
+		display: initial;
+	}
+}
+
 .wp-block-site-title {
+	top: 0.25rem;
+	position: relative;
+	display: none;
+
+	@media (min-width: $breakpoint-sm) {
+		display: initial;
+	}
 
 	a {
 		text-decoration: none;
@@ -348,7 +363,7 @@ body.has-ribbon-menu {
 #nav-logo {
 	position: absolute !important;
 	visibility: hidden;
-	margin: -22px -12px;
+	margin: -25px -5px;
 	max-width: 1440px;
 	opacity: 0;
 	transition: opacity 0.3s ease;
