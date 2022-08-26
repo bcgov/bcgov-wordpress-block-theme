@@ -15,6 +15,14 @@ html :where(.editor-styles-wrapper) {
 
 }
 
+.wp-block-site-title {
+
+	a {
+		text-decoration: none;
+	}
+}
+
+
 /*
  *  Ribbon Menu Template Part.
  */
@@ -114,6 +122,17 @@ body.has-ribbon-menu {
 	position: relative;
 	z-index: 9;
 
+	#nav-title {
+		display: none;
+
+		@media (min-width: $breakpoint-xs) {
+			display: initial;
+		}
+		position: relative;
+		top: -10px;
+		right: -20px;
+	}
+
 	.wp-block-navigation {
 
 		&__responsive-container {
@@ -171,6 +190,7 @@ body.has-ribbon-menu {
 			flex-direction: row !important;
 			flex-wrap: wrap;
 			max-width: 1440px;
+			width: 75vw;
 			justify-content: center !important;
 			align-items: center;
 			height: auto;
@@ -199,12 +219,20 @@ body.has-ribbon-menu {
 			}
 
 			> .wp-block-navigation-item {
+				// Keep for testing.
+				// border: 1px dashed lime;
 				flex: 1;
 				width: 100%;
 				max-width: 100%;
 				min-width: 100%;
-				min-height: 15vh;
-				margin: 2rem 0 auto 0;
+				min-height: 3rem;
+				margin: 2rem 0;
+
+				a {
+					width: 96%;
+					padding-bottom: 0.5rem;
+					display: inline-block;
+				}
 
 
 				@media (min-width: $breakpoint-xs) {
@@ -213,8 +241,8 @@ body.has-ribbon-menu {
 				}
 
 				@media (min-width: $breakpoint-sm) {
-					max-width: 26.66%;
-					min-width: 26.66%;
+					width: 100%;
+					min-width: 31%;
 				}
 
 				ul,

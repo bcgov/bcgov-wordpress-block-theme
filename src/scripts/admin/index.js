@@ -1,6 +1,11 @@
 import '../../styles/admin/index.scss';
 
 /**
+ * Load the required site options.
+ */
+import '../public/loader';
+
+/**
  * Filters modify or enhance existing blocks using addFilter hooks.
  * PHP render functions are used and defined in inc/core/filters directory.
  */
@@ -18,7 +23,7 @@ import './filters/query-loop-enhanced';
 // import './blocks/accordion-item';
 import './blocks/card/container';
 import './blocks/card/item';
-import './blocks/collapse/app.js';
+import './blocks/collapse/app';
 import './blocks/collapse/container';
 import './blocks/collapse/item';
 

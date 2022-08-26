@@ -20,50 +20,62 @@ html :where(.editor-styles-wrapper) {
  */
 body.cleanbc {
 
+	padding-top: 80px;
+
+	.bcgov-header-group.bcgov-site-header {
+		border-bottom: 3px solid var(--wp--preset--color--quinary);
+		position: fixed;
+		width: 100vw;
+		z-index: 999;
+		top: 0;
+	}
+
 	.is-style-takeover-menu {
 
 		.wp-block-navigation {
-
-			&__responsive-dialog {
-				
-			}
 
 			&__responsive-container-content {
 
 				ul:not(.wp-block-navigation__submenu-container) {
 
-					border: 1px dashed var(--wp--preset--color--senary);
+					// Keep for testing.
+					// border: 1px dashed var(--wp--preset--color--senary);
+
 					display: flex;
 					justify-content: space-between !important;
+					align-items: flex-start;
 
 					li {
 
 						&:nth-child(1) a {
-							border-bottom: 8px solid var(--wp--preset--color--tertiary);
+							border-bottom: 0.5rem solid var(--wp--preset--color--tertiary);
 						}
 
 						&:nth-child(2) a {
-							border-bottom: 8px solid var(--wp--preset--color--accent);
+							border-bottom: 0.5rem solid var(--wp--preset--color--quinary);
 						}
 
 						&:nth-child(3) a {
-							border-bottom: 8px solid var(--wp--preset--color--quarternary);
+							border-bottom: 0.5rem solid var(--wp--preset--color--accent);
 						}
 
 						&:nth-child(4) a {
-							border-bottom: 8px solid var(--wp--preset--color--tridenary);
+							border-bottom: 0.5rem solid var(--wp--preset--color--tridenary);
 						}
 
 						&:nth-child(5) a {
-							border-bottom: 8px solid var(--wp--preset--color--octonary);
+							border-bottom: 0.5rem solid var(--wp--preset--color--nonary);
 						}
 
 						&:nth-child(6) a {
-							border-bottom: 8px solid var(--wp--preset--color--senary);
+							border-bottom: 0.5rem solid var(--wp--preset--color--senary);
 						}
 
 						a {
+							line-height: 1.25;
 							margin-bottom: 1rem;
+							padding-bottom: 0.5rem;
+							max-width: 300px;
 
 							&:hover,
 							&:focus {
@@ -79,9 +91,11 @@ body.cleanbc {
 						border-bottom: 2px solid var(--wp--preset--color--transparent) !important;
 						/* stylelint-disable font-weight-notation */
 						font-weight: 700 !important;
-						margin: 1rem 0 0 !important;
+						font-size: 1.5rem !important;
+						line-height: 1.25;
+						margin: 1rem 0 0.5rem !important;
+						padding: 0 !important;
 						width: 100%;
-						min-width: 300px;
 
 						&:hover,
 						&:focus {
@@ -92,8 +106,16 @@ body.cleanbc {
 					ul.wp-block-navigation__submenu-container {
 
 						a {
+							font-size: 1rem !important;
 							font-weight: 300 !important;
+							line-height: 1.5;
 							margin: 0 !important;
+							opacity: 0.8;
+
+							&::before {
+								content: "";
+								margin: 8px 0 auto;
+							}
 						}
 					}
 				}

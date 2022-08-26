@@ -35,26 +35,31 @@ html :where(.editor-styles-wrapper) {
 
 	&.site-footer {
 
-		.is-footer-menu {
+		.wp-block-columns {
+			margin-bottom: 0;
 
-			li {
+			.is-footer-menu {
 
-				border-left: 1px solid #4b5e73;
+				li {
 
-				&:first-of-type {
-					border: none;
+					border-left: 1px solid #4b5e73;
+
+					&:first-of-type {
+						border: none;
+					}
+
+					a {
+						font-size: 0.813rem;
+						margin-right: 1.5rem;
+						text-decoration: none;
+
+					}
+
+					&:not(:first-of-type) {
+						padding-left: 1.5rem;
+					}
 				}
 
-				a {
-					font-size: 0.813rem;
-					margin-right: 1.5rem;
-					text-decoration: none;
-
-				}
-
-				&:not(:first-of-type) {
-					padding-left: 1.5rem;
-				}
 			}
 
 		}
@@ -62,4 +67,3 @@ html :where(.editor-styles-wrapper) {
 	}
 
 }
-
