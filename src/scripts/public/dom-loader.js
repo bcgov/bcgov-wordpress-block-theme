@@ -18,7 +18,10 @@ const domReady = () => {
 			body.classList.add('bcgov');
 		}
 
-		if (null !== window.site.headerEffect) {
+		if (
+			null !== window.site.headerEffect &&
+			header.querySelector('.is-style-takeover-menu')
+		) {
 			body.classList.add(`header-${window.site.headerEffect}`);
 		} else {
 			body.classList.add('header-scroll');
@@ -28,18 +31,23 @@ const domReady = () => {
 		 * Enable fixed or scroll header based on site options.
 		 */
 		if (
-			'fixed' === window.site.headerEffect ||
-			'hides' === window.site.headerEffect
+			null !== header.querySelector('nav') &&
+			('fixed' === window.site.headerEffect ||
+				'hides' === window.site.headerEffect)
 		) {
 			header.style.position = 'fixed';
 		}
 		if (
-			null === window.site.headerEffect ||
-			'scroll' === window.site.headerEffect
+			null !== header.querySelector('.is-style-takeover-menu') &&
+			(null === window.site.headerEffect ||
+				'scroll' === window.site.headerEffect)
 		) {
 			header.style.position = 'absolute';
 			header.style.overflow = 'hidden';
 			header.style.transform = 'none';
+		}
+		if (null === header.querySelector('nav')) {
+			body.style.paddingTop = 0;
 		}
 
 		/**
@@ -92,7 +100,10 @@ const domReady = () => {
 			/**
 			 * Enable header scroll show/hide based on site options.
 			 */
-			if ('hides' === window.site.headerEffect) {
+			if (
+				header.querySelector('.is-style-takeover-menu') &&
+				'hides' === window.site.headerEffect
+			) {
 				const scrollTopPosition =
 					window.pageYOffset || document.documentElement.scrollTop;
 				if (scrollTopPosition < lastScrollTop) {

@@ -82,6 +82,16 @@ body.header-scroll {
 	.has-modal-open {
 		position: fixed !important;
 	}
+
+	nav {
+		padding: 0.75rem;
+		justify-content: flex-end;
+
+		@media (min-width: $breakpoint-sm) {
+			padding: 0;
+			justify-content: flex-start;
+		}
+	}
 }
 
 body.has-ribbon-menu {
@@ -237,9 +247,9 @@ body.has-ribbon-menu {
 			flex-direction: row !important;
 			flex-wrap: wrap;
 			max-width: 1440px;
-			width: 75vw;
+			width: 96vw;
 			justify-content: center !important;
-			align-items: center;
+			align-items: flex-start !important;
 			height: auto;
 			margin: 0;
 			padding: 0;
@@ -272,24 +282,29 @@ body.has-ribbon-menu {
 				width: 100%;
 				max-width: 100%;
 				min-width: 100%;
-				min-height: 3rem;
-				margin: 2rem 0;
+				min-height: 1rem;
+				margin: 0.5rem 0;
+
+				@media (min-width: $breakpoint-sm) {
+					min-height: 3rem;
+					margin: 2rem 0;
+				}
 
 				a {
-					width: 96%;
+					width: 100%;
 					padding-bottom: 0.5rem;
 					display: inline-block;
 				}
 
 
-				@media (min-width: $breakpoint-xs) {
-					max-width: 48%;
+				@media (min-width: $breakpoint-sm) {
+					width: 100%;
 					min-width: 48%;
 				}
 
-				@media (min-width: $breakpoint-sm) {
+				@media (min-width: $breakpoint-md) {
 					width: 100%;
-					min-width: 31%;
+					min-width: 31.33%;
 				}
 
 				ul,
@@ -314,7 +329,7 @@ body.has-ribbon-menu {
 									&::before,
 									&::after {
 										content: "\025b6";
-										display: block;
+										display: inline-block;
 										margin: 8px 4px auto 0;
 										font-size: 60%;
 										transform: scale(0.66, 1);
@@ -333,7 +348,7 @@ body.has-ribbon-menu {
 
 											&::before {
 												content: "\02501\025b6";
-												display: block;
+												display: inline-block;
 											}
 										}
 
