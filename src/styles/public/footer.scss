@@ -94,14 +94,20 @@ footer {
 		padding: 0;
 		margin: 0;
 		position: fixed;
-		right: 0.5rem;
-		bottom: 0.25rem;
+		right: 1.5rem;
+		bottom: 5.25rem;
 		opacity: 0;
 		z-index: 9999;
 		transition: opacity 0.3s ease;
 
+		.back-to-top-icon {
+			vertical-align: bottom;
+		}
+
 		&:focus {
 			outline: 2px solid var(--wp--preset--color--primary-brand);
+			outline-offset: 2px;
+			border-radius: 3px;
 		}
 	}
 }

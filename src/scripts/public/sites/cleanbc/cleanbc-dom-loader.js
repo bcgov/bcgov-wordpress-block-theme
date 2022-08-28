@@ -8,6 +8,7 @@ const domReady = () => {
 		 * SafarIE bug requires 0ms timeout.
 		 */
 		setTimeout(function() {
+			// CleanBC Icon Buttons
 			const iconButtons = document.querySelectorAll('a.icon');
 			if (iconButtons.length) {
 				iconButtons.forEach((button) => {
@@ -30,6 +31,13 @@ const domReady = () => {
 					}
 				});
 			}
+			/**
+			 * Manage events after page scroll.
+			 */
+			const cleanbcWindowScroll = () => {
+				// Do nothing for now – will remove if not needed.
+			};
+			window.addEventListener('scroll', cleanbcWindowScroll);
 		}, 0);
 	}
 };

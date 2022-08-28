@@ -20,19 +20,20 @@ html :where(.editor-styles-wrapper) {
  */
 body.cleanbc {
 
-	padding-top: 4.5rem;
-
 	.bcgov-header-group.bcgov-site-header {
 		border-bottom: 3px solid var(--wp--preset--color--quinary);
-		position: fixed;
-		width: 100vw;
-		z-index: 999;
-		top: 0;
 	}
 
 	.is-style-takeover-menu {
 
+		z-index: 9999;
+		transform: none;
+
 		.wp-block-navigation {
+
+			&__responsive-container {
+				height: 100vh;
+			}
 
 			&__responsive-container-content {
 

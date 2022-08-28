@@ -3,7 +3,7 @@ import '../../styles/admin/index.scss';
 /**
  * Load the required site options.
  */
-import '../public/loader';
+import '../public/dom-loader';
 
 /**
  * Filters modify or enhance existing blocks using addFilter hooks.
