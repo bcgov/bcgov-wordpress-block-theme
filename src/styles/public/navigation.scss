@@ -12,8 +12,40 @@ html :where(.editor-styles-wrapper) {
 	.is-style-takeover-menu {
 		background-color: transparent;
 	}
-
 }
+
+body:not(body.wp-admin):not(body.editor-styles-wrapper) {
+
+	padding-top: 4.5rem;
+}
+
+.bcgov-header-group.bcgov-site-header {
+
+	border-bottom: 3px solid var(--wp--preset--color--accent);
+	width: 100vw;
+	z-index: 999;
+	top: 0;
+
+	body.admin-bar & {
+		top: 32px;
+	}
+}
+
+body.header-fixed,
+body.header-hides {
+
+	&.bcgov-header-group.bcgov-site-header {
+		position: fixed;
+	}
+}
+
+body.header-scroll {
+
+	&.bcgov-header-group.bcgov-site-header {
+		position: fixed;
+	}
+}
+
 
 .wp-container-2 {
 	display: none;
@@ -157,7 +189,7 @@ body.has-ribbon-menu {
 			transition: all 0.3s ease-in-out;
 
 			body.admin-bar & {
-				margin-top: 20px;
+				// margin-top: 20px;
 			}
 
 			@media (prefers-reduced-motion) {
@@ -179,7 +211,7 @@ body.has-ribbon-menu {
 			.wp-block-navigation {
 
 				&__responsive-container-close {
-					top: 5px;
+					top: -10px;
 					right: 0;
 
 					@media (min-width: $breakpoint-lg) {

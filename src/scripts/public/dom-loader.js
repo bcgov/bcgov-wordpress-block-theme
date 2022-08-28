@@ -1,5 +1,5 @@
 /**
- * General CleanBC DOM manipulation.
+ * General Block Theme window event management and DOM manipulation.
  */
 const domReady = () => {
 	/*
@@ -11,6 +11,9 @@ const domReady = () => {
 		 */
 		if (null !== window.site.siteName) {
 			document.querySelector('body').classList.add(window.site.siteName);
+			document
+				.querySelector('body')
+				.classList.add(`header-${window.site.headerEffect}`);
 		}
 
 		/**
@@ -41,9 +44,14 @@ const domReady = () => {
 		/**
 		 * Manage events after page scroll.
 		 */
+
+		let lastScrollTop = 0;
+		const scrollTopPadding = 100;
+		const header = document.querySelector('.bcgov-site-header');
+
 		const windowScroll = () => {
 			/**
-			 * Set back to top link visible when close to bottom of windowdy.
+			 * Set back to top link visible when close to bottom of window.
 			 */
 			const backToTop = document.querySelector('.back-to-top');
 			if (
@@ -56,12 +64,44 @@ const domReady = () => {
 				backToTop.style.display = 'none';
 				backToTop.style.opacity = '0';
 			}
+			/**
+			 * Enable header scroll show/hide based on site options.
+			 */
+			if ('hides' === window.site.headerEffect) {
+				const scrollTopPosition =
+					window.pageYOffset || document.documentElement.scrollTop;
+				if (scrollTopPosition < lastScrollTop) {
+					// Do scroll up management.
+					if (scrollTopPosition > scrollTopPadding) {
+						header.style.opacity = '1';
+						header.style.transform = 'translateY(0%)';
+					}
+				} else if (scrollTopPosition > scrollTopPadding) {
+					header.style.opacity = '0';
+					header.style.transform = 'translateY(-100%)';
+				}
+				lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
+			}
 		};
 
 		/**
 		 * Manage events after page load.
 		 */
 		const windowLoad = () => {
+			/**
+			 * Enable fixed or scroll header based on site options.
+			 */
+			if (
+				'fixed' === window.site.headerEffect ||
+				'hides' === window.site.headerEffect
+			) {
+				header.style.position = 'fixed';
+			}
+			if ('scroll' === window.site.headerEffect) {
+				header.style.position = 'absolute';
+				header.style.overflow = 'hidden';
+				header.style.transform = 'none';
+			}
 			windowResize();
 		};
 

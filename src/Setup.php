@@ -124,7 +124,8 @@ class Setup {
 
 		// Overwrite default with options value set in the Theme Option admin.
 		if ( function_exists( 'acf_add_options_page' ) ) {
-			$javascript_variables['siteName'] = get_field( 'active_site', 'option' );
+			$javascript_variables['siteName']     = get_field( 'active_site', 'option' );
+			$javascript_variables['headerEffect'] = get_field( 'header_effect', 'option' );
 		}
 
 		return $javascript_variables;

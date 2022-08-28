@@ -14,13 +14,17 @@ const domReady = () => {
 		const elLogo = document.querySelector('.wp-block-site-logo');
 		const cloneLogo = elLogo.cloneNode(true);
 		cloneLogo.id = 'nav-logo';
+		cloneLogo
+			.querySelector('.custom-logo-link')
+			.setAttribute('tabindex', '-1');
 		document
-			.querySelector('.wp-block-navigation__responsive-container-close')
-			.before(cloneLogo);
+			.querySelector('.wp-block-navigation__responsive-container-content')
+			.after(cloneLogo);
 
 		const elSiteName = document.querySelector('.wp-block-site-title a');
 		const cloneSiteName = elSiteName.cloneNode(true);
 		cloneSiteName.id = 'nav-title';
+		cloneSiteName.setAttribute('aria-label', 'site homepage');
 		document
 			.querySelector('#nav-logo .custom-logo-link')
 			.after(cloneSiteName);

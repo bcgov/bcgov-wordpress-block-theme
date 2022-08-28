@@ -17,6 +17,11 @@ body {
 			font-weight: 700;
 		}
 	}
+
+	&.cleanbc .bcgov-header-group.bcgov-site-header.bcgov-site-header {
+		transform: translateY(0%);
+		transition: all 0.3s ease;
+	}
 }
 
 .advisory-tag {
