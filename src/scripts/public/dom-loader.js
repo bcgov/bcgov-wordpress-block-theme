@@ -7,13 +7,39 @@ const domReady = () => {
 	 */
 	setTimeout(function() {
 		/**
-		 * Add siteName body class.
+		 * Add siteName body classes.
 		 */
+		const body = document.querySelector('body');
+		const header = document.querySelector('.bcgov-site-header');
+
 		if (null !== window.site.siteName) {
-			document.querySelector('body').classList.add(window.site.siteName);
-			document
-				.querySelector('body')
-				.classList.add(`header-${window.site.headerEffect}`);
+			body.classList.add(window.site.siteName);
+		} else {
+			body.classList.add('bcgov');
+		}
+
+		if (null !== window.site.headerEffect) {
+			body.classList.add(`header-${window.site.headerEffect}`);
+		} else {
+			body.classList.add('header-scroll');
+		}
+
+		/**
+		 * Enable fixed or scroll header based on site options.
+		 */
+		if (
+			'fixed' === window.site.headerEffect ||
+			'hides' === window.site.headerEffect
+		) {
+			header.style.position = 'fixed';
+		}
+		if (
+			null === window.site.headerEffect ||
+			'scroll' === window.site.headerEffect
+		) {
+			header.style.position = 'absolute';
+			header.style.overflow = 'hidden';
+			header.style.transform = 'none';
 		}
 
 		/**
@@ -47,7 +73,6 @@ const domReady = () => {
 
 		let lastScrollTop = 0;
 		const scrollTopPadding = 100;
-		const header = document.querySelector('.bcgov-site-header');
 
 		const windowScroll = () => {
 			/**
@@ -88,20 +113,6 @@ const domReady = () => {
 		 * Manage events after page load.
 		 */
 		const windowLoad = () => {
-			/**
-			 * Enable fixed or scroll header based on site options.
-			 */
-			if (
-				'fixed' === window.site.headerEffect ||
-				'hides' === window.site.headerEffect
-			) {
-				header.style.position = 'fixed';
-			}
-			if ('scroll' === window.site.headerEffect) {
-				header.style.position = 'absolute';
-				header.style.overflow = 'hidden';
-				header.style.transform = 'none';
-			}
 			windowResize();
 		};
 
