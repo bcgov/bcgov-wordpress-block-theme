@@ -11,6 +11,7 @@ import '../public/sites/cleanbc/cleanbc-dom-loader';
  * PHP render functions are used and defined in inc/core/filters directory.
  */
 import './filters/button-enhanced';
+import './filters/columns-enhanced';
 import './filters/column-enhanced';
 import './filters/heading-enhanced';
 import './filters/media-text-enhanced';
