@@ -8,6 +8,13 @@ const domReady = () => {
 		 * SafarIE bug requires 0ms timeout.
 		 */
 		setTimeout(function() {
+			const body = document.querySelector('body');
+			const homeBanner = document.querySelector('.home-cover-banner');
+
+			if (null !== homeBanner) {
+				body.classList.add('home');
+			}
+
 			// CleanBC Icon Buttons
 			const iconButtons = document.querySelectorAll('a.icon');
 			if (iconButtons.length) {
@@ -25,9 +32,12 @@ const domReady = () => {
 			);
 			if (iconButtonContainers.length) {
 				iconButtonContainers.forEach((container) => {
-					if (!container.classList.contains('has-size-large')) {
-						container.querySelector('a').style.outlineOffset =
-							'1rem';
+					const containerLink = container.querySelector('a');
+					if (
+						null !== containerLink &&
+						!container.classList.contains('has-size-large')
+					) {
+						containerLink.style.outlineOffset = '1rem';
 					}
 				});
 			}

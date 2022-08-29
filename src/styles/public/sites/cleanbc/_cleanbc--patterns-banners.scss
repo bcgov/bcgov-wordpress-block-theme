@@ -188,9 +188,57 @@ html :where(.editor-styles-wrapper) {
 	}
 }
 
+
+// In-page Cloud Banner with rounded icon styles.
+.in-page-cloud-banner {
+
+	position: relative;
+
+	.wp-block-cover {
+		border-radius: 1rem;
+
+		img {
+			border-radius: 1rem;
+		}
+
+		.wp-block-cover {
+
+			&__background {
+				border-radius: 1rem;
+			}
+		}
+	}
+
+	.image-column {
+		background-color: var(--wp--preset--color--accent);
+		border-radius: 50%;
+	}
+}
+
+
 // In-page Strategies Banner with side image.
 .in-page-strategies-banner {
 	position: relative;
+
+	.wp-block-cover {
+		border-radius: 1rem;
+
+		img {
+			border-radius: 1rem;
+		}
+
+		.wp-block-cover {
+
+			&__background {
+				border-radius: 1rem;
+			}
+		}
+	}
+
+	.image-column {
+		background-color: var(--wp--preset--color--accent);
+		border-radius: 50%;
+	}
 }
 
 // Info Cover Banner header styles.
@@ -213,9 +261,15 @@ html :where(.editor-styles-wrapper) {
 		}
 
 		.image-column {
+			display: flex;
 			flex-basis: calc(33.333% - 2rem) !important;
 			border-radius: 50%;
 			margin-right: 2rem;
+			aspect-ratio: 1 / 1;
+
+			figure {
+				margin: auto;
+			}
 		}
 	}
 }

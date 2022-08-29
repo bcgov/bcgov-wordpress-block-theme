@@ -140,15 +140,20 @@ function bcgov_blocks_theme_register_block_patterns() {
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-full-width-constrained-bordered-section';
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-full-width-constrained-floating-section';
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-sections-sector-cards';
+		$block_patterns[] = 'cleanbc/cleanbc-in-page-warning-section';
 		$block_patterns[] = 'cleanbc/cleanbc-info-cards';
 		$block_patterns[] = 'cleanbc/cleanbc-small-three-up-card-feature';
 		$block_patterns[] = 'cleanbc/cleanbc-three-up-card-feature';
 		$block_patterns[] = 'cleanbc/cleanbc-three-up-icon-items';
 		$block_patterns[] = 'cleanbc/cleanbc-two-up-card-feature';
+		$block_patterns[] = 'cleanbc/cleanbc-two-up-card-feature-wide';
 		$block_patterns[] = 'cleanbc/cleanbc-four-up-cover-card-feature';
 
 		// CleanBC full page patterns.
-		$block_patterns[] = 'cleanbc/goelectric-landing-page';
+		$block_patterns[] = 'cleanbc/cleanbc-page-layout-homepage';
+		$block_patterns[] = 'cleanbc/cleanbc-page-layout-impacts';
+		$block_patterns[] = 'cleanbc/cleanbc-page-layout-level-3';
+		$block_patterns[] = 'cleanbc/cleanbc-page-layout-level-4';
 
 		// CleanBC query patterns.
 		$block_patterns[] = 'cleanbc/cleanbc-actions-query';
