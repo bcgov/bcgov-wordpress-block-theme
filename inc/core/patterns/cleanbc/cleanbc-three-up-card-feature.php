@@ -12,9 +12,9 @@ namespace Bcgov\Theme\Block;
 return [
 	'title'      => __( 'Three-up Card Feature', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-general' ],
-	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"6rem","right":"2rem","bottom":"6rem","left":"2rem"},"blockGap":"2rem","margin":{"top":"3rem"}}},"className":"three-up-card-feature"} -->
-	<div class="wp-block-group alignfull three-up-card-feature" style="margin-top:3rem;padding-top:6rem;padding-right:2rem;padding-bottom:6rem;padding-left:2rem"><!-- wp:heading {"textAlign":"center","style":{"typography":{"fontSize":"3rem","fontStyle":"normal","fontWeight":"300"}},"textColor":"secondary-brand"} -->
-	<h2 class="has-text-align-center has-secondary-brand-color has-text-color" style="font-size:3rem;font-style:normal;font-weight:300">CleanBC programs help you take action</h2>
+	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"6rem","right":"2rem","bottom":"6rem","left":"2rem"},"blockGap":"2rem","margin":{"top":"3rem"}}},"backgroundColor":"transparent","className":"three-up-card-feature"} -->
+	<div class="wp-block-group alignfull three-up-card-feature has-transparent-background-color has-background" style="margin-top:3rem;padding-top:6rem;padding-right:2rem;padding-bottom:6rem;padding-left:2rem"><!-- wp:heading {"textAlign":"center","textColor":"secondary-brand"} -->
+	<h2 class="has-text-align-center has-secondary-brand-color has-text-color">CleanBC programs help you take action</h2>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"align":"center","textColor":"tertiary","className":"is-style-custom","fontSize":"large"} -->

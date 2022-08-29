@@ -943,4 +943,21 @@ html :where(.editor-styles-wrapper) {
 		box-shadow: 0 0 12px rgba($black, 33%);
 	}
 
+	&.is-style-square {
+
+		.wp-block-media-text {
+
+			&__media {
+				height: auto;
+				aspect-ratio: 1 / 1 !important;
+				margin-top: 3rem;
+
+				img {
+					aspect-ratio: 1 / 1;
+
+				}
+			}
+		}
+	}
+
 }

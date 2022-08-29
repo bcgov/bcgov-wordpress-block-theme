@@ -18,11 +18,34 @@ body {
 		}
 	}
 
-	&.cleanbc .bcgov-header-group.bcgov-site-header.bcgov-site-header {
-		transform: translateY(0%);
-		transition: all 0.3s ease;
+	&.cleanbc {
+
+		.bcgov-header-group.bcgov-site-header.bcgov-site-header {
+			transform: translateY(0%);
+			transition: all 0.3s ease;
+		}
+
+		.back-to-top {
+			bottom: 5.25rem;
+
+			@media (min-width: $breakpoint-sm) {
+				bottom: 23.25rem;
+			}
+		}
+	}
+
+	&.home:not(body.wp-admin) .three-up-card-feature {
+		background-image: url(../../../assets/images/sites/cleanbc/footer-forest-bg-image-01.jpg);
+		background-position: center bottom;
+		background-size: auto;
+
+		@media (min-width: $breakpoint-md) {
+			background-size: contain;
+		}
+		background-repeat: no-repeat;
 	}
 }
+
 
 .advisory-tag {
 
@@ -31,24 +54,9 @@ body {
 	}
 }
 
-.wp-block-media-text {
 
-	.wp-block-media-text {
-
-		&__media {
-			height: 100%;
-
-			img,
-			video {
-				max-width: unset;
-				object-fit: cover;
-				vertical-align: middle;
-				height: 100%;
-				width: 100%;
-			}
-		}
-
-	}
+.four-up-cover-card-feature {
+	position: relative;
 }
 
 
@@ -103,6 +111,7 @@ body {
 	}
 }
 
+
 .three-up-card-feature {
 
 	.wp-block-columns {
@@ -122,6 +131,13 @@ body {
 		.wp-block-group {
 			display: flex;
 			flex-direction: column;
+			width: 100%;
+
+			&.has-border-color {
+				border-bottom-width: 0 !important;
+				border-left-width: 0 !important;
+				border-right-width: 0 !important;
+			}
 
 			.wp-block-group {
 
@@ -220,6 +236,23 @@ body {
 	}
 }
 
-.four-up-cover-card-feature {
-	position: relative;
+
+.wp-block-media-text {
+
+	.wp-block-media-text {
+
+		&__media {
+			height: 100%;
+
+			img,
+			video {
+				max-width: unset;
+				object-fit: cover;
+				vertical-align: middle;
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+	}
 }

@@ -11,6 +11,13 @@ const domReady = () => {
 		 */
 		const body = document.querySelector('body');
 		const header = document.querySelector('.bcgov-site-header');
+		const footer = document.querySelector('footer');
+		let takeover,
+			nav = null;
+		if (null !== header) {
+			takeover = header.querySelector('.is-style-takeover-menu');
+			nav = header.querySelector('nav');
+		}
 
 		if (null !== window.site.siteName) {
 			body.classList.add(window.site.siteName);
@@ -18,10 +25,7 @@ const domReady = () => {
 			body.classList.add('bcgov');
 		}
 
-		if (
-			null !== window.site.headerEffect &&
-			header.querySelector('.is-style-takeover-menu')
-		) {
+		if (null !== window.site.headerEffect && null !== takeover) {
 			body.classList.add(`header-${window.site.headerEffect}`);
 		} else {
 			body.classList.add('header-scroll');
@@ -31,14 +35,14 @@ const domReady = () => {
 		 * Enable fixed or scroll header based on site options.
 		 */
 		if (
-			null !== header.querySelector('nav') &&
+			null !== nav &&
 			('fixed' === window.site.headerEffect ||
 				'hides' === window.site.headerEffect)
 		) {
 			header.style.position = 'fixed';
 		}
 		if (
-			null !== header.querySelector('.is-style-takeover-menu') &&
+			null !== takeover &&
 			(null === window.site.headerEffect ||
 				'scroll' === window.site.headerEffect)
 		) {
@@ -46,7 +50,7 @@ const domReady = () => {
 			header.style.overflow = 'hidden';
 			header.style.transform = 'none';
 		}
-		if (null === header.querySelector('nav')) {
+		if (null === nav) {
 			body.style.paddingTop = 0;
 		}
 
@@ -64,7 +68,9 @@ const domReady = () => {
 		);
 		backToTopBtn.setAttribute('href', '#top');
 		backToTopBtn.setAttribute('role', 'button');
-		document.querySelector('footer').append(backToTopBtn);
+		if (null !== footer) {
+			footer.append(backToTopBtn);
+		}
 
 		const backToTopImage = document.createElement('img');
 		backToTopImage.setAttribute('class', 'back-to-top-icon');
@@ -87,23 +93,22 @@ const domReady = () => {
 			 * Set back to top link visible when close to bottom of window.
 			 */
 			const backToTop = document.querySelector('.back-to-top');
-			if (
-				window.pageYOffset + window.innerHeight >
-				document.body.offsetHeight - 1000
-			) {
-				backToTop.style.display = 'block';
-				backToTop.style.opacity = '0.75';
-			} else {
-				backToTop.style.display = 'none';
-				backToTop.style.opacity = '0';
+			if (null !== backToTop) {
+				if (
+					window.pageYOffset + window.innerHeight >
+					document.body.offsetHeight - 1000
+				) {
+					backToTop.style.display = 'block';
+					backToTop.style.opacity = '0.75';
+				} else {
+					backToTop.style.display = 'none';
+					backToTop.style.opacity = '0';
+				}
 			}
 			/**
 			 * Enable header scroll show/hide based on site options.
 			 */
-			if (
-				header.querySelector('.is-style-takeover-menu') &&
-				'hides' === window.site.headerEffect
-			) {
+			if (null !== nav && 'hides' === window.site.headerEffect) {
 				const scrollTopPosition =
 					window.pageYOffset || document.documentElement.scrollTop;
 				if (scrollTopPosition < lastScrollTop) {

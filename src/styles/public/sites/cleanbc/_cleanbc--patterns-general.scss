@@ -13,32 +13,20 @@
 			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem) !important;
 		}
 	}
-}
 
+	&.two-up-wide {
 
-// In-page Cloud Banner with rounded icon styles.
-.in-page-cloud-banner {
+		.wp-block-columns {
+			max-width: 1440px;
+			margin: 0 auto;
 
-	.wp-block-cover {
-		border-radius: 1rem;
-
-		img {
-			border-radius: 1rem;
-		}
-
-		.wp-block-cover {
-
-			&__background {
+			.wp-block-column {
 				border-radius: 1rem;
 			}
 		}
 	}
-
-	.image-column {
-		background-color: var(--wp--preset--color--accent);
-		border-radius: 50%;
-	}
 }
+
 
 // In-page Full width with image Banner.
 .in-page-full-width-constrained-section {

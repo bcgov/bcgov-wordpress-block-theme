@@ -4,6 +4,7 @@ import '../../styles/admin/index.scss';
  * Load the required site options.
  */
 import '../public/dom-loader';
+import '../public/sites/cleanbc/cleanbc-dom-loader';
 
 /**
  * Filters modify or enhance existing blocks using addFilter hooks.
