@@ -140,6 +140,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-full-width-constrained-bordered-section';
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-full-width-constrained-floating-section';
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-sections-sector-cards';
+		$block_patterns[] = 'cleanbc/cleanbc-in-page-hazards-section';
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-warning-section';
 		$block_patterns[] = 'cleanbc/cleanbc-info-cards';
 		$block_patterns[] = 'cleanbc/cleanbc-small-three-up-card-feature';
