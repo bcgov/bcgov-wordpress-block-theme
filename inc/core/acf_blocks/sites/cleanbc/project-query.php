@@ -9,12 +9,11 @@
 
 namespace Bcgov\Theme\Block;
 
+// Create id and class attributes allowing for custom "className" and "align" values.
 $elId = 'project-' . $block['id'];
 if ( ! empty( $block['anchor'] ) ) {
     $elId = $block['anchor'];
 }
-
-// Create class attribute allowing for custom "className" and "align" values.
 $className = 'project';
 if ( ! empty( $block['className'] ) ) {
     $className .= ' ' . $block['className'];
@@ -37,7 +36,7 @@ $projects = get_posts(
 	]
 );
 
-// Category details for Edit screen.
+// Content details for Edit screen.
 $category_detail = get_field( 'project_category' );
 $numItems        = count( $category_detail );
 $index           = 0;
@@ -73,14 +72,16 @@ $allowed_html = [
 
 echo wp_kses( "{$html_output}", $allowed_html );
 
-
 if ( $projects ) : ?>
 
 <!-- wp:group {"align":"wide","style":{"border":{"radius":"1rem"}}} -->
 <div id="<?php echo esc_html( $elId ); ?>" class="<?php echo esc_html( $className ); ?> wp-block-group alignwide" style="border-radius:1rem">
 
 
-	<?php foreach ( $projects as $project ) : ?>
+    <?php
+    // Content details for Save screen.
+    foreach ( $projects as $project ) :
+		?>
    
 <!-- wp:columns {"style":{"border":{"radius":"1rem"}}} -->
 <div class="wp-block-columns hide-in-admin" style="border-radius:1rem"><!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"padding":{"top":"3rem","right":"3rem","bottom":"3rem","left":"3rem"}}},"className":"content-column"} -->

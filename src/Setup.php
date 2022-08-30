@@ -320,7 +320,7 @@ class Setup {
 		if ( function_exists( 'acf_register_block_type' ) ) {
 
 			// Load CleanBC Blocks.
-			if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC' ) && CLEANBC ) {
+			if ( function_exists( 'acf_add_options_page' ) && 'cleanbc' === get_field( 'active_site', 'option' ) ) {
 				require_once get_template_directory() . '/inc/core/acf_blocks/sites/cleanbc/cleanbc-block-loader.php';
 			}
 		}
