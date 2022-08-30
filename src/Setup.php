@@ -33,8 +33,10 @@ class Setup {
 		add_action( 'admin_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_admin_scripts' ] );
 		add_action( 'admin_notices', [ $this, 'bcgov_block_theme_dependencies' ] );
 		add_action( 'admin_menu', [ $this, 'bcgov_block_theme_menu' ] );
+		add_action( 'acf/init', [ $this, 'bcgov_block_theme_acf_init_block_types' ] );
 		add_filter( 'get_custom_logo', [ $this, 'bcgov_block_theme_custom_logo' ] );
 		remove_theme_support( 'core-block-patterns' );
+
     }
 
 	/**
@@ -116,11 +118,11 @@ class Setup {
      */
     public function set_javascript_variables() {
 
-		$javascript_variables = array(
+		$javascript_variables = [
 			'domain'      => home_url(),
 			'siteName'    => 'bcgov',
 			'templateDir' => get_template_directory_uri(),
-		);
+		];
 
 		// Overwrite default with options value set in the Theme Option admin.
 		if ( function_exists( 'acf_add_options_page' ) ) {
@@ -194,7 +196,7 @@ class Setup {
 		wp_enqueue_script(
 			'bcgov-blocks-manager',
 			get_template_directory_uri() . '/inc/core/theme-blocks-allow-list.js',
-			array( 'wp-blocks', 'wp-dom' ),
+			[ 'wp-blocks', 'wp-dom' ],
 			filemtime( get_template_directory() . '/inc/core/theme-blocks-allow-list.js' ),
 			true
 		);
@@ -305,5 +307,23 @@ class Setup {
 
 	}
 
+	/**
+	 * Register ACF Pro Blocks.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function bcgov_block_theme_acf_init_block_types() {
 
+		// Check function exists.
+		if ( function_exists( 'acf_register_block_type' ) ) {
+
+			// Load CleanBC Blocks.
+			if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC' ) && CLEANBC ) {
+				require_once get_template_directory() . '/inc/core/acf_blocks/sites/cleanbc/cleanbc-block-loader.php';
+			}
+		}
+	}
 }
+

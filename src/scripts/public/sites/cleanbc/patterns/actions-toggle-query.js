@@ -21,6 +21,10 @@ const domReady = () => {
 					.replace(/ /g, '-')
 					.replace(/[^\w-]+/g, '');
 
+				const elQueryLoops = document.querySelectorAll(
+					'.wp-block-query'
+				);
+
 				element.newClass = newClass;
 
 				element
@@ -56,6 +60,17 @@ const domReady = () => {
 									el.classList.toggle('hidden');
 								}
 							});
+						elQueryLoops.forEach((loopItem) => {
+							loopItem.classList.add('hide');
+							if (
+								loopItem.classList.contains(
+									`show-${targetAction}`
+								)
+							) {
+								loopItem.classList.remove('hide');
+							}
+							// loopItem.classList.contains(`${targetAction}`).
+						});
 					}
 				});
 			});

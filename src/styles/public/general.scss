@@ -125,6 +125,20 @@ body {
 	}
 }
 
+.admin-placeholder,
+.hide,
+.hidden {
+	display: none;
+}
+
+.hide-in-admin {
+	display: inherit;
+}
+
+.show-in-admin {
+	display: hide;
+}
+
 main,
 .post-content {
 
