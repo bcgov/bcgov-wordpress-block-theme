@@ -8,9 +8,9 @@ const domReady = () => {
 		/*
 		 * Check for menu items being out of viewport and class is needed.
 		 */
-		function doBoundsCheck(t) {
+		function doBoundsCheck(targetEl) {
 			setTimeout(function() {
-				const container = t;
+				const container = targetEl;
 				const childContainer = container.querySelector('ul');
 
 				let bounding = null;
