@@ -1061,4 +1061,19 @@ html :where(.editor-styles-wrapper) {
 		}
 	}
 
+	&.is-style-no-clip {
+
+		.wp-block-media-text {
+
+			&__media {
+				height: auto !important;
+
+				img,
+				video {
+					height: auto !important;
+				}
+			}
+		}
+	}
+
 }
