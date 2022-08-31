@@ -93,7 +93,7 @@ const domReady = () => {
 						const childItem = group.querySelector(
 							'.wp-block-group.project'
 						);
-						const noChildItem = group.querySelector('.no-results');
+
 						if (null !== childItem) {
 							const childCount = childItem.querySelectorAll(
 								'.wp-block-columns'
@@ -123,11 +123,14 @@ const domReady = () => {
 								}
 							}
 						}
-						if (null !== noChildItem) {
+						const noChildItem = group.querySelector('.no-results');
+						if (noChildItem !== null) {
 							const spanToReset = noChildItem
 								.closest('.wp-block-bcgov-collapse-item')
 								.querySelector('.collapse-header .count');
-							spanToReset.innerHTML = '0';
+							if (spanToReset !== null) {
+								spanToReset.innerHTML = '0';
+							}
 						}
 					});
 				});
