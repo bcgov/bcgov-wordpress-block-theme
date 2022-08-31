@@ -72,46 +72,58 @@ $allowed_html = [
 
 echo wp_kses( "{$html_output}", $allowed_html );
 
-if ( $projects ) : ?>
+if ( $projects ) { ?>
 
-<!-- wp:group {"align":"wide","style":{"border":{"radius":"1rem"}}} -->
-<div id="<?php echo esc_html( $elId ); ?>" class="<?php echo esc_html( $className ); ?> wp-block-group alignwide" style="border-radius:1rem">
-
-
+<!-- wp:group {"align":"wide","style":{"border":{"radius":"1rem"}},{"spacing":{"padding":{"top":"1rem"}}} -->
+<div id="<?php echo esc_html( $elId ); ?>" class="<?php echo esc_html( $className ); ?> wp-block-group alignwide" style="border-radius:1rem;padding-top:1rem;">
     <?php
     // Content details for Save screen.
     foreach ( $projects as $project ) :
 		?>
    
-<!-- wp:columns {"style":{"border":{"radius":"1rem"}}} -->
-<div class="wp-block-columns hide-in-admin" style="border-radius:1rem"><!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"padding":{"top":"3rem","right":"3rem","bottom":"3rem","left":"3rem"}}},"className":"content-column"} -->
-<div class="wp-block-column is-vertically-aligned-center content-column" style="padding-top:2rem;padding-right:0;padding-bottom:2rem;padding-left:0;flex-basis:66.66%"><!-- wp:heading -->
-<h2><?php echo esc_html( get_the_title( $project->ID ) ); ?></h2>
-<!-- /wp:heading -->
+        <!-- wp:columns {"style":{"border":{"radius":"1rem"}}},{"spacing":{"padding":{"top":"2rem"}}},"className":"hide-in-admin"} -->
+        <div class="wp-block-columns wp-container-25 hide-in-admin" style="padding-top:2rem;border-radius:1rem">
+            <!-- wp:column {"verticalAlignment":"center","width":"66.66%","style":{"spacing":{"padding":{"top":"0","right":"3rem","bottom":"0","left":"3rem"}}},"className":"content-column"} -->
+            <div class="wp-block-column is-vertically-aligned-center content-column" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;flex-basis:66.66%">
+                <!-- wp:heading -->
+                <h4><?php echo esc_html( get_the_title( $project->ID ) ); ?></h4>
+                <!-- /wp:heading -->
+                <!-- wp:paragraph -->
+                <?php echo esc_html( get_the_excerpt( $project->ID ) ); ?>
 
-<!-- wp:paragraph -->
-		<?php echo esc_html( get_the_excerpt( $project->ID ) ); ?>
+                <!-- wp:button {"style":{"spacing":{"padding":{"top":"2rem","right":"0","bottom":"2rem","left":"0"}}} -->
+                <div class="wp-block-button has-size-regular is-style-underline"><a href="<?php echo esc_html( get_permalink( $project->ID ) ); ?>" tabindex="0" class="wp-block-button__link has-secondary-brand-color has-text-color">View Action</a></div>
+                <!-- /wp:button -->
+                <!-- /wp:paragraph -->
+            <!-- /wp:column --></div>
 
-<!-- wp:button {"style":{"spacing":{"padding":{"top":"2rem","right":"0","bottom":"2rem","left":"0"}}} -->
-<div class="wp-block-button has-size-regular is-style-underline"><a href="<?php echo esc_html( get_permalink( $project->ID ) ); ?>" tabindex="0" class="wp-block-button__link has-secondary-brand-color has-text-color">View Action</a></div>
-<!-- /wp:button -->
-<!-- /wp:paragraph --></div>
-<!-- /wp:column -->
+            <!-- wp:column {"verticalAlignment":"center","width":"33.33%","backgroundColor":"transparent","className":"image-column","textColor":"gray-60"} -->
+            <div class="wp-block-column is-vertically-aligned-top image-column has-transparent-background-color has-background has-text-align-right has-gray-60-color has-text-color" style="flex-basis:33.33%">
+                <!-- wp:paragraph -->
+                <?php
+                $posttags = get_the_tags( $project->ID );
 
-<!-- wp:column {"verticalAlignment":"center","width":"33.33%","backgroundColor":"transparent","className":"image-column"} -->
-<div class="wp-block-column is-vertically-aligned-center image-column has-transparent-background-color has-background" style="flex-basis:33.33%"><!-- wp:paragraph -->
-		<?php
-		$posttags = get_the_tags( $project->ID );
+                if ( $posttags ) {
+                    $num_tags = count( $posttags );
+                    $index    = 0;
+                    $tag_list = '';
 
-		if ( $posttags ) {
-			foreach ( $posttags as $tagItem ) {
-				echo esc_html( $tagItem->name . ' ' );
-			}
-		}
-		?>
-<!-- /wp:paragraph --></div>
-<!-- /wp:column --></div>
-<!-- /wp:columns --></div>
-	<?php endforeach; ?>
-<!-- /wp:group -->
-<?php endif; ?>
+                    foreach ( $posttags as $tag_item ) {
+                        $tag_list .= $tag_item->name;
+                        if ( ++$index !== $num_tags ) {
+                            $tag_list .= ', ';
+                        }
+                    }
+                    echo esc_html( $tag_list . ' ' );
+                }
+                ?>
+                <!-- /wp:paragraph -->
+            <!-- /wp:column --></div>
+        <!-- /wp:columns --></div>
+    <?php endforeach; ?>
+<!-- /wp:group --></div>
+<?php } else { ?>
+    <div class="no-results">
+        <p class="hide-in-admin">Sorry, there are no projects for this category.</p>
+    </div>
+<?php } ?>

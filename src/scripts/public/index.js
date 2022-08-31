@@ -9,7 +9,6 @@ import './ribbon-navigation';
 
 import '../admin/blocks/collapse/app';
 
-import './sites/cleanbc/patterns/actions-accordion-query';
 import './sites/cleanbc/patterns/actions-toggle-query';
 import './sites/cleanbc/patterns/landing-cover-banner';
 import './sites/cleanbc/patterns/sectors-section-cards';
