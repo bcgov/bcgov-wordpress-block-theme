@@ -485,10 +485,31 @@ html :where(.editor-styles-wrapper) {
 					}
 				}
 
+				&-calendar {
+
+					&::before {
+						mask: $icon-calendar;
+					}
+				}
+
 				&-case {
 
 					&::before {
 						mask: $icon-case;
+					}
+				}
+
+				&-changes {
+
+					&::before {
+						mask: $icon-changes;
+					}
+				}
+
+				&-federal {
+
+					&::before {
+						mask: $icon-federal;
 					}
 				}
 
@@ -510,6 +531,19 @@ html :where(.editor-styles-wrapper) {
 					}
 				}
 
+				&-leaf {
+
+					&::before {
+						mask: $icon-leaf;
+					}
+				}
+
+				&-map {
+
+					&::before {
+						mask: $icon-map;
+					}
+				}
 
 				&-tag {
 
