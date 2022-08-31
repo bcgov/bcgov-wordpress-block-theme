@@ -132,6 +132,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		// CleanBC general patterns.
 		$block_patterns[] = 'cleanbc/cleanbc-advisory-tag';
 		$block_patterns[] = 'cleanbc/cleanbc-alternating-home-cards';
+		$block_patterns[] = 'cleanbc/cleanbc-graph-card-feature';
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-cloud-banner';
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-impact-banner';
 		$block_patterns[] = 'cleanbc/cleanbc-in-page-strategies-banner';
