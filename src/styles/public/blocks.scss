@@ -261,6 +261,19 @@ html :where(.editor-styles-wrapper) {
 					}
 				}
 
+				&-calendar {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-calendar;
+							}
+						}
+					}
+				}
+
 				&-case {
 
 					.wp-block-button {
@@ -269,6 +282,32 @@ html :where(.editor-styles-wrapper) {
 
 							&::before {
 								mask: $icon-case;
+							}
+						}
+					}
+				}
+
+				&-changes {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-changes;
+							}
+						}
+					}
+				}
+
+				&-federal {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-federal;
 							}
 						}
 					}
@@ -304,6 +343,32 @@ html :where(.editor-styles-wrapper) {
 					}
 				}
 
+				&-leaf {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-leaf;
+							}
+						}
+					}
+				}
+
+				&-map {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-map;
+							}
+						}
+					}
+				}
+
 				&-tag {
 
 					.wp-block-button {
@@ -316,6 +381,8 @@ html :where(.editor-styles-wrapper) {
 						}
 					}
 				}
+
+
 			}
 
 
