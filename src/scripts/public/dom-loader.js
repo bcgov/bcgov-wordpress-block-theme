@@ -7,11 +7,14 @@ const domReady = () => {
 	 */
 	setTimeout(function() {
 		/**
-		 * Add siteName body classes.
+		 * Add siteName body classes and modify DOM placement of breadcrumb after first banner.
 		 */
 		const body = document.querySelector('body');
 		const header = document.querySelector('.bcgov-site-header');
 		const footer = document.querySelector('footer');
+		const bannerElement = document.querySelector('.wp-block-post-content')
+			.firstElementChild;
+		const breadcrumb = document.querySelector('.breadcrumb-nav-section');
 		let takeover,
 			nav = null;
 		if (null !== header) {
@@ -29,6 +32,24 @@ const domReady = () => {
 			body.classList.add(`header-${window.site.headerEffect}`);
 		} else {
 			body.classList.add('header-scroll');
+		}
+
+		if (null !== bannerElement) {
+			if (
+				bannerElement.className
+					.split(' ')
+					.some((individualClass) =>
+						/.*banner.*/.test(individualClass)
+					)
+			) {
+				if (null !== breadcrumb) {
+					bannerElement.parentNode.insertBefore(
+						breadcrumb,
+						bannerElement.nextSibling
+					);
+					breadcrumb.classList.add('alignwide');
+				}
+			}
 		}
 
 		/**

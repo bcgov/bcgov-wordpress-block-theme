@@ -14,7 +14,7 @@ return [
 	'categories' => [ 'cleanbc-patterns-general' ],
 	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem"}}},"backgroundColor":"nonary","className":"in-page-full-width-constrained-section"} -->
 	<div class="wp-block-group alignfull in-page-full-width-constrained-section has-nonary-background-color has-background" style="padding-top:6rem;padding-bottom:6rem"><!-- wp:media-text {"mediaId":2165,"mediaLink":"none","mediaType":"image","mediaWidth":15,"verticalAlignment":"center","textColor":"background","className":"is-style-square"} -->
-	<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-style-square has-background-color has-text-color" style="grid-template-columns:15% auto"><figure class="wp-block-media-text__media"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/warning-icon.png" alt="" class="wp-image-2165 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:group -->
+	<div class="wp-block-media-text alignwide is-stacked-on-mobile is-vertically-aligned-center is-style-square has-background-color has-text-color" style="grid-template-columns:15% auto"><figure class="wp-block-media-text__media"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/icons/warning-icon.png" alt="" class="wp-image-2165 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:group -->
 	<div class="wp-block-group"><!-- wp:heading {"style":{"typography":{"fontSize":"36px"}},"textColor":"primary-brand"} -->
 	<h2 class="has-primary-brand-color has-text-color" style="font-size:36px">Preparing for hazards before they happen</h2>
 	<!-- /wp:heading -->
