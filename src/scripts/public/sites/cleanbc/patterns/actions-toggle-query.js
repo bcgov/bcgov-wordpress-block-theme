@@ -82,60 +82,6 @@ const domReady = () => {
 
 			countActiveProjects();
 
-			function countActiveProjects() {
-				const elAccordionItems = document.querySelectorAll(
-					'.wp-block-bcgov-collapse-item'
-				);
-
-				elAccordionItems.forEach((item) => {
-					const queryGroup = item.querySelectorAll('.active-group');
-					queryGroup.forEach((group) => {
-						const childItem = group.querySelector(
-							'.wp-block-group.project'
-						);
-
-						if (null !== childItem) {
-							const childCount = childItem.querySelectorAll(
-								'.wp-block-columns'
-							);
-							const headingCounter = childItem
-								.closest('.wp-block-bcgov-collapse-item')
-								.querySelector(
-									'.collapse-header .collapse-title'
-								);
-							const headingCounterContainer = headingCounter.querySelector(
-								'.count'
-							);
-							const headingCount = childCount.length;
-							if (childCount.length) {
-								// console.log(headingCount);
-								if (
-									null !== headingCounterContainer &&
-									headingCount
-								) {
-									headingCounterContainer.innerHTML = `${headingCount}`;
-								}
-								if (
-									null === headingCounterContainer &&
-									headingCount
-								) {
-									headingCounter.innerHTML = `${headingCounter.innerText} <span class="count">${headingCount} </span>`;
-								}
-							}
-						}
-						const noChildItem = group.querySelector('.no-results');
-						if (noChildItem !== null) {
-							const spanToReset = noChildItem
-								.closest('.wp-block-bcgov-collapse-item')
-								.querySelector('.collapse-header .count');
-							if (spanToReset !== null) {
-								spanToReset.innerHTML = '0';
-							}
-						}
-					});
-				});
-			}
-
 			const elActions = document.querySelectorAll(
 				'.type-post.category-actions'
 			);
@@ -182,6 +128,57 @@ const domReady = () => {
 			});
 		}
 	}, 0);
+
+	function countActiveProjects() {
+		const elAccordionItems = document.querySelectorAll(
+			'.wp-block-bcgov-collapse-item'
+		);
+
+		elAccordionItems.forEach((item) => {
+			const queryGroup = item.querySelectorAll('.active-group');
+			queryGroup.forEach((group) => {
+				const childItem = group.querySelector(
+					'.wp-block-group.project'
+				);
+
+				if (null !== childItem) {
+					const childCount = childItem.querySelectorAll(
+						'.wp-block-columns'
+					);
+					const headingCounter = childItem
+						.closest('.wp-block-bcgov-collapse-item')
+						.querySelector('.collapse-header .collapse-title');
+					const headingCounterContainer = headingCounter.querySelector(
+						'.count'
+					);
+					const headingCount = childCount.length;
+					if (childCount.length) {
+						// console.log(headingCount);
+						if (null !== headingCounterContainer && headingCount) {
+							headingCounterContainer.innerHTML = `${headingCount}`;
+						}
+						if (null === headingCounterContainer && headingCount) {
+							headingCounter.innerHTML = `${headingCounter.innerText} <span class="count">${headingCount} </span>`;
+						}
+					}
+				}
+				const noChildItem = group.querySelector('.no-results');
+				if (noChildItem !== null) {
+					const headerContainer = noChildItem
+						.closest('.wp-block-bcgov-collapse-item')
+						.querySelector('.collapse-title');
+					const spanToReset = noChildItem
+						.closest('.wp-block-bcgov-collapse-item')
+						.querySelector('.collapse-header .count');
+					if (spanToReset !== null) {
+						spanToReset.innerHTML = '0';
+					} else {
+						headerContainer.innerHTML = `${headerContainer.innerText} <span class="count">0</span>`;
+					}
+				}
+			});
+		});
+	}
 };
 
 if ('complete' === document.readyState) {

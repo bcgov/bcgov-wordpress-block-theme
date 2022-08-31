@@ -30,3 +30,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 – Many patterns + BCgov base theme reuseability fixes (mostly around navigation) + DOM element selector checking for admin. Fixed bug in ribbon style navigation for offscreen flyout sebmenus. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 – Added initial pass at Projects Query block to enable late changes to information delivery. Additional work needed to tie output into Actions switching mechanism. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 - Accordion/Actions toggle feature revamped to use new Project Query Block. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
+- Accordion/Project Query Block render output and count initialisation fix. Front end button icon style fix. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
