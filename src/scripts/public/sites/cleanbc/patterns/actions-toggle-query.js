@@ -20,19 +20,24 @@ const domReady = () => {
 					.toLowerCase()
 					.replace(/ /g, '-')
 					.replace(/[^\w-]+/g, '');
-
-				const elQueryLoops = document.querySelectorAll(
-					'.wp-block-query'
+				const accordionBlockGroup = document.querySelectorAll(
+					'.actions-accordion-header .wp-block-group.query-group'
 				);
-
 				element.newClass = newClass;
-
 				element
 					.querySelector('a.wp-block-button__link')
 					.classList.add(element.newClass);
 
 				if (0 === index) {
 					button.classList.add('active');
+					accordionBlockGroup.forEach((el) => {
+						el.classList.add('hidden');
+						el.classList.remove('active-group');
+						if (el.classList.contains(`${newClass}`)) {
+							el.classList.toggle('hidden');
+							el.classList.add('active-group');
+						}
+					});
 				}
 
 				button.addEventListener('click', function(e) {
@@ -50,6 +55,7 @@ const domReady = () => {
 							.toLowerCase()
 							.replace(/ /g, '-')
 							.replace(/[^\w-]+/g, '');
+
 						document
 							.querySelectorAll(
 								'.actions-toggle-query-loop .category-actions'
@@ -60,26 +66,78 @@ const domReady = () => {
 									el.classList.toggle('hidden');
 								}
 							});
-						elQueryLoops.forEach((loopItem) => {
-							loopItem.classList.add('hide');
-							if (
-								loopItem.classList.contains(
-									`show-${targetAction}`
-								)
-							) {
-								loopItem.classList.remove('hide');
+						accordionBlockGroup.forEach((el) => {
+							el.classList.add('hidden');
+							el.classList.remove('active-group');
+							if (el.classList.contains(`${targetAction}`)) {
+								el.classList.toggle('hidden');
+								el.classList.add('active-group');
 							}
-							// loopItem.classList.contains(`${targetAction}`).
 						});
+
+						countActiveProjects();
 					}
 				});
 			});
+
+			countActiveProjects();
+
+			function countActiveProjects() {
+				const elAccordionItems = document.querySelectorAll(
+					'.wp-block-bcgov-collapse-item'
+				);
+
+				elAccordionItems.forEach((item) => {
+					const queryGroup = item.querySelectorAll('.active-group');
+					queryGroup.forEach((group) => {
+						const childItem = group.querySelector(
+							'.wp-block-group.project'
+						);
+						const noChildItem = group.querySelector('.no-results');
+						if (null !== childItem) {
+							const childCount = childItem.querySelectorAll(
+								'.wp-block-columns'
+							);
+							const headingCounter = childItem
+								.closest('.wp-block-bcgov-collapse-item')
+								.querySelector(
+									'.collapse-header .collapse-title'
+								);
+							const headingCounterContainer = headingCounter.querySelector(
+								'.count'
+							);
+							const headingCount = childCount.length;
+							if (childCount.length) {
+								// console.log(headingCount);
+								if (
+									null !== headingCounterContainer &&
+									headingCount
+								) {
+									headingCounterContainer.innerHTML = `${headingCount}`;
+								}
+								if (
+									null === headingCounterContainer &&
+									headingCount
+								) {
+									headingCounter.innerHTML = `${headingCounter.innerText} <span class="count">${headingCount} </span>`;
+								}
+							}
+						}
+						if (null !== noChildItem) {
+							const spanToReset = noChildItem
+								.closest('.wp-block-bcgov-collapse-item')
+								.querySelector('.collapse-header .count');
+							spanToReset.innerHTML = '0';
+						}
+					});
+				});
+			}
 
 			const elActions = document.querySelectorAll(
 				'.type-post.category-actions'
 			);
 
-			elActions.forEach((element, index) => {
+			elActions.forEach((element) => {
 				const heading = element.querySelector('h2').innerText;
 				const linkAddition = element.querySelector(
 					'.wp-block-button__link'
@@ -105,10 +163,18 @@ const domReady = () => {
 					.toLowerCase()
 					.replace(/ /g, '-')
 					.replace(/[^\w-]+/g, '');
-				element.classList.add(newClass);
+				const activeButton = document.querySelector(
+					'a.wp-block-button__link.active'
+				);
+				const targetAction = activeButton.innerText
+					.toLowerCase()
+					.replace(/ /g, '-')
+					.replace(/[^\w-]+/g, '');
 
-				if (0 !== index) {
-					element.classList.add('hidden');
+				element.classList.add(newClass);
+				element.classList.add('hidden');
+				if (element.classList.contains(`${targetAction}`)) {
+					element.classList.toggle('hidden');
 				}
 			});
 		}

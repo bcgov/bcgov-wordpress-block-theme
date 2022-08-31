@@ -25,7 +25,7 @@ wp.domReady(function () {
 			if (block.name === 'core/embed') {
 				block.variations.forEach(variant => {
 					// Allow Youtube.
-					if ('youtube' !== variant.name) {
+					if ('youtube' !== variant.name && 'vimeo' !== variant.name) {
 						wp.blocks.unregisterBlockVariation(block.name, variant.name);
 					}
 				});
@@ -51,15 +51,13 @@ wp.domReady(function () {
 
 			if (block.category === 'media') return;
 
-			if (block.category === 'embed') return;
-
 			if (block.category === 'design') return;
 
 			if (block.category === 'theme') return;
 
 			if (block.name === 'core/embed') {
 				block.variations.forEach(variant => {
-					if ('youtube' !== variant.name) {
+					if ('youtube' !== variant.name && 'vimeo' !== variant.name) {
 						wp.blocks.unregisterBlockVariation(block.name, variant.name);
 					}
 				});

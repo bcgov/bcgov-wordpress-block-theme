@@ -32,6 +32,10 @@ body {
 				bottom: 23.25rem;
 			}
 		}
+
+		.wp-block-separator {
+			margin: 0;
+		}
 	}
 
 	&.home:not(body.wp-admin) .three-up-card-feature {
