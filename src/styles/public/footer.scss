@@ -5,7 +5,7 @@
 */
 
 // Template editor specific styles.
-html :where(.editor-styles-wrapper) {
+html body.wp-admin .editor-styles-wrapper {
 
 	li {
 

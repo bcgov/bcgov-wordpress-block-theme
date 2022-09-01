@@ -2,7 +2,7 @@
 
 
 // Template editor specific styles.
-html :where(.editor-styles-wrapper) {
+html body.wp-admin .editor-styles-wrapper {
 
 	.cleanbc-subfooter a {
 		color: var(--wp--preset--color--white);

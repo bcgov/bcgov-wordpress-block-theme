@@ -4,7 +4,7 @@
 /*
  * Editor Styles – use when editor specific style specificity is required.
  */
-html :where(.editor-styles-wrapper) {
+html body.wp-admin .editor-styles-wrapper {
 
 	/*
 	*  Query: Is Grid of Posts Pattern.

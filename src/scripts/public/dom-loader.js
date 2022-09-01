@@ -10,11 +10,17 @@ const domReady = () => {
 		 * Add siteName body classes and modify DOM placement of breadcrumb after first banner.
 		 */
 		const body = document.querySelector('body');
+		// Guard against being in the WordPress admin area.
+		const wpAdmin = body.classList.contains('wp-admin');
+		if (wpAdmin) return;
+
+		const home = body.classList.contains('home');
 		const header = document.querySelector('.bcgov-site-header');
 		const footer = document.querySelector('footer');
 		const bannerElement = document.querySelector('.wp-block-post-content')
 			.firstElementChild;
 		const breadcrumb = document.querySelector('.breadcrumb-nav-section');
+
 		let takeover,
 			nav = null;
 		if (null !== header) {
@@ -48,6 +54,9 @@ const domReady = () => {
 						bannerElement.nextSibling
 					);
 					breadcrumb.classList.add('alignwide');
+					if (home) {
+						breadcrumb.remove();
+					}
 				}
 			}
 		}

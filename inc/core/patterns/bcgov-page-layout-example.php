@@ -38,8 +38,8 @@ return [
 	<!-- /wp:group --></div></div>
 	<!-- /wp:cover -->
 	
-	<!-- wp:group {"tagName":"section","align":"wide","style":{"spacing":{"padding":{"top":"1rem","right":"1rem","bottom":"1rem","left":"1rem"}}},"layout":{"inherit":false,"contentSize":"1440px"},"fontSize":"extra-small"} -->
-	<section class="wp-block-group alignwide has-extra-small-font-size" style="padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem"><!-- wp:aioseo/breadcrumbs /--></section>
+	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"1rem","right":"1rem","bottom":"1rem","left":"1rem"}}},"layout":{"inherit":false,"contentSize":"1440px"},"fontSize":"extra-small"} -->
+	<div class="wp-block-group alignwide has-extra-small-font-size" style="padding-top:1rem;padding-right:1rem;padding-bottom:1rem;padding-left:1rem"><!-- wp:aioseo/breadcrumbs /--></div>
 	<!-- /wp:group -->
 	
 	<!-- wp:group {"align":"wide"} -->
