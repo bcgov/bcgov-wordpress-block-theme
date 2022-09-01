@@ -32,7 +32,7 @@ registerBlockStyle('core/button', {
 
 if ('cleanbc' === window.site.siteName) {
 	registerBlockStyle('core/button', {
-		name: 'blank',
+		name: 'icon',
 		label: 'Icon',
 	});
 }
@@ -198,7 +198,7 @@ const addClassesToEditor = createHigherOrderComponent((BlockListBlock) => {
 				className={classnames(
 					className,
 					size ? `has-size-${size}` : '',
-					svgIcon ? `icon-${svgIcon}` : ''
+					svgIcon ? `icon icon-${svgIcon}` : ''
 				)}
 			/>
 		);

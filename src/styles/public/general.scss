@@ -1,7 +1,7 @@
 /* stylelint-disable no-descending-specificity */
 
 
-:root html :where(.editor-styles-wrapper) {
+html body.wp-admin .editor-styles-wrapper {
 
 	h1:not(.is-style-custom) {
 		font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.25rem) !important;
@@ -45,10 +45,6 @@
 		min-height: 0;
 	}
 
-}
-
-body.wp-admin {
-
 	.wp-block-columns {
 
 		&.is-style-constrained {
@@ -66,9 +62,31 @@ body.wp-admin {
 */
 html {
 	scroll-behavior: smooth;
+	scroll-padding-top: 80px;
 }
 
 body {
+
+	opacity: 0;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-name: fadeIn;
+
+
+	@keyframes fadeIn {
+
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
 	font-family: BCSans, "Noto Sans", Verdana, Arial, sans-serif;
 	color: $body-color;
 

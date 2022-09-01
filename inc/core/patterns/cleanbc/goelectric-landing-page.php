@@ -42,8 +42,8 @@ return [
 	<!-- /wp:group --></div></div>
 	<!-- /wp:cover -->
 	
-	<!-- wp:group {"tagName":"section","align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"10px","bottom":"10px","left":"10px"}}},"layout":{"inherit":false,"contentSize":"1440px"},"fontSize":"extra-small"} -->
-	<section class="wp-block-group alignwide has-extra-small-font-size" style="padding-top:0px;padding-right:10px;padding-bottom:10px;padding-left:10px"><!-- wp:aioseo/breadcrumbs /--></section>
+	<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"10px","bottom":"10px","left":"10px"}}},"layout":{"inherit":false,"contentSize":"1440px"},"fontSize":"extra-small"} -->
+	<div class="wp-block-group alignwide has-extra-small-font-size" style="padding-top:0px;padding-right:10px;padding-bottom:10px;padding-left:10px"><!-- wp:aioseo/breadcrumbs /--></div>
 	<!-- /wp:group -->
 	
 	<!-- wp:media-text {"mediaPosition":"right","mediaId":284,"mediaLink":"https://bcgov-block-theme.local/bcgov/polestar-2-2022/","mediaType":"image","verticalAlignment":"center","style":{"color":{"background":"#0033660a"}}} -->
