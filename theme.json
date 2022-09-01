@@ -55,11 +55,13 @@
 		},
 		{
 			"title": "Search Field",
-			"name": "search-field"
+			"name": "search-field",
+			"area": "header"
 		},
 		{
 			"title": "Breadcrumb Nav – requires AIOSEO plugin",
-			"name": "breadcrumb-nav"
+			"name": "breadcrumb-nav",
+			"area": "header"
 		},
 		{
 			"title": "BCGov Footer",
