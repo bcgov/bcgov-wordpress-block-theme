@@ -1,46 +1,6 @@
 {
 	"version": 2,
 	"title": "CleanBC",
-	"templateParts": [
-		{
-			"title": "BCGov Header (general with ribbon navigation)",
-			"name": "header",
-			"area": "header"
-		},
-		{
-			"title": "BCGov Header (with fullscreen navigation)",
-			"name": "header-takeover-nav",
-			"area": "header"
-		},
-		{
-			"title": "Main Menu",
-			"name": "navigation",
-			"area": "header"
-		},
-		{
-			"title": "Ribbon Menu (Main)",
-			"name": "ribbon-navigation",
-			"area": "header"
-		},
-		{
-			"title": "Takeover Menu (Main)",
-			"name": "takeover-navigation",
-			"area": "header"
-		},
-		{
-			"title": "Search Field",
-			"name": "search-field"
-		},
-		{
-			"title": "Breadcrumb Nav – requires AIOSEO plugin",
-			"name": "breadcrumb-nav"
-		},
-		{
-			"title": "BCGov Footer",
-			"name": "footer",
-			"area": "footer"
-		}
-	],
 	"settings": {
 		"appearanceTools": true,
 		"color": {

@@ -274,7 +274,6 @@ html body.wp-admin .editor-styles-wrapper {
 		&.is-style-icon {
 
 			&.icon {
-				display: unset;
 
 				.wp-block-button {
 
@@ -485,8 +484,6 @@ html body.wp-admin .editor-styles-wrapper {
 	.wp-block-button {
 
 		&__link {
-
-			display: unset;
 
 			&.icon {
 				text-align: left;

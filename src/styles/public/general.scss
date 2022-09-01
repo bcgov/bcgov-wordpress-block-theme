@@ -67,14 +67,15 @@ html {
 
 body {
 
-	opacity: 0;
-	animation-duration: 0.3s;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease-out;
-	animation-delay: 0s;
-	animation-iteration-count: 1;
-	animation-name: fadeIn;
-
+	&:not(.wp-admin) {
+		opacity: 0;
+		animation-duration: 0.3s;
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-out;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-name: fadeIn;
+	}
 
 	@keyframes fadeIn {
 
