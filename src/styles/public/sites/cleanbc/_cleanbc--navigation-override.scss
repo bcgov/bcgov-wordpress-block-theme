@@ -31,6 +31,10 @@ body.cleanbc {
 
 		.wp-block-navigation {
 
+			&__container > .wp-block-navigation-item {
+				max-width: 31.33%;
+			}
+
 			&__responsive-container {
 				height: 100vh;
 			}
@@ -43,7 +47,6 @@ body.cleanbc {
 					// border: 1px dashed var(--wp--preset--color--senary);
 
 					display: flex;
-					justify-content: space-between !important;
 					align-items: flex-start;
 
 					li {
