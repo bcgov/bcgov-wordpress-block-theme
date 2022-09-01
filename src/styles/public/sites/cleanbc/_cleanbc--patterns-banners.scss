@@ -517,3 +517,14 @@ html :where(.editor-styles-wrapper) {
 		}
 	}
 }
+
+
+.region-climate-change-section {
+
+	.wp-block-column {
+
+		&.content-column {
+			all: unset;
+		}
+	}
+}

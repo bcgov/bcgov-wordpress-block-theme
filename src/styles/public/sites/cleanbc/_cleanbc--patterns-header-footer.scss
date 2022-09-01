@@ -96,11 +96,11 @@ body.cleanbc {
 				width: 100%;
 
 				&:nth-of-type(2) {
-					border-color: var(--wp--preset--color--quarternary);
+					border-color: var(--wp--preset--color--accent);
 				}
 
 				&:nth-of-type(3) {
-					border-color: var(--wp--preset--color--accent);
+					border-color: var(--wp--preset--color--nonary);
 				}
 
 				&:nth-of-type(4) {
@@ -109,6 +109,10 @@ body.cleanbc {
 
 				&:nth-of-type(5) {
 					border-color: var(--wp--preset--color--septenary);
+				}
+
+				&:nth-of-type(6) {
+					border-color: var(--wp--preset--color--senary);
 				}
 
 				&__content {

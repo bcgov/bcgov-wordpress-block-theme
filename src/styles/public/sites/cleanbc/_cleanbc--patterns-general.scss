@@ -22,7 +22,15 @@
 			margin: 0 auto;
 
 			.wp-block-column {
+				all: unset;
 				border-radius: 1rem;
+				display: flex;
+
+				.wp-block-group {
+					display: flex;
+					flex-direction: column;
+					margin: auto;
+				}
 			}
 		}
 	}
