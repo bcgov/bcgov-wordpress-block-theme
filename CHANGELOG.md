@@ -33,3 +33,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 - Accordion/Project Query Block render output and count initialisation fix. Front end button icon style fix. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 - Menu and footer navigation, in-page layout styles and breadcrumb placement fixes. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 - Troubleshooting Template Parts for CleanBC + Admin styles fix/updates. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
+– DESCW-534 Block template parts Area fix + more. Button styles, Project Query Block, Pattern Loremisation [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
