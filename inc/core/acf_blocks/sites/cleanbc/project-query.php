@@ -37,10 +37,10 @@ $projects = get_posts(
 );
 
 // Content details for Edit screen.
-$category_detail = get_field( 'project_category' );
-$numItems        = count( $category_detail );
-$index           = 0;
-$categoryList    = '';
+get_field( 'project_category' ) ? $category_detail = get_field( 'project_category' ) : $category_detail = [];
+$numItems     = count( $category_detail );
+$index        = 0;
+$categoryList = '';
 
 foreach ( $category_detail as $cd ) {
     $catName       = get_cat_name( $cd );
@@ -51,9 +51,9 @@ foreach ( $category_detail as $cd ) {
 }
 
 $html_output = sprintf(
-    '<div class="show-in-admin admin-placeholder" style="padding-top:1rem;"><h3>Project Query Block Placeholder</h3><h4>Category settings: <span style="color: var(--wp--preset--color--secondary-brand)">%1$s</span></h4><p>There are %2$s Project(s) in these categories.</p></div>',
-    $categoryList,
-    count( $projects )
+    '<div class="show-in-admin admin-placeholder" style="padding-top:1rem;padding-bottom:0;"><h4 style="padding-bottom:0;margin-bottom:0;font-size:1.5rem!important;font-weight:300!important;">Project/Action Query Block Placeholder</h4><div style="margin-top:4px;">Please choose at least one Action + Project category combination</div><p><strong>Categories: <span style="color: var(--wp--preset--color--secondary-brand)">%1$s</span></strong></p><p>There are %2$s Project(s) in these categories.</p></div>',
+    $categoryList ? $categoryList : 'No categories selected...',
+    $numItems
 );
 
 $allowed_html = [
@@ -61,8 +61,10 @@ $allowed_html = [
         'class' => [],
         'style' => [],
     ],
-    'h3'     => [],
-    'h4'     => [],
+    'h4'     => [
+        'class' => [],
+        'style' => [],
+    ],
     'p'      => [],
     'span'   => [
         'style' => [],

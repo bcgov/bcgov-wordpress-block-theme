@@ -12,149 +12,29 @@ namespace Bcgov\Theme\Block;
 return [
 	'title'      => __( 'Projects Accordion List', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-query' ],
-	'content'    => '<!-- wp:bcgov-block-theme/collapse {"collapseId":"collapse-container-47e5ec8e-5177-4c28-a779-a62e1208c244","align":"wide","className":"wp-block-bcgov-collapse actions-accordion-header"} -->
-	<div id="collapse-container-47e5ec8e-5177-4c28-a779-a62e1208c244" class="wp-block-bcgov-block-theme-collapse alignwide wp-block-bcgov-collapse actions-accordion-header"><div class="collapse-container-nav"><span><button data-target="#collapse-container-47e5ec8e-5177-4c28-a779-a62e1208c244" class="collapse-expand-all">Expand all</button></span><span><button data-target="#collapse-container-47e5ec8e-5177-4c28-a779-a62e1208c244" class="collapse-collapse-all">Collapse all</button></span></div><!-- wp:bcgov-block-theme/collapse-item {"title":"Ongoing Projects","itemId":"collapse-item-236667b6-2b20-448b-b234-f3c208f30ec0","headingId":"heading-236667b6-2b20-448b-b234-f3c208f30ec0","className":"wp-block-bcgov-collapse-item"} -->
-	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-236667b6-2b20-448b-b234-f3c208f30ec0"><h3><button data-toggle="collapse" data-target="#collapse-item-236667b6-2b20-448b-b234-f3c208f30ec0" aria-expanded="false" aria-controls="collapse-item-236667b6-2b20-448b-b234-f3c208f30ec0" class="collapsed"><span class="collapse-title">Ongoing Projects</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-236667b6-2b20-448b-b234-f3c208f30ec0"><div class="collapse-body"><!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"cleanbc-projects","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[1]}}} -->
-	<div class="wp-block-query"><!-- wp:post-template -->
-	<!-- wp:columns -->
-	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"85%"} -->
-	<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:85%"><!-- wp:post-title {"level":4,"textColor":"secondary-brand"} /-->
-	
-	<!-- wp:post-excerpt {"moreText":"View Action","style":{"elements":{"link":{"color":{"text":"var:preset|color|secondary-brand"}}}}} /--></div>
-	<!-- /wp:column -->
-	
-	<!-- wp:column {"verticalAlignment":"center","width":"15%"} -->
-	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:15%"><!-- wp:post-terms {"term":"post_tag","textAlign":"right","className":"tag","fontSize":"extra-small"} /--></div>
-	<!-- /wp:column --></div>
-	<!-- /wp:columns -->
-	<!-- /wp:post-template -->
-	
-	<!-- wp:query-no-results -->
-	<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results.","textColor":"gray-60"} -->
-	<p class="has-gray-60-color has-text-color">No results found for Ongoing Projects.</p>
-	<!-- /wp:paragraph -->
-	<!-- /wp:query-no-results --></div>
-	<!-- /wp:query --><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-236667b6-2b20-448b-b234-f3c208f30ec0" href="#collapse-item-236667b6-2b20-448b-b234-f3c208f30ec0" role="button" aria-expanded="true" aria-controls="collapse-item-236667b6-2b20-448b-b234-f3c208f30ec0">Collapse</a></div></div></div></div>
+	'content'    => '<!-- wp:bcgov-block-theme/collapse {"collapseId":"collapse-container-c0a10a74-4dd7-4a07-871c-a9708765cd9e","align":"wide","className":"wp-block-bcgov-collapse actions-accordion-header"} -->
+	<div id="collapse-container-c0a10a74-4dd7-4a07-871c-a9708765cd9e" class="wp-block-bcgov-block-theme-collapse alignwide wp-block-bcgov-collapse actions-accordion-header"><div class="collapse-container-nav"><span><button data-target="#collapse-container-c0a10a74-4dd7-4a07-871c-a9708765cd9e" class="collapse-expand-all">Expand all</button></span><span><button data-target="#collapse-container-c0a10a74-4dd7-4a07-871c-a9708765cd9e" class="collapse-collapse-all">Collapse all</button></span></div><!-- wp:bcgov-block-theme/collapse-item {"title":"Ongoing Projects","itemId":"collapse-item-b7a360d1-3fb7-4da5-a120-997cc499ffe6","headingId":"heading-b7a360d1-3fb7-4da5-a120-997cc499ffe6","className":"wp-block-bcgov-collapse-item"} -->
+	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-b7a360d1-3fb7-4da5-a120-997cc499ffe6"><h3><button data-toggle="collapse" data-target="#collapse-item-b7a360d1-3fb7-4da5-a120-997cc499ffe6" aria-expanded="false" aria-controls="collapse-item-b7a360d1-3fb7-4da5-a120-997cc499ffe6" class="collapsed"><span class="collapse-title">Ongoing Projects</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-b7a360d1-3fb7-4da5-a120-997cc499ffe6"><div class="collapse-body"><!-- wp:acf/project {"id":"block_6312410bd4998","name":"acf/project","data":{"field_630d261ee8de1":""},"align":"","mode":"preview"} /--><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-b7a360d1-3fb7-4da5-a120-997cc499ffe6" href="#collapse-item-b7a360d1-3fb7-4da5-a120-997cc499ffe6" role="button" aria-expanded="true" aria-controls="collapse-item-b7a360d1-3fb7-4da5-a120-997cc499ffe6">Collapse</a></div></div></div></div>
 	<!-- /wp:bcgov-block-theme/collapse-item -->
 	
-	<!-- wp:bcgov-block-theme/collapse-item {"title":"Started Projects","itemId":"collapse-item-f290ee6a-9607-475f-9f5c-1b43539540c0","headingId":"heading-f290ee6a-9607-475f-9f5c-1b43539540c0","className":"wp-block-bcgov-collapse-item"} -->
-	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-f290ee6a-9607-475f-9f5c-1b43539540c0"><h3><button data-toggle="collapse" data-target="#collapse-item-f290ee6a-9607-475f-9f5c-1b43539540c0" aria-expanded="false" aria-controls="collapse-item-f290ee6a-9607-475f-9f5c-1b43539540c0" class="collapsed"><span class="collapse-title">Started Projects</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-f290ee6a-9607-475f-9f5c-1b43539540c0"><div class="collapse-body"><!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"cleanbc-projects","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[15]}}} -->
-	<div class="wp-block-query"><!-- wp:post-template -->
-	<!-- wp:columns -->
-	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"85%"} -->
-	<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:85%"><!-- wp:post-title {"level":3,"textColor":"secondary-brand"} /-->
-	
-	<!-- wp:post-excerpt {"moreText":"View Action"} /--></div>
-	<!-- /wp:column -->
-	
-	<!-- wp:column {"verticalAlignment":"center","width":"15%"} -->
-	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:15%"><!-- wp:post-terms {"term":"post_tag","textAlign":"center","backgroundColor":"gray-05","className":"tag","fontSize":"extra-small"} /--></div>
-	<!-- /wp:column --></div>
-	<!-- /wp:columns -->
-	<!-- /wp:post-template -->
-	
-	<!-- wp:query-no-results -->
-	<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results.","textColor":"gray-60"} -->
-	<p class="has-gray-60-color has-text-color">No results found for Ongoing Projects.</p>
-	<!-- /wp:paragraph -->
-	<!-- /wp:query-no-results --></div>
-	<!-- /wp:query --><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-f290ee6a-9607-475f-9f5c-1b43539540c0" href="#collapse-item-f290ee6a-9607-475f-9f5c-1b43539540c0" role="button" aria-expanded="true" aria-controls="collapse-item-f290ee6a-9607-475f-9f5c-1b43539540c0">Collapse</a></div></div></div></div>
+	<!-- wp:bcgov-block-theme/collapse-item {"title":"Started Projects","itemId":"collapse-item-636500db-c2c8-42f0-9c0a-e3b8d6d5ed03","headingId":"heading-636500db-c2c8-42f0-9c0a-e3b8d6d5ed03","className":"wp-block-bcgov-collapse-item"} -->
+	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-636500db-c2c8-42f0-9c0a-e3b8d6d5ed03"><h3><button data-toggle="collapse" data-target="#collapse-item-636500db-c2c8-42f0-9c0a-e3b8d6d5ed03" aria-expanded="false" aria-controls="collapse-item-636500db-c2c8-42f0-9c0a-e3b8d6d5ed03" class="collapsed"><span class="collapse-title">Started Projects</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-636500db-c2c8-42f0-9c0a-e3b8d6d5ed03"><div class="collapse-body"><!-- wp:acf/project {"id":"block_63124114d4999","name":"acf/project","data":{"field_630d261ee8de1":""},"align":"","mode":"preview"} /--><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-636500db-c2c8-42f0-9c0a-e3b8d6d5ed03" href="#collapse-item-636500db-c2c8-42f0-9c0a-e3b8d6d5ed03" role="button" aria-expanded="true" aria-controls="collapse-item-636500db-c2c8-42f0-9c0a-e3b8d6d5ed03">Collapse</a></div></div></div></div>
 	<!-- /wp:bcgov-block-theme/collapse-item -->
 	
-	<!-- wp:bcgov-block-theme/collapse-item {"title":"Projects starting by 2030","itemId":"collapse-item-8b0a65d7-5035-4318-9b11-595864714492","headingId":"heading-8b0a65d7-5035-4318-9b11-595864714492","className":"wp-block-bcgov-collapse-item"} -->
-	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-8b0a65d7-5035-4318-9b11-595864714492"><h3><button data-toggle="collapse" data-target="#collapse-item-8b0a65d7-5035-4318-9b11-595864714492" aria-expanded="false" aria-controls="collapse-item-8b0a65d7-5035-4318-9b11-595864714492" class="collapsed"><span class="collapse-title">Projects starting by 2030</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-8b0a65d7-5035-4318-9b11-595864714492"><div class="collapse-body"><!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"cleanbc-projects","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[16]}}} -->
-	<div class="wp-block-query"><!-- wp:post-template -->
-	<!-- wp:columns -->
-	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"85%"} -->
-	<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:85%"><!-- wp:post-title /-->
-	
-	<!-- wp:post-excerpt {"moreText":"View Action"} /--></div>
-	<!-- /wp:column -->
-	
-	<!-- wp:column {"verticalAlignment":"center","width":"15%"} -->
-	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:15%"><!-- wp:post-terms {"term":"post_tag","textAlign":"right"} /--></div>
-	<!-- /wp:column --></div>
-	<!-- /wp:columns -->
-	<!-- /wp:post-template -->
-	
-	<!-- wp:query-no-results -->
-	<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results.","textColor":"gray-60"} -->
-	<p class="has-gray-60-color has-text-color">No results found Projects starting by 2030.</p>
-	<!-- /wp:paragraph -->
-	<!-- /wp:query-no-results --></div>
-	<!-- /wp:query --><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-8b0a65d7-5035-4318-9b11-595864714492" href="#collapse-item-8b0a65d7-5035-4318-9b11-595864714492" role="button" aria-expanded="true" aria-controls="collapse-item-8b0a65d7-5035-4318-9b11-595864714492">Collapse</a></div></div></div></div>
+	<!-- wp:bcgov-block-theme/collapse-item {"title":"Projects starting by 2030","itemId":"collapse-item-f907529f-e8b3-48b5-8164-0b039f3921f4","headingId":"heading-f907529f-e8b3-48b5-8164-0b039f3921f4","className":"wp-block-bcgov-collapse-item"} -->
+	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-f907529f-e8b3-48b5-8164-0b039f3921f4"><h3><button data-toggle="collapse" data-target="#collapse-item-f907529f-e8b3-48b5-8164-0b039f3921f4" aria-expanded="false" aria-controls="collapse-item-f907529f-e8b3-48b5-8164-0b039f3921f4" class="collapsed"><span class="collapse-title">Projects starting by 2030</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-f907529f-e8b3-48b5-8164-0b039f3921f4"><div class="collapse-body"><!-- wp:acf/project {"id":"block_6312411ed499a","name":"acf/project","data":{"field_630d261ee8de1":""},"align":"","mode":"preview"} /--><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-f907529f-e8b3-48b5-8164-0b039f3921f4" href="#collapse-item-f907529f-e8b3-48b5-8164-0b039f3921f4" role="button" aria-expanded="true" aria-controls="collapse-item-f907529f-e8b3-48b5-8164-0b039f3921f4">Collapse</a></div></div></div></div>
 	<!-- /wp:bcgov-block-theme/collapse-item -->
 	
-	<!-- wp:bcgov-block-theme/collapse-item {"title":"Projects starting by 2040","itemId":"collapse-item-9ad649f1-9ecc-4704-b82d-333ece876806","headingId":"heading-9ad649f1-9ecc-4704-b82d-333ece876806","className":"wp-block-bcgov-collapse-item"} -->
-	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-9ad649f1-9ecc-4704-b82d-333ece876806"><h3><button data-toggle="collapse" data-target="#collapse-item-9ad649f1-9ecc-4704-b82d-333ece876806" aria-expanded="false" aria-controls="collapse-item-9ad649f1-9ecc-4704-b82d-333ece876806" class="collapsed"><span class="collapse-title">Projects starting by 2040</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-9ad649f1-9ecc-4704-b82d-333ece876806"><div class="collapse-body"><!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"cleanbc-projects","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[17]}}} -->
-	<div class="wp-block-query"><!-- wp:post-template -->
-	<!-- wp:columns -->
-	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"85%"} -->
-	<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:85%"><!-- wp:post-title /-->
-	
-	<!-- wp:post-excerpt {"moreText":"View Action"} /--></div>
-	<!-- /wp:column -->
-	
-	<!-- wp:column {"verticalAlignment":"center","width":"15%"} -->
-	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:15%"><!-- wp:post-terms {"term":"post_tag","textAlign":"right"} /--></div>
-	<!-- /wp:column --></div>
-	<!-- /wp:columns -->
-	<!-- /wp:post-template -->
-	
-	<!-- wp:query-no-results -->
-	<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results.","textColor":"gray-60"} -->
-	<p class="has-gray-60-color has-text-color">No results found for Projects starting by 2040.</p>
-	<!-- /wp:paragraph -->
-	<!-- /wp:query-no-results --></div>
-	<!-- /wp:query --><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-9ad649f1-9ecc-4704-b82d-333ece876806" href="#collapse-item-9ad649f1-9ecc-4704-b82d-333ece876806" role="button" aria-expanded="true" aria-controls="collapse-item-9ad649f1-9ecc-4704-b82d-333ece876806">Collapse</a></div></div></div></div>
+	<!-- wp:bcgov-block-theme/collapse-item {"title":"Projects starting by 2040","itemId":"collapse-item-ff17e930-50ce-42c9-be3a-125a8493a42a","headingId":"heading-ff17e930-50ce-42c9-be3a-125a8493a42a","className":"wp-block-bcgov-collapse-item"} -->
+	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-ff17e930-50ce-42c9-be3a-125a8493a42a"><h3><button data-toggle="collapse" data-target="#collapse-item-ff17e930-50ce-42c9-be3a-125a8493a42a" aria-expanded="false" aria-controls="collapse-item-ff17e930-50ce-42c9-be3a-125a8493a42a" class="collapsed"><span class="collapse-title">Projects starting by 2040</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-ff17e930-50ce-42c9-be3a-125a8493a42a"><div class="collapse-body"><!-- wp:acf/project {"id":"block_63124127d499b","name":"acf/project","data":{"field_630d261ee8de1":""},"align":"","mode":"preview"} /--><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-ff17e930-50ce-42c9-be3a-125a8493a42a" href="#collapse-item-ff17e930-50ce-42c9-be3a-125a8493a42a" role="button" aria-expanded="true" aria-controls="collapse-item-ff17e930-50ce-42c9-be3a-125a8493a42a">Collapse</a></div></div></div></div>
 	<!-- /wp:bcgov-block-theme/collapse-item -->
 	
-	<!-- wp:bcgov-block-theme/collapse-item {"title":"Completed Projects","itemId":"collapse-item-d7b6e854-67de-4094-830e-edeac8e7c47d","headingId":"heading-d7b6e854-67de-4094-830e-edeac8e7c47d","className":"wp-block-bcgov-collapse-item"} -->
-	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-d7b6e854-67de-4094-830e-edeac8e7c47d"><h3><button data-toggle="collapse" data-target="#collapse-item-d7b6e854-67de-4094-830e-edeac8e7c47d" aria-expanded="false" aria-controls="collapse-item-d7b6e854-67de-4094-830e-edeac8e7c47d" class="collapsed"><span class="collapse-title">Completed Projects</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-d7b6e854-67de-4094-830e-edeac8e7c47d"><div class="collapse-body"><!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"cleanbc-projects","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[18]}}} -->
-	<div class="wp-block-query"><!-- wp:post-template -->
-	<!-- wp:columns -->
-	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"85%"} -->
-	<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:85%"><!-- wp:post-title /-->
-	
-	<!-- wp:post-excerpt {"moreText":"View Action"} /--></div>
-	<!-- /wp:column -->
-	
-	<!-- wp:column {"verticalAlignment":"center","width":"15%"} -->
-	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:15%"><!-- wp:post-terms {"term":"post_tag","textAlign":"right"} /--></div>
-	<!-- /wp:column --></div>
-	<!-- /wp:columns -->
-	<!-- /wp:post-template -->
-	
-	<!-- wp:query-no-results -->
-	<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results.","textColor":"gray-60"} -->
-	<p class="has-gray-60-color has-text-color">No results found for Completed Projects.</p>
-	<!-- /wp:paragraph -->
-	<!-- /wp:query-no-results --></div>
-	<!-- /wp:query --><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-d7b6e854-67de-4094-830e-edeac8e7c47d" href="#collapse-item-d7b6e854-67de-4094-830e-edeac8e7c47d" role="button" aria-expanded="true" aria-controls="collapse-item-d7b6e854-67de-4094-830e-edeac8e7c47d">Collapse</a></div></div></div></div>
+	<!-- wp:bcgov-block-theme/collapse-item {"title":"Completed Projects","itemId":"collapse-item-92718388-10de-475e-befa-60957c317821","headingId":"heading-92718388-10de-475e-befa-60957c317821","className":"wp-block-bcgov-collapse-item"} -->
+	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-92718388-10de-475e-befa-60957c317821"><h3><button data-toggle="collapse" data-target="#collapse-item-92718388-10de-475e-befa-60957c317821" aria-expanded="false" aria-controls="collapse-item-92718388-10de-475e-befa-60957c317821" class="collapsed"><span class="collapse-title">Completed Projects</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-92718388-10de-475e-befa-60957c317821"><div class="collapse-body"><!-- wp:acf/project {"id":"block_63124139d499c","name":"acf/project","data":{"field_630d261ee8de1":""},"align":"","mode":"preview"} /--><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-92718388-10de-475e-befa-60957c317821" href="#collapse-item-92718388-10de-475e-befa-60957c317821" role="button" aria-expanded="true" aria-controls="collapse-item-92718388-10de-475e-befa-60957c317821">Collapse</a></div></div></div></div>
 	<!-- /wp:bcgov-block-theme/collapse-item -->
 	
-	<!-- wp:bcgov-block-theme/collapse-item {"title":"Plans and Strategies","itemId":"collapse-item-6bbf9c66-1227-4f13-bfa8-d1076eaba619","headingId":"heading-6bbf9c66-1227-4f13-bfa8-d1076eaba619","className":"wp-block-bcgov-collapse-item"} -->
-	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-6bbf9c66-1227-4f13-bfa8-d1076eaba619"><h3><button data-toggle="collapse" data-target="#collapse-item-6bbf9c66-1227-4f13-bfa8-d1076eaba619" aria-expanded="false" aria-controls="collapse-item-6bbf9c66-1227-4f13-bfa8-d1076eaba619" class="collapsed"><span class="collapse-title">Plans and Strategies</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-6bbf9c66-1227-4f13-bfa8-d1076eaba619"><div class="collapse-body"><!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":0,"offset":0,"postType":"cleanbc-projects","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":{"category":[19]}}} -->
-	<div class="wp-block-query"><!-- wp:post-template -->
-	<!-- wp:columns -->
-	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"top","width":"85%"} -->
-	<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:85%"><!-- wp:post-title /-->
-	
-	<!-- wp:post-excerpt {"moreText":"View Action"} /--></div>
-	<!-- /wp:column -->
-	
-	<!-- wp:column {"verticalAlignment":"center","width":"15%"} -->
-	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:15%"><!-- wp:post-terms {"term":"post_tag","textAlign":"right"} /--></div>
-	<!-- /wp:column --></div>
-	<!-- /wp:columns -->
-	<!-- /wp:post-template -->
-	
-	<!-- wp:query-no-results -->
-	<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when the query returns no results.","textColor":"gray-60"} -->
-	<p class="has-gray-60-color has-text-color">No results found for Plans and Strategies.</p>
-	<!-- /wp:paragraph -->
-	<!-- /wp:query-no-results --></div>
-	<!-- /wp:query --><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-6bbf9c66-1227-4f13-bfa8-d1076eaba619" href="#collapse-item-6bbf9c66-1227-4f13-bfa8-d1076eaba619" role="button" aria-expanded="true" aria-controls="collapse-item-6bbf9c66-1227-4f13-bfa8-d1076eaba619">Collapse</a></div></div></div></div>
+	<!-- wp:bcgov-block-theme/collapse-item {"title":"Plans and Strategies","itemId":"collapse-item-053b043b-7dbb-4b71-9fb2-c4f9027eb6d9","headingId":"heading-053b043b-7dbb-4b71-9fb2-c4f9027eb6d9","className":"wp-block-bcgov-collapse-item"} -->
+	<div class="wp-block-bcgov-block-theme-collapse-item wp-block-bcgov-collapse-item"><div class="collapse-header" id="heading-053b043b-7dbb-4b71-9fb2-c4f9027eb6d9"><h3><button data-toggle="collapse" data-target="#collapse-item-053b043b-7dbb-4b71-9fb2-c4f9027eb6d9" aria-expanded="false" aria-controls="collapse-item-053b043b-7dbb-4b71-9fb2-c4f9027eb6d9" class="collapsed"><span class="collapse-title">Plans and Strategies</span></button></h3></div><div class="collapse collapse-container" id="collapse-item-053b043b-7dbb-4b71-9fb2-c4f9027eb6d9"><div class="collapse-body"><!-- wp:acf/project {"id":"block_63124142d499d","name":"acf/project","data":{"field_630d261ee8de1":""},"align":"","mode":"preview"} /--><div class="collapse-close"><a data-toggle="collapse" data-target="#collapse-item-053b043b-7dbb-4b71-9fb2-c4f9027eb6d9" href="#collapse-item-053b043b-7dbb-4b71-9fb2-c4f9027eb6d9" role="button" aria-expanded="true" aria-controls="collapse-item-053b043b-7dbb-4b71-9fb2-c4f9027eb6d9">Collapse</a></div></div></div></div>
 	<!-- /wp:bcgov-block-theme/collapse-item --></div>
 	<!-- /wp:bcgov-block-theme/collapse -->',
 ];

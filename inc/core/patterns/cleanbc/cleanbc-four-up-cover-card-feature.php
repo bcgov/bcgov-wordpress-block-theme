@@ -24,16 +24,16 @@ return [
 	
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"0rem","right":"2rem","bottom":"1rem","left":"2rem"}},"border":{"width":"8px"}},"borderColor":"octonary"} -->
 	<div class="wp-block-group has-border-color has-octonary-border-color" style="border-width:8px;padding-top:0rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:heading {"textAlign":"left","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"secondary-brand","className":"is-style-default","fontSize":"large"} -->
-	<h3 class="has-text-align-left is-style-default has-secondary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Restoring Coastal Ecosystems</h3>
+	<h3 class="has-text-align-left is-style-default has-secondary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Sollicitudin Aenean Dolor</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"textColor":"secondary-brand"} -->
-	<p class="has-secondary-brand-color has-text-color">We\'re supporting local communities to protect and strengthen natural habitats, like the Kus-kus-sum\'s fish bearing stream in the Comox Valley.</p>
+	<p class="has-secondary-brand-color has-text-color">Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov","layout":{"type":"flex","justifyContent":"left"},"style":{"spacing":{"margin":{"top":"1rem"}}}} -->
 	<div class="wp-block-buttons is-bcgov" style="margin-top:1rem"><!-- wp:button {"textColor":"secondary-brand","className":"is-style-underline"} -->
-	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link has-secondary-brand-color has-text-color">More about natural resources</a></div>
+	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link has-secondary-brand-color has-text-color">More about Sollicitudin</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div>
@@ -48,16 +48,16 @@ return [
 	
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"0rem","right":"2rem","bottom":"1rem","left":"2rem"}},"border":{"width":"8px"}},"borderColor":"accent"} -->
 	<div class="wp-block-group has-border-color has-accent-border-color" style="border-width:8px;padding-top:0rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:heading {"textAlign":"left","level":4,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"secondary-brand","className":"is-style-default","fontSize":"large"} -->
-	<h4 class="has-text-align-left is-style-default has-secondary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Delivering Cleaner Energy</h4>
+	<h4 class="has-text-align-left is-style-default has-secondary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Vehicula Justo Adipiscing</h4>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"textColor":"secondary-brand"} -->
-	<p class="has-secondary-brand-color has-text-color">We\'re helping people use cleaner energy for more things by making it easier to get, like with more fast-charging electric vehicle stations.</p>
+	<p class="has-secondary-brand-color has-text-color">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov","layout":{"type":"flex","justifyContent":"left"},"style":{"spacing":{"margin":{"top":"1rem"}}}} -->
 	<div class="wp-block-buttons is-bcgov" style="margin-top:1rem"><!-- wp:button {"textColor":"secondary-brand","className":"is-style-underline"} -->
-	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link has-secondary-brand-color has-text-color">More about energy</a></div>
+	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link has-secondary-brand-color has-text-color">More about Vehicula</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div>
@@ -76,16 +76,16 @@ return [
 	
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"0rem","right":"2rem","bottom":"1rem","left":"2rem"}},"border":{"width":"8px"}},"borderColor":"quarternary"} -->
 	<div class="wp-block-group has-border-color has-quarternary-border-color" style="border-width:8px;padding-top:0rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:heading {"textAlign":"left","level":3,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"secondary-brand","className":"is-style-default","fontSize":"large"} -->
-	<h3 class="has-text-align-left is-style-default has-secondary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Investing in Sustainable Jobs</h3>
+	<h3 class="has-text-align-left is-style-default has-secondary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Dolor Venenatis Nibh</h3>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"textColor":"secondary-brand"} -->
-	<p class="has-secondary-brand-color has-text-color">We can have a strong economy by making sure we increase clean jobs in B.C., like mass timber building and making solar panels.</p>
+	<p class="has-secondary-brand-color has-text-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov","layout":{"type":"flex","justifyContent":"left"},"style":{"spacing":{"margin":{"top":"1rem"}}}} -->
 	<div class="wp-block-buttons is-bcgov" style="margin-top:1rem"><!-- wp:button {"textColor":"secondary-brand","className":"is-style-underline"} -->
-	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link has-secondary-brand-color has-text-color">More about the economy</a></div>
+	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link has-secondary-brand-color has-text-color">More about Venenatis</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div>
@@ -100,16 +100,16 @@ return [
 	
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"0rem","right":"2rem","bottom":"1rem","left":"2rem"}},"border":{"width":"8px"}},"borderColor":"senary"} -->
 	<div class="wp-block-group has-border-color has-senary-border-color" style="border-width:8px;padding-top:0rem;padding-right:2rem;padding-bottom:1rem;padding-left:2rem"><!-- wp:heading {"textAlign":"left","level":4,"style":{"spacing":{"margin":{"top":"2rem"}},"typography":{"fontStyle":"normal","fontWeight":"300"}},"textColor":"secondary-brand","className":"is-style-default","fontSize":"large"} -->
-	<h4 class="has-text-align-left is-style-default has-secondary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Strengthening Food Security</h4>
+	<h4 class="has-text-align-left is-style-default has-secondary-brand-color has-text-color has-large-font-size" style="font-style:normal;font-weight:300;margin-top:2rem">Cursus Parturient Fringilla</h4>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph {"textColor":"secondary-brand"} -->
-	<p class="has-secondary-brand-color has-text-color">We\’re supporting farming and agriculture practices that are more sustainable so we can rely on our local food systems for years to come.</p>
+	<p class="has-secondary-brand-color has-text-color">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis.</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:buttons {"className":"is-bcgov","layout":{"type":"flex","justifyContent":"left"},"style":{"spacing":{"margin":{"top":"1rem"}}}} -->
 	<div class="wp-block-buttons is-bcgov" style="margin-top:1rem"><!-- wp:button {"textColor":"secondary-brand","className":"is-style-underline"} -->
-	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link has-secondary-brand-color has-text-color">More about agriculture</a></div>
+	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link has-secondary-brand-color has-text-color">More about Parturient</a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
 	<!-- /wp:group --></div>

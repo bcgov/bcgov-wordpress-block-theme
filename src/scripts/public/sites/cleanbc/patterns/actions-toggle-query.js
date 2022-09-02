@@ -87,7 +87,8 @@ const domReady = () => {
 			);
 
 			elActions.forEach((element) => {
-				const heading = element.querySelector('h2').innerText;
+				const heading = element.querySelector('.wp-block-post-title')
+					.innerText;
 				const linkAddition = element.querySelector(
 					'.wp-block-button__link'
 				);
