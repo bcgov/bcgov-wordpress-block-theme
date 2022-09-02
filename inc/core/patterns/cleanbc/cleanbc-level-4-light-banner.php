@@ -13,20 +13,16 @@ return [
 	<div class="wp-block-cover alignfull is-light info-cover-banner" style="min-height:50vh"><span aria-hidden="true" class="wp-block-cover__background has-white-background-color has-background-dim-70 has-background-dim"></span><img class="wp-block-cover__image-background wp-image-1041" alt="" src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/bc-cover-banner-default.jpg" style="object-position:50% 100%" data-object-fit="cover" data-object-position="50% 100%"/><div class="wp-block-cover__inner-container"><!-- wp:columns -->
 	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","className":"content-column"} -->
 	<div class="wp-block-column is-vertically-aligned-center content-column"><!-- wp:heading {"level":1,"textColor":"secondary-brand"} -->
-	<h1 class="has-secondary-brand-color has-text-color">Atmospheric Rivers</h1>
+	<h1 class="has-secondary-brand-color has-text-color">Bibendum Sollicitudin</h1>
 	<!-- /wp:heading -->
 	
 	<!-- wp:paragraph -->
-	<p>This is a paragraph about atmospheric rivers  and natural hazards in our built environment. </p>
-	<!-- /wp:paragraph -->
-	
-	<!-- wp:paragraph -->
-	<p>This paragraph is the introduction to below.</p>
+	<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 	<!-- /wp:paragraph -->
 	
 	<!-- wp:group {"style":{"spacing":{"padding":{"top":"1rem"}}},"className":"advisory-tag","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-	<div class="wp-block-group advisory-tag" style="padding-top:1rem"><!-- wp:paragraph {"backgroundColor":"accent","textColor":"primary-brand"} -->
-	<p class="has-primary-brand-color has-accent-background-color has-text-color has-background">Advisory</p>
+	<div class="wp-block-group advisory-tag" style="padding-top:1rem"><!-- wp:paragraph {"backgroundColor":"quinary","textColor":"primary-brand"} -->
+	<p class="has-primary-brand-color has-quinary-background-color has-text-color has-background">Warning</p>
 	<!-- /wp:paragraph --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:column -->
