@@ -25,6 +25,8 @@ html body.wp-admin .editor-styles-wrapper {
 
 	.info-cover-banner {
 
+		height: clamp(600px, 80vh - 80px, 800px);
+
 		h1 {
 			font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem);
 			line-height: 1.25;
@@ -36,6 +38,8 @@ html body.wp-admin .editor-styles-wrapper {
 	}
 
 	.landing-cover-banner {
+
+		height: clamp(600px, 80vh - 80px, 800px);
 
 		h1:not(.is-style-custom) {
 			color: var(--wp--preset--color--white);
@@ -72,8 +76,7 @@ html body.wp-admin .editor-styles-wrapper {
 					flex-direction: column;
 					justify-content: space-between;
 					align-content: flex-start;
-					height: auto;
-					min-height: 250px;
+					height: clamp(600px, 100vh - 80px, 850px);
 
 					> * {
 						width: 100%;
@@ -105,6 +108,8 @@ html body.wp-admin .editor-styles-wrapper {
 
 // Home Cover Banner header styles.
 .home-cover-banner {
+
+	height: clamp(600px, 100vh - 80px, 1000px) !important;
 
 	.wp-block-cover {
 
@@ -236,13 +241,22 @@ html body.wp-admin .editor-styles-wrapper {
 	}
 
 	.image-column {
+		aspect-ratio: 1 / 1;
 		background-color: var(--wp--preset--color--accent);
 		border-radius: 50%;
+		display: flex;
+
+		figure {
+			margin: auto;
+		}
 	}
 }
 
 // Info Cover Banner header styles.
 .info-cover-banner {
+
+	height: clamp(600px, 80vh - 80px, 800px);
+	overflow: clip;
 
 	.wp-block-columns {
 		margin-bottom: 0;
@@ -277,6 +291,7 @@ html body.wp-admin .editor-styles-wrapper {
 // Landing Cover Banner header styles.
 .landing-cover-banner {
 
+	height: clamp(600px, 80vh - 80px, 800px);
 	overflow: clip;
 
 	.wp-block-cover {
@@ -458,7 +473,7 @@ html body.wp-admin .editor-styles-wrapper {
 
 
 	&.large {
-		min-height: 66vh;
+		height: clamp(600px, calc(100vh - 80px), 850px);
 	}
 
 	max-width: 100%;
@@ -484,8 +499,7 @@ html body.wp-admin .editor-styles-wrapper {
 .level-3-banner {
 
 	display: flex;
-	min-height: 600px;
-	height: 50vh;
+	height: clamp(600px, 80vh - 80px, 800px);
 
 	.content-column {
 		max-width: 50%;
@@ -525,6 +539,20 @@ html body.wp-admin .editor-styles-wrapper {
 
 		&.content-column {
 			all: unset;
+
+			h3 {
+				font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+				margin: 0 0 0.5rem;
+			}
+
+			h4 {
+				font-size: clamp(1.05rem, 0.25rem + 3.3333vw, 1.25rem) !important;
+				margin: 0.5rem 0 0;
+			}
+
+			p {
+				margin-top: 0.5rem;
+			}
 		}
 	}
 }

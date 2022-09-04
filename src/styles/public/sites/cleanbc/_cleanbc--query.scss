@@ -11,8 +11,8 @@ html body.wp-admin .editor-styles-wrapper {
 		h4:not(.is-style-custom) {
 			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
 			color: var(--wp--preset--color--headline-color);
-			margin-bottom: 1rem;
-			padding-bottom: 1rem;
+			margin-bottom: 0;
+			padding-bottom: 0;
 		}
 
 		.collapse-header {
@@ -79,8 +79,8 @@ html body.wp-admin .editor-styles-wrapper {
 		h4:not(.is-style-custom) {
 			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
 			color: var(--wp--preset--color--headline-color);
-			margin-bottom: 1rem;
-			padding-bottom: 1rem;
+			margin-bottom: 0;
+			padding-bottom: 0;
 		}
 
 		.collapse-header {
