@@ -3,14 +3,14 @@
 namespace Bcgov\Theme\Block;
 
 /**
- * CleanBC Actions Toggle List - Homepage block pattern.
+ * CleanBC Actions Accordion Toggle List - Homepage block pattern.
  *
  * @since 1.0.0
  *
  * @package Bcgov/Theme/Block
  */
 return [
-	'title'      => __( 'Actions Toggle List', 'bcgov_blocks_theme' ),
+	'title'      => __( 'Actions Accordion Toggle List', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-query' ],
 	'content'    => '<!-- wp:group {"align":"wide"} -->
 	<div class="wp-block-group alignwide"><!-- wp:heading {"align":"wide","style":{"spacing":{"margin":{"bottom":"0px"}}}} -->

@@ -3,14 +3,14 @@
 namespace Bcgov\Theme\Block;
 
 /**
- * CleanBC Projects Accordion List - Homepage block pattern.
+ * CleanBC Single Project Accordion List - Homepage block pattern.
  *
  * @since 1.0.0
  *
  * @package Bcgov/Theme/Block
  */
 return [
-	'title'      => __( 'Projects Accordion List', 'bcgov_blocks_theme' ),
+	'title'      => __( 'Single Project Accordion List', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-query' ],
 	'content'    => '<!-- wp:bcgov-block-theme/collapse {"collapseId":"collapse-container-c0a10a74-4dd7-4a07-871c-a9708765cd9e","align":"wide","className":"wp-block-bcgov-collapse actions-accordion-header"} -->
 	<div id="collapse-container-c0a10a74-4dd7-4a07-871c-a9708765cd9e" class="wp-block-bcgov-block-theme-collapse alignwide wp-block-bcgov-collapse actions-accordion-header"><div class="collapse-container-nav"><span><button data-target="#collapse-container-c0a10a74-4dd7-4a07-871c-a9708765cd9e" class="collapse-expand-all">Expand all</button></span><span><button data-target="#collapse-container-c0a10a74-4dd7-4a07-871c-a9708765cd9e" class="collapse-collapse-all">Collapse all</button></span></div><!-- wp:bcgov-block-theme/collapse-item {"title":"Ongoing Projects","itemId":"collapse-item-b7a360d1-3fb7-4da5-a120-997cc499ffe6","headingId":"heading-b7a360d1-3fb7-4da5-a120-997cc499ffe6","className":"wp-block-bcgov-collapse-item"} -->
