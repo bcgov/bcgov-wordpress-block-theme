@@ -39,7 +39,8 @@ html body.wp-admin .editor-styles-wrapper {
 		min-height: 0;
 	}
 
-	p:not(.is-style-custom) {
+	p:not(.is-style-custom),
+	li:not(.is-style-custom) {
 		font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.25rem) !important;
 		line-height: 1.5;
 		min-height: 0;
@@ -136,7 +137,8 @@ body {
 			min-height: 0;
 		}
 
-		p:not(.is-style-custom) {
+		p:not(.is-style-custom),
+		li:not(.is-style-custom) {
 			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.25rem) !important;
 			line-height: 1.5;
 			min-height: 0;

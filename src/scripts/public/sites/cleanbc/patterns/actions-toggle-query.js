@@ -1,3 +1,5 @@
+import { triggerClick } from '../../../../admin/utils/common';
+
 /**
  * Actions Toggle manipulation.
  */
@@ -79,6 +81,21 @@ const domReady = () => {
 					}
 				});
 			});
+
+			const queryParams = new Proxy(
+				new URLSearchParams(window.location.search),
+				{
+					get: (searchParams, prop) => searchParams.get(prop),
+				}
+			);
+			// Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+			const queryValue = queryParams.target; // "some_value"
+
+			const targetButton = document.querySelector(
+				`.actions-toggle-buttons .wp-block-button__link[href="#${queryValue}"]`
+			);
+
+			triggerClick(targetButton);
 
 			countActiveProjects();
 

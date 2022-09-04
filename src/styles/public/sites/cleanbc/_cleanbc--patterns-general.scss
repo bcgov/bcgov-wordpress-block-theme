@@ -303,7 +303,8 @@
 		margin-right: auto;
 		position: relative;
 
-		body.cleanbc & p:not(.is-style-custom) {
+		body.cleanbc & p:not(.is-style-custom),
+		body.cleanbc & li:not(.is-style-custom) {
 			font-size: 0.875rem !important;
 			padding: 0 2rem;
 

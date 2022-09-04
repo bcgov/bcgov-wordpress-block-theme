@@ -11,3 +11,15 @@ registerBlockStyle('core/paragraph', [
 		label: 'Custom Sizes',
 	},
 ]);
+
+registerBlockStyle('core/list', [
+	{
+		name: 'default',
+		label: 'Default',
+		isDefault: true,
+	},
+	{
+		name: 'custom',
+		label: 'Custom Sizes',
+	},
+]);

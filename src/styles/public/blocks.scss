@@ -1085,6 +1085,8 @@ html body.wp-admin .editor-styles-wrapper {
  */
 .wp-block-media-text {
 
+	overflow: visible;
+
 	&.is-style-dropshadow {
 		box-shadow: 0 0 12px rgba($black, 33%);
 	}
