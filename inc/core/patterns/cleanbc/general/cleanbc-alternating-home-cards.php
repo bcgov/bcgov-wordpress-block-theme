@@ -3,14 +3,14 @@
 namespace Bcgov\Theme\Block;
 
 /**
- * CleanBC Alternating Cards - Homepage block pattern.
+ * CleanBC Alternating Cards - Stories block pattern.
  *
  * @since 1.0.0
  *
  * @package Bcgov/Theme/Block
  */
 return [
-	'title'      => __( 'Alternating Cards - Homepage', 'bcgov_blocks_theme' ),
+	'title'      => __( 'Alternating Cards - Stories', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-general' ],
 	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"3rem","bottom":"3rem"}}}} -->
 	<div class="wp-block-group alignwide" style="margin-top:3rem;margin-bottom:3rem"><!-- wp:media-text {"mediaPosition":"right","mediaId":1232,"mediaLink":"/","mediaType":"image","verticalAlignment":"center","className":"is-style-dropshadow"} -->

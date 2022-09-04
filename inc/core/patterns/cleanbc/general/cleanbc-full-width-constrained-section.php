@@ -3,14 +3,14 @@
 namespace Bcgov\Theme\Block;
 
 /**
- * CleanBC In-page Full Width Constrained with Image block pattern.
+ * CleanBC Full Width Constrained with Image block pattern.
  *
  * @since 1.0.0
  *
  * @package Bcgov/Theme/Block
  */
 return [
-	'title'      => __( 'In-page Full Width Constrained with Image', 'bcgov_blocks_theme' ),
+	'title'      => __( 'Full Width Constrained with Image', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-general' ],
 	'content'    => '<!-- wp:group {"align":"full","style":{"color":{"background":"#005e991f"}},"className":"in-page-full-width-constrained-section"} -->
 	<div class="wp-block-group alignfull in-page-full-width-constrained-section has-background" style="background-color:#005e991f"><!-- wp:media-text {"mediaPosition":"right","mediaId":1446,"mediaLink":"none","mediaType":"image","mediaWidth":35,"verticalAlignment":"center","textColor":"background"} -->

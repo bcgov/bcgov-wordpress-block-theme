@@ -3,14 +3,14 @@
 namespace Bcgov\Theme\Block;
 
 /**
- * CleanBC In-page Constrained Section with Rounded Image block pattern.
+ * CleanBC Constrained Section with Rounded Image block pattern.
  *
  * @since 1.0.0
  *
  * @package Bcgov/Theme/Block
  */
 return [
-	'title'      => __( 'In-page Constrained Section with Rounded Image', 'bcgov_blocks_theme' ),
+	'title'      => __( 'Constrained Section with Rounded Image', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-general' ],
 	'content'    => '<!-- wp:group {"align":"full","backgroundColor":"transparent","className":"in-page-full-width-constrained-section floating"} -->
 	<div class="wp-block-group alignfull in-page-full-width-constrained-section floating has-transparent-background-color has-background"><!-- wp:media-text {"mediaId":1752,"mediaLink":"none","mediaType":"image","mediaWidth":35,"verticalAlignment":"center","textColor":"background"} -->

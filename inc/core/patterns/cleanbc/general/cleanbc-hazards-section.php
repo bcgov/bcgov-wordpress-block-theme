@@ -3,14 +3,14 @@
 namespace Bcgov\Theme\Block;
 
 /**
- * CleanBC In-page Learn About Hazards block pattern.
+ * CleanBC Learn About Hazards block pattern.
  *
  * @since 1.0.0
  *
  * @package Bcgov/Theme/Block
  */
 return [
-	'title'      => __( 'In-page Learn About Hazards Section', 'bcgov_blocks_theme' ),
+	'title'      => __( 'Learn About Hazards Section', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-general' ],
 	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem"}},"color":{"background":"#00294d1a"}},"className":"learn-about-hazards"} -->
 	<div class="wp-block-group alignfull learn-about-hazards has-background" style="background-color:#00294d1a;padding-top:6rem;padding-bottom:6rem"><!-- wp:columns {"className":"is-style-constrained"} -->

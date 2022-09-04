@@ -36,23 +36,53 @@ namespace Bcgov\Theme\Block;
 
 <div class="auth-app-card card">
 <h2>Site Specific Block Patterns</h2>
-<h3>CleanBC Patterns</h3>
-<ul>
-	<li><span class="dashicons dashicons-yes"></span> ...coming soon</li>
-</ul>
-<hr />
-<h2>Instructions</h2>
 <p>Site specific patterns developed specifically for sites can also be inserted from their patterns. Look for  categories that identify the site by name. These patterns can be modified once applied to the page and can either be set up a Reusable Block or alternatively can be copy/pasted between pages or sections once altered.</p>
+
+<?php
+/*
+* CleanBC site specific patterns.
+*/
+if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) :
+	?>
+
+<h3>CleanBC Patterns</h3>
+<h4>Banners – including special-use header and footer Patterns</h4>
+<p>Available in the Patterns selector under <strong>CleanBC: Banners</strong>. When using these banner patterns placing one at the top of a page will cause the Breadcrumb navigation to move below the pattern content.</p>
+<hr />
+
+<h4>General in-page Patterns</h4>
+<p>Available in the Patterns selector under <strong>CleanBC: General</strong>. Standard in-page content patterns for use in any project. Styles may vary based on the Active Site option selected in the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/admin.php?page=theme-options">BCGov Block Theme Options</a>.</p>
+<hr />
+
+<h4>Active Site Patterns</h4>
+<p>Available in the Patterns selector under <strong>CleanBC: Post Query</strong> and <strong>CleanBC: Page Layouts</strong>. These patterns utilise features, content or functionality specific to the CleanBC site and are only available to CleanBC or other sites that set the Active Site option to CleanBC in the BCGov Block Theme Options.
+<?php endif; ?>
+
 </div>
 
 <div class="auth-app-card card">
-<h2>Colour Palette</h2>
-<ul>
-	<li><span class="dashicons dashicons-yes"></span> ...coming soon</li>
-</ul>
+<h2>Colour Palettes</h2>
+<p>Colour palettes for the BCGov Block Theme are made up of 24 pre-defined colours. Any additional Active Site options will also include a palette with an equivalent number of colours in order to make the patterns useable across sites. An associated group of Gradients based on the 16 essential custom colours in the coulour palette are also available.</p>
+<h3>Example palettes</h3>
+<p><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/block-theme/BCGOV-Colour-Palette-Swatches.jpg" alt="BCGov theme colour palette" style="width: 300px;" /> <img src="
+                        <?php
+						echo esc_url( get_template_directory_uri() );
+						?>
+/assets/images/block-theme/BCGOV-Gradients-Swatches.jpg" alt="BCGov theme colour palette" style="width: 300px;" /></p>
+<p><img src="
+<?php
+echo esc_url( get_template_directory_uri() );
+?>
+/assets/images/block-theme/CleanBC-Colour-Palette-Swatches.jpg" alt="CleanBC theme colour palette" style="width: 300px;" /> <img src="
+<?php
+echo esc_url( get_template_directory_uri() );
+?>
+/assets/images/block-theme/CleanBC-Gradients-Swatches.jpg" alt="BCGov theme colour palette" style="width: 300px;" /></p>
+<p>It should be noted that most blocks and patterns can be modified in the editor to override colour or gradient palette options to accomodate specific customisation needs.</p>
 <hr />
 <h2>Instructions</h2>
-<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/style-icon.png'; ?>" alt="style icon" style="float: right; width: 3rem;"/> Global Styles Switcher allows users to switch the theme defaults to alternate colour palettes. Open <strong>Appearance > <a href="/wp-admin/site-editor.php">Editor</a></strong> in the admin. You should see the theme variations in the global styles switcher by clicking on the syles icon in the top right corner.</p>
+<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/style-icon.png'; ?>" alt="style icon" style="float: right; width: 3rem;"/> Global Styles Switcher allows users to switch the theme defaults to alternate colour palettes. Open <strong>Appearance > <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/site-editor.php">Editor</a></strong> in the admin. You should see the theme variations in the global styles switcher by clicking on the syles icon in the top right corner.</p>
+
 </div>
 
 

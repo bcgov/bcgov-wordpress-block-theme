@@ -8,7 +8,7 @@
  */
 return [
 	'title'      => __( 'Scrolling Link Banner', 'bcgov_blocks_theme' ),
-	'categories' => [ 'cleanbc-patterns-header-footer' ],
+	'categories' => [ 'cleanbc-patterns-banners' ],
 	'content'    => '<!-- wp:group {"align":"full","backgroundColor":"primary-brand","className":"scroll-link-banner","layout":{"inherit":false}} -->
 	<div class="wp-block-group alignfull scroll-link-banner has-primary-brand-background-color has-background"><!-- wp:group {"align":"wide","className":"is-content-group","layout":{"inherit":false}} -->
 	<div class="wp-block-group alignwide is-content-group"><!-- wp:columns {"verticalAlignment":"center","isStackedOnMobile":false,"align":"wide"} -->
