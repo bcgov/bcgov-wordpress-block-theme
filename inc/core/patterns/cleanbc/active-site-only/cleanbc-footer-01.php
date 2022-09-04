@@ -8,7 +8,7 @@
  */
 return [
 	'title'      => __( 'CleanBC Footer', 'bcgov_blocks_theme' ),
-	'categories' => [ 'cleanbc-patterns-header-footer' ],
+	'categories' => [ 'cleanbc-patterns-general' ],
 	'content'    => '<!-- wp:group {"align":"full","backgroundColor":"primary-brand","className":"cleanbc-subfooter","layout":{"contentSize":"1440px","wideSize":"100%"}} -->
 <div class="wp-block-group alignfull cleanbc-subfooter has-primary-brand-background-color has-background"><!-- wp:columns {"verticalAlignment":"top"} -->
 <div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top"} -->

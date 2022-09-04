@@ -11,7 +11,7 @@ namespace Bcgov\Theme\Block;
  */
 return [
 	'title'      => __( 'CleanBC On This Page', 'bcgov_blocks_theme' ),
-	'categories' => [ 'cleanbc-patterns-general' ],
+	'categories' => [ 'cleanbc-patterns-banners' ],
 	'content'    => '<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}},"border":{"width":"8px","style":"solid","radius":{"topLeft":"rem","bottomLeft":"1rem","bottomRight":"1rem"}}},"borderColor":"quinary","backgroundColor":"gray-05","className":"on-this-page"} -->
 	<div class="wp-block-group alignwide on-this-page has-border-color has-quinary-border-color has-gray-05-background-color has-background" style="border-top-left-radius:rem;border-bottom-left-radius:1rem;border-bottom-right-radius:1rem;border-style:solid;border-width:8px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:media-text {"mediaPosition":"right","mediaId":2129,"mediaLink":"none","mediaType":"image","mediaWidth":65,"className":"is-style-default"} -->
 	<div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile is-style-default" style="grid-template-columns:auto 65%"><figure class="wp-block-media-text__media"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/cleanbc-on-this-page-placeholder-02.jpg" alt="" class="wp-image-2129 size-full"/></figure><div class="wp-block-media-text__content"><!-- wp:heading {"level":3} -->

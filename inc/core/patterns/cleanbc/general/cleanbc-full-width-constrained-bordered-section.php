@@ -3,14 +3,14 @@
 namespace Bcgov\Theme\Block;
 
 /**
- * CleanBC In-page Constrained Bordered Section with Image block pattern.
+ * CleanBC Constrained Bordered Section with Image block pattern.
  *
  * @since 1.0.0
  *
  * @package Bcgov/Theme/Block
  */
 return [
-	'title'      => __( 'In-page Constrained Bordered Section with Image', 'bcgov_blocks_theme' ),
+	'title'      => __( 'Constrained Bordered Section with Image', 'bcgov_blocks_theme' ),
 	'categories' => [ 'cleanbc-patterns-general' ],
 	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"3rem","bottom":"3rem"}}},"className":"in-page-full-width-constrained-section bordered"} -->
 	<div class="wp-block-group alignfull in-page-full-width-constrained-section bordered" style="padding-top:3rem;padding-bottom:3rem"><!-- wp:media-text {"mediaId":1752,"mediaLink":"none","mediaType":"image","mediaWidth":35,"verticalAlignment":"center","backgroundColor":"background","className":"is-style-default"} -->

@@ -8,7 +8,7 @@
  */
 return [
 	'title'      => __( 'Level 3 Dark Banner', 'bcgov_blocks_theme' ),
-	'categories' => [ 'cleanbc-patterns-header-footer' ],
+	'categories' => [ 'cleanbc-patterns-banners' ],
 	'content'    => '<!-- wp:group {"align":"full","backgroundColor":"secondary-brand","className":"level-3-banner"} -->
 	<div class="wp-block-group alignfull level-3-banner has-secondary-brand-background-color has-background"><!-- wp:columns {"className":"is-style-constrained"} -->
 	<div class="wp-block-columns is-style-constrained"><!-- wp:column {"verticalAlignment":"center","width":"","className":"content-column"} -->
