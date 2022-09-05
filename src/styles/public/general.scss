@@ -193,6 +193,15 @@ main,
 		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
+
+		.wp-block-column {
+			margin: 0 auto;
+			max-width: calc(100% - 4rem);
+
+			@media (min-width: calc($breakpoint-xl + 2rem)) {
+				max-width: 1440px;
+			}
+		}
 	}
 }
 

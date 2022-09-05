@@ -1,6 +1,22 @@
 /* stylelint-disable no-descending-specificity */
 /* stylelint-disable font-weight-notation */
 
+
+// Template editor specific styles.
+html body.wp-admin .editor-styles-wrapper {
+
+	.cleanbc-large-info-card {
+
+		.wp-block-media-text {
+
+			&__media {
+				width: 25% !important;
+				margin: auto;
+			}
+		}
+	}
+}
+
 .cleanbc-info-cards {
 
 	h2,
@@ -17,9 +33,15 @@
 
 	&.two-up-wide {
 
+		padding: 1rem;
+
 		.wp-block-columns {
 			max-width: 1440px;
-			margin: 0 auto;
+			margin: 0 1rem;
+
+			@media (min-width: $breakpoint-sm) {
+				margin: 0 auto;
+			}
 
 			.wp-block-column {
 				all: unset;
@@ -30,6 +52,43 @@
 					display: flex;
 					flex-direction: column;
 					margin: auto;
+
+					&.cleanbc-large-info-card {
+						display: block;
+						margin: 0 auto;
+						padding: 2rem 0;
+
+						@media (min-width: $breakpoint-sm) {
+							padding: 2rem;
+						}
+
+						@media (min-width: $breakpoint-lg) {
+							display: inherit;
+							margin: auto;
+						}
+
+						.wp-block-media-text {
+							display: block;
+
+							@media (min-width: $breakpoint-lg) {
+								display: inherit;
+							}
+
+							&__media {
+								aspect-ratio: 1/1;
+								width: 50%;
+								margin: auto;
+
+								@media (min-width: $breakpoint-lg) {
+									width: 100%;
+								}
+
+								@media (min-width: $breakpoint-xl) {
+									width: 75%;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -40,18 +99,33 @@
 // In-page Full width with image Banner.
 .in-page-full-width-constrained-section {
 
-	padding: 0;
+	padding: 2rem;
+
+	@media (min-width: $breakpoint-sm) {
+		padding: 0;
+	}
 
 	.wp-block-media-text {
 		max-width: 1440px;
-		margin: 0 auto;
+		margin: 0;
+		width: 100%;
+
+		@media (min-width: $breakpoint-sm) {
+			margin: 0 2rem;
+			width: calc(100% - 4rem);
+		}
+		overflow: hidden;
+
+		@media (min-width: $breakpoint-xl) {
+			margin: 0 auto;
+		}
 
 		.wp-block-media-text {
 
 			&__media {
-				aspect-ratio: initial;
+				aspect-ratio: unset;
 
-				@media (min-width: $breakpoint-sm) {
+				@media (min-width: $breakpoint-lg) {
 					aspect-ratio: 1 / 1;
 				}
 
@@ -65,7 +139,11 @@
 			}
 
 			&__content {
-				padding: 0 0 0 2rem;
+				padding: 0;
+
+				@media (min-width: $breakpoint-sm) {
+					padding: 0 0 0 2rem;
+				}
 
 				.wp-block-group {
 					padding: 0;
@@ -91,7 +169,11 @@
 			.wp-block-media-text {
 
 				&__content {
-					padding: 0 2rem 0 0;
+					padding: 0;
+
+					@media (min-width: $breakpoint-sm) {
+						padding: 0 2rem 0 0;
+					}
 				}
 			}
 		}
@@ -110,12 +192,18 @@
 					padding: 0;
 
 					.wp-block-group:not(.wp-block-group > .wp-block-group) {
-						padding-left: 2rem;
+
 						border-width: 0.5rem;
 						border-right: none;
 						border-left: none;
 						border-bottom: none;
-						border-radius: 0 1rem 0 0;
+						border-radius: 0;
+						padding-left: 0;
+
+						@media (min-width: $breakpoint-sm) {
+							border-radius: 0 1rem 0 0;
+							padding-left: 2rem;
+						}
 						display: flex;
 						flex-direction: column;
 						min-height: 400px;
@@ -137,11 +225,19 @@
 
 				&__media {
 					aspect-ratio: initial;
-					border-radius: 1rem 0 0 1rem;
+					border-radius: 1rem 1rem 0 0;
+
+					@media (min-width: $breakpoint-sm) {
+						border-radius: 1rem 0 0 1rem;
+					}
 
 					img {
 						aspect-ratio: initial;
-						border-radius: 1rem 0 0 1rem;
+						border-radius: 1rem 1rem 0 0;
+
+						@media (min-width: $breakpoint-sm) {
+							border-radius: 1rem 0 0 1rem;
+						}
 					}
 				}
 			}
@@ -159,7 +255,11 @@
 
 					img {
 						aspect-ratio: initial;
-						border-radius: 0 1rem 1rem 0;
+						border-radius: 1rem 1rem 0 0;
+
+						@media (min-width: $breakpoint-sm) {
+							border-radius: 0 1rem 1rem 0;
+						}
 					}
 				}
 
@@ -169,7 +269,12 @@
 					.wp-block-group:not(.wp-block-group > .wp-block-group) {
 						padding-left: 2rem;
 						padding-right: 0;
-						border-radius: 1rem 0 0 0;
+						border-radius: 0;
+
+						@media (min-width: $breakpoint-sm) {
+							border-radius: 1rem 0 0 0;
+							border-radius: 0 1rem 1rem 0;
+						}
 					}
 				}
 			}
@@ -191,6 +296,144 @@
 			}
 		}
 	}
+
+	&.sectors {
+		padding: 0;
+
+		.in-page-sectors-section {
+
+			padding: 0 2rem 3rem;
+
+			@media (min-width: $breakpoint-sm) {
+				padding: 0 2rem 3rem;
+			}
+
+			width: 100%;
+
+			.wp-block-columns {
+				margin-bottom: 0;
+				max-width: 1440px;
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				position: relative;
+
+				.wp-block-column {
+					border-radius: 1rem;
+					margin-bottom: 3rem;
+					position: relative;
+
+					&::after {
+						content: attr(data-after-content);
+						display: block;
+						position: absolute;
+						width: 100%;
+						font-size: 1.75rem;
+						transform: translate(50%, 100%);
+						bottom: -1rem;
+						right: 50%;
+						top: auto;
+						text-align: center;
+					}
+
+					&.content-column {
+						padding: 1rem;
+
+						@media (min-width: $breakpoint-md) {
+							padding: 2rem;
+						}
+					}
+
+					.wp-block-group {
+						aspect-ratio: 1 / 1;
+						border-radius: 50%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						figcaption:not([contenteditable="true"]) {
+							display: none !important;
+						}
+
+						figcaption[contenteditable="true"] {
+							color: var(--wp--preset--color--white);
+							font-size: 1.25rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.graph-card-feature {
+
+	.is-stacked-on-mobile {
+
+		body.mobile & {
+
+			grid-template-columns: 100% !important;
+
+			.wp-block-media-text {
+
+				&__media {
+					grid-column: 1;
+					grid-row: 1;
+				}
+
+				&__content {
+					grid-column: 1;
+					grid-row: 2;
+				}
+			}
+		}
+	}
+}
+
+.warning-section {
+
+	.wp-block-group {
+		gap: 0;
+		flex-direction: column;
+
+		@media (min-width: $breakpoint-lg) {
+			flex-direction: row;
+		}
+	}
+
+	.wp-block-media-text {
+
+		flex: 1;
+		min-height: 400px;
+		padding: 2rem;
+
+
+		&__content {
+			padding: 0;
+
+			@media (min-width: $breakpoint-sm) {
+				padding: 0 0 0 2rem;
+			}
+		}
+
+		&__media {
+			aspect-ratio: initial;
+			border-radius: 1rem;
+			max-width: 50%;
+
+			@media (min-width: $breakpoint-sm) {
+				max-width: 100%;
+			}
+			margin-left: auto;
+			margin-right: auto;
+
+			img {
+				aspect-ratio: initial;
+				border-radius: 1rem;
+			}
+		}
+	}
 }
 
 .in-page-level-4-top-banner {
@@ -203,12 +446,20 @@
 
 	.wp-block-media-text {
 		max-width: 1440px;
-		margin: 0 auto;
+		margin: 0 1rem;
+
+		@media (min-width: $breakpoint-sm) {
+			margin: 0 auto;
+		}
 
 		.wp-block-media-text {
 
 			&__content {
-				padding: 0 0 0 2rem;
+				padding: 0 2rem;
+
+				@media (min-width: $breakpoint-sm) {
+					padding: 0 0 0 2rem;
+				}
 
 				.wp-block-group {
 					padding: 0;
@@ -236,54 +487,6 @@
 
 				&__content {
 					padding: 0 2rem 0 0;
-				}
-			}
-		}
-	}
-}
-
-.in-page-sectors-section {
-
-	.wp-block-columns {
-		margin-bottom: 0;
-		max-width: 1440px;
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-		position: relative;
-
-		.wp-block-column {
-			border-radius: 1rem;
-			margin-bottom: 3rem;
-			position: relative;
-
-			&::after {
-				content: attr(data-after-content);
-				display: block;
-				position: absolute;
-				width: 100%;
-				font-size: 1.75rem;
-				transform: translate(50%, 100%);
-				bottom: -1rem;
-				right: 50%;
-				top: auto;
-				text-align: center;
-			}
-
-			.wp-block-group {
-				aspect-ratio: 1 / 1;
-				border-radius: 50%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-				figcaption:not([contenteditable="true"]) {
-					display: none !important;
-				}
-
-				figcaption[contenteditable="true"] {
-					color: var(--wp--preset--color--white);
-					font-size: 1.25rem;
 				}
 			}
 		}

@@ -33,6 +33,17 @@ body {
 			}
 		}
 
+		.help {
+
+			br {
+				display: none;
+
+				@media (min-width: $breakpoint-md) {
+					display: block;
+				}
+			}
+		}
+
 		.wp-block-separator {
 			margin: 0;
 		}
@@ -45,6 +56,10 @@ body {
 
 		@media (min-width: $breakpoint-md) {
 			background-size: contain;
+		}
+
+		@media (min-width: $breakpoint-xl) {
+			background-size: cover;
 		}
 		background-repeat: no-repeat;
 	}
@@ -96,13 +111,17 @@ body {
 	ul {
 		padding-left: 1rem;
 
-		li {
+		li:not(.is-style-custom) {
 			list-style-type: disclosure-open;
-			line-height: 2;
+			line-height: 1.7;
 
 			a {
 				text-decoration: none;
-				padding: 0 0.5rem;
+				padding: 0;
+
+				@media (min-width: $breakpoint-sm) {
+					// margin: 0 0.5rem;
+				}
 
 				&:hover,
 				&:focus {
@@ -118,9 +137,29 @@ body {
 
 .three-up-card-feature {
 
+	> .wp-block-group {
+		margin-left: 0;
+		margin-right: 0;
+
+		@media (min-width: $breakpoint-sm) {
+			margin-left: 2rem;
+			margin-right: 2rem;
+		}
+	}
+
 	.wp-block-columns {
 		max-width: 1440px;
-		margin: 0 auto;
+		margin: 0 1rem;
+
+		@media (min-width: $breakpoint-sm) {
+			gap: 0.5rem;
+			margin: 0 auto;
+		}
+
+		@media (min-width: $breakpoint-md) {
+			gap: 2rem;
+		}
+
 
 		.wp-block-column {
 			display: flex;
@@ -135,21 +174,28 @@ body {
 		.wp-block-group {
 			display: flex;
 			flex-direction: column;
+			padding: 0 2rem;
 			width: 100%;
 
-			&.has-border-color {
-				border-bottom-width: 0 !important;
-				border-left-width: 0 !important;
-				border-right-width: 0 !important;
-			}
-
 			.wp-block-group {
+				padding: 0 1rem;
+
+				@media (min-width: $breakpoint-lg) {
+					padding: 0 2rem;
+				}
 
 				&.has-border-color {
 					border-bottom-width: 0 !important;
 					border-left-width: 0 !important;
 					border-right-width: 0 !important;
 				}
+			}
+
+
+			&.has-border-color {
+				border-bottom-width: 0 !important;
+				border-left-width: 0 !important;
+				border-right-width: 0 !important;
 			}
 
 			body & {
@@ -179,11 +225,19 @@ body {
 
 .two-up-card-feature {
 
+	body.cleanbc & {
+		margin: 0 auto !important;
+		width: 100%;
+	}
+	padding: 0;
+
 	.wp-block-columns {
 		max-width: 1440px;
 		margin: 0 auto;
 
+
 		.wp-block-column {
+
 			border-radius: 1rem;
 			display: flex;
 			align-self: inherit;

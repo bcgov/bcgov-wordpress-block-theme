@@ -151,6 +151,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		// Load only for CleanBC patterns.
 		if ( function_exists( 'acf_add_options_page' ) && 'cleanbc' === get_field( 'active_site', 'option' ) ) {
 			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-actions-toggle-query';
+			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-dual-warning-section';
 			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-footer-01';
 			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-three-up-icon-items';
 			// CleanBC query patterns.

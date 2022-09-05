@@ -44,6 +44,10 @@ body.cleanbc {
 					}
 
 					@media (min-width: $breakpoint-lg) {
+						flex-basis: 60%;
+					}
+
+					@media (min-width: $breakpoint-xl) {
 						flex-basis: 70%;
 					}
 				}
@@ -56,6 +60,10 @@ body.cleanbc {
 					}
 
 					@media (min-width: $breakpoint-lg) {
+						flex-basis: 40%;
+					}
+
+					@media (min-width: $breakpoint-xl) {
 						flex-basis: 30%;
 					}
 				}

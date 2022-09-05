@@ -39,13 +39,22 @@ const domReady = () => {
 		} else {
 			body.classList.add('header-scroll');
 		}
-
+		/*
+		 * Any inital element with a class that includes 'banner' will be moved above the breadcrumb navigation.
+		 * However if the class name also includes 'in-page' it will not be moved.
+		 * eg: in-page-strategies-banner
+		 */
 		if (null !== bannerElement) {
 			if (
 				bannerElement.className
 					.split(' ')
 					.some((individualClass) =>
 						/.*banner.*/.test(individualClass)
+					) &&
+				!bannerElement.className
+					.split(' ')
+					.some((individualClass) =>
+						/.*in-page.*/.test(individualClass)
 					)
 			) {
 				if (null !== breadcrumb) {
@@ -179,6 +188,33 @@ const domReady = () => {
 				// Portrait
 				document.body.classList.remove('landscape');
 				document.body.classList.add('portrait');
+			}
+			/**
+			 * Set device size helper classes on body.
+			 * Needed for overriding WordPress specific block size !important.
+			 * eg: .wp-block-media-text.is-stacked-on-mobile for small breakpoint.
+			 */
+			if (width <= 782) {
+				/**
+				 * Mobile or small breakpoint: $breakpoint-sm
+				 */
+				document.body.classList.remove('largeScreen');
+				document.body.classList.remove('tablet');
+				document.body.classList.add('mobile');
+			} else if (width <= 1199) {
+				/**
+				 * Tablet or large breakpoint for mid-sized resolution changes: $breakpoint-lg
+				 */
+				document.body.classList.remove('mobile');
+				document.body.classList.add('tablet');
+				document.body.classList.remove('largeScreen');
+			} else {
+				/**
+				 * Desktop or wider than large breakpoint
+				 */
+				document.body.classList.remove('mobile');
+				document.body.classList.remove('tablet');
+				document.body.classList.add('largeScreen');
 			}
 		};
 
