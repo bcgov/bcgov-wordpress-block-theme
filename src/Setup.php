@@ -252,11 +252,11 @@ class Setup {
 	 */
 	public function bcgov_block_theme_dependencies() {
 		// Checks for AIOSEO breadcrumb specific function.
-		$message_intro = __( 'Warning: The BCGov Block Theme needs the', 'bcgov_block_theme' );
+		$message_intro = __( 'Missing: The BCGov Block Theme needs the', 'bcgov_block_theme' );
 
 		if ( ! function_exists( 'aioseo_breadcrumbs' ) ) {
 			$plugin        = 'All in One SEO';
-			$className     = 'warning';
+			$className     = 'notice-warning notice';
 			$message_extro = __( 'plugin activated to enable to page specific breadcrumb navigation.', 'bcgov_block_theme' );
 
 			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
@@ -265,7 +265,7 @@ class Setup {
 		if ( ! function_exists( 'acf_add_options_page' ) ) {
 			$plugin        = 'Advanced Custom Fields PRO';
 			$className     = 'error';
-			$message_extro = __( 'plugin activated to enable admin options page.', 'bcgov_block_theme' );
+			$message_extro = __( 'plugin activated to enable admin options page in order to function properly.', 'bcgov_block_theme' );
 
 			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
 		}
@@ -273,7 +273,7 @@ class Setup {
 		if ( ! function_exists( 'cptui_loaded' ) ) {
 			$plugin        = 'Custom Post Type UI';
 			$className     = 'error';
-			$message_extro = __( 'plugin activated to enable to custom post types.', 'bcgov_block_theme' );
+			$message_extro = __( 'plugin activated to enable to custom post types in order to function properly.', 'bcgov_block_theme' );
 
 			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
 		}
