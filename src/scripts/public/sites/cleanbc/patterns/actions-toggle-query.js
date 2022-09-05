@@ -95,7 +95,9 @@ const domReady = () => {
 				`.actions-toggle-buttons .wp-block-button__link[href="#${queryValue}"]`
 			);
 
-			triggerClick(targetButton);
+			if (null !== targetButton) {
+				triggerClick(targetButton);
+			}
 
 			countActiveProjects();
 

@@ -24,8 +24,11 @@ html body.wp-admin .editor-styles-wrapper {
 
 
 	.info-cover-banner {
+		height: 100%;
 
-		height: clamp(600px, 80vh - 80px, 800px);
+		@media (min-width: $breakpoint-sm) {
+			height: clamp(600px, 80vh - 80px, 800px);
+		}
 
 		h1 {
 			font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem);
@@ -39,7 +42,11 @@ html body.wp-admin .editor-styles-wrapper {
 
 	.landing-cover-banner {
 
-		height: clamp(600px, 80vh - 80px, 800px);
+		height: 100%;
+
+		@media (min-width: $breakpoint-sm) {
+			height: clamp(600px, 80vh - 80px, 800px);
+		}
 
 		h1:not(.is-style-custom) {
 			color: var(--wp--preset--color--white);
@@ -127,14 +134,30 @@ html body.wp-admin .editor-styles-wrapper {
 
 		&__inner-container {
 			box-sizing: border-box;
-			max-width: 720px;
-			width: 50%;
-			margin: 0 50% 0 auto;
+			max-width: 1440px;
+			width: 100%;
+			margin: auto;
 			padding-right: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 70vh;
 
-			@media (min-width: $breakpoint-sm-md) {
-				padding-right: 6rem;
+			@media (min-width: $breakpoint-sm) {
+				width: 45%;
+				justify-content: center;
+				margin: auto auto auto 2.5%;
 			}
+
+			@media (min-width: $breakpoint-md) {
+				width: 35%;
+				margin: auto auto auto 5%;
+			}
+
+			@media (min-width: $breakpoint-lg) {
+				margin: auto auto auto 10%;
+			}
+
 
 			body .bcgov-body-content & {
 
@@ -201,6 +224,11 @@ html body.wp-admin .editor-styles-wrapper {
 
 	.wp-block-cover {
 		border-radius: 1rem;
+		padding: 1rem 2rem 0;
+
+		@media (min-width: $breakpoint-sm) {
+			padding: 1rem 3rem 2rem;
+		}
 
 		img {
 			border-radius: 1rem;
@@ -211,6 +239,14 @@ html body.wp-admin .editor-styles-wrapper {
 			&__background {
 				border-radius: 1rem;
 			}
+		}
+	}
+
+	.content-column {
+		padding: 0;
+
+		@media (min-width: $breakpoint-sm) {
+			padding: 3rem;
 		}
 	}
 
@@ -227,6 +263,11 @@ html body.wp-admin .editor-styles-wrapper {
 
 	.wp-block-cover {
 		border-radius: 1rem;
+		padding: 1rem 2rem 0;
+
+		@media (min-width: $breakpoint-sm) {
+			padding: 1rem 3rem 2rem;
+		}
 
 		img {
 			border-radius: 1rem;
@@ -238,6 +279,19 @@ html body.wp-admin .editor-styles-wrapper {
 				border-radius: 1rem;
 			}
 		}
+	}
+
+	.content-column {
+		padding: 0;
+
+		@media (min-width: $breakpoint-sm) {
+			padding: 3rem;
+		}
+
+		h2 {
+			margin-top: 0;
+		}
+
 	}
 
 	.image-column {
@@ -255,7 +309,11 @@ html body.wp-admin .editor-styles-wrapper {
 // Info Cover Banner header styles.
 .info-cover-banner {
 
-	height: clamp(600px, 80vh - 80px, 800px);
+	height: 100%;
+
+	@media (min-width: $breakpoint-sm) {
+		height: clamp(600px, 80vh - 80px, 800px);
+	}
 	overflow: clip;
 
 	.wp-block-columns {
@@ -272,14 +330,39 @@ html body.wp-admin .editor-styles-wrapper {
 
 		h2 {
 			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem);
+			margin-top: 0;
+		}
+
+		&.content-column {
+
+			@media (min-width: $breakpoint-sm) {
+				max-width: 50%;
+			}
 		}
 
 		.image-column {
-			display: flex;
-			flex-basis: calc(33.333% - 2rem) !important;
-			border-radius: 50%;
-			margin-right: 2rem;
 			aspect-ratio: 1 / 1;
+			display: flex;
+			border-radius: 50%;
+			height: auto;
+			flex-basis: 100% !important;
+			max-width: 100vw;
+			margin: auto auto 2rem auto;
+
+			@media (min-width: $breakpoint-sm) {
+				margin-bottom: auto;
+				margin-right: 2rem;
+				margin-left: auto;
+				flex-basis: calc(45% - 4rem) !important;
+				max-width: 45vw;
+				width: 100%;
+			}
+
+			@media (min-width: $breakpoint-xl) {
+				flex-basis: calc(33.333% - 4rem) !important;
+				max-width: 35vw;
+			}
+
 
 			figure {
 				margin: auto;
@@ -290,8 +373,11 @@ html body.wp-admin .editor-styles-wrapper {
 
 // Landing Cover Banner header styles.
 .landing-cover-banner {
+	height: 100%;
 
-	height: clamp(600px, 80vh - 80px, 800px);
+	@media (min-width: $breakpoint-sm) {
+		height: clamp(600px, 80vh - 80px, 800px);
+	}
 	overflow: clip;
 
 	.wp-block-cover {
@@ -499,10 +585,17 @@ html body.wp-admin .editor-styles-wrapper {
 .level-3-banner {
 
 	display: flex;
-	height: clamp(600px, 80vh - 80px, 800px);
+	height: 100%;
+
+	@media (min-width: $breakpoint-sm) {
+		height: clamp(600px, 80vh - 80px, 800px);
+	}
 
 	.content-column {
-		max-width: 50%;
+
+		@media (min-width: $breakpoint-sm) {
+			max-width: 50%;
+		}
 
 		h1 {
 			font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem);
@@ -517,14 +610,27 @@ html body.wp-admin .editor-styles-wrapper {
 	.image-column {
 		aspect-ratio: 1 / 1;
 		display: flex;
-		flex-basis: calc(33.333% - 4rem) !important;
 		background-color: var(--wp--preset--color--accent);
 		border-radius: 50%;
 		height: auto;
-		max-width: 35vw;
-		width: 100%;
-		margin-right: 2rem;
-		margin-left: auto;
+		flex-basis: 100% !important;
+		max-width: 100vw;
+		margin: auto auto 2rem auto;
+
+		@media (min-width: $breakpoint-sm) {
+			margin-bottom: auto;
+			margin-right: 2rem;
+			margin-left: auto;
+			flex-basis: calc(45% - 4rem) !important;
+			max-width: 45vw;
+			width: 100%;
+		}
+
+		@media (min-width: $breakpoint-xl) {
+			flex-basis: calc(33.333% - 4rem) !important;
+			max-width: 35vw;
+		}
+
 
 		figure {
 			margin: auto;
@@ -535,10 +641,20 @@ html body.wp-admin .editor-styles-wrapper {
 
 .region-climate-change-section {
 
+	.wp-block-cover {
+		padding: 0 2rem;
+	}
+
 	.wp-block-column {
 
 		&.content-column {
 			all: unset;
+			padding: 2rem 2rem 1rem;
+			width: 100%;
+
+			@media (min-width: $breakpoint-sm) {
+				max-width: 31.33%;
+			}
 
 			h3 {
 				font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 1.5rem) !important;
