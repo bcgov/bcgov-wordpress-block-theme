@@ -35,3 +35,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 - Troubleshooting Template Parts for CleanBC + Admin styles fix/updates. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 – DESCW-534 Block template parts Area fix + more. Button styles, Project Query Block, Pattern Loremisation [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 – Updated accordion toggle by querystring. Added hierarchy to CleanBC pattern files for better file management. Updated Appearance > BCGov Block Theme Admin instructions page. Responsive styling + CPT plugin detection. Plus additional updates for various patterns, breadcrumb DOM reording, and body class size helpers. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
+– Modified Accordion toggle feature to suppress empty project categories [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
