@@ -42,7 +42,7 @@ namespace Bcgov\Theme\Block;
 /*
 * CleanBC site specific patterns.
 */
-if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) :
+if ( CLEANBC ) :
 	?>
 
 <h3>CleanBC Patterns</h3>
@@ -55,7 +55,7 @@ if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) :
 <hr />
 
 <h4>Active Site Patterns</h4>
-<p>Available in the Patterns selector under <strong>CleanBC: Post Query</strong> and <strong>CleanBC: Page Layouts</strong>. These patterns utilise features, content or functionality specific to the CleanBC site and are only available to CleanBC or other sites that set the Active Site option to CleanBC in the BCGov Block Theme Options.
+<p>Available in the Patterns selector under <strong>CleanBC: Post Query</strong> and <strong>CleanBC: Page Layouts</strong>. These patterns utilise features, content or functionality specific to the CleanBC site and are only available to CleanBC or other sites that set the Active Site option to CleanBC in the BCGov Block Theme Options.</p>
 <?php endif; ?>
 
 </div>
@@ -70,13 +70,13 @@ if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) :
 						?>
 /assets/images/block-theme/BCGOV-Gradients-Swatches.jpg" alt="BCGov theme colour palette" style="width: 300px;" /></p>
 <p><img src="
-<?php
-echo esc_url( get_template_directory_uri() );
-?>
+	<?php
+	echo esc_url( get_template_directory_uri() );
+	?>
 /assets/images/block-theme/CleanBC-Colour-Palette-Swatches.jpg" alt="CleanBC theme colour palette" style="width: 300px;" /> <img src="
-<?php
-echo esc_url( get_template_directory_uri() );
-?>
+	<?php
+	echo esc_url( get_template_directory_uri() );
+	?>
 /assets/images/block-theme/CleanBC-Gradients-Swatches.jpg" alt="BCGov theme colour palette" style="width: 300px;" /></p>
 <p>It should be noted that most blocks and patterns can be modified in the editor to override colour or gradient palette options to accomodate specific customisation needs.</p>
 <hr />

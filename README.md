@@ -28,31 +28,18 @@ This adds some housekeeping for the theme developers, which include touchpoints 
 
 ### Where: functions.php
 
-To turn off and on certain features, PHP constants are defined in the functions file. The following examples will use the CleanBC project constants which are defined as CLEANBC and CLEANBC\PATTERNS.
+To turn off and on certain features, PHP constants are defined in the functions file. The following examples will use the CleanBC project constants which are defined as CleanBC.
 
 The CLEANBC constant is used in the following locations:
-
-```bash
-/src/Setup.php – as a check to load/register CleanBC Custom Posts and Taxonomy.
-```
+- Set in functions.php
+- Used for allowing site specific patterns: inc/core/theme-block-patterns.php
 
 This can be done using the check:
 
 ```bash
-if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC' ) && CLEANBC ) {
+if ( CLEANBC ) {
 ```
 
-...and the CLEANBC\PATTERNS is used in:
-
-```bash
-/inc/core/theme-block-patterns.php – to enable CleanBC site specific patterns. 
-```
-
-This can be done using the check:
-
-```bash
-if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) {
-```
 
 To enable/disable Javascript based features such as Block Filters, a global Javascript variable is set to allow for checking whether the site is avaiable. Add additional/new site checks to the set_javascript_variables() function:
 
@@ -68,49 +55,16 @@ if (window.site.cleanbc) {
 
 ## Site Specific Custom Post Types (CPT)
 
-### Where: /src/Setup.php -> bcgov_register_custom_types()
-
-Use the format:
-
-```bash
-/src/custom-types/[site]/[site]-[label].php
-/src/custom-types/[site]/[site]-taxonomy.php
-```
-
-Eg:  For the CleanBC Actions CPT:
-
-```bash
-/src/custom-types/cleanbc/cleanbc-actions.php
-/src/custom-types/cleanbc/cleanbc-taxonomy.php
-```
-
-Note that the default Block Theme template structure for a CPT can be set in the 'template' argument when using the register_post_type function – eg: register_post_type( 'cleanbc-actions', $args ) – or alternatively a Block Theme style template can be created and placed in the Template directory Eg: 
-
-```bash
-/templates/single-cleanbc-actions.html
-```
-
-Currently the only means to remove a template specific to a previous site is to physically remove its HTML file from the templates directory as well as any reference to it in the theme.json file under the 'customTemplates' key Eg:
-
-```bash
-"customTemplates": [
-  {
-    "name": "single-cleanbc-actions",
-    "title": "CleanBC Action Post",
-    "postTypes": [
-    "cleanbc-actions"
-    ]
-  }...
-```
+Use the 'Custom Post Type UI' (CPT UI) in conjunction with the 'Advanced Custom Fields Pro' (ACF Pro) plugins to generate new Custom Post Types.
 
 ## Site Specific Block Patterns
 
 ### Where: /inc/core/theme-block-patterns.php
 
-When registering new Block Paterns use the [SITE]\PATTERNS constant check. Eg:
+When registering new Block Paterns use the [SITE] constant check. Eg:
 
 ```bash
-if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) {
+if ( CLEANBC ) {
 ```
 
 Add any site specific patterns to the $block_patterns array. The reasoning for this using a pattern specific check is that while Custom Post Types, taxonomies, block filters and more may need to be suppressed for a site, the patterns developed for previous sites can be left available to site owners for use in page building and rapid prototyping layouts.
