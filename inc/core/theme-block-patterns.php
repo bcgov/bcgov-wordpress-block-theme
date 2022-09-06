@@ -39,7 +39,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 	/*
 	* CleanBC site specific patterns.
 	*/
-	if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) {
+	if ( CLEANBC ) {
 
 		$block_pattern_categories['cleanbc-patterns-general']      = [
 			'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ),
@@ -117,7 +117,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 	/*
 	* CleanBC site specific patterns.
 	*/
-	if ( defined( 'Bcgov\\Theme\\Block\\CLEANBC\\PATTERNS' ) && CLEANBC\PATTERNS ) {
+	if ( CLEANBC ) {
 		// CleanBC Page Banners (and footers) patterns.
 		$block_patterns[] = 'cleanbc/banners/cleanbc-home-cover-banner';
 		$block_patterns[] = 'cleanbc/banners/cleanbc-info-cover-banner';
