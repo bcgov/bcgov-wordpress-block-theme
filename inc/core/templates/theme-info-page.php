@@ -62,7 +62,7 @@ if ( CLEANBC ) :
 
 <div class="auth-app-card card">
 <h2>Colour Palettes</h2>
-<p>Colour palettes for the BCGov Block Theme are made up of 24 pre-defined colours. Any additional Active Site options will also include a palette with an equivalent number of colours in order to make the patterns useable across sites. An associated group of Gradients based on the 16 essential custom colours in the coulour palette are also available.</p>
+<p>Colour palettes for the BCGov Block Theme are made up of 24 pre-defined colours. Any additional Active Site options will also include a palette with an equivalent number of colours in order to make the patterns useable across sites. An associated group of Gradients based on the 16 essential custom colours in the colour palette are also available.</p>
 <h3>Example palettes</h3>
 <p><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/block-theme/BCGOV-Colour-Palette-Swatches.jpg" alt="BCGov theme colour palette" style="width: 300px;" /> <img src="
                         <?php

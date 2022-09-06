@@ -155,6 +155,7 @@ const domReady = () => {
 		);
 
 		elAccordionItems.forEach((item) => {
+			item.classList.remove('hidden');
 			const queryGroup = item.querySelectorAll('.active-group');
 			queryGroup.forEach((group) => {
 				const childItem = group.querySelector(
@@ -184,13 +185,19 @@ const domReady = () => {
 				}
 				const noChildItem = group.querySelector('.no-results');
 				if (noChildItem !== null) {
+					const headerCollapseItem = noChildItem.closest(
+						'.wp-block-bcgov-collapse-item'
+					);
 					const headerContainer = noChildItem
 						.closest('.wp-block-bcgov-collapse-item')
 						.querySelector('.collapse-title');
 					const spanToReset = noChildItem
 						.closest('.wp-block-bcgov-collapse-item')
 						.querySelector('.collapse-header .count');
-					if (spanToReset !== null) {
+					if (null !== headerCollapseItem) {
+						headerCollapseItem.classList.add('hidden');
+					}
+					if (null !== spanToReset) {
 						spanToReset.innerHTML = '0';
 					} else {
 						headerContainer.innerHTML = `${headerContainer.innerText} <span class="count">0</span>`;
