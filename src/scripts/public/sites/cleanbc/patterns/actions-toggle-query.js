@@ -43,6 +43,8 @@ const domReady = () => {
 				}
 
 				button.addEventListener('click', function(e) {
+					e.preventDefault();
+
 					const buttonLinks = document.querySelectorAll(
 						'.actions-toggle-buttons .wp-block-button a.wp-block-button__link'
 					);
