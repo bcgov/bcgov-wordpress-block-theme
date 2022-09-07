@@ -17,6 +17,7 @@ function add_button_attributes( $block_content = '', $block = [] ) {
 		$defaults = [
 			'size'    => 'regular',
 			'svgIcon' => 'none',
+			'label'   => 'none',
 		];
 
 		$args = wp_parse_args( $block['attrs'], $defaults );
@@ -27,6 +28,12 @@ function add_button_attributes( $block_content = '', $block = [] ) {
 			$icon = '';
 		}
 
+		if ( 'none' !== $args['label'] ) {
+			$label = 'aria-label="' . esc_attr( $args['label'] ) . '"';
+		} else {
+			$label = null;
+		}
+
 		$html = str_replace(
 			[
 				'<div class="wp-block-button',
@@ -34,7 +41,7 @@ function add_button_attributes( $block_content = '', $block = [] ) {
 			],
 			[
 				'<div class="wp-block-button has-size-' . esc_attr( $args['size'] ),
-				'<a tabindex="0" class="wp-block-button__link' . $icon,
+				'<a tabindex="0" ' . $label . ' class="wp-block-button__link' . $icon,
 			],
 			$block_content
 		);

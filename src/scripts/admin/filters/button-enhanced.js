@@ -9,7 +9,7 @@ const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { PanelBody, SelectControl } = wp.components;
+const { PanelBody, SelectControl, TextControl } = wp.components;
 
 /**
  * Add Size control to Button block.
@@ -69,6 +69,10 @@ function addAttributes(settings, name) {
 					type: 'boolean',
 					default: false,
 				},
+				label: {
+					type: 'string',
+					default: '',
+				},
 			}),
 		});
 	}
@@ -87,7 +91,7 @@ addFilter(
 const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const {
-			attributes: { size, svgIcon, iconsList, clickFlag },
+			attributes: { size, svgIcon, iconsList, clickFlag, label },
 			setAttributes,
 			name,
 		} = props;
@@ -163,6 +167,15 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 							onChange={(value) => {
 								setAttributes({ size: value });
 							}}
+						/>
+					</PanelBody>
+					<PanelBody title="Accessibility" initialOpen={false}>
+						<TextControl
+							label="ARIA Label"
+							value={label}
+							onChange={(value) =>
+								setAttributes({ label: value })
+							}
 						/>
 					</PanelBody>
 				</InspectorControls>
