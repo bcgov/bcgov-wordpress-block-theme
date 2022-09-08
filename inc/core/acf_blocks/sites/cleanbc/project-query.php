@@ -9,20 +9,6 @@
 
 namespace Bcgov\Theme\Block;
 
-ob_start(); ?>
- 
-<!-- <h1>Attributes< ?php echo esc_html(var_dump($attributes)) ?>!</h3> -->
-<!-- <h3>The number of columns is < ?php echo esc_html($attributes['myColumns']) ?>!</h3> -->
-<!-- <h2>The content is:</h2><p>< ?php echo esc_html($content) ?>!</p> -->
-<!-- <h2>The content is </h2><p>< ?php echo esc_html(get_the_content()) ?>!</p> -->
-<!-- <h2>The content is </h2><p>< ?php echo var_dump(parse_blocks( get_the_content() )) ?>!</p>        -->
-<!-- <h2>The post is </h2><p>< ?php echo var_dump($post) ?>!</p>             -->
-<!-- Write out the block's content -->
-
-
-
-<?php
-
 // Create id and class attributes allowing for custom "className" and "align" values.
 $elId = 'project-' . $block['id'];
 if ( ! empty( $block['anchor'] ) ) {
@@ -132,7 +118,7 @@ if ( $projects ) {
 					// Loop through the JSON write out the details.
 					foreach ( $buttonDetails as $buttonDetail ) {
 						$aria_label = $buttonDetail['label'];
-						printf( '<div class="labelInjector hidden" data-label="%1$s"></div>', esc_html( $aria_label ) );
+						printf( '<div class="labelInjector hidden" aria-hidden="true" data-label="%1$s"></div>', esc_html( $aria_label ) );
 					}
 				}
                 ?>

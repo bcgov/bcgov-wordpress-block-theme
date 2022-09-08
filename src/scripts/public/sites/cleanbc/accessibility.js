@@ -33,6 +33,7 @@ const domReady = () => {
 					link.setAttribute('aria-label', ariaLabel);
 				}
 			});
+			label.remove();
 		});
 
 		setTimeout(function() {}, 0);
