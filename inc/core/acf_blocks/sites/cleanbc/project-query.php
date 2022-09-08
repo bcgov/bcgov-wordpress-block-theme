@@ -9,6 +9,20 @@
 
 namespace Bcgov\Theme\Block;
 
+ob_start(); ?>
+ 
+<!-- <h1>Attributes< ?php echo esc_html(var_dump($attributes)) ?>!</h3> -->
+<!-- <h3>The number of columns is < ?php echo esc_html($attributes['myColumns']) ?>!</h3> -->
+<!-- <h2>The content is:</h2><p>< ?php echo esc_html($content) ?>!</p> -->
+<!-- <h2>The content is </h2><p>< ?php echo esc_html(get_the_content()) ?>!</p> -->
+<!-- <h2>The content is </h2><p>< ?php echo var_dump(parse_blocks( get_the_content() )) ?>!</p>        -->
+<!-- <h2>The post is </h2><p>< ?php echo var_dump($post) ?>!</p>             -->
+<!-- Write out the block's content -->
+
+
+
+<?php
+
 // Create id and class attributes allowing for custom "className" and "align" values.
 $elId = 'project-' . $block['id'];
 if ( ! empty( $block['anchor'] ) ) {
@@ -33,6 +47,7 @@ $projects = get_posts(
     [
 		'post_type'     => 'project',
 		'category__and' => $blockCategory,
+        'numberposts'   => -1,
 	]
 );
 
@@ -74,7 +89,8 @@ $allowed_html = [
 
 echo wp_kses( "{$html_output}", $allowed_html );
 
-if ( $projects ) { ?>
+if ( $projects ) {
+	?>
 
 <div id="<?php echo esc_html( $elId ); ?>" class="<?php echo esc_html( $className ); ?> wp-block-group alignwide" style="border-radius:1rem;padding-top:1rem;">
     <?php
@@ -88,7 +104,38 @@ if ( $projects ) { ?>
 
                 <h4><?php echo esc_html( get_the_title( $project->ID ) ); ?></h4>
 
-                <?php echo wp_kses_post( get_the_content( null, false, $project->ID ) ); ?>
+                <?php echo wp_kses_post( get_the_content( null, true, $project->ID ) ); ?>
+                
+                <?php
+                $dom1 = new \DOMDocument();
+                $dom1->loadHTML( get_the_content( null, true, $project->ID ) );
+                $xpath1           = new \DOMXpath( $dom1 );
+                $wp_html_comments = $xpath1->query( './/comment()', $dom1 );
+                // Filter out the the comments for the InnerBlocks.
+                $wp_html_commentPrefix = 'wp:button {';
+                $JSON                  = '';
+				foreach ( $wp_html_comments as $wp_html_comment ) {
+					if ( substr( trim( $wp_html_comment->nodeValue . PHP_EOL ), 0, strlen( $wp_html_commentPrefix ) ) === $wp_html_commentPrefix ) {
+						// Add a comma to the end of each line except for the last line.
+						if ( '' !== $JSON ) {
+							$JSON = $JSON . ',';
+						}
+						// Retrieve the JSON from the comment.
+						$JSON .= substr( $wp_html_comment->nodeValue . PHP_EOL, strlen( $wp_html_commentPrefix ), strlen( $wp_html_comment->nodeValue . PHP_EOL ) - strlen( $wp_html_commentPrefix ) - 3 );
+					}
+				}
+
+                    $JSON          = '{ "button" : [' . $JSON . '}]}';
+                    $decoded_json  = json_decode( $JSON, true );
+                    $buttonDetails = $decoded_json['button'];
+				if ( is_array( $buttonDetails ) || is_object( $buttonDetails ) ) {
+					// Loop through the JSON write out the details.
+					foreach ( $buttonDetails as $buttonDetail ) {
+						$aria_label = $buttonDetail['label'];
+						printf( '<div class="labelInjector hidden" data-label="%1$s"></div>', esc_html( $aria_label ) );
+					}
+				}
+                ?>
 
             </div>
 
