@@ -37,3 +37,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 – Updated accordion toggle by querystring. Added hierarchy to CleanBC pattern files for better file management. Updated Appearance > BCGov Block Theme Admin instructions page. Responsive styling + CPT plugin detection. Plus additional updates for various patterns, breadcrumb DOM reording, and body class size helpers. [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 – Modified Accordion toggle feature to suppress empty project categories [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 – Added core/button aria-label a11y text [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
+– Added ARIA labels into queried content for the Accordion feature [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
