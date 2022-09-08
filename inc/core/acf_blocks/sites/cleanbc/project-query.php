@@ -93,6 +93,10 @@ if ( $projects ) {
                 <?php echo wp_kses_post( get_the_content( null, true, $project->ID ) ); ?>
                 
                 <?php
+                /*
+                * Retrieve the WordPress meta HTML comments and use them to generate/inject an ARIA label into buttons.
+                * Works in conjuntion with src/scripts/public/sites/cleanbc/accessibility.js.
+                */
                 $dom1 = new \DOMDocument();
                 $dom1->loadHTML( get_the_content( null, true, $project->ID ) );
                 $xpath1           = new \DOMXpath( $dom1 );
@@ -111,9 +115,9 @@ if ( $projects ) {
 					}
 				}
 
-                    $JSON          = '{ "button" : [' . $JSON . '}]}';
-                    $decoded_json  = json_decode( $JSON, true );
-                    $buttonDetails = $decoded_json['button'];
+                $JSON          = '{ "button" : [' . $JSON . '}]}';
+                $decoded_json  = json_decode( $JSON, true );
+                $buttonDetails = $decoded_json['button'];
 				if ( is_array( $buttonDetails ) || is_object( $buttonDetails ) ) {
 					// Loop through the JSON write out the details.
 					foreach ( $buttonDetails as $buttonDetail ) {
