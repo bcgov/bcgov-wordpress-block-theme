@@ -9,6 +9,7 @@ tests/_output
 .phpdocs
 .phpunit.result.*
 dist/scripts/*.php
+dist/*.asset.php
 package-lock.json
 composer.lock
 coverage

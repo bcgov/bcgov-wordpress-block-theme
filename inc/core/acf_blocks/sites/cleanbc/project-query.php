@@ -115,16 +115,20 @@ if ( $projects ) {
 					}
 				}
 
-                $JSON          = '{ "button" : [' . $JSON . '}]}';
-                $decoded_json  = json_decode( $JSON, true );
-                $buttonDetails = $decoded_json['button'];
-				if ( is_array( $buttonDetails ) || is_object( $buttonDetails ) ) {
-					// Loop through the JSON write out the details.
-					foreach ( $buttonDetails as $buttonDetail ) {
-						$aria_label = $buttonDetail['label'];
-						printf( '<div class="labelInjector hidden" aria-hidden="true" data-label="%1$s"></div>', esc_html( $aria_label ) );
-					}
-				}
+                $JSON         = '{ "button" : [' . $JSON . '}]}';
+                $decoded_json = json_decode( $JSON, true );
+                if ( isset( $decoded_json ) ) {
+                    $buttonDetails = $decoded_json['button'];
+                    if ( is_array( $buttonDetails ) || is_object( $buttonDetails ) ) {
+                        // Loop through the JSON write out the details.
+                        foreach ( $buttonDetails as $buttonDetail ) {
+                            if ( isset( $buttonDetail['label'] ) ) {
+                                $aria_label = $buttonDetail['label'];
+                                printf( '<div class="labelInjector hidden" aria-hidden="true" data-label="%1$s"></div>', esc_html( $aria_label ) );
+                            }
+                        }
+                    }
+                }
                 ?>
 
             </div>
