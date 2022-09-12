@@ -27,7 +27,7 @@ html body.wp-admin .editor-styles-wrapper {
 		height: 100%;
 
 		@media (min-width: $breakpoint-sm) {
-			height: clamp(600px, 80vh - 80px, 800px);
+			height: clamp(500px, 80vh - 80px, 800px);
 		}
 
 		h1 {
@@ -45,7 +45,7 @@ html body.wp-admin .editor-styles-wrapper {
 		height: 100%;
 
 		@media (min-width: $breakpoint-sm) {
-			height: clamp(600px, 80vh - 80px, 800px);
+			height: clamp(500px, 80vh - 80px, 800px);
 		}
 
 		h1:not(.is-style-custom) {
@@ -83,7 +83,7 @@ html body.wp-admin .editor-styles-wrapper {
 					flex-direction: column;
 					justify-content: space-between;
 					align-content: flex-start;
-					height: clamp(600px, 100vh - 80px, 850px);
+					height: clamp(600px, 100vh - 80px, 800px);
 
 					> * {
 						width: 100%;
@@ -116,7 +116,7 @@ html body.wp-admin .editor-styles-wrapper {
 // Home Cover Banner header styles.
 .home-cover-banner {
 
-	height: clamp(600px, 100vh - 80px, 1000px) !important;
+	height: clamp(600px, 100vh - 80px, 800px) !important;
 
 	.wp-block-cover {
 
@@ -312,7 +312,7 @@ html body.wp-admin .editor-styles-wrapper {
 	height: 100%;
 
 	@media (min-width: $breakpoint-sm) {
-		height: clamp(600px, 80vh - 80px, 800px);
+		height: clamp(500px, 80vh - 80px, 800px);
 	}
 	overflow: clip;
 
@@ -376,7 +376,7 @@ html body.wp-admin .editor-styles-wrapper {
 	height: 100%;
 
 	@media (min-width: $breakpoint-sm) {
-		height: clamp(600px, 80vh - 80px, 800px);
+		height: clamp(500px, 80vh - 80px, 800px);
 	}
 	overflow: clip;
 
@@ -559,7 +559,7 @@ html body.wp-admin .editor-styles-wrapper {
 
 
 	&.large {
-		height: clamp(600px, calc(100vh - 80px), 850px);
+		height: clamp(600px, calc(100vh - 80px), 800px);
 	}
 
 	max-width: 100%;
@@ -588,7 +588,7 @@ html body.wp-admin .editor-styles-wrapper {
 	height: 100%;
 
 	@media (min-width: $breakpoint-sm) {
-		height: clamp(600px, 80vh - 80px, 800px);
+		height: clamp(500px, 80vh - 80px, 800px);
 	}
 
 	.content-column {

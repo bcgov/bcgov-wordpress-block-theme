@@ -154,6 +154,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-dual-warning-section';
 			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-footer-01';
 			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-three-up-icon-items';
+			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-programs';
 			// CleanBC query patterns.
 			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-actions-query';
 			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-projects-accordion-query';
