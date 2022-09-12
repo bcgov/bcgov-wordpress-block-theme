@@ -38,3 +38,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 – Modified Accordion toggle feature to suppress empty project categories [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 – Added core/button aria-label a11y text [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 – Added ARIA labels into queried content for the Accordion feature [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
+– Accordion PHP fix, new pattern + styles [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
