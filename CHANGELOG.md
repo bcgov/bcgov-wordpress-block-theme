@@ -39,3 +39,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 – Added core/button aria-label a11y text [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 – Added ARIA labels into queried content for the Accordion feature [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 – Accordion PHP fix, new pattern + styles [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
+- Project query ordering updated with additional minor style updates and fixes [DESCW-598]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-598)
