@@ -31,7 +31,7 @@ return [
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->
 	
-	<!-- wp:columns {"verticalAlignment":null,"className":"is-style-constrained"} -->
+	<!-- wp:columns {"className":"is-style-constrained"} -->
 	<div class="wp-block-columns is-style-constrained"><!-- wp:column {"verticalAlignment":"top"} -->
 	<div class="wp-block-column is-vertically-aligned-top"><!-- wp:image {"align":"center","id":8992,"sizeSlug":"full","linkDestination":"none"} -->
 	<figure class="wp-block-image aligncenter size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/programs-heat-pump.png" alt="" class="wp-image-8992"/></figure>
@@ -97,13 +97,11 @@ return [
 	<figure class="wp-block-image aligncenter size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/programs-bicycles.png" alt="" class="wp-image-9007"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:spacer {"height":"1px"} -->
-	<div style="height:1px" aria-hidden="true" class="wp-block-spacer"></div>
-	<!-- /wp:spacer -->
-	
-	<!-- wp:paragraph {"align":"center","textColor":"primary-brand","className":"is-style-custom","fontSize":"small"} -->
-	<p class="has-text-align-center is-style-custom has-primary-brand-color has-text-color has-small-font-size">Save the PST when you buy an e-bike</p>
-	<!-- /wp:paragraph --></div>
+	<!-- wp:buttons -->
+	<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-underline"} -->
+	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link" href="https://scrapit.ca/rebatechoices/">Scrap your car for rebates</a></div>
+	<!-- /wp:button --></div>
+	<!-- /wp:buttons --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->
 	
@@ -112,16 +110,17 @@ return [
 	<!-- /wp:spacer --></div>
 	<!-- /wp:group -->
 	
-	<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"2rem"}},"className":"three-up-card-feature"} -->
-	<div class="wp-block-group alignfull three-up-card-feature"><!-- wp:columns {"className":"programs"} -->
-	<div class="wp-block-columns programs"><!-- wp:column {"verticalAlignment":"center","backgroundColor":"background","className":"is-style-default","layout":{"inherit":false}} -->
+	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"0rem","right":"0rem","bottom":"2rem","left":"0rem"},"blockGap":"2rem","margin":{"top":"3rem"}}},"backgroundColor":"transparent","className":"three-up-card-feature"} -->
+	<div class="wp-block-group alignfull three-up-card-feature has-transparent-background-color has-background" style="margin-top:3rem;padding-top:0rem;padding-right:0rem;padding-bottom:2rem;padding-left:0rem"><!-- wp:group {"style":{"border":{"radius":"1rem"}}} -->
+	<div class="wp-block-group" style="border-radius:1rem"><!-- wp:columns -->
+	<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"center","backgroundColor":"background","className":"is-style-default","layout":{"inherit":false}} -->
 	<div class="wp-block-column is-vertically-aligned-center is-style-default has-background-background-color has-background"><!-- wp:group {"style":{"border":{"width":"1px"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"borderColor":"gray-40"} -->
 	<div class="wp-block-group has-border-color has-gray-40-border-color" style="border-width:1px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:image {"align":"center","id":1917,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/feature-Better-Homes.jpg" alt="" class="wp-image-1917"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:group {"style":{"border":{"width":"8px"},"spacing":{"padding":{"bottom":"2rem"}}},"borderColor":"tertiary"} -->
-	<div class="wp-block-group has-border-color has-tertiary-border-color" style="border-width:8px;padding-bottom:2rem"><!-- wp:buttons -->
+	<!-- wp:group {"style":{"border":{"width":"8px"}},"borderColor":"tertiary"} -->
+	<div class="wp-block-group has-border-color has-tertiary-border-color" style="border-width:8px"><!-- wp:buttons -->
 	<div class="wp-block-buttons"><!-- wp:button {"textColor":"tertiary","className":"is-style-underline","fontSize":"extra-large"} -->
 	<div class="wp-block-button has-custom-font-size is-style-underline has-extra-large-font-size"><a class="wp-block-button__link has-tertiary-color has-text-color" href="https://betterhomesbc.ca/">Better Homes</a></div>
 	<!-- /wp:button --></div>
@@ -129,25 +128,19 @@ return [
 	
 	<!-- wp:paragraph {"textColor":"secondary-brand"} -->
 	<p class="has-secondary-brand-color has-text-color">Making stricter emissions standards and penalties and expanding legislation to include marine and aviation fuels and new compliance options.</p>
-	<!-- /wp:paragraph -->
-	
-	<!-- wp:buttons -->
-	<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-underline"} -->
-	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link" href="https://betterhomesbc.ca/">Learn more</a></div>
-	<!-- /wp:button --></div>
-	<!-- /wp:buttons --></div>
+	<!-- /wp:paragraph --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:column -->
 	
 	<!-- wp:column {"verticalAlignment":"center","backgroundColor":"background","className":"is-style-default"} -->
 	<div class="wp-block-column is-vertically-aligned-center is-style-default has-background-background-color has-background"><!-- wp:group {"style":{"border":{"width":"1px"},"spacing":{"padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"}}},"borderColor":"gray-40"} -->
-	<div class="wp-block-group has-border-color has-gray-40-border-color" style="border-width:1px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:image {"align":"center","id":1242,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
-	<figure class="wp-block-image aligncenter size-large is-style-default"><a href="https://goelectricbc.ca/"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/feature-Go-Electric.jpg" alt="" class="wp-image-1242"/></a></figure>
+	<div class="wp-block-group has-border-color has-gray-40-border-color" style="border-width:1px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!-- wp:image {"align":"center","sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
+	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/feature-Go-Electric.jpg" alt=""/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:group {"style":{"border":{"width":"8px"},"spacing":{"padding":{"bottom":"2rem"}}},"borderColor":"tertiary"} -->
-	<div class="wp-block-group has-border-color has-tertiary-border-color" style="border-width:8px;padding-bottom:2rem"><!-- wp:buttons -->
+	<!-- wp:group {"style":{"border":{"width":"8px"}},"borderColor":"tertiary"} -->
+	<div class="wp-block-group has-border-color has-tertiary-border-color" style="border-width:8px"><!-- wp:buttons -->
 	<div class="wp-block-buttons"><!-- wp:button {"textColor":"tertiary","className":"is-style-underline","fontSize":"extra-large"} -->
 	<div class="wp-block-button has-custom-font-size is-style-underline has-extra-large-font-size"><a class="wp-block-button__link has-tertiary-color has-text-color" href="https://goelectricbc.ca/">Go Electric</a></div>
 	<!-- /wp:button --></div>
@@ -155,13 +148,7 @@ return [
 	
 	<!-- wp:paragraph {"textColor":"secondary-brand"} -->
 	<p class="has-secondary-brand-color has-text-color">Funding programs, incentives, studies and energy-management initiatives to encourage people and businesses to switch to electricity.</p>
-	<!-- /wp:paragraph -->
-	
-	<!-- wp:buttons -->
-	<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-underline"} -->
-	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link" href="https://goelectricbc.ca/">Learn more</a></div>
-	<!-- /wp:button --></div>
-	<!-- /wp:buttons --></div>
+	<!-- /wp:paragraph --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:column -->
@@ -172,8 +159,8 @@ return [
 	<figure class="wp-block-image aligncenter size-large is-style-default"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/sites/cleanbc/feature-Better-Buildings.jpg" alt="" class="wp-image-7022"/></figure>
 	<!-- /wp:image -->
 	
-	<!-- wp:group {"style":{"border":{"width":"8px"},"spacing":{"padding":{"bottom":"2rem"}}},"borderColor":"tertiary"} -->
-	<div class="wp-block-group has-border-color has-tertiary-border-color" style="border-width:8px;padding-bottom:2rem"><!-- wp:buttons -->
+	<!-- wp:group {"style":{"border":{"width":"8px"}},"borderColor":"tertiary"} -->
+	<div class="wp-block-group has-border-color has-tertiary-border-color" style="border-width:8px"><!-- wp:buttons -->
 	<div class="wp-block-buttons"><!-- wp:button {"textColor":"tertiary","className":"is-style-underline","fontSize":"extra-large"} -->
 	<div class="wp-block-button has-custom-font-size is-style-underline has-extra-large-font-size"><a class="wp-block-button__link has-tertiary-color has-text-color" href="https://betterbuildingsbc.ca/">Better Buildings</a></div>
 	<!-- /wp:button --></div>
@@ -181,16 +168,11 @@ return [
 	
 	<!-- wp:paragraph {"textColor":"secondary-brand"} -->
 	<p class="has-secondary-brand-color has-text-color">Increasing use of hydrogen fuel-cell technology by rolling out hydrogen vehicles and fuelling stations and starting a local chapter of the Canadian Hydrogen Fuel Cell Association.</p>
-	<!-- /wp:paragraph -->
-	
-	<!-- wp:buttons -->
-	<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-underline"} -->
-	<div class="wp-block-button is-style-underline"><a class="wp-block-button__link" href="https://betterbuildingsbc.ca/">Learn more</a></div>
-	<!-- /wp:button --></div>
-	<!-- /wp:buttons --></div>
+	<!-- /wp:paragraph --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:group --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></div>
+	<!-- /wp:group --></div>
 	<!-- /wp:group -->',
 ];
