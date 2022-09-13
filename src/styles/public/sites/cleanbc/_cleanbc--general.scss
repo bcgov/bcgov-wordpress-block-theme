@@ -46,6 +46,11 @@ body {
 
 		.wp-block-separator {
 			margin: 0;
+
+			&.has-background:not(.is-style-wide):not(.is-style-dots) {
+				height: 6px;
+				width: 280px;
+			}
 		}
 	}
 
