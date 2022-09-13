@@ -146,6 +146,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		$block_patterns[] = 'cleanbc/general/cleanbc-three-up-card-feature';
 		$block_patterns[] = 'cleanbc/general/cleanbc-two-up-card-feature-wide';
 		$block_patterns[] = 'cleanbc/general/cleanbc-two-up-card-feature';
+		$block_patterns[] = 'cleanbc/general/cleanbc-video-feature';
 		$block_patterns[] = 'cleanbc/general/cleanbc-warning-section';
 
 		// Load only for CleanBC patterns.
