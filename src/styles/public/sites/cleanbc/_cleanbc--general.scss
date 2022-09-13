@@ -101,15 +101,19 @@ body {
 
 	}
 
+	/* stylelint-disable selector-class-pattern */
+	.is-image-fill .wp-block-media-text__media,
 	img {
-		border-bottom-left-radius: 1rem;
+		border-bottom-left-radius: 1rem !important;
 	}
 
-	.has-media-on-the-right {
+	.has-media-on-the-right,
+	.is-image-fill.has-media-on-the-right {
 
+		.wp-block-media-text__media,
 		img {
-			border-bottom-left-radius: 0;
-			border-bottom-right-radius: 1rem;
+			border-bottom-left-radius: 0 !important;
+			border-bottom-right-radius: 1rem !important;
 		}
 	}
 

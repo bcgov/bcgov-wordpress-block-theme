@@ -141,7 +141,6 @@ html body.wp-admin .editor-styles-wrapper {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			height: 70vh;
 
 			@media (min-width: $breakpoint-sm) {
 				width: 45%;
@@ -164,7 +163,7 @@ html body.wp-admin .editor-styles-wrapper {
 				h1 {
 					font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem) !important;
 					line-height: 1.25;
-					margin-bottom: 0;
+					margin: 0;
 				}
 
 				h2 {

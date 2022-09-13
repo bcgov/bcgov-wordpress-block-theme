@@ -481,6 +481,9 @@ html body.wp-admin .editor-styles-wrapper {
  */
 .wp-block-buttons {
 
+	display: flex;
+	gap: 1rem;
+
 	.wp-block-button {
 
 		&__link {
