@@ -34,6 +34,8 @@ $projects = get_posts(
 		'post_type'     => 'project',
 		'category__and' => $blockCategory,
         'numberposts'   => -1,
+        'order'         => 'ASC',
+        'orderby'       => 'menu_order',
 	]
 );
 
