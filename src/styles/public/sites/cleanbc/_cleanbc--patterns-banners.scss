@@ -135,17 +135,17 @@ html body.wp-admin .editor-styles-wrapper {
 		&__inner-container {
 			box-sizing: border-box;
 			max-width: 1440px;
-			width: 100%;
-			margin: auto;
+			margin: 4% auto auto 2.5%;
+			width: 50%;
 			padding-right: 0;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
+			justify-content: flex-start;
 
-			@media (min-width: $breakpoint-sm) {
-				width: 45%;
-				justify-content: center;
+			@media (min-width: $breakpoint-sm-md) {
 				margin: auto auto auto 2.5%;
+				justify-content: center;
+				width: 45%;
 			}
 
 			@media (min-width: $breakpoint-md) {
@@ -178,6 +178,44 @@ html body.wp-admin .editor-styles-wrapper {
 				}
 			}
 		}
+	}
+
+	&::after {
+		content: $landing-banner-down-arrow;
+		height: 4rem;
+		max-height: 4rem;
+		min-height: 4rem;
+		width: 3rem;
+		display: flex;
+		position: absolute;
+		bottom: 3rem;
+		top: auto;
+		left: calc(25% - 1.5rem);
+		right: auto;
+		justify-content: flex-end;
+		align-items: flex-end;
+		z-index: 999;
+		animation: bounce 2s 3;
+	}
+}
+
+
+@keyframes bounce {
+
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translate(0%, 0);
+	}
+
+	40% {
+		transform: translate(0%, -30px);
+	}
+
+	60% {
+		transform: translate(0%, -15px);
 	}
 }
 
