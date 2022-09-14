@@ -181,7 +181,10 @@ html body.wp-admin .editor-styles-wrapper {
 	}
 
 	&::after {
-		content: $landing-banner-down-arrow;
+		content: " ";
+		background-image: $landing-banner-down-arrow;
+		background-size: contain;
+		background-repeat: no-repeat;
 		height: 4rem;
 		max-height: 4rem;
 		min-height: 4rem;

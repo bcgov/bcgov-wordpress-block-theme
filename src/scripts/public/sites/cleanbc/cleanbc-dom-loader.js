@@ -10,9 +10,11 @@ const domReady = () => {
 		setTimeout(function() {
 			const body = document.querySelector('body');
 			const homeBanner = document.querySelector('.home-cover-banner');
-			const homeButtons = homeBanner.querySelectorAll('.wp-block-button');
 
 			if (null !== homeBanner) {
+				const homeButtons = homeBanner.querySelectorAll(
+					'.wp-block-button'
+				);
 				body.classList.add('home');
 				homeBanner.addEventListener('click', () => {
 					document
