@@ -10,9 +10,22 @@ const domReady = () => {
 		setTimeout(function() {
 			const body = document.querySelector('body');
 			const homeBanner = document.querySelector('.home-cover-banner');
+			const homeButtons = homeBanner.querySelectorAll('.wp-block-button');
 
 			if (null !== homeBanner) {
 				body.classList.add('home');
+				homeBanner.addEventListener('click', () => {
+					document
+						.querySelector('.home-cover-banner + div')
+						.scrollIntoView();
+				});
+				if (null !== homeButtons) {
+					homeButtons.forEach((btn) => {
+						btn.addEventListener('click', (e) => {
+							e.stopPropagation();
+						});
+					});
+				}
 			}
 
 			// CleanBC Icon Buttons
