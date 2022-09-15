@@ -32,7 +32,13 @@ body.cleanbc {
 		.wp-block-navigation {
 
 			&__container > .wp-block-navigation-item {
-				max-width: 31.33%;
+				width: 90%;
+				max-width: 90%;
+
+				@media (min-width: $breakpoint-sm) {
+					width: 100%;
+					max-width: 31.33%;
+				}
 			}
 
 			&__responsive-container {
@@ -41,13 +47,17 @@ body.cleanbc {
 
 			&__responsive-container-content {
 
+				padding-bottom: 10rem;
+
+				@media (min-width: $breakpoint-sm) {
+					padding-bottom: 2rem;
+				}
+
 				ul:not(.wp-block-navigation__submenu-container) {
 
-					// Keep for testing.
-					// border: 1px dashed var(--wp--preset--color--senary);
-
 					display: flex;
-					align-items: flex-start;
+					align-items: center;
+					width: 100%;
 
 					li {
 
