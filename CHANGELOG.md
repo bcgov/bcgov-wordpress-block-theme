@@ -41,3 +41,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 – Accordion PHP fix, new pattern + styles [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 - Project query ordering updated with additional minor style updates and fixes [DESCW-598]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-598)
 – Testing updates blocks, patterns, and accessibility. Includes Skip-nav template part, media-text block filters & more [DESCW-601]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-601)
+– Navigation update: sorting out tagging for production [DESCW-601]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-601)
