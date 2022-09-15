@@ -3,6 +3,10 @@
 
 html body.wp-admin .editor-styles-wrapper {
 
+	.skip-nav-menu {
+		height: auto;
+	}
+
 	h1:not(.is-style-custom) {
 		font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.25rem) !important;
 		line-height: 1.25;
@@ -68,15 +72,18 @@ html {
 
 body {
 
-	&:not(.wp-admin) {
-		opacity: 0;
-		animation-duration: 0.3s;
-		animation-fill-mode: forwards;
-		animation-timing-function: ease-out;
-		animation-delay: 0s;
-		animation-iteration-count: 1;
-		animation-name: fadeIn;
-	}
+	/*
+	* Temporary comment omitted in order to Lighthouse performance test on staging.
+	*/
+	// &:not(.wp-admin) {
+	// opacity: 0;
+	// animation-duration: 0.3s;
+	// animation-fill-mode: forwards;
+	// animation-timing-function: ease-out;
+	// animation-delay: 0s;
+	// animation-iteration-count: 1;
+	// animation-name: fadeIn;
+	// }
 
 	@keyframes fadeIn {
 
@@ -91,6 +98,37 @@ body {
 
 	font-family: BCSans, "Noto Sans", Verdana, Arial, sans-serif;
 	color: $body-color;
+
+	.skip-nav-menu {
+		display: flex;
+		height: 0;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.skip-nav {
+
+			a {
+				color: currentcolor !important;
+				position: fixed;
+				transform: translate(-50%, -50%);
+				width: fit-content;
+				height: auto;
+				top: 2.25rem;
+				left: -9999px;
+				right: auto;
+				bottom: auto;
+				z-index: 99999;
+
+				&:focus {
+					left: 50%;
+					color: var(--wp--preset--color--background);
+				}
+
+			}
+		}
+
+	}
 
 	/*
  	* Clamping text as a default.
@@ -150,10 +188,6 @@ body {
 .hide,
 .hidden {
 	display: none;
-}
-
-.hide-in-admin {
-	display: inherit;
 }
 
 .show-in-admin {

@@ -110,6 +110,15 @@ const domReady = () => {
 			elActions.forEach((element) => {
 				const heading = element.querySelector('.wp-block-post-title')
 					.innerText;
+				const image = element.querySelector(
+					'.attachment-post-thumbnail'
+				);
+				const titleContainer = element.querySelector(
+					'.wp-block-post-excerpt__excerpt'
+				);
+				if (null !== image && null !== titleContainer) {
+					image.setAttribute('title', titleContainer.innerText);
+				}
 				const linkAddition = element.querySelector(
 					'.wp-block-button__link'
 				);

@@ -398,6 +398,17 @@ html body.wp-admin .editor-styles-wrapper {
 	}
 }
 
+.emergency-near-me {
+
+	.wp-block-columns {
+		padding: 0 2rem;
+
+		@media (min-width: $breakpoint-xl) {
+			padding: 0 4rem;
+		}
+	}
+}
+
 .warning-section {
 
 	.wp-block-group {
@@ -540,7 +551,12 @@ html body.wp-admin .editor-styles-wrapper {
 .video-feature {
 
 	.video-content {
-		border-radius: 1rem 1rem 0 0;
+		border-radius: 1rem;
+		order: -1;
+
+		@media (min-width: $breakpoint-sm) {
+			order: 0;
+		}
 
 		.wp-block-embed.is-type-video {
 			margin: 0;

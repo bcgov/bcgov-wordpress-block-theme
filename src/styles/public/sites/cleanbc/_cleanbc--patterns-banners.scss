@@ -20,6 +20,24 @@ html body.wp-admin .editor-styles-wrapper {
 		h2 {
 			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem);
 		}
+
+		.wp-block-cover {
+
+			&__inner-container {
+
+				&::after {
+					position: relative;
+					height: 4rem;
+					max-height: 4rem;
+					min-height: 4rem;
+					width: 3rem;
+					bottom: -6rem;
+					top: auto;
+					left: calc(25% - 1.5rem);
+					right: auto;
+				}
+			}
+		}
 	}
 
 
@@ -115,15 +133,31 @@ html body.wp-admin .editor-styles-wrapper {
 
 // Home Cover Banner header styles.
 .home-cover-banner {
+	height: auto;
+	min-height: 50vh;
+	flex-direction: column;
+	padding: 0;
 
-	height: clamp(600px, 100vh - 80px, 800px) !important;
+	@media (min-width: $breakpoint-sm) {
+		height: clamp(600px, 100vh - 80px, 800px) !important;
+		min-height: 80%;
+	}
 
 	.wp-block-cover {
 
 		&__background {
 
+			position: relative;
+
+			@media (min-width: $breakpoint-sm) {
+				position: absolute;
+			}
+
 			&.has-background-background-color {
-				background: linear-gradient(100deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 55%, rgba(255, 255, 255, 0) 55%) !important;
+
+				@media (min-width: $breakpoint-sm) {
+					background: linear-gradient(100deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 55%, rgba(255, 255, 255, 0) 55%) !important;
+				}
 
 				@media (min-width: $breakpoint-sm-md) {
 					background: linear-gradient(105deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0) 50%) !important;
@@ -135,12 +169,19 @@ html body.wp-admin .editor-styles-wrapper {
 		&__inner-container {
 			box-sizing: border-box;
 			max-width: 1440px;
-			margin: 4% auto auto 2.5%;
-			width: 50%;
+			margin: 4% auto 2rem 2.5%;
+			width: calc(100% - 5%);
 			padding-right: 0;
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
+			order: -1;
+
+			@media (min-width: $breakpoint-sm) {
+				margin: 4% auto auto 2.5%;
+				order: 0;
+				width: 50%;
+			}
 
 			@media (min-width: $breakpoint-sm-md) {
 				margin: auto auto auto 2.5%;
@@ -177,29 +218,66 @@ html body.wp-admin .editor-styles-wrapper {
 					}
 				}
 			}
+
+			&::after {
+				content: " ";
+				background-image: $landing-banner-down-arrow;
+				background-size: contain;
+				background-repeat: no-repeat;
+				display: flex;
+				position: relative;
+				height: 2rem;
+				max-height: 2rem;
+				min-height: 2rem;
+				width: 2rem;
+				bottom: -1rem;
+				top: auto;
+				left: auto;
+				right: auto;
+				justify-content: flex-end;
+				align-items: flex-end;
+				z-index: 9;
+				animation: bounce 2s 3;
+
+				@media (min-width: $breakpoint-sm) {
+					position: absolute;
+					height: 4rem;
+					max-height: 4rem;
+					min-height: 4rem;
+					width: 3rem;
+					bottom: 3rem;
+					top: auto;
+					left: calc(25% - 1.5rem);
+					right: auto;
+				}
+			}
+		}
+
+	}
+
+	img.wp-block-cover {
+
+		&__image-background {
+			position: relative;
+
+			@media (min-width: $breakpoint-sm) {
+				position: absolute;
+			}
 		}
 	}
 
-	&::after {
-		content: " ";
-		background-image: $landing-banner-down-arrow;
-		background-size: contain;
-		background-repeat: no-repeat;
-		height: 4rem;
-		max-height: 4rem;
-		min-height: 4rem;
-		width: 3rem;
-		display: flex;
-		position: absolute;
-		bottom: 3rem;
-		top: auto;
-		left: calc(25% - 1.5rem);
-		right: auto;
-		justify-content: flex-end;
-		align-items: flex-end;
-		z-index: 999;
-		animation: bounce 2s 3;
+	video.wp-block-cover {
+
+		&__video-background {
+			position: relative;
+
+			@media (min-width: $breakpoint-sm) {
+				position: absolute;
+			}
+		}
 	}
+
+
 }
 
 
