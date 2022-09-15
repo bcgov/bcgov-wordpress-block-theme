@@ -16,10 +16,15 @@ const domReady = () => {
 
 		const home = body.classList.contains('home');
 		const header = document.querySelector('.bcgov-site-header');
+		const isGovLogo = document.querySelector('.bcgov-web-logo');
 		const footer = document.querySelector('footer');
 		const bannerElement = document.querySelector('.wp-block-post-content')
 			.firstElementChild;
 		const breadcrumb = document.querySelector('.breadcrumb-nav-section');
+
+		if (null !== isGovLogo) {
+			isGovLogo.querySelector('img').setAttribute('alt', 'BCGov Logo');
+		}
 
 		let takeover,
 			nav = null;

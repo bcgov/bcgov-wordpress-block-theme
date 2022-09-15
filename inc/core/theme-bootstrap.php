@@ -11,6 +11,7 @@ namespace Bcgov\Theme\Block;
 
 // Add BC Gov Blocks Theme block filters.
 require 'filters/button-enhanced.php';
+require 'filters/media-text-enhanced.php';
 
 // Add BC Gov Blocks Theme block patterns.
 require 'theme-block-patterns.php';
