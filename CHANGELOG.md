@@ -1,5 +1,5 @@
 # Changelog
-## 1.0.0: September 30, 2022
+## 1.0.2: September 19, 2022
 
 – Initial Theme Structure ([DESCW-186](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-186))
 - node scripts ([DESCW-237](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-237))
@@ -42,3 +42,4 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 - Project query ordering updated with additional minor style updates and fixes [DESCW-598]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-598)
 – Testing updates blocks, patterns, and accessibility. Includes Skip-nav template part, media-text block filters & more [DESCW-601]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-601)
 – Navigation update: sorting out tagging for production [DESCW-601]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-601)
+– Post-launch design updates. Various landing banner changes + rounding elements + patterns [DESCW-598]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-598)
