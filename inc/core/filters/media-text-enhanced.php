@@ -23,7 +23,7 @@ function add_media_text_attributes( $block_content = '', $block = [] ) {
 		if ( 'none' !== $args['title'] ) {
 			$title = 'title="' . esc_attr( $args['title'] ) . '"';
 		} else {
-			$title = null;
+			$title = '';
 		}
 
 		$html = str_replace(

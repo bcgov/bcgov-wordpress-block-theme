@@ -8,28 +8,6 @@ const domReady = () => {
 		 * SafarIE bug requires 0ms timeout.
 		 */
 		setTimeout(function() {
-			const body = document.querySelector('body');
-			const homeBanner = document.querySelector('.home-cover-banner');
-
-			if (null !== homeBanner) {
-				const homeButtons = homeBanner.querySelectorAll(
-					'.wp-block-button'
-				);
-				body.classList.add('home');
-				homeBanner.addEventListener('click', () => {
-					document
-						.querySelector('.home-cover-banner + div')
-						.scrollIntoView();
-				});
-				if (null !== homeButtons) {
-					homeButtons.forEach((btn) => {
-						btn.addEventListener('click', (e) => {
-							e.stopPropagation();
-						});
-					});
-				}
-			}
-
 			// CleanBC Icon Buttons
 			const iconButtons = document.querySelectorAll('a.icon');
 			if (iconButtons.length) {
