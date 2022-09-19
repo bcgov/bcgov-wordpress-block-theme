@@ -171,11 +171,13 @@ body {
 
 
 		.wp-block-column {
-			display: flex;
 			align-self: inherit;
+			border-radius: 1rem;
+			display: flex;
 		}
 
 		.wp-block-image {
+			border-radius: 1rem 1rem 0 0;
 			margin: 0;
 		}
 

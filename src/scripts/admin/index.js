@@ -32,4 +32,3 @@ import './blocks/collapse/item';
 /**
  * Pattern scripts.
  */
-import '../public/sites/cleanbc/patterns/landing-cover-banner';

@@ -31,7 +31,7 @@ function add_button_attributes( $block_content = '', $block = [] ) {
 		if ( 'none' !== $args['label'] ) {
 			$label = 'aria-label="' . esc_attr( $args['label'] ) . '"';
 		} else {
-			$label = null;
+			$label = '';
 		}
 
 		$html = str_replace(
