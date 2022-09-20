@@ -6,6 +6,11 @@ const domReady = () => {
 	 * SafarIE bug requires 0ms timeout.
 	 */
 	setTimeout(function() {
+
+		/* 
+		 * Add a clip path SVG to create a mask on landing banner ::before elements.
+		 * Works in conjuction with .landing-cover-banner styles in _cleanbc--patterns-banners.scss.
+		 */
 		const isHomeBanner = document.querySelectorAll('.home-cover-banner');
 		const isLandingBanner = document.querySelectorAll(
 			'.landing-cover-banner'
