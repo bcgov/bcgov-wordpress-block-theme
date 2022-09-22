@@ -331,16 +331,23 @@ html body.wp-admin .editor-styles-wrapper {
 					background-color: currentcolor;
 				}
 
-				body.home & {
+				body.cleanbc.home & {
 
 					&::after {
 						content: url(../../../assets/images/sites/cleanbc/home-landing-logomark.svg);
 						display: block;
 						position: absolute;
-						top: -39px;
-						left: 60px;
+						top: -37px;
+						left: 2rem;
 						height: 90px;
 						width: 214px;
+
+						@media (min-width: $breakpoint-sm) {
+							top: -75px;
+							width: 300px;
+							left: 6rem;
+						}
+
 					}
 				}
 			}
@@ -353,7 +360,7 @@ html body.wp-admin .editor-styles-wrapper {
 					font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3rem) !important;
 					line-height: 1.25;
 					margin: 0;
-					padding: 0;
+					padding: 0 1rem 1rem;
 
 					&:last-child {
 						padding: 0 1rem 3rem;
@@ -366,7 +373,7 @@ html body.wp-admin .editor-styles-wrapper {
 					font-weight: 300;
 					line-height: 1.5;
 					margin: 0;
-					padding: 0;
+					padding: 0 1rem 1rem;
 
 					&:last-child {
 						padding: 0 1rem 3rem;
