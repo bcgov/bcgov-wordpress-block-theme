@@ -18,8 +18,11 @@ const domReady = () => {
 		const header = document.querySelector('.bcgov-site-header');
 		const isGovLogo = document.querySelector('.bcgov-web-logo');
 		const footer = document.querySelector('footer');
-		const bannerElement = document.querySelector('.wp-block-post-content')
-			.firstElementChild;
+		const postContent = document.querySelector('.wp-block-post-content');
+		let bannerElement = null;
+		if (null !== postContent) {
+			bannerElement = postContent.firstElementChild;
+		}
 		const breadcrumb = document.querySelector('.breadcrumb-nav-section');
 
 		if (null !== isGovLogo) {
