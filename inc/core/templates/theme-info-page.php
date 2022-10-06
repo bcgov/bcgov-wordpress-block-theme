@@ -45,10 +45,20 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 						<p class="bcgov-block-theme-intro-text">
 							<?php echo esc_html__( 'The BCGov Block Theme is now installed and ready to use. You can start building from scratch using a selection of pre-designed and ready to use block and page patterns available in the page/post editor.', 'bcgov-block-theme' ); ?>
 						</p>
-					</div> <!-- .body -->
+					</div> <!-- /Getting started -->
 
 					<div class="bcgov-block-theme-grid-content card">
-						<h2 class="bcgov-block-theme-title"><?php esc_html_e( 'Patterns', 'bcgov-block-theme' ); ?></h2>
+						<h2 id="general" class="bcgov-block-theme-title"><?php esc_html_e( 'General editing', 'bcgov-block-theme' ); ?></h2>
+
+						<h3>Understanding the role of margins and padding in the WordPress editor</h3>
+
+						<p>Be vary careful when using margins and padding in the editor. They are one size fits all (or doesn’t fit as the case may be). Any padding or margin spacing added to any element, layout, pattern or block is going to display similarly across all resolutions. 6rem of margins on a desktop view may look good, but can add a lot of unwanted spacing on mobile devices.</p>
+
+						<p>One day the block editor may allow for differentiating between viewport sizes to add selective padding or margins, but until that day is it always safer to err on the side of cautious use and fulsome testing to ensure the element doesn’t take on unwanted aspects when viewed across all platforms and screen resolutions.</p>
+					</div><!-- /General editing -->
+
+					<div class="bcgov-block-theme-grid-content card">
+						<h2 id="block-patterns" class="bcgov-block-theme-title"><?php esc_html_e( 'Patterns', 'bcgov-block-theme' ); ?></h2>
 
 						<h3>Understanding Patterns</h3>
 						<ul>
@@ -58,7 +68,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 						<li><span class="dashicons dashicons-yes"></span>Be very cautious moving patterns into other patterns.</li>
 						</ul>
 
-						<h2 id="block-patterns">BCGov General Block Patterns</h2>
+						<h2>BCGov General Block Patterns</h2>
 						<p>Many patterns are available for use as part of the default BCGov base theme. They offer layouts such as Alternating Cards, Card with Image Overlay, Card with Under Image Portrait 2-Up, Cards Portrait 3-up, Detail Card with Icons, Hero Banner, Long Card, Quote, Small Quote with Image, and many more.</li>
 						</p>
 						<h3>BCGov Full Page Patterns</h3>
@@ -74,7 +84,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 						<p>WordPress block patterns are a collection of pre-made design elements that you can use for creating custom content layouts faster. These patterns include items like pre-built multi-column layouts, media and text patterns, call-to-action patterns, headers, buttons, and more.</p>
 						<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/add-block-icon.png'; ?>" alt="style icon" style="float: right; width: 3rem;"/> To use block patterns, you need to edit the WordPress post or page where you want to use the block pattern. On the page/post edit screen, click on the Add Block button to open the block inserter. From there, switch to the Patterns tab to view available block patterns.</p>
 						<p>You can also view BCGov specific block patterns in different categories like general, headers, footers, pages, and more including any site specific patterns developed specifically for sites such as CleanBC.</p>
-					</div>
+					</div><!-- /Patterns -->
 
 					<div class="bcgov-block-theme-grid-content card">
 						<h2 id="specific-block-patterns" class="bcgov-block-theme-title">Site Specific Block Patterns</h2>
@@ -108,10 +118,10 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 						<p>Available in the Patterns selector under <strong>CleanBC: Post Query</strong> and <strong>CleanBC: Page Layouts</strong>. These patterns utilise features, content or functionality specific to the CleanBC site and are only available to CleanBC or other sites that set the Active Site option to CleanBC in the BCGov Block Theme Options.</p>
 						
 						<?php endif; ?>
-					</div>
+					</div><!-- /Site specific patterns -->
 
 					<div class="bcgov-block-theme-grid-content card">
-						<h2 id="specific-block-patterns" class="bcgov-block-theme-title">Site Specific Blocks and Block Styles</h2>
+						<h2 id="specific-blocks" class="bcgov-block-theme-title">Site Specific Blocks and Block Styles</h2>
 
 						<p>Site specific blocks and block styles can also be inserted. Look for styles that identify the variations or options.</p>
 
@@ -136,64 +146,54 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 						<?php endif; ?>
 
-					</div>
+					</div><!-- /Site specific Blocks -->
 					
 
 					<div class="bcgov-block-theme-grid-content card">
-					<h2 id="colour-palettes">Colour Palettes</h2>
-					<p>Colour palettes for the BCGov Block Theme are made up of 24 pre-defined colours. Any additional Active Site options will also include a palette with an equivalent number of colours in order to make the patterns useable across sites. An associated group of Gradients based on the 16 essential custom colours in the colour palette are also available.</p>
-					<h3>Example palettes</h3>
-					<p><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/block-theme/BCGOV-Colour-Palette-Swatches.jpg" alt="BCGov theme colour palette" style="width: 300px;" /> <img src="
-											<?php
-											echo esc_url( get_template_directory_uri() );
-											?>
-					/assets/images/block-theme/BCGOV-Gradients-Swatches.jpg" alt="BCGov theme colour palette" style="width: 300px;" /></p>
-					<p><img src="
-						<?php
-						echo esc_url( get_template_directory_uri() );
-						?>
-					/assets/images/block-theme/CleanBC-Colour-Palette-Swatches.jpg" alt="CleanBC theme colour palette" style="width: 300px;" /> <img src="
-						<?php
-						echo esc_url( get_template_directory_uri() );
-						?>
-					/assets/images/block-theme/CleanBC-Gradients-Swatches.jpg" alt="BCGov theme colour palette" style="width: 300px;" /></p>
-					<p>It should be noted that most blocks and patterns can be modified in the editor to override colour or gradient palette options to accomodate specific customisation needs.</p>
-					<hr />
-					<h2>Instructions</h2>
-					<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/style-icon.png'; ?>" alt="style icon" style="float: right; width: 3rem;"/> Global Styles Switcher allows users to switch the theme defaults to alternate colour palettes. Open <strong>Appearance > <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/site-editor.php">Editor</a></strong> in the admin. You should see the theme variations in the global styles switcher by clicking on the syles icon in the top right corner.</p>
+						<h2 id="colour-palettes" class="bcgov-block-theme-title">Colour Palettes</h2>
+						<p>Colour palettes for the BCGov Block Theme are made up of 24 pre-defined colours. Any additional Active Site options will also include a palette with an equivalent number of colours in order to make the patterns useable across sites. An associated group of Gradients based on the 16 essential custom colours in the colour palette are also available.</p>
+						<h3>Example palettes</h3>
+						<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/BCGOV-Colour-Palette-Swatches.jpg'; ?>" alt="BCGov theme colour palette" style="width: 300px;" /> <img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/BCGOV-Gradients-Swatches.jpg'; ?>" alt="BCGov theme colour palette" style="width: 300px;" /></p>
+						<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/CleanBC-Colour-Palette-Swatches.jpg'; ?>" alt="CleanBC theme colour palette" style="width: 300px;" /> <img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/CleanBC-Gradients-Swatches.jpg'; ?>" alt="BCGov theme colour palette" style="width: 300px;" /></p>
+						<p>It should be noted that most blocks and patterns can be modified in the editor to override colour or gradient palette options to accomodate specific customisation needs.</p>
+						<hr />
+						<h2>Instructions</h2>
+						<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/style-icon.png'; ?>" alt="style icon" style="float: right; width: 3rem;"/> Global Styles Switcher allows users to switch the theme defaults to alternate colour palettes. Open <strong>Appearance > <a href="<?php echo esc_url( home_url() ) . '/wp-admin/site-editor.php'; ?>">Editor</a></strong> in the admin. You should see the theme variations in the global styles switcher by clicking on the syles icon in the top right corner.</p>
 
-					</div>
+					</div><!-- /Colour Palettes -->
 
 					<h2><?php esc_html_e( 'Advanced theme management', 'bcgov-block-theme' ); ?></h2>
 
 					<div class="bcgov-block-theme-grid-content card">
-					<h2 id="custom-templates">Customisable Templates</h2>
-					<ul>
-						<li><span class="dashicons dashicons-yes"></span> <strong>Page</strong>: displays a single page with the standard layout</li>
-						<li><span class="dashicons dashicons-yes"></span> <strong>Page – Content only</strong>: allows for custom banners, requires in-page breadcrumb navigation block if used on site</li>
-						<li><span class="dashicons dashicons-yes"></span> <strong>Blank</strong>: no default header, content or footer – for use in creating custom landing pages</li>
-						<li><span class="dashicons dashicons-yes"></span> <strong>Search</strong>: display results page</li>
-						<li><span class="dashicons dashicons-yes"></span> <strong>404</strong>: displays when no content is found, provides customisable 404 information</li>
-					</ul>
-					<hr />
-					<h2>Instructions</h2>
-					<p>The theme editor allows for the customization of the BCGov WordPress theme without writing any code, and modify page templates without breaking the website. This page is not meant for in-depth instruction in using the theme editor, just know the full site editor is a powerful and flexible way to customize the BCGov Block theme and will allow for making substantive changes to a theme and its layout at any time. This enables a level of flexiblility which allows you to easily create on-demand page layouts. For more information regarding WordPress 6+ Templating see: </p>
-					</div>
+						<h2 id="custom-templates" class="bcgov-block-theme-title">Customisable Templates</h2>
+						<ul>
+							<li><span class="dashicons dashicons-yes"></span> <strong>Page</strong>: displays a single page with the standard layout</li>
+							<li><span class="dashicons dashicons-yes"></span> <strong>Page – Content only</strong>: allows for custom banners, requires in-page breadcrumb navigation block if used on site</li>
+							<li><span class="dashicons dashicons-yes"></span> <strong>Blank</strong>: no default header, content or footer – for use in creating custom landing pages</li>
+							<li><span class="dashicons dashicons-yes"></span> <strong>Search</strong>: display results page</li>
+							<li><span class="dashicons dashicons-yes"></span> <strong>404</strong>: displays when no content is found, provides customisable 404 information</li>
+						</ul>
+						<hr />
+						<h2>Instructions</h2>
+						<p>The theme editor allows for the customization of the BCGov WordPress theme without writing any code, and modify page templates without breaking the website. This page is not meant for in-depth instruction in using the theme editor, just know the full site editor is a powerful and flexible way to customize the BCGov Block theme and will allow for making substantive changes to a theme and its layout at any time. This enables a level of flexiblility which allows you to easily create on-demand page layouts. For more information regarding WordPress 6+ Templating see: </p>
+
+					</div><!-- /Customisable Templates -->
 
 					<div class="bcgov-block-theme-grid-content card">
-					<h2 id="custom-template-parts">Customisable Template Parts</h2>
-					<ul>
-						<li><span class="dashicons dashicons-yes"></span> <strong>BCGov Header (Standard)</strong>: adds typical BC Gov blue header with site logo, title, navigation and search</li>
-						<li><span class="dashicons dashicons-yes"></span> <strong>Navigation</strong>: adds menu navigation to the header</li>
-						<li><span class="dashicons dashicons-yes"></span> <strong>Search Field</strong>: adds search field to the header</li>
-						<li><span class="dashicons dashicons-yes"></span> <strong>Breadcrumb Nav</strong>: adds breadcrumb navigation, <a href="<?php echo esc_html( admin_url( 'plugins.php' ) ); ?>" rel="noreferrer">requires AIOSEO plugin activation</a></li>
-						<li><span class="dashicons dashicons-yes"></span> <strong>BCGov Footer (Standard)</strong>: adds typical BC Gov blue footer</li>
-					</ul>
-					<hr />
-					<h2>Instructions</h2>
-					<p>Template parts are used to organize a theme in smaller reusable structural parts. They are commonly used for site headers and site footers. Just like templates, the theme editor allows for the customization of the BCGov WordPress theme without writing any code and this includes modifying template parts.</p>
-					<p>The Site Editor’s Template Parts section displays a list of all template parts. You can create template parts using the Add New button. In this view, you can also clear customizations from theme template parts and delete user-created template parts should an error be made while editing inside the editor.</p>
-					</div>
+						<h2 id="custom-template-parts" class="bcgov-block-theme-title">Customisable Template Parts</h2>
+						<ul>
+							<li><span class="dashicons dashicons-yes"></span> <strong>BCGov Header (Standard)</strong>: adds typical BC Gov blue header with site logo, title, navigation and search</li>
+							<li><span class="dashicons dashicons-yes"></span> <strong>Navigation</strong>: adds menu navigation to the header</li>
+							<li><span class="dashicons dashicons-yes"></span> <strong>Search Field</strong>: adds search field to the header</li>
+							<li><span class="dashicons dashicons-yes"></span> <strong>Breadcrumb Nav</strong>: adds breadcrumb navigation, <a href="<?php echo esc_html( admin_url( 'plugins.php' ) ); ?>" rel="noreferrer">requires AIOSEO plugin activation</a></li>
+							<li><span class="dashicons dashicons-yes"></span> <strong>BCGov Footer (Standard)</strong>: adds typical BC Gov blue footer</li>
+						</ul>
+						<hr />
+						<h2>Instructions</h2>
+						<p>Template parts are used to organize a theme in smaller reusable structural parts. They are commonly used for site headers and site footers. Just like templates, the theme editor allows for the customization of the BCGov WordPress theme without writing any code and this includes modifying template parts.</p>
+						<p>The Site Editor’s Template Parts section displays a list of all template parts. You can create template parts using the Add New button. In this view, you can also clear customizations from theme template parts and delete user-created template parts should an error be made while editing inside the editor.</p>
+
+					</div><!-- /Customisable Template Parts -->
 
 				</div> <!-- .content -->
 				
@@ -205,10 +205,16 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 							<h2 class="bcgov-block-theme-widget-title"><?php echo esc_html__( 'On this page', 'bcgov-block-theme' ); ?></h2>
 							<ul class="bcgov-block-theme-useful-links">
 								<li>
+									<a href="#general"><?php echo esc_html__( 'General editing', 'bcgov-block-theme' ); ?></a>
+								</li>
+								<li>
 									<a href="#block-patterns"><?php echo esc_html__( 'Block Patterns', 'bcgov-block-theme' ); ?></a>
 								</li>
 								<li>
-									<a href="#specific-block-patterns"><?php echo esc_html__( 'Site Specific Block Patterns', 'bcgov-block-theme' ); ?></a>
+									<a href="#specific-block-patterns"><?php echo esc_html__( 'Site Specific Patterns', 'bcgov-block-theme' ); ?></a>
+								</li>
+								<li>
+									<a href="#specific-blocks"><?php echo esc_html__( 'Site Specific Blocks', 'bcgov-block-theme' ); ?></a>
 								</li>
 								<li>
 									<a href="#colour-palettes"><?php echo esc_html__( 'Colour Palettes', 'bcgov-block-theme' ); ?></a>
