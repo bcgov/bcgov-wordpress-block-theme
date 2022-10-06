@@ -1,3 +1,4 @@
+/* stylelint-disable font-weight-notation */
 // Admin styles
 
 // Load Public Styles
@@ -22,4 +23,124 @@ html :where(.editor-styles-wrapper) {
 
 .show-in-admin {
 	display: inherit;
+}
+
+
+/* Admin Styles
+-------------------------------------------------------*/
+.appearance-page-bcgov-block-theme-theme #wpcontent,
+.toplevel-page-bcgov-block-theme #wpcontent {
+	padding: 0;
+}
+
+.bcgov-block-theme-page-header {
+	padding: 10px 20px;
+	height: 50px;
+	background-color: #fff;
+
+
+	&__container {
+		margin: 0 auto;
+		height: 100%;
+		max-width: 1140px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__branding {
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		max-width: 62px;
+		vertical-align: middle;
+	}
+
+	&__tagline-text a {
+		text-decoration: none;
+	}
+}
+
+.bcgov-block-theme-theme-version {
+	background-color: #edf0f0;
+	padding: 3px 5px;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+
+/* Content */
+.bcgov-block-theme-grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -12px;
+	margin-right: -12px;
+}
+
+.bcgov-block-theme-grid-content {
+	margin-bottom: 24px;
+}
+
+.bcgov-block-theme-grid-content,
+.bcgov-block-theme-grid-sidebar {
+	flex: 1 0 0%;
+	max-width: 100%;
+	padding: 0 12px;
+
+	&.sticky {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 3.5rem;
+		display: block;
+		height: 50vh;
+	}
+}
+
+@media screen and (min-width: 783px) {
+
+	.bcgov-block-theme-grid-sidebar {
+		max-width: 25%;
+		flex: 0 0 25%;
+		padding: 0 12px;
+	}
+}
+
+/* Container
+-------------------------------------------------------*/
+.bcgov-block-theme-container {
+	max-width: 1140px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 25px auto 20px;
+
+	.bcgov-block-theme-title {
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1.2;
+		padding: 0;
+	}
+}
+
+.bcgov-block-theme-body {
+	background-color: #fff;
+	padding: 40px;
+
+	ol {
+		font-size: 0.9375rem;
+	}
+
+	h3 {
+		margin-top: 1.5em;
+	}
+}
+
+.bcgov-block-theme-intro-text {
+	font-size: 1.1875rem;
+	margin-bottom: 1rem;
+}
+
+.bcgov-block-theme-list {
+	line-height: 1.5;
 }
