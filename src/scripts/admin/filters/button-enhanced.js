@@ -30,7 +30,7 @@ registerBlockStyle('core/button', {
 	label: 'Underline',
 });
 
-if ('cleanbc' === window.site.siteName) {
+if ('cleanbc' === window.site.siteName || window.site.allSiteStyles.length) {
 	registerBlockStyle('core/button', {
 		name: 'icon',
 		label: 'Icon',

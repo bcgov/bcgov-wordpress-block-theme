@@ -2,8 +2,11 @@
  * General CleanBC DOM manipulation.
  */
 const domReady = () => {
-	// Only run for CleanBC.
-	if ('cleanbc' === window.site.siteName) {
+	// Only run for CleanBC or sites that use all styles.
+	if (
+		'cleanbc' === window.site.siteName ||
+		window.site.allSiteStyles.length
+	) {
 		/*
 		 * SafarIE bug requires 0ms timeout.
 		 */

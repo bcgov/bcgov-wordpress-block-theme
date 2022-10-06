@@ -1,5 +1,17 @@
 # Changelog
+## 1.0.3: 
+
+– Updates related to implementing styles and patterns to better generalise site specific patterns and blocks. Admin documentation page update. [DESCW-599]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-599)
+
 ## 1.0.2: September 19, 2022
+
+– Post-launch design updates. Various landing banner changes + rounding elements + patterns [DESCW-598]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-598)
+
+## 1.0.1: September 19, 2022
+
+– Navigation update: sorting out tagging for production [DESCW-601]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-601)
+
+## 1.0.0: September 19, 2022
 
 – Initial Theme Structure ([DESCW-186](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-186))
 - node scripts ([DESCW-237](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-237))
@@ -41,5 +53,3 @@ Long Card, Quote, Small Quote with Image, etc. ([DESCW-494]https://apps.itsm.gov
 – Accordion PHP fix, new pattern + styles [DESCW-534]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-534)
 - Project query ordering updated with additional minor style updates and fixes [DESCW-598]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-598)
 – Testing updates blocks, patterns, and accessibility. Includes Skip-nav template part, media-text block filters & more [DESCW-601]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-601)
-– Navigation update: sorting out tagging for production [DESCW-601]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-601)
-– Post-launch design updates. Various landing banner changes + rounding elements + patterns [DESCW-598]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-598)

@@ -108,6 +108,19 @@ class Setup {
 				}
             );
 		}
+
+		/**
+		 * Constants to enable/disable specific site features.
+		 *
+		 * @since 1.0.3
+		 */
+		if ( function_exists( 'acf_add_options_page' ) ) {
+			if ( 'cleanbc' === get_field( 'active_site', 'option' ) || get_field( 'enable_all_site_styles_and_patterns', 'option' ) ) {
+				define( 'Bcgov\Theme\Block\CLEANBC', true );
+			} else {
+				define( 'Bcgov\Theme\Block\CLEANBC', false );
+			}
+		}
 	}
 
  	/**
@@ -126,8 +139,9 @@ class Setup {
 
 		// Overwrite default with options value set in the Theme Option admin.
 		if ( function_exists( 'acf_add_options_page' ) ) {
-			$javascript_variables['siteName']     = get_field( 'active_site', 'option' );
-			$javascript_variables['headerEffect'] = get_field( 'header_effect', 'option' );
+			$javascript_variables['siteName']      = get_field( 'active_site', 'option' );
+			$javascript_variables['headerEffect']  = get_field( 'header_effect', 'option' );
+			$javascript_variables['allSiteStyles'] = get_field( 'enable_all_site_styles_and_patterns', 'option' );
 		}
 
 		return $javascript_variables;
