@@ -13,7 +13,7 @@
 namespace Bcgov\Theme\Block;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	exit( 'Direct access denied.' );
 }
 
 require_once get_template_directory() . '/src/Setup.php';
