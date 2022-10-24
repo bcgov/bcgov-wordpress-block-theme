@@ -13,8 +13,6 @@ namespace Bcgov\Theme\Block;
  * Setup class setups up theme.
  */
 class Setup {
-
-
     /**
      * Constructor.
      */
@@ -303,7 +301,7 @@ class Setup {
 	public function bcgov_block_theme_menu() {
 		add_theme_page(
 			esc_html__( 'BCGov Blocks Theme', 'bcgov-block-theme' ),
-			esc_html__( 'BCGov Blocks Theme', 'bcgov-block-theme' ),
+			esc_html__( 'Using BCGov Blocks Theme', 'bcgov-block-theme' ),
 			'edit_theme_options',
 			'bcgov-block-theme-info',
 			[ &$this, 'bcgov_block_theme_page_display' ]

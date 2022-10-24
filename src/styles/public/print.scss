@@ -1,0 +1,128 @@
+/* stylelint-disable font-weight-notation */
+:root {
+
+	@media print {
+
+		@page {
+			size: auto !important;
+			margin: 10mm 10mm 12mm 10mm !important;
+		}
+
+		* {
+			all: revert;
+			aspect-ratio: unset !important;
+			color: #333 !important;
+			background: none !important;
+			border: none !important;
+			display: inline-block !important;
+			height: auto !important;
+			min-height: 100% !important;
+			max-height: 100% !important;
+			width: 100% !important;
+			max-width: 100% !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			position: static !important;
+			pointer-events: none !important;
+			text-align: left !important;
+
+			&::after,
+			&::before {
+				content: "" !important;
+				background: none !important;
+				border: none !important;
+				height: auto !important;
+				min-height: 100% !important;
+				max-height: 100% !important;
+			}
+			page-break-after: avoid !important;
+			page-break-before: avoid !important;
+			break-after: avoid-region !important;
+			break-before: avoid-region !important;
+		}
+
+		body {
+			display: grid;
+			align-items: center;
+			justify-content: center;
+			grid-template-columns: 1fr;
+			margin: 0 2rem !important;
+			overflow: visible !important;
+			max-width: calc(100% - 4rem) !important;
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				margin-top: 1rem !important;
+				font-family: "Times New Roman", serif;
+				font-weight: 400 !important;
+				line-height: 1.45 !important;
+
+				strong {
+					font-weight: 400 !important;
+				}
+			}
+
+			h1 {
+				font-size: clamp(3rem, calc(1rem + 4vw), 5.5rem) !important;
+			}
+
+			h2 {
+				font-size: clamp(2.5rem, calc(1rem + 3.5vw), 3.5rem) !important;
+			}
+
+			h3 {
+				font-size: clamp(1.5rem, calc(1rem + 3vw), 2rem) !important;
+			}
+
+			h4 {
+				font-size: clamp(1.25rem, calc(1rem + 2.5vw), 1.75rem) !important;
+			}
+
+			p {
+				margin-top: 1rem !important;
+			}
+
+			p,
+			a,
+			li,
+			input,
+			textarea,
+			select {
+				font-family: "Times New Roman", serif;
+				font-size: clamp(1.25rem, calc(1rem + 0.5vw), 1.5rem) !important;
+			}
+
+			a {
+				display: inline !important;
+				text-decoration: none !important;
+				border-bottom: 1px solid rgba(#333, 0.25) !important;
+			}
+
+			.post-content .alignfull {
+				margin: 0 !important;
+			}
+
+			.wp-block-buttons {
+				margin: 0.5rem 0 !important;
+			}
+		}
+
+		head,
+		style,
+		script,
+		header,
+		footer,
+		figure,
+		img,
+		svg,
+		.skip-nav-menu,
+		.territory-acknowledgement,
+		.cleanbc-subfooter {
+			display: none !important;
+		}
+	}
+}

@@ -61,6 +61,13 @@ html :where(.editor-styles-wrapper) {
 	&__tagline-text a {
 		text-decoration: none;
 	}
+
+	.pill {
+		background-color: #f6b900;
+		color: #0e3468;
+		border-radius: 99px;
+		padding: 0.25rem 0.5rem;
+	}
 }
 
 .bcgov-block-theme-theme-version {
