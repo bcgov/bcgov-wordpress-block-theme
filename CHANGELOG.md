@@ -1,13 +1,14 @@
 # Changelog
 
-## 1.0.3: October 24, 2022
+## 1.0.3: November 9, 2022
 
 – Updates related to implementing styles and patterns to better generalise site specific patterns and blocks. Admin documentation page update. ([DESCW-599]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-599))
 - Minor update to site options to allow access to cross-site styles ([DESCW-599]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-599))
 - Added theme option export file to repo ([DESCW-599]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-599))
 - Added CleanBC Home landing banner null check ([DESCW-599]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-599))
 - Removed logo if not set to that site in options ([DESCW-599]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-599))
-- First pass at print mode (currently in backlog) ([DESCW-669]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-669))
+- First pass at print mode ([DESCW-669]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-669))
+- Built custom theme options page and refactored setup with default values to make use of new options (uses WordPress Settings API) – minor display fixes for menu and card styles ([DESCW-722]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-722))
 
 ## 1.0.2: September 19, 2022
 

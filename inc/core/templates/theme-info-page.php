@@ -16,18 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 *
 * @since 1.0.0
 */
-$site_setting = 'BCGov';
 
-if ( function_exists( 'acf_add_options_page' ) ) {
-	$site_setting = get_field_object( 'active_site', 'option' );
-	$site_name    = $site_setting['choices'][ $site_setting['value'] ];
-}
+$site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 ?>
 
 		<div class="bcgov-block-theme-page-header">
 			<div class="bcgov-block-theme-page-header__container">
 				<div class="bcgov-block-theme-page-header__branding">
-				<h2><?php echo esc_html( $theme->name . ' | Current site setting: ' ); ?> <span class="pill"><?php echo esc_html( $site_name ); ?></span></h2>
+				<h2><?php echo esc_html( $theme->name . ' | Current site setting: ' ); ?> <a href="/wp-admin/themes.php?page=bcgov-block-theme-options"><span class="pill"><?php echo esc_html( $site_name ); ?></span></a></h2>
 				</div>
 				<div class="bcgov-block-theme-page-header__tagline">
 					<span  class="bcgov-block-theme-page-header__tagline-text">				

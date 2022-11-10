@@ -37,9 +37,9 @@ function bcgov_blocks_theme_register_block_patterns() {
 	];
 
 	/*
-	* CleanBC site specific patterns.
+	* CleanBC site specific pattern catergories.
 	*/
-	if ( CLEANBC ) {
+	if ( CLEANBC || 'true' === get_option( 'enable_all_styles' ) ) {
 
 		$block_pattern_categories['cleanbc-patterns-general']      = [
 			'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ),
@@ -115,9 +115,9 @@ function bcgov_blocks_theme_register_block_patterns() {
 	];
 
 	/*
-	* CleanBC site specific patterns.
+	* Load CleanBC site patterns for CleanBC or sites enabling all styles and patterns.
 	*/
-	if ( CLEANBC ) {
+	if ( CLEANBC || 'true' === get_option( 'enable_all_styles' ) ) {
 		// CleanBC Page Banners (and footers) patterns.
 		$block_patterns[] = 'cleanbc/banners/cleanbc-info-cover-banner';
 		$block_patterns[] = 'cleanbc/banners/cleanbc-landing-cover-banner';
@@ -147,23 +147,22 @@ function bcgov_blocks_theme_register_block_patterns() {
 		$block_patterns[] = 'cleanbc/general/cleanbc-two-up-card-feature';
 		$block_patterns[] = 'cleanbc/general/cleanbc-video-feature';
 		$block_patterns[] = 'cleanbc/general/cleanbc-warning-section';
-
-		// Load only for CleanBC patterns.
-		if ( function_exists( 'acf_add_options_page' ) && 'cleanbc' === get_field( 'active_site', 'option' ) ) {
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-actions-toggle-query';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-dual-warning-section';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-footer-01';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-three-up-icon-items';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-programs';
-			// CleanBC query patterns.
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-actions-query';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-projects-accordion-query';
-			// CleanBC full page patterns.
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-homepage';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-impacts';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-level-3';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-level-4';
-		}
+	}
+	// Load only for CleanBC patterns.
+	if ( CLEANBC ) {
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-actions-toggle-query';
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-dual-warning-section';
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-footer-01';
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-three-up-icon-items';
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-programs';
+		// CleanBC query patterns.
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-actions-query';
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-projects-accordion-query';
+		// CleanBC full page patterns.
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-homepage';
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-impacts';
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-level-3';
+		$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-level-4';
 	}
 
 	/**
