@@ -246,6 +246,7 @@ body.has-ribbon-menu {
 		&__container {
 			flex-direction: row !important;
 			flex-wrap: wrap;
+			gap: 2.5rem !important;
 			max-width: 1440px;
 			width: 96vw;
 			justify-content: center !important;
@@ -258,6 +259,7 @@ body.has-ribbon-menu {
 				justify-content: flex-start !important;
 				align-items: flex-start !important;
 				margin: 0 0 auto 0;
+				max-width: 300px !important;
 
 				a {
 					font-weight: 700;
@@ -280,14 +282,17 @@ body.has-ribbon-menu {
 				// border: 1px dashed lime;
 				flex: 1;
 				width: 100%;
-				max-width: 100%;
-				min-width: 100%;
+				min-width: calc(100% - 6rem);
 				min-height: 1rem;
-				margin: 0.5rem 0;
+				margin: 0.5rem 6rem 0 3rem;
 
 				@media (min-width: $breakpoint-sm) {
 					min-height: 3rem;
 					margin: 2rem 0;
+				}
+
+				@media (min-width: $breakpoint-md) {
+					max-width: 300px;
 				}
 
 				a {

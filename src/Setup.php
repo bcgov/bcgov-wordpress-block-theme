@@ -26,9 +26,10 @@ class Setup {
      * @return void
      */
     private function hook() {
-		add_action( 'after_setup_theme', [ $this, 'bcgov_block_theme' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_scripts' ] );
+		add_action( 'admin_init', [ $this, 'bcgov_block_theme_custom_settings' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_admin_scripts' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_scripts' ] );
+		add_action( 'after_setup_theme', [ $this, 'bcgov_block_theme' ] );
 		add_action( 'admin_notices', [ $this, 'bcgov_block_theme_dependencies' ] );
 		add_action( 'admin_menu', [ $this, 'bcgov_block_theme_menu' ] );
 		add_action( 'acf/init', [ $this, 'bcgov_block_theme_acf_init_block_types' ] );
@@ -45,23 +46,6 @@ class Setup {
 	 * @return void
 	 */
 	public function bcgov_block_theme(): void {
-
-		// Load options admin page. Requires ACF Pro plugin.
-		if ( function_exists( 'acf_add_options_page' ) ) {
-
-			acf_add_options_page(
-                [
-					'page_title'  => 'BCGov Block Theme Options',
-					'menu_title'  => 'Theme Options',
-					'menu_slug'   => 'theme-options',
-					'capabaility' => 'edit_posts',
-					'parent_slug' => false,
-					'icon_url'    => false,
-					'redirect'    => false,
-				]
-            );
-
-		}
 
 		load_theme_textdomain( 'bcgov-block-theme', get_template_directory() . '/languages' );
 
@@ -90,34 +74,15 @@ class Setup {
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
-		// Pre-populate body class options with sites developed with this theme.
-		if ( function_exists( 'acf_add_options_page' ) ) {
-			add_filter(
-                'acf/load_field/name=active_site',
-                function( $field ) {
-					$choices                = [
-						'bcgov'   => __( 'Default (BCGov)', 'bcgov-block-theme' ),
-						'buybc'   => __( 'BuyBC', 'bcgov-block-theme' ),
-						'cleanbc' => __( 'CleanBC', 'bcgov-block-theme' ),
-					];
-					$field['choices']       = $choices;
-					$field['default_value'] = 'bcgov';
-					return $field;
-				}
-            );
-		}
-
 		/**
 		 * Constants to enable/disable specific site features.
 		 *
 		 * @since 1.0.3
 		 */
-		if ( function_exists( 'acf_add_options_page' ) ) {
-			if ( 'cleanbc' === get_field( 'active_site', 'option' ) || get_field( 'enable_all_site_styles_and_patterns', 'option' ) ) {
-				define( 'Bcgov\Theme\Block\CLEANBC', true );
-			} else {
-				define( 'Bcgov\Theme\Block\CLEANBC', false );
-			}
+		if ( 'cleanbc' === get_option( 'active_site_pattern_styles' ) ) {
+			define( 'Bcgov\Theme\Block\CLEANBC', true );
+		} else {
+			define( 'Bcgov\Theme\Block\CLEANBC', false );
 		}
 	}
 
@@ -130,17 +95,12 @@ class Setup {
     public function set_javascript_variables() {
 
 		$javascript_variables = [
-			'domain'      => home_url(),
-			'siteName'    => 'bcgov',
-			'templateDir' => get_template_directory_uri(),
+			'domain'        => home_url(),
+			'siteName'      => esc_attr( get_option( 'active_site_pattern_styles' ) ),
+			'templateDir'   => get_template_directory_uri(),
+			'headerEffect'  => esc_attr( get_option( 'header_effect' ) ),
+			'allSiteStyles' => esc_attr( get_option( 'enable_all_styles' ) ),
 		];
-
-		// Overwrite default with options value set in the Theme Option admin.
-		if ( function_exists( 'acf_add_options_page' ) ) {
-			$javascript_variables['siteName']      = get_field( 'active_site', 'option' );
-			$javascript_variables['headerEffect']  = get_field( 'header_effect', 'option' );
-			$javascript_variables['allSiteStyles'] = get_field( 'enable_all_site_styles_and_patterns', 'option' );
-		}
 
 		return $javascript_variables;
 	}
@@ -203,6 +163,7 @@ class Setup {
 		);
 
 		$javascript_variables = $this->set_javascript_variables();
+
 		wp_localize_script( 'bcgov-block-theme-admin', 'site', $javascript_variables );
 
 		wp_enqueue_script(
@@ -274,10 +235,10 @@ class Setup {
 			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
 		}
 
-		if ( ! function_exists( 'acf_add_options_page' ) ) {
+		if ( ! function_exists( 'acf_register_block_type' ) ) {
 			$plugin        = 'Advanced Custom Fields PRO';
 			$className     = 'error';
-			$message_extro = __( 'plugin activated to enable admin options page in order to function properly.', 'bcgov_block_theme' );
+			$message_extro = __( 'plugin activated to enable theme specific blocks.', 'bcgov_block_theme' );
 
 			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
 		}
@@ -299,13 +260,23 @@ class Setup {
 	 * @return void
 	 */
 	public function bcgov_block_theme_menu() {
+
 		add_theme_page(
-			esc_html__( 'BCGov Blocks Theme', 'bcgov-block-theme' ),
-			esc_html__( 'Using BCGov Blocks Theme', 'bcgov-block-theme' ),
+			esc_html__( 'Using BCGov Block Theme', 'bcgov-block-theme' ),
+			esc_html__( 'Using the BCGov Block Theme', 'bcgov-block-theme' ),
 			'edit_theme_options',
-			'bcgov-block-theme-info',
-			[ &$this, 'bcgov_block_theme_page_display' ]
+			'bcgov-block-theme-docs',
+			[ &$this, 'bcgov_block_theme_documentation_display' ]
 		);
+
+		add_theme_page(
+			esc_html__( 'BCGov Block Theme Options', 'bcgov-block-theme' ),
+			esc_html__( 'Theme Options', 'bcgov-block-theme' ),
+			'edit_theme_options',
+			'bcgov-block-theme-options',
+			[ &$this, 'bcgov_block_theme_options_display' ]
+		);
+
 	}
 
 	/**
@@ -315,7 +286,7 @@ class Setup {
 	 *
 	 * @return void
 	 */
-	public function bcgov_block_theme_page_display() {
+	public function bcgov_block_theme_documentation_display() {
 
 		$theme = wp_get_theme();
 
@@ -324,6 +295,60 @@ class Setup {
 		}
 
 		require_once get_template_directory() . '/inc/core/templates/theme-info-page.php';
+	}
+
+	/**
+	 * Display BCGov Block Theme options page.
+	 *
+	 * @since 1.0.3
+	 *
+	 * @return void
+	 */
+	public function bcgov_block_theme_options_display() {
+
+		$theme = wp_get_theme();
+
+		if ( is_child_theme() ) {
+			$theme = wp_get_theme()->parent();
+		}
+
+		require_once get_template_directory() . '/inc/core/templates/theme-options-page.php';
+
+	}
+
+
+	/**
+	 * Register Custom Settings and populate with default values.
+	 *
+	 * @since 1.0.3
+	 *
+	 * @return void
+	 */
+	public function bcgov_block_theme_custom_settings() {
+
+		register_setting( 'bcgov-block-theme-settings-group', 'active_site_pattern_styles' );
+		register_setting( 'bcgov-block-theme-settings-group', 'header_effect' );
+		register_setting( 'bcgov-block-theme-settings-group', 'enable_all_styles' );
+
+		$active_site_pattern_styles = esc_attr( get_option( 'active_site_pattern_styles' ) );
+		$header_effect              = esc_attr( get_option( 'header_effect' ) );
+		$enable_all_styles          = esc_attr( get_option( 'enable_all_styles' ) );
+
+		/*
+		* Initial settings to maintain configuration of CleanBC in production
+		* these will change to default BCGov configuration after v1.0.3.
+		*/
+		if ( '' === $active_site_pattern_styles || null === $active_site_pattern_styles ) {
+			add_option( 'enable_all_styles', 'cleanbc' ); // will be: bcgov (or default).
+		}
+
+		if ( '' === $header_effect || null === $header_effect ) {
+			add_option( 'header_effect', 'hides' ); // will be: fixed.
+		}
+
+		if ( '' === $enable_all_styles || null === $enable_all_styles ) {
+			add_option( 'enable_all_styles', 'true' ); // will be: false.
+		}
 
 	}
 
@@ -339,8 +364,8 @@ class Setup {
 		// Check function exists.
 		if ( function_exists( 'acf_register_block_type' ) ) {
 
-			// Load CleanBC Blocks.
-			if ( function_exists( 'acf_add_options_page' ) && 'cleanbc' === get_field( 'active_site', 'option' ) ) {
+			// Load blocks only meant for CleanBC.
+			if ( CLEANBC ) {
 				require_once get_template_directory() . '/inc/core/acf_blocks/sites/cleanbc/cleanbc-block-loader.php';
 			}
 		}

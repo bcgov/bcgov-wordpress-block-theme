@@ -25,6 +25,7 @@ html body.wp-admin .editor-styles-wrapper {
 	*/
 	.is-card-portrait-image-over {
 		background-color: transparent;
+		gap: 2rem;
 	}
 }
 
@@ -129,6 +130,8 @@ html body.wp-admin .editor-styles-wrapper {
  *  Quote Pattern.
  */
 .is-card-portrait-image-over {
+
+	gap: 2rem;
 
 	.wp-block-column {
 		border-top: 1rem solid var(--wp--preset--color--primary-brand);
