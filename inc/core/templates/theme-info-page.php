@@ -23,11 +23,11 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 		<div class="bcgov-block-theme-page-header">
 			<div class="bcgov-block-theme-page-header__container">
 				<div class="bcgov-block-theme-page-header__branding">
-				<h2><?php echo esc_html( $theme->name . ' | Current site setting: ' ); ?> <a href="/wp-admin/themes.php?page=bcgov-block-theme-options"><span class="pill"><?php echo esc_html( $site_name ); ?></span></a></h2>
+				<h2><?php echo esc_html( $theme->name . ' | Current site setting: ' ); ?> <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-block-theme-options"><span class="pill"><?php echo esc_html( $site_name ); ?></span></a></h2>
 				</div>
 				<div class="bcgov-block-theme-page-header__tagline">
 					<span  class="bcgov-block-theme-page-header__tagline-text">				
-					<?php esc_html_e( 'Theme repository:', 'bcgov-block-theme' ); ?> <a href="https://github.com/bcgov/bcgov-wordpress-block-theme"><?php echo esc_html__( 'Github', 'bcgov-block-theme' ); ?></a>						
+					Theme repository: <a href="https://github.com/bcgov/bcgov-wordpress-block-theme">Github</a>						
 					</span>					
 				</div>				
 			</div>
@@ -38,18 +38,18 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 
 				<div class="bcgov-block-theme-grid-content">
 					<div class="bcgov-block-theme-body">
-						<h1 class="bcgov-block-theme-title"><?php esc_html_e( 'Getting Started', 'bcgov-block-theme' ); ?></h1>
+						<h1 class="bcgov-block-theme-title">Getting Started</h1>
 						<p class="bcgov-block-theme-intro-text">
-							<?php echo esc_html__( 'The BCGov Block Theme is now installed and ready to use. You can start building from scratch using a selection of pre-designed and ready to use block and page patterns available in the page/post editor.', 'bcgov-block-theme' ); ?>
+							The BCGov Block Theme is now installed and ready to use. You can start building from scratch using a selection of pre-designed and ready to use block and page patterns available in the page/post editor.
 						</p>
 					</div> <!-- /Getting started -->
 
 					<div class="bcgov-block-theme-grid-content card">
-						<h2 id="theme-options" class="bcgov-block-theme-title"><?php esc_html_e( 'Theme Options', 'bcgov-block-theme' ); ?></h2>
+						<h2 id="theme-options" class="bcgov-block-theme-title">Theme Options</h2>
 
 						<h3>Changing theme behaviours</h3>
 
-						<p>The BCGov Block Theme allows you to change some of the behaviours of the site such as theme styles and how the header behaves. Simply go to the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/admin.php?page=theme-options">Theme Options</a> page in the site admin area and choose the behaviours you wish to use.</p>
+						<p>The BCGov Block Theme allows you to change some of the behaviours of the site such as theme styles and how the header behaves. Simply go to the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-block-theme-options">Theme Options</a> page in the site admin area and choose the behaviours you wish to use.</p>
 
 						<ul>
 							<li><span class="dashicons dashicons-yes"></span>Choose the active site stying – this choice will impact how certain features display or are made available.</li>
@@ -65,7 +65,7 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 					</div><!-- /Theme options -->
 
 					<div class="bcgov-block-theme-grid-content card">
-						<h2 id="general" class="bcgov-block-theme-title"><?php esc_html_e( 'General editing', 'bcgov-block-theme' ); ?></h2>
+						<h2 id="general" class="bcgov-block-theme-title">General editing</h2>
 
 						<h3>Understanding the role of margins and padding in the WordPress editor</h3>
 
@@ -75,7 +75,7 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 					</div><!-- /General editing -->
 
 					<div class="bcgov-block-theme-grid-content card">
-						<h2 id="block-patterns" class="bcgov-block-theme-title"><?php esc_html_e( 'Patterns', 'bcgov-block-theme' ); ?></h2>
+						<h2 id="block-patterns" class="bcgov-block-theme-title">Patterns</h2>
 						
 						<h2>Instructions</h2>
 
@@ -123,7 +123,7 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 
 							<hr />
 
-							<h2><?php esc_html_e( 'CleanBC Patterns', 'bcgov-block-theme' ); ?></h2>
+							<h2>CleanBC Patterns</h2>
 
 							<h3>Banners – including special-use header and footer Patterns</h3>
 
@@ -141,7 +141,7 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 
 							<h3>General in-page Patterns</h3>
 
-							<p>Available in the Patterns selector under <strong>CleanBC: General</strong>. Standard in-page content patterns for use in any project. Styles may vary based on the Active Site option selected in the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/admin.php?page=theme-options">BCGov Block Theme Options</a>.</p>
+							<p>Available in the Patterns selector under <strong>CleanBC: General</strong>. Standard in-page content patterns for use in any project. Styles may vary based on the Active Site option selected in the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-block-theme-options">BCGov Block Theme Options</a>.</p>
 							
 							<hr />
 
@@ -213,7 +213,7 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 
 					</div><!-- /Colour Palettes -->
 
-					<h2 class="bcgov-block-theme-title"><?php esc_html_e( 'Advanced theme management', 'bcgov-block-theme' ); ?></h2>
+					<h2 class="bcgov-block-theme-title">Advanced theme management</h2>
 
 					<div class="bcgov-block-theme-grid-content card">
 						
@@ -265,6 +265,29 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 
 					</div><!-- /Customisable Template Parts -->
 
+					<div class="bcgov-block-theme-grid-content card">
+						
+						<h2 id="custom-templates" class="bcgov-block-theme-title">Polylang Navigation</h2>
+
+						<p>Adding the Polylang Language Switcher is accomplished in the Template editor. It is best to associate the switcher with the site Navigation or main menu, but as of Polylang Pro version 3.2.8 the "Language switcher" block which enables the ability to move between languages does not integrate directly with the main menu navigation. Instead the site administrator needs to be creative with placement and layout.</p>
+
+						<hr />
+
+						<h2>Instructions</h2>
+						<div style="display: flex; gap: 2rem;">
+							<div style="max-width: 300px;">
+								<p>Add the Language switcher block to the same group or row as the Navigation menu and align it as desired.</p>
+								<p>With the Language switcher block in place choose the display options that best suit the desired look and feel. The primary options are as either a) a drop select or b) a list view.</p>
+								<p>Note the 'list view' option may be styled to behave as a menu rather than a list in cewrtain situations.</p>
+							</div>
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-list.png'; ?>" alt="Language switcher in the list view" style="border: 1px solid #ccc; width: 300px;" /><br />Language switcher in the list view</p>
+						</div>
+						<div style="display: flex; gap: 2rem;">
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-options.png'; ?>" alt="Language switcher options 1 drop down" style="border: 1px solid #ccc;width: 300px;" /><br />Language switcher options - drop down</p>
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-options-2.png'; ?>" alt="Language switcher options 2 list items" style="border: 1px solid #ccc;width: 300px;" /><br />Language switcher options – list items</p>
+						</div>
+					</div><!-- /Customisable Templates -->
+
 				</div> <!-- /Content -->
 				
 				<!-- Sidebar -->
@@ -272,55 +295,55 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 					<div class="bcgov-block-theme-grid-sidebar-widget-area">
 
 					<div class="bcgov-block-theme-widget">
-							<h2 class="bcgov-block-theme-widget-title"><?php echo esc_html__( 'On this page', 'bcgov-block-theme' ); ?></h2>
+							<h2 class="bcgov-block-theme-widget-title">On this page</h2>
 							<ul class="bcgov-block-theme-useful-links">
 							<li>
-									<a href="#theme-options"><?php echo esc_html__( 'Theme Options', 'bcgov-block-theme' ); ?></a>
+									<a href="#theme-options">Theme Options</a>
 								</li>
 								<li>
-									<a href="#general"><?php echo esc_html__( 'General editing', 'bcgov-block-theme' ); ?></a>
+									<a href="#general">General editing</a>
 								</li>
 								<li>
-									<a href="#block-patterns"><?php echo esc_html__( 'Block Patterns', 'bcgov-block-theme' ); ?></a>
+									<a href="#block-patterns">Block Patterns</a>
 								</li>
 								<li>
-									<a href="#specific-block-patterns"><?php echo esc_html__( 'Site Specific Patterns', 'bcgov-block-theme' ); ?></a>
+									<a href="#specific-block-patterns">Site Specific Patterns</a>
 								</li>
 								<li>
-									<a href="#specific-blocks"><?php echo esc_html__( 'Site Specific Blocks', 'bcgov-block-theme' ); ?></a>
+									<a href="#specific-blocks">Site Specific Blocks</a>
 								</li>
 								<li>
-									<a href="#colour-palettes"><?php echo esc_html__( 'Colour Palettes', 'bcgov-block-theme' ); ?></a>
+									<a href="#colour-palettes">Colour Palettes</a>
 								</li>
 								
 								<li>
-									<p><strong><?php echo esc_html__( 'Advanced management', 'bcgov-block-theme' ); ?></strong></p>
+									<p><strong>Advanced management</strong></p>
 								</li>
 								<li>
-									<a href="#custom-templates"><?php echo esc_html__( 'Customisable Templates', 'bcgov-block-theme' ); ?></a>
+									<a href="#custom-templates">Customisable Templates</a>
 								</li>
 								<li>
-									<a href="#custom-template-parts"><?php echo esc_html__( 'Custom Template Parts', 'bcgov-block-theme' ); ?></a>
+									<a href="#custom-template-parts">Custom Template Parts</a>
 								</li>
 							</ul>
 						</div>
 
 						<div class="bcgov-block-theme-widget">
-							<h2 class="bcgov-block-theme-widget-title"><?php echo esc_html__( 'Useful Links', 'bcgov-block-theme' ); ?></h2>
+							<h2 class="bcgov-block-theme-widget-title">Useful Links</h2>
 							<ul class="bcgov-block-theme-useful-links">
 								<li>
-									<a href="https://learn.wordpress.org/tutorials/" target="_blank"><?php echo esc_html__( 'Learn WordPress Tutorials', 'bcgov-block-theme' ); ?></a>
+									<a href="https://learn.wordpress.org/tutorials/" target="_blank">Learn WordPress Tutorials</a>
 								</li>
 								<li>
-									<a href="https://www.youtube.com/playlist?list=PLiPorWuYVbztdvJxv3ZEbdnPYricJ1XwY" target="_blank"><?php echo esc_html__( 'Block Editor Tips & Tricks', 'bcgov-block-theme' ); ?></a>
+									<a href="https://www.youtube.com/playlist?list=PLiPorWuYVbztdvJxv3ZEbdnPYricJ1XwY" target="_blank">Block Editor Tips & Tricks</a>
 								</li>
 							</ul>
 						</div>
 
 						<div class="bcgov-block-theme-widget">
-							<h2 class="bcgov-block-theme-widget-title"><?php echo esc_html__( 'Do you need support?', 'bcgov-block-theme' ); ?></h2>
-							<p><?php echo esc_html__( 'Are you are having trouble? Reach out to the development team.', 'bcgov-block-theme' ); ?></p>
-							<a href="mailto:govwordpress@gov.bc.ca?SUBJECT=Help needed using <?php echo esc_html( $site_name . ' Theme for WordPress' ); ?>" class="button button-primary button-hero" style="text-decoration: none;" target="_blank"><?php esc_html_e( 'Ask for help', 'bcgov-block-theme' ); ?></a>
+							<h2 class="bcgov-block-theme-widget-title">Do you need support?</h2>
+							<p>Are you are having trouble? Reach out to the development team.</p>
+							<a href="mailto:govwordpress@gov.bc.ca?SUBJECT=Help needed using <?php echo esc_html( $site_name . ' Theme for WordPress' ); ?>" class="button button-primary button-hero" style="text-decoration: none;" target="_blank">Ask for help</a>
 						</div>
 						
 					</div>					
