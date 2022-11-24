@@ -162,7 +162,7 @@ const domReady = () => {
 
 	function countActiveProjects() {
 		const elAccordionItems = document.querySelectorAll(
-			'.wp-block-bcgov-collapse-item'
+			'.wp-block-bcgov-block-theme-collapse-item'
 		);
 
 		elAccordionItems.forEach((item) => {
@@ -178,7 +178,7 @@ const domReady = () => {
 						'.wp-block-columns'
 					);
 					const headingCounter = childItem
-						.closest('.wp-block-bcgov-collapse-item')
+						.closest('.wp-block-bcgov-block-theme-collapse-item')
 						.querySelector('.collapse-header .collapse-title');
 					const headingCounterContainer = headingCounter.querySelector(
 						'.count'
@@ -197,13 +197,13 @@ const domReady = () => {
 				const noChildItem = group.querySelector('.no-results');
 				if (noChildItem !== null) {
 					const headerCollapseItem = noChildItem.closest(
-						'.wp-block-bcgov-collapse-item'
+						'.wp-block-bcgov-block-theme-collapse-item'
 					);
 					const headerContainer = noChildItem
-						.closest('.wp-block-bcgov-collapse-item')
+						.closest('.wp-block-bcgov-block-theme-collapse-item')
 						.querySelector('.collapse-title');
 					const spanToReset = noChildItem
-						.closest('.wp-block-bcgov-collapse-item')
+						.closest('.wp-block-bcgov-block-theme-collapse-item')
 						.querySelector('.collapse-header .count');
 					if (null !== headerCollapseItem) {
 						headerCollapseItem.classList.add('hidden');

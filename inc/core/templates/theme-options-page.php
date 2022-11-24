@@ -66,9 +66,9 @@ $enable_all_styles          = esc_attr( get_option( 'enable_all_styles' ) );
 					<p class="description">Choose the active site – this choice will impact how certain patterns display and which patterns and blocks may or may not be available.</p>
 
 					<p><select id="active_site_pattern_styles" name="active_site_pattern_styles">
-						<option value="bcgov" <?php if ( 'bcgov' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Default (BCGov)</option>
-						<option value="cleanbc" <?php if ( 'cleanbc' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Option 1 (CleanBC)</option>
-						<option value="buybc" <?php if ( 'buybc' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Option 2 (BuyBC)</option>
+						<option value="bcgov" <?php if ( 'bcgov' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Default (BC Government Palette)</option>
+						<option value="cleanbc" <?php if ( 'cleanbc' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Option 1 (CleanBC Brand Palette)</option>
+						<!--option value="buybc" <?php if ( 'buybc' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Option 2 (BuyBC)</option-->
 					</select></p>
 
 					<p class="note"><span class="dashicons dashicons-info" style="color: dodgerblue"></span> <strong>Note:</strong> to change the theme colour palette you will need to do so in the styles option inside the Theme editor. See additional details in the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-block-theme-docs#colour-palettes">Block Theme documentation</a>.</p>

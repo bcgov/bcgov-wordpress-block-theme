@@ -60,7 +60,7 @@ export function collapseItemsButtonClick() {
 
 	const collapseButton = this;
 	const collapseItem = collapseButton
-		.closest('.wp-block-bcgov-collapse-item')
+		.closest('.wp-block-bcgov-block-theme-collapse-item')
 		.querySelector('.collapse-container');
 
 	collapseItem.classList.remove('collapse');

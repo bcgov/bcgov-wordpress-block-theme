@@ -32,7 +32,7 @@
       }
     }
   }
-  .wp-block-bcgov-collapse-item {
+  .wp-block-bcgov-block-theme-collapse-item {
     margin-bottom: 0.5rem;
     .collapse-header {
       h3 {
@@ -40,6 +40,7 @@
         margin-top: 0;
 
         button {
+          border-bottom: 4px solid currentColor;
           padding: 0.5rem 1rem;
           display: block;
           width: 100%;
@@ -49,6 +50,10 @@
           span {
             margin-right: 16px;
             display: block;
+          }
+
+          &:hover, &:focus {
+            background-color: rgba(var(--primary-brand-rgb), 0.05);
           }
 
           &:after {
@@ -115,7 +120,7 @@
   .collapse-container-nav {
     display: none !important;
   }
-  .wp-block-bcgov-collapse-item {
+  .wp-block-bcgov-block-theme-collapse-item {
     .collapse-container {
       &.show {
         display: block !important;

@@ -266,7 +266,7 @@ class Setup {
 			esc_html__( 'Using the BCGov Block Theme', 'bcgov-block-theme' ),
 			'edit_theme_options',
 			'bcgov-block-theme-docs',
-			[ &$this, 'bcgov_block_theme_documentation_display' ]
+			[ $this, 'bcgov_block_theme_documentation_display' ]
 		);
 
 		add_theme_page(
@@ -274,7 +274,7 @@ class Setup {
 			esc_html__( 'Theme Options', 'bcgov-block-theme' ),
 			'edit_theme_options',
 			'bcgov-block-theme-options',
-			[ &$this, 'bcgov_block_theme_options_display' ]
+			[ $this, 'bcgov_block_theme_options_display' ]
 		);
 
 	}
