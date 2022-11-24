@@ -21,7 +21,6 @@ html body.wp-admin .editor-styles-wrapper {
 			h3:not(.is-style-custom),
 			h4:not(.is-style-custom) {
 				font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.25rem) !important;
-				border-bottom: 4px solid var(--wp--preset--color--tertiary);
 			}
 		}
 	}
@@ -89,7 +88,6 @@ html body.wp-admin .editor-styles-wrapper {
 			h3:not(.is-style-custom),
 			h4:not(.is-style-custom) {
 				font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.25rem) !important;
-				border-bottom: 4px solid var(--wp--preset--color--tertiary);
 			}
 		}
 	}
