@@ -278,7 +278,7 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 							<div style="max-width: 300px;">
 								<p>Add the Language switcher block to the same group or row as the Navigation menu and align it as desired.</p>
 								<p>With the Language switcher block in place choose the display options that best suit the desired look and feel. The primary options are as either a) a drop select or b) a list view.</p>
-								<p>Note the 'list view' option may be styled to behave as a menu rather than a list in cewrtain situations.</p>
+								<p>Note the 'list view' option may be styled to behave as a menu rather than a list in certain situations.</p>
 							</div>
 							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-list.png'; ?>" alt="Language switcher in the list view" style="border: 1px solid #ccc; width: 300px;" /><br />Language switcher in the list view</p>
 						</div>
