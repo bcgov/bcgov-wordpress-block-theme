@@ -69,6 +69,18 @@ body.header-scroll {
 	}
 }
 
+/*
+ *  Language Switcher Block.
+ */
+select.pll-switcher-select {
+	border: 1px solid currentcolor;
+	background-color: transparent;
+	margin: 1rem;
+	padding: 0.25rem 0.5rem;
+	color: var(--wp--preset--color--background);
+	font-size: 1rem;
+}
+
 
 /*
  *  Ribbon Menu Template Part.
@@ -91,6 +103,10 @@ body.header-scroll {
 			padding: 0;
 			justify-content: flex-start;
 		}
+	}
+
+	select.pll-switcher-select {
+		border: 0;
 	}
 }
 
