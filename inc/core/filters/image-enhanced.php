@@ -3,7 +3,7 @@
 namespace Bcgov\Theme\Block;
 
 /**
- * Improve button block by adding additional attribtes: size class and tabindex.
+ * Improve image block by adding additional attribtes: title and print mode.
  *
  * Load this file via inc/core/theme-bootstrap.php.
  *
@@ -11,9 +11,9 @@ namespace Bcgov\Theme\Block;
  * @param  array  $block         Block attributes.
  * @return string
  */
-function add_media_text_attributes( $block_content = '', $block = [] ) {
+function add_image_attributes( $block_content = '', $block = [] ) {
 
-	if ( isset( $block['blockName'] ) && 'core/media-text' === $block['blockName'] ) {
+	if ( isset( $block['blockName'] ) && 'core/image' === $block['blockName'] ) {
 		$defaults = [
 			'title'     => 'none',
 			'printMode' => false,
@@ -48,4 +48,4 @@ function add_media_text_attributes( $block_content = '', $block = [] ) {
 	return $block_content;
 }
 
-add_filter( 'render_block', __NAMESPACE__ . '\add_media_text_attributes', 10, 2 );
+add_filter( 'render_block', __NAMESPACE__ . '\add_image_attributes', 10, 2 );

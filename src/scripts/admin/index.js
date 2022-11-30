@@ -14,8 +14,10 @@ import './filters/button-enhanced';
 import './filters/columns-enhanced';
 import './filters/column-enhanced';
 import './filters/heading-enhanced';
+import './filters/image-enhanced';
 import './filters/media-text-enhanced';
 import './filters/paragraph-enhanced';
+import './filters/site-logo-enhanced';
 import './filters/query-loop-enhanced';
 
 /**

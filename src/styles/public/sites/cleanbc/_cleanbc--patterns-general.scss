@@ -359,7 +359,7 @@ html body.wp-admin .editor-styles-wrapper {
 						align-items: center;
 
 						figcaption:not([contenteditable="true"]) {
-							display: none !important;
+							display: none;
 						}
 
 						figcaption[contenteditable="true"] {

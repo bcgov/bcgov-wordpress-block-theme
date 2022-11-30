@@ -1,30 +1,13 @@
-const { registerBlockStyle } = wp.blocks;
-
 const { assign, merge } = require('lodash');
 
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { PanelBody, PanelRow, CheckboxControl, TextControl } = wp.components;
-
-registerBlockStyle('core/media-text', {
-	name: 'dropshadow',
-	label: 'Drop shadow',
-});
-
-registerBlockStyle('core/media-text', {
-	name: 'square',
-	label: 'Square',
-});
-
-registerBlockStyle('core/media-text', {
-	name: 'no-clip',
-	label: 'Full Image',
-});
+const { PanelBody, PanelRow, CheckboxControl } = wp.components;
 
 /**
- * Add Size attribute to Button block.
+ * Add print attribute to Site Logo block.
  *
  * @param  {Object} settings Original block settings
  * @param  {string} name     Block name
@@ -32,14 +15,10 @@ registerBlockStyle('core/media-text', {
  * @return {Object} Filtered block settings
  */
 function addAttributes(settings, name) {
-	if (name === 'core/media-text') {
+	if (name === 'core/site-logo') {
 		return assign({}, settings, {
 			attributes: merge(settings.attributes, {
-				title: {
-					type: 'string',
-					default: '',
-				},
-				printMode: {
+				inverted: {
 					type: 'boolean',
 					default: false,
 				},
@@ -51,7 +30,7 @@ function addAttributes(settings, name) {
 
 addFilter(
 	'blocks.registerBlockType',
-	'bcgov-block-theme/media-text/add-attributes',
+	'bcgov-block-theme/site-logo/add-attributes',
 	addAttributes
 );
 
@@ -61,12 +40,12 @@ addFilter(
 const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const {
-			attributes: { title, printMode },
+			attributes: { inverted },
 			setAttributes,
 			name,
 		} = props;
 
-		if (name !== 'core/media-text') {
+		if (name !== 'core/site-logo') {
 			return <BlockEdit {...props} />;
 		}
 
@@ -76,20 +55,11 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 				<InspectorControls>
 					<PanelBody title="Other Media Settings" initialOpen={false}>
 						<PanelRow>
-							<TextControl
-								label="Title (hover details)"
-								value={title}
-								onChange={(value) =>
-									setAttributes({ title: value })
-								}
-							/>
-						</PanelRow>
-						<PanelRow>
 							<CheckboxControl
-								label="Show image when printing"
-								checked={printMode}
+								label="Set dark background for print"
+								checked={inverted}
 								onChange={(newval) =>
-									setAttributes({ printMode: newval })
+									setAttributes({ inverted: newval })
 								}
 							/>
 						</PanelRow>
@@ -102,6 +72,6 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 
 addFilter(
 	'editor.BlockEdit',
-	'bcgov-block-theme/media-text/add-inspector-controls',
+	'bcgov-block-theme/site-logo/add-inspector-controls',
 	addInspectorControl
 );

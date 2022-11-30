@@ -8,19 +8,9 @@ const { Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor;
 const { PanelBody, PanelRow, CheckboxControl, TextControl } = wp.components;
 
-registerBlockStyle('core/media-text', {
+registerBlockStyle('core/image', {
 	name: 'dropshadow',
 	label: 'Drop shadow',
-});
-
-registerBlockStyle('core/media-text', {
-	name: 'square',
-	label: 'Square',
-});
-
-registerBlockStyle('core/media-text', {
-	name: 'no-clip',
-	label: 'Full Image',
 });
 
 /**
@@ -32,7 +22,7 @@ registerBlockStyle('core/media-text', {
  * @return {Object} Filtered block settings
  */
 function addAttributes(settings, name) {
-	if (name === 'core/media-text') {
+	if (name === 'core/image') {
 		return assign({}, settings, {
 			attributes: merge(settings.attributes, {
 				title: {
@@ -51,7 +41,7 @@ function addAttributes(settings, name) {
 
 addFilter(
 	'blocks.registerBlockType',
-	'bcgov-block-theme/media-text/add-attributes',
+	'bcgov-block-theme/image/add-attributes',
 	addAttributes
 );
 
@@ -66,7 +56,7 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 			name,
 		} = props;
 
-		if (name !== 'core/media-text') {
+		if (name !== 'core/image') {
 			return <BlockEdit {...props} />;
 		}
 
@@ -102,6 +92,6 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 
 addFilter(
 	'editor.BlockEdit',
-	'bcgov-block-theme/media-text/add-inspector-controls',
+	'bcgov-block-theme/image/add-inspector-controls',
 	addInspectorControl
 );
