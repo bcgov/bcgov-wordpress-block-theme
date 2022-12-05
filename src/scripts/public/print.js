@@ -1,5 +1,5 @@
 /**
- * Accessibility DOM manipulation.
+ * Print mode manipulation.
  */
 const domReady = () => {
 	/*
@@ -9,6 +9,9 @@ const domReady = () => {
 		const siteLogo = document.querySelector('.bcgov-logo');
 		const siteName = document.querySelector('.wp-block-site-title');
 
+		/*
+		 * Print mode header synthesis
+		 */
 		if (null !== siteLogo) {
 			const invertBackground = siteLogo.hasAttribute('data-print');
 			const printHeaderContainer = document.createElement('div');
@@ -38,6 +41,20 @@ const domReady = () => {
 				printHeaderContainer.append(cloneSiteName);
 			}
 		}
+
+		/*
+		 * Print mode enable parent containers for images allowed to print
+		 */
+		const imageElement = document.querySelectorAll('img');
+
+		imageElement.forEach((image) => {
+			if (true === image.hasAttribute('data-print')) {
+				const imageContainer = image.closest('figure');
+				if (null !== imageContainer) {
+					imageContainer.classList.add('print');
+				}
+			}
+		});
 	}, 0);
 };
 

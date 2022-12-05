@@ -22,11 +22,7 @@
 			background: none !important;
 			border: none !important;
 			display: block !important;
-			height: auto !important;
-			min-height: 100% !important;
-			max-height: 100% !important;
-			width: 100% !important;
-			max-width: 100% !important;
+			min-height: auto !important;
 			margin: 0 !important;
 			padding: 0 !important;
 			position: static !important;
@@ -41,10 +37,6 @@
 				border: none !important;
 				height: auto !important;
 			}
-			page-break-after: avoid !important;
-			page-break-before: avoid !important;
-			break-after: avoid-region !important;
-			break-before: avoid-region !important;
 		}
 
 		body {
@@ -55,6 +47,34 @@
 			margin: 2rem auto !important;
 			overflow: visible !important;
 			max-width: calc(100% - 4rem) !important;
+
+			* {
+				page-break-after: auto !important;
+				break-after: auto !important;
+				overflow-wrap: break-word !important;
+				all: revert;
+				aspect-ratio: unset !important;
+				color: #333 !important;
+				background: none !important;
+				border: none !important;
+				display: block !important;
+				width: 100% !important;
+				min-height: auto !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				position: static !important;
+				pointer-events: none !important;
+				text-align: left !important;
+
+				&::after,
+				&::before {
+					display: none;
+					content: "" !important;
+					background: none !important;
+					border: none !important;
+					height: auto !important;
+				}
+			}
 
 			.wp-block-post-content {
 				display: grid !important;
@@ -67,10 +87,12 @@
 			h5,
 			h6 {
 				all: revert;
+				margin: 0 !important;
 				margin-top: 1rem !important;
 				font-family: "Times New Roman", serif;
 				font-weight: 400 !important;
 				line-height: 1.45 !important;
+				break-inside: avoid !important;
 
 				strong {
 					font-weight: 400 !important;
@@ -122,6 +144,7 @@
 			select {
 				font-family: "Times New Roman", serif;
 				font-size: clamp(1rem, calc(1rem + 0.5vw), 1.25rem) !important;
+				break-inside: avoid !important;
 			}
 
 			a {
@@ -145,10 +168,19 @@
 				}
 			}
 
+			.wp-block-cover,
 			.landing-cover-banner,
+			.info-cover-banner,
 			.level-3-banner,
 			.level-2-banner {
 				order: 0;
+				min-height: unset !important;
+				height: unset !important;
+
+				&__inner-container {
+					min-height: unset !important;
+					height: unset !important;
+				}
 			}
 
 			.post-content .alignfull {
@@ -165,11 +197,14 @@
 		script,
 		header,
 		footer,
+		figure,
 		img,
 		svg,
 		.skip-nav-menu,
 		.territory-acknowledgement,
-		.cleanbc-subfooter {
+		.cleanbc-subfooter,
+		.show-in-admin,
+		.admin-placeholder {
 			display: none !important;
 		}
 
@@ -180,12 +215,30 @@
 			}
 		}
 
+		.wp-block-media-text {
+
+			&__media {
+				display: none !important;
+			}
+		}
+
+		figure.print {
+			display: block !important;
+
+			&.wp-block-media-text {
+
+				&__media {
+					display: block !important;
+				}
+			}
+		}
+
 		img[data-print="true"],
 		img.bcgov-logo,
 		img.print {
 			display: block !important;
 			max-width: max-content !important;
-			margin: 2rem auto !important;
+			margin: 2rem 0 !important;
 		}
 
 		.print-header {
