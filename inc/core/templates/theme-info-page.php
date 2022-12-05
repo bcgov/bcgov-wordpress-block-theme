@@ -72,6 +72,10 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 						<p><span class="dashicons dashicons-warning" style="color: orange"></span> <strong>Warning:</strong> Be vary careful when using margins and padding in the editor. They are one size fits all (or doesn’t fit as the case may be). Any padding or margin spacing added to any element, layout, pattern or block is going to display similarly across all resolutions. 6rem of margins on a desktop view may look good, but can add a lot of unwanted spacing on mobile devices.</p>
 
 						<p>One day the block editor may allow for differentiating between viewport sizes to add selective padding or margins, but until that day is it always safer to err on the side of cautious use and fulsome testing to ensure the element doesn’t take on unwanted aspects when viewed across all platforms and screen resolutions.</p>
+
+						<h3>Enabling images to print</h3>
+
+						<p>By default images do not print. If you have an image that conveys information, such as a graph, and want it to print, you will need to enable this by selecting the Image block or the Media & Text block (currently the only two blocks supporting printing images) and open the "Other Media Settings" inside the block settings panel. Within that section you will find the checkbox "Show image when printing". Toggle this on and the image will print when the user does so.</p>
 					</div><!-- /General editing -->
 
 					<div class="bcgov-block-theme-grid-content card">
@@ -267,7 +271,7 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 
 					<div class="bcgov-block-theme-grid-content card">
 						
-						<h2 id="custom-templates" class="bcgov-block-theme-title">Polylang Navigation</h2>
+						<h2 id="polylang-navigation" class="bcgov-block-theme-title">Polylang Navigation</h2>
 
 						<p>Adding the Polylang Language Switcher is accomplished in the Template editor. It is best to associate the switcher with the site Navigation or main menu, but as of Polylang Pro version 3.2.8 the "Language switcher" block which enables the ability to move between languages does not integrate directly with the main menu navigation. Instead the site administrator needs to be creative with placement and layout.</p>
 
@@ -324,6 +328,9 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 								</li>
 								<li>
 									<a href="#custom-template-parts">Custom Template Parts</a>
+								</li>
+								<li>
+									<a href="#polylang-navigation">Polylang Navigation</a>
 								</li>
 							</ul>
 						</div>
