@@ -2,7 +2,8 @@
 
 ## 1.0.4: November 29, 2022
 
-–  Print mode: header + image printing. Adds core/site-logo print logo against black backing. Adds core/media-text and core/image block setting for print ([DESCW-723]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-723))
+–  Print mode: header + image printing. Adds core/site-logo print logo against black backing. Adds core/media-text and core/image block setting for print
+–  Print mode: Additional print mode styling including script to enable printing of parent containers for images ([DESCW-723]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-723))
 
 ## 1.0.3: November 23, 2022
 
