@@ -29,12 +29,22 @@
 	],
 	"templateParts": [
 		{
-			"title": "BCGov Header (general with ribbon navigation)",
+			"title": "Global Header Container",
+			"name": "global-header-container",
+			"area": "header"
+		},
+		{
+			"title": "General Header with Polylang ribbon nav",
+			"name": "header-ribbon-polylang",
+			"area": "header"
+		},
+		{
+			"title": "General Header with ribbon nav",
 			"name": "header",
 			"area": "header"
 		},
 		{
-			"title": "BCGov Header (with fullscreen navigation)",
+			"title": "General Header with fullscreen nav",
 			"name": "header-takeover-nav",
 			"area": "header"
 		},
@@ -62,6 +72,16 @@
 			"title": "Breadcrumb Nav – requires AIOSEO plugin",
 			"name": "breadcrumb-nav",
 			"area": "header"
+		},
+		{
+			"title": "Accessibility Skip Nav",
+			"name": "skip-nav",
+			"area": "header"
+		},
+		{
+			"title": "Global Footer Container",
+			"name": "global-footer-container",
+			"area": "footer"
 		},
 		{
 			"title": "BCGov Footer",
