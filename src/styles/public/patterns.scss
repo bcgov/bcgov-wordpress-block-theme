@@ -27,6 +27,13 @@ html body.wp-admin .editor-styles-wrapper {
 		background-color: transparent;
 		gap: 2rem;
 	}
+
+	/*
+	*  Step through sequence Pattern.
+	*/
+	.detail-with-number-container {
+		margin: 0 auto 2rem;
+	}
 }
 
 
@@ -176,6 +183,112 @@ html body.wp-admin .editor-styles-wrapper {
 			}
 			overflow: visible;
 			position: absolute;
+		}
+	}
+}
+
+
+/*
+ *  Step through sequence Pattern.
+ */
+.detail-with-number-container {
+
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	border: 1px solid var(--wp--preset--color--gray-60);
+	border-radius: 0.66rem;
+	box-shadow: 0 0 0.75rem var(--wp--preset--color--gray-60);
+	margin: 0 auto 2rem;
+	padding-left: 0;
+	padding-right: 0;
+
+	.wp-block-column {
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		flex: 1;
+		margin: 0;
+		min-height: 150px;
+		padding: 0.5rem 2rem;
+		position: relative;
+
+		p {
+			margin: 0.5rem 0;
+		}
+
+		&:first-of-type {
+
+			flex-direction: row;
+			align-items: center;
+			flex-basis: 33.33%;
+			border-radius: 0.66rem 0 0 0.66rem;
+
+			@media (max-width: $breakpoint-sm) {
+
+				flex-basis: 100%;
+				border-radius: 0.66rem 0.66rem 0 0;
+			}
+			background-color: var(--wp--preset--color--accent);
+			color: var(--wp--preset--color--background);
+			padding-left: 5rem;
+
+			h3.large {
+				font-size: 6rem !important;
+				position: absolute;
+				top: auto;
+				bottom: auto;
+				left: 1rem;
+			}
+
+			h4 {
+				line-height: 1.2;
+				margin: 0.5rem 0;
+				width: 90%;
+			}
+
+			&::after {
+				content: $detail-container-down-arrow;
+				height: auto;
+				width: 1.6rem;
+				display: block;
+				position: absolute;
+				bottom: -2.35rem;
+				top: auto;
+				left: calc(50% - 1rem);
+				right: auto;
+
+				@media (max-width: $breakpoint-sm) {
+					content: "";
+				}
+			}
+		}
+
+		&:last-of-type {
+
+			&::after {
+
+				@media (max-width: $breakpoint-sm) {
+					content: $detail-container-down-arrow;
+				}
+				height: auto;
+				width: 1.6rem;
+				display: block;
+				position: absolute;
+				bottom: -2.35rem;
+				top: auto;
+				left: calc(50% - 1rem);
+				right: auto;
+			}
+		}
+	}
+
+	&:is(.last) {
+
+		.wp-block-column::after {
+			content: "";
 		}
 	}
 }
