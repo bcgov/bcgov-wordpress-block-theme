@@ -106,6 +106,7 @@ function bcgov_blocks_theme_register_block_patterns() {
 		'bcgov-long-card',
 		'bcgov-quote',
 		'bcgov-small-quote-image',
+		'bcgov-sequence-steps',
 		'general-breadcrumb-nav',
 		'general-hero',
 		'query-grid',

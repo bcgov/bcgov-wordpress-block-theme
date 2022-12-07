@@ -99,6 +99,10 @@ select.pll-switcher-select {
 		padding: 0.75rem;
 		justify-content: flex-end;
 
+		.current-menu-item {
+			background-color: var(--wp--preset--color--primary-brand);
+		}
+
 		@media (min-width: $breakpoint-sm) {
 			padding: 0;
 			justify-content: flex-start;
