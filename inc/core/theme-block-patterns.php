@@ -95,6 +95,8 @@ function bcgov_blocks_theme_register_block_patterns() {
 		'footer-default',
 
 		// General patterns: not site specific.
+		'bcgov-accordion-with-media-text',
+		'bcgov-accordion-with-tables',
 		'bcgov-alternating-cards',
 		'bcgov-card-image-overlay',
 		'bcgov-card-image-under-2-up',

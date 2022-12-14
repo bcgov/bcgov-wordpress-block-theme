@@ -1,6 +1,7 @@
 /* stylelint-disable no-descending-specificity */
 
-.wp-block-bcgov-collapse {
+.wp-block-bcgov-collapse,
+.wp-block-bcgov-block-theme-collapse {
   padding: 0;
   margin-bottom: 2rem;
 
@@ -114,7 +115,8 @@
 }
 
 @media print {
-  .wp-block-bcgov-collapse {
+  .wp-block-bcgov-collapse,
+  .wp-block-bcgov-block-theme-collapse {
     margin-bottom: 1rem;
   }
   .collapse-container-nav {
@@ -162,7 +164,8 @@
       left: 0.25rem;
       font-size: 0.8rem;
     }
-    .wp-block-bcgov-collapse {
+    .wp-block-bcgov-collapse,
+    .wp-block-bcgov-block-theme-collapse {
       background-color: rgba(255, 255, 255, 0.7);
       list-style: none !important;
       padding: 0 !important ;
