@@ -1,11 +1,13 @@
 # Changelog
 
-## 1.0.4: November 29, 2022
+## 1.0.4: December 14, 2022
 
 –  Print mode: header + image printing. Adds core/site-logo print logo against black backing. Adds core/media-text and core/image block setting for print
 –  Print mode: Additional print mode styling including script to enable printing of parent containers for images ([DESCW-723]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-723))
 – Header footer templates + parts. Updated all templates and related template parts needed to create a global header and footer ([DESCW-721]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-721))
-– Adjuststed global header container template part. Patterns update to add and integrate Step through sequence pattern used in Go Electric BC for general Block Theme use. ([DESCW-721]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-721))
+– Adjuststed global header container template part. ([DESCW-721]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-721))
+- Patterns update to add and integrate Step through sequence pattern used in Go Electric BC for general Block Theme use.
+- Collapse block (accordion) styling picked up for non-pattern usage. Added two patterns using the collapse blocks: table and media-text variations ([DESCW-750]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-750))
 
 ## 1.0.3: November 23, 2022
 
