@@ -339,7 +339,7 @@ class Setup {
 		* these will change to default BCGov configuration after v1.0.3.
 		*/
 		if ( '' === $active_site_pattern_styles || null === $active_site_pattern_styles ) {
-			add_option( 'enable_all_styles', 'cleanbc' ); // will be: bcgov (or default).
+			add_option( 'enable_all_styles', 'bcgov' );
 		}
 
 		if ( '' === $header_effect || null === $header_effect ) {

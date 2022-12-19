@@ -12,6 +12,10 @@ html body.wp-admin .editor-styles-wrapper {
 
 }
 
+.wp-block-site-title a {
+	color: currentcolor !important;
+}
+
 // General header styles.
 .wp-block-template-part {
 
@@ -55,7 +59,7 @@ html body.wp-admin .editor-styles-wrapper {
 						img {
 							min-height: 2.66rem;
 							margin-top: 0.33rem;
-							height: 100%;
+							height: auto;
 						}
 					}
 

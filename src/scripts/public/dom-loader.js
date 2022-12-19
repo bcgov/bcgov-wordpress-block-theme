@@ -36,7 +36,11 @@ const domReady = () => {
 			nav = header.querySelector('nav');
 		}
 
-		if (null !== window.site.siteName) {
+		if (
+			null !== window.site.siteName &&
+			'' !== window.site.siteName &&
+			undefined !== window.site.siteName
+		) {
 			body.classList.add(window.site.siteName);
 		} else {
 			body.classList.add('bcgov');

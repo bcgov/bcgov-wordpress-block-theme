@@ -130,7 +130,8 @@
 			}
 
 			.bcgov-body-content p:not(.is-style-custom),
-			.bcgov-body-content li:not(.is-style-custom),
+			.bcgov-body-content figure:not(.is-style-custom) p,
+			.bcgov-body-content ul:not(.is-style-custom) li,
 			p,
 			li {
 				margin-top: 1rem !important;

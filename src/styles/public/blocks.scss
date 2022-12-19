@@ -1049,6 +1049,9 @@ html body.wp-admin .editor-styles-wrapper {
 	background-color: var(--wp--preset--color--white);
 }
 
+/*
+ * Card admin.
+ */
 .wp-admin {
 
 	.wp-block-bcgov-card-container {
@@ -1106,6 +1109,18 @@ html body.wp-admin .editor-styles-wrapper {
 
 }
 
+/*
+ *  Images.
+ */
+.wp-block-image {
+
+	&.is-style-dropshadow {
+
+		img {
+			box-shadow: 0 0 12px rgba($black, 33%);
+		}
+	}
+}
 
 /*
  *  Media + Text Cards.
@@ -1150,4 +1165,20 @@ html body.wp-admin .editor-styles-wrapper {
 		}
 	}
 
+}
+
+/*
+ *  Tables.
+ */
+body:not(.wp-admin) tr {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border-top: 2px solid var(--wp--preset--color--secondary-brand);
+
+	@media (min-width: $breakpoint-sm) {
+		display: table-row;
+		border-top: none;
+		text-align: left;
+	}
 }
