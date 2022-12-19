@@ -525,7 +525,8 @@ html body.wp-admin .editor-styles-wrapper {
 		position: relative;
 
 		body.cleanbc & p:not(.is-style-custom),
-		body.cleanbc & li:not(.is-style-custom) {
+		body.cleanbc & figure:not(.is-style-custom) blockquote p,
+		body.cleanbc & ul:not(.is-style-custom) li {
 			font-size: 0.875rem !important;
 			padding: 0 2rem;
 
