@@ -1,4 +1,17 @@
 /**
+ * Custom CSS unescape special characters helper.
+ *
+ * @param {string} cssStr – containing CSS selectors and attributes
+ */
+function unEscapeCSS(cssStr) {
+	cssStr = cssStr.replace(/&gt;/g, '>');
+	cssStr = cssStr.replace(/&quot;/g, '"');
+	cssStr = cssStr.replace(/&#39;/g, "'");
+	cssStr = cssStr.replace(/&amp;/g, '&');
+	return cssStr;
+}
+
+/**
  * General Block Theme window event management and DOM manipulation.
  */
 const domReady = () => {
@@ -19,6 +32,11 @@ const domReady = () => {
 		const isGovLogo = document.querySelector('.bcgov-web-logo');
 		const footer = document.querySelector('footer');
 		const postContent = document.querySelector('.wp-block-post-content');
+		const customCSS = document.querySelector('#wp-custom-css');
+
+		if (null !== customCSS) {
+			customCSS.innerText = unEscapeCSS(customCSS.innerText);
+		}
 
 		let bannerElement = null;
 		if (null !== postContent) {

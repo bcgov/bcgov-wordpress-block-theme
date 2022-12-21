@@ -10,6 +10,7 @@
 - Collapse block (accordion) styling picked up for non-pattern usage. Added two patterns using the collapse blocks: table and media-text variations ([DESCW-750]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-750))
 - Reviewed and modified default blocks such as heading, paragraph, list, blockquote, table, image, gallery, and more to ensure the styling works as expected for responsive and accessible design. Addresses issues within the WordPress admin as well as visitor facing. Also addresses consistency of display for the header colour and navigation. ([DESCW-749]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-749)) 
 - Header + navigation enhancements. Added colour options to takeover underlines. Added custom body class feature and enabled access to Additional CSS customiser tool from settings page. Added admin utility filtering to inject custom body class into customiser tool. Enhanced image block for variable ratio styling. ([DESCW-737]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-737))
+- Fullscreen menu improvements – fix overzealous custom CSS selector encoding. ([DESCW-751]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-751))
 
 
 ## 1.0.3: November 23, 2022
