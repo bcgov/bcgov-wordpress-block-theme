@@ -15,9 +15,28 @@ if ( ! current_user_can( 'manage_options' ) ) {
 	exit( '<h1>You do not have sufficient permissions to edit this page.</h1>' );
 }
 
+/**
+ * Ensures custom class name is valid.
+ *
+ * @param string $class input custom class name.
+ *
+ * @since 1.0.4
+ * @return string
+ */
+function make_class_safe( $class ) {
+	$class = str_replace( ' ', '-', $class );
+	$class = preg_replace( '~[^\\pL0-9_]+~u', '-', $class );
+	$class = trim( $class, '-' );
+	$class = iconv( 'utf-8', 'us-ascii//TRANSLIT', $class );
+	$class = strtolower( $class );
+	$class = preg_replace( '~[^-a-z0-9_]+~', '', $class );
+	return $class;
+}
+
 $active_site_pattern_styles = esc_attr( get_option( 'active_site_pattern_styles' ) );
 $header_effect              = esc_attr( get_option( 'header_effect' ) );
 $enable_all_styles          = esc_attr( get_option( 'enable_all_styles' ) );
+$custom_body_class          = make_class_safe( esc_attr( get_option( 'custom_body_class' ) ) );
 
 /**
 * Add admin page content
@@ -77,7 +96,7 @@ $enable_all_styles          = esc_attr( get_option( 'enable_all_styles' ) );
 
 				<div class="bcgov-block-theme-grid-content card">
 
-					<h3 for="acf-field_630ac9b794e5d">Header Effect</h3>
+					<h3>Header Effect</h3>
 
 					<p class="description">Choose the behaviour of the header bar when using the takeover menu. A "takeover menu" (set in the 'Overlay Menu' option in the template setting for Navigation) collapses the navigation options in a menu to the hamburger icon and opens the menu in a fullscreen overlay. This is the default menu for mobile but can also be used for desktop resolutions.</p>
 
@@ -101,7 +120,24 @@ $enable_all_styles          = esc_attr( get_option( 'enable_all_styles' ) );
 						</label></li>
 					</ul>
 				</div>
+				
+				<div class="bcgov-block-theme-grid-content card">
+
+					<h2 class="bcgov-block-theme-title">Advanced settings</h2>
+
+					<hr />
+
+					<h3>Custom Body Class</h3>
+
+					<p class="description">This is used for custom styling of a site to enable body class specific overrides.</p>
 					
+					<p>body.custom-<input id="custom_body_class" name="custom_body_class" type="text" value="<?php if ( ! empty( $custom_body_class ) ) { echo esc_attr( $custom_body_class ); } ?>"></p>
+					
+					<?php if ( ! empty( $custom_body_class ) ) : ?>
+					<p>Adds a custom class that is applied to the body and can be referenced in styles as <strong>body.custom-<?php if ( ! empty( $custom_body_class ) ) { echo esc_attr( $custom_body_class ); } ?></strong> – and is used in conjunction with the <a href="<?php echo esc_url( home_url() ) . '/wp-admin/customize.php'; ?>">Additional CSS</a> customizer tool.</p>
+					<?php endif; ?>
+
+					</div> <!-- /Custom Body Class -->
 			</div><!-- /Content -->
 
 			<!-- Sidebar -->

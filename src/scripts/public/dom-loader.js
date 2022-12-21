@@ -19,6 +19,7 @@ const domReady = () => {
 		const isGovLogo = document.querySelector('.bcgov-web-logo');
 		const footer = document.querySelector('footer');
 		const postContent = document.querySelector('.wp-block-post-content');
+
 		let bannerElement = null;
 		if (null !== postContent) {
 			bannerElement = postContent.firstElementChild;
@@ -51,6 +52,14 @@ const domReady = () => {
 		} else {
 			body.classList.add('header-scroll');
 		}
+
+		if (
+			null !== window.site.customBodyClass &&
+			'' !== window.site.customBodyClass
+		) {
+			body.classList.add(`custom-${window.site.customBodyClass}`);
+		}
+
 		/*
 		 * Any inital element with a class that includes 'banner' will be moved above the breadcrumb navigation.
 		 * However if the class name also includes 'in-page' it will not be moved.

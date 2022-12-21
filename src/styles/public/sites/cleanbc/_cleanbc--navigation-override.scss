@@ -22,6 +22,7 @@ body.cleanbc {
 
 	.bcgov-header-group.bcgov-site-header {
 		border-bottom: 3px solid var(--wp--preset--color--quinary);
+		transition: all 0.3s ease;
 	}
 
 	.is-style-takeover-menu {
@@ -43,6 +44,10 @@ body.cleanbc {
 
 			&__responsive-container {
 				height: 100vh;
+			}
+
+			&__responsive-container-close {
+				top: -10px;
 			}
 
 			&__responsive-container-content {
@@ -136,4 +141,12 @@ body.cleanbc {
 			}
 		}
 	}
+
+	.is-menu-open #nav-logo {
+		opacity: 1;
+		visibility: visible;
+		top: -24px;
+		left: -6px;
+	}
+
 }

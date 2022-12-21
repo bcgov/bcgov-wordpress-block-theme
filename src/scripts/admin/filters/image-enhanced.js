@@ -14,8 +14,8 @@ registerBlockStyle('core/image', {
 });
 
 registerBlockStyle('core/image', {
-	name: 'square',
-	label: 'Variable',
+	name: 'variable-ratio',
+	label: 'Variable ratio',
 	description:
 		'Image ratio changes between desktop/tablet and mobile. Image displays at 1:1 ratio on large screens and 2:1 ratio (wider than it is high) on mobile screens.',
 });
