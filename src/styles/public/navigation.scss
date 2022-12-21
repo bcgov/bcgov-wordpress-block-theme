@@ -1,5 +1,6 @@
 /* stylelint-disable no-descending-specificity */
 /* stylelint-disable font-weight-notation */
+/* stylelint-disable selector-class-pattern */
 
 /*
  * Editor Styles – use when editor specific style specificity is required.
@@ -75,9 +76,9 @@ body.header-scroll {
 select.pll-switcher-select {
 	border: 1px solid currentcolor;
 	background-color: transparent;
-	margin: 1rem;
+	margin: 0 1rem;
 	padding: 0.25rem 0.5rem;
-	color: var(--wp--preset--color--background);
+	color: currentcolor;
 	font-size: 1rem;
 }
 
@@ -111,6 +112,7 @@ select.pll-switcher-select {
 
 	select.pll-switcher-select {
 		border: 0;
+		color: currentcolor;
 	}
 }
 
@@ -231,17 +233,31 @@ body.has-ribbon-menu {
 			}
 
 			&.is-menu-open {
-				left: 0%;
+				left: 0;
+				overflow-y: auto;
+				overflow-x: hidden;
 
-				.wp-block-navigation-item {
-					opacity: 1;
+				.wp-block-navigation {
+
+					&__responsive-container-content {
+
+						.wp-block-navigation-item {
+							opacity: 1;
+
+							&__content {
+								color: currentcolor;
+							}
+						}
+					}
 				}
+
+
 			}
 
 			.wp-block-navigation {
 
 				&__responsive-container-close {
-					top: -10px;
+					top: 0;
 					right: 0;
 
 					@media (min-width: $breakpoint-lg) {
@@ -261,6 +277,73 @@ body.has-ribbon-menu {
 		&__responsive-container-content {
 			flex-direction: revert;
 			margin: auto;
+
+			ul:not(.wp-block-navigation__submenu-container) {
+
+				li {
+
+					&.primary-brand > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--primary-brand);
+					}
+
+					&.secondary-brand > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--secondary-brand);
+					}
+
+					&.accent > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--accent);
+					}
+
+					&.secondary-accent > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--secondary-accent);
+					}
+
+					&.tertiary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--tertiary);
+					}
+
+					&.quarternary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--quarternary);
+					}
+
+					&.quinary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--quinary);
+					}
+
+					&.senary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--senary);
+					}
+
+					&.octonary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--octonary);
+					}
+
+					&.nonary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--nonary);
+					}
+
+					&.denary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--denary);
+					}
+
+					&.ondenary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--ondenary);
+					}
+
+					&.duodenary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--duodenary);
+					}
+
+					&.tridenary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--tridenary);
+					}
+
+					&.quadenary > a {
+						border-bottom: 0.5rem solid var(--wp--preset--color--quadenary);
+					}
+
+				}
+			}
 		}
 
 		&__container {
@@ -435,14 +518,10 @@ body.has-ribbon-menu {
 #nav-logo {
 	position: absolute !important;
 	visibility: hidden;
-	margin: -25px -5px;
+	margin: auto;
 	max-width: 1440px;
 	opacity: 0;
 	transition: opacity 0.3s ease;
 	transition-delay: 0.2s;
 }
 
-.is-menu-open #nav-logo {
-	opacity: 1;
-	visibility: visible;
-}

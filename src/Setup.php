@@ -95,11 +95,12 @@ class Setup {
     public function set_javascript_variables() {
 
 		$javascript_variables = [
-			'domain'        => home_url(),
-			'siteName'      => esc_attr( get_option( 'active_site_pattern_styles' ) ),
-			'templateDir'   => get_template_directory_uri(),
-			'headerEffect'  => esc_attr( get_option( 'header_effect' ) ),
-			'allSiteStyles' => esc_attr( get_option( 'enable_all_styles' ) ),
+			'domain'          => home_url(),
+			'siteName'        => esc_attr( get_option( 'active_site_pattern_styles' ) ),
+			'templateDir'     => get_template_directory_uri(),
+			'headerEffect'    => esc_attr( get_option( 'header_effect' ) ),
+			'allSiteStyles'   => esc_attr( get_option( 'enable_all_styles' ) ),
+			'customBodyClass' => esc_attr( get_option( 'custom_body_class' ) ),
 		];
 
 		return $javascript_variables;
@@ -329,25 +330,31 @@ class Setup {
 		register_setting( 'bcgov-block-theme-settings-group', 'active_site_pattern_styles' );
 		register_setting( 'bcgov-block-theme-settings-group', 'header_effect' );
 		register_setting( 'bcgov-block-theme-settings-group', 'enable_all_styles' );
+		register_setting( 'bcgov-block-theme-settings-group', 'custom_body_class' );
 
 		$active_site_pattern_styles = esc_attr( get_option( 'active_site_pattern_styles' ) );
 		$header_effect              = esc_attr( get_option( 'header_effect' ) );
 		$enable_all_styles          = esc_attr( get_option( 'enable_all_styles' ) );
+		$custom_body_class          = esc_attr( get_option( 'custom_body_class' ) );
 
 		/*
 		* Initial settings to maintain configuration of CleanBC in production
 		* these will change to default BCGov configuration after v1.0.3.
 		*/
-		if ( '' === $active_site_pattern_styles || null === $active_site_pattern_styles ) {
+		if ( empty( $active_site_pattern_styles ) ) {
 			add_option( 'enable_all_styles', 'bcgov' );
 		}
 
-		if ( '' === $header_effect || null === $header_effect ) {
+		if ( empty( $header_effect ) ) {
 			add_option( 'header_effect', 'hides' ); // will be: fixed.
 		}
 
-		if ( '' === $enable_all_styles || null === $enable_all_styles ) {
+		if ( empty( $enable_all_styles ) ) {
 			add_option( 'enable_all_styles', 'true' ); // will be: false.
+		}
+
+		if ( empty( $custom_body_class ) ) {
+			add_option( 'custom_body_class', 'default' );
 		}
 
 	}

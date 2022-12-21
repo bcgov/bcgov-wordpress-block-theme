@@ -839,10 +839,6 @@ html body.wp-admin .editor-styles-wrapper {
 				border-radius: 0.33rem;
 				color: var(--wp--preset--color--primary-brand) !important;
 
-				// &::before {
-				// 	color: currentColor !important;
-				// }
-
 				&:hover,
 				&:focus {
 					filter: contrast(150%);

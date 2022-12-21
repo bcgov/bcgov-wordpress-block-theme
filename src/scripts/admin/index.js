@@ -1,6 +1,11 @@
 import '../../styles/admin/index.scss';
 
 /**
+ * Load the wp-admin filters.
+ */
+import './utils/filter';
+
+/**
  * Load the required site options.
  */
 import '../public/dom-loader';
