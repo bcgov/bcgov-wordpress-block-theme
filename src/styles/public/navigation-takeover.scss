@@ -15,183 +15,6 @@ html body.wp-admin .editor-styles-wrapper {
 	}
 }
 
-body:not(body.wp-admin):not(body.editor-styles-wrapper):not(body.error404) {
-
-	padding-top: 4.5rem;
-}
-
-.bcgov-header-group.bcgov-site-header {
-
-	border-bottom: 3px solid var(--wp--preset--color--accent);
-	width: 100vw;
-	z-index: 999;
-	top: 0;
-
-	body.admin-bar & {
-		top: 32px;
-	}
-}
-
-body.header-fixed,
-body.header-hides {
-
-	&.bcgov-header-group.bcgov-site-header {
-		position: fixed;
-	}
-}
-
-body.header-scroll {
-
-	&.bcgov-header-group.bcgov-site-header {
-		position: fixed;
-	}
-}
-
-
-.wp-container-2 {
-	display: none;
-
-	@media (min-width: $breakpoint-sm) {
-		display: initial;
-	}
-}
-
-.wp-block-site-title {
-	top: 0.25rem;
-	position: relative;
-	display: none;
-
-	@media (min-width: $breakpoint-sm) {
-		display: initial;
-	}
-
-	a {
-		text-decoration: none;
-	}
-}
-
-/*
- *  Language Switcher Block.
- */
-select.pll-switcher-select {
-	border: 1px solid currentcolor;
-	background-color: transparent;
-	margin: 0 1rem;
-	padding: 0.25rem 0.5rem;
-	color: currentcolor;
-	font-size: 1rem;
-}
-
-
-/*
- *  Ribbon Menu Template Part.
- */
-.is-style-ribbon-menu {
-
-	.is-offscreen {
-		display: inherit;
-	}
-
-	.has-modal-open {
-		position: fixed !important;
-	}
-
-	nav {
-		padding: 0.75rem;
-		justify-content: flex-end;
-
-		.current-menu-item {
-			background-color: var(--wp--preset--color--primary-brand);
-		}
-
-		@media (min-width: $breakpoint-sm) {
-			padding: 0;
-			justify-content: flex-start;
-		}
-	}
-
-	select.pll-switcher-select {
-		border: 0;
-		color: currentcolor;
-	}
-}
-
-body.has-ribbon-menu {
-
-	.site-header {
-
-		nav {
-			padding: 1rem 2rem;
-
-			@media (min-width: $breakpoint-sm) {
-				padding: inherit;
-			}
-		}
-	}
-
-	.wp-block-navigation {
-
-		a {
-
-			&:hover,
-			&:focus {
-				background-color: rgba($black, 33%);
-			}
-		}
-
-		&.has-background {
-
-			.has-child {
-
-				.wp-block-navigation {
-
-					&__submenu-container {
-
-						border: none;
-
-
-						@media (min-width: $breakpoint-xs-sm) {
-
-							border: 1px solid var(--wp--preset--color--background);
-
-							a {
-
-								&:hover,
-								&:focus {
-									filter: contrast(150%);
-									text-decoration: underline;
-								}
-							}
-						}
-
-						.wp-block-navigation {
-
-							&__submenu-container {
-
-								@media (min-width: $breakpoint-xs) {
-									left: 100%;
-									top: 0;
-								}
-							}
-
-							&__submenu-icon {
-
-								transform: rotate(-90deg);
-								margin-right: 0.5rem;
-
-								@media (min-width: $breakpoint-sm) {
-									transform: rotate(0deg);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-
 /*
  *  Takeover Menu Template Part.
  */
@@ -217,7 +40,7 @@ body.has-ribbon-menu {
 		&__responsive-container {
 			display: flex;
 			left: 200vw;
-			padding: 2rem 20px 2rem 2rem;
+			padding: 2rem 0 0;
 			transition: all 0.3s ease-in-out;
 
 			body.admin-bar & {
@@ -258,29 +81,34 @@ body.has-ribbon-menu {
 
 				&__responsive-container-close {
 					top: 0;
-					right: 0;
+					right: 1.25rem;
 
-					@media (min-width: $breakpoint-lg) {
-						right: 5px;
+					@media (min-width: calc($breakpoint-xl + 1rem)) {
+						right: 0;
 					}
 				}
 			}
 		}
 
 		&__responsive-dialog {
-			max-width: 1440px;
+			width: 100vw;
 			margin: auto;
 			min-height: 80vh;
-			display: flex;
+
+			@media (min-width: $breakpoint-sm) {
+				max-width: 1440px;
+				display: flex;
+			}
 		}
 
 		&__responsive-container-content {
 			flex-direction: revert;
-			margin: auto;
+			margin: auto 0;
+			width: calc(100% - 1rem);
 
-			ul:not(.wp-block-navigation__submenu-container) {
+			.wp-block-navigation__container:not(.wp-block-navigation__submenu-container) {
 
-				li {
+				.wp-block-navigation-item {
 
 					&.primary-brand > a {
 						border-bottom: 0.5rem solid var(--wp--preset--color--primary-brand);
@@ -375,19 +203,22 @@ body.has-ribbon-menu {
 					}
 				}
 
-				ul {
-					padding-left: 0 !important;
+				.wp-block-navigation {
+
+					&__submenu-container {
+						padding-left: 0 !important;
+					}
 				}
 			}
 
 			> .wp-block-navigation-item {
 				// Keep for testing.
-				// border: 1px dashed lime;
+				//  border: 1px dashed lime;
 				flex: 1;
 				width: 100%;
 				min-width: calc(100% - 6rem);
 				min-height: 1rem;
-				margin: 0.5rem 6rem 0 3rem;
+				margin: 0;
 
 				@media (min-width: $breakpoint-sm) {
 					min-height: 3rem;
@@ -514,14 +345,33 @@ body.has-ribbon-menu {
 	}
 }
 
+/*
+ *  Fixed width columns using grid.
+ */
+.is-style-takeover-menu.is-style-grid {
 
-#nav-logo {
-	position: absolute !important;
-	visibility: hidden;
-	margin: auto;
-	max-width: 1440px;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-	transition-delay: 0.2s;
+	.wp-block-navigation {
+
+		&__container {
+			display: grid !important;
+			grid-template-columns: 1fr;
+			width: calc(100vw - 4rem);
+
+			@media (min-width: $breakpoint-sm) {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			@media (min-width: $breakpoint-md) {
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+
+			> .wp-block-navigation-item {
+				min-width: 90% !important;
+
+				@media (min-width: $breakpoint-md) {
+					min-width: 100% !important;
+				}
+			}
+		}
+	}
 }
-

@@ -9,7 +9,10 @@
 // Base Public Styles
 @import "./header";
 @import "./footer";
-@import "./navigation";
+@import "./navigation-general";
+@import "./navigation-language-switcher";
+@import "./navigation-ribbon";
+@import "./navigation-takeover";
 @import "./general";
 @import "./blocks";
 @import "./patterns";

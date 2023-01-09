@@ -1,0 +1,110 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+
+/*
+ *  Ribbon Menu Template Part.
+ */
+.is-style-ribbon-menu {
+
+	.is-offscreen {
+		display: inherit;
+	}
+
+	.has-modal-open {
+		position: fixed !important;
+	}
+
+	nav {
+		padding: 0.75rem;
+		justify-content: flex-end;
+
+		.current-menu-item {
+			background-color: var(--wp--preset--color--primary-brand);
+		}
+
+		@media (min-width: $breakpoint-sm) {
+			padding: 0;
+			justify-content: flex-start;
+		}
+	}
+
+	select.pll-switcher-select {
+		border: 0;
+		color: currentcolor;
+	}
+}
+
+body.has-ribbon-menu {
+
+	.site-header {
+
+		nav {
+			padding: 1rem 2rem;
+
+			@media (min-width: $breakpoint-sm) {
+				padding: inherit;
+			}
+		}
+	}
+
+	.wp-block-navigation {
+
+		a {
+
+			&:hover,
+			&:focus {
+				background-color: rgba($black, 33%);
+			}
+		}
+
+		&.has-background {
+
+			.has-child {
+
+				.wp-block-navigation {
+
+					&__submenu-container {
+
+						border: none;
+
+
+						@media (min-width: $breakpoint-xs-sm) {
+
+							border: 1px solid var(--wp--preset--color--background);
+
+							a {
+
+								&:hover,
+								&:focus {
+									filter: contrast(150%);
+									text-decoration: underline;
+								}
+							}
+						}
+
+						.wp-block-navigation {
+
+							&__submenu-container {
+
+								@media (min-width: $breakpoint-xs) {
+									left: 100%;
+									top: 0;
+								}
+							}
+
+							&__submenu-icon {
+
+								transform: rotate(-90deg);
+								margin-right: 0.5rem;
+
+								@media (min-width: $breakpoint-sm) {
+									transform: rotate(0deg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

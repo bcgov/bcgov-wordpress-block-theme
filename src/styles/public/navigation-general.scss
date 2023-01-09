@@ -1,0 +1,80 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+
+/*
+ * Editor Styles – use when editor specific style specificity is required.
+ */
+html body.wp-admin .editor-styles-wrapper {
+
+	/*
+	*  Takeover Menu Template Part.
+	*/
+	.is-style-takeover-menu {
+		background-color: transparent;
+	}
+}
+
+body:not(body.wp-admin):not(body.editor-styles-wrapper):not(body.error404) {
+
+	padding-top: 4.5rem;
+}
+
+.bcgov-header-group.bcgov-site-header {
+
+	border-bottom: 3px solid var(--wp--preset--color--accent);
+	width: 100vw;
+	z-index: 999;
+	top: 0;
+
+	body.admin-bar & {
+		top: 32px;
+	}
+}
+
+body.header-fixed,
+body.header-hides {
+
+	&.bcgov-header-group.bcgov-site-header {
+		position: fixed;
+	}
+}
+
+body.header-scroll {
+
+	&.bcgov-header-group.bcgov-site-header {
+		position: fixed;
+	}
+}
+
+.wp-container-2 {
+	display: none;
+
+	@media (min-width: $breakpoint-sm) {
+		display: initial;
+	}
+}
+
+.wp-block-site-title {
+	top: 0.25rem;
+	position: relative;
+	display: none;
+
+	@media (min-width: $breakpoint-sm) {
+		display: initial;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+#nav-logo {
+	position: absolute !important;
+	visibility: hidden;
+	margin: auto;
+	max-width: 1440px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	transition-delay: 0.2s;
+}
+
