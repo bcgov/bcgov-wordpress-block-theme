@@ -1,7 +1,7 @@
 import '../../styles/public/index.scss';
 import '../../../assets/images/bc_gov_logo_transparent.png';
 
-import './dom-loader.js';
+import './dom-loader';
 import './accessibility';
 import './print';
 
