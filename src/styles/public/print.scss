@@ -10,6 +10,12 @@
 
 	@media print {
 
+		.do-not-print,
+		.hide-for-print,
+		.hide-when-printing {
+			display: none !important;
+		}
+
 		@page {
 			size: auto !important;
 			margin: 10mm 10mm 12mm 10mm !important;
@@ -18,9 +24,9 @@
 		* {
 			all: revert;
 			aspect-ratio: unset !important;
-			color: #333 !important;
 			background: none !important;
 			border: none !important;
+			color: #333 !important;
 			display: block !important;
 			min-height: auto !important;
 			margin: 0 !important;
@@ -132,9 +138,14 @@
 			.bcgov-body-content p:not(.is-style-custom),
 			.bcgov-body-content figure:not(.is-style-custom) p,
 			.bcgov-body-content ul:not(.is-style-custom) li,
-			p,
-			li {
+			p {
 				margin-top: 1rem !important;
+			}
+
+			li {
+				display: list-item !important;
+				margin-top: 0.5rem !important;
+				margin-left: 1.5rem !important;
 			}
 
 			p,
@@ -198,7 +209,6 @@
 		script,
 		header,
 		footer,
-		figure,
 		img,
 		svg,
 		.skip-nav-menu,
@@ -223,13 +233,58 @@
 			}
 		}
 
-		figure.print {
-			display: block !important;
+		figure {
+			display: none !important;
 
-			&.wp-block-media-text {
+			&.print,
+			&.wp-block-audio,
+			&.wp-block-gallery,
+			&.wp-block-image,
+			&.wp-block-pullquote,
+			&.wp-block-table {
+				display: block !important;
+				margin: 1rem 0 !important;
+				max-width: fit-content;
 
-				&__media {
-					display: block !important;
+				&.wp-block-media-text {
+
+					&__media {
+						display: block !important;
+					}
+				}
+
+				thead {
+					border-bottom: 2px solid #333 !important;
+					margin: 2rem 0.5rem 0 !important;
+				}
+
+				tbody tr {
+					padding: 0.5rem 0.5rem 0 !important;
+				}
+
+				th,
+				td {
+					border-bottom: 0.25px solid #333 !important;
+					font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.25rem) !important;
+					line-height: 1.5;
+					padding: 0.5rem 0 !important;
+				}
+
+				th:last-of-type,
+				td:last-of-type {
+					border-bottom: 2px solid #333 !important;
+				}
+
+				figcaption {
+					font-size: 0.75rem !important;
+					padding: 1rem 0.5rem 0.5rem !important;
+				}
+
+				&.is-style-stripes {
+
+					tr:nth-child(even) {
+						background-color: rgba(0, 0, 0, 0.05) !important;
+					}
 				}
 			}
 		}
