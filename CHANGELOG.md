@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5: January 16, 2023
+
+- Print mode: additional core block styling, classes to suppress printing, and print specific styling (eg: tables) ([DESCW-828]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-828))
+
 ## 1.0.4: January 9, 2023
 
 –  Print mode: header + image printing. Adds core/site-logo print logo against black backing. Adds core/media-text and core/image block setting for print

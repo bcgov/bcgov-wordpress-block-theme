@@ -71,6 +71,16 @@ if ( CLEANBC ) {
 
 Add any site specific patterns to the $block_patterns array. The reasoning for this using a pattern specific check is that while Custom Post Types, taxonomies, block filters and more may need to be suppressed for a site, the patterns developed for previous sites can be left available to site owners for use in page building and rapid prototyping layouts.
 
+## Printing features
+### as of v1.0.5
+
+Classes to hide elements when printing (use any of the following):
+
+```bash
+.do-not-print
+.hide-for-print
+.hide-when-printing
+```
 
 ## Admin User Documentation
 
