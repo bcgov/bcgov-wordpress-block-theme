@@ -3,6 +3,7 @@
 ## 1.0.5: January 16, 2023
 
 - Print mode: additional core block styling, classes to suppress printing, and print specific styling (eg: tables) ([DESCW-828]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-828))
+- Enhanced image printing options for image and media-text blocks. Allows specifying the size of the printed image width in print mode. Includes update to site instructions. ([DESCW-828]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-828))
 
 ## 1.0.4: January 9, 2023
 

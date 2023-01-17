@@ -73,9 +73,6 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 
 						<p>One day the block editor may allow for differentiating between viewport sizes to add selective padding or margins, but until that day is it always safer to err on the side of cautious use and fulsome testing to ensure the element doesn’t take on unwanted aspects when viewed across all platforms and screen resolutions.</p>
 
-						<h3>Enabling images to print</h3>
-
-						<p>By default images do not print. If you have an image that conveys information, such as a graph, and want it to print, you will need to enable this by selecting the Image block or the Media & Text block (currently the only two blocks supporting printing images) and open the "Other Media Settings" inside the block settings panel. Within that section you will find the checkbox "Show image when printing". Toggle this on and the image will print when the user does so.</p>
 					</div><!-- /General editing -->
 
 					<div class="bcgov-block-theme-grid-content card">
@@ -217,6 +214,23 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 
 					</div><!-- /Colour Palettes -->
 
+
+					<div class="bcgov-block-theme-grid-content card">
+						
+						<h2 id="printing" class="bcgov-block-theme-title">Print specific controls</h2>
+
+						<h3>Enabling images to print</h3>
+
+						<p>By default images do not print. If you have an image that conveys information, such as a graph, and want it to print, you will need to enable this by selecting the Image block or the Media & Text block (currently the only two blocks supporting printing images) and open the "Other Media Settings" inside the block settings panel. Within that section you will find the checkbox "Show image when printing". Toggle this on and the image will print when the user does so.</p>
+
+						<p>Inside this option you will find two controls that help determine how an image is printed. Using the "Show image when printing" checkbox will enable printing of the image. </p>
+
+						<h3>Sizing images when printing</h3>
+
+						<p>Using the "Max width on printed page (%)" slider or its related number firld will set the percentage an image takes on the printed page. This range can be from 10% to 100% width of the printed page width and is set to a default of 25%.</p>
+
+					</div><!-- /Print specific controls -->
+
 					<h2 class="bcgov-block-theme-title">Advanced theme management</h2>
 
 					<div class="bcgov-block-theme-grid-content card">
@@ -290,7 +304,8 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-options.png'; ?>" alt="Language switcher options 1 drop down" style="border: 1px solid #ccc;width: 300px;" /><br />Language switcher options - drop down</p>
 							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-options-2.png'; ?>" alt="Language switcher options 2 list items" style="border: 1px solid #ccc;width: 300px;" /><br />Language switcher options – list items</p>
 						</div>
-					</div><!-- /Customisable Templates -->
+					</div><!-- /Polylang -->
+
 
 				</div> <!-- /Content -->
 				
@@ -318,6 +333,9 @@ $site_name = esc_attr( get_option( 'active_site_pattern_styles' ) );
 								</li>
 								<li>
 									<a href="#colour-palettes">Colour Palettes</a>
+								</li>
+								<li>
+									<a href="#printing">Print specific controls</a>
 								</li>
 								
 								<li>

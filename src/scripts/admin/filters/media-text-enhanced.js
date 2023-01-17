@@ -6,7 +6,13 @@ const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-const { PanelBody, PanelRow, CheckboxControl, TextControl } = wp.components;
+const {
+	PanelBody,
+	PanelRow,
+	CheckboxControl,
+	TextControl,
+	RangeControl,
+} = wp.components;
 
 registerBlockStyle('core/media-text', {
 	name: 'dropshadow',
@@ -43,6 +49,10 @@ function addAttributes(settings, name) {
 					type: 'boolean',
 					default: false,
 				},
+				printWidth: {
+					type: 'number',
+					default: 25,
+				},
 			}),
 		});
 	}
@@ -61,7 +71,7 @@ addFilter(
 const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
 		const {
-			attributes: { title, printMode },
+			attributes: { title, printMode, printWidth },
 			setAttributes,
 			name,
 		} = props;
@@ -91,6 +101,18 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 								onChange={(newval) =>
 									setAttributes({ printMode: newval })
 								}
+							/>
+						</PanelRow>
+						<PanelRow>
+							<RangeControl
+								label="Max&nbsp;width&nbsp;on&nbsp;printed&nbsp;page&nbsp;(%)"
+								value={printWidth}
+								onChange={(newval) =>
+									setAttributes({ printWidth: newval })
+								}
+								min={10}
+								max={100}
+								separatorType="fullWidth"
 							/>
 						</PanelRow>
 					</PanelBody>

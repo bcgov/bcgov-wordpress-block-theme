@@ -48,13 +48,49 @@ const domReady = () => {
 		const imageElement = document.querySelectorAll('img');
 
 		imageElement.forEach((image) => {
+			const imageContainer = image.closest('figure');
 			if (true === image.hasAttribute('data-print')) {
-				const imageContainer = image.closest('figure');
 				if (null !== imageContainer) {
 					imageContainer.classList.add('print');
 				}
 			}
 		});
+
+		const printMediaQuery = window.matchMedia('print');
+
+		function handlePrintChange(e) {
+			const imagesToPrint = document.querySelectorAll('img');
+
+			if (e.matches) {
+				imagesToPrint.forEach((image) => {
+					const imageContainer = image.closest('figure');
+					if (true === image.hasAttribute('data-print-width')) {
+						if (null !== imageContainer) {
+							image.setAttribute(
+								'style',
+								'max-width: ' +
+									image.dataset.printWidth +
+									'% !important'
+							);
+						}
+					}
+				});
+			} else {
+				imagesToPrint.forEach((image) => {
+					const imageContainer = image.closest('figure');
+					if (true === image.hasAttribute('data-print-width')) {
+						if (null !== imageContainer) {
+							image.removeAttribute('style');
+						}
+					}
+				});
+			}
+		}
+
+		printMediaQuery.addEventListener('change', handlePrintChange);
+
+		// Initial check
+		handlePrintChange(printMediaQuery);
 	}, 0);
 };
 

@@ -15,8 +15,9 @@ function add_media_text_attributes( $block_content = '', $block = [] ) {
 
 	if ( isset( $block['blockName'] ) && 'core/media-text' === $block['blockName'] ) {
 		$defaults = [
-			'title'     => 'none',
-			'printMode' => false,
+			'title'      => 'none',
+			'printMode'  => false,
+			'printWidth' => 25,
 		];
 
 		$args = wp_parse_args( $block['attrs'], $defaults );
@@ -32,12 +33,18 @@ function add_media_text_attributes( $block_content = '', $block = [] ) {
 			$printMode = '';
 		}
 
+		if ( false !== $args['printWidth'] ) {
+			$printWidth = 'data-print-width="' . $args['printWidth'] . '"';
+		} else {
+			$printWidth = '';
+		}
+
 		$html = str_replace(
 			[
 				'<img ',
 			],
 			[
-				'<img ' . $title . ' ' . $printMode . ' ',
+				'<img ' . $title . ' ' . $printMode . ' ' . $printWidth . ' ',
 			],
 			$block_content
 		);
