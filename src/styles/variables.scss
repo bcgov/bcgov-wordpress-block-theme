@@ -14,13 +14,13 @@ $breakpoint-wp-content-wide: $breakpoint-xl;
 /* Legacy breakpoint variables. */
 $cards-mobile-breakpoint: 767px;
 
-// SCSS Colours.
-$black: #111;
-$body-color: #313132;
-
-// To do: make this dynamic based on current root colour palette options.
-// Currently overrides these values as needed in ./[site]/variables.scss
+/* Setting general CSS variables. */
 :root {
+	--scroll-padding: 80px;
+
+	// To do: make this dynamic based on current root colour palette options.
+	// Currently overrides these values as needed in ./[site]/variables.scss
+
 	--primary-brand-rgb: 14, 52, 104;
 	--secondary-brand-rgb: 59, 90, 148;
 	--accent-rgb: 246, 185, 0;
@@ -46,6 +46,9 @@ $body-color: #313132;
 	--background-rgb: 249, 249, 249;
 }
 
+// SCSS Colours.
+$black: #111;
+$body-color: #313132;
 
 /* FOR REFERENCE: Go Electric v1 Project colours. */
 $sushigreen: #61a744;
