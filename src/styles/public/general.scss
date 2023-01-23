@@ -75,6 +75,7 @@ html {
 	scroll-padding: var(--scroll-padding, 80px);
 }
 
+:root .editor-styles-wrapper,
 body {
 
 	/*
@@ -127,6 +128,9 @@ body {
 		--wp--preset--spacing--70: 6rem;
 		--wp--preset--spacing--80: 7rem;
 	}
+}
+
+body {
 
 	@keyframes fadeIn {
 
