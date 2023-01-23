@@ -1,91 +1,132 @@
 /* stylelint-disable no-descending-specificity */
 
 
-html body.wp-admin .editor-styles-wrapper {
+html body.wp-admin {
 
-	.skip-nav-menu {
-		height: auto;
-	}
+	.editor-styles-wrapper {
 
-	h1:not(.is-style-custom) {
-		font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.25rem) !important;
-		line-height: 1.25;
-		min-height: 0;
-	}
+		.skip-nav-menu {
+			height: auto;
+		}
 
-	h2:not(.is-style-custom) {
-		font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 2.75rem) !important;
-		line-height: 1.25;
-		min-height: 0;
-	}
+		h1:not(.is-style-custom) {
+			font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3.25rem) !important;
+			line-height: 1.25;
+			min-height: 0;
+		}
 
-	h3:not(.is-style-custom) {
-		font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.25rem) !important;
-		line-height: 1.25;
-		min-height: 0;
-	}
+		h2:not(.is-style-custom) {
+			font-size: clamp(1.5rem, 0.25rem + 3.3333vw, 2.75rem) !important;
+			line-height: 1.25;
+			min-height: 0;
+		}
 
-	h4:not(.is-style-custom) {
-		font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 2rem) !important;
-		line-height: 1.25;
-		min-height: 0;
-	}
+		h3:not(.is-style-custom) {
+			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.25rem) !important;
+			line-height: 1.25;
+			min-height: 0;
+		}
 
-	h5:not(.is-style-custom) {
-		font-size: clamp(1.1rem, 0.25rem + 3.3333vw, 1.75rem) !important;
-		line-height: 1.25;
-		min-height: 0;
-	}
+		h4:not(.is-style-custom) {
+			font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 2rem) !important;
+			line-height: 1.25;
+			min-height: 0;
+		}
 
-	h6:not(.is-style-custom) {
-		font-size: clamp(1.05rem, 0.25rem + 3.3333vw, 1.5rem) !important;
-		line-height: 1.25;
-		min-height: 0;
-	}
+		h5:not(.is-style-custom) {
+			font-size: clamp(1.1rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+			line-height: 1.25;
+			min-height: 0;
+		}
 
-	*:not(.is-style-custom) cite,
-	*:not(.is-style-custom) p,
-	p:not(.is-style-custom),
-	ul:not(.is-style-custom) li {
-		font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.25rem);
-		line-height: 1.5;
-		min-height: 0;
-	}
+		h6:not(.is-style-custom) {
+			font-size: clamp(1.05rem, 0.25rem + 3.3333vw, 1.5rem) !important;
+			line-height: 1.25;
+			min-height: 0;
+		}
 
-	.wp-block-columns {
+		*:not(.is-style-custom) cite,
+		*:not(.is-style-custom) p,
+		p:not(.is-style-custom),
+		ul:not(.is-style-custom) li {
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.25rem);
+			line-height: 1.5;
+			min-height: 0;
+		}
 
-		&.is-style-constrained {
-			margin-bottom: 0;
-			max-width: 1440px;
-			width: 100%;
-			margin-left: auto;
-			margin-right: auto;
+		.wp-block-columns {
+
+			&.is-style-constrained {
+				margin-bottom: 0;
+				max-width: 1440px;
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 	}
 }
 
 /* General styles.
-*
+* --scroll-padding is set in dom-loader.js
 */
 html {
 	scroll-behavior: smooth;
-	scroll-padding-top: 80px;
+	scroll-padding: var(--scroll-padding, 80px);
 }
 
 body {
 
 	/*
-	* Temporary comment omitted in order to Lighthouse performance test on staging.
-	*/
-	// &:not(.wp-admin) {
-	// opacity: 0;
-	// animation-duration: 0.3s;
-	// animation-fill-mode: forwards;
-	// animation-timing-function: ease-out;
-	// animation-delay: 0s;
-	// animation-iteration-count: 1;
-	// animation-name: fadeIn;
-	// }
+	 * theme.json spacing for padding, margin and gap.
+	 */
+	--wp--preset--spacing--20: 0.2rem;
+	--wp--preset--spacing--30: 0.4rem;
+	--wp--preset--spacing--40: 0.6rem;
+	--wp--preset--spacing--50: 0.8rem;
+	--wp--preset--spacing--60: 1rem;
+	--wp--preset--spacing--70: 1.2rem;
+	--wp--preset--spacing--80: 1.4rem;
+
+	@media (min-width: $breakpoint-sm) {
+		--wp--preset--spacing--20: 0.25rem;
+		--wp--preset--spacing--30: 0.5rem;
+		--wp--preset--spacing--40: 0.75rem;
+		--wp--preset--spacing--50: 1rem;
+		--wp--preset--spacing--60: 1.25rem;
+		--wp--preset--spacing--70: 1.5rem;
+		--wp--preset--spacing--80: 1.75rem;
+	}
+
+	@media (min-width: $breakpoint-md) {
+		--wp--preset--spacing--20: 0.33rem;
+		--wp--preset--spacing--30: 0.66rem;
+		--wp--preset--spacing--40: 1rem;
+		--wp--preset--spacing--50: 1.33rem;
+		--wp--preset--spacing--60: 1.66rem;
+		--wp--preset--spacing--70: 2rem;
+		--wp--preset--spacing--80: 2.33rem;
+	}
+
+	@media (min-width: $breakpoint-lg) {
+		--wp--preset--spacing--20: 0.5rem;
+		--wp--preset--spacing--30: 1rem;
+		--wp--preset--spacing--40: 1.5rem;
+		--wp--preset--spacing--50: 2rem;
+		--wp--preset--spacing--60: 2.5rem;
+		--wp--preset--spacing--70: 3rem;
+		--wp--preset--spacing--80: 3.5rem;
+	}
+
+	@media (min-width: $breakpoint-xl) {
+		--wp--preset--spacing--20: 1rem;
+		--wp--preset--spacing--30: 2rem;
+		--wp--preset--spacing--40: 3rem;
+		--wp--preset--spacing--50: 4rem;
+		--wp--preset--spacing--60: 5rem;
+		--wp--preset--spacing--70: 6rem;
+		--wp--preset--spacing--80: 7rem;
+	}
 
 	@keyframes fadeIn {
 
