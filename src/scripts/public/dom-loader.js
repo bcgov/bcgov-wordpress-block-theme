@@ -38,6 +38,15 @@ const domReady = () => {
 			customCSS.innerText = unEscapeCSS(customCSS.innerText);
 		}
 
+		/*
+		 * Set the scroll padding to the height of the header
+		 */
+		const headerHeight = header.offsetHeight;
+		document.documentElement.style.setProperty(
+			'--scroll-padding',
+			headerHeight + 'px'
+		);
+
 		let bannerElement = null;
 		if (null !== postContent) {
 			bannerElement = postContent.firstElementChild;

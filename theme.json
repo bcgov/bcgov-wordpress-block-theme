@@ -320,8 +320,19 @@
 			"wideSize": "1440px"
 		},
 		"spacing": {
-			"blockGap": null
-		},
+			"blockGap": null,
+			"spacing": {
+				"blockGap": null,
+				"customSpacingSize": true,
+				"spacingScale": {
+					"operator": "*",
+					"increment": 1.75,
+					"steps": 9,
+					"mediumStep": 1.5,
+					"unit": "rem"
+				}
+			}
+		},		
 		"typography": {
 			"fontSizes": [
 				{
