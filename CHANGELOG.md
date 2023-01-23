@@ -2,6 +2,7 @@
 
 ## 1.0.6: January 23, 2023
 - Editing padding, margins and gap now use the WordPress 6.1 spacingScale with responsive sizes. Spacing for scroll padding has been added to dynamically adjust based on header size. ([DESCW-840]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-840))
+- Added admin editor fix for preview tool (desktop/tablet/mobile) sizing variations ([DESCW-840]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-840))
 
 ## 1.0.5: January 16, 2023
 
