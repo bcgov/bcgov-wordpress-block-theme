@@ -33,11 +33,36 @@ function make_class_safe( $class ) {
 	return $class;
 }
 
+/**
+ * Ensures directive submissions are valid.
+ *
+ * @param string $directives input custom directives list.
+ *
+ * @since 1.0.6
+ * @return string
+ */
+function remove_csp_keywords( $directives ) {
+	$directives         = strtolower( $directives );
+	$substringsToRemove = [ 'data', 'none', 'self', 'unsafe-inline', 'unsafe-eval', ':' ];
+	$directives         = str_replace( $substringsToRemove, '', html_entity_decode( $directives, ENT_QUOTES ) );
+	$directives         = trim( $directives );
+	$directives         = preg_replace( '/x\d+x\d+_\d+x_/ ', '', $directives );
+	$directives         = preg_replace( '/(\'|&#0*39;)/', '', $directives );
+	return $directives;
+}
+
 $active_site_pattern_styles = esc_attr( get_option( 'active_site_pattern_styles' ) );
 $header_effect              = esc_attr( get_option( 'header_effect' ) );
-$enable_all_styles          = esc_attr( get_option( 'enable_all_styles' ) );
+$enable_all_styles          = get_option( 'enable_all_styles' );
 $custom_body_class          = make_class_safe( esc_attr( get_option( 'custom_body_class' ) ) );
-
+$custom_csp_defaultsrc      = remove_csp_keywords( esc_attr( get_option( 'custom_csp_defaultsrc' ) ) );
+$custom_csp_scriptsrc       = remove_csp_keywords( esc_attr( get_option( 'custom_csp_scriptsrc' ) ) );
+$custom_csp_stylesrc        = remove_csp_keywords( esc_attr( get_option( 'custom_csp_stylesrc' ) ) );
+$custom_csp_connectsrc      = remove_csp_keywords( esc_attr( get_option( 'custom_csp_connectsrc' ) ) );
+$custom_csp_fontsrc         = remove_csp_keywords( esc_attr( get_option( 'custom_csp_fontsrc' ) ) );
+$custom_csp_imgsrc          = remove_csp_keywords( esc_attr( get_option( 'custom_csp_imgsrc' ) ) );
+$custom_csp_mediasrc        = remove_csp_keywords( esc_attr( get_option( 'custom_csp_mediasrc' ) ) );
+$custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom_csp_framesrc' ) ) );
 /**
 * Add admin page content
 *
@@ -63,8 +88,11 @@ $custom_body_class          = make_class_safe( esc_attr( get_option( 'custom_bod
 
 	<form method="post" action="options.php">
 		
-		<?php settings_fields( 'bcgov-block-theme-settings-group' ); ?>
-		<?php do_settings_sections( 'bcgov-block-theme-settings-group' ); ?>
+		<?php
+			settings_fields( 'bcgov-block-theme-settings-group' );
+			do_settings_sections( 'bcgov-block-theme-settings-group' );
+			settings_errors();
+		?>
 
 		<div class="bcgov-block-theme-grid">
 
@@ -137,6 +165,48 @@ $custom_body_class          = make_class_safe( esc_attr( get_option( 'custom_bod
 					<p>Adds a custom class that is applied to the body and can be referenced in styles as <strong>body.custom-<?php if ( ! empty( $custom_body_class ) ) { echo esc_attr( $custom_body_class ); } ?></strong> – and is used in conjunction with the <a href="<?php echo esc_url( home_url() ) . '/wp-admin/customize.php'; ?>">Additional CSS</a> customizer tool.</p>
 					<?php endif; ?>
 
+					<?php if ( is_admin() ) : ?>
+					
+					<hr />
+
+					<h3>Content Security Policy (CSP)</h3>
+
+					<p>CSP is a way to control what sources a website can load content from. There are different rules for different types of content. Once a website has set a CSP, the browser will only allow content from sources that the website has specifically allowed. Source values are separated by spaces and can only include URLs (with or without a wildcard eg: domain.ca and *.domain.ca). Note that the special <strong>CSP keywords are not allowed</strong> in this list.</p>
+
+					<h4>default-src policy:</h4>
+					<p class="description">The fallback directive used to specify the default content policy for most of the source directives</p>
+					<div><input class="large-text" id="custom_csp_defaultsrc" name="custom_csp_defaultsrc" type="text" value="<?php if ( ! empty( $custom_csp_defaultsrc ) ) { echo esc_attr( $custom_csp_defaultsrc ); } ?>"></div>
+					
+					<h4>script-src policy:</h4>
+					<p class="description">Used to allowlist script sources. </p>
+					<div><input class="large-text" id="custom_csp_scriptsrc" name="custom_csp_scriptsrc" type="text" value="<?php if ( ! empty( $custom_csp_scriptsrc ) ) { echo esc_attr( $custom_csp_scriptsrc ); } ?>"></div>
+
+					<h4>style-src policy:</h4>
+					<p class="description">Used to allowlist CSS stylesheet sources</p>
+					<div><input class="large-text" id="custom_csp_stylesrc" name="custom_csp_stylesrc" type="text" value="<?php if ( ! empty( $custom_csp_stylesrc ) ) { echo esc_attr( $custom_csp_stylesrc ); } ?>"></div>
+
+					<h4>connect-src policy:</h4>
+					<p class="description">Specifies permitted origins for direct JavaScript connections that use EventSource, WebSocket, or XMLHttpRequest objects</p>
+					<div><input class="large-text" id="custom_csp_connectsrc" name="custom_csp_connectsrc" type="text" value="<?php if ( ! empty( $custom_csp_connectsrc ) ) { echo esc_attr( $custom_csp_connectsrc ); } ?>"></div>
+
+					<h4>img-src policy:</h4>
+					<p class="description">Lets you restrict image sources.</p>
+					<div><input class="large-text" id="custom_csp_imgsrc" name="custom_csp_imgsrc" type="text" value="<?php if ( ! empty( $custom_csp_imgsrc ) ) { echo esc_attr( $custom_csp_imgsrc ); } ?>"></div>
+
+					<h4>font-src policy:</h4>
+					<p class="description">Specifies permitted sources for loading fonts</p>
+					<div><input class="large-text" id="custom_csp_fontsrc" name="custom_csp_fontsrc" type="text" value="<?php if ( ! empty( $custom_csp_fontsrc ) ) { echo esc_attr( $custom_csp_fontsrc ); } ?>"></div>
+
+					<h4>media-src policy:</h4>
+					<p class="description">Restricts origins for loading sound and video resources</p>
+					<div><input class="large-text" id="custom_csp_mediasrc" name="custom_csp_mediasrc" type="text" value="<?php if ( ! empty( $custom_csp_mediasrc ) ) { echo esc_attr( $custom_csp_mediasrc ); } ?>"></div>
+
+					<h4>frame-src policy:</h4>
+					<p class="description">Used to restrict permitted URLs for JavaScript workers and embedded frame contents, <strong>including embedded videos</strong></p>
+					<div><input class="large-text" id="custom_csp_framesrc" name="custom_csp_framesrc" type="text" value="<?php if ( ! empty( $custom_csp_framesrc ) ) { echo esc_attr( $custom_csp_framesrc ); } ?>"></div>
+					<p>&nbsp;</p>
+					<?php endif; ?>
+
 					</div> <!-- /Custom Body Class -->
 			</div><!-- /Content -->
 
@@ -152,7 +222,7 @@ $custom_body_class          = make_class_safe( esc_attr( get_option( 'custom_bod
 
 						<?php
 						 submit_button();
-						 settings_errors();
+
 						?>
 						
 					</div>
