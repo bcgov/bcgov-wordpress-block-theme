@@ -176,35 +176,42 @@ $custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom
 					<h4>default-src policy:</h4>
 					<p class="description">The fallback directive used to specify the default content policy for most of the source directives</p>
 					<div><input class="large-text" id="custom_csp_defaultsrc" name="custom_csp_defaultsrc" type="text" value="<?php if ( ! empty( $custom_csp_defaultsrc ) ) { echo esc_attr( $custom_csp_defaultsrc ); } ?>"></div>
+					<p class="description">Default includes: 'self' gov.bc.ca *.gov.bc.ca data: *.twitter.com *.twimg.com  </p>
 					
 					<h4>script-src policy:</h4>
 					<p class="description">Used to allowlist script sources. </p>
 					<div><input class="large-text" id="custom_csp_scriptsrc" name="custom_csp_scriptsrc" type="text" value="<?php if ( ! empty( $custom_csp_scriptsrc ) ) { echo esc_attr( $custom_csp_scriptsrc ); } ?>"></div>
+					<p class="description">Default includes: 'self' 'unsafe-inline' 'unsafe-eval' gov.bc.ca *.gov.bc.ca *.twimg.com *.twitter.com *.flickr.com  </p>
 
 					<h4>style-src policy:</h4>
 					<p class="description">Used to allowlist CSS stylesheet sources</p>
 					<div><input class="large-text" id="custom_csp_stylesrc" name="custom_csp_stylesrc" type="text" value="<?php if ( ! empty( $custom_csp_stylesrc ) ) { echo esc_attr( $custom_csp_stylesrc ); } ?>"></div>
+					<p class="description">Default includes: 'self' 'unsafe-inline' *.twitter.com *.twimg.com </p>
 
 					<h4>connect-src policy:</h4>
 					<p class="description">Specifies permitted origins for direct JavaScript connections that use EventSource, WebSocket, or XMLHttpRequest objects</p>
 					<div><input class="large-text" id="custom_csp_connectsrc" name="custom_csp_connectsrc" type="text" value="<?php if ( ! empty( $custom_csp_connectsrc ) ) { echo esc_attr( $custom_csp_connectsrc ); } ?>"></div>
+					<p class="description">Default includes: 'self' gov.bc.ca  *.gov.bc.ca *.flickr.com  </p>
 
 					<h4>img-src policy:</h4>
 					<p class="description">Lets you restrict image sources.</p>
 					<div><input class="large-text" id="custom_csp_imgsrc" name="custom_csp_imgsrc" type="text" value="<?php if ( ! empty( $custom_csp_imgsrc ) ) { echo esc_attr( $custom_csp_imgsrc ); } ?>"></div>
+					<p class="description">Default includes: 'self' data: gov.bc.ca *.gov.bc.ca *.twimg.com *.twitter.com *.staticflickr.com </p>
 
 					<h4>font-src policy:</h4>
 					<p class="description">Specifies permitted sources for loading fonts</p>
 					<div><input class="large-text" id="custom_csp_fontsrc" name="custom_csp_fontsrc" type="text" value="<?php if ( ! empty( $custom_csp_fontsrc ) ) { echo esc_attr( $custom_csp_fontsrc ); } ?>"></div>
+					<p class="description">Default includes: 'self' 'unsafe-inline' data:  </p>
 
 					<h4>media-src policy:</h4>
 					<p class="description">Restricts origins for loading sound and video resources</p>
 					<div><input class="large-text" id="custom_csp_mediasrc" name="custom_csp_mediasrc" type="text" value="<?php if ( ! empty( $custom_csp_mediasrc ) ) { echo esc_attr( $custom_csp_mediasrc ); } ?>"></div>
+					<p class="description">Default includes: 'self' 'unsafe-inline' </p>
 
 					<h4>frame-src policy:</h4>
 					<p class="description">Used to restrict permitted URLs for JavaScript workers and embedded frame contents, <strong>including embedded videos</strong></p>
 					<div><input class="large-text" id="custom_csp_framesrc" name="custom_csp_framesrc" type="text" value="<?php if ( ! empty( $custom_csp_framesrc ) ) { echo esc_attr( $custom_csp_framesrc ); } ?>"></div>
-					<p>&nbsp;</p>
+					<p class="description">Default includes: 'self' gov.bc.ca *.gov.bc.ca *.twitter.com youtube.com *.youtube.com youtu.be</p>
 					<?php endif; ?>
 
 					</div> <!-- /Custom Body Class -->
