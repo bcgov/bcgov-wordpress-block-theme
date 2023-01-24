@@ -70,6 +70,9 @@ $custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom
 */
 ?>
 
+<style>
+#wpfooter { position: fixed }
+</style>
 
 <div class="bcgov-block-theme-page-header">
 	<div class="bcgov-block-theme-page-header__container">
@@ -108,7 +111,7 @@ $custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom
 				</div> <!-- /Getting started -->
 
 				<div class="bcgov-block-theme-grid-content card">
-					<h3>Active Site Pattern Styles</h3>
+					<h3 id="active-pattern">Active Site Pattern Styles</h3>
 					
 					<p class="description">Choose the active site – this choice will impact how certain patterns display and which patterns and blocks may or may not be available.</p>
 
@@ -124,7 +127,7 @@ $custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom
 
 				<div class="bcgov-block-theme-grid-content card">
 
-					<h3>Header Effect</h3>
+					<h3 id="header-effect">Header Effect</h3>
 
 					<p class="description">Choose the behaviour of the header bar when using the takeover menu. A "takeover menu" (set in the 'Overlay Menu' option in the template setting for Navigation) collapses the navigation options in a menu to the hamburger icon and opens the menu in a fullscreen overlay. This is the default menu for mobile but can also be used for desktop resolutions.</p>
 
@@ -138,7 +141,7 @@ $custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom
 
 				<div class="bcgov-block-theme-grid-content card">
 
-					<h3>Styles and patterns</h3>
+					<h3 id="styles-patterns">Styles and patterns</h3>
 
 					<p class="description">Gain access to all available styles and patterns regardless of chosen site styles. Ie: choosing this option means if you have selected Buy BC as your Active Site you will also see CleanBC styles and patterns.</p>
 
@@ -155,7 +158,7 @@ $custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom
 
 					<hr />
 
-					<h3>Custom Body Class</h3>
+					<h3 id="custom-body-class">Custom Body Class</h3>
 
 					<p class="description">This is used for custom styling of a site to enable body class specific overrides.</p>
 					
@@ -169,7 +172,7 @@ $custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom
 					
 					<hr />
 
-					<h3>Content Security Policy (CSP)</h3>
+					<h3 id="csp">Content Security Policy (CSP)</h3>
 
 					<p>CSP is a way to control what sources a website can load content from. There are different rules for different types of content. Once a website has set a CSP, the browser will only allow content from sources that the website has specifically allowed. Source values are separated by spaces and can only include URLs (with or without a wildcard eg: domain.ca and *.domain.ca). Note that the special <strong>CSP keywords are not allowed</strong> in this list.</p>
 
@@ -222,6 +225,31 @@ $custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom
 
 				<div class="bcgov-block-theme-grid-sidebar-widget-area">
 
+				<div class="bcgov-block-theme-widget">
+							<h2 class="bcgov-block-theme-widget-title">On this page</h2>
+							<ul class="bcgov-block-theme-useful-links">
+							<li>
+									<a href="#active-pattern">Active Site Pattern Styles</a>
+								</li>
+								<li>
+									<a href="#header-effect">Header Effect</a>
+								</li>
+								<li>
+									<a href="#styles-patterns">Styles and patterns</a>
+								</li>
+								
+								<li>
+									<p><strong>Advanced management</strong></p>
+								</li>
+								<li>
+									<a href="#custom-body-class">Custom Body Class</a>
+								</li>
+								<li>
+									<a href="#csp">Content Security Policy (CSP)</a>
+								</li>
+							</ul>
+						</div>
+					</div>
 					<div class="bcgov-block-theme-widget">
 
 						<h2 class="bcgov-block-theme-widget-title"><?php echo esc_html__( 'Save your changes', 'bcgov-block-theme' ); ?></h2>
