@@ -389,17 +389,25 @@ class Setup {
      * @return array
      */
     public function bcgov_block_theme_wp_headers( $headers ) {
-        $csp         = '';
-        $csp_initial = [
+		$custom_csp_defaultsrc = esc_attr( get_option( 'custom_csp_defaultsrc' ) );
+		$custom_csp_scriptsrc  = esc_attr( get_option( 'custom_csp_scriptsrc' ) );
+		$custom_csp_stylesrc   = esc_attr( get_option( 'custom_csp_stylesrc' ) );
+		$custom_csp_connectsrc = esc_attr( get_option( 'custom_csp_connectsrc' ) );
+		$custom_csp_fontsrc    = esc_attr( get_option( 'custom_csp_fontsrc' ) );
+		$custom_csp_imgsrc     = esc_attr( get_option( 'custom_csp_imgsrc' ) );
+		$custom_csp_mediasrc   = esc_attr( get_option( 'custom_csp_mediasrc' ) );
+		$custom_csp_framesrc   = esc_attr( get_option( 'custom_csp_framesrc' ) );
+        $csp                   = '';
+        $csp_initial           = [
             'upgrade-insecure-requests',
-            'default-src'     => "'self' gov.bc.ca *.gov.bc.ca data: *.twitter.com *.twimg.com " . ( get_option( 'custom_csp_defaultsrc' ) ? esc_attr( get_option( 'custom_csp_defaultsrc' ) ) : '' ),
-            'script-src'      => "'self' 'unsafe-inline' 'unsafe-eval' gov.bc.ca *.gov.bc.ca *.twimg.com *.twitter.com *.flickr.com " . ( get_option( 'custom_csp_scriptsrc' ) ? esc_attr( get_option( 'custom_csp_scriptsrc' ) ) : '' ),
-            'style-src'       => "'self' 'unsafe-inline' *.twitter.com *.twimg.com" . ( get_option( 'custom_csp_stylesrc' ) ? esc_attr( get_option( 'custom_csp_stylesrc' ) ) : '' ),
-            'connect-src'     => "'self' gov.bc.ca  *.gov.bc.ca *.flickr.com " . ( get_option( 'custom_csp_connectsrc' ) ? esc_attr( get_option( 'custom_csp_connectsrc' ) ) : '' ),
-            'font-src'        => "'self' 'unsafe-inline' data: " . ( get_option( 'custom_csp_fontsrc' ) ? esc_attr( get_option( 'custom_csp_fontsrc' ) ) : '' ),
-            'img-src'         => "'self' data: gov.bc.ca *.gov.bc.ca *.twimg.com *.twitter.com *.staticflickr.com " . ( get_option( 'custom_csp_imgsrc' ) ? esc_attr( get_option( 'custom_csp_imgsrc' ) ) : '' ),
-            'media-src'       => "'self' 'unsafe-inline' " . ( get_option( 'custom_csp_mediasrc' ) ? esc_attr( get_option( 'custom_csp_mediasrc' ) ) : '' ),
-            'frame-src'       => "'self' gov.bc.ca *.gov.bc.ca *.twitter.com youtube.com *.youtube.com youtu.be " . ( get_option( 'custom_csp_framesrc' ) ? esc_attr( get_option( 'custom_csp_framesrc' ) ) : '' ),
+            'default-src'     => "'self' gov.bc.ca *.gov.bc.ca data: *.twitter.com *.twimg.com " . ( ! empty( $custom_csp_defaultsrc ) ? $custom_csp_defaultsrc : '' ),
+            'script-src'      => "'self' 'unsafe-inline' 'unsafe-eval' gov.bc.ca *.gov.bc.ca *.twimg.com *.twitter.com *.flickr.com " . ( ! empty( $custom_csp_scriptsrc ) ? $custom_csp_scriptsrc : '' ),
+            'style-src'       => "'self' 'unsafe-inline' *.twitter.com *.twimg.com" . ( ! empty( $custom_csp_stylesrc ) ? $custom_csp_stylesrc : '' ),
+            'connect-src'     => "'self' gov.bc.ca  *.gov.bc.ca *.flickr.com " . ( ! empty( $custom_csp_connectsrc ) ? $custom_csp_connectsrc : '' ),
+            'font-src'        => "'self' 'unsafe-inline' data: " . ( ! empty( $custom_csp_fontsrc ) ? $custom_csp_fontsrc : '' ),
+            'img-src'         => "'self' data: gov.bc.ca *.gov.bc.ca *.twimg.com *.twitter.com *.staticflickr.com " . ( ! empty( $custom_csp_imgsrc ) ? $custom_csp_imgsrc : '' ),
+            'media-src'       => "'self' 'unsafe-inline' " . ( ! empty( $custom_csp_mediasrc ) ? $custom_csp_mediasrc : '' ),
+            'frame-src'       => "'self' gov.bc.ca *.gov.bc.ca *.twitter.com youtube.com *.youtube.com youtu.be " . ( ! empty( $custom_csp_framesrc ) ? $custom_csp_framesrc : '' ),
             'frame-ancestors' => "'self'",
         ];
 
