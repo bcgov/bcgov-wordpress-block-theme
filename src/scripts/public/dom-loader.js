@@ -1,15 +1,4 @@
-/**
- * Custom CSS unescape special characters helper.
- *
- * @param {string} cssStr – containing CSS selectors and attributes
- */
-function unEscapeCSS(cssStr) {
-	cssStr = cssStr.replace(/&gt;/g, '>');
-	cssStr = cssStr.replace(/&quot;/g, '"');
-	cssStr = cssStr.replace(/&#39;/g, "'");
-	cssStr = cssStr.replace(/&amp;/g, '&');
-	return cssStr;
-}
+import { qs, unEscapeCSS } from './utils';
 
 /**
  * General Block Theme window event management and DOM manipulation.
@@ -22,17 +11,17 @@ const domReady = () => {
 		/**
 		 * Add siteName body classes and modify DOM placement of breadcrumb after first banner.
 		 */
-		const body = document.querySelector('body');
+		const body = qs('body');
 		// Guard against being in the WordPress admin area.
 		const wpAdmin = body.classList.contains('wp-admin');
 		if (wpAdmin) return;
 
 		const home = body.classList.contains('home');
-		const header = document.querySelector('.bcgov-site-header');
-		const isGovLogo = document.querySelector('.bcgov-web-logo');
-		const footer = document.querySelector('footer');
-		const postContent = document.querySelector('.wp-block-post-content');
-		const customCSS = document.querySelector('#wp-custom-css');
+		const header = qs('.bcgov-site-header');
+		const isGovLogo = qs('.wp-block-site-logo');
+		const footer = qs('footer');
+		const postContent = qs('.wp-block-post-content');
+		const customCSS = qs('#wp-custom-css');
 
 		if (null !== customCSS) {
 			customCSS.innerText = unEscapeCSS(customCSS.innerText);
@@ -51,17 +40,17 @@ const domReady = () => {
 		if (null !== postContent) {
 			bannerElement = postContent.firstElementChild;
 		}
-		const breadcrumb = document.querySelector('.breadcrumb-nav-section');
+		const breadcrumb = qs('.breadcrumb-nav-section');
 
 		if (null !== isGovLogo) {
-			isGovLogo.querySelector('img').setAttribute('alt', 'BCGov Logo');
+			qs('img', isGovLogo).setAttribute('alt', 'BCGov Logo');
 		}
 
 		let takeover,
 			nav = null;
 		if (null !== header) {
-			takeover = header.querySelector('.is-style-takeover-menu');
-			nav = header.querySelector('nav');
+			takeover = qs('.is-style-takeover-menu', header);
+			nav = qs('nav', header);
 		}
 
 		if (
@@ -179,7 +168,7 @@ const domReady = () => {
 			/**
 			 * Set back to top link visible when close to bottom of window.
 			 */
-			const backToTop = document.querySelector('.back-to-top');
+			const backToTop = qs('.back-to-top');
 			if (null !== backToTop) {
 				if (
 					window.pageYOffset + window.innerHeight >

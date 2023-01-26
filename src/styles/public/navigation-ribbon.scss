@@ -4,7 +4,9 @@
 /*
  *  Ribbon Menu Template Part.
  */
+
 .is-style-ribbon-menu {
+
 
 	.is-offscreen {
 		display: inherit;
@@ -103,6 +105,21 @@ body.has-ribbon-menu {
 							}
 						}
 					}
+				}
+
+			}
+		}
+
+		&__container {
+
+			.wp-block-navigation {
+
+				&-submenu {
+					padding: 0;
+				}
+
+				&__submenu-icon {
+					margin: 0 0.5rem 0 0;
 				}
 			}
 		}

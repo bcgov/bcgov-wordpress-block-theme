@@ -1,3 +1,5 @@
+import { addGlobalEventListener, createElement, qs, qsa } from './utils';
+
 /**
  * Print mode manipulation.
  */
@@ -6,15 +8,17 @@ const domReady = () => {
 	 * SafarIE bug requires 0ms timeout.
 	 */
 	setTimeout(function() {
-		const siteLogo = document.querySelector('.bcgov-logo');
-		const siteName = document.querySelector('.wp-block-site-title');
+		const siteLogo = qs('.wp-block-site-logo img');
+		const siteName = qs('.wp-block-site-title');
 
 		/*
 		 * Print mode header synthesis
 		 */
 		if (null !== siteLogo) {
 			const invertBackground = siteLogo.hasAttribute('data-print');
-			const printHeaderContainer = document.createElement('div');
+			const printHeaderContainer = createElement('div', {
+				class: 'print-header',
+			});
 			const cloneLogo = siteLogo.cloneNode(true);
 
 			printHeaderContainer.className = 'print-header';
@@ -23,12 +27,12 @@ const domReady = () => {
 				printHeaderContainer.classList.add(
 					'print-header-black-background'
 				);
-				const printHeaderBlackImage = document.createElement('img');
-				printHeaderBlackImage.className = 'black-background';
-				printHeaderBlackImage.setAttribute(
-					'src',
-					window.site.templateDir + '/assets/images/svg/black.svg'
-				);
+				const printHeaderBlackImage = createElement('img', {
+					class: 'black-background',
+					src:
+						window.site.templateDir +
+						'/assets/images/svg/black.svg',
+				});
 				printHeaderContainer.append(printHeaderBlackImage);
 			}
 
@@ -45,7 +49,7 @@ const domReady = () => {
 		/*
 		 * Print mode enable parent containers for images allowed to print
 		 */
-		const imageElement = document.querySelectorAll('img');
+		const imageElement = qsa('img');
 
 		imageElement.forEach((image) => {
 			const imageContainer = image.closest('figure');
@@ -59,7 +63,7 @@ const domReady = () => {
 		const printMediaQuery = window.matchMedia('print');
 
 		function handlePrintChange(e) {
-			const imagesToPrint = document.querySelectorAll('img');
+			const imagesToPrint = qsa('img');
 
 			if (e.matches) {
 				imagesToPrint.forEach((image) => {
@@ -87,7 +91,7 @@ const domReady = () => {
 			}
 		}
 
-		printMediaQuery.addEventListener('change', handlePrintChange);
+		addGlobalEventListener('change', printMediaQuery, handlePrintChange);
 
 		// Initial check
 		handlePrintChange(printMediaQuery);

@@ -1,3 +1,5 @@
+import { qs, qsa } from './utils';
+
 /**
  * Accessibility DOM manipulation.
  */
@@ -6,28 +8,26 @@ const domReady = () => {
 	 * SafarIE bug requires 0ms timeout.
 	 */
 	setTimeout(function() {
-		const bodyInsertion = document.querySelector('body').firstChild;
-		const skipNav = document.querySelector('.skip-nav-menu');
+		const bodyInsertion = qs('body').firstChild;
+		const skipNav = qs('.skip-nav-menu');
 
 		if (null !== skipNav) {
 			bodyInsertion.parentNode.insertBefore(skipNav, bodyInsertion);
-			const skipNavItems = skipNav.querySelectorAll('.skip-nav');
+			const skipNavItems = qsa('.skip-nav', skipNav);
 			skipNavItems.forEach((item) => {
-				item.querySelector('a').setAttribute('tabindex', 0);
+				qs('a', item).setAttribute('tabindex', 0);
 			});
 		}
 
-		const mainMenuHamburger = document.querySelector('header nav > button');
-		const mainMenu = document.querySelector(
-			'header nav button + .hidden-by-default'
-		);
+		const mainMenuHamburger = qs('header nav > button');
+		const mainMenu = qs('header nav button + .hidden-by-default');
 
 		if (null !== mainMenuHamburger) {
 			mainMenuHamburger.setAttribute('id', 'main-menu');
 
 			if (null !== mainMenu) {
-				const mainMenuLinks = mainMenu.querySelectorAll('a');
-				const mainMenuButtons = mainMenu.querySelectorAll('button');
+				const mainMenuLinks = qsa('a', mainMenu);
+				const mainMenuButtons = qsa('button', mainMenu);
 				if (mainMenu.getAttribute('aria-hidden') !== 'true') {
 					mainMenuLinks.forEach((link) => {
 						link.setAttribute('tabindex', '-1');

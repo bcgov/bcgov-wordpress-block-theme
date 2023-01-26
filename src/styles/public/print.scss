@@ -5,7 +5,7 @@
 :root {
 
 	.print-header {
-		display: none;
+		display: none !important;
 	}
 
 	@media print {
@@ -305,17 +305,23 @@
 		}
 
 		.print-header {
-			// background: var(--wp--preset--color--foreground) !important;
+
+			background: var(--wp--preset--color--white) !important;
 			display: flex !important;
 			justify-content: center;
 			align-items: center;
-			margin-bottom: 1rem !important;
-			padding: 0 2rem !important;
+			margin-bottom: 4rem !important;
+			padding: 0 !important;
 			width: auto !important;
+
 
 			.wp-block-site-title * {
 				-webkit-print-color-adjust: exact !important;
-				color: var(--wp--preset--color--background) !important;
+				color: var(--wp--preset--color--black) !important;
+
+				&.print-header-black-background {
+					background: var(--wp--preset--color--white) !important;
+				}
 				font-size: 2rem !important;
 			}
 
@@ -325,6 +331,8 @@
 			}
 
 			&.print-header-black-background {
+				background: var(--wp--preset--color--black) !important;
+				padding: 0 2rem !important;
 				position: relative !important;
 
 				img.black-background {
