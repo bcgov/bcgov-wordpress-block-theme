@@ -1,3 +1,5 @@
+import { qs, qsa } from './utils';
+
 /**
  * Takeover navigation manipulation.
  */
@@ -5,13 +7,13 @@ const domReady = () => {
 	/**
 	 * Add body class for CSS specificity if Takeover Menu is in use.
 	 */
-	if (document.querySelectorAll('.is-style-takeover-menu').length) {
-		document.querySelector('body').classList.add('has-takeover-menu');
+	if (qsa('.is-style-takeover-menu').length) {
+		qs('body').classList.add('has-takeover-menu');
 
 		/**
 		 * Clone site logo node and insert copy inside modal overlay.
 		 */
-		const elLogo = document.querySelector('.wp-block-site-logo');
+		const elLogo = qs('.wp-block-site-logo');
 		const cloneLogo = elLogo.cloneNode(true);
 		cloneLogo.id = 'nav-logo';
 		cloneLogo
@@ -21,7 +23,7 @@ const domReady = () => {
 			.querySelector('.wp-block-navigation__responsive-container-content')
 			.after(cloneLogo);
 
-		const elSiteName = document.querySelector('.wp-block-site-title a');
+		const elSiteName = qs('.wp-block-site-title a');
 		const cloneSiteName = elSiteName.cloneNode(true);
 		cloneSiteName.id = 'nav-title';
 		cloneSiteName.setAttribute('aria-label', 'site homepage');
@@ -33,7 +35,7 @@ const domReady = () => {
 	/**
 	 * Override menu open SVG. Affects all hamburger icon instances.
 	 */
-	const menuOpenSVGToReplace = document.querySelector(
+	const menuOpenSVGToReplace = qs(
 		'.wp-block-navigation__responsive-container-open svg'
 	);
 	const newOpenSVG = document.createElementNS(
@@ -58,7 +60,7 @@ const domReady = () => {
 	/**
 	 * Override menu close SVG. Affects all close icon instances.
 	 */
-	const menuCloseSVGToReplace = document.querySelector(
+	const menuCloseSVGToReplace = qs(
 		'.wp-block-navigation__responsive-container-close svg'
 	);
 	const newCloseSVG = document.createElementNS(
