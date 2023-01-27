@@ -20,8 +20,9 @@
 		padding: 0.75rem;
 		justify-content: flex-end;
 
-		.current-menu-item {
-			background-color: var(--wp--preset--color--primary-brand);
+		.current-menu-item:not(.language-group) {
+			background-color: var(--wp--preset--color--accent) !important;
+			color: var(--wp--preset--color--headline-color) !important;
 		}
 
 		@media (min-width: $breakpoint-sm) {
@@ -68,7 +69,6 @@ body.has-ribbon-menu {
 					&__submenu-container {
 
 						border: none;
-
 
 						@media (min-width: $breakpoint-xs-sm) {
 
