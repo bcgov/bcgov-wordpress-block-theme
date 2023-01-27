@@ -72,6 +72,35 @@ const domReady = () => {
 				ul2.classList.add('primary-menu-container');
 			}
 
+			const submenuLis = qsa('li', ul2);
+			const subSubmenuLis = qsa(
+				'.wp-block-navigation__submenu-container li',
+				ul2
+			);
+			let subMenuLanguageGroupLiClasses = '';
+			let subMenuLanguageOptionLiClasses = '';
+
+			submenuLis.forEach((li) => {
+				if (
+					li.classList.contains('wp-block-navigation-submenu') &&
+					'' === subMenuLanguageGroupLiClasses
+				) {
+					subMenuLanguageGroupLiClasses = li.classList
+						.toString()
+						.replace(/,/g, ' ');
+				}
+			});
+			subSubmenuLis.forEach((li) => {
+				if (
+					li.classList.contains('wp-block-navigation-item') &&
+					'' === subMenuLanguageOptionLiClasses
+				) {
+					subMenuLanguageOptionLiClasses = li.classList
+						.toString()
+						.replace(/,/g, ' ');
+				}
+			});
+
 			const lis1 = qsa('.lang-item', ul1);
 
 			let currentUl = ul2;
@@ -84,13 +113,11 @@ const domReady = () => {
 
 				if (li.classList.contains('current-lang')) {
 					li2 = createElement('li', {
-						class:
-							'has-text-color has-white-color has-background has-blue-background-background-color has-extra-small-font-size wp-block-navigation-item has-child open-on-hover-click tertiary wp-block-navigation-submenu current-menu-item accent',
+						class: `language-group ${subMenuLanguageGroupLiClasses}`,
 					});
 				} else {
 					li2 = createElement('li', {
-						class:
-							'language-option has-text-color has-white-color has-background has-blue-background-background-color has-extra-small-font-size wp-block-navigation-item denary wp-block-navigation-link',
+						class: `language-option ${subMenuLanguageOptionLiClasses}`,
 					});
 				}
 
@@ -171,6 +198,11 @@ const domReady = () => {
 					currentUl = ul3;
 				}
 			});
+
+			// remove the language switcher down arrow from the DOM when using the "Show arrow" navigation option
+			if (!qs('.language-group.open-on-hover-click')) {
+				qs('.language-group button').remove();
+			}
 
 			// remove the default language switcher from the DOM when using the "Displays as dropdown" option
 			if (!qs('.wp-block-polylang-language-switcher select')) {
