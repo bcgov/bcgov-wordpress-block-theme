@@ -14,6 +14,7 @@
 
 	.has-modal-open {
 		position: fixed !important;
+		overflow-x: hidden !important;
 	}
 
 	nav {
