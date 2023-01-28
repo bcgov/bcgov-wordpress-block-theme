@@ -61,24 +61,25 @@ const domReady = () => {
 		 * Sets up an integrated menu item for the language switcher
 		 * when NOT using the "Displays as dropdown" (select-based) option
 		 */
+		let subMenuLanguageGroupLiClasses = '';
+		let subMenuLanguageOptionLiClasses = '';
+
 		if (
 			qs('.wp-block-polylang-language-switcher') &&
 			!qs('.wp-block-polylang-language-switcher select')
 		) {
-			const ul1 = qs('.wp-block-polylang-language-switcher');
-			const ul2 = qs('.wp-block-navigation__container');
+			const ulmainnav = qs('.wp-block-navigation__container');
 
-			if (ul2) {
-				ul2.classList.add('primary-menu-container');
+			if (ulmainnav) {
+				ulmainnav.classList.add('primary-menu-container');
+				ulmainnav.classList.add('ul-main-nav');
 			}
 
-			const submenuLis = qsa('li', ul2);
+			const submenuLis = qsa('li', ulmainnav);
 			const subSubmenuLis = qsa(
 				'.wp-block-navigation__submenu-container li',
-				ul2
+				ulmainnav
 			);
-			let subMenuLanguageGroupLiClasses = '';
-			let subMenuLanguageOptionLiClasses = '';
 
 			submenuLis.forEach((li) => {
 				if (
@@ -87,9 +88,11 @@ const domReady = () => {
 				) {
 					subMenuLanguageGroupLiClasses = li.classList
 						.toString()
-						.replace(/,/g, ' ');
+						.replace(/,/g, ' ')
+						.replace('current-menu-item', '');
 				}
 			});
+
 			subSubmenuLis.forEach((li) => {
 				if (
 					li.classList.contains('wp-block-navigation-item') &&
@@ -97,13 +100,20 @@ const domReady = () => {
 				) {
 					subMenuLanguageOptionLiClasses = li.classList
 						.toString()
-						.replace(/,/g, ' ');
+						.replace(/,/g, ' ')
+						.replace('current-menu-item', '');
 				}
 			});
 
-			const lis1 = qsa('.lang-item', ul1);
+			// Attempt to assign colours when there aren't any other sub-menus to draw from
+			if ('' === subMenuLanguageGroupLiClasses) {
+				subMenuLanguageGroupLiClasses = `${subMenuLanguageOptionLiClasses} has-text-color has-background-color has-background has-secondary-brand-background-color wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu`;
+			}
 
-			let currentUl = ul2;
+			let currentUl = ulmainnav;
+
+			const ulLangSwitch = qs('.wp-block-polylang-language-switcher');
+			const lis1 = qsa('.lang-item', ulLangSwitch);
 
 			lis1.forEach((li) => {
 				const a = qs('a', li);
@@ -185,7 +195,7 @@ const domReady = () => {
 					li2.insertBefore(button, a2.nextSibling);
 					const ul3 = createElement('ul', {
 						class:
-							'wp-block-navigation__submenu-container language_switcher_options',
+							'wp-block-navigation__submenu-container language_switcher_options ul3',
 					});
 					li2.appendChild(ul3);
 				}
@@ -217,6 +227,11 @@ const domReady = () => {
 		const lis2 = qsa('.language-option', ulPrimary);
 
 		lis2.forEach((li) => {
+			subMenuLanguageGroupLiClasses.split(' ').forEach((className) => {
+				if ('' !== className) {
+					li.classList.add(className);
+				}
+			});
 			ulLanguageOptions.appendChild(li);
 		});
 	}

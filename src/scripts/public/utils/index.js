@@ -5,26 +5,41 @@
 /**
  * addGlobalEventListener is a utility function that attaches an event listener to the given parent element and triggers the callback function only if the event target matches the given selector.
  *
- * @param {string} type - The type of event to listen for (e.g. 'click', 'mouseover')
- * @param {string} selector - The CSS selector to match against the event target
- * @param {Function} callback - The callback function to be called when the event occurs and the target matches the selector
- * @param {Object} [options] - Optional options object to pass to addEventListener
+ * @param {string} type - The type of event to listen for (e.g. 'click', 'pointerevent')
+ * @param {string|Element} selector - The selector to match against the event. Can be a CSS selector string or an Element.
+ * @param {Function} callback - The function to be called when the event is triggered
  * @param {Element} [parent=document] - The parent element to attach the event listener to (defaults to document)
  */
+
 export function addGlobalEventListener(
 	type,
 	selector,
 	callback,
-	options,
 	parent = document
 ) {
-	parent.addEventListener(
-		type,
-		(e) => {
-			if (e.target.matches(selector)) callback(e);
-		},
-		options
-	);
+	// check if the selector is valid
+	if (!selector || typeof selector !== 'string') {
+		throw new Error('Invalid selector: must be CSS selector or an element');
+	}
+
+	// check if the callback is a valid function
+	if (typeof callback !== 'function') {
+		throw new Error('Invalid callback provided');
+	}
+
+	parent.addEventListener(type, (event) => {
+		// use qsa to get all elements that match the selector
+		const elements = qsa(selector);
+
+		// check if the event target is one of the matching elements
+		const target = event.target;
+		if (
+			elements.includes(target) ||
+			elements.some((element) => element.contains(target))
+		) {
+			callback(event);
+		}
+	});
 }
 
 /**
@@ -41,9 +56,11 @@ export function createElement(type, options = {}) {
 	const element = document.createElement(type);
 	Object.entries(options).forEach(([key, value]) => {
 		if (key === 'class') {
-			value
-				.split(' ')
-				.forEach((className) => element.classList.add(className));
+			value.split(' ').forEach((className) => {
+				if ('' !== className) {
+					element.classList.add(className);
+				}
+			});
 			return;
 		}
 
@@ -72,6 +89,9 @@ export function createElement(type, options = {}) {
  * @return {Element} - The first element matching the selector, or null if no match is found
  */
 export function qs(selector, parent = document) {
+	if (!selector) {
+		throw new Error('A selector argument is required for the qs function');
+	}
 	return parent.querySelector(selector);
 }
 
@@ -83,6 +103,9 @@ export function qs(selector, parent = document) {
  * @return {Element[]} - An array of all elements matching the selector, or an empty array if no matches are found
  */
 export function qsa(selector, parent = document) {
+	if (!selector) {
+		throw new Error('A selector argument is required for the qsa function');
+	}
 	return [...parent.querySelectorAll(selector)];
 }
 

@@ -1,4 +1,4 @@
-import { addGlobalEventListener, createElement, qs, qsa } from './utils';
+import { createElement, qs, qsa } from './utils';
 
 /**
  * Print mode manipulation.
@@ -91,7 +91,8 @@ const domReady = () => {
 			}
 		}
 
-		addGlobalEventListener('change', printMediaQuery, handlePrintChange);
+		// Uses a matchMedia MediaQueryList so do not use addGlobalEventListener
+		printMediaQuery.addEventListener('change', handlePrintChange);
 
 		// Initial check
 		handlePrintChange(printMediaQuery);
