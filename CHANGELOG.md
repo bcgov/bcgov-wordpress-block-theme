@@ -3,6 +3,7 @@
 ## 1.0.7: January 27, 2023
 - Polylang integration into ribbon style menu. Includes utility function additions for querySelect [qs()], querySelectAll [qsa()] and createElement, with associated public facing side refactoring. Includes placeholder masking the language switcher in the Full Site Editor ribbon navigation. ([DESCW-841]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-841))
 - Modified langauge switcher to pull in main navigation styles. Removes arrow from langauge switcher when navigation option "show arrow" is not selected. ([DESCW-841]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-841))
+- Bug fix for polylang menu integration when no other sub menu items are available to lend classes to synthesised language menu. ([DESCW-841]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-841))
 
 ## 1.0.6: January 23, 2023
 - Editing padding, margins and gap now use the WordPress 6.1 spacingScale with responsive sizes. Spacing for scroll padding has been added to dynamically adjust based on header size. ([DESCW-840]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-840))
