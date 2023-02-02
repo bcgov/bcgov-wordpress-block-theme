@@ -497,35 +497,61 @@ class Setup {
 			'show_in_graphql'       => false,
 		];
 
-		$taxonomy_labels = array(
-			'name'              => _x( 'Pattern Groups', 'taxonomy general name' ),
-			'singular_name'     => _x( 'Pattern Group', 'taxonomy singular name' ),
-			'search_items'      => __( 'Search Pattern Groups' ),
-			'all_items'         => __( 'All Pattern Groups' ),
-			'parent_item'       => __( 'Parent Pattern Group' ),
-			'parent_item_colon' => __( 'Parent Pattern Group:' ),
-			'edit_item'         => __( 'Edit Pattern Group' ),
-			'update_item'       => __( 'Update Pattern Group' ),
-			'add_new_item'      => __( 'Add New Pattern Group' ),
-			'new_item_name'     => __( 'New Pattern Group Name' ),
-			'menu_name'         => __( 'Pattern Groups' ),
-		);
+		register_post_type( 'custom-pattern', $args );
 
         register_taxonomy(
             'pattern-groups',
-            [ 'custom-patterns' ],
+            [ 'custom-pattern' ],
             [
-				'hierarchical'      => true,
-				'labels'            => $taxonomy_labels,
-				'show_ui'           => true,
-				'show_in_rest'      => true,
-				'show_admin_column' => true,
-				'query_var'         => true,
-				'rewrite'           => array( 'slug' => 'pattern-group' ),
+				'hierarchical'      	=> true,
+				'labels'            	=> [
+					'name'              => _x( 'Pattern Groups', 'taxonomy general name' ),
+					'singular_name'     => _x( 'Pattern Group', 'taxonomy singular name' ),
+					'search_items'      => __( 'Search Pattern Groups' ),
+					'all_items'         => __( 'All Pattern Groups' ),
+					'parent_item'       => __( 'Parent Pattern Group' ),
+					'parent_item_colon' => __( 'Parent Pattern Group:' ),
+					'edit_item'         => __( 'Edit Pattern Group' ),
+					'update_item'       => __( 'Update Pattern Group' ),
+					'add_new_item'      => __( 'Add New Pattern Group' ),
+					'new_item_name'     => __( 'New Pattern Group Name' ),
+					'menu_name'         => __( 'Pattern Groups' ),
+				],
+				'show_ui'           	=> true,
+				'show_in_rest'      	=> true,
+				'show_admin_column' 	=> true,
+				'query_var'         	=> true,
+				'rewrite'           	=> [ 'slug' => 'pattern-group' ]
 			]
         );
 
-		register_post_type( 'custom-pattern', $args );
+		/**
+		 * Taxonomy: Related Search Terms.
+		 * Allows adding search keywords to patterns.
+		 */
+		 register_taxonomy( 
+			'pattern-keywords', 
+			[ 'custom-pattern' ], 
+			[
+			'hierarchical' 		=> false,
+			'labels' 			=> [
+				'name' 			=> _x( 'Related Search Terms', 'taxonomy general name' ),
+				'singular_name' => _x( 'Related Search Term', 'taxonomy singular name' ),
+				'search_items'  => __( 'Search Related Search Terms' ),
+				'all_items' 	=> __( 'All Related Search Terms' ),
+				'edit_item' 	=> __( 'Edit Related Search Term' ),
+				'view_item' 	=> __( 'View Related Search Term' ),
+				'update_item' 	=> __( 'Update Related Search Term name' ),
+				'add_new_item' 	=> __( 'Add Related Search Term' ),
+				'new_item_name' => __( 'New Related Term name' ),
+				'menu_name' 	=> __( 'Search Related Terms' ),
+			],
+			'show_ui'           => true,
+			'show_in_rest'      => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite' 			=> [ 'slug' => 'pattern-keyword' ]
+		]);
 	}
 }
 
