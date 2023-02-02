@@ -265,16 +265,16 @@ class Setup {
 	public function bcgov_block_theme_menu() {
 
 		add_theme_page(
-			esc_html__( 'Using BCGov Block Theme', 'bcgov-block-theme' ),
-			esc_html__( 'Using the BCGov Block Theme', 'bcgov-block-theme' ),
+			__( 'Using BCGov Block Theme', 'bcgov-block-theme' ),
+			__( 'Using the BCGov Block Theme', 'bcgov-block-theme' ),
 			'edit_theme_options',
 			'bcgov-block-theme-docs',
 			[ $this, 'bcgov_block_theme_documentation_display' ]
 		);
 
 		add_theme_page(
-			esc_html__( 'BCGov Block Theme Options', 'bcgov-block-theme' ),
-			esc_html__( 'Theme Options', 'bcgov-block-theme' ),
+			__( 'BCGov Block Theme Options', 'bcgov-block-theme' ),
+			__( 'Theme Options', 'bcgov-block-theme' ),
 			'edit_theme_options',
 			'bcgov-block-theme-options',
 			[ $this, 'bcgov_block_theme_options_display' ]
@@ -431,46 +431,46 @@ class Setup {
 		 */
 
 		$labels = [
-			'name'                     => esc_html__( 'Custom Patterns', 'bcgov-block-theme' ),
-			'singular_name'            => esc_html__( 'Custom Pattern', 'bcgov-block-theme' ),
-			'menu_name'                => esc_html__( 'Patterns', 'bcgov-block-theme' ),
-			'all_items'                => esc_html__( 'All Custom Patterns', 'bcgov-block-theme' ),
-			'add_new'                  => esc_html__( 'Add new', 'bcgov-block-theme' ),
-			'add_new_item'             => esc_html__( 'Add new Custom Pattern', 'bcgov-block-theme' ),
-			'edit_item'                => esc_html__( 'Edit Custom Pattern', 'bcgov-block-theme' ),
-			'new_item'                 => esc_html__( 'New Custom Pattern', 'bcgov-block-theme' ),
-			'view_item'                => esc_html__( 'View Custom Pattern', 'bcgov-block-theme' ),
-			'view_items'               => esc_html__( 'View Custom Patterns', 'bcgov-block-theme' ),
-			'search_items'             => esc_html__( 'Search Custom Patterns', 'bcgov-block-theme' ),
-			'not_found'                => esc_html__( 'No Custom Patterns found', 'bcgov-block-theme' ),
-			'not_found_in_trash'       => esc_html__( 'No Custom Patterns found in trash', 'bcgov-block-theme' ),
-			'parent'                   => esc_html__( 'Parent Custom Pattern:', 'bcgov-block-theme' ),
-			'featured_image'           => esc_html__( 'Featured image for this Custom Pattern', 'bcgov-block-theme' ),
-			'set_featured_image'       => esc_html__( 'Set featured image for this Custom Pattern', 'bcgov-block-theme' ),
-			'remove_featured_image'    => esc_html__( 'Remove featured image for this Custom Pattern', 'bcgov-block-theme' ),
-			'use_featured_image'       => esc_html__( 'Use as featured image for this Custom Pattern', 'bcgov-block-theme' ),
-			'archives'                 => esc_html__( 'Custom Pattern archives', 'bcgov-block-theme' ),
-			'insert_into_item'         => esc_html__( 'Insert into Custom Pattern', 'bcgov-block-theme' ),
-			'uploaded_to_this_item'    => esc_html__( 'Upload to this Custom Pattern', 'bcgov-block-theme' ),
-			'filter_items_list'        => esc_html__( 'Filter Custom Patterns list', 'bcgov-block-theme' ),
-			'items_list_navigation'    => esc_html__( 'Custom Patterns list navigation', 'bcgov-block-theme' ),
-			'items_list'               => esc_html__( 'Custom Patterns list', 'bcgov-block-theme' ),
-			'attributes'               => esc_html__( 'Custom Patterns attributes', 'bcgov-block-theme' ),
-			'name_admin_bar'           => esc_html__( 'Custom Pattern', 'bcgov-block-theme' ),
-			'item_published'           => esc_html__( 'Custom Pattern published', 'bcgov-block-theme' ),
-			'item_published_privately' => esc_html__( 'Custom Pattern published privately.', 'bcgov-block-theme' ),
-			'item_reverted_to_draft'   => esc_html__( 'Custom Pattern reverted to draft.', 'bcgov-block-theme' ),
-			'item_scheduled'           => esc_html__( 'Custom Pattern scheduled', 'bcgov-block-theme' ),
-			'item_updated'             => esc_html__( 'Custom Pattern updated.', 'bcgov-block-theme' ),
-			'parent_item_colon'        => esc_html__( 'Parent Custom Pattern:', 'bcgov-block-theme' ),
+			'name'                     => __( 'Custom Patterns', 'bcgov-block-theme' ),
+			'singular_name'            => __( 'Custom Pattern', 'bcgov-block-theme' ),
+			'menu_name'                => __( 'Patterns', 'bcgov-block-theme' ),
+			'all_items'                => __( 'All Custom Patterns', 'bcgov-block-theme' ),
+			'add_new'                  => __( 'Add new', 'bcgov-block-theme' ),
+			'add_new_item'             => __( 'Add new Custom Pattern', 'bcgov-block-theme' ),
+			'edit_item'                => __( 'Edit Custom Pattern', 'bcgov-block-theme' ),
+			'new_item'                 => __( 'New Custom Pattern', 'bcgov-block-theme' ),
+			'view_item'                => __( 'View Custom Pattern', 'bcgov-block-theme' ),
+			'view_items'               => __( 'View Custom Patterns', 'bcgov-block-theme' ),
+			'search_items'             => __( 'Search Custom Patterns', 'bcgov-block-theme' ),
+			'not_found'                => __( 'No Custom Patterns found', 'bcgov-block-theme' ),
+			'not_found_in_trash'       => __( 'No Custom Patterns found in trash', 'bcgov-block-theme' ),
+			'parent'                   => __( 'Parent Custom Pattern:', 'bcgov-block-theme' ),
+			'featured_image'           => __( 'Featured image for this Custom Pattern', 'bcgov-block-theme' ),
+			'set_featured_image'       => __( 'Set featured image for this Custom Pattern', 'bcgov-block-theme' ),
+			'remove_featured_image'    => __( 'Remove featured image for this Custom Pattern', 'bcgov-block-theme' ),
+			'use_featured_image'       => __( 'Use as featured image for this Custom Pattern', 'bcgov-block-theme' ),
+			'archives'                 => __( 'Custom Pattern archives', 'bcgov-block-theme' ),
+			'insert_into_item'         => __( 'Insert into Custom Pattern', 'bcgov-block-theme' ),
+			'uploaded_to_this_item'    => __( 'Upload to this Custom Pattern', 'bcgov-block-theme' ),
+			'filter_items_list'        => __( 'Filter Custom Patterns list', 'bcgov-block-theme' ),
+			'items_list_navigation'    => __( 'Custom Patterns list navigation', 'bcgov-block-theme' ),
+			'items_list'               => __( 'Custom Patterns list', 'bcgov-block-theme' ),
+			'attributes'               => __( 'Custom Patterns attributes', 'bcgov-block-theme' ),
+			'name_admin_bar'           => __( 'Custom Pattern', 'bcgov-block-theme' ),
+			'item_published'           => __( 'Custom Pattern published', 'bcgov-block-theme' ),
+			'item_published_privately' => __( 'Custom Pattern published privately.', 'bcgov-block-theme' ),
+			'item_reverted_to_draft'   => __( 'Custom Pattern reverted to draft.', 'bcgov-block-theme' ),
+			'item_scheduled'           => __( 'Custom Pattern scheduled', 'bcgov-block-theme' ),
+			'item_updated'             => __( 'Custom Pattern updated.', 'bcgov-block-theme' ),
+			'parent_item_colon'        => __( 'Parent Custom Pattern:', 'bcgov-block-theme' ),
 		];
 
 		$args = [
-			'label'                 => esc_html__( 'Custom Patterns', 'bcgov-block-theme' ),
+			'label'                 => __( 'Custom Patterns', 'bcgov-block-theme' ),
 			'labels'                => $labels,
 			'description'           => '',
 			'public'                => true,
-			'publicly_queryable'    => true,
+			'publicly_queryable'    => false,
 			'show_ui'               => true,
 			'show_in_rest'          => true,
 			'rest_base'             => '',
@@ -484,7 +484,7 @@ class Setup {
 			'capability_type'       => 'post',
 			'map_meta_cap'          => true,
 			'hierarchical'          => false,
-			'can_export'            => false,
+			'can_export'            => true,
 			'rewrite'               => [
 				'slug'       => 'custom-pattern',
 				'with_front' => true,
@@ -493,9 +493,37 @@ class Setup {
 			'menu_position'         => 20,
 			'menu_icon'             => 'dashicons-editor-kitchensink',
 			'supports'              => [ 'title', 'editor', 'revisions' ],
-			'taxonomies'            => [ 'category' ],
+			'taxonomies'            => [ 'pattern-groups' ],
 			'show_in_graphql'       => false,
 		];
+
+		$taxonomy_labels = array(
+			'name'              => _x( 'Pattern Groups', 'taxonomy general name' ),
+			'singular_name'     => _x( 'Pattern Group', 'taxonomy singular name' ),
+			'search_items'      => __( 'Search Pattern Groups' ),
+			'all_items'         => __( 'All Pattern Groups' ),
+			'parent_item'       => __( 'Parent Pattern Group' ),
+			'parent_item_colon' => __( 'Parent Pattern Group:' ),
+			'edit_item'         => __( 'Edit Pattern Group' ),
+			'update_item'       => __( 'Update Pattern Group' ),
+			'add_new_item'      => __( 'Add New Pattern Group' ),
+			'new_item_name'     => __( 'New Pattern Group Name' ),
+			'menu_name'         => __( 'Pattern Groups' ),
+		);
+
+        register_taxonomy(
+            'pattern-groups',
+            [ 'custom-patterns' ],
+            [
+				'hierarchical'      => true,
+				'labels'            => $taxonomy_labels,
+				'show_ui'           => true,
+				'show_in_rest'      => true,
+				'show_admin_column' => true,
+				'query_var'         => true,
+				'rewrite'           => array( 'slug' => 'pattern-group' ),
+			]
+        );
 
 		register_post_type( 'custom-pattern', $args );
 	}
