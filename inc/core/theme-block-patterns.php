@@ -197,37 +197,42 @@ function bcgov_blocks_theme_register_block_patterns() {
 
 		$query = new \WP_Query( $args );
 
+		if ( ! taxonomy_exists( 'pattern-groups' ) ) {
+			register_taxonomy( 'pattern-groups', 'custom-pattern', array( 'label' => 'Pattern Groups' ) );
+		}
+
 		while ( $query->have_posts() ) {
 			$query->the_post();
 
 			$title              = get_the_title();
-			$categories         = get_the_category();
+			$categories         = get_the_terms( get_the_ID(), 'pattern-groups' );
 			$content            = get_the_content();
 			$block_pattern_slug = get_post_field( 'post_name', get_post() );
 
 			if ( ! empty( $categories ) ) {
 				foreach ( $categories as $category ) {
-					if ( ! \WP_Block_Patterns_Registry::get_instance()->is_registered( 'bcgov_blocks_theme-' . $category->category_nicename ) ) {
+					if ( ! \WP_Block_Patterns_Registry::get_instance()->is_registered( 'bcgov_blocks_theme-' . $category->slug ) ) {
 						register_block_pattern_category(
-                            'bcgov_blocks_theme-' . $category->category_nicename,
-                            [
+							'bcgov_blocks_theme-' . $category->slug,
+							[
 								/* translators: %s: category label */
 								'label' => sprintf( __( 'Custom: %s', 'bcgov_blocks_theme' ), $category->name ),
 							]
-                        );
+						);
 					}
 					register_block_pattern(
 						'bcgov-wordpress-block-theme/' . $block_pattern_slug,
 						[
 							/* translators: %s: pattern title */
 							'title'      => sprintf( __( 'Custom: %s', 'bcgov_blocks_theme' ), $title ),
-							'categories' => [ 'bcgov_blocks_theme-' . $category->category_nicename ],
+							'categories' => [ 'bcgov_blocks_theme-' . $category->slug ],
 							'content'    => $content,
 						]
 					);
 				}
 			}
 		}
+
 		wp_reset_postdata();
 	}
 
