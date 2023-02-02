@@ -503,8 +503,8 @@ class Setup {
             'pattern-groups',
             [ 'custom-pattern' ],
             [
-				'hierarchical'      	=> true,
-				'labels'            	=> [
+				'hierarchical'      => true,
+				'labels'            => [
 					'name'              => _x( 'Pattern Groups', 'taxonomy general name' ),
 					'singular_name'     => _x( 'Pattern Group', 'taxonomy singular name' ),
 					'search_items'      => __( 'Search Pattern Groups' ),
@@ -517,11 +517,11 @@ class Setup {
 					'new_item_name'     => __( 'New Pattern Group Name' ),
 					'menu_name'         => __( 'Pattern Groups' ),
 				],
-				'show_ui'           	=> true,
-				'show_in_rest'      	=> true,
-				'show_admin_column' 	=> true,
-				'query_var'         	=> true,
-				'rewrite'           	=> [ 'slug' => 'pattern-group' ]
+				'show_ui'           => true,
+				'show_in_rest'      => true,
+				'show_admin_column' => true,
+				'query_var'         => true,
+				'rewrite'           => [ 'slug' => 'pattern-group' ],
 			]
         );
 
@@ -529,29 +529,30 @@ class Setup {
 		 * Taxonomy: Related Search Terms.
 		 * Allows adding search keywords to patterns.
 		 */
-		 register_taxonomy( 
-			'pattern-keywords', 
-			[ 'custom-pattern' ], 
+        register_taxonomy(
+			'pattern-keywords',
+			[ 'custom-pattern' ],
 			[
-			'hierarchical' 		=> false,
-			'labels' 			=> [
-				'name' 			=> _x( 'Related Search Terms', 'taxonomy general name' ),
-				'singular_name' => _x( 'Related Search Term', 'taxonomy singular name' ),
-				'search_items'  => __( 'Search Related Search Terms' ),
-				'all_items' 	=> __( 'All Related Search Terms' ),
-				'edit_item' 	=> __( 'Edit Related Search Term' ),
-				'view_item' 	=> __( 'View Related Search Term' ),
-				'update_item' 	=> __( 'Update Related Search Term name' ),
-				'add_new_item' 	=> __( 'Add Related Search Term' ),
-				'new_item_name' => __( 'New Related Term name' ),
-				'menu_name' 	=> __( 'Search Related Terms' ),
-			],
-			'show_ui'           => true,
-			'show_in_rest'      => true,
-			'show_admin_column' => true,
-			'query_var'         => true,
-			'rewrite' 			=> [ 'slug' => 'pattern-keyword' ]
-		]);
+				'hierarchical'      => false,
+				'labels'            => [
+					'name'          => _x( 'Related Search Terms', 'taxonomy general name' ),
+					'singular_name' => _x( 'Related Search Term', 'taxonomy singular name' ),
+					'search_items'  => __( 'Search Related Search Terms' ),
+					'all_items'     => __( 'All Related Search Terms' ),
+					'edit_item'     => __( 'Edit Related Search Term' ),
+					'view_item'     => __( 'View Related Search Term' ),
+					'update_item'   => __( 'Update Related Search Term name' ),
+					'add_new_item'  => __( 'Add Related Search Term' ),
+					'new_item_name' => __( 'New Related Term name' ),
+					'menu_name'     => __( 'Search Related Terms' ),
+				],
+				'show_ui'           => true,
+				'show_in_rest'      => true,
+				'show_admin_column' => true,
+				'query_var'         => true,
+				'rewrite'           => [ 'slug' => 'pattern-keyword' ],
+			]
+        );
 	}
 }
 
