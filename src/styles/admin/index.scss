@@ -166,6 +166,13 @@ html :where(.editor-styles-wrapper) {
 
 :root .editor-styles-wrapper {
 
+	.edit-post-visual-editor {
+
+		&__post-title-wrapper > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+			max-width: 1440px !important;
+		}
+	}
+
 	.is-style-ribbon-menu {
 
 		.wp-block-polylang-language-switcher {

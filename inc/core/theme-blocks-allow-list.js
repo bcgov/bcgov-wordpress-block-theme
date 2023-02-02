@@ -25,7 +25,7 @@ wp.domReady(function () {
 			if (block.name === 'core/embed') {
 				block.variations.forEach(variant => {
 					// Allow Youtube.
-					if ('youtube' !== variant.name && 'vimeo' !== variant.name) {
+					if ('youtube' !== variant.name && 'vimeo' !== variant.name  && 'twitter' !== variant.name) {
 						wp.blocks.unregisterBlockVariation(block.name, variant.name);
 					}
 				});
@@ -57,7 +57,7 @@ wp.domReady(function () {
 
 			if (block.name === 'core/embed') {
 				block.variations.forEach(variant => {
-					if ('youtube' !== variant.name && 'vimeo' !== variant.name) {
+					if ('youtube' !== variant.name && 'vimeo' !== variant.name && 'twitter' !== variant.name) {
 						wp.blocks.unregisterBlockVariation(block.name, variant.name);
 					}
 				});
