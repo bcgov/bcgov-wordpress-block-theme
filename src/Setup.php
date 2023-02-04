@@ -27,6 +27,7 @@ class Setup {
      */
     private function hook() {
 		add_action( 'admin_init', [ $this, 'bcgov_block_theme_custom_settings' ] );
+		add_action( 'admin_init', [ $this, 'bcgov_block_theme_notification_banner_settings' ] );
 		add_action( 'init', [ $this, 'bcgov_block_theme_register_custom_pattern' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_admin_scripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_scripts' ] );
@@ -97,12 +98,23 @@ class Setup {
     public function set_javascript_variables() {
 
 		$javascript_variables = [
-			'domain'          => home_url(),
-			'siteName'        => esc_attr( get_option( 'active_site_pattern_styles' ) ),
-			'templateDir'     => get_template_directory_uri(),
-			'headerEffect'    => esc_attr( get_option( 'header_effect' ) ),
-			'allSiteStyles'   => esc_attr( get_option( 'enable_all_styles' ) ),
-			'customBodyClass' => esc_attr( get_option( 'custom_body_class' ) ),
+			'domain'                     => home_url(),
+			'siteName'                   => esc_attr( get_option( 'active_site_pattern_styles' ) ),
+			'templateDir'                => get_template_directory_uri(),
+			'headerEffect'               => esc_attr( get_option( 'header_effect' ) ),
+			'allSiteStyles'              => esc_attr( get_option( 'enable_all_styles' ) ),
+			'customBodyClass'            => esc_attr( get_option( 'custom_body_class' ) ),
+			'notice_enabled'             => esc_attr( get_option( 'notice_enabled' ) ),
+			'notice_homepage_only'       => esc_attr( get_option( 'notice_homepage_only' ) ),
+			'notice_label_bold'          => esc_attr( get_option( 'notice_label_bold' ) ),
+			'notice_label_big'           => esc_attr( get_option( 'notice_label_big' ) ),
+			'notice_status'              => esc_attr( get_option( 'notice_status' ) ),
+			'notice_content'             => esc_attr( get_option( 'notice_content' ) ),
+			'notice_button_label'        => esc_attr( get_option( 'notice_button_label' ) ),
+			'notice_button_enabled'      => esc_attr( get_option( 'notice_button_enabled' ) ),
+			'notice_button_aria_label'   => esc_attr( get_option( 'notice_button_aria_label' ) ),
+			'notice_button_link'         => esc_attr( get_option( 'notice_button_link' ) ),
+			'notice_button_utm_campaign' => esc_attr( get_option( 'notice_button_utm_campaign' ) ),
 		];
 
 		return $javascript_variables;
@@ -280,6 +292,14 @@ class Setup {
 			[ $this, 'bcgov_block_theme_options_display' ]
 		);
 
+		add_theme_page(
+			__( 'BCGov Block Notifications Banner', 'bcgov-block-theme' ),
+			__( 'Notifications Banner', 'bcgov-block-theme' ),
+			'edit_theme_options',
+			'bcgov-block-theme-notification-banner',
+			[ $this, 'bcgov_block_theme_notification_banner_display' ]
+		);
+
 	}
 
 	/**
@@ -316,6 +336,25 @@ class Setup {
 		}
 
 		require_once get_template_directory() . '/inc/core/templates/theme-options-page.php';
+
+	}
+
+	/**
+	 * Display BCGov Block Theme Notification Banner settings page.
+	 *
+	 * @since 1.0.8
+	 *
+	 * @return void
+	 */
+	public function bcgov_block_theme_notification_banner_display() {
+
+		$theme = wp_get_theme();
+
+		if ( is_child_theme() ) {
+			$theme = wp_get_theme()->parent();
+		}
+
+		require_once get_template_directory() . '/inc/core/templates/theme-notification-banner.php';
 
 	}
 
@@ -361,6 +400,29 @@ class Setup {
 		if ( ! get_option( 'custom_body_class' ) ) {
 			update_option( 'custom_body_class', 'default' );
 		}
+
+	}
+
+	/**
+	 * Register Notification Banner settings.
+	 *
+	 * @since 1.0.8
+	 *
+	 * @return void
+	 */
+	public function bcgov_block_theme_notification_banner_settings() {
+
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_enabled' );
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_homepage_only' );
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_label_bold' );
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_label_big' );
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_status' );
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_content' );
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_button_label' );
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_button_enabled' );
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_button_aria_label' );
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_button_link' );
+		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_button_utm_campaign' );
 
 	}
 

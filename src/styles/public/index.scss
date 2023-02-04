@@ -7,16 +7,16 @@
 @import "./sites/cleanbc/variables";
 
 // Base Public Styles
-@import "./header";
+@import "./blocks";
 @import "./footer";
+@import "./general";
+@import "./header";
 @import "./navigation-general";
 @import "./navigation-language-switcher";
 @import "./navigation-ribbon";
 @import "./navigation-takeover";
-@import "./general";
-@import "./blocks";
 @import "./patterns";
-
+@import "./notification-banner";
 // Specific Block Styles
 @import "./blocks/_block-card-breaks";
 @import "../../scripts/admin/blocks/collapse/container";
