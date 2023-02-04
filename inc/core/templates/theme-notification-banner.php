@@ -275,12 +275,9 @@ endif;
 								<label for="notice_button_label">Button Label</label>
 							</div>
 							<div class="input">
-								<div class="input-wrap"><input type="text" id="notice_button_label" name="notice_button_label" value="
-                                <?php
-                                if ( ! empty( $notice_button_label ) ) { echo esc_attr( $notice_button_label );
-								} else { echo 'Learn more'; }
-								?>
-                                " maxlength="32"></div>
+								<div class="input-wrap"><input type="text" id="notice_button_label" name="notice_button_label"
+								required
+								value="<?php if ( ! empty( $notice_button_label ) ) { echo esc_attr( $notice_button_label ); } ?>" maxlength="32"></div>
 							</div>
 						</div>
 						<div class="field half">

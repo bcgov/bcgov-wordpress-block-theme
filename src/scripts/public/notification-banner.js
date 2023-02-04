@@ -9,19 +9,18 @@ const domReady = () => {
 	 */
 	setTimeout(function() {
 		const body = qs('body');
-		let notificationsEnabled = window.site.notice_enabled;
-		const notificationsHomepageOnly = window.site.notice_homepage_only;
-		const notificationsLabelBold = window.site.notice_label_bold;
-		const notificationsLabelBig = window.site.notice_label_big;
-		const notificationsStatus = window.site.notice_status;
-		const notificationsContent = window.site.notice_content;
-		const notificationsButtonLabel = window.site.notice_button_label;
-		const notificationsButtonEnabled = window.site.notice_button_enabled;
-		const notificationsButtonAriaLabel =
-			window.site.notice_button_aria_label;
-		const notificationsButtonLink = window.site.notice_button_link;
+		let notificationsEnabled = window.site.noticeEnabled;
+		const notificationsHomepageOnly = window.site.noticeHomepageOnly;
+		const notificationsLabelBold = window.site.noticeLabelBold;
+		const notificationsLabelBig = window.site.noticeLabelBig;
+		const notificationsStatus = window.site.noticeStatus;
+		const notificationsContent = window.site.noticeContent;
+		const notificationsButtonLabel = window.site.noticeButtonLabel;
+		const notificationsButtonEnabled = window.site.noticeButtonEnabled;
+		const notificationsButtonAriaLabel = window.site.noticeButtonAriaLabel;
+		const notificationsButtonLink = window.site.noticeButtonLink;
 		const notificationsButtonUtmCampaign =
-			window.site.notice_button_utm_campaign;
+			window.site.noticeButtonUtmCampaign;
 
 		if (
 			notificationsEnabled &&
