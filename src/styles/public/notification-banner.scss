@@ -1,0 +1,271 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable font-weight-notation */
+
+/*
+ * Notification Banner admin page styles.
+ */
+
+.bcgov-block-theme-body.pb-0 {
+	padding-bottom: 10px;
+
+	#setting-error-settings {
+
+		&_updated {
+			display: block;
+
+			button {
+				min-width: revert;
+			}
+		}
+	}
+
+}
+
+.bcgov-block-theme-grid-content {
+
+	.flex-right {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+
+.field-grid {
+
+	border: 0.5px solid $noticeLightestGray;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1.5fr 1fr;
+	gap: 0;
+
+
+	.field {
+		border: 0.5px solid $noticeLightestGray;
+		padding: 1rem;
+
+		&:first-of-type {
+			border: 1px solid $sushigreen;
+			color: $noticeDarkGreen;
+			background-color: $noticeLightestGray;
+		}
+
+		&.full {
+			grid-column: 1 / -1;
+		}
+
+		&.third {
+			grid-column: 1 / -2;
+		}
+
+		&.half {
+			grid-column: -3 / -1;
+		}
+
+		input[type="text"],
+		input[type="url"] {
+			width: 100%;
+		}
+
+		select {
+			min-width: 90%;
+		}
+	}
+
+	label {
+		display: inline-block;
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+
+		span {
+			font-weight: 400;
+		}
+	}
+
+}
+
+body.wp-admin .notice {
+	width: calc(100% - 4rem);
+
+	.inner-container {
+		grid-template-columns: 6fr 1fr;
+	}
+}
+
+/*
+ * Notification Banner Styles.
+ */
+
+.notice {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	margin: auto;
+	padding: 1rem;
+	text-align: left;
+
+	@media (min-width: $breakpoint-sm) {
+		padding: 1rem 2rem;
+		grid-auto-flow: column;
+	}
+
+	.inner-container {
+		display: grid;
+		max-width: 1440px;
+		grid-auto-flow: row;
+		gap: 2rem;
+		justify-content: center;
+
+		@media (min-width: $breakpoint-sm) {
+			grid-auto-flow: column;
+			width: fit-content;
+		}
+	}
+
+	p {
+		justify-self: end;
+		margin: 0.5rem 0;
+
+		&.bold {
+			font-weight: 700;
+		}
+
+		&.big {
+			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.25rem);
+		}
+	}
+
+	button {
+		border: none;
+		border-radius: 3px;
+		cursor: pointer;
+		display: grid;
+		justify-self: end;
+		align-self: center;
+		padding: 0.5rem 1rem;
+		max-width: 16ch;
+		min-width: 12ch;
+		font-weight: 400;
+		margin: 0 1rem 2rem;
+
+		&.bold {
+			font-weight: 700;
+		}
+
+		&.big {
+			font-size: clamp(0.75rem, 0.25rem + 3.3333vw, 1rem);
+		}
+
+		@media (min-width: $breakpoint-sm) {
+			margin: 0;
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&:focus {
+			opacity: 0.9;
+		}
+	}
+
+	div {
+		display: grid;
+		justify-self: end;
+	}
+}
+
+.notice-default {
+	background-color: $bahamablue;
+
+	p {
+		color: $white;
+	}
+
+	button {
+		background-color: $prussianblue;
+		color: $white;
+	}
+}
+
+.notice-green,
+.bcgov-block-theme-page-header .pill.enabled {
+	background-color: $noticeGreenCyan;
+
+	p {
+		color: $noticeDarkGreenText;
+	}
+
+	button {
+		background-color: $noticeDarkGreen;
+		color: $white;
+	}
+}
+
+.notice-white {
+	background-color: $white;
+	border-bottom: 1px solid $noticeLightGray;
+
+	p {
+		color: $prussianblue;
+	}
+
+	button {
+		background-color: $prussianblue;
+		color: $white;
+	}
+}
+
+.notice-black {
+	background-color: $black;
+
+	p {
+		color: $white;
+	}
+
+	button {
+		background-color: $noticeLightGray;
+		color: $prussianblue;
+	}
+}
+
+.notice-yellow,
+.bcgov-block-theme-page-header .pill.disabled {
+	background-color: $noticeAmber;
+
+	p {
+		color: $prussianblue;
+	}
+
+	button {
+		background-color: $prussianblue;
+		color: $white;
+	}
+}
+
+.notice-orange {
+	background-color: $noticeOrange;
+
+	p {
+		color: $white;
+	}
+
+	button {
+		background-color: $white;
+		color: $noticeOrange;
+	}
+}
+
+.notice-red {
+	background-color: $noticeRed;
+
+	p {
+		color: $white;
+	}
+
+	button {
+		background-color: $white;
+		color: $noticeDarkRedText;
+	}
+}
+

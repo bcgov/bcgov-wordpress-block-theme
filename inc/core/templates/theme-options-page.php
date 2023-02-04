@@ -225,7 +225,7 @@ $custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom
 
 				<div class="bcgov-block-theme-grid-sidebar-widget-area">
 
-				<div class="bcgov-block-theme-widget">
+					<div class="bcgov-block-theme-widget">
 							<h2 class="bcgov-block-theme-widget-title">On this page</h2>
 							<ul class="bcgov-block-theme-useful-links">
 							<li>
@@ -246,6 +246,14 @@ $custom_csp_framesrc        = remove_csp_keywords( esc_attr( get_option( 'custom
 								</li>
 								<li>
 									<a href="#csp">Content Security Policy (CSP)</a>
+								</li>
+							</ul>
+						</div>
+						<div class="bcgov-block-theme-widget">
+							<h2 class="bcgov-block-theme-widget-title">Other Tools</h2>
+								<ul class="bcgov-block-theme-useful-links">
+								<li>
+									<a href="themes.php?page=bcgov-block-theme-notification-banner">Admin Notifications Banner</a>
 								</li>
 							</ul>
 						</div>

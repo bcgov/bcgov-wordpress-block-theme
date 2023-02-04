@@ -3,6 +3,7 @@ import '../../../assets/images/bc_gov_logo_transparent.png';
 
 import './dom-loader';
 import './accessibility';
+import './notification-banner';
 import './print';
 
 import './takeover-navigation';
