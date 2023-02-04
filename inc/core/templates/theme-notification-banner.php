@@ -69,7 +69,7 @@ $notice_button_utm_campaign = esc_attr( get_option( 'notice_button_utm_campaign'
 
 				<div class="bcgov-block-theme-body pb-0">
 
-					<h1 class="bcgov-block-theme-title" style="margin-bottom: 1rem;">Theme Options and Site Specific Settings</h1>
+					<h1 class="bcgov-block-theme-title" style="margin-bottom: 1rem;">Notification Banner Settings</h1>
 
 					<?php if ( $notice_enabled ) : ?>
 						<div class="notice <?php echo esc_html( $notice_status ); ?>" role="status">
