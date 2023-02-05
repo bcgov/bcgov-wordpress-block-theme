@@ -27,7 +27,6 @@ class Setup {
      */
     private function hook() {
 		add_action( 'admin_init', [ $this, 'bcgov_block_theme_custom_settings' ] );
-		add_action( 'admin_init', [ $this, 'bcgov_block_theme_notification_banner_settings' ] );
 		add_action( 'init', [ $this, 'bcgov_block_theme_register_custom_pattern' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_admin_scripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'bcgov_block_theme_enqueue_scripts' ] );
@@ -368,18 +367,42 @@ class Setup {
 	 */
 	public function bcgov_block_theme_custom_settings() {
 
-		register_setting( 'bcgov-block-theme-settings-group', 'active_site_pattern_styles' );
-		register_setting( 'bcgov-block-theme-settings-group', 'header_effect' );
-		register_setting( 'bcgov-block-theme-settings-group', 'enable_all_styles' );
-		register_setting( 'bcgov-block-theme-settings-group', 'custom_body_class' );
-		register_setting( 'bcgov-block-theme-settings-group', 'custom_csp_defaultsrc' );
-		register_setting( 'bcgov-block-theme-settings-group', 'custom_csp_scriptsrc' );
-		register_setting( 'bcgov-block-theme-settings-group', 'custom_csp_stylesrc' );
-		register_setting( 'bcgov-block-theme-settings-group', 'custom_csp_connectsrc' );
-		register_setting( 'bcgov-block-theme-settings-group', 'custom_csp_fontsrc' );
-		register_setting( 'bcgov-block-theme-settings-group', 'custom_csp_imgsrc' );
-		register_setting( 'bcgov-block-theme-settings-group', 'custom_csp_mediasrc' );
-		register_setting( 'bcgov-block-theme-settings-group', 'custom_csp_framesrc' );
+		// Editable CSP Settings.
+		$this->bcgov_block_theme_setting_to_register(
+            'bcgov-block-theme-settings-group',
+            [
+				'active_site_pattern_styles',
+				'header_effect',
+				'enable_all_styles',
+				'custom_body_class',
+				'custom_csp_defaultsrc',
+				'custom_csp_scriptsrc',
+				'custom_csp_stylesrc',
+				'custom_csp_connectsrc',
+				'custom_csp_fontsrc',
+				'custom_csp_imgsrc',
+				'custom_csp_mediasrc',
+				'custom_csp_framesrc',
+			]
+        );
+
+		// Notifications Banner Settings.
+		$this->bcgov_block_theme_setting_to_register(
+            'bcgov-block-theme-notification-banner-group',
+            [
+				'notice_enabled',
+				'notice_homepage_only',
+				'notice_label_bold',
+				'notice_label_big',
+				'notice_status',
+				'notice_content',
+				'notice_button_label',
+				'notice_button_enabled',
+				'notice_button_aria_label',
+				'notice_button_link',
+				'notice_button_utm_campaign',
+			]
+        );
 
 		/*
 		* Initial settings to maintain configuration of CleanBC in production
@@ -404,26 +427,23 @@ class Setup {
 	}
 
 	/**
-	 * Register Notification Banner settings.
+	 * Registers settings for Theme and Site Settings
 	 *
 	 * @since 1.0.8
 	 *
+	 * @param string $group    The group name for the settings.
+	 * @param array  $settings The settings to be registered.
+	 *
 	 * @return void
 	 */
-	public function bcgov_block_theme_notification_banner_settings() {
+	public function bcgov_block_theme_setting_to_register( $group, $settings ) {
 
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_enabled' );
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_homepage_only' );
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_label_bold' );
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_label_big' );
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_status' );
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_content' );
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_button_label' );
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_button_enabled' );
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_button_aria_label' );
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_button_link' );
-		register_setting( 'bcgov-block-theme-notification-banner-group', 'notice_button_utm_campaign' );
+		if ( function_exists( 'register_setting' ) ) {
 
+			foreach ( $settings as $setting ) {
+				register_setting( $group, $setting );
+			}
+		}
 	}
 
 	/**
