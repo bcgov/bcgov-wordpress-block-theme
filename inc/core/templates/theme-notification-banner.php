@@ -83,14 +83,8 @@ endif;
 								?>
                                 "><?php echo esc_html( $notice_content ); ?></p>
 								<?php if ( $notice_button_enabled ) : ?>
-									<button class="
-                                    <?php
-                                    if ( $notice_label_bold ) : echo 'bold ';
-endif;
-									if ( $notice_label_big ) :  echo 'big';
-endif;
-									?>
-                                    "" onclick="location.href='<?php echo esc_html( $notice_button_link ); ?><?php if ( ! empty( $notice_button_utm_campaign ) ) { echo '?utm_campaign=' . esc_html( $notice_button_utm_campaign ); } ?>'" <?php if ( $notice_button_aria_label ) : ?> aria-label="<?php echo esc_html( $notice_button_aria_label ); ?>" <?php endif; ?>><?php echo esc_html( $notice_button_label ); ?></button>
+									<button class="<?php if ( $notice_label_bold ) { echo 'bold '; } ?><?php if ( $notice_label_big ) { echo 'big'; } ?>"
+                                    onclick="location.href='<?php echo esc_html( $notice_button_link ); ?><?php if ( ! empty( $notice_button_utm_campaign ) ) { echo '?utm_campaign=' . esc_html( $notice_button_utm_campaign ); } ?>'" <?php if ( $notice_button_aria_label ) : ?> aria-label="<?php echo esc_html( $notice_button_aria_label ); ?>" <?php endif; ?>><?php echo esc_html( $notice_button_label ); ?></button>
 								<?php endif; ?>
 							</div>
 						</div>
