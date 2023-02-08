@@ -2,6 +2,7 @@ import { qs, qsa } from './utils';
 
 /**
  * Takeover navigation manipulation.
+ * [@return](https://github.com/return) {void}
  */
 const domReady = () => {
 	/**

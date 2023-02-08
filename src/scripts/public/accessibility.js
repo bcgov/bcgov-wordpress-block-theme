@@ -2,6 +2,7 @@ import { qs, qsa } from './utils';
 
 /**
  * Accessibility DOM manipulation.
+ * [@return](https://github.com/return) {void}
  */
 const domReady = () => {
 	/*

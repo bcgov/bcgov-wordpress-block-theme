@@ -175,11 +175,21 @@ body.wp-admin .notice {
 	}
 }
 
+.notification-banner-info,
 .notice-default {
 	background-color: $bahamablue;
 
 	p {
 		color: $white;
+	}
+
+	a {
+		color: $white;
+
+		&:hover,
+		&:focus {
+			color: $noticeAmber;
+		}
 	}
 
 	button {
@@ -216,11 +226,21 @@ body.wp-admin .notice {
 	}
 }
 
+.notification-banner-black,
 .notice-black {
 	background-color: $black;
 
 	p {
 		color: $white;
+	}
+
+	a {
+		color: $white;
+
+		&:hover,
+		&:focus {
+			color: $noticeAmber;
+		}
 	}
 
 	button {
@@ -229,12 +249,22 @@ body.wp-admin .notice {
 	}
 }
 
+.notification-banner-notice,
 .notice-yellow,
 .bcgov-block-theme-page-header .pill.disabled {
 	background-color: $noticeAmber;
 
 	p {
 		color: $prussianblue;
+	}
+
+	a {
+		color: $prussianblue;
+
+		&:hover,
+		&:focus {
+			color: $noticeRed;
+		}
 	}
 
 	button {
@@ -256,11 +286,21 @@ body.wp-admin .notice {
 	}
 }
 
+.notification-banner-warning,
 .notice-red {
 	background-color: $noticeRed;
 
 	p {
 		color: $white;
+	}
+
+	a {
+		color: $white;
+
+		&:hover,
+		&:focus {
+			color: $noticeAmber;
+		}
 	}
 
 	button {

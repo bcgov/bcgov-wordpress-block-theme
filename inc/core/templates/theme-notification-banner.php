@@ -33,17 +33,7 @@ $notice_button_utm_campaign = esc_attr( get_option( 'notice_button_utm_campaign'
 <div class="bcgov-block-theme-page-header">
 	<div class="bcgov-block-theme-page-header__container">
 		<div class="bcgov-block-theme-page-header__branding">
-			<h2>Admin Notifications Banner  <span class="
-            <?php
-            if ( $notice_enabled ) {  echo 'enabled';
-			} else { echo 'disabled'; }
-			?>
-             pill">&nbsp;
- <?php
-	if ( $notice_enabled ) { echo 'enabled';
-	} else { echo 'disabled'; }
-	?>
-&nbsp;</span></h2>
+			<h2><?php esc_html_e( 'Admin Notifications Banner Settings', 'bcgov-block-theme' ); ?> <span class=" <?php echo $notice_enabled ? 'enabled' : 'disabled'; ?> pill">&nbsp;<?php echo $notice_enabled ? 'enabled' : 'disabled'; ?>&nbsp;</span></h2>
 		</div>
 		<div class="bcgov-block-theme-page-header__tagline">
 			<span class="bcgov-block-theme-page-header__tagline-text">
@@ -71,17 +61,14 @@ $notice_button_utm_campaign = esc_attr( get_option( 'notice_button_utm_campaign'
 
 					<h1 class="bcgov-block-theme-title" style="margin-bottom: 1rem;">Notification Banner Settings</h1>
 
-					<?php if ( $notice_enabled ) : ?>
+					<?php
+                    if ( $notice_enabled ) :
+						$notice_class  = $notice_label_bold ? 'bold ' : '';
+						$notice_class .= $notice_label_big ? 'big' : '';
+						?>
 						<div class="notice <?php echo esc_html( $notice_status ); ?>" role="status">
 							<div class="inner-container">
-								<p class="
-                                <?php
-                                if ( $notice_label_bold ) : echo 'bold ';
-endif;
-								if ( $notice_label_big ) :  echo 'big';
-endif;
-								?>
-                                "><?php echo esc_html( $notice_content ); ?></p>
+								<p class="<?php echo esc_attr( $notice_class ); ?>"><?php echo esc_html( $notice_content ); ?></p>
 								<?php if ( $notice_button_enabled ) : ?>
 									<button class="<?php if ( $notice_label_bold ) { echo 'bold '; } ?><?php if ( $notice_label_big ) { echo 'big'; } ?>"
                                     onclick="location.href='<?php echo esc_html( $notice_button_link ); ?><?php if ( ! empty( $notice_button_utm_campaign ) ) { echo '?utm_campaign=' . esc_html( $notice_button_utm_campaign ); } ?>'" <?php if ( $notice_button_aria_label ) : ?> aria-label="<?php echo esc_html( $notice_button_aria_label ); ?>" <?php endif; ?>><?php echo esc_html( $notice_button_label ); ?></button>
@@ -94,7 +81,7 @@ endif;
 				</div> <!-- /Getting started -->
 
 				<div class="bcgov-block-theme-grid-content card">
-					<h3 id="active-pattern">Notification Settings</h3>
+				<h3 id="active-pattern"><?php esc_html_e( 'Notification Settings', 'bcgov-block-theme' ); ?></h3>
 					
 					<div class="field-grid">
 						<div class="field">
@@ -107,12 +94,8 @@ endif;
 										<input 	type="checkbox" 
 												id="notice_enabled" 
 												name="notice_enabled" 
-												value="1" 
-												<?php
-                                                if ( $notice_enabled ) {
-													echo ' checked="checked"';
-												}
-                                                ?>
+												value="1"
+												<?php echo $notice_enabled ? 'checked="checked' : ''; ?>
 												/>
 										<span class="message">Enable / disable banner</span>
 									</label>
@@ -129,12 +112,8 @@ endif;
 											<input 	type="checkbox" 
 													id="notice_homepage_only" 				
 													name="notice_homepage_only" 
-													value="1" 
-													<?php
-                                                    if ( $notice_homepage_only ) {
-														echo ' checked="checked"';
-													}
-                                                    ?>
+													value="1"
+													<?php echo $notice_homepage_only ? 'checked="checked' : ''; ?>
 													/>
 											<span class="message">Show only on the homepage</span>
 									</label>
@@ -147,55 +126,19 @@ endif;
 							</div>
 							<div class="input">
 								<select id="notice_status" class="" name="notice_status">
-									<option value="notice-default" 
-									<?php
-									if ( 'notice-default' === $notice_status ) {
-											  echo ' selected';
-									}
-									?>
-                                            >Default (BCGov blue)</option>
-									<option value="notice-green" 
-									<?php
-									if ( 'notice-green' === $notice_status ) {
-											  echo ' selected';
-									}
-									?>
-                                            >Notice (green)</option>
-									<option value="notice-white" 
-									<?php
-									if ( 'notice-white' === $notice_status ) {
-											  echo ' selected';
-									}
-									?>
-                                            >Minimalist (white)</option>
-									<option value="notice-black" 
-									<?php
-									if ( 'notice-black' === $notice_status ) {
-											  echo ' selected';
-									}
-									?>
-                                            >Cancelled (dark)</option>
-									<option value="notice-yellow" 
-									<?php
-									if ( 'notice-yellow' === $notice_status ) {
-											  echo ' selected';
-									}
-									?>
-                                            >Warning (yellow)</option>
-									<option value="notice-orange" 
-									<?php
-									if ( 'notice-orange' === $notice_status ) {
-											  echo ' selected';
-									}
-									?>
-                                            >Alert (orange)</option>
-									<option value="notice-red" 
-									<?php
-									if ( 'notice-red' === $notice_status ) {
-											  echo ' selected';
-									}
-									?>
-                                            >Emergency (red)</option>
+									<option <?php echo 'notice-default' === $notice_status ? 'selected' : ''; ?> 
+									value="notice-default" >Default (BCGov blue)</option>
+									<option <?php echo 'notice-green' === $notice_status ? 'selected' : ''; ?> 
+									value="notice-green">Notice (green)</option>
+									<option <?php echo 'notice-white' === $notice_status ? 'selected' : ''; ?> 
+									value="notice-white">Minimalist (white)</option>
+									<option <?php echo 'notice-black' === $notice_status ? 'selected' : ''; ?> 
+									value="notice-black">Cancelled (dark)</option>
+									<option <?php echo 'notice-yellow' === $notice_status ? 'selected' : ''; ?> 
+									value="notice-yellow">Warning (yellow)</option>
+									<option <?php echo 'notice-orange' === $notice_status ? 'selected' : ''; ?> 
+									value="notice-orange">Alert (orange)</option>
+									<option <?php echo 'notice-red' === $notice_status ? 'selected' : ''; ?> value="notice-red">Emergency (red)</option>
 								</select>
 								<p class="description">Choose a colour for the notice</p>
 							</div>
