@@ -2,6 +2,7 @@ import { createElement, qs, qsa } from './utils';
 
 /**
  * Print mode manipulation.
+ * [@return](https://github.com/return) {void}
  */
 const domReady = () => {
 	/*

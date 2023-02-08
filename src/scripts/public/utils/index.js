@@ -1,5 +1,7 @@
 /**
  * Utility functions for cleaner JavaScript.
+ *
+ * Unit tests for functional data manipulations and logical operations found in `Tests`.
  */
 
 /**
@@ -29,7 +31,7 @@ export function addGlobalEventListener(
 
 	parent.addEventListener(type, (event) => {
 		// use qsa to get all elements that match the selector
-		const elements = qsa(selector);
+		const elements = document.querySelectorAll(selector);
 
 		// check if the event target is one of the matching elements
 		const target = event.target;
@@ -76,6 +78,11 @@ export function createElement(type, options = {}) {
 			return;
 		}
 
+		if (key === 'html') {
+			element.innerHTML = value;
+			return;
+		}
+
 		element.setAttribute(key, value);
 	});
 	return element;
@@ -87,6 +94,7 @@ export function createElement(type, options = {}) {
  * @param {string} selector - The CSS selector to search for
  * @param {Element} [parent=document] - The parent element to search within (defaults to document)
  * @return {Element} - The first element matching the selector, or null if no match is found
+ * @throws {Error} If `selector` argument is missing
  */
 export function qs(selector, parent = document) {
 	if (!selector) {
@@ -101,6 +109,7 @@ export function qs(selector, parent = document) {
  * @param {string} selector - The CSS selector to search for
  * @param {Element} [parent=document] - The parent element to search within (defaults to document)
  * @return {Element[]} - An array of all elements matching the selector, or an empty array if no matches are found
+ * @throws {Error} If `selector` argument is missing
  */
 export function qsa(selector, parent = document) {
 	if (!selector) {
@@ -113,6 +122,7 @@ export function qsa(selector, parent = document) {
  * unEscapeCSS - replaces escape characters in a CSS string with their unescaped equivalents
  *
  * @param {string} cssStr – the CSS string to unescape containing CSS selectors and attributes
+ * @return {string} - An escaped CSS string
  */
 export function unEscapeCSS(cssStr) {
 	cssStr = cssStr.replace(/&gt;/g, '>');

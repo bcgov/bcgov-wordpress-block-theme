@@ -114,7 +114,17 @@ class Setup {
 			'noticeButtonAriaLabel'   => esc_attr( get_option( 'notice_button_aria_label' ) ),
 			'noticeButtonLink'        => esc_attr( get_option( 'notice_button_link' ) ),
 			'noticeButtonUtmCampaign' => esc_attr( get_option( 'notice_button_utm_campaign' ) ),
+			'networkBannerEnabledNet' => esc_attr( get_site_option( 'bcgov_notification_banner_enable_network' ) ),
+			'networkBannerType'       => esc_attr( get_site_option( 'bcgov_notification_banner_banner_type' ) ),
+			'networkBannerContent'    => esc_html( get_site_option( 'bcgov_notification_banner_banner_content' ) ),
+			'networkBannerUtm'        => esc_attr( get_site_option( 'bcgov_notification_banner_utm_campaign' ) ),
 		];
+
+		get_site_option( 'bcgov_notification_banner_enable_network' );
+		get_site_option( 'bcgov_notification_banner_enable_banner' );
+		get_site_option( 'bcgov_notification_banner_banner_type' );
+		get_site_option( 'bcgov_notification_banner_banner_content' );
+		get_site_option( 'bcgov_notification_banner_utm_campaign' );
 
 		return $javascript_variables;
 	}
@@ -341,7 +351,7 @@ class Setup {
 	/**
 	 * Display BCGov Block Theme Notification Banner settings page.
 	 *
-	 * @since 1.0.8
+	 * @since 1.1.0
 	 *
 	 * @return void
 	 */
@@ -429,14 +439,14 @@ class Setup {
 	/**
 	 * Registers settings for Theme and Site Settings
 	 *
-	 * @since 1.0.8
+	 * @since 1.1.0
 	 *
 	 * @param string $group    The group name for the settings.
 	 * @param array  $settings The settings to be registered.
 	 *
 	 * @return void
 	 */
-	public function bcgov_block_theme_setting_to_register( $group, $settings ) {
+	public function bcgov_block_theme_setting_to_register( $group, $settings ): void {
 
 		if ( function_exists( 'register_setting' ) ) {
 
@@ -502,7 +512,7 @@ class Setup {
 	/**
      * Registers a Custom Post Type for  "Custom Patterns".
      *
-     * @since 1.0.8
+     * @since 1.1.0
 	 *
 	 * @return void
      */

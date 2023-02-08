@@ -2,6 +2,7 @@ import { qs, unEscapeCSS } from './utils';
 
 /**
  * General Block Theme window event management and DOM manipulation.
+ * [@return](https://github.com/return) {void}
  */
 const domReady = () => {
 	/*

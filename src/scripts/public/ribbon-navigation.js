@@ -2,6 +2,7 @@ import { createElement, qs, qsa } from './utils';
 
 /**
  * Ribbon navigation manipulation.
+ * [@return](https://github.com/return) {void}
  */
 const domReady = () => {
 	if (qsa('.is-style-ribbon-menu').length) {
