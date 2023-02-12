@@ -22,9 +22,14 @@ if ( class_exists( 'Bcgov\\Theme\\Block\\Setup' ) ) {
     new Setup();
 }
 
+
 /**
- * Load core file.
+ * Constants to enable/disable specific site features.
  *
- * @since 1.0.0
+ * @since 1.0.3
  */
-require_once get_template_directory() . '/inc/core/theme-bootstrap.php';
+if ( 'cleanbc' === get_option( 'active_site_pattern_styles' ) ) {
+	define( __NAMESPACE__ . '\CLEANBC', true );
+} else {
+	define( __NAMESPACE__ . '\CLEANBC', false );
+}

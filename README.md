@@ -30,14 +30,14 @@ This adds some housekeeping for the theme developers, which include touchpoints 
 
 To turn off and on certain features, PHP constants are defined in the functions file. The following examples will use the CleanBC project constants which are defined as CleanBC.
 
-The CLEANBC constant is used in the following locations:
+The \Bcgov\Theme\Block\CLEANBC constant is used in the following locations:
 - Set in [Setup.php](src/Setup.php)
 - Used for allowing site specific patterns: inc/core/theme-block-patterns.php
 
 This can be done using the check:
 
 ```bash
-if ( CLEANBC ) {
+if ( \Bcgov\Theme\Block\CLEANBC ) {
 ```
 
 
@@ -66,7 +66,7 @@ Use the 'Custom Post Type UI' (CPT UI) in conjunction with the 'Advanced Custom 
 When registering new Block Paterns use the [SITE] constant check. Eg:
 
 ```bash
-if ( CLEANBC ) {
+if ( \Bcgov\Theme\Block\CLEANBC ) {
 ```
 
 Add any site specific patterns to the $block_patterns array. The reasoning for this using a pattern specific check is that while Custom Post Types, taxonomies, block filters and more may need to be suppressed for a site, the patterns developed for previous sites can be left available to site owners for use in page building and rapid prototyping layouts.
