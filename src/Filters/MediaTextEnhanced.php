@@ -10,24 +10,24 @@
 namespace Bcgov\Theme\Block\Filters;
 
 /**
- * This class enhances the Image block by adding title and print mode attributes.
- * It provides the add_image_attributes method which accepts the block's content and attributes
- * as input parameters, and returns a modified block content with added attributes.
- * If the block is not an Image block, the original block content is returned.
+ * This class enhances the Media-text block by adding title and print mode attributes.
+ * It provides the add_media_text_attributes method which accepts the block's content and
+ * attributes as input parameters, and returns a modified block content with added attributes.
+ * If the block is not an Media-text block, the original block content is returned.
  *
  * @since 1.1.1
  */
-class FilterImageEnhanced {
+class MediaTextEnhanced {
 	/**
-	 * Improve image block by adding additional attribtes: title and print mode.
-	 *
-	 * @param  string $block_content Block content to be rendered.
-	 * @param  array  $block         Block attributes.
-	 * @return string
-	 */
-	public function add_image_attributes( $block_content = '', $block = [] ) {
+     * Improve button block by adding additional attribtes: size class and tabindex.
+     *
+     * @param  string $block_content Block content to be rendered.
+     * @param  array  $block         Block attributes.
+     * @return string
+     */
+	public function add_media_text_attributes( $block_content = '', $block = [] ) {
 
-		if ( isset( $block['blockName'] ) && 'core/image' === $block['blockName'] ) {
+		if ( isset( $block['blockName'] ) && 'core/media-text' === $block['blockName'] ) {
 			$defaults = [
 				'title'      => 'none',
 				'printMode'  => false,

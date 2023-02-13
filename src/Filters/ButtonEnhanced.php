@@ -17,7 +17,7 @@ namespace Bcgov\Theme\Block\Filters;
  *
  * @since 1.1.1
  */
-class FilterButtonEnhanced {
+class ButtonEnhanced {
 
 	/**
 	 * Improve button block by adding additional attribtes: size class and tabindex.

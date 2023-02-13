@@ -9,7 +9,7 @@ namespace Bcgov\Theme\Block\Actions;
  *
  * @package Bcgov/Theme/Block
  */
-class BlockThemeSupports {
+class ThemeSupports {
 
 	/**
 	 * Constructs theme defaults and settings.

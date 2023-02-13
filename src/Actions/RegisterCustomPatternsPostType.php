@@ -7,7 +7,7 @@ namespace Bcgov\Theme\Block\Actions;
  *
  * @since 1.1.1
  */
-class BlockThemeRegisterCustomPatternsPostType {
+class RegisterCustomPatternsPostType {
 
 	/**
 	 * Constructs a custom patterns post type.

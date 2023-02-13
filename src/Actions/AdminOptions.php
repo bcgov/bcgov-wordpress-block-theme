@@ -9,7 +9,7 @@ namespace Bcgov\Theme\Block\Actions;
  *
  * @package Bcgov/Theme/Block
  */
-class BlockThemeAdminOptions {
+class AdminOptions {
 	/**
 	 * Register Custom Settings and populate with default values.
 	 *

@@ -9,7 +9,7 @@ namespace Bcgov\Theme\Block\Actions;
  *
  * @package Bcgov/Theme/Block
  */
-class BlockThemeEnqueueAndInject {
+class EnqueueAndInject {
 
 	/**
 	 * Enqueue scripts and styles for public website.
