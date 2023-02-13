@@ -12,7 +12,7 @@ namespace Bcgov\Theme\Block\Filters;
 /**
  * Adds additional attributes to the site logo block, specifically for print mode.
  */
-class FilterSiteLogoEnhanced {
+class SiteLogoEnhanced {
 	/**
 	 * Improve site logo block by adding additional attribtes: print mode.
 	 *

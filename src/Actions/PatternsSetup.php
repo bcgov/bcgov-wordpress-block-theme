@@ -9,7 +9,7 @@ namespace Bcgov\Theme\Block\Actions;
  *
  * @package Bcgov/Theme/Block
  */
-class BlockThemePatternsSetup {
+class PatternsSetup {
 
 	/**
 	 * BCGov Blocks Theme: Registers block patterns and categories.

@@ -11,7 +11,7 @@ use Bcgov\Theme\Block\Templates;
  *
  * @package Bcgov/Theme/Block
  */
-class BlockThemeAdminMenus {
+class AdminMenus {
 
 	/**
 	 * BCGov Blocks Theme: Add theme page to the admin menu.

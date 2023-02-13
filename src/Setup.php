@@ -25,19 +25,19 @@ class Setup {
 		$loader->register();
 
 		// Actions.
-		$theme_supports                 = new Actions\BlockThemeSupports();
-		$theme_admin_menus              = new Actions\BlockThemeAdminMenus();
-		$theme_admin_options            = new Actions\BlockThemeAdminOptions();
-		$theme_dependencies             = new Actions\BlockThemeDependencies();
-		$theme_register_custom_patterns = new Actions\BlockThemeRegisterCustomPatternsPostType();
-		$theme_enqueue_and_inject       = new Actions\BlockThemeEnqueueAndInject();
-		$theme_register_block_patterns  = new Actions\BlockThemePatternsSetup();
+		$theme_supports                 = new Actions\ThemeSupports();
+		$theme_admin_menus              = new Actions\AdminMenus();
+		$theme_admin_options            = new Actions\AdminOptions();
+		$theme_dependencies             = new Actions\Dependencies();
+		$theme_register_custom_patterns = new Actions\RegisterCustomPatternsPostType();
+		$theme_enqueue_and_inject       = new Actions\EnqueueAndInject();
+		$theme_register_block_patterns  = new Actions\PatternsSetup();
 
 		// Filters.
-		$filter_button_enhanced    = new Filters\FilterButtonEnhanced();
-		$filter_image_enhanced     = new Filters\FilterImageEnhanced();
-		$filter_mediatext_enhanced = new Filters\FilterMediaTextEnhanced();
-		$filter_sitelogo_enhanced  = new Filters\FilterSiteLogoEnhanced();
+		$filter_button_enhanced    = new Filters\ButtonEnhanced();
+		$filter_image_enhanced     = new Filters\ImageEnhanced();
+		$filter_mediatext_enhanced = new Filters\MediaTextEnhanced();
+		$filter_sitelogo_enhanced  = new Filters\SiteLogoEnhanced();
 
 		add_action( 'acf/init', [ $theme_admin_options, 'bcgov_block_theme_acf_init_block_types' ] );
 		add_action( 'admin_enqueue_scripts', [ $theme_enqueue_and_inject, 'bcgov_block_theme_enqueue_admin_scripts' ] );

@@ -7,7 +7,7 @@ namespace Bcgov\Theme\Block\Actions;
  *
  * @since 1.1.1
  */
-class BlockThemeDependencies {
+class Dependencies {
 
 	/**
 	 * Constructs and sets up theme dependencies.
