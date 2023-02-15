@@ -1,7 +1,10 @@
 # Changelog
 
+## 1.1.2: February 14, 2023
+- Added the ability to export Block Theme templates, teplate parts and global styles via the WordPress exporter tool. ([DESCW-912]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-912))
+
 ## 1.1.1: February 12, 2023
-- Restructured `src` and `inc/core` directories – to put more focus on the src directory. Moved away from functional structure to a class/loader system. Added an autoloader to the Setup and reworked the hooks system to utilise this approach through `src/Actions` and `src/Filters` class directories. Admin pages for options, notifications banner and documentation pages moved into `src/Templates`. ([DESCW-911]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-901))
+- Restructured `src` and `inc/core` directories – to put more focus on the src directory. Moved away from functional structure to a class/loader system. Added an autoloader to the Setup and reworked the hooks system to utilise this approach through `src/Actions` and `src/Filters` class directories. Admin pages for options, notifications banner and documentation pages moved into `src/Templates`. ([DESCW-911]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-911))
 
 ## 1.1.0: February 8, 2023
 - Adds a custom post type for "Custom Patterns" and register any categorised Custom Pattern post type as patterns within the pattern picker. ([DESCW-911]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-911))
