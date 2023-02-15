@@ -31,6 +31,7 @@ class Setup {
 		$theme_dependencies             = new Actions\Dependencies();
 		$theme_register_custom_patterns = new Actions\RegisterCustomPatternsPostType();
 		$theme_enqueue_and_inject       = new Actions\EnqueueAndInject();
+		$theme_exports                  = new Actions\ExportOptions();
 		$theme_register_block_patterns  = new Actions\PatternsSetup();
 
 		// Filters.
@@ -44,6 +45,7 @@ class Setup {
         add_action( 'admin_init', [ $theme_admin_options, 'bcgov_block_theme_custom_settings' ] );
 		add_action( 'admin_menu', [ $theme_admin_menus, 'bcgov_block_theme_menu' ] );
 		add_action( 'admin_notices', [ $theme_dependencies, 'bcgov_block_theme_dependencies' ] );
+		add_action( 'export_filters', [ $theme_exports, 'bcgov_block_theme_exports' ] );
 		add_action( 'after_setup_theme', [ $theme_supports, 'bcgov_block_theme' ] );
 		add_action( 'init', [ $theme_register_custom_patterns, 'bcgov_block_theme_register_custom_pattern' ] );
 		add_action( 'wp_enqueue_scripts', [ $theme_enqueue_and_inject, 'bcgov_block_theme_enqueue_scripts' ] );
