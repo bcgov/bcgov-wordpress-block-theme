@@ -66,30 +66,32 @@ const domReady = () => {
 		function handlePrintChange(e) {
 			const imagesToPrint = qsa('img');
 
-			if (e.matches) {
-				imagesToPrint.forEach((image) => {
-					const imageContainer = image.closest('figure');
-					if (true === image.hasAttribute('data-print-width')) {
-						if (null !== imageContainer) {
+			imagesToPrint.forEach((image) => {
+				const imageContainer = image.closest('figure');
+				if (true === image.hasAttribute('data-print-width')) {
+					if (e.matches) {
+						image.dataset.nonPrintStyle = image.getAttribute(
+							'style'
+						);
+					}
+					if (null !== imageContainer) {
+						if (e.matches) {
 							image.setAttribute(
 								'style',
 								'max-width: ' +
 									image.dataset.printWidth +
 									'% !important'
 							);
-						}
-					}
-				});
-			} else {
-				imagesToPrint.forEach((image) => {
-					const imageContainer = image.closest('figure');
-					if (true === image.hasAttribute('data-print-width')) {
-						if (null !== imageContainer) {
+						} else if (image.dataset.nonPrintStyle) {
 							image.removeAttribute('style');
+							image.setAttribute(
+								'style',
+								image.dataset.nonPrintStyle
+							);
 						}
 					}
-				});
-			}
+				}
+			});
 		}
 
 		// Uses a matchMedia MediaQueryList so do not use addGlobalEventListener
