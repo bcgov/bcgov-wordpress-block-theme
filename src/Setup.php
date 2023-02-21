@@ -33,6 +33,7 @@ class Setup {
 		$theme_enqueue_and_inject       = new Actions\EnqueueAndInject();
 		$theme_exports                  = new Actions\ExportOptions();
 		$theme_register_block_patterns  = new Actions\PatternsSetup();
+		$theme_page_custom_class        = new Actions\PageCustomClass();
 
 		// Filters.
 		$filter_button_enhanced    = new Filters\ButtonEnhanced();
@@ -52,6 +53,11 @@ class Setup {
 
 		add_action( 'init', [ $theme_register_block_patterns, 'bcgov_blocks_theme_register_block_patterns' ], 9 );
 
+		// Custom Page Class combined Action & Filter hooks into Actions Class.
+		add_action( 'add_meta_boxes', [ $theme_page_custom_class, 'custom_page_meta_boxes' ], 10, 2 );
+		add_action( 'save_post', [ $theme_page_custom_class, 'custom_save_page_meta' ] );
+		add_filter( 'body_class', [ $theme_page_custom_class, 'add_custom_class_to_body' ] );
+
 		add_filter( 'get_custom_logo', [ $theme_supports, 'bcgov_block_theme_custom_logo' ] );
 		add_filter( 'wp_headers', [ $theme_admin_options, 'bcgov_block_theme_wp_headers' ] );
 
@@ -61,5 +67,5 @@ class Setup {
 		add_filter( 'render_block', [ $filter_sitelogo_enhanced, 'add_site_logo_attributes' ], 10, 2 );
 
 		remove_theme_support( 'core-block-patterns' );
-    }
+	}
 }

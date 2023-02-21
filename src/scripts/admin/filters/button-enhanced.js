@@ -14,27 +14,16 @@ const { PanelBody, SelectControl, TextControl } = wp.components;
 /**
  * Add Size control to Button block.
  */
-registerBlockStyle('core/button', {
-	name: 'fill',
-	label: 'BCGov',
-	default: 'is-bcgov-fill',
-});
+const styles = [
+	{ name: 'fill', label: 'BCGov', default: 'is-bcgov-fill' },
+	{ name: 'outline', label: 'Outline' },
+	{ name: 'underline', label: 'Underline' },
+];
 
-registerBlockStyle('core/button', {
-	name: 'outline',
-	label: 'Outline',
-});
-
-registerBlockStyle('core/button', {
-	name: 'underline',
-	label: 'Underline',
-});
+styles.forEach((style) => registerBlockStyle('core/button', style));
 
 if ('cleanbc' === window.site.siteName || window.site.allSiteStyles.length) {
-	registerBlockStyle('core/button', {
-		name: 'icon',
-		label: 'Icon',
-	});
+	registerBlockStyle('core/button', { name: 'icon', label: 'Icon' });
 }
 
 wp.domReady(() => {
