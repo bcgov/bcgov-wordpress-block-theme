@@ -23,7 +23,7 @@ body:not(body.wp-admin):not(body.editor-styles-wrapper):not(body.error404) {
 
 	border-bottom: 3px solid var(--wp--preset--color--accent);
 	width: 100vw;
-	z-index: 999;
+	z-index: auto;
 	top: 0;
 
 	body.admin-bar & {

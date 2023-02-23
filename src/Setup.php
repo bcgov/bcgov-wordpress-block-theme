@@ -2,7 +2,7 @@
 
 namespace Bcgov\Theme\Block;
 
-require_once 'Loader.php';
+use Bcgov\Theme\Block\Loader;
 
 /**
  * Initialization and setup of theme utilising an auto-loader.
