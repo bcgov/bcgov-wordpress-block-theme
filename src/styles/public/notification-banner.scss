@@ -32,20 +32,20 @@
 
 .field-grid {
 
-	border: 0.5px solid $noticeLightestGray;
+	border: 0.5px solid $notificationLightestGray;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1.5fr 1fr;
 	gap: 0;
 
 
 	.field {
-		border: 0.5px solid $noticeLightestGray;
+		border: 0.5px solid $notificationLightestGray;
 		padding: 1rem;
 
 		&:first-of-type {
 			border: 1px solid $sushigreen;
-			color: $noticeDarkGreen;
-			background-color: $noticeLightestGray;
+			color: $notificationDarkGreen;
+			background-color: $notificationLightestGray;
 		}
 
 		&.full {
@@ -82,7 +82,7 @@
 
 }
 
-body.wp-admin .notice {
+body.wp-admin .notification {
 	width: calc(100% - 4rem);
 
 	.inner-container {
@@ -94,7 +94,7 @@ body.wp-admin .notice {
  * Notification Banner Styles.
  */
 
-.notice {
+.notification {
 	display: flex;
 	position: relative;
 	justify-content: center;
@@ -176,7 +176,7 @@ body.wp-admin .notice {
 }
 
 .notification-banner-info,
-.notice-default {
+.notification-default {
 	background-color: $bahamablue;
 
 	p {
@@ -188,7 +188,7 @@ body.wp-admin .notice {
 
 		&:hover,
 		&:focus {
-			color: $noticeAmber;
+			color: $notificationAmber;
 		}
 	}
 
@@ -198,23 +198,23 @@ body.wp-admin .notice {
 	}
 }
 
-.notice-green,
+.notification-green,
 .bcgov-block-theme-page-header .pill.enabled {
-	background-color: $noticeGreenCyan;
+	background-color: $notificationGreenCyan;
 
 	p {
-		color: $noticeDarkGreenText;
+		color: $notificationDarkGreenText;
 	}
 
 	button {
-		background-color: $noticeDarkGreen;
+		background-color: $notificationDarkGreen;
 		color: $white;
 	}
 }
 
-.notice-white {
+.notification-white {
 	background-color: $white;
-	border-bottom: 1px solid $noticeLightGray;
+	border-bottom: 1px solid $notificationLightGray;
 
 	p {
 		color: $prussianblue;
@@ -227,7 +227,7 @@ body.wp-admin .notice {
 }
 
 .notification-banner-black,
-.notice-black {
+.notification-black {
 	background-color: $black;
 
 	p {
@@ -239,20 +239,20 @@ body.wp-admin .notice {
 
 		&:hover,
 		&:focus {
-			color: $noticeAmber;
+			color: $notificationAmber;
 		}
 	}
 
 	button {
-		background-color: $noticeLightGray;
+		background-color: $notificationLightGray;
 		color: $prussianblue;
 	}
 }
 
-.notification-banner-notice,
-.notice-yellow,
+.notification-banner-notification,
+.notification-yellow,
 .bcgov-block-theme-page-header .pill.disabled {
-	background-color: $noticeAmber;
+	background-color: $notificationAmber;
 
 	p {
 		color: $prussianblue;
@@ -263,7 +263,7 @@ body.wp-admin .notice {
 
 		&:hover,
 		&:focus {
-			color: $noticeRed;
+			color: $notificationRed;
 		}
 	}
 
@@ -273,8 +273,8 @@ body.wp-admin .notice {
 	}
 }
 
-.notice-orange {
-	background-color: $noticeOrange;
+.notification-orange {
+	background-color: $notificationOrange;
 
 	p {
 		color: $white;
@@ -282,13 +282,13 @@ body.wp-admin .notice {
 
 	button {
 		background-color: $white;
-		color: $noticeOrange;
+		color: $notificationOrange;
 	}
 }
 
 .notification-banner-warning,
-.notice-red {
-	background-color: $noticeRed;
+.notification-red {
+	background-color: $notificationRed;
 
 	p {
 		color: $white;
@@ -299,13 +299,13 @@ body.wp-admin .notice {
 
 		&:hover,
 		&:focus {
-			color: $noticeAmber;
+			color: $notificationAmber;
 		}
 	}
 
 	button {
 		background-color: $white;
-		color: $noticeDarkRedText;
+		color: $notificationDarkRedText;
 	}
 }
 

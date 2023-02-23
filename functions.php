@@ -16,9 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct access denied.' );
 }
 
+require_once get_template_directory() . '/src/Loader.php';
 require_once get_template_directory() . '/src/Setup.php';
 
-if ( class_exists( 'Bcgov\\Theme\\Block\\Setup' ) ) {
+if ( class_exists( 'Bcgov\\Theme\\Block\\Loader' ) && class_exists( 'Bcgov\\Theme\\Block\\Setup' ) ) {
     new Setup();
 }
 
