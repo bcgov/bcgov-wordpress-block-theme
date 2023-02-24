@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.2: February 23, 2023
+## 1.1.2: February 24, 2023
 - Added the ability to export Block Theme templates, teplate parts and global styles via the WordPress exporter tool. ([DESCW-912]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-912))
 - Added print bug fix where updating styles for print were bleeding back into the DOM overriding WordPress image settings. Added the ability to set a page specific body class. ([DESCW-949]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-949))
 - Added Safari takeove menu layer order fix for Safari. Fixed naming collision inside Admin Notification banner with WordPress generic .notice class. Moved to use vs. require for Loader class in Setup.php. ([DESCW-949]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-949))
