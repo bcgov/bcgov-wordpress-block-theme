@@ -1116,6 +1116,12 @@ html body.wp-admin .editor-styles-wrapper {
 			box-shadow: 0 0 12px rgba($black, 33%);
 		}
 	}
+
+	&.is-style-abs-img {
+		overflow: visible;
+		pointer-events: none;
+		position: absolute;
+	}
 }
 
 /*

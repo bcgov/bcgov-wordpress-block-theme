@@ -4,6 +4,7 @@
 - Added the ability to export Block Theme templates, teplate parts and global styles via the WordPress exporter tool. ([DESCW-912]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-912))
 - Added print bug fix where updating styles for print were bleeding back into the DOM overriding WordPress image settings. Added the ability to set a page specific body class. ([DESCW-949]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-949))
 - Added Safari takeove menu layer order fix for Safari. Fixed naming collision inside Admin Notification banner with WordPress generic .notice class. Moved to use vs. require for Loader class in Setup.php. ([DESCW-949]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-949))
+- Enabled absolute positioning as a filter to core/image. Removed Gravity Forms block exclusion. ([DESCW-949]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-949))
 
 ## 1.1.1: February 12, 2023
 - Restructured `src` and `inc/core` directories – to put more focus on the src directory. Moved away from functional structure to a class/loader system. Added an autoloader to the Setup and reworked the hooks system to utilise this approach through `src/Actions` and `src/Filters` class directories. Admin pages for options, notifications banner and documentation pages moved into `src/Templates`. ([DESCW-911]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-911))
