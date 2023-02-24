@@ -28,8 +28,7 @@ wp.domReady(function() {
 					if (
 						'youtube' !== variant.name &&
 						'vimeo' !== variant.name &&
-						'twitter' !== variant.name &&
-						'gravity-forms' !== variant.name
+						'twitter' !== variant.name
 					) {
 						wp.blocks.unregisterBlockVariation(
 							block.name,
@@ -65,8 +64,7 @@ wp.domReady(function() {
 					if (
 						'youtube' !== variant.name &&
 						'vimeo' !== variant.name &&
-						'twitter' !== variant.name &&
-						'gravity-forms' !== variant.name
+						'twitter' !== variant.name
 					) {
 						wp.blocks.unregisterBlockVariation(
 							block.name,
