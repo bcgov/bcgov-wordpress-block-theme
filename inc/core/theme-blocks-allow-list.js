@@ -21,7 +21,6 @@ wp.domReady(function() {
 			if (block.category === 'design') return;
 
 			if (block.category === 'theme') return;
-
 			// Remove Variations of core/embed.
 			if (block.name === 'core/embed') {
 				block.variations.forEach((variant) => {
@@ -29,7 +28,8 @@ wp.domReady(function() {
 					if (
 						'youtube' !== variant.name &&
 						'vimeo' !== variant.name &&
-						'twitter' !== variant.name
+						'twitter' !== variant.name &&
+						'gravity-forms' !== variant.name
 					) {
 						wp.blocks.unregisterBlockVariation(
 							block.name,
@@ -42,7 +42,8 @@ wp.domReady(function() {
 
 			// Allow by Name.
 			if (block.name === 'aioseo/breadcrumbs') return;
-
+			if (block.name === 'gravityforms/form') return;
+			
 			// Unregister all other blocks.
 			wp.blocks.unregisterBlockType(block.name);
 		});
@@ -64,7 +65,8 @@ wp.domReady(function() {
 					if (
 						'youtube' !== variant.name &&
 						'vimeo' !== variant.name &&
-						'twitter' !== variant.name
+						'twitter' !== variant.name &&
+						'gravity-forms' !== variant.name
 					) {
 						wp.blocks.unregisterBlockVariation(
 							block.name,
@@ -74,6 +76,8 @@ wp.domReady(function() {
 				});
 				return;
 			}
+
+			if (block.name === 'gravityforms/form') return;
 
 			wp.blocks.unregisterBlockType(block.name);
 		});
