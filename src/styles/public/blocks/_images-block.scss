@@ -1,0 +1,21 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+
+/*
+ *  Images.
+ */
+.wp-block-image {
+
+	&.is-style-dropshadow {
+
+		img {
+			box-shadow: 0 0 12px rgba($black, 33%);
+		}
+	}
+
+	&.is-style-abs-img {
+		overflow: visible;
+		pointer-events: none;
+		position: absolute;
+	}
+}

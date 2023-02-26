@@ -1,0 +1,476 @@
+/* stylelint-disable no-descending-specificity */
+
+/*
+ * Block Styles.
+ */
+
+/*
+ * Editor Styles – use when editor specific style specificity is required.
+ */
+
+html body.wp-admin .editor-styles-wrapper {
+
+	.block-editor-block-list {
+
+		&__layout {
+
+			.is-style-icon {
+
+				a {
+					padding: 0 !important;
+				}
+
+				.wp-block-button {
+
+					&__link {
+						display: flex;
+
+						&::before {
+							content: "";
+							display: block;
+							margin-right: 1rem;
+							max-width: 24px;
+							max-height: 24px;
+							width: 100%;
+							height: 24px;
+							mask-size: cover;
+						}
+
+
+						&.has-primary-brand-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--primary-brand) !important;
+							}
+						}
+
+						&.has-secondary-brand-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--secondary-brand) !important;
+							}
+						}
+
+						&.has-accent-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--accent) !important;
+							}
+						}
+
+						&.has-headline-color-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--headline-color) !important;
+							}
+						}
+
+						&.has-text-color-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--text-color) !important;
+							}
+						}
+
+						&.has-transparent-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--transparent) !important;
+							}
+						}
+
+						&.has-tertiary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--tertiary) !important;
+							}
+						}
+
+						&.has-quarternary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--quarternary) !important;
+							}
+						}
+
+						&.has-quinary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--quinary) !important;
+							}
+						}
+
+						&.has-senary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--senary) !important;
+							}
+						}
+
+						&.has-septenary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--septenary) !important;
+							}
+						}
+
+						&.has-octonary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--octonary) !important;
+							}
+						}
+
+						&.has-nonary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--nonary) !important;
+							}
+						}
+
+						&.has-denary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--denary) !important;
+							}
+						}
+
+						&.has-ondenary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--ondenary) !important;
+							}
+						}
+
+						&.has-duodenary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--duodenary) !important;
+							}
+						}
+
+						&.has-tridenary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--tridenary) !important;
+							}
+						}
+
+						&.has-quadenary-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--quadenary) !important;
+							}
+						}
+
+						&.has-gray-80-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--gray-80) !important;
+							}
+						}
+
+						&.has-gray-60-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--gray-60) !important;
+							}
+						}
+
+						&.has-gray-40-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--gray-40) !important;
+							}
+						}
+
+						&.has-gray-05-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--gray-05) !important;
+							}
+						}
+
+						&.has-foreground-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--foreground) !important;
+							}
+						}
+
+						&.has-background-background-color {
+
+							&::before {
+								background-color: var(--wp--preset--color--background) !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.wp-block-button {
+
+		&__link {
+			background-color: var(--wp--preset--color--primary-brand);
+			border-radius: 0.33rem;
+			color: var(--wp--preset--color--white);
+
+			&:hover,
+			&:focus {
+				filter: contrast(150%);
+				outline: 2px solid var(--wp--preset--color--primary-brand);
+				outline-offset: 2px;
+			}
+		}
+
+		&.is-style-outline {
+
+			.wp-block-button {
+
+				&__link {
+					background-color: var(--wp--preset--color--white);
+					border-color: var(--wp--preset--color--primary-brand);
+					border-radius: 0.33rem;
+					color: var(--wp--preset--color--primary-brand);
+
+					&:hover,
+					&:focus {
+						filter: contrast(150%);
+						outline: 2px solid var(--wp--preset--color--primary-brand);
+						outline-offset: 2px;
+					}
+				}
+
+			}
+
+		}
+
+		&.is-style-underline {
+
+			.wp-block-button {
+
+				&__link {
+					background-color: var(--wp--preset--color--transparent);
+					border-color: currentcolor;
+					border-bottom: 2px solid;
+					border-radius: 0;
+					color: var(--wp--preset--color--primary-brand);
+					padding: calc(0.667em + 2px) 0 calc(0.33em + 2px);
+
+					&:hover,
+					&:focus {
+						filter: contrast(150%);
+						outline: 2px solid currentcolor;
+						outline-offset: 6px;
+					}
+				}
+
+			}
+
+		}
+
+		&.is-style-icon {
+
+			&.icon {
+
+				.wp-block-button {
+
+					&__link {
+						text-align: left;
+						padding: 0;
+
+						&::before {
+							content: "";
+							display: inline-block;
+							margin-right: 1rem;
+							max-width: 24px;
+							max-height: 24px;
+							width: 100%;
+							height: 24px;
+							mask-size: cover;
+							background-color: currentcolor;
+						}
+					}
+				}
+
+
+				&-default {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-default;
+							}
+						}
+					}
+				}
+
+				&-home {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-home;
+							}
+						}
+					}
+				}
+
+				&-auto {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-auto;
+							}
+						}
+					}
+				}
+
+				&-book {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-book;
+							}
+						}
+					}
+				}
+
+				&-calendar {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-calendar;
+							}
+						}
+					}
+				}
+
+				&-case {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-case;
+							}
+						}
+					}
+				}
+
+				&-changes {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-changes;
+							}
+						}
+					}
+				}
+
+				&-federal {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-federal;
+							}
+						}
+					}
+				}
+
+				&-gear {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-gear;
+							}
+						}
+					}
+				}
+
+				&-group {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-group;
+								max-width: 34px;
+								position: relative;
+								left: -4px;
+								margin-right: 6px;
+							}
+						}
+					}
+				}
+
+				&-leaf {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-leaf;
+							}
+						}
+					}
+				}
+
+				&-map {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-map;
+							}
+						}
+					}
+				}
+
+				&-tag {
+
+					.wp-block-button {
+
+						&__link {
+
+							&::before {
+								mask: $icon-tag;
+							}
+						}
+					}
+				}
+
+			}
+		}
+
+	}
+}

@@ -1,0 +1,47 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+
+/*
+ *  Media + Text Cards.
+ */
+.wp-block-media-text {
+
+	overflow: visible;
+
+	&.is-style-dropshadow {
+		box-shadow: 0 0 12px rgba($black, 33%);
+	}
+
+	&.is-style-square {
+
+		.wp-block-media-text {
+
+			&__media {
+				height: auto;
+				aspect-ratio: 1 / 1 !important;
+				margin-top: 3rem;
+
+				img {
+					aspect-ratio: 1 / 1;
+
+				}
+			}
+		}
+	}
+
+	&.is-style-no-clip {
+
+		.wp-block-media-text {
+
+			&__media {
+				height: auto !important;
+
+				img,
+				video {
+					height: auto !important;
+				}
+			}
+		}
+	}
+
+}
