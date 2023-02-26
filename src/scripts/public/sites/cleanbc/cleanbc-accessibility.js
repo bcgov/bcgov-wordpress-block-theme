@@ -1,3 +1,5 @@
+import { qs, qsa } from '../../utils';
+
 /**
  * Accessibility DOM manipulation.
  */
@@ -6,7 +8,7 @@ const domReady = () => {
 	 * SafarIE bug requires 0ms timeout.
 	 */
 	setTimeout(function() {
-		if (document.querySelector('.actions-accordion-header')) {
+		if (qs('.actions-accordion-header')) {
 			const getSiblings = function(elem) {
 				// Setup siblings array and get the first sibling
 				const siblings = [];
@@ -24,13 +26,13 @@ const domReady = () => {
 			/*
 			 * Inject ARIA labels into queried content.
 			 */
-			const labelEls = document.querySelectorAll('.labelInjector');
+			const labelEls = qsa('.labelInjector');
 			labelEls.forEach((label) => {
 				const siblings = getSiblings(label);
 				const ariaLabel = label.getAttribute('data-label');
 				siblings.forEach((el) => {
 					if (el.classList.contains('wp-block-buttons')) {
-						const link = el.querySelector('.wp-block-button__link');
+						const link = qs('.wp-block-button__link', el);
 						link.setAttribute('aria-label', ariaLabel);
 					}
 				});

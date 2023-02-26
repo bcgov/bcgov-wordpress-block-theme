@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import iconsObj from '../utils/button-icons';
 
-const { assign, merge } = require('lodash');
+import { assign, merge } from 'lodash';
 
 const { registerBlockStyle, unregisterBlockStyle } = wp.blocks;
 const { __ } = wp.i18n;
@@ -79,11 +79,9 @@ addFilter(
  */
 const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
-		const {
-			attributes: { size, svgIcon, iconsList, clickFlag, label },
-			setAttributes,
-			name,
-		} = props;
+		const { size, svgIcon, iconsList, clickFlag, label } = props.attributes;
+		const { setAttributes } = props;
+		const { name } = props;
 
 		if (name !== 'core/button') {
 			return <BlockEdit {...props} />;
@@ -101,7 +99,7 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 						title={__('Icon options', 'bcgov-block-theme')}
 						initialOpen={false}
 					>
-						{clickFlag && (
+						{clickFlag ? (
 							<SelectControl
 								label={__('Icon', 'bcgov-block-theme')}
 								value={svgIcon}
@@ -110,8 +108,7 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 									setAttributes({ svgIcon: value });
 								}}
 							/>
-						)}
-						{!clickFlag && (
+						) : (
 							<>
 								<h3>Instructions (for CleanBC only):</h3>
 								<p>
@@ -136,12 +133,9 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 							</>
 						)}
 					</PanelBody>
-					<PanelBody
-						title={__('Size options', 'bcgov-block-theme')}
-						initialOpen={true}
-					>
+					<PanelBody title="Size options" initialOpen={true}>
 						<SelectControl
-							label={__('Size', 'bcgov-block-theme')}
+							label="Size"
 							value={size}
 							options={[
 								{
@@ -180,8 +174,9 @@ addFilter(
 );
 
 /**
- * Add additional classes to the block in the editor.
- */
+	
+	Add additional classes to the block in the editor.
+	*/
 const addClassesToEditor = createHigherOrderComponent((BlockListBlock) => {
 	return (props) => {
 		const {
@@ -197,18 +192,21 @@ const addClassesToEditor = createHigherOrderComponent((BlockListBlock) => {
 		return (
 			<BlockListBlock
 				{...props}
-				className={classnames(
-					className,
-					size ? `has-size-${size}` : '',
-					svgIcon ? `icon icon-${svgIcon}` : ''
-				)}
+				className={classnames(className, {
+					[size]: size,
+					[svgIcon]: svgIcon,
+				})}
 			/>
 		);
 	};
-}, 'withClientIdClassName');
+}, 'addClassesToEditor');
 
 addFilter(
 	'editor.BlockListBlock',
-	'bcgov-block-theme/button-block/add-editor-class',
+	'bcgov-block-theme/button-block/add-classes-to-editor',
 	addClassesToEditor
 );
+
+export default function Button() {
+	return null;
+}

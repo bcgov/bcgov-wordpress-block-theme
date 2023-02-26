@@ -1,3 +1,4 @@
+import { qs, qsa } from '../../../utils';
 import { triggerClick } from '../../../../admin/utils/common';
 
 /**
@@ -8,27 +9,26 @@ const domReady = () => {
 	 * SafarIE bug requires 0ms timeout.
 	 */
 	setTimeout(function() {
-		const elActionToggleButtons = document.querySelectorAll(
+		const elActionToggleButtons = qsa(
 			'.actions-toggle-buttons .wp-block-button'
 		);
 
 		if (elActionToggleButtons.length) {
 			elActionToggleButtons.forEach((element, index) => {
-				const button = element.querySelector('a.wp-block-button__link');
-				const buttonText = element.querySelector(
-					'a.wp-block-button__link'
-				).innerText;
+				const button = qs('a.wp-block-button__link', element);
+				const buttonText = qs('a.wp-block-button__link', element)
+					.innerText;
 				const newClass = buttonText
 					.toLowerCase()
 					.replace(/ /g, '-')
 					.replace(/[^\w-]+/g, '');
-				const accordionBlockGroup = document.querySelectorAll(
+				const accordionBlockGroup = qsa(
 					'.actions-accordion-header .wp-block-group.query-group'
 				);
 				element.newClass = newClass;
-				element
-					.querySelector('a.wp-block-button__link')
-					.classList.add(element.newClass);
+				qs('a.wp-block-button__link', element).classList.add(
+					element.newClass
+				);
 
 				if (0 === index) {
 					button.classList.add('active');
@@ -45,7 +45,7 @@ const domReady = () => {
 				button.addEventListener('click', function(e) {
 					e.preventDefault();
 
-					const buttonLinks = document.querySelectorAll(
+					const buttonLinks = qsa(
 						'.actions-toggle-buttons .wp-block-button a.wp-block-button__link'
 					);
 
@@ -60,16 +60,14 @@ const domReady = () => {
 							.replace(/ /g, '-')
 							.replace(/[^\w-]+/g, '');
 
-						document
-							.querySelectorAll(
-								'.actions-toggle-query-loop .category-actions'
-							)
-							.forEach((el) => {
-								el.classList.add('hidden');
-								if (el.classList.contains(`${targetAction}`)) {
-									el.classList.toggle('hidden');
-								}
-							});
+						qsa(
+							'.actions-toggle-query-loop .category-actions'
+						).forEach((el) => {
+							el.classList.add('hidden');
+							if (el.classList.contains(`${targetAction}`)) {
+								el.classList.toggle('hidden');
+							}
+						});
 						accordionBlockGroup.forEach((el) => {
 							el.classList.add('hidden');
 							el.classList.remove('active-group');
@@ -93,7 +91,7 @@ const domReady = () => {
 			// Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
 			const queryValue = queryParams.target; // "some_value"
 
-			const targetButton = document.querySelector(
+			const targetButton = qs(
 				`.actions-toggle-buttons .wp-block-button__link[href="#${queryValue}"]`
 			);
 
@@ -103,27 +101,21 @@ const domReady = () => {
 
 			countActiveProjects();
 
-			const elActions = document.querySelectorAll(
-				'.type-post.category-actions'
-			);
+			const elActions = qsa('.type-post.category-actions');
 
 			elActions.forEach((element) => {
-				const heading = element.querySelector('.wp-block-post-title')
-					.innerText;
-				const image = element.querySelector(
-					'.attachment-post-thumbnail'
-				);
-				const titleContainer = element.querySelector(
-					'.wp-block-post-excerpt__excerpt'
+				const heading = qs('.wp-block-post-title', element).innerText;
+				const image = qs('.attachment-post-thumbnail', element);
+				const titleContainer = qs(
+					'.wp-block-post-excerpt__excerpt',
+					element
 				);
 				if (null !== image && null !== titleContainer) {
 					image.setAttribute('title', titleContainer.innerText);
 				}
-				const linkAddition = element.querySelector(
-					'.wp-block-button__link'
-				);
+				const linkAddition = qs('.wp-block-button__link', element);
 
-				if (element.querySelectorAll('.wp-block-button__link').length) {
+				if (qsa('.wp-block-button__link', element).length) {
 					linkAddition.innerText = `${
 						linkAddition.innerText
 					} ${heading.toLowerCase()}`;
@@ -143,9 +135,7 @@ const domReady = () => {
 					.toLowerCase()
 					.replace(/ /g, '-')
 					.replace(/[^\w-]+/g, '');
-				const activeButton = document.querySelector(
-					'a.wp-block-button__link.active'
-				);
+				const activeButton = qs('a.wp-block-button__link.active');
 				const targetAction = activeButton.innerText
 					.toLowerCase()
 					.replace(/ /g, '-')
@@ -161,27 +151,24 @@ const domReady = () => {
 	}, 0);
 
 	function countActiveProjects() {
-		const elAccordionItems = document.querySelectorAll(
+		const elAccordionItems = qsa(
 			'.wp-block-bcgov-block-theme-collapse-item'
 		);
 
 		elAccordionItems.forEach((item) => {
 			item.classList.remove('hidden');
-			const queryGroup = item.querySelectorAll('.active-group');
+			const queryGroup = qsa('.active-group', item);
 			queryGroup.forEach((group) => {
-				const childItem = group.querySelector(
-					'.wp-block-group.project'
-				);
+				const childItem = qs('.wp-block-group.project', group);
 
 				if (null !== childItem) {
-					const childCount = childItem.querySelectorAll(
-						'.wp-block-columns'
-					);
+					const childCount = qsa('.wp-block-columns', childItem);
 					const headingCounter = childItem
 						.closest('.wp-block-bcgov-block-theme-collapse-item')
-						.querySelector('.collapse-header .collapse-title');
-					const headingCounterContainer = headingCounter.querySelector(
-						'.count'
+						.qs('.collapse-header .collapse-title');
+					const headingCounterContainer = qs(
+						'.count',
+						headingCounter
 					);
 					const headingCount = childCount.length;
 					if (childCount.length) {
@@ -194,17 +181,17 @@ const domReady = () => {
 						}
 					}
 				}
-				const noChildItem = group.querySelector('.no-results');
+				const noChildItem = qs('.no-results', group);
 				if (noChildItem !== null) {
 					const headerCollapseItem = noChildItem.closest(
 						'.wp-block-bcgov-block-theme-collapse-item'
 					);
 					const headerContainer = noChildItem
 						.closest('.wp-block-bcgov-block-theme-collapse-item')
-						.querySelector('.collapse-title');
+						.qs('.collapse-title');
 					const spanToReset = noChildItem
 						.closest('.wp-block-bcgov-block-theme-collapse-item')
-						.querySelector('.collapse-header .count');
+						.qs('.collapse-header .count');
 					if (null !== headerCollapseItem) {
 						headerCollapseItem.classList.add('hidden');
 					}

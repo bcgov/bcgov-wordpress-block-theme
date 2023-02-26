@@ -1,4 +1,4 @@
-const { assign, merge } = require('lodash');
+import { assign, merge } from 'lodash';
 
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
@@ -39,11 +39,9 @@ addFilter(
  */
 const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
-		const {
-			attributes: { inverted },
-			setAttributes,
-			name,
-		} = props;
+		const { inverted } = props.attributes;
+		const { setAttributes } = props;
+		const { name } = props;
 
 		if (name !== 'core/site-logo') {
 			return <BlockEdit {...props} />;

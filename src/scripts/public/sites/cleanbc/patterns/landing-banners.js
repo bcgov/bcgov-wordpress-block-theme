@@ -1,3 +1,5 @@
+import { qsa } from '../../../utils';
+
 /**
  * Landing banners manipulation.
  */
@@ -10,10 +12,8 @@ const domReady = () => {
 		 * Add a clip path SVG to create a mask on landing banner ::before elements.
 		 * Works in conjuction with .landing-cover-banner styles in _cleanbc--patterns-banners.scss.
 		 */
-		const isHomeBanner = document.querySelectorAll('.home-cover-banner');
-		const isLandingBanner = document.querySelectorAll(
-			'.landing-cover-banner'
-		);
+		const isHomeBanner = qsa('.home-cover-banner');
+		const isLandingBanner = qsa('.landing-cover-banner');
 
 		if (isHomeBanner.length || isLandingBanner.length) {
 			const svg = document.getElementsByTagName('svg')[0];

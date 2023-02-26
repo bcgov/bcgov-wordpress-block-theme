@@ -1,6 +1,6 @@
-const { registerBlockStyle } = wp.blocks;
+import { assign, merge } from 'lodash';
 
-const { assign, merge } = require('lodash');
+const { registerBlockStyle } = wp.blocks;
 
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
@@ -14,19 +14,14 @@ const {
 	RangeControl,
 } = wp.components;
 
-registerBlockStyle('core/media-text', {
-	name: 'dropshadow',
-	label: 'Drop shadow',
-});
+const styles = [
+	{ name: 'dropshadow', label: 'Drop shadow' },
+	{ name: 'square', label: 'Square' },
+	{ name: 'no-clip', label: 'Full Image' },
+];
 
-registerBlockStyle('core/media-text', {
-	name: 'square',
-	label: 'Square',
-});
-
-registerBlockStyle('core/media-text', {
-	name: 'no-clip',
-	label: 'Full Image',
+styles.forEach((style) => {
+	registerBlockStyle('core/media-text', style);
 });
 
 /**
@@ -70,11 +65,9 @@ addFilter(
  */
 const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
-		const {
-			attributes: { title, printMode, printWidth },
-			setAttributes,
-			name,
-		} = props;
+		const { title, printMode, printWidth } = props.attributes;
+		const { setAttributes } = props;
+		const { name } = props;
 
 		if (name !== 'core/media-text') {
 			return <BlockEdit {...props} />;

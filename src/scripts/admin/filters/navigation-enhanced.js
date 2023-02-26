@@ -1,6 +1,6 @@
 const { registerBlockStyle } = wp.blocks;
 
-registerBlockStyle('core/navigation', [
+const styles = [
 	{
 		name: 'default',
 		label: 'Centre Overlay',
@@ -14,4 +14,8 @@ registerBlockStyle('core/navigation', [
 		description:
 			'This uses a Grid approach to layout and will use consistant width and spacing across a maximum of three columns. Menu groups will wrap to the next row and position themselves under the first column.',
 	},
-]);
+];
+
+styles.forEach((style) => {
+	registerBlockStyle('core/navigation', style);
+});
