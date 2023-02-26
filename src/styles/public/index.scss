@@ -7,7 +7,6 @@
 @import "./sites/cleanbc/variables";
 
 // Base Public Styles
-@import "./blocks";
 @import "./footer";
 @import "./general";
 @import "./header";
@@ -17,7 +16,14 @@
 @import "./navigation-takeover";
 @import "./patterns";
 @import "./notification-banner";
+
 // Specific Block Styles
+@import "./blocks/accordion-collapse-block";
+@import "./blocks/buttons-block";
+@import "./blocks/cards-block";
+@import "./blocks/columns-block";
+@import "./blocks/images-block";
+@import "./blocks/media-text-block";
 @import "./blocks/_block-card-breaks";
 @import "../../scripts/admin/blocks/collapse/container";
 
@@ -28,4 +34,6 @@
 @import "./sites/cleanbc/_cleanbc--patterns-general";
 @import "./sites/cleanbc/_cleanbc--patterns-header-footer";
 @import "./sites/cleanbc/_cleanbc--query";
+
+// Print Styles
 @import "./print";

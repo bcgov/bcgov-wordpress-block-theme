@@ -2,7 +2,9 @@
 // Admin styles
 
 // Load Public Styles
+@import "../variables";
 @import "../public/index";
+@import "./blocks/buttons-block";
 
 html :where(.editor-styles-wrapper) {
 

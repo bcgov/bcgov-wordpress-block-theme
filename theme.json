@@ -334,31 +334,52 @@
 			}
 		},		
 		"typography": {
+			"fluid": true,
 			"fontSizes": [
 				{
-					"slug": "extra-small",
-					"size": "1rem",
-					"name": "Extra small"
-				},
-				{
 					"slug": "small",
-					"size": "1.125rem",
+					"size": "1rem",
+					"fluid": {
+						"min": "1rem",
+						"max": "1.25rem"
+					},
 					"name": "Small"
 				},
 				{
-					"slug": "normal",
-					"size": "1.25rem",
-					"name": "Normal"
+					"slug": "medium",
+					"size": "1.125rem",
+					"fluid": {
+						"min": "1.125rem",
+						"max": "1.25rem"
+					},
+					"name": "Medium"
 				},
 				{
 					"slug": "large",
-					"size": "1.5rem",
+					"size": "1.25rem",
+					"fluid": {
+						"min": "1.25rem",
+						"max": "1.5rem"
+					},
 					"name": "Large"
 				},
 				{
 					"slug": "extra-large",
-					"size": "2rem",
-					"name": "Extra large"
+					"size": "1.5rem",
+					"fluid": {
+						"min": "1.5rem",
+						"max": "1.75rem"
+					},
+					"name": "Extra Large"
+				},
+				{
+					"slug": "extra-extra-large",
+					"size": "1.75rem",
+					"fluid": {
+						"min": "1.75rem",
+						"max": "2rem"
+					},
+					"name": "Extra Extra large"
 				}
 			],
 			"fontFamilies": []

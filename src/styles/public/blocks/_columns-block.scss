@@ -1,0 +1,13 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+
+/*
+ *  Column.
+ */
+.wp-block-column {
+
+	&.is-style-dropshadow {
+		box-shadow: 0 0 12px rgba($black, 33%);
+	}
+
+}

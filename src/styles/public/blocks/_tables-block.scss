@@ -1,0 +1,18 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+
+/*
+ *  Tables.
+ */
+body:not(.wp-admin) tr {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border-top: 2px solid var(--wp--preset--color--secondary-brand);
+
+	@media (min-width: $breakpoint-sm) {
+		display: table-row;
+		border-top: none;
+		text-align: left;
+	}
+}
