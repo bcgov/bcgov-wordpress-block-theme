@@ -17,23 +17,23 @@ if ( ! current_user_can( 'manage_options' ) ) {
  *
  * @package Bcgov/Theme/Block
  */
-class NotificationsBannerAdminPage {
+class NotificationBannerAdminPage {
 
 	/**
      * Constructor.
      */
 	public function __construct() {
-		$this->build_notifications_banner_page();
+		$this->build_notification_banner_page();
 	}
 
 	/**
-	 * Displays the options page for enabling a notifications banner. Using this feature
+	 * Displays the options page for enabling a notification banner. Using this feature
 	 * will override a Network enabled banner. Banner is injected into the DOM and is
 	 * set up in `src/scripts/public/notification-banner.js`.
 	 *
 	 * @return void
 	 */
-	public function build_notifications_banner_page() {
+	public function build_notification_banner_page() {
 
 		$notification_enabled             = esc_attr( get_option( 'notification_enabled' ) );
 		$notification_homepage_only       = esc_attr( get_option( 'notification_homepage_only' ) );
@@ -52,7 +52,7 @@ class NotificationsBannerAdminPage {
 		<div class="bcgov-block-theme-page-header">
 			<div class="bcgov-block-theme-page-header__container">
 				<div class="bcgov-block-theme-page-header__branding">
-					<h2><?php esc_html_e( 'Admin Notifications Banner Settings', 'bcgov-block-theme' ); ?> <span class=" <?php echo $notification_enabled ? 'enabled' : 'disabled'; ?> pill">&nbsp;<?php echo $notification_enabled ? 'enabled' : 'disabled'; ?>&nbsp;</span></h2>
+					<h2><?php esc_html_e( 'Custom Notice Banner Settings', 'bcgov-block-theme' ); ?> <span class=" <?php echo $notification_enabled ? 'enabled' : 'disabled'; ?> pill">&nbsp;<?php echo $notification_enabled ? 'enabled' : 'disabled'; ?>&nbsp;</span></h2>
 				</div>
 				<div class="bcgov-block-theme-page-header__tagline">
 					<span class="bcgov-block-theme-page-header__tagline-text">
@@ -78,7 +78,7 @@ class NotificationsBannerAdminPage {
 
 						<div class="bcgov-block-theme-body pb-0">
 
-							<h1 class="bcgov-block-theme-title" style="margin-bottom: 1rem;">Notification Banner Settings</h1>
+							<h1 class="bcgov-block-theme-title" style="margin-bottom: 1rem;">Custom Notice Banner Settings</h1>
 
 							<?php
 							if ( $notification_enabled ) :
@@ -232,6 +232,7 @@ class NotificationsBannerAdminPage {
 									</div>
 									<div class="input">
 										<div class="input-wrap"><input type="text" id="notification_button_label" name="notification_button_label"
+										placeholder="Learn more"
 										required
 										value="<?php if ( ! empty( $notification_button_label ) ) { echo esc_attr( $notification_button_label ); } ?>" maxlength="32"></div>
 									</div>

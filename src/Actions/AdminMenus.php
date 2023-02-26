@@ -2,7 +2,11 @@
 
 namespace Bcgov\Theme\Block\Actions;
 
-use Bcgov\Theme\Block\Templates;
+use Bcgov\Theme\Block\Templates\{
+	InfoAdminPage,
+	OptionsAdminPage,
+	NotificationBannerAdminPage,
+};
 
 /**
  * Add theme management pages to the admin menu and registers their pages.
@@ -38,13 +42,18 @@ class AdminMenus {
 			[ $this, 'bcgov_block_theme_options_display' ]
 		);
 
-		add_theme_page(
-			__( 'BCGov Block Notifications Banner', 'bcgov-block-theme' ),
-			__( 'Notifications Banner', 'bcgov-block-theme' ),
-			'edit_theme_options',
-			'bcgov-block-theme-notification-banner',
-			[ $this, 'bcgov_block_theme_notification_banner_display' ]
-		);
+		// Add Custom Notifications theme page if enabled within "BCGov Block Theme Admin Settings" page.
+		$admin_notification        = get_option( 'bcgov_admin_notification_settings' ) ?? [];
+        $enable_admin_notification = isset( $admin_notification['show_admin_notification'] ) ? $admin_notification['show_admin_notification'] : 0;
+		if ( $enable_admin_notification ) {
+			add_theme_page(
+				__( 'BCGov Block Notification Banner', 'bcgov-block-theme' ),
+				__( 'Custom Notice Banner', 'bcgov-block-theme' ),
+				'edit_theme_options',
+				'bcgov-block-theme-notification-banner',
+				[ $this, 'bcgov_block_theme_notification_banner_display' ]
+			);
+		}
 
 	}
 
@@ -57,7 +66,7 @@ class AdminMenus {
 	 */
 	public function bcgov_block_theme_documentation_display() {
 
-		new Templates\InfoAdminPage();
+		new InfoAdminPage();
 
 	}
 
@@ -70,7 +79,7 @@ class AdminMenus {
 	 */
 	public function bcgov_block_theme_options_display() {
 
-		new Templates\OptionsAdminPage();
+		new OptionsAdminPage();
 
 	}
 
@@ -83,7 +92,7 @@ class AdminMenus {
 	 */
 	public function bcgov_block_theme_notification_banner_display() {
 
-		new Templates\NotificationsBannerAdminPage();
+		new NotificationBannerAdminPage();
 
 	}
 }

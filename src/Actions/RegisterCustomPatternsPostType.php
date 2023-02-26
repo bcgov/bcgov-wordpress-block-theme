@@ -96,7 +96,13 @@ class RegisterCustomPatternsPostType {
 			'show_in_graphql'       => false,
 		];
 
-		register_post_type( 'custom-pattern', $args );
+		// Register Custom Patterns post type if enabled within "BCGov Block Theme Admin Settings" page.
+		$custom_patterns        = get_option( 'bcgov_custom_patterns_settings' ) ?? [];
+		$enable_custom_patterns = isset( $custom_patterns['show_custom_patterns'] ) ? $custom_patterns['show_custom_patterns'] : 0;
+
+		if ( $enable_custom_patterns ) {
+			register_post_type( 'custom-pattern', $args );
+		}
 
         register_taxonomy(
             'pattern-groups',

@@ -42,17 +42,17 @@ class AdminOptions {
 		$this->bcgov_block_theme_setting_to_register(
             'bcgov-block-theme-notification-banner-group',
             [
-				'notice_enabled',
-				'notice_homepage_only',
-				'notice_label_bold',
-				'notice_label_big',
-				'notice_status',
-				'notice_content',
-				'notice_button_label',
-				'notice_button_enabled',
-				'notice_button_aria_label',
-				'notice_button_link',
-				'notice_button_utm_campaign',
+				'notification_enabled',
+				'notification_homepage_only',
+				'notification_label_bold',
+				'notification_label_big',
+				'notification_status',
+				'notification_content',
+				'notification_button_label',
+				'notification_button_enabled',
+				'notification_button_aria_label',
+				'notification_button_link',
+				'notification_button_utm_campaign',
 			]
         );
 

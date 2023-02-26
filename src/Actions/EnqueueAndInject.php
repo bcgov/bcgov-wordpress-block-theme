@@ -112,28 +112,22 @@ class EnqueueAndInject {
 			'headerEffect'            => esc_attr( get_option( 'header_effect' ) ),
 			'allSiteStyles'           => esc_attr( get_option( 'enable_all_styles' ) ),
 			'customBodyClass'         => esc_attr( get_option( 'custom_body_class' ) ),
-			'noticeEnabled'           => esc_attr( get_option( 'notice_enabled' ) ),
-			'noticeHomepageOnly'      => esc_attr( get_option( 'notice_homepage_only' ) ),
-			'noticeLabelBold'         => esc_attr( get_option( 'notice_label_bold' ) ),
-			'noticeLabelBig'          => esc_attr( get_option( 'notice_label_big' ) ),
-			'noticeStatus'            => esc_attr( get_option( 'notice_status' ) ),
-			'noticeContent'           => esc_attr( get_option( 'notice_content' ) ),
-			'noticeButtonLabel'       => esc_attr( get_option( 'notice_button_label' ) ),
-			'noticeButtonEnabled'     => esc_attr( get_option( 'notice_button_enabled' ) ),
-			'noticeButtonAriaLabel'   => esc_attr( get_option( 'notice_button_aria_label' ) ),
-			'noticeButtonLink'        => esc_attr( get_option( 'notice_button_link' ) ),
-			'noticeButtonUtmCampaign' => esc_attr( get_option( 'notice_button_utm_campaign' ) ),
+			'noticeEnabled'           => esc_attr( get_option( 'notification_enabled' ) ),
+			'noticeHomepageOnly'      => esc_attr( get_option( 'notification_homepage_only' ) ),
+			'noticeLabelBold'         => esc_attr( get_option( 'notification_label_bold' ) ),
+			'noticeLabelBig'          => esc_attr( get_option( 'notification_label_big' ) ),
+			'noticeStatus'            => esc_attr( get_option( 'notification_status' ) ),
+			'noticeContent'           => esc_attr( get_option( 'notification_content' ) ),
+			'noticeButtonLabel'       => esc_attr( get_option( 'notification_button_label' ) ),
+			'noticeButtonEnabled'     => esc_attr( get_option( 'notification_button_enabled' ) ),
+			'noticeButtonAriaLabel'   => esc_attr( get_option( 'notification_button_aria_label' ) ),
+			'noticeButtonLink'        => esc_attr( get_option( 'notification_button_link' ) ),
+			'noticeButtonUtmCampaign' => esc_attr( get_option( 'notification_button_utm_campaign' ) ),
 			'networkBannerEnabledNet' => esc_attr( get_site_option( 'bcgov_notification_banner_enable_network' ) ),
 			'networkBannerType'       => esc_attr( get_site_option( 'bcgov_notification_banner_banner_type' ) ),
 			'networkBannerContent'    => esc_html( get_site_option( 'bcgov_notification_banner_banner_content' ) ),
 			'networkBannerUtm'        => esc_attr( get_site_option( 'bcgov_notification_banner_utm_campaign' ) ),
 		];
-
-		get_site_option( 'bcgov_notification_banner_enable_network' );
-		get_site_option( 'bcgov_notification_banner_enable_banner' );
-		get_site_option( 'bcgov_notification_banner_banner_type' );
-		get_site_option( 'bcgov_notification_banner_banner_content' );
-		get_site_option( 'bcgov_notification_banner_utm_campaign' );
 
 		return $javascript_variables;
 	}
