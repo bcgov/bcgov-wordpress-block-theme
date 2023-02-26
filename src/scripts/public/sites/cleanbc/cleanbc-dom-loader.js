@@ -1,3 +1,5 @@
+import { qs, qsa } from '../../utils';
+
 /**
  * General CleanBC DOM manipulation.
  */
@@ -12,7 +14,7 @@ const domReady = () => {
 		 */
 		setTimeout(function() {
 			// CleanBC Icon Buttons
-			const iconButtons = document.querySelectorAll('a.icon');
+			const iconButtons = qsa('a.icon');
 			if (iconButtons.length) {
 				iconButtons.forEach((button) => {
 					if (null === button.getAttribute('href')) {
@@ -23,12 +25,10 @@ const domReady = () => {
 			}
 
 			// This should be CSS...
-			const iconButtonContainers = document.querySelectorAll(
-				'.wp-block-button.is-style-icon'
-			);
+			const iconButtonContainers = qsa('.wp-block-button.is-style-icon');
 			if (iconButtonContainers.length) {
 				iconButtonContainers.forEach((container) => {
-					const containerLink = container.querySelector('a');
+					const containerLink = qs('a', container);
 					if (
 						null !== containerLink &&
 						!container.classList.contains('has-size-large')

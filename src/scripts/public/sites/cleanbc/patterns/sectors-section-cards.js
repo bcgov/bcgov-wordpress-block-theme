@@ -1,3 +1,5 @@
+import { qs, qsa } from '../../../utils';
+
 /**
  * Actions Accordion manipulation.
  */
@@ -5,14 +7,12 @@ const domReady = () => {
 	/*
 	 * SafarIE bug requires 0ms timeout.
 	 */
-	if (document.querySelector('.in-page-sectors-section')) {
+	if (qs('.in-page-sectors-section')) {
 		setTimeout(function() {
-			const elCaptionContainers = document.querySelectorAll(
+			const elCaptionContainers = qsa(
 				'.in-page-sectors-section .wp-block-column'
 			);
-			const elCaptions = document.querySelectorAll(
-				'.in-page-sectors-section figcaption'
-			);
+			const elCaptions = qsa('.in-page-sectors-section figcaption');
 
 			// Manipulate the ::after psedo element content using the image caption.
 			// Works in conjunction with CSS.
@@ -29,10 +29,10 @@ const domReady = () => {
 
 			// Capture the click on the column and send down to available link.
 			elCaptionContainers.forEach((col) => {
-				if (col.querySelector('a')) {
+				if (qs('a', col)) {
 					col.style.cursor = 'pointer';
 					col.addEventListener('click', function() {
-						this.querySelector('a').click();
+						qs('a', this).click();
 					});
 				}
 			});

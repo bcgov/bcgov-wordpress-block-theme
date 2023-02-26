@@ -1,6 +1,6 @@
 const { registerBlockStyle } = wp.blocks;
 
-registerBlockStyle('core/query', [
+const styles = [
 	{
 		name: 'dropshadow',
 		label: 'Drop shadow',
@@ -10,4 +10,8 @@ registerBlockStyle('core/query', [
 		name: 'default',
 		label: 'No Shadow',
 	},
-]);
+];
+
+styles.forEach((style) => {
+	registerBlockStyle('core/query', style);
+});

@@ -1,6 +1,6 @@
 const { registerBlockStyle } = wp.blocks;
 
-registerBlockStyle('core/heading', [
+const styles = [
 	{
 		name: 'default',
 		label: 'Default',
@@ -10,4 +10,8 @@ registerBlockStyle('core/heading', [
 		name: 'custom',
 		label: 'Custom Sizes',
 	},
-]);
+];
+
+styles.forEach((style) => {
+	registerBlockStyle('core/heading', style);
+});

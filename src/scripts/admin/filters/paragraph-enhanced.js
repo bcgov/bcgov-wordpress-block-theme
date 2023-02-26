@@ -1,6 +1,6 @@
 const { registerBlockStyle } = wp.blocks;
 
-registerBlockStyle('core/paragraph', [
+const paragraphStyles = [
 	{
 		name: 'default',
 		label: 'Default',
@@ -10,9 +10,13 @@ registerBlockStyle('core/paragraph', [
 		name: 'custom',
 		label: 'Custom Sizes',
 	},
-]);
+];
 
-registerBlockStyle('core/list', [
+paragraphStyles.forEach((style) => {
+	registerBlockStyle('core/paragraph', style);
+});
+
+const listStyles = [
 	{
 		name: 'default',
 		label: 'Default',
@@ -22,4 +26,8 @@ registerBlockStyle('core/list', [
 		name: 'custom',
 		label: 'Custom Sizes',
 	},
-]);
+];
+
+listStyles.forEach((style) => {
+	registerBlockStyle('core/list', style);
+});

@@ -2,7 +2,25 @@
 
 namespace Bcgov\Theme\Block;
 
-use Bcgov\Theme\Block\Loader;
+use Bcgov\Theme\Block\Actions\{
+    ThemeSupports,
+    AdminMenus,
+    AdminOptions,
+    Dependencies,
+    RegisterCustomPatternsPostType,
+    EnqueueAndInject,
+    ExportOptions,
+    PatternsSetup,
+    PageCustomClass
+};
+
+use Bcgov\Theme\Block\Filters\{
+    ButtonEnhanced,
+    ImageEnhanced,
+    MediaTextEnhanced,
+    SiteLogoEnhanced
+};
+
 
 /**
  * Initialization and setup of theme utilising an auto-loader.
@@ -17,29 +35,22 @@ class Setup {
      */
     public function __construct() {
 
-		$base_dirs = [
-			get_template_directory() . '/src',
-			get_template_directory() . '/inc/core',
-		];
-		$loader    = new Loader( $base_dirs );
-		$loader->register();
-
 		// Actions.
-		$theme_supports                 = new Actions\ThemeSupports();
-		$theme_admin_menus              = new Actions\AdminMenus();
-		$theme_admin_options            = new Actions\AdminOptions();
-		$theme_dependencies             = new Actions\Dependencies();
-		$theme_register_custom_patterns = new Actions\RegisterCustomPatternsPostType();
-		$theme_enqueue_and_inject       = new Actions\EnqueueAndInject();
-		$theme_exports                  = new Actions\ExportOptions();
-		$theme_register_block_patterns  = new Actions\PatternsSetup();
-		$theme_page_custom_class        = new Actions\PageCustomClass();
+		$theme_supports                 = new ThemeSupports();
+		$theme_admin_menus              = new AdminMenus();
+		$theme_admin_options            = new AdminOptions();
+		$theme_dependencies             = new Dependencies();
+		$theme_register_custom_patterns = new RegisterCustomPatternsPostType();
+		$theme_enqueue_and_inject       = new EnqueueAndInject();
+		$theme_exports                  = new ExportOptions();
+		$theme_register_block_patterns  = new PatternsSetup();
+		$theme_page_custom_class        = new PageCustomClass();
 
 		// Filters.
-		$filter_button_enhanced    = new Filters\ButtonEnhanced();
-		$filter_image_enhanced     = new Filters\ImageEnhanced();
-		$filter_mediatext_enhanced = new Filters\MediaTextEnhanced();
-		$filter_sitelogo_enhanced  = new Filters\SiteLogoEnhanced();
+		$filter_button_enhanced    = new ButtonEnhanced();
+		$filter_image_enhanced     = new ImageEnhanced();
+		$filter_mediatext_enhanced = new MediaTextEnhanced();
+		$filter_sitelogo_enhanced  = new SiteLogoEnhanced();
 
 		add_action( 'acf/init', [ $theme_admin_options, 'bcgov_block_theme_acf_init_block_types' ] );
 		add_action( 'admin_enqueue_scripts', [ $theme_enqueue_and_inject, 'bcgov_block_theme_enqueue_admin_scripts' ] );

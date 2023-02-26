@@ -1,6 +1,6 @@
-const { registerBlockStyle } = wp.blocks;
+import { assign, merge } from 'lodash';
 
-const { assign, merge } = require('lodash');
+const { registerBlockStyle } = wp.blocks;
 
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
@@ -73,11 +73,9 @@ addFilter(
  */
 const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
 	return (props) => {
-		const {
-			attributes: { title, printMode, printWidth },
-			setAttributes,
-			name,
-		} = props;
+		const { title, printMode, printWidth } = props.attributes;
+		const { setAttributes } = props;
+		const { name } = props;
 
 		if (name !== 'core/image') {
 			return <BlockEdit {...props} />;
