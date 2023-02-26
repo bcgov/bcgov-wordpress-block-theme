@@ -10,52 +10,51 @@ const domReady = () => {
 	 */
 	setTimeout(function() {
 		const body = qs('body');
-		let notificationsEnabled =
+		let notificationEnabled =
 			'1' === window.site.noticeEnabled ? true : false;
-		const notificationsHomepageOnly =
+		const notificationHomepageOnly =
 			'1' === window.site.noticeHomepageOnly ? true : false;
-		const notificationsLabelBold =
+		const notificationLabelBold =
 			'1' === window.site.noticeLabelBold ? true : false;
-		const notificationsLabelBig =
+		const notificationLabelBig =
 			'1' === window.site.noticeLabelBig ? true : false;
-		let notificationsStatus = window.site.noticeStatus;
-		let notificationsContent = window.site.noticeContent;
-		const notificationsButtonLabel = window.site.noticeButtonLabel;
-		let notificationsButtonEnabled =
+		let notificationStatus = window.site.noticeStatus;
+		let notificationContent = window.site.noticeContent;
+		const notificationButtonLabel = window.site.noticeButtonLabel;
+		let notificationButtonEnabled =
 			'1' === window.site.noticeButtonEnabled ? true : false;
-		const notificationsButtonAriaLabel = window.site.noticeButtonAriaLabel;
-		const notificationsButtonLink = window.site.noticeButtonLink;
-		let notificationsButtonUtmCampaign =
-			window.site.noticeButtonUtmCampaign;
-		const networkNotificationsBannerNetworkEnabled =
+		const notificationButtonAriaLabel = window.site.noticeButtonAriaLabel;
+		const notificationButtonLink = window.site.noticeButtonLink;
+		let notificationButtonUtmCampaign = window.site.noticeButtonUtmCampaign;
+		const networkNotificationBannerNetworkEnabled =
 			'1' === window.site.networkBannerEnabledNet ? true : false;
-		const networkNotificationsStatus = window.site.networkBannerType;
-		const networkNotificationsContent = window.site.networkBannerContent;
-		const networkNotificationsButtonUtmCampaign =
+		const networkNotificationStatus = window.site.networkBannerType;
+		const networkNotificationContent = window.site.networkBannerContent;
+		const networkNotificationButtonUtmCampaign =
 			window.site.networkBannerUtm;
 
-		if (notificationsEnabled && notificationsHomepageOnly) {
-			notificationsEnabled = body.classList.contains('home')
+		if (notificationEnabled && notificationHomepageOnly) {
+			notificationEnabled = body.classList.contains('home')
 				? true
 				: false;
 		}
 		const currentPage = window.location.href;
-		if (notificationsEnabled && notificationsButtonLink === currentPage) {
-			notificationsEnabled = false;
+		if (notificationEnabled && notificationButtonLink === currentPage) {
+			notificationEnabled = false;
 		}
 
 		// Use Network banner content if enabled and not overidden by local banner.
-		if (networkNotificationsBannerNetworkEnabled && !notificationsEnabled) {
-			notificationsEnabled = true;
-			notificationsButtonEnabled = false;
-			notificationsContent = networkNotificationsContent;
-			notificationsStatus = networkNotificationsStatus;
-			notificationsButtonUtmCampaign = networkNotificationsButtonUtmCampaign;
+		if (networkNotificationBannerNetworkEnabled && !notificationEnabled) {
+			notificationEnabled = true;
+			notificationButtonEnabled = false;
+			notificationContent = networkNotificationContent;
+			notificationStatus = networkNotificationStatus;
+			notificationButtonUtmCampaign = networkNotificationButtonUtmCampaign;
 		}
 
-		if (notificationsEnabled) {
-			const notfificationContainer = createElement('div', {
-				class: `notice ${notificationsStatus}`,
+		if (notificationEnabled) {
+			const notificationContainer = createElement('div', {
+				class: `notice notification ${notificationStatus}`,
 				role: 'alert',
 				'aria-live': 'assertive',
 			});
@@ -64,11 +63,11 @@ const domReady = () => {
 				class: 'inner-container',
 			});
 
-			const notificationContent = createElement('p', {
-				class: `${notificationsLabelBold ? 'bold' : ''} ${
-					notificationsLabelBig ? 'big' : ''
+			const notificationContentInner = createElement('p', {
+				class: `${notificationLabelBold ? 'bold' : ''} ${
+					notificationLabelBig ? 'big' : ''
 				}`,
-				html: `${notificationsContent}`,
+				html: `${notificationContent}`,
 			});
 
 			const notfificationBtnContainer = createElement('div', {
@@ -77,33 +76,33 @@ const domReady = () => {
 
 			const notfificationBtn = createElement('button', {
 				'aria-label': `${
-					notificationsButtonAriaLabel
-						? notificationsButtonAriaLabel
-						: notificationsContent +
+					notificationButtonAriaLabel
+						? notificationButtonAriaLabel
+						: notificationContentInner +
 						  ' – ' +
-						  notificationsButtonLabel
+						  notificationButtonLabel
 				}`,
-				class: `${notificationsLabelBold ? 'bold' : ''} ${
-					notificationsLabelBig ? 'big' : ''
+				class: `${notificationLabelBold ? 'bold' : ''} ${
+					notificationLabelBig ? 'big' : ''
 				}`,
-				text: `${notificationsButtonLabel}`,
-				onclick: `location.href="${notificationsButtonLink}${
-					notificationsButtonUtmCampaign
-						? '?utm_campaign=' + notificationsButtonUtmCampaign
+				text: `${notificationButtonLabel}`,
+				onclick: `location.href="${notificationButtonLink}${
+					notificationButtonUtmCampaign
+						? '?utm_campaign=' + notificationButtonUtmCampaign
 						: ''
 				}"`,
 			});
 
 			// Assemble the Notification banner.
-			document.body.prepend(notfificationContainer);
-			if (notificationsButtonEnabled) {
-				notfificationContainer.prepend(notfificationBtnContainer);
+			document.body.prepend(notificationContainer);
+			if (notificationButtonEnabled) {
+				notificationContainer.prepend(notfificationBtnContainer);
 				notificationContentInnerContainer.prepend(notfificationBtn);
 			} else {
 				notificationContentInnerContainer.classList.add('no-btn');
 			}
-			notfificationContainer.prepend(notificationContentInnerContainer);
-			notificationContentInnerContainer.prepend(notificationContent);
+			notificationContainer.prepend(notificationContentInnerContainer);
+			notificationContentInnerContainer.prepend(notificationContentInner);
 		}
 	}, 0);
 };

@@ -6,6 +6,7 @@ use Bcgov\Theme\Block\Actions\{
     ThemeSupports,
     AdminMenus,
     AdminOptions,
+	BcgovSettings,
     Dependencies,
     RegisterCustomPatternsPostType,
     EnqueueAndInject,
@@ -39,6 +40,7 @@ class Setup {
 		$theme_supports                 = new ThemeSupports();
 		$theme_admin_menus              = new AdminMenus();
 		$theme_admin_options            = new AdminOptions();
+		$theme_bcgov_settings           = new BcgovSettings();
 		$theme_dependencies             = new Dependencies();
 		$theme_register_custom_patterns = new RegisterCustomPatternsPostType();
 		$theme_enqueue_and_inject       = new EnqueueAndInject();
@@ -56,6 +58,7 @@ class Setup {
 		add_action( 'admin_enqueue_scripts', [ $theme_enqueue_and_inject, 'bcgov_block_theme_enqueue_admin_scripts' ] );
         add_action( 'admin_init', [ $theme_admin_options, 'bcgov_block_theme_custom_settings' ] );
 		add_action( 'admin_menu', [ $theme_admin_menus, 'bcgov_block_theme_menu' ] );
+		add_action( 'admin_menu', [ $theme_bcgov_settings, 'bcgov_add_settings_menu' ] );
 		add_action( 'admin_notices', [ $theme_dependencies, 'bcgov_block_theme_dependencies' ] );
 		add_action( 'export_filters', [ $theme_exports, 'bcgov_block_theme_exports' ] );
 		add_action( 'after_setup_theme', [ $theme_supports, 'bcgov_block_theme' ] );
