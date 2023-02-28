@@ -12,6 +12,6 @@ const styles = [
 	},
 ];
 
-styles.forEach((style) => {
-	registerBlockStyle('core/query', style);
-});
+styles.forEach( ( style ) => {
+	registerBlockStyle( 'core/query', style );
+} );

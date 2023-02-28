@@ -3,7 +3,7 @@ import { InnerBlocks } from '@wordpress/block-editor';
 export const deprecated = [
 	{
 		attributes,
-		save: (props) => {
+		save: ( props ) => {
 			const {
 				attributes: {
 					cardId,
@@ -19,12 +19,12 @@ export const deprecated = [
 			return (
 				<div>
 					<style jsx>
-						{`
-							#${cardId} {
-								background-color: ${backgroundColor};
+						{ `
+							#${ cardId } {
+								background-color: ${ backgroundColor };
 							}
-							@media (min-width: ${secondBreak}px) {
-								ul#${cardId} {
+							@media ( min-width: ${ secondBreak }px ) {
+								ul#${ cardId } {
 									-webkit-flex-direction: row;
 									-moz-flex-direction: row;
 									-ms-flex-direction: row;
@@ -35,13 +35,14 @@ export const deprecated = [
 									flex-wrap: wrap;
 									flex-wrap: wrap;
 								}
-								ul#${cardId} > li {
-									width: ${100 / secondBreakColumns - 1 * 2}%;
+								ul#${ cardId } > li {
+									width: ${ 100 / secondBreakColumns -
+									1 * 2 }%;
 									margin: 1%;
 								}
 							}
-							@media (min-width: ${firstBreak}px) {
-								ul#${cardId} {
+							@media ( min-width: ${ firstBreak }px ) {
+								ul#${ cardId } {
 									-webkit-flex-direction: row;
 									-moz-flex-direction: row;
 									-ms-flex-direction: row;
@@ -51,14 +52,15 @@ export const deprecated = [
 									-ms-flex-wrap: wrap;
 									flex-wrap: wrap;
 								}
-								ul#${cardId} > li {
-									width: ${100 / firstBreakColumns - 1 * 2}%;
+								ul#${ cardId } > li {
+									width: ${ 100 / firstBreakColumns -
+									1 * 2 }%;
 									margin: 1%;
 								}
 							}
-						`}
+						` }
 					</style>
-					<ul className={className} id={cardId}>
+					<ul className={ className } id={ cardId }>
 						<InnerBlocks.Content />
 					</ul>
 				</div>
@@ -67,7 +69,7 @@ export const deprecated = [
 	},
 	{
 		attributes,
-		save: (props) => {
+		save: ( props ) => {
 			const {
 				attributes: {
 					cardId,
@@ -83,12 +85,12 @@ export const deprecated = [
 			return (
 				<div role="navigation">
 					<style jsx>
-						{`
-							#${cardId} {
-								background-color: ${backgroundColor};
+						{ `
+							#${ cardId } {
+								background-color: ${ backgroundColor };
 							}
-							@media (min-width: ${secondBreak}px) {
-								ul#${cardId} {
+							@media ( min-width: ${ secondBreak }px ) {
+								ul#${ cardId } {
 									-webkit-flex-direction: row;
 									-moz-flex-direction: row;
 									-ms-flex-direction: row;
@@ -99,13 +101,14 @@ export const deprecated = [
 									flex-wrap: wrap;
 									flex-wrap: wrap;
 								}
-								ul#${cardId} > li {
-									width: ${100 / secondBreakColumns - 1 * 2}%;
+								ul#${ cardId } > li {
+									width: ${ 100 / secondBreakColumns -
+									1 * 2 }%;
 									margin: 1%;
 								}
 							}
-							@media (min-width: ${firstBreak}px) {
-								ul#${cardId} {
+							@media ( min-width: ${ firstBreak }px ) {
+								ul#${ cardId } {
 									-webkit-flex-direction: row;
 									-moz-flex-direction: row;
 									-ms-flex-direction: row;
@@ -115,14 +118,15 @@ export const deprecated = [
 									-ms-flex-wrap: wrap;
 									flex-wrap: wrap;
 								}
-								ul#${cardId} > li {
-									width: ${100 / firstBreakColumns - 1 * 2}%;
+								ul#${ cardId } > li {
+									width: ${ 100 / firstBreakColumns -
+									1 * 2 }%;
 									margin: 1%;
 								}
 							}
-						`}
+						` }
 					</style>
-					<ul className={className} id={cardId}>
+					<ul className={ className } id={ cardId }>
 						<InnerBlocks.Content />
 					</ul>
 				</div>
@@ -131,7 +135,7 @@ export const deprecated = [
 	},
 	{
 		attributes,
-		save: (props) => {
+		save: ( props ) => {
 			const {
 				attributes: {
 					cardId,
@@ -145,7 +149,7 @@ export const deprecated = [
 			} = props;
 
 			return (
-				<ul className={className} id={cardId}>
+				<ul className={ className } id={ cardId }>
 					<InnerBlocks.Content />
 				</ul>
 			);

@@ -27,13 +27,13 @@ class Dependencies {
 		// Checks for AIOSEO breadcrumb specific function.
 		$message_intro = __( 'Missing: The BCGov Block Theme needs the', 'bcgov_block_theme' );
 
-		if ( ! function_exists( 'aioseo_breadcrumbs' ) ) {
-			$plugin        = 'All in One SEO';
-			$className     = 'notice-warning notice';
-			$message_extro = __( 'plugin activated to enable to page specific breadcrumb navigation.', 'bcgov_block_theme' );
+		// if ( ! function_exists( 'aioseo_breadcrumbs' ) ) {
+		// 	$plugin        = 'All in One SEO';
+		// 	$className     = 'notice-warning notice';
+		// 	$message_extro = __( 'plugin activated to enable to page specific breadcrumb navigation.', 'bcgov_block_theme' );
 
-			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
-		}
+		// 	printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
+		// }
 
 		if ( ! function_exists( 'acf_register_block_type' ) ) {
 			$plugin        = 'Advanced Custom Fields PRO';

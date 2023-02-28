@@ -2,8 +2,8 @@ import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks, RichText } from '@wordpress/block-editor';
 
-registerBlockType('bcgov-block-theme/collapse-item', {
-	title: __('Collapse Item', 'bcgov-blocks'),
+registerBlockType( 'bcgov-block-theme/collapse-item', {
+	title: __( 'Collapse Item', 'bcgov-blocks' ),
 	icon: 'welcome-add-page',
 	category: 'layout',
 	attributes: {
@@ -21,41 +21,41 @@ registerBlockType('bcgov-block-theme/collapse-item', {
 		},
 	},
 	example: {},
-	edit: (props) => {
+	edit: ( props ) => {
 		const {
 			attributes: { title, itemId, headingId },
 			className,
 			clientId,
 		} = props;
 
-		const onChangeTitle = (value) => {
-			props.setAttributes({ title: value });
+		const onChangeTitle = ( value ) => {
+			props.setAttributes( { title: value } );
 		};
 
-		props.setAttributes({ itemId: `collapse-item-${clientId}` });
-		props.setAttributes({ headingId: `heading-${clientId}` });
+		props.setAttributes( { itemId: `collapse-item-${ clientId }` } );
+		props.setAttributes( { headingId: `heading-${ clientId }` } );
 		return (
-			<div className={className}>
-				<div className="collapse-header" id={headingId}>
+			<div className={ className }>
+				<div className="collapse-header" id={ headingId }>
 					<h3>
 						<button
 							data-toggle="collapse"
-							data-target={`#${itemId}`}
+							data-target={ `#${ itemId }` }
 							aria-expanded="false"
-							aria-controls={itemId}
+							aria-controls={ itemId }
 							className="collapsed"
 						>
 							<RichText
 								tagName="span"
-								onChange={onChangeTitle}
+								onChange={ onChangeTitle }
 								className="collapse-title"
-								value={title}
-								placeholder={__('…Title')}
+								value={ title }
+								placeholder={ __( '…Title' ) }
 							/>
 						</button>
 					</h3>
 				</div>
-				<div className="collapse collapse-container" id={itemId}>
+				<div className="collapse collapse-container" id={ itemId }>
 					<div className="collapse-body">
 						<InnerBlocks />
 					</div>
@@ -63,42 +63,42 @@ registerBlockType('bcgov-block-theme/collapse-item', {
 			</div>
 		);
 	},
-	save: (props) => {
+	save: ( props ) => {
 		const {
 			attributes: { title, itemId, headingId },
 		} = props;
 		return (
 			<div>
-				<div className="collapse-header" id={headingId}>
+				<div className="collapse-header" id={ headingId }>
 					<h3>
 						<button
 							data-toggle="collapse"
-							data-target={`#${itemId}`}
+							data-target={ `#${ itemId }` }
 							aria-expanded="false"
-							aria-controls={itemId}
+							aria-controls={ itemId }
 							className="collapsed"
 						>
 							<RichText.Content
 								tagName="span"
 								className="collapse-title"
-								value={title}
+								value={ title }
 							/>
 						</button>
 					</h3>
 				</div>
-				<div className="collapse collapse-container" id={itemId}>
+				<div className="collapse collapse-container" id={ itemId }>
 					<div className="collapse-body">
 						<InnerBlocks.Content />
 						<div className="collapse-close">
 							<a
 								data-toggle="collapse"
-								data-target={`#${itemId}`}
-								href={`#${itemId}`}
+								data-target={ `#${ itemId }` }
+								href={ `#${ itemId }` }
 								role="button"
 								aria-expanded="true"
-								aria-controls={itemId}
+								aria-controls={ itemId }
 							>
-								{__('Collapse')}
+								{ __( 'Collapse' ) }
 							</a>
 						</div>
 					</div>
@@ -106,4 +106,4 @@ registerBlockType('bcgov-block-theme/collapse-item', {
 			</div>
 		);
 	},
-});
+} );
