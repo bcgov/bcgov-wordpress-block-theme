@@ -72,14 +72,6 @@ class EnqueueAndInject {
 
 		wp_localize_script( 'bcgov-block-theme-admin', 'site', $javascript_variables );
 
-		wp_enqueue_script(
-			'bcgov-blocks-manager',
-			get_template_directory_uri() . '/inc/core/theme-blocks-allow-list.js',
-			[ 'wp-blocks', 'wp-dom' ],
-			filemtime( get_template_directory() . '/inc/core/theme-blocks-allow-list.js' ),
-			true
-		);
-
 		wp_localize_script(
 			'bcgov-blocks-manager',
 			'postData',
