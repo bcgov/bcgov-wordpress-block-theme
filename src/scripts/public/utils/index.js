@@ -20,28 +20,30 @@ export function addGlobalEventListener(
 	parent = document
 ) {
 	// check if the selector is valid
-	if (!selector || typeof selector !== 'string') {
-		throw new Error('Invalid selector: must be CSS selector or an element');
+	if ( ! selector || typeof selector !== 'string' ) {
+		throw new Error(
+			'Invalid selector: must be CSS selector or an element'
+		);
 	}
 
 	// check if the callback is a valid function
-	if (typeof callback !== 'function') {
-		throw new Error('Invalid callback provided');
+	if ( typeof callback !== 'function' ) {
+		throw new Error( 'Invalid callback provided' );
 	}
 
-	parent.addEventListener(type, (event) => {
+	parent.addEventListener( type, ( event ) => {
 		// use qsa to get all elements that match the selector
-		const elements = document.querySelectorAll(selector);
+		const elements = document.querySelectorAll( selector );
 
 		// check if the event target is one of the matching elements
 		const target = event.target;
 		if (
-			elements.includes(target) ||
-			elements.some((element) => element.contains(target))
+			elements.includes( target ) ||
+			elements.some( ( element ) => element.contains( target ) )
 		) {
-			callback(event);
+			callback( event );
 		}
-	});
+	} );
 }
 
 /**
@@ -54,37 +56,37 @@ export function addGlobalEventListener(
  * @param {string} options.text - the text content to set on the element
  * @return {HTMLElement} the created element
  */
-export function createElement(type, options = {}) {
-	const element = document.createElement(type);
-	Object.entries(options).forEach(([key, value]) => {
-		if (key === 'class') {
-			value.split(' ').forEach((className) => {
-				if ('' !== className) {
-					element.classList.add(className);
+export function createElement( type, options = {} ) {
+	const element = document.createElement( type );
+	Object.entries( options ).forEach( ( [ key, value ] ) => {
+		if ( key === 'class' ) {
+			value.split( ' ' ).forEach( ( className ) => {
+				if ( '' !== className ) {
+					element.classList.add( className );
 				}
-			});
+			} );
 			return;
 		}
 
-		if (key === 'dataset') {
-			Object.entries(value).forEach(([dataKey, dataValue]) => {
-				element.dataset[dataKey] = dataValue;
-			});
+		if ( key === 'dataset' ) {
+			Object.entries( value ).forEach( ( [ dataKey, dataValue ] ) => {
+				element.dataset[ dataKey ] = dataValue;
+			} );
 			return;
 		}
 
-		if (key === 'text') {
+		if ( key === 'text' ) {
 			element.textContent = value;
 			return;
 		}
 
-		if (key === 'html') {
+		if ( key === 'html' ) {
 			element.innerHTML = value;
 			return;
 		}
 
-		element.setAttribute(key, value);
-	});
+		element.setAttribute( key, value );
+	} );
 	return element;
 }
 
@@ -96,11 +98,13 @@ export function createElement(type, options = {}) {
  * @return {Element} - The first element matching the selector, or null if no match is found
  * @throws {Error} If `selector` argument is missing
  */
-export function qs(selector, parent = document) {
-	if (!selector) {
-		throw new Error('A selector argument is required for the qs function');
+export function qs( selector, parent = document ) {
+	if ( ! selector ) {
+		throw new Error(
+			'A selector argument is required for the qs function'
+		);
 	}
-	return parent.querySelector(selector);
+	return parent.querySelector( selector );
 }
 
 /**
@@ -111,11 +115,13 @@ export function qs(selector, parent = document) {
  * @return {Element[]} - An array of all elements matching the selector, or an empty array if no matches are found
  * @throws {Error} If `selector` argument is missing
  */
-export function qsa(selector, parent = document) {
-	if (!selector) {
-		throw new Error('A selector argument is required for the qsa function');
+export function qsa( selector, parent = document ) {
+	if ( ! selector ) {
+		throw new Error(
+			'A selector argument is required for the qsa function'
+		);
 	}
-	return [...parent.querySelectorAll(selector)];
+	return [ ...parent.querySelectorAll( selector ) ];
 }
 
 /**
@@ -124,10 +130,10 @@ export function qsa(selector, parent = document) {
  * @param {string} cssStr – the CSS string to unescape containing CSS selectors and attributes
  * @return {string} - An escaped CSS string
  */
-export function unEscapeCSS(cssStr) {
-	cssStr = cssStr.replace(/&gt;/g, '>');
-	cssStr = cssStr.replace(/&quot;/g, '"');
-	cssStr = cssStr.replace(/&#39;/g, "'");
-	cssStr = cssStr.replace(/&amp;/g, '&');
+export function unEscapeCSS( cssStr ) {
+	cssStr = cssStr.replace( /&gt;/g, '>' );
+	cssStr = cssStr.replace( /&quot;/g, '"' );
+	cssStr = cssStr.replace( /&#39;/g, "'" );
+	cssStr = cssStr.replace( /&amp;/g, '&' );
 	return cssStr;
 }

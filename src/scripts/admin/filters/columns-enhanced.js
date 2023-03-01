@@ -1,6 +1,6 @@
 const { registerBlockStyle } = wp.blocks;
 
-registerBlockStyle('core/columns', {
+registerBlockStyle( 'core/columns', {
 	name: 'constrained',
 	label: 'Constrained',
-});
+} );

@@ -12,9 +12,9 @@ const paragraphStyles = [
 	},
 ];
 
-paragraphStyles.forEach((style) => {
-	registerBlockStyle('core/paragraph', style);
-});
+paragraphStyles.forEach( ( style ) => {
+	registerBlockStyle( 'core/paragraph', style );
+} );
 
 const listStyles = [
 	{
@@ -28,6 +28,6 @@ const listStyles = [
 	},
 ];
 
-listStyles.forEach((style) => {
-	registerBlockStyle('core/list', style);
-});
+listStyles.forEach( ( style ) => {
+	registerBlockStyle( 'core/list', style );
+} );

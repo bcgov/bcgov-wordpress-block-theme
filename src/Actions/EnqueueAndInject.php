@@ -57,8 +57,9 @@ class EnqueueAndInject {
 	 * @return void
 	 */
 	public function bcgov_block_theme_enqueue_admin_scripts(): void {
-		$admin_assets  = get_template_directory_uri() . '/dist/admin.asset.php';
-		$admin_version = $admin_assets['version'] ?? wp_get_theme()->get( 'Version' );
+		$admin_assets_path = get_template_directory() . '/dist/admin.asset.php';
+		$admin_assets      = require_once $admin_assets_path;
+		$admin_version     = $admin_assets['version'] ?? wp_get_theme()->get( 'Version' );
 
 		wp_enqueue_script(
 			'bcgov-block-theme-admin',
@@ -71,14 +72,6 @@ class EnqueueAndInject {
 		$javascript_variables = $this->set_javascript_variables();
 
 		wp_localize_script( 'bcgov-block-theme-admin', 'site', $javascript_variables );
-
-		wp_enqueue_script(
-			'bcgov-blocks-manager',
-			get_template_directory_uri() . '/inc/core/theme-blocks-allow-list.js',
-			[ 'wp-blocks', 'wp-dom' ],
-			filemtime( get_template_directory() . '/inc/core/theme-blocks-allow-list.js' ),
-			true
-		);
 
 		wp_localize_script(
 			'bcgov-blocks-manager',
