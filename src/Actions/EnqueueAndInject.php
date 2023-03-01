@@ -57,9 +57,9 @@ class EnqueueAndInject {
 	 * @return void
 	 */
 	public function bcgov_block_theme_enqueue_admin_scripts(): void {
-		$admin_assets_path  = get_template_directory() . '/dist/admin.asset.php';
-        $admin_assets       = require_once $admin_assets_path;
-		$admin_version = $admin_assets['version'] ?? wp_get_theme()->get( 'Version' );
+		$admin_assets_path = get_template_directory() . '/dist/admin.asset.php';
+        $admin_assets      = require_once $admin_assets_path;
+		$admin_version     = $admin_assets['version'] ?? wp_get_theme()->get( 'Version' );
 
 		wp_enqueue_script(
 			'bcgov-block-theme-admin',
