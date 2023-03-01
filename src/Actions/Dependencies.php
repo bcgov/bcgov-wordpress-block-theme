@@ -10,13 +10,6 @@ namespace Bcgov\Theme\Block\Actions;
 class Dependencies {
 
 	/**
-	 * Constructs and sets up theme dependencies.
-	 */
-	public function __construct() {
-		$this->bcgov_block_theme_dependencies();
-	}
-
-	/**
 	 * Sets an admin notice for missing plugin dependencies.
 	 *
 	 * @since 1.0.0
