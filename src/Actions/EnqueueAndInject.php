@@ -49,6 +49,14 @@ class EnqueueAndInject {
 		);
 	}
 
+	public function bcgov_block_theme_enqueue_digmod_theme():void {
+		wp_enqueue_style(
+			'digimodv2',
+			get_template_directory_uri() . '/dist/digimodv2.css',
+			[]
+		);
+	}
+
 	/**
 	 * Enqueue scripts and styles for admin.
 	 *
@@ -88,7 +96,18 @@ class EnqueueAndInject {
 			[],
 			$admin_version
 		);
+		
 	}
+
+	public function add_editor_styles() {
+		// Add support for editor styles.
+		  add_theme_support( 'editor-styles' );
+		  // Enqueue editor styles.
+		add_editor_style( './dist/digimodv2.css' );
+	}
+	
+	
+	// add_action( 'after_setup_theme', 'add_editor_styles' );
 
 	/**
      * Enqueue JS variables.
