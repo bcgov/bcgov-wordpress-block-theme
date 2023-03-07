@@ -37,6 +37,8 @@ class Setup {
     public function __construct() {
 		
 		/* DIGMOD PATCH */
+		// Run GDX theme logic only on pages that are not old V2 digimod pages
+
 		$digimod_v2_templates = ['bcgov-wordpress-block-theme//single-common-component','bcgov-wordpress-block-theme//single-cop'];
 		$digimod_v2_urls = [
 			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/b-c-s-digital-plan/',
@@ -118,6 +120,7 @@ class Setup {
 
 		$current_url = "http" . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 's' : '') . "://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 
+		// check for common components in communities of practice
 		$start_match = false;
 		foreach ($digimod_v2_urls_start as $item) {
 			if (strpos($current_url, $item) === 0) {
@@ -127,7 +130,16 @@ class Setup {
 
 		$post_id = isset($_GET['post']) ? $_GET['post'] : null;
 
-		if(in_array($current_url,$digimod_v2_urls) or $start_match ) #
+		// if we're on local, do not apply
+		$local=false;
+		if (strpos($_SERVER['HTTP_HOST'], 'localhost' ) === 0) {
+			$local=true;
+		}
+		// echo($_SERVER['HTTP_HOST']);
+		// echo('local: '.  ($local ? 'true' : 'false'));
+		
+		// if we're on preview url for v2 page, include v2 css only, don't run GDX logic
+		if((in_array($current_url,$digimod_v2_urls) or $start_match) && !$local) #
 		{
 			// echo('inject v2 and return');
 			$theme_enqueue_and_inject       = new EnqueueAndInject();
@@ -135,9 +147,10 @@ class Setup {
 			return;
 		}
 		
+		// if we're on editor for one of V2 pages or full site editing of V2 templates, don't run GDX logic
 		$postId = isset($_GET['postId']) ? $_GET['postId'] : null;
 		// echo('postId: '. $postId);
-		if (in_array($post_id, $digimod_v2_pages) or in_array($postId,$digimod_v2_templates) or get_post_type($post_id)=="common-component"){
+		if ((in_array($post_id, $digimod_v2_pages) or in_array($postId,$digimod_v2_templates) or get_post_type($post_id)=="common-component")&&!$local){
 			// echo('v2 add editor styles');
 			$theme_enqueue_and_inject       = new EnqueueAndInject();
 			add_action( 'after_setup_theme', [$theme_enqueue_and_inject, 'add_editor_styles']);
