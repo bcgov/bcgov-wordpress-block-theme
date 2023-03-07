@@ -113,7 +113,8 @@ class Setup {
 		'http://localhost:8888/common-component', 'http://localhost:8888/cop'];
 
 		$digimod_v2_pages = ['616','66', '87', '77', '68', '72', '89', '74', '85', '81', '83', '79', '228', '226', '221', '9', '632', '634', '636', 
-							'639', '641', '643', '645', '652', '630', '647', '654', '666', '656', '658', '660', '662', '664', '668', '670', '672', '13'];
+							'639', '641', '643', '645', '652', '630', '647', '654', '666', '656', '658', '660', '662', '664', '668', '670', '672', '13']; // todo: remove 810
+		
 
 		$current_url = "http" . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 's' : '') . "://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 
@@ -124,17 +125,19 @@ class Setup {
 			}
 		}
 
-		if(in_array($current_url,$digimod_v2_urls) or $start_match)
+		$post_id = isset($_GET['post']) ? $_GET['post'] : null;
+
+		if(in_array($current_url,$digimod_v2_urls) or $start_match ) #
 		{
 			// echo('inject v2 and return');
 			$theme_enqueue_and_inject       = new EnqueueAndInject();
 			add_action( 'wp_enqueue_scripts', [ $theme_enqueue_and_inject, 'bcgov_block_theme_enqueue_digmod_theme' ] );
 			return;
 		}
-		$post_id = isset($_GET['post']) ? $_GET['post'] : null;
+		
 		$postId = isset($_GET['postId']) ? $_GET['postId'] : null;
 		// echo('postId: '. $postId);
-		if (in_array($post_id, $digimod_v2_pages) or in_array($postId,$digimod_v2_templates)){
+		if (in_array($post_id, $digimod_v2_pages) or in_array($postId,$digimod_v2_templates) or get_post_type($post_id)=="common-component"){
 			// echo('v2 add editor styles');
 			$theme_enqueue_and_inject       = new EnqueueAndInject();
 			add_action( 'after_setup_theme', [$theme_enqueue_and_inject, 'add_editor_styles']);
