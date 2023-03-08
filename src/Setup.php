@@ -38,7 +38,7 @@ class Setup {
 		
 		/* DIGMOD PATCH */
 		// Run GDX theme logic only on pages that are not old V2 digimod pages
-		$applyDigimodPath = false;
+		$applyDigimodPath = true;
 		$runGDX = true;
 
 		if ($applyDigimodPath){
