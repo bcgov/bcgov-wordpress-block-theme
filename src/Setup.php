@@ -41,78 +41,42 @@ class Setup {
 
 		$digimod_v2_templates = ['bcgov-wordpress-block-theme//single-common-component','bcgov-wordpress-block-theme//single-cop'];
 		$digimod_v2_urls = [
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/b-c-s-digital-plan/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/digital-framework-progress/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/forms-surveys/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/case-studies/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/case-study-energy-mines-and-digital-trust/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/case-study-medical-services-plan/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/case-study-mines-digital-service/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/case-study-nutrient-management-calculator/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/common-components/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/communities/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/about/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/copyright/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/disclaimer/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/privacy/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/home/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/learning/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/low-touch-saas/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/build-diverse-teams-internal-capacity/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/continuously-learn-improve/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/design-with-people/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/embed-inclusion/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/express-cultural-historical-awareness-respect/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/integrate-ethics/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/manage-risks-proportionately/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/take-an-ecosystem-approach/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/take-care-of-information-and-data/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-code-of-practice/work-in-the-open/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/policies-and-standards/digital-principles/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/products-services/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/resources/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/video-conferencing-guide/',
-			'https://wordpress-prod.apps.silver.devops.gov.bc.ca/services/',
-
-			'http://localhost:8888/b-c-s-digital-plan/',
-			'http://localhost:8888/digital-framework-progress/',
-			'http://localhost:8888/forms-surveys/',
-			'http://localhost:8888/case-studies/',
-			'http://localhost:8888/case-study-energy-mines-and-digital-trust/',
-			'http://localhost:8888/case-study-medical-services-plan/',
-			'http://localhost:8888/case-study-mines-digital-service/',
-			'http://localhost:8888/case-study-nutrient-management-calculator/',
-			'http://localhost:8888/common-components/',
-			'http://localhost:8888/communities/',
-			'http://localhost:8888/about/',
-			'http://localhost:8888/copyright/',
-			'http://localhost:8888/disclaimer/',
-			'http://localhost:8888/privacy/',
-			'http://localhost:8888/home/',
-			'http://localhost:8888/learning/',
-			'http://localhost:8888/low-touch-saas/',
-			'http://localhost:8888/policies-and-standards/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/build-diverse-teams-internal-capacity/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/continuously-learn-improve/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/design-with-people/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/embed-inclusion/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/express-cultural-historical-awareness-respect/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/integrate-ethics/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/manage-risks-proportionately/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/take-an-ecosystem-approach/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/take-care-of-information-and-data/',
-			'http://localhost:8888/policies-and-standards/digital-code-of-practice/work-in-the-open/',
-			'http://localhost:8888/policies-and-standards/digital-principles/',
-			'http://localhost:8888/products-services/',
-			'http://localhost:8888/resources/',
-			'http://localhost:8888/video-conferencing-guide/',
-			'http://localhost:8888/services/'
+			'b-c-s-digital-plan/',
+			'digital-framework-progress/',
+			'forms-surveys/',
+			'case-studies/',
+			'case-study-energy-mines-and-digital-trust/',
+			'case-study-medical-services-plan/',
+			'case-study-mines-digital-service/',
+			'case-study-nutrient-management-calculator/',
+			'common-components/',
+			'communities/',
+			'about/',
+			'copyright/',
+			'disclaimer/',
+			'privacy/',
+			'home/',
+			'learning/',
+			'low-touch-saas/',
+			'policies-and-standards/',
+			'policies-and-standards/digital-code-of-practice/',
+			'policies-and-standards/digital-code-of-practice/build-diverse-teams-internal-capacity/',
+			'policies-and-standards/digital-code-of-practice/continuously-learn-improve/',
+			'policies-and-standards/digital-code-of-practice/design-with-people/',
+			'policies-and-standards/digital-code-of-practice/embed-inclusion/',
+			'policies-and-standards/digital-code-of-practice/express-cultural-historical-awareness-respect/',
+			'policies-and-standards/digital-code-of-practice/integrate-ethics/',
+			'policies-and-standards/digital-code-of-practice/manage-risks-proportionately/',
+			'policies-and-standards/digital-code-of-practice/take-an-ecosystem-approach/',
+			'policies-and-standards/digital-code-of-practice/take-care-of-information-and-data/',
+			'policies-and-standards/digital-code-of-practice/work-in-the-open/',
+			'policies-and-standards/digital-principles/',
+			'products-services/',
+			'resources/',
+			'video-conferencing-guide/',
+			'services/'
 			];
-		$digimod_v2_urls_start = ['https://wordpress-prod.apps.silver.devops.gov.bc.ca/common-component', 'https://wordpress-prod.apps.silver.devops.gov.bc.ca/cop',
-		'http://localhost:8888/common-component', 'http://localhost:8888/cop'];
+		$digimod_v2_urls_start = ['common-component', 'cop'];
 
 		$digimod_v2_pages = ['616','66', '87', '77', '68', '72', '89', '74', '85', '81', '83', '79', '228', '226', '221', '9', '632', '634', '636', 
 							'639', '641', '643', '645', '652', '630', '647', '654', '666', '656', '658', '660', '662', '664', '668', '670', '672', '13']; // todo: remove 810
@@ -121,10 +85,19 @@ class Setup {
 		$current_url = "http" . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 's' : '') . "://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
 
 		// check for common components in communities of practice
+		$path = parse_url($current_url, PHP_URL_PATH);
+		$base = basename($path);
 		$start_match = false;
 		foreach ($digimod_v2_urls_start as $item) {
-			if (strpos($current_url, $item) === 0) {
+			if (strpos($base, $item) === 0) {
 				$start_match=true;
+			}
+		}
+
+		$end_match = false;
+		foreach ($digimod_v2_urls as $item) {
+			if (str_ends_with($current_url,$item)) {
+				$end_match=true;
 			}
 		}
 
@@ -139,7 +112,7 @@ class Setup {
 		// echo('local: '.  ($local ? 'true' : 'false'));
 		
 		// if we're on preview url for v2 page, include v2 css only, don't run GDX logic
-		if((in_array($current_url,$digimod_v2_urls) or $start_match) && !$local) #
+		if(($end_match or $start_match) && !$local) #
 		{
 			// echo('inject v2 and return');
 			$theme_enqueue_and_inject       = new EnqueueAndInject();
