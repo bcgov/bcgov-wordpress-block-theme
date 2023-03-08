@@ -132,9 +132,9 @@ class Setup {
 
 		// if we're on local, do not apply
 		$local=false;
-		if (strpos($_SERVER['HTTP_HOST'], 'localhost' ) === 0) {
-			$local=true;
-		}
+		// if (strpos($_SERVER['HTTP_HOST'], 'localhost' ) === 0) {
+		// 	$local=true;
+		// }
 		// echo($_SERVER['HTTP_HOST']);
 		// echo('local: '.  ($local ? 'true' : 'false'));
 		
