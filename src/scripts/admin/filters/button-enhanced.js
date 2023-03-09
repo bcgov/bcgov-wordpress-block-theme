@@ -1,3 +1,5 @@
+/* eslint jsdoc/check-line-alignment: "off" */
+
 import classnames from 'classnames';
 import iconsObj from '../utils/button-icons';
 

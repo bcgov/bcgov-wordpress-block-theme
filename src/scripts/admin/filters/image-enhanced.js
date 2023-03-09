@@ -1,3 +1,5 @@
+/* eslint jsdoc/check-line-alignment: "off" */
+
 import { assign, merge } from 'lodash';
 
 const { registerBlockStyle } = wp.blocks;

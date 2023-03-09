@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.3 March 9, 2023
+- Added eslint rules to ignore various warnings during build. ([DESCW-975]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-975))
+
 ## 1.1.2: February 28, 2023
 - Removed block category allow list, fixing bug preventing custom categories in editor ([DESCW-924]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-924))
 - Updated package.json:
