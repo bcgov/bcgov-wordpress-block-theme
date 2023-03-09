@@ -1,3 +1,5 @@
+/* eslint jsdoc/check-line-alignment: "off" */
+
 /**
  * Utility functions for cleaner JavaScript.
  *

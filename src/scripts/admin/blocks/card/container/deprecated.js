@@ -1,3 +1,5 @@
+/* eslint react/no-unknown-property: "off" */
+
 import { attributes } from './attributes';
 import { InnerBlocks } from '@wordpress/block-editor';
 export const deprecated = [

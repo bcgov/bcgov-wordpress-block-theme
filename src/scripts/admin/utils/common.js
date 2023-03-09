@@ -1,3 +1,5 @@
+/* eslint jsdoc/check-line-alignment: "off" */
+
 export const allowedColors = [
 	{ name: 'bcgov-background-light', color: '#f2f2f2' },
 	{ name: 'bcgov-component', color: '#606060' },
