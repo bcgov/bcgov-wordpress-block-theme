@@ -72,28 +72,30 @@ class InfoAdminPage {
 
 							<h3>Changing theme behaviours in Theme Options</h3>
 
-							<p>The BCGov Block Theme allows you to change some of the behaviours of the site such as theme styles and how the header behaves. These are coupled with the Blovk Theme Appearance settings. Simply go to the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-block-theme-options">Theme Options</a> page in the site admin area and choose the behaviours you wish to use.</p>
+							<p>The BCGov Block Theme allows you to change some of the behaviours of the site such as theme styles and how the header behaves. These are coupled with the Block Theme Appearance settings. Simply go to the Theme Options page in the site admin area and choose the behaviours you wish to use.</p>
 
 							<ul>
-								<li><span class="dashicons dashicons-yes"></span>Choose the active site stying – this choice will impact how certain features display or are made available.</li>
+								<li><span class="dashicons dashicons-yes"></span>Choose the active site styling – this choice will impact how certain features display or are made available.</li>
 
 								<li><span class="dashicons dashicons-yes"></span>Change the behaviour of the site header bar when using the Takeover Menu.</li>
 
-								<li><span class="dashicons dashicons-yes"></span>Make styles and patterns from non-active sites available to the current site.</li>
+								<li><span class="dashicons dashicons-yes"></span>Enable optional styles and patterns available to the current site.</li>
+
+								<li><span class="dashicons dashicons-yes"></span>Enable a custom body class for site specific style overrides.</li>
+
+								<li><span class="dashicons dashicons-yes"></span>Add custom content security policy overrides.</li>
 							</ul>
 
-							<p>More detail on these features can be found on the Theme Options page.</p>
-
-							<p><strong>Note:</strong> New sites will need to enable the ACF Pro plugin and import the most recent version of the site options export file found in the <a href="https://github.com/bcgov/bcgov-wordpress-block-theme/tree/development/src/exports">src/exports</a> directory in the theme repository on Github.</p>
+							<p>More detail on these features can be found on the <strong>Appearance > <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-block-theme-options">Theme Options</a></strong> page.</p>
 
 							<hr />
 
 							<h3>BCGov Block Theme Settings</h3>
 
-							<p>Some features will need to be turned on to become available to the admin environemnt. These include the Custom Notice Banner feature and the Custom Patterns. Such available options will change over time, so be sure to review this area to determine the latest settings available to the BCGov Block Theme environment. These will be turned off by default in a new installation. For more information on these options see their respective sections below.</p>
+							<p>Some features will need to be turned on to become available to the admin environment. These include the Custom Notice Banner feature and the Custom Patterns. Such available options will change over time, so be sure to review this area to determine the latest settings available to the BCGov Block Theme environment. These will be turned off by default in a new installation. For more information on these options see their respective sections below.</p>
 
 							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/settings-admin-menu.png'; ?>" alt="" style="border: 1px solid #ccc; width: 200px;" />
-							<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/bcgov-block-theme-settings.png'; ?>" alt="" style="border: 1px solid #ccc; width: 400px;" /><br />Other settings for admin enabling options in the Block Theme</p>
+							<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/bcgov-block-theme-settings.png'; ?>" alt="" style="border: 1px solid #ccc; width: 400px;" /><br />Other settings for admin enabling options in the Block Theme can be found on the <strong><a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-settings-menu">BCGov Block Theme Settings</a></strong> page</p>
 
 						</div><!-- /Theme options -->
 
@@ -119,7 +121,7 @@ class InfoAdminPage {
 
 								<h3>Linked vs unlinked</h3>
 
-								<p>The link sides icon allows you to choose to apply the same settings to all sides or break them out individually. In some situations you may have access to all sides (top, bottom, left and right) or you may only have top and bottom. In some circumstances you may only have access to paadding or margin but not both. And in other cases the padding and margin option may not be available. It is up to you to use combinations of conatining blocks such as groups, rows, columns, etc. to find the right layout pattern for your desired look and feel.</p>
+								<p>The link sides icon allows you to choose to apply the same settings to all sides or break them out individually. In some situations you may have access to all sides (top, bottom, left and right) or you may only have top and bottom. In some circumstances you may only have access to padding or margin but not both. And in other cases the padding and margin option may not be available. It is up to you to use combinations of containing blocks such as groups, rows, columns, etc. to find the right layout pattern for your desired look and feel.</p>
 
 								<p><span class="dashicons dashicons-warning" style="color: orange"></span> <strong>Warning:</strong> Be careful when using margins and padding in the editor and setting your own sizes. Using explicit sizes – eg: 2rem, 1.5em or 18px – are one size fits all (or doesn’t fit as the case may be). Any padding or margin spacing added to any element, layout, pattern or block is going to display similarly across all resolutions. 6rem of margin on a desktop view may look good, but can add a lot of unwanted spacing on mobile devices.</p>
 								</div>
@@ -171,7 +173,7 @@ class InfoAdminPage {
 
 								<li><span class="dashicons dashicons-yes"></span>Patterns are typically designed to be discreet page specific sections and are not meant to be combined within other patterns.</li>
 
-								<li><span class="dashicons dashicons-yes"></span>Patterns are usually contained in a Group block at it's top most level when using the List View..</li>
+								<li><span class="dashicons dashicons-yes"></span>Patterns are usually contained in a Group block at its top most level when using the List View..</li>
 
 								<li><span class="dashicons dashicons-warning" style="color: orange"></span> Pre-defined styling can be changed by moving or altering pattern structure while others may cause design failures.</li>
 
@@ -182,7 +184,7 @@ class InfoAdminPage {
 
 							<h2>BCGov Block Patterns</h2>
 
-							<p>Patterns are separated into different categories such as General, Banners, Header/Footer, Page Layout, Post Queries, etc. These categoris are used to separate intended purpose and also keep the list of patterns from getting too large and inhibit browsing. Should you know the name of a pattern you can use the search tool in the Block Inserter to filter and find the one you need.</p>
+							<p>Patterns are separated into different categories such as General, Banners, Header/Footer, Page Layout, Post Queries, etc. These categories are used to separate intended purpose and also keep the list of patterns from getting too large and inhibit browsing. Should you know the name of a pattern you can use the search tool in the Block Inserter to filter and find the one you need.</p>
 
 							<p>Many patterns are available for use as part of the default BCGov base theme. They offer layouts such as Alternating Cards, Card with Image Overlay, Card with Under Image Portrait 2-Up, Cards Portrait 3-up, Detail Card with Icons, Hero Banner, Long Card, Quote, Small Quote with Image, and many more.</li>
 							</p>
@@ -205,11 +207,11 @@ class InfoAdminPage {
 
 							<p>Click on the "Publish" button to save your new pattern category.</p>
 
-							<p>Your custom pattern will now be available in the Pattern Chooser under the category you just added. It will come prefixed with the "Custom: " label, so if your group was called My Great Patterns, in the pattern chooser it will be labeled "Custom: My Great Patterns."</p>
+							<p>Your custom pattern will now be available in the Pattern Chooser under the category you just added. It will come prefixed with the "Custom: " label, so if your group was called My Great Patterns, in the pattern chooser it will be labelled "Custom: My Great Patterns."</p>
 
 							<h3>Making custom patterns searchable</h3>
 
-							<p>You may have noticed at the top of the block and pattern chooser the ability to search for exiting blocks and patterns. To make your pattern easily findable without browsing to it you can add keywords to aid in finding your pattern.</p>
+							<p>You may have noticed at the top of the block and pattern chooser the ability to search for existing blocks and patterns. To make your pattern easily findable without browsing to it you can add keywords to aid in finding your pattern.</p>
 
 							<p>Add any keywords you feel make for better searchability to the "Add Related Search Term" under the "Search Related Terms" section found directly below the Pattern Groups.</p>
 
@@ -218,7 +220,7 @@ class InfoAdminPage {
 						<div class="bcgov-block-theme-grid-content card">
 							<h2 id="specific-block-patterns" class="bcgov-block-theme-title">Site Specific Patterns</h2>
 
-							<p>Site specific patterns developed specifically for sites can also be inserted from their patterns. Look for  categories that identify the site by name. These patterns can be modified once applied to the page and can either be set up a Reusable Block or alternatively can be copy/pasted between pages or sections once altered.</p>
+							<p>Site specific patterns developed specifically for sites can also be inserted from their patterns. Look for  categories that identify the site by name. These patterns can be modified once applied to the page and can either be set up as a Reusable Block or alternatively can be copy/pasted between pages or sections once altered.</p>
 
 							<?php
 							/*
@@ -301,7 +303,7 @@ class InfoAdminPage {
 						<div class="bcgov-block-theme-grid-content card">
 							<h2 id="colour-palettes" class="bcgov-block-theme-title">Colour Palettes</h2>
 
-							<p>Colour palettes for the BCGov Block Theme are made up of 24 pre-defined colours. Any additional Active Site options will also include a palette with an equivalent number of colours in order to make the patterns useable across sites. An associated group of Gradients based on the 16 essential custom colours in the colour palette are also available.</p>
+							<p>Colour palettes for the BCGov Block Theme are made up of 24 predefined colours. Any additional Active Site options will also include a palette with an equivalent number of colours in order to make the patterns usable across sites. An associated group of Gradients based on the 16 essential custom colours in the colour palette are also available.</p>
 
 							<h3>Example palettes</h3>
 
@@ -309,13 +311,13 @@ class InfoAdminPage {
 							
 							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/CleanBC-Colour-Palette-Swatches.jpg'; ?>" alt="CleanBC theme colour palette" style="width: 300px;" /> <img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/CleanBC-Gradients-Swatches.jpg'; ?>" alt="BCGov theme colour palette" style="width: 300px;" /></p>
 							
-							<p>It should be noted that most blocks and patterns can be modified in the editor to override colour or gradient palette options to accomodate specific customisation needs.</p>
+							<p>It should be noted that most blocks and patterns can be modified in the editor to override colour or gradient palette options to accommodate specific customisation needs.</p>
 							
 							<hr />
 							
 							<h2>Instructions</h2>
 							
-							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/style-icon.png'; ?>" alt="style icon" style="float: right; width: 3rem;"/> Global Styles Switcher allows users to switch the theme defaults to alternate colour palettes. Open <strong>Appearance > <a href="<?php echo esc_url( home_url() ) . '/wp-admin/site-editor.php'; ?>">Editor</a></strong> in the admin. You should see the theme variations in the global styles switcher by clicking on the syles icon in the top right corner.</p>
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/style-icon.png'; ?>" alt="style icon" style="float: right; width: 3rem;"/> Global Styles Switcher allows users to switch the theme defaults to alternate colour palettes. Open <strong>Appearance > <a href="<?php echo esc_url( home_url() ) . '/wp-admin/site-editor.php'; ?>">Editor</a></strong> in the admin. You should see the theme variations in the global styles switcher by clicking on the styles icon in the top right corner.</p>
 
 						</div><!-- /Colour Palettes -->
 
@@ -341,7 +343,7 @@ class InfoAdminPage {
 							</div>
 							<p>By default images do not print. If you have an image that conveys information, such as a graph, and want it to print, you will need to enable this by selecting the <strong>Image block or the Media & Text block</strong> (currently the only two blocks supporting printing images).</p>
 
-							<p>Using the "Max width on printed page (%)" slider or its related number firld will set the percentage an image takes on the printed page. This range can be from 10% to 100% width of the printed page width and is set to a default of 25%.</p>
+							<p>Using the "Max width on printed page (%)" slider or its related number field will set the percentage an image takes on the printed page. This range can be from 10% to 100% of the printed page width and is set to a default of 25%.</p>
 
 							<p>Once you have set these options, you can preview the block to see how it will appear when printed.</p>
 							
@@ -391,7 +393,7 @@ class InfoAdminPage {
 
 							<h2>Instructions</h2>
 
-							<p>The theme editor allows for the customization of the BCGov WordPress theme without writing any code, and modify page templates without breaking the website. This page is not meant for in-depth instruction in using the theme editor, just know the full site editor is a powerful and flexible way to customize the BCGov Block theme and will allow for making substantive changes to a theme and its layout at any time. This enables a level of flexiblility which allows you to easily create on-demand page layouts. For more information regarding WordPress 6+ Templating see: </p>
+							<p>The theme editor allows for the customization of the BCGov WordPress theme without writing any code, and modifying page templates without breaking the website. This page is not meant for in-depth instruction in using the theme editor, just know the full site editor is a powerful and flexible way to customise the BCGov Block theme and will allow for making substantive changes to a theme and its layout at any time. This enables a level of flexibility which allows you to easily create on-demand page layouts. For more information regarding WordPress 6+ Templating see: </p>
 
 						</div><!-- /Customisable Templates -->
 
@@ -415,7 +417,7 @@ class InfoAdminPage {
 
 							<h2>Instructions</h2>
 
-							<p>Template parts are used to organize a theme in smaller reusable structural parts. They are commonly used for site headers and site footers. Just like templates, the theme editor allows for the customization of the BCGov WordPress theme without writing any code and this includes modifying template parts.</p>
+							<p>Template parts are used to organise a theme in smaller reusable structural parts. They are commonly used for site headers and site footers. Just like templates, the theme editor allows for the customization of the BCGov WordPress theme without writing any code and this includes modifying template parts.</p>
 
 							<p>The Site Editor’s Template Parts section displays a list of all template parts. You can create template parts using the Add New button. In this view, you can also clear customizations from theme template parts and delete user-created template parts should an error be made while editing inside the editor.</p>
 
@@ -429,12 +431,12 @@ class InfoAdminPage {
 
 							<p>The Custom Notice Banner can be enabled in the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/admin.php?page=bcgov-settings-menu">BCGov Block Theme Settings</a>  page and is to be used when a notification banner is required to relay a message of some importance. When enabling the notification banner on the website, it is essential to ensure that the message is clear and concise and does not detract from the overall purpose of the site itself.</p>
 
-							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/notice-settings.png'; ?>" alt="Settings for the cutom notice banner" style="border: 1px solid #ccc; width: 100%;" /><br />Settings for the cutom notice banner</p>
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/notice-settings.png'; ?>" alt="Settings for the custom notice banner" style="border: 1px solid #ccc; width: 100%;" /><br />Settings for the custom notice banner</p>
 
 							<ol>
 							<li> <strong>Enable Admin Notification:</strong> Show or hide the banner on the site.</li>
 							<li> <strong>Homepage only:</strong> This refers to a setting that allows the banner to be displayed only on the homepage and not on other pages.</li>
-							<li> <strong>Status (colour):</strong> The color used to indicate the status of the message. A number of colour options are available (which can be seen in the image above) and utilise preset colour options that conform to digitial accessibility standards for contrast.</li>
+							<li> <strong>Status (colour):</strong> The colour used to indicate the status of the message. A number of colour options are available (which can be seen in the image above) and utilise preset colour options that conform to digital accessibility standards for contrast.</li>
 							<li> <strong>Embolden / Embiggen:</strong> These terms refer to the act of making the banner content appear more prominent by increasing the font size or bolding the text.</li>
 							<li> <strong>Notification content:</strong> This refers to the message or information displayed in the notification banner itself, such as an alert or banner, that is meant to grab the attention of the user.</li>
 							<li> <strong>Enable button:</strong> Show or hide the button inside the banner.</li>
@@ -499,7 +501,7 @@ class InfoAdminPage {
 								<li> Determine which specific resources or elements on your website are being blocked by the CSP. You may need to check the browser console or network tab for details on which resources are being blocked.</li>
 								<li> Once you've identified the specific resources or elements that are being blocked, determine which type of exception is needed to allow those resources or elements to be loaded. For example, you may need to add an exception for a specific domain or subdomain, or you may need to allow a specific type of resource (such as scripts, images, or stylesheets).</li>
 								<li> Once you've determined what type of exception is needed, navigate to the Custom Security Policy Exception form in your site Simply go to the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-block-theme-options#csp">Theme Options</a> settings.</li>
-								<li> In the Custom Security Policy Exception form, enter the specific details of the exception that you need to add. This may include the domain or subdomain that needs to be allowed, the specific resource type that needs to be allowed, and any other relevant information.</li>
+								<li> In the Custom Security Policy Exception form, enter the specific details of the exception that you need to add. This may include the domain or subdomain that needs to be allowed, the specified resource type that needs to be allowed, and any other relevant information.</li>
 								<li> Once you've entered the details of the exception, click the "Save Changes" button to save the exception to your site's CSP.</li>
 							</ol>
 
