@@ -68,11 +68,11 @@ class InfoAdminPage {
 						</div> <!-- /Getting started -->
 
 						<div class="bcgov-block-theme-grid-content card">
-							<h2 id="theme-options" class="bcgov-block-theme-title">Theme Options</h2>
+							<h2 id="theme-options" class="bcgov-block-theme-title">Theme Options and Block Theme Settings</h2>
 
-							<h3>Changing theme behaviours</h3>
+							<h3>Changing theme behaviours in Theme Options</h3>
 
-							<p>The BCGov Block Theme allows you to change some of the behaviours of the site such as theme styles and how the header behaves. Simply go to the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-block-theme-options">Theme Options</a> page in the site admin area and choose the behaviours you wish to use.</p>
+							<p>The BCGov Block Theme allows you to change some of the behaviours of the site such as theme styles and how the header behaves. These are coupled with the Blovk Theme Appearance settings. Simply go to the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-block-theme-options">Theme Options</a> page in the site admin area and choose the behaviours you wish to use.</p>
 
 							<ul>
 								<li><span class="dashicons dashicons-yes"></span>Choose the active site stying – this choice will impact how certain features display or are made available.</li>
@@ -85,21 +85,75 @@ class InfoAdminPage {
 							<p>More detail on these features can be found on the Theme Options page.</p>
 
 							<p><strong>Note:</strong> New sites will need to enable the ACF Pro plugin and import the most recent version of the site options export file found in the <a href="https://github.com/bcgov/bcgov-wordpress-block-theme/tree/development/src/exports">src/exports</a> directory in the theme repository on Github.</p>
+
+							<hr />
+
+							<h3>BCGov Block Theme Settings</h3>
+
+							<p>Some features will need to be turned on to become available to the admin environemnt. These include the Custom Notice Banner feature and the Custom Patterns. Such available options will change over time, so be sure to review this area to determine the latest settings available to the BCGov Block Theme environment. These will be turned off by default in a new installation. For more information on these options see their respective sections below.</p>
+
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/settings-admin-menu.png'; ?>" alt="" style="border: 1px solid #ccc; width: 200px;" />
+							<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/bcgov-block-theme-settings.png'; ?>" alt="" style="border: 1px solid #ccc; width: 400px;" /><br />Other settings for admin enabling options in the Block Theme</p>
+
 						</div><!-- /Theme options -->
 
 						<div class="bcgov-block-theme-grid-content card">
-							<h2 id="general" class="bcgov-block-theme-title">General editing</h2>
+							<h2 id="general" class="bcgov-block-theme-title">General editing and layout</h2>
 
 							<h3>Understanding the role of margins and padding in the WordPress editor</h3>
 
-							<p><span class="dashicons dashicons-warning" style="color: orange"></span> <strong>Warning:</strong> Be vary careful when using margins and padding in the editor. They are one size fits all (or doesn’t fit as the case may be). Any padding or margin spacing added to any element, layout, pattern or block is going to display similarly across all resolutions. 6rem of margins on a desktop view may look good, but can add a lot of unwanted spacing on mobile devices.</p>
+							<div style="display: flex; gap: 2rem;">
+								<div style="max-width: 360px;">
 
-							<p>One day the block editor may allow for differentiating between viewport sizes to add selective padding or margins, but until that day is it always safer to err on the side of cautious use and fulsome testing to ensure the element doesn’t take on unwanted aspects when viewed across all platforms and screen resolutions.</p>
+								<p>The WordPress environment allows for responsive padding and margins by using the slider mechanism.</p>
+
+								<ol>
+								<li> First, open the page or post where you want to adjust the padding or margin.</li>
+								Once you're in the editing mode, select the block you want to adjust.</li>
+								<li> On the right-hand side of the editor, you should see a panel called "Block settings". Look for the "Spacing" section within the panel.</li>
+								<li> Within the "Spacing" section, you'll see two sliders: one for margin and one for padding. You can adjust these sliders to change the amount of margin or padding around the block.</li>
+								<li> The margin slider controls the space outside the block, while the padding slider controls the space inside the block.</li>
+								<li> You can either adjust the sliders by dragging the handles or by clicking on the number and typing in a specific value.</li>
+								<li> As you adjust the sliders, you'll see the changes reflected in real-time on the preview of your page or post.</li>
+								</ol>
+
+								<h3>Linked vs unlinked</h3>
+
+								<p>The link sides icon allows you to choose to apply the same settings to all sides or break them out individually. In some situations you may have access to all sides (top, bottom, left and right) or you may only have top and bottom. In some circumstances you may only have access to paadding or margin but not both. And in other cases the padding and margin option may not be available. It is up to you to use combinations of conatining blocks such as groups, rows, columns, etc. to find the right layout pattern for your desired look and feel.</p>
+
+								<p><span class="dashicons dashicons-warning" style="color: orange"></span> <strong>Warning:</strong> Be careful when using margins and padding in the editor and setting your own sizes. Using explicit sizes – eg: 2rem, 1.5em or 18px – are one size fits all (or doesn’t fit as the case may be). Any padding or margin spacing added to any element, layout, pattern or block is going to display similarly across all resolutions. 6rem of margin on a desktop view may look good, but can add a lot of unwanted spacing on mobile devices.</p>
+								</div>
+								<div>
+								<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/padding-margin-settings.png'; ?>" alt="Enabling printing of an image" style="border: 1px solid #ccc; width: 300px;" /><br />Using sliders to set padding and margin</p>
+
+								</div>
+
+								<hr />
+
+							</div>
+							
+							<hr/>
+							<h3>Fluid Typography</h3>
+
+							<div style="display: flex; gap: 2rem;">
+							<div style="max-width: 360px;">
+							<p>This feature enables font sizes to adapt to changes in screen size, for example, by growing larger as the viewport width increases, or smaller as it decreases. You will find this control in most text based block inspector options.</p>
+
+							<p>It is still possible to set the size of text or headings in hard coded values by setting a custom size, however much like the margins and padding issue above, it does not scale responsively so use it with care and test across all screen sizes from desktop to mobile.</p>
+							</div>
+							<div>
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/fluid-typography.png'; ?>" alt="Enabling printing of an image" style="border: 1px solid #ccc; width: 300px;" /><br />Font size picker UI control with presets</p>
+							</div>
+							</div>
+
+							
+
+							
 
 						</div><!-- /General editing -->
 
 						<div class="bcgov-block-theme-grid-content card">
-							<h2 id="block-patterns" class="bcgov-block-theme-title">Patterns</h2>
+							<h2 id="block-patterns" class="bcgov-block-theme-title">Patterns and Custom Patterns</h2>
 							
 							<h2>Instructions</h2>
 
@@ -117,12 +171,14 @@ class InfoAdminPage {
 
 								<li><span class="dashicons dashicons-yes"></span>Patterns are typically designed to be discreet page specific sections and are not meant to be combined within other patterns.</li>
 
-								<li><span class="dashicons dashicons-yes"></span>Patterns are usually contained in a Group block at it's top most level when using the List View. Banner patterns typically use the Cover block as the top most block.</li>
+								<li><span class="dashicons dashicons-yes"></span>Patterns are usually contained in a Group block at it's top most level when using the List View..</li>
 
 								<li><span class="dashicons dashicons-warning" style="color: orange"></span> Pre-defined styling can be changed by moving or altering pattern structure while others may cause design failures.</li>
 
 								<li><span class="dashicons dashicons-warning" style="color: orange"></span> Be very cautious moving patterns into other patterns.</li>
 							</ul>
+
+							<hr />
 
 							<h2>BCGov Block Patterns</h2>
 
@@ -131,10 +187,36 @@ class InfoAdminPage {
 							<p>Many patterns are available for use as part of the default BCGov base theme. They offer layouts such as Alternating Cards, Card with Image Overlay, Card with Under Image Portrait 2-Up, Cards Portrait 3-up, Detail Card with Icons, Hero Banner, Long Card, Quote, Small Quote with Image, and many more.</li>
 							</p>
 
+							<hr />
+
+							<h2>Creating Custom Patterns</h2>
+
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/patterns-admin-menu.png'; ?>" alt="Enabling printing of an image" style="border: 1px solid #ccc; width: 200px; margin-left: 1rem; margin-bottom: 1rem; float: right" /> In the site admin click on "Patterns", this will bring up the list of custom patterns currently in your site, or it will be empty if starting new. </p>
+							
+							<p>Use the "Add new" button to begin building a custom pattern. Enter a name for the pattern and then build it as you would any other layout using the blocks or elements you want to include in your custom pattern.</p>
+
+							<p>Once you've arranged the blocks to your liking, click on the "Publish" button to save your pattern.</p>
+
+							<h3>Adding custom patterns to the pattern chooser</h3>
+
+							<p>To add your custom pattern to the Pattern chooser, you need to add a new or existing "Pattern Group" located on the Custom Pattern tab of the block inspector area. Click on the "Add New Pattern Group" link or choose from any of the options listed.</p>
+
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/pattern-settings.png'; ?>" alt="Enabling printing of an image" style="border: 1px solid #ccc; width: 260px; margin-left: 1rem; margin-bottom: 1rem; float: right" />If creating a new group enter a "New Pattern Group Name" for your new pattern group and select the group option you just created.</p>
+
+							<p>Click on the "Publish" button to save your new pattern category.</p>
+
+							<p>Your custom pattern will now be available in the Pattern Chooser under the category you just added. It will come prefixed with the "Custom: " label, so if your group was called My Great Patterns, in the pattern chooser it will be labeled "Custom: My Great Patterns."</p>
+
+							<h3>Making custom patterns searchable</h3>
+
+							<p>You may have noticed at the top of the block and pattern chooser the ability to search for exiting blocks and patterns. To make your pattern easily findable without browsing to it you can add keywords to aid in finding your pattern.</p>
+
+							<p>Add any keywords you feel make for better searchability to the "Add Related Search Term" under the "Search Related Terms" section found directly below the Pattern Groups.</p>
+
 						</div><!-- /Patterns -->
 
 						<div class="bcgov-block-theme-grid-content card">
-							<h2 id="specific-block-patterns" class="bcgov-block-theme-title">Site Specific Block Patterns</h2>
+							<h2 id="specific-block-patterns" class="bcgov-block-theme-title">Site Specific Patterns</h2>
 
 							<p>Site specific patterns developed specifically for sites can also be inserted from their patterns. Look for  categories that identify the site by name. These patterns can be modified once applied to the page and can either be set up a Reusable Block or alternatively can be copy/pasted between pages or sections once altered.</p>
 
@@ -242,17 +324,50 @@ class InfoAdminPage {
 							
 							<h2 id="printing" class="bcgov-block-theme-title">Print specific controls</h2>
 
-							<h3>Enabling images to print</h3>
+							<div style="display: flex; gap: 2rem;">
+								<div style="max-width: 360px;">
+									<h3>Enabling images to print</h3>
 
-							<p>By default images do not print. If you have an image that conveys information, such as a graph, and want it to print, you will need to enable this by selecting the Image block or the Media & Text block (currently the only two blocks supporting printing images) and open the "Other Media Settings" inside the block settings panel. Within that section you will find the checkbox "Show image when printing". Toggle this on and the image will print when the user does so.</p>
+									<p>To show an image when printing, or set the width of the image on a printed page, follow these steps:</p>
 
-							<p>Inside this option you will find two controls that help determine how an image is printed. Using the "Show image when printing" checkbox will enable printing of the image. </p>
-
-							<h3>Sizing images when printing</h3>
+									<ol><li> Select the image on which you want to add these settings.</li>
+									<li> In the Block Inspector, click on the "Other media settings" heading.</li>
+									<li> To show the image when printing, check the box next to "Show image when printing".</li>
+									<li> To set the maximum width of the block when printed, enter the desired width value in the "Max width on printed page" field as a % of the printed page width.</li></ol>
+								</div>
+								<div>
+								<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/image-print-settings.png'; ?>" alt="Enabling printing of an image" style="border: 1px solid #ccc; width: 300px;" /><br />Enabling printing of an image</p>
+								</div>
+							</div>
+							<p>By default images do not print. If you have an image that conveys information, such as a graph, and want it to print, you will need to enable this by selecting the <strong>Image block or the Media & Text block</strong> (currently the only two blocks supporting printing images).</p>
 
 							<p>Using the "Max width on printed page (%)" slider or its related number firld will set the percentage an image takes on the printed page. This range can be from 10% to 100% width of the printed page width and is set to a default of 25%.</p>
 
+							<p>Once you have set these options, you can preview the block to see how it will appear when printed.</p>
+							
 						</div><!-- /Print specific controls -->
+
+						<div class="bcgov-block-theme-grid-content card">
+							
+							<h2 id="accessibility" class="bcgov-block-theme-title">Accessibility specific controls</h2>
+
+							<div style="display: flex; gap: 2rem;">
+								<div style="max-width: 360px;">
+									<h3>Adding Aria labels to buttons</h3>
+
+									<p>Aria labels, or Accessible Rich Internet Applications (ARIA) labels, should be used to enhance the accessibility of web content for users with disabilities. To this end when using buttons an option to add an Aria label is available in the Block Inspector panel.</p>
+
+									<p>ARIA labels can provide additional context to assistive technology users, such as screen readers, in understanding the purpose and function of various elements on a webpage.</p>
+
+								</div>
+								<div>
+								<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/aria-labels.png'; ?>" alt="Enabling printing of an image" style="border: 1px solid #ccc; width: 300px;" /><br />Adding an Aria label to a button</p>
+								</div>
+							</div>
+							
+							<p>ARIA labels should be concise and descriptive and should be used when the button label does not provide context as to the purpose of the link itself. For example a typical use case is a series of cards that simply say "Learn more" or "Read more". In this situation the Aria label should include the context of the link that the label fails to provide.</p>
+							
+						</div><!-- /Accessibility controls -->
 
 						<h2 class="bcgov-block-theme-title">Advanced theme management</h2>
 
@@ -308,9 +423,37 @@ class InfoAdminPage {
 
 						<div class="bcgov-block-theme-grid-content card">
 							
-							<h2 id="polylang-navigation" class="bcgov-block-theme-title">Polylang Navigation</h2>
+							<h2 id="custom-notice-banner" class="bcgov-block-theme-title">Custom Notice Banner</h2>
+							
+							<p>A notification banner on a website is a useful tool that can serve various purposes, including communicating important announcements, informing users about promotions and offers, providing urgent updates such as website maintenance, and acting as a call to action for users.</p>
 
-							<p>Adding the Polylang Language Switcher is accomplished in the Template editor. It is best to associate the switcher with the site Navigation or main menu, but as of Polylang Pro version 3.2.8 the "Language switcher" block which enables the ability to move between languages does not integrate directly with the main menu navigation. Instead the site administrator needs to be creative with placement and layout.</p>
+							<p>The Custom Notice Banner can be enabled in the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/admin.php?page=bcgov-settings-menu">BCGov Block Theme Settings</a>  page and is to be used when a notification banner is required to relay a message of some importance. When enabling the notification banner on the website, it is essential to ensure that the message is clear and concise and does not detract from the overall purpose of the site itself.</p>
+
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/notice-settings.png'; ?>" alt="Settings for the cutom notice banner" style="border: 1px solid #ccc; width: 100%;" /><br />Settings for the cutom notice banner</p>
+
+							<ol>
+							<li> <strong>Enable Admin Notification:</strong> Show or hide the banner on the site.</li>
+							<li> <strong>Homepage only:</strong> This refers to a setting that allows the banner to be displayed only on the homepage and not on other pages.</li>
+							<li> <strong>Status (colour):</strong> The color used to indicate the status of the message. A number of colour options are available (which can be seen in the image above) and utilise preset colour options that conform to digitial accessibility standards for contrast.</li>
+							<li> <strong>Embolden / Embiggen:</strong> These terms refer to the act of making the banner content appear more prominent by increasing the font size or bolding the text.</li>
+							<li> <strong>Notification content:</strong> This refers to the message or information displayed in the notification banner itself, such as an alert or banner, that is meant to grab the attention of the user.</li>
+							<li> <strong>Enable button:</strong> Show or hide the button inside the banner.</li>
+							<li> <strong>Button Label:</strong> This is the text that appears inside the button.</li>
+							<li> <strong>Accessibility button label:</strong> This is the text that is read by screen readers to describe the purpose or function of a button to users with disabilities. It is important to ensure that this label accurately reflects the button's purpose to ensure accessibility.</li>
+							<li> <strong>UTM Campaign:</strong> A UTM campaign is a set of parameters added to a URL to track the effectiveness of online marketing campaigns. If the button is meant to track click throughs to a specific campaign, add its UTM identifier here. It is ok to leave this empty.</li>
+							</ol>
+
+							<p><span class="dashicons dashicons-warning" style="color: orange"></span> When enabled, the positioning of the banner in the page will be based on whether the header is fixed or scrolls with the page. For fixed headers it will appear below the header. For scrolling headers it will appear above.</p>
+
+						</div><!-- /Custom Notice Banner -->
+
+						<div class="bcgov-block-theme-grid-content card">
+							
+							<h2 id="polylang-navigation" class="bcgov-block-theme-title">Using Polylang for translations</h2>
+
+							<h3>Adding the Language Switcher to navigation</h3>
+
+							<p>Adding the Polylang Language Switcher is accomplished in the Template editor. It is best to associate the switcher with the site Navigation or main menu, but as of Polylang Pro version 3.2.8 the "Language switcher" block which enables the ability to move between languages. The language switcher block can now integrate directly with the main menu navigation if using the "ribbon navigation" styling. If the site design does not use the ribbon navigation, the site administrator needs to be creative with placement and layout.</p>
 
 							<hr />
 
@@ -319,16 +462,48 @@ class InfoAdminPage {
 								<div style="max-width: 300px;">
 									<p>Add the Language switcher block to the same group or row as the Navigation menu and align it as desired.</p>
 									<p>With the Language switcher block in place choose the display options that best suit the desired look and feel. The primary options are as either a) a drop select or b) a list view.</p>
-									<p>Note the 'list view' option may be styled to behave as a menu rather than a list in certain situations.</p>
+									<p><strong>Note the 'Displays as a dropdown' option must be deactivated to behave as a menu rather than a select box in sites that use the 'ribbon navigation' template part.</strong></p>
 								</div>
-								<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-list.png'; ?>" alt="Language switcher in the list view" style="border: 1px solid #ccc; width: 300px;" /><br />Language switcher in the list view</p>
+								<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-list.png'; ?>" alt="Language switcher in the list view" style="border: 1px solid #ccc; width: 300px;" /><br />Language switcher placement in the list view</p>
 							</div>
 							<div style="display: flex; gap: 2rem;">
-								<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-options.png'; ?>" alt="Language switcher options 1 drop down" style="border: 1px solid #ccc;width: 300px;" /><br />Language switcher options - drop down</p>
-								<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-options-2.png'; ?>" alt="Language switcher options 2 list items" style="border: 1px solid #ccc;width: 300px;" /><br />Language switcher options – list items</p>
+								<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-options.png'; ?>" alt="Language switcher options 1 drop down" style="border: 1px solid #ccc;width: 300px;" /><br />Language switcher options – select dropdown <br />(works well beside a hamburger menu control)</p>
+								<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/ls-block-options-2.png'; ?>" alt="Language switcher options 2 list items" style="border: 1px solid #ccc;width: 300px;" /><br />Language switcher options – integrated as a menu item</p>
 							</div>
+
+							<hr/>
+
+							<h3>Polylang translation of template parts</h3>
+
+							<p>On sites where you wish to translate page elements in the header, footer or menus, if they are based on template parts, you will need to decouple (or detach) them from the template part system prior to adding a translation.</p>
+							
+							<p><img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/detach-template-part.png'; ?>" alt="Detach template part" style="border: 1px solid #ccc; width: 600px" /><br />Detach the template part prior to translation – this is typically done in the Full Site Editor area under <strong>Appearance > Editor (beta)</strong>.</p>
+
+							<p>If this is not done, Polylang and the Block Theme will not only fail to generate translations, but it will cause the site to generate many additional templates of the same name. This bug may be resolved at some point by the Polylang developer but until that happens detaching template parts is the only way to ensure you will be able to translate this content.</p>
+							
 						</div><!-- /Polylang -->
 
+
+						<div class="bcgov-block-theme-grid-content card">
+							
+							<h2 id="custom-template-parts" class="bcgov-block-theme-title">Content Security Policy (CSP)</h2>
+							
+							<h3>What is a Content Security Policy?</h3>
+
+							<p>A Content Security Policy (CSP) is an added layer of security that helps protect your website against cross-site scripting (XSS) attacks, data injection, and other types of code injection attacks. CSPs work by specifying which types of content can be loaded and executed on a website, and from which sources they can be loaded. This can help prevent malicious scripts from running on your website, as well as reduce the risk of data theft and other types of attacks.</p>
+
+							<h3>How to Identify What Exception is Needed for a Custom Security Policy Exception</h3>
+
+							<p>If you need to add a Custom Security Policy Exception, follow these steps to identify what exception is needed:</p>
+							<ol>
+								<li> Determine which specific resources or elements on your website are being blocked by the CSP. You may need to check the browser console or network tab for details on which resources are being blocked.</li>
+								<li> Once you've identified the specific resources or elements that are being blocked, determine which type of exception is needed to allow those resources or elements to be loaded. For example, you may need to add an exception for a specific domain or subdomain, or you may need to allow a specific type of resource (such as scripts, images, or stylesheets).</li>
+								<li> Once you've determined what type of exception is needed, navigate to the Custom Security Policy Exception form in your site Simply go to the <a href="<?php echo esc_url( home_url() ); ?>/wp-admin/themes.php?page=bcgov-block-theme-options#csp">Theme Options</a> settings.</li>
+								<li> In the Custom Security Policy Exception form, enter the specific details of the exception that you need to add. This may include the domain or subdomain that needs to be allowed, the specific resource type that needs to be allowed, and any other relevant information.</li>
+								<li> Once you've entered the details of the exception, click the "Save Changes" button to save the exception to your site's CSP.</li>
+							</ol>
+
+						</div><!-- /CSP -->
 
 					</div> <!-- /Content -->
 					
@@ -340,13 +515,13 @@ class InfoAdminPage {
 								<h2 class="bcgov-block-theme-widget-title">On this page</h2>
 								<ul class="bcgov-block-theme-useful-links">
 								<li>
-										<a href="#theme-options">Theme Options</a>
+										<a href="#theme-options">Theme Options and Settings</a>
 									</li>
 									<li>
-										<a href="#general">General editing</a>
+										<a href="#general">General editing and layout</a>
 									</li>
 									<li>
-										<a href="#block-patterns">Block Patterns</a>
+										<a href="#block-patterns">Patterns and Custom Patterns</a>
 									</li>
 									<li>
 										<a href="#specific-block-patterns">Site Specific Patterns</a>
@@ -360,6 +535,9 @@ class InfoAdminPage {
 									<li>
 										<a href="#printing">Print specific controls</a>
 									</li>
+									<li>
+										<a href="#accessibility">Accessibility specific controls</a>
+									</li>
 									
 									<li>
 										<p><strong>Advanced management</strong></p>
@@ -371,7 +549,10 @@ class InfoAdminPage {
 										<a href="#custom-template-parts">Custom Template Parts</a>
 									</li>
 									<li>
-										<a href="#polylang-navigation">Polylang Navigation</a>
+										<a href="#custom-notice-banner">Custom Notice Banner</a>
+									</li>
+									<li>
+										<a href="#polylang-navigation">Polylang for multilanguage translation</a>
 									</li>
 								</ul>
 							</div>

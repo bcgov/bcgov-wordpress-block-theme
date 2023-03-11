@@ -1,7 +1,7 @@
 # Changelog
 
 ## 1.1.3 March 9, 2023
-- Added eslint rules to ignore various warnings during build. ([DESCW-975]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-975))
+- Update Block Theme documentation (including graphics where appropriate) to include: Using custom block features such as Accessibility labels, print image options, etc. Fluid typography and responsive margins and padding. Creating custom patterns. Using the custom notification banner. Multilanguage supported placement and settings for adding Polylang language switcher (to the menu or header), and translation of FSE template blocks and decoupling Template Parts. Adding a Custom Security Policy exception. Also added eslint rules to ignore various warnings during build. ([DESCW-975]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-975))
 
 ## 1.1.2: February 28, 2023
 - Removed block category allow list, fixing bug preventing custom categories in editor ([DESCW-924]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-924))
