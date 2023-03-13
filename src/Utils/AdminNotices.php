@@ -76,7 +76,7 @@ class AdminNotices {
 		}
 
 		foreach ( explode( ',', self::TYPES ) as $type ) {
-			
+
 			foreach ( $this->admin_notices->{$type} as $admin_notice ) {
 
 				$dismiss_url = add_query_arg(
