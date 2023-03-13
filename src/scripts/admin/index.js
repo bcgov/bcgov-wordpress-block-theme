@@ -4,6 +4,7 @@ import '../../styles/admin/index.scss';
  * Load the wp-admin filters.
  */
 import './utils/filter';
+import './utils/dismiss-warnings';
 
 /**
  * Load the required site options.
