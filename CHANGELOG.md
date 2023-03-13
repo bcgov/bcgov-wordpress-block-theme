@@ -1,6 +1,7 @@
 # Changelog
 
 ## 1.1.3 March 9, 2023
+- Updated missing plugin (dependencies) to warning status. Better descriptions for notices. Permaban dismissable notices – not finessed, futured updates could allow for showing again after an intevral or on demand (TBD). ([DESCW-952]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-952))
 - Update Block Theme documentation (including graphics where appropriate) to include: Using custom block features such as Accessibility labels, print image options, etc. Fluid typography and responsive margins and padding. Creating custom patterns. Using the custom notification banner. Multilanguage supported placement and settings for adding Polylang language switcher (to the menu or header), and translation of FSE template blocks and decoupling Template Parts. Adding a Custom Security Policy exception. Also added eslint rules to ignore various warnings during build. ([DESCW-975]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-975))
 
 ## 1.1.2: February 28, 2023
