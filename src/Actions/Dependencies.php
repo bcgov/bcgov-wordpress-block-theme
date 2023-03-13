@@ -2,6 +2,8 @@
 
 namespace Bcgov\Theme\Block\Actions;
 
+use Bcgov\Theme\Block\Utils\AdminNotices;
+
 /**
  * Handles theme dependencies.
  *
@@ -10,38 +12,36 @@ namespace Bcgov\Theme\Block\Actions;
 class Dependencies {
 
 	/**
-	 * Sets an admin notice for missing plugin dependencies.
+	 * Sets admin notices for missing plugin dependencies using the AdminNotices class.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
 	public function bcgov_block_theme_dependencies() {
+
 		// Checks for AIOSEO breadcrumb specific function.
-		$message_intro = __( 'Missing: The BCGov Block Theme needs the', 'bcgov_block_theme' );
+		$message_intro = __( 'Missing: The BCGov Block Theme requires the activation of the ', 'bcgov_block_theme' );
 
 		if ( ! function_exists( 'aioseo_breadcrumbs' ) ) {
-			$plugin        = 'All in One SEO';
-			$className     = 'notice-warning notice';
-			$message_extro = __( 'plugin activated to enable to page specific breadcrumb navigation.', 'bcgov_block_theme' );
 
-			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
+			$notice = new AdminNotices();
+			$notice->warning( 'Missing plugin → All in One SEO', 'BCGov Block Theme requires the activation of the All in One SEO plugin to enable breadcrumb navigation and SEO/social sharing. Breadcrumb navigation is set in the page templates.', 'aioseo-breadcrumbs-warning-message' );
+
 		}
 
 		if ( ! function_exists( 'acf_register_block_type' ) ) {
-			$plugin        = 'Advanced Custom Fields PRO';
-			$className     = 'error';
-			$message_extro = __( 'plugin activated to enable theme specific blocks.', 'bcgov_block_theme' );
 
-			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
+			$notice = new AdminNotices();
+			$notice->warning( 'Missing plugin → Advanced Custom Fields (or Pro version)', 'BCGov Block Theme requires the activation of the Advanced Custom Fields or ACF Pro plugin to enable theme specific blocks and add custom fields to pages, posts and site specific Custom Post Types.', 'acf-warning-message' );
+
 		}
 
 		if ( ! function_exists( 'cptui_loaded' ) ) {
-			$plugin        = 'Custom Post Type UI';
-			$className     = 'error';
-			$message_extro = __( 'plugin activated to enable to custom post types in order to function properly.', 'bcgov_block_theme' );
 
-			printf( '<div class="%1$s"><p>%2$s <strong>%3$s</strong> %4$s</p></div>', esc_attr( $className ), esc_html( $message_intro ), esc_html( $plugin ), esc_html( $message_extro ) );
+			$notice = new AdminNotices();
+			$notice->warning( 'Missing plugin → Custom Post Type UI', 'BCGov Block Theme requires the activation of the Custom Post Type UI plugin to enable to Custom Post Types (CPTs) which allow for customised templating features and aggragation of specific content types using the query loop block.', 'cptui-warning-message' );
+
 		}
 	}
 }

@@ -57,9 +57,9 @@ class Setup {
 		add_action( 'acf/init', [ $theme_admin_options, 'bcgov_block_theme_acf_init_block_types' ] );
 		add_action( 'admin_enqueue_scripts', [ $theme_enqueue_and_inject, 'bcgov_block_theme_enqueue_admin_scripts' ] );
         add_action( 'admin_init', [ $theme_admin_options, 'bcgov_block_theme_custom_settings' ] );
+		add_action( 'admin_notices', [ $theme_dependencies, 'bcgov_block_theme_dependencies' ] );
 		add_action( 'admin_menu', [ $theme_admin_menus, 'bcgov_block_theme_menu' ] );
 		add_action( 'admin_menu', [ $theme_bcgov_settings, 'bcgov_add_settings_menu' ] );
-		add_action( 'admin_notices', [ $theme_dependencies, 'bcgov_block_theme_dependencies' ] );
 		add_action( 'export_filters', [ $theme_exports, 'bcgov_block_theme_exports' ] );
 		add_action( 'after_setup_theme', [ $theme_supports, 'bcgov_block_theme' ] );
 		add_action( 'init', [ $theme_register_custom_patterns, 'bcgov_block_theme_register_custom_pattern' ] );
