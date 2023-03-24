@@ -20,6 +20,7 @@
   "main": "index.js",
   "devDependencies": {
     "@bcgov/bc-sans": "^1.0.1",
+    "@bcgov/webpack-wordpress": "git+https://apps.itsm.gov.bc.ca/bitbucket/scm/wp/bcgov-webpack-wordpress.git",
     "@wordpress/scripts": "^25.4.0",
     "classnames": "^2.3.1",
     "lodash": "^4.17.21"
@@ -30,7 +31,8 @@
     "lint:css": "wp-scripts lint-style src/styles",
     "fix:css": "wp-scripts lint-style --fix --config @wordpress/stylelint-config/scss src/styles",
     "lint:js": "wp-scripts lint-js src/scripts",
-    "format": "wp-scripts format src/scripts",
+    "fix:js": "wp-scripts lint-js src/scripts --fix",
+    "format": "wp-scripts format src/",
     "lint:md:docs": "wp-scripts lint-md-docs",
     "lint:pkg-json": "wp-scripts lint-pkg-json",
     "packages-update": "wp-scripts packages-update",
