@@ -1,0 +1,61 @@
+{
+	"version": 2,
+	"title": "Larger Text",
+	"patterns": [
+		"bcgov-hero-banner"
+	],
+	"settings": {	
+		"typography": {
+			"fluid": true,
+			"fontSizes": [
+				{
+					"slug": "small",
+					"size": "1.5rem",
+					"fluid": {
+						"min": "1.25rem",
+						"max": "1.5rem"
+					},
+					"name": "Small"
+				},
+				{
+					"slug": "medium",
+					"size": "1.8rem",
+					"fluid": {
+						"min": "1.5rem",
+						"max": "1.8rem"
+					},
+					"name": "Medium"
+				},
+				{
+					"slug": "large",
+					"size": "2.16rem",
+					"fluid": {
+						"min": "1.8rem",
+						"max": "2.16rem"
+					},
+					"name": "Large"
+				},
+				{
+					"slug": "extra-large",
+					"size": "2.592rem",
+					"fluid": {
+						"min": "2.16rem",
+						"max": "2.592rem"
+					},
+					"name": "Extra Large"
+				},
+				{
+					"slug": "extra-extra-large",
+					"size": "3.11rem",
+					"fluid": {
+						"min": "2.592rem",
+						"max": "3.11rem"
+					},
+					"name": "Extra Extra large"
+				}
+			],
+			"fontFamilies": []
+		},
+		"custom": {}
+	}
+}

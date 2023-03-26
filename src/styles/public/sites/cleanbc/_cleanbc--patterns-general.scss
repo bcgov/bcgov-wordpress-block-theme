@@ -19,18 +19,6 @@ html body.wp-admin .editor-styles-wrapper {
 
 .cleanbc-info-cards {
 
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-
-		body .bcgov-body-content &:not(.is-style-custom) {
-
-			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem) !important;
-		}
-	}
-
 	&.two-up-wide {
 
 		padding: 1rem;
@@ -524,10 +512,10 @@ html body.wp-admin .editor-styles-wrapper {
 		margin-right: auto;
 		position: relative;
 
-		body.cleanbc & p:not(.is-style-custom),
-		body.cleanbc & figure:not(.is-style-custom) blockquote p,
-		body.cleanbc & ul:not(.is-style-custom) li {
-			font-size: 0.875rem !important;
+		body.cleanbc & p,
+		body.cleanbc & figure blockquote p,
+		body.cleanbc & ul li {
+			font-size: 0.875rem;
 			padding: 0 2rem;
 
 			@media (min-width: calc($breakpoint-xl + 2rem)) {

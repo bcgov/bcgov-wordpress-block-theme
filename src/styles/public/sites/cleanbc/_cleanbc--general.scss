@@ -6,17 +6,6 @@
 */
 body {
 
-	.bcgov-body-content {
-
-		h1:not(.is-style-custom),
-		h2:not(.is-style-custom),
-		h3:not(.is-style-custom),
-		h4:not(.is-style-custom),
-		h5:not(.is-style-custom),
-		h6:not(.is-style-custom) {
-			font-weight: 700;
-		}
-	}
 
 	&.cleanbc {
 
@@ -90,12 +79,10 @@ body {
 
 	body & {
 
-		h2:not(.is-style-custom),
-		h3:not(.is-style-custom),
-		h4:not(.is-style-custom) {
-			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.25rem) !important;
+		h2,
+		h3,
+		h4 {
 			border-bottom: 2px solid var(--wp--preset--color--primary-brand);
-			line-height: 1.5;
 			padding-bottom: 1rem;
 		}
 
@@ -120,7 +107,7 @@ body {
 	ul {
 		padding-left: 1rem;
 
-		&:not(.is-style-custom) li {
+		li {
 			list-style-type: disclosure-open;
 			line-height: 1.7;
 
@@ -204,27 +191,6 @@ body {
 				border-left-width: 0 !important;
 				border-right-width: 0 !important;
 			}
-
-			body & {
-
-				h2:not(.is-style-custom) {
-					font-size: clamp(1.35rem, 0.25rem + 3.3333vw, 2rem) !important;
-					line-height: 1.2;
-					margin-bottom: 0;
-				}
-
-				h3:not(.is-style-custom) {
-					font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
-					line-height: 1.2;
-					margin-bottom: 0;
-				}
-
-				h4:not(.is-style-custom) {
-					font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 1.5rem) !important;
-					line-height: 1.2;
-					margin-bottom: 0;
-				}
-			}
 		}
 	}
 }
@@ -290,27 +256,6 @@ body {
 					border-bottom-width: 0 !important;
 					border-left-width: 0 !important;
 					border-right-width: 0 !important;
-				}
-
-				body & {
-
-					h2:not(.is-style-custom) {
-						font-size: clamp(1.35rem, 0.25rem + 3.3333vw, 2rem) !important;
-						line-height: 1.2;
-						margin-bottom: 0;
-					}
-
-					h3:not(.is-style-custom) {
-						font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
-						line-height: 1.2;
-						margin-bottom: 0;
-					}
-
-					h4:not(.is-style-custom) {
-						font-size: clamp(1.15rem, 0.25rem + 3.3333vw, 1.5rem) !important;
-						line-height: 1.2;
-						margin-bottom: 0;
-					}
 				}
 			}
 		}
