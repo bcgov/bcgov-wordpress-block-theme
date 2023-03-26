@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.5 March 20, 2023
+- Fluid typography updates to remove style overrides. Added Small and Large style options along side default sizing. Heading are sized based on a Minor Third (1.200) scale. ([DESCW-1001]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1001))
+
 ## 1.1.4 March 20, 2023
 - Null check bug fix for menu navigation scripts. ([DESCW-1000]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1000))
 

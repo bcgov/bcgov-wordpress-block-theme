@@ -186,16 +186,10 @@ html body.wp-admin .editor-styles-wrapper {
 
 	h1 {
 		color: var(--wp--preset--color--white) !important;
-		font-size: 3.5rem;
-		line-height: 1.5;
 		margin: 0 50% 2rem 0 !important;
 
 		text-shadow: 0 0 4px rgba($black, 0.8);
 		background-clip: text;
 		background-color: var(--wp--preset--color--tertiary);
-
-		@media (max-width: $breakpoint-sm) {
-			font-size: 8vw;
-		}
 	}
 }

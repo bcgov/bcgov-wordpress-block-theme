@@ -338,7 +338,7 @@
 			"fontSizes": [
 				{
 					"slug": "small",
-					"size": "1rem",
+					"size": "1.25rem",
 					"fluid": {
 						"min": "1rem",
 						"max": "1.25rem"
@@ -347,37 +347,37 @@
 				},
 				{
 					"slug": "medium",
-					"size": "1.125rem",
+					"size": "1.5rem",
 					"fluid": {
-						"min": "1.125rem",
-						"max": "1.25rem"
+						"min": "1.25rem",
+						"max": "1.5rem"
 					},
 					"name": "Medium"
 				},
 				{
 					"slug": "large",
-					"size": "1.25rem",
+					"size": "1.8rem",
 					"fluid": {
-						"min": "1.25rem",
-						"max": "1.5rem"
+						"min": "1.5rem",
+						"max": "1.8rem"
 					},
 					"name": "Large"
 				},
 				{
 					"slug": "extra-large",
-					"size": "1.5rem",
+					"size": "2.16rem",
 					"fluid": {
-						"min": "1.5rem",
-						"max": "1.75rem"
+						"min": "1.8rem",
+						"max": "2.16rem"
 					},
 					"name": "Extra Large"
 				},
 				{
 					"slug": "extra-extra-large",
-					"size": "1.75rem",
+					"size": "2.592rem",
 					"fluid": {
-						"min": "1.75rem",
-						"max": "2rem"
+						"min": "2.16rem",
+						"max": "2.592rem"
 					},
 					"name": "Extra Extra large"
 				}

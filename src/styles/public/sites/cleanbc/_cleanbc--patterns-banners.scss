@@ -28,18 +28,13 @@ html body.wp-admin .editor-styles-wrapper {
 			height: clamp(500px, 80vh - 80px, 800px);
 		}
 
-		h1:not(.is-style-custom) {
+		h1 {
 			color: var(--wp--preset--color--white);
-			font-size: clamp(2rem, 0.25rem + 3.3333vw, 3rem) !important;
-			line-height: 1.25;
 			margin-bottom: 0;
 		}
 
-		h2:not(.is-style-custom) {
+		h2 {
 			color: var(--wp--preset--color--white);
-			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem) !important;
-			font-weight: 300;
-			line-height: 1.5;
 		}
 	}
 
@@ -234,8 +229,6 @@ html body.wp-admin .editor-styles-wrapper {
 		margin-right: auto;
 
 		h1 {
-			font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem);
-			line-height: 1.25;
 			margin-top: 0;
 
 			@media (min-width: $breakpoint-sm) {
@@ -244,7 +237,6 @@ html body.wp-admin .editor-styles-wrapper {
 		}
 
 		h2 {
-			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem);
 			margin-top: 0;
 		}
 
@@ -354,11 +346,9 @@ html body.wp-admin .editor-styles-wrapper {
 
 			body .bcgov-body-content & {
 
-				h1:not(.is-style-custom) {
+				h1 {
 					background-color: var(--wp--preset--color--primary-brand);
 					color: var(--wp--preset--color--white);
-					font-size: clamp(1.75rem, 0.25rem + 3.3333vw, 3rem) !important;
-					line-height: 1.25;
 					margin: 0;
 					padding: 0 1rem 1rem;
 
@@ -367,11 +357,8 @@ html body.wp-admin .editor-styles-wrapper {
 					}
 				}
 
-				h2:not(.is-style-custom) {
+				h2 {
 					color: var(--wp--preset--color--white);
-					font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.5rem) !important;
-					font-weight: 300;
-					line-height: 1.5;
 					margin: 0;
 					padding: 0 1rem 1rem;
 
@@ -586,17 +573,11 @@ html body.wp-admin .editor-styles-wrapper {
 		}
 
 		h1 {
-			font-size: clamp(2rem, 0.25rem + 3.3333vw, 4rem);
-			line-height: 1.25;
 			margin-top: 0;
 
 			@media (min-width: $breakpoint-sm) {
 				margin-top: 1rem;
 			}
-		}
-
-		h2 {
-			font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.5rem);
 		}
 	}
 

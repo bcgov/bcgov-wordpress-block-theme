@@ -6,22 +6,12 @@ html body.wp-admin .editor-styles-wrapper {
 
 	.actions-accordion-header {
 
-		h2:not(.is-style-custom),
-		h3:not(.is-style-custom),
-		h4:not(.is-style-custom) {
-			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+		h2,
+		h3,
+		h4 {
 			color: var(--wp--preset--color--headline-color);
 			margin-bottom: 0;
 			padding-bottom: 0;
-		}
-
-		.collapse-header {
-
-			h2:not(.is-style-custom),
-			h3:not(.is-style-custom),
-			h4:not(.is-style-custom) {
-				font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.25rem) !important;
-			}
 		}
 	}
 
@@ -73,22 +63,12 @@ html body.wp-admin .editor-styles-wrapper {
 
 	body .bcgov-body-content & {
 
-		h2:not(.is-style-custom),
-		h3:not(.is-style-custom),
-		h4:not(.is-style-custom) {
-			font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 1.75rem) !important;
+		h2,
+		h3,
+		h4 {
 			color: var(--wp--preset--color--headline-color);
 			margin-bottom: 0;
 			padding-bottom: 0;
-		}
-
-		.collapse-header {
-
-			h2:not(.is-style-custom),
-			h3:not(.is-style-custom),
-			h4:not(.is-style-custom) {
-				font-size: clamp(1.25rem, 0.25rem + 3.3333vw, 2.25rem) !important;
-			}
 		}
 	}
 
