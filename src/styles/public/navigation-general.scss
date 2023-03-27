@@ -25,10 +25,6 @@ body:not(body.wp-admin):not(body.editor-styles-wrapper):not(body.error404) {
 	width: 100vw;
 	z-index: auto;
 	top: 0;
-
-	body.admin-bar & {
-		top: 32px;
-	}
 }
 
 body.header-fixed,

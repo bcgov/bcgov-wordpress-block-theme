@@ -153,6 +153,9 @@ body {
 main,
 .post-content {
 
+	isolation: isolate;
+	z-index: 0;
+
 	@media (max-width: $breakpoint-xl) {
 		margin-left: 2rem;
 		margin-right: 2rem;

@@ -12,6 +12,11 @@ html body.wp-admin .editor-styles-wrapper {
 
 }
 
+header {
+	isolation: isolate;
+	z-index: 9;
+}
+
 .wp-block-site-title a {
 	color: currentcolor !important;
 }
