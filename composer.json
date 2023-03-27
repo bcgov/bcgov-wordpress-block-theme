@@ -9,7 +9,7 @@
         }
     ],
     "require-dev": {
-        "bcgov/wordpress-scripts": "@dev"
+        "bcgov/wordpress-scripts": "1.*"
     },
     "autoload": {
         "psr-4": {
