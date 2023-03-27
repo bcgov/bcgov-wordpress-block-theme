@@ -1,5 +1,5 @@
 {
-    "extends": "./node_modules/@bcgov/webpack-wordpress/.stylelintrc",
+    "extends": "@bcgov/webpack-wordpress/.stylelintrc",
     "ignoreFontFamilies": [ "BCSans" ],
     "rules" : {
         "max-line-length": null,
