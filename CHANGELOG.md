@@ -1,6 +1,7 @@
 # Changelog
 
-## 1.1.5 March 20, 2023
+## 1.1.5 March 27, 2023
+- Added @bcgov/webpack-wordpress to package.json dev dependencies for future use of its JS linter rules. ([DESCW-977](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-977))
 - Fluid typography updates to remove style overrides. Added Small and Large style options along side default sizing. Heading are sized based on a Minor Third (1.200) scale. ([DESCW-1001]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1001))
 
 ## 1.1.4 March 20, 2023

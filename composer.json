@@ -9,7 +9,7 @@
         }
     ],
     "require-dev": {
-        "bcgov/wordpress-scripts": "@dev"
+        "bcgov/wordpress-scripts": "1.*"
     },
     "autoload": {
         "psr-4": {
@@ -26,7 +26,6 @@
     },
     "scripts": {
         "production": [
-            "npm run format",
             "npm run build:production",
             "Bcgov\\Script\\Checklists::postProductionChecks"
         ],

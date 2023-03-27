@@ -1,5 +1,5 @@
 {
-    "extends": "@wordpress/stylelint-config/scss",
+    "extends": "@bcgov/webpack-wordpress/.stylelintrc",
     "ignoreFontFamilies": [ "BCSans" ],
     "rules" : {
         "max-line-length": null,
