@@ -1,0 +1,31 @@
+name: JavaScript Lint and Unit Tests
+on:
+  pull_request:
+    branches:
+      - "development"
+    paths:
+      - "**.js"
+jobs:
+  run-php-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.14.x
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Run JS lint
+        run: npm run lint:js
+      
+      - name: Run JS unit tests
+        run: npm run test
+
+      - name: Run JS e2e tests
+        run: npm run test:e2e
