@@ -33,7 +33,6 @@ if ( class_exists( 'Bcgov\\Theme\\Block\\Setup' ) ) {
     new Setup();
 }
 
-
 /**
  * Constants to enable/disable specific site features.
  *
