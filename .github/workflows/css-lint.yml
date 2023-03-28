@@ -6,8 +6,9 @@ on:
     paths:
       - "**.scss"
       - "**.css"
+  workflow_dispatch:
 jobs:
-  run-php-lint:
+  run-css:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

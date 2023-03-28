@@ -5,8 +5,9 @@ on:
       - "development"
     paths:
       - "**.js"
+  workflow_dispatch:
 jobs:
-  run-php-lint:
+  run-js:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
