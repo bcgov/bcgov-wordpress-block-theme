@@ -5,6 +5,7 @@ on:
       - "development"
     paths:
       - "**.php"
+      - "!dist/**"
   workflow_dispatch:
 jobs:
   run-php:

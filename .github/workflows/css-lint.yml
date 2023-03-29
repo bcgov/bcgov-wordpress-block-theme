@@ -6,6 +6,7 @@ on:
     paths:
       - "**.scss"
       - "**.css"
+      - "!dist/**"
   workflow_dispatch:
 jobs:
   run-css:
