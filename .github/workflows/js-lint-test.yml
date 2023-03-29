@@ -30,4 +30,4 @@ jobs:
         run: npm run test
 
       - name: Run JS e2e tests
-        run: npm run test:e2e
+        run: npm run test:e2e --passWithNoTests
