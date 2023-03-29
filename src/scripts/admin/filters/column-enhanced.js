@@ -1,6 +1,6 @@
 const { registerBlockStyle } = wp.blocks;
 
-registerBlockStyle( 'core/column', {
-	name: 'dropshadow',
-	label: 'Drop shadow',
-} );
+registerBlockStyle('core/column', {
+    name: 'dropshadow',
+    label: 'Drop shadow',
+});

@@ -6,7 +6,7 @@ export const attributes = {
     firstBreakColumns: {
         type: 'integer',
         default: 3,
-	},
+    },
     cardId: {
         type: 'string',
         default: '',

@@ -9,22 +9,21 @@ import { qsa } from '../../public/utils';
  * @name dismissNotices
  * @return {void}
  */
-( function () {
-	'use strict';
-	document.addEventListener( 'DOMContentLoaded', function () {
-		const notices = qsa( '.bcgov-block-theme-notice' );
-		notices.forEach( function ( notice ) {
-			notice.addEventListener( 'click', function ( event ) {
-				if ( event.target.classList.contains( 'notice-dismiss' ) ) {
-					const dismissUrl =
-						notice.getAttribute( 'data-dismiss-url' );
-					if ( dismissUrl ) {
-						const xhr = new window.XMLHttpRequest();
-						xhr.open( 'GET', dismissUrl );
-						xhr.send();
-					}
-				}
-			} );
-		} );
-	} );
-} )();
+(function () {
+    'use strict';
+    document.addEventListener('DOMContentLoaded', function () {
+        const notices = qsa('.bcgov-block-theme-notice');
+        notices.forEach(function (notice) {
+            notice.addEventListener('click', function (event) {
+                if (event.target.classList.contains('notice-dismiss')) {
+                    const dismissUrl = notice.getAttribute('data-dismiss-url');
+                    if (dismissUrl) {
+                        const xhr = new window.XMLHttpRequest();
+                        xhr.open('GET', dismissUrl);
+                        xhr.send();
+                    }
+                }
+            });
+        });
+    });
+})();

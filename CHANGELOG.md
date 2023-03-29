@@ -1,6 +1,7 @@
 # Changelog
 
 ## 1.1.6 March 29, 2023
+- Fixed tab indentation lint errors in JS code ([DESCW-978](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-978))
 - Updated JavaScript linting rules and GitHub workflows ([DESCW-978](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-978))
 
 ## 1.1.5 March 28, 2023
