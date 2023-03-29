@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.6 March 29, 2023
+- Updated JavaScript linting rules and GitHub workflows ([DESCW-978](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-978))
+
 ## 1.1.5 March 28, 2023
 - Added GitHub workflow files ([DESCW-978](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-978))
 - Fixed header and post-content/main layering through isolation and z-index. Also fixed small screen issue for sticky nav scrolling in admin in order to access save button in theme settings. ([DESCW-974]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-974))

@@ -1,6 +1,7 @@
 {
     "name": "bcgov-theme/bcgov-wordpress-block-theme",
-    "version": "1.1.5",
+    "description": "Block Theme for BC Gov",
+    "version": "1.1.6",
     "type": "wordpress-theme",
     "repositories": [
         {

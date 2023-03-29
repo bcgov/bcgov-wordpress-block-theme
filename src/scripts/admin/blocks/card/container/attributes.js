@@ -1,14 +1,14 @@
 export const attributes = {
-	backgroundColor: {
-		type: 'string',
-		default: 'transparent',
+    backgroundColor: {
+        type: 'string',
+        default: 'transparent',
+    },
+    firstBreakColumns: {
+        type: 'integer',
+        default: 3,
 	},
-	firstBreakColumns: {
-		type: 'integer',
-		default: 3,
-	},
-	cardId: {
-		type: 'string',
-		default: '',
-	},
+    cardId: {
+        type: 'string',
+        default: '',
+    },
 };

@@ -6,6 +6,7 @@ on:
     paths:
       - "**.scss"
       - "**.css"
+      - "!dist/**"
   workflow_dispatch:
 jobs:
   run-css:
@@ -17,7 +18,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.14.x
+          node-version: 18
           cache: npm
 
       - name: Install
