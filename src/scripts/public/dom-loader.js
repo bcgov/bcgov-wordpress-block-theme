@@ -31,11 +31,13 @@ const domReady = () => {
         /*
          * Set the scroll padding to the height of the header
          */
-        const headerHeight = header.offsetHeight;
-        document.documentElement.style.setProperty(
-            '--scroll-padding',
-            headerHeight + 'px'
-        );
+        if (header) {
+            const headerHeight = header.offsetHeight;
+            document.documentElement.style.setProperty(
+                '--scroll-padding',
+                headerHeight + 'px'
+            );
+        }
 
         let bannerElement = null;
         if (null !== postContent) {
@@ -170,7 +172,7 @@ const domReady = () => {
              * Set back to top link visible when close to bottom of window.
              */
             const backToTop = qs('.back-to-top');
-            if (null !== backToTop) {
+            if (backToTop) {
                 if (
                     window.pageYOffset + window.innerHeight >
                     document.body.offsetHeight - 1000
