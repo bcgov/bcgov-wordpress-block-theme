@@ -228,7 +228,7 @@ class PatternsSetup {
 								'bcgov_blocks_theme-' . $category->slug,
 								[
 									/* translators: %s: category label */
-									'label' => sprintf( __( 'Custom: %s', 'bcgov_blocks_theme' ), $category->name ),
+									'label' => sprintf( __( '%s', 'bcgov_blocks_theme' ), $category->name ),
 								]
 							);
 						}
@@ -243,7 +243,7 @@ class PatternsSetup {
 							'bcgov-wordpress-block-theme/' . $block_pattern_slug,
 							[
 								/* translators: %s: pattern title */
-								'title'      => sprintf( __( 'Custom: %s', 'bcgov_blocks_theme' ), $title ),
+								'title'      => sprintf( __( '%s', 'bcgov_blocks_theme' ), $title ),
 								'categories' => [ 'bcgov_blocks_theme-' . $category->slug ],
 								'keywords'   => $keywords,
 								'content'    => $content,
