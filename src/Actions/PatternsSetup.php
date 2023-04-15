@@ -194,6 +194,7 @@ class PatternsSetup {
 			$args = array(
 				'post_type'      => 'custom-pattern',
 				'posts_per_page' => -1,
+				'orderby' => 'name',
 			);
 
 			$query = new \WP_Query( $args );
@@ -206,11 +207,18 @@ class PatternsSetup {
 				register_taxonomy( 'pattern-keywords', 'custom-pattern', array( 'label' => 'Related Search Terms' ) );
 			}
 
+			function logger($msg)
+			{
+				error_log(print_r($msg, true));
+			}
+			;
+
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
+				$id = get_the_ID();
 				$title              = get_the_title();
-				$categories         = get_the_terms( get_the_ID(), 'pattern-groups' );
+				$categories = get_the_terms($id, 'pattern-groups');
 				$search_keywords    = get_terms(
 					[
 						'taxonomy'   => 'pattern-keywords',
@@ -223,12 +231,22 @@ class PatternsSetup {
 
 				if ( ! empty( $categories ) ) {
 					foreach ( $categories as $category ) {
-						if ( ! \WP_Block_Patterns_Registry::get_instance()->is_registered( 'bcgov_blocks_theme-' . $category->slug ) ) {
+						logger($category->slug);
+						logger($id);
+						$block_pattern_name = 'bcgov_blocks_theme-' . $category->slug;
+						if (!\WP_Block_Patterns_Registry::get_instance()->is_registered($block_pattern_name)) {
+
+							if ($category->parent !== 0) {
+								$child_marker = '--';
+							} else {
+								$child_marker = '';
+							}
+
 							register_block_pattern_category(
-								'bcgov_blocks_theme-' . $category->slug,
+								$block_pattern_name,
 								[
 									/* translators: %s: category label */
-									'label' => sprintf( __( '%s', 'bcgov_blocks_theme' ), $category->name ),
+									'label' => sprintf(__('%1$s%2$s', 'bcgov_blocks_theme'), $child_marker, $category->name),
 								]
 							);
 						}
@@ -243,8 +261,8 @@ class PatternsSetup {
 							'bcgov-wordpress-block-theme/' . $block_pattern_slug,
 							[
 								/* translators: %s: pattern title */
-								'title'      => sprintf( __( '%s', 'bcgov_blocks_theme' ), $title ),
-								'categories' => [ 'bcgov_blocks_theme-' . $category->slug ],
+								'title' => sprintf(__('%1$s%2$s', 'bcgov_blocks_theme'), $child_marker, $title),
+								'categories' => [$block_pattern_name],
 								'keywords'   => $keywords,
 								'content'    => $content,
 							]
