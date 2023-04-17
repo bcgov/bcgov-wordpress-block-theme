@@ -27,7 +27,6 @@
     },
     "scripts": {
         "production": [
-            "npm run build:production",
             "Bcgov\\Script\\Checklists::postProductionChecks"
         ],
         "checklist": [
