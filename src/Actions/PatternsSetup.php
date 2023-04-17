@@ -244,11 +244,11 @@ class PatternsSetup {
 						/*
 						 * if the category is a parent, leave the label as-is.
 						 * if the category is a child, prepend its parent's name in parenthesis
-						 */
+						*/
 						$parent_name = '';
 						foreach ( $parents as $parent ) {
 							if ( $parent->term_id === $category->parent ) {
-								$parent_name = '(' . $parent->name . ')';
+								$parent_name = '(' . $parent->name . ') ';
 							}
 						}
 
@@ -257,7 +257,7 @@ class PatternsSetup {
                                 'bcgov_blocks_theme-' . $category->slug,
 								[
 									/* translators: %s: category label */
-									'label' => sprintf( __( '%1$s %2$s', 'bcgov_blocks_theme' ), $parent_name, $category->name ),
+									'label' => sprintf( __( '%1$s%2$s', 'bcgov_blocks_theme' ), $parent_name, $category->name ),
 								]
 							);
 						}
