@@ -2,6 +2,7 @@
 
 ## 1.2.0 April 17, 2023
 - prefix child pattern groups with parent names in patterns selector ([DESCW-1004](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1004))
+- removed 'npm run production' build from composer production script ( per PO instructions)
 
 ## 1.1.6 March 29, 2023
 - Fixed tab indentation lint errors in JS code ([DESCW-978](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-978))
