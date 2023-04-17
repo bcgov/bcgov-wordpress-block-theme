@@ -229,19 +229,30 @@ class PatternsSetup {
 				$block_pattern_slug = get_post_field( 'post_name', get_post() );
 				$keywords           = [];
 
+				$parent_child_categories = [];
 				if ( ! empty( $categories ) ) {
-					foreach ( $categories as $category ) {
-						logger($category->slug);
-						logger($id);
+					$parents = [];
+					$children = [];
+					foreach ($categories as $category) {
+						if ($category->parent !== 0) {
+							$child_marker = '--';
+							$children[] = $category;
+						} else {
+							$child_marker = '';
+							$parents[] = $category;
+						}
+					}
+					$parent_child_categories = $parents + $children;
+					logger('Parent child categories');
+					// logger($parent_child_categories);
+					// logger($children);
+					// logger($parents);
+
+					foreach ($parent_child_categories as $category) {
+						logger("in main loop!");
+						logger($category->slug . ' parent =' . $category->parent);
 						$block_pattern_name = 'bcgov_blocks_theme-' . $category->slug;
 						if (!\WP_Block_Patterns_Registry::get_instance()->is_registered($block_pattern_name)) {
-
-							if ($category->parent !== 0) {
-								$child_marker = '--';
-							} else {
-								$child_marker = '';
-							}
-
 							register_block_pattern_category(
 								$block_pattern_name,
 								[
