@@ -194,7 +194,7 @@ class PatternsSetup {
 			$args = array(
 				'post_type'      => 'custom-pattern',
 				'posts_per_page' => -1,
-				'orderby' => 'name',
+				'orderby'        => 'name',
 			);
 
 			$query = new \WP_Query( $args );
@@ -207,16 +207,17 @@ class PatternsSetup {
 				register_taxonomy( 'pattern-keywords', 'custom-pattern', array( 'label' => 'Related Search Terms' ) );
 			}
 
-			/* accumulate a list of parent pattern categories outside the query loop
-			 * so we can check wether a pattern category is a parent or a child.
-			 */
+			/*
+			Accumulate a list of parent pattern categories outside the query loop
+			* so we can check wether a pattern category is a parent or a child.
+			*/
 			$parents = [];
 
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
 				$title              = get_the_title();
-				$categories = get_the_terms(get_the_ID(), 'pattern-groups');
+				$categories         = get_the_terms( get_the_ID(), 'pattern-groups' );
 				$search_keywords    = get_terms(
 					[
 						'taxonomy'   => 'pattern-keywords',
@@ -227,35 +228,36 @@ class PatternsSetup {
 				$block_pattern_slug = get_post_field( 'post_name', get_post() );
 				$keywords           = [];
 
-				if (!empty($categories)) {
+				if ( ! empty( $categories ) ) {
 
-					// get a list of parent categories
-					foreach ($categories as $category) {
-						if ($category->parent === 0) {
+					// get a list of parent categories.
+					foreach ( $categories as $category ) {
+						if ( 0 === $category->parent ) {
 							$parents[] = $category;
 						}
 					}
 
-					// register patterns
-					foreach ($categories as $category) {
+					// Register patterns.
+					foreach ( $categories as $category ) {
 						$block_pattern_name = 'bcgov_blocks_theme-' . $category->slug;
+
 						/*
 						 * if the category is a parent, leave the label as-is.
 						 * if the category is a child, prepend its parent's name in parenthesis
 						 */
-						$parent_name = "";
-						foreach ($parents as $parent) {
-							if ($parent->term_id === $category->parent) {
-								$parent_name = '(' . $parent->name . ') ';
+						$parent_name = '';
+						foreach ( $parents as $parent ) {
+							if ( $parent->term_id === $category->parent ) {
+								$parent_name = '(' . $parent->name . ')';
 							}
 						}
 
-						if (!\WP_Block_Patterns_Registry::get_instance()->is_registered($block_pattern_name)) {
+						if ( ! \WP_Block_Patterns_Registry::get_instance()->is_registered( 'bcgov_blocks_theme-' . $category->slug ) ) {
 							register_block_pattern_category(
-								$block_pattern_name,
+                                'bcgov_blocks_theme-' . $category->slug,
 								[
 									/* translators: %s: category label */
-									'label' => sprintf(__('%s%s', 'bcgov_blocks_theme'), $parent_name, $category->name),
+									'label' => sprintf( __( '%1$s %2$s', 'bcgov_blocks_theme' ), $parent_name, $category->name ),
 								]
 							);
 						}
@@ -270,8 +272,8 @@ class PatternsSetup {
 							'bcgov-wordpress-block-theme/' . $block_pattern_slug,
 							[
 								/* translators: %s: pattern title */
-								'title' => sprintf(__('%s', 'bcgov_blocks_theme'), $title),
-								'categories' => [$block_pattern_name],
+								'title'      => sprintf( __( 'bcgov_blocks_theme' ), $title ),
+								'categories' => [ 'bcgov_blocks_theme-' . $category->slug ],
 								'keywords'   => $keywords,
 								'content'    => $content,
 							]

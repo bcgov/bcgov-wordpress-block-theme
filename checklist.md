@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Created at 2023-04-18 3:29 pm
+=======
+Created at 2023-04-17 1:44 pm
+>>>>>>> 3cbbeec (DESCW-1004 build and update versions; fix linter errors)
 
 * [yes] Updated version in composer.json
 * [yes] Updated version in style.css or plugin file
