@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.6 April 17, 2023
+## 1.2.0 April 17, 2023
 - prefix child pattern groups with parent names in patterns selector ([DESCW-1004](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1004))
 
 ## 1.1.6 March 29, 2023
