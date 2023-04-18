@@ -194,6 +194,7 @@ class PatternsSetup {
 			$args = array(
 				'post_type'      => 'custom-pattern',
 				'posts_per_page' => -1,
+				'orderby'        => 'name',
 			);
 
 			$query = new \WP_Query( $args );
@@ -209,8 +210,9 @@ class PatternsSetup {
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
+				$id                 = get_the_ID();
 				$title              = get_the_title();
-				$categories         = get_the_terms( get_the_ID(), 'pattern-groups' );
+				$categories         = get_the_terms( $id, 'pattern-groups' );
 				$search_keywords    = get_terms(
 					[
 						'taxonomy'   => 'pattern-keywords',
@@ -222,13 +224,25 @@ class PatternsSetup {
 				$keywords           = [];
 
 				if ( ! empty( $categories ) ) {
+					// Register patterns.
 					foreach ( $categories as $category ) {
+						$block_pattern_name = 'bcgov_blocks_theme-' . $category->slug;
+
 						if ( ! \WP_Block_Patterns_Registry::get_instance()->is_registered( 'bcgov_blocks_theme-' . $category->slug ) ) {
 							register_block_pattern_category(
-								'bcgov_blocks_theme-' . $category->slug,
+                                'bcgov_blocks_theme-' . $category->slug,
 								[
-									/* translators: %s: category label */
-									'label' => sprintf( __( 'Custom: %s', 'bcgov_blocks_theme' ), $category->name ),
+									'label' => trim(
+                                        get_term_parents_list(
+                                            $category->term_id,
+                                            'pattern-groups',
+                                            [
+												'link' => false,
+												'separator' => '//',
+											]
+                                        ),
+                                        '/'
+                                    ),
 								]
 							);
 						}
@@ -243,7 +257,7 @@ class PatternsSetup {
 							'bcgov-wordpress-block-theme/' . $block_pattern_slug,
 							[
 								/* translators: %s: pattern title */
-								'title'      => sprintf( __( 'Custom: %s', 'bcgov_blocks_theme' ), $title ),
+								'title'      => 'bcgov_blocks_theme ' . $title,
 								'categories' => [ 'bcgov_blocks_theme-' . $category->slug ],
 								'keywords'   => $keywords,
 								'content'    => $content,

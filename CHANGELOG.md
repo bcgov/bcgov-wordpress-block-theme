@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0 April 17, 2023
+- prefix child pattern groups with parent names in patterns selector ([DESCW-1004](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1004))
+- removed 'npm run production' build from composer production script ( per PO instructions)
+
 ## 1.1.6 March 29, 2023
 - Fixed tab indentation lint errors in JS code ([DESCW-978](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-978))
 - Updated JavaScript linting rules and GitHub workflows ([DESCW-978](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-978))
@@ -62,7 +66,7 @@
 – Adjuststed global header container template part. ([DESCW-721]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-721))
 - Patterns update to add and integrate Step through sequence pattern used in Go Electric BC for general Block Theme use.
 - Collapse block (accordion) styling picked up for non-pattern usage. Added two patterns using the collapse blocks: table and media-text variations ([DESCW-750]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-750))
-- Reviewed and modified default blocks such as heading, paragraph, list, blockquote, table, image, gallery, and more to ensure the styling works as expected for responsive and accessible design. Addresses issues within the WordPress admin as well as visitor facing. Also addresses consistency of display for the header colour and navigation. ([DESCW-749]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-749)) 
+- Reviewed and modified default blocks such as heading, paragraph, list, blockquote, table, image, gallery, and more to ensure the styling works as expected for responsive and accessible design. Addresses issues within the WordPress admin as well as visitor facing. Also addresses consistency of display for the header colour and navigation. ([DESCW-749]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-749))
 - Header + navigation enhancements. Added colour options to takeover underlines. Added custom body class feature and enabled access to Additional CSS customiser tool from settings page. Added admin utility filtering to inject custom body class into customiser tool. Enhanced image block for variable ratio styling. ([DESCW-737]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-737))
 - Navigation improvements – fix overzealous custom CSS selector encoding. Refactored styles for navigation options. Updated polylang navigation selector for more consistent display. Added navigation block styles to allow for centring vs column alignment (flex vs grid layouts) when using the overlay (full screen takeover) menu. ([DESCW-751]https://apps.itsm.gov.bc.ca/jira/browse/DESCW-751))
 
