@@ -1,0 +1,52 @@
+name: Deploy WordPress Theme Prod
+
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        extensions: mbstring, intl, pdo_mysql
+        coverage: none
+
+    - name: Install Composer
+      run: |
+        curl -sS https://getcomposer.org/installer | php
+        sudo mv composer.phar /usr/local/bin/composer
+        composer --version
+    - name: Log in to OpenShift
+      run: |
+        oc login ${{ secrets.OPENSHIFT_SERVER }} --token=${{ secrets.OPENSHIFT_API_TOKEN }} --insecure-skip-tls-verify=true
+    
+    - name: Deploy theme
+      run: |
+        export THEME_NAME="bc-gov-x-theme"
+        export NAMESPACE="c0cce6-dev"
+        export WORDPRESS_POD_NAME=$(oc get pods -n $NAMESPACE -l  app.kubernetes.io/part-of=wp-git-deploy-dev,role=nginx -o jsonpath='{.items[0].metadata.name}')
+        export WORDPRESS_CONTAINER_NAME=$(oc get pods -n $NAMESPACE $WORDPRESS_POD_NAME -o jsonpath='{.spec.containers[0].name}')
+        export DATE=$(date +%Y-%m-%d)
+        composer install
+        # Check if the theme folder exists and rename it to create a backup
+        THEME_FOLDER_EXISTS=$(oc exec -n $NAMESPACE -c $WORDPRESS_CONTAINER_NAME $WORDPRESS_POD_NAME -- test -d /var/www/html/wp-content/themes/$THEME_NAME && echo "yes" || echo "no")
+        if [ "$THEME_FOLDER_EXISTS" = "yes" ]; then
+          oc exec -n $NAMESPACE -c $WORDPRESS_CONTAINER_NAME $WORDPRESS_POD_NAME -- mv /var/www/html/wp-content/themes/$THEME_NAME /var/www/html/wp-content/themes/${THEME_NAME}_backup_${DATE}
+        fi
+        oc cp --no-preserve . $NAMESPACE/$WORDPRESS_POD_NAME:/var/www/html/wp-content/themes/$THEME_NAME -c $WORDPRESS_CONTAINER_NAME
+        
+        if [ "$THEME_FOLDER_EXISTS" = "no" ]; then
+          # Activate the theme
+          # Download wp-cli in the GitHub Actions workspace
+          curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+          # Copy wp-cli to the WordPress instance
+          oc cp --no-preserve wp-cli.phar $NAMESPACE/$WORDPRESS_POD_NAME:/tmp/wp-cli.phar -c $WORDPRESS_CONTAINER_NAME
+          oc exec -n $NAMESPACE -c $WORDPRESS_CONTAINER_NAME $WORDPRESS_POD_NAME -- chmod +x /tmp/wp-cli.phar 
+          oc exec -n $NAMESPACE -c $WORDPRESS_CONTAINER_NAME $WORDPRESS_POD_NAME -- php /tmp/wp-cli.phar theme activate $THEME_NAME --allow-root
+        fi
