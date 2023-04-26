@@ -1,0 +1,106 @@
+name: Deploy WordPress Theme
+
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        extensions: mbstring, intl, pdo_mysql
+        coverage: none
+
+    - name: Install Composer
+      run: |
+        curl -sS https://getcomposer.org/installer | php
+        sudo mv composer.phar /usr/local/bin/composer
+        composer --version
+    - name: Log in to OpenShift
+      run: |
+        oc login ${{ secrets.OPENSHIFT_SERVER }} --token=${{ secrets.OPENSHIFT_API_TOKEN }} --insecure-skip-tls-verify=true
+    
+    - name: Delete existing deployment
+      run: |
+        export NAMESPACE="c0cce6-dev"
+        oc delete pods,deployments,services,routes,replicasets,configmaps,secrets,persistentvolumeclaims -l app.kubernetes.io/part-of=wp-git-deploy-dev -n $NAMESPACE
+
+    - name: Clone wordpress-deploy-digimod repository
+      run: |
+        git clone -b test-deploy https://github.com/kmandryk/wordpress-deploy-digimod.git
+
+    - name: Create new WordPress instance
+      run: |
+        export OC_ENV=dev
+        export OC_SITE_NAME=wp-git-deploy-dev
+        export OC_POOL_NAME=wp-git-deploy-dev-pool
+        export OC_APP_DOMAIN=wp-git-deploy-dev.apps.silver.devops.gov.bc.ca
+        ls wordpress-deploy-digimod
+        chmod +x wordpress-deploy-digimod/openshift/templates/site-builder-unix.sh
+        ./wordpress-deploy-digimod/openshift/templates/site-builder-unix.sh
+    - name: Wait for WordPress pod to be running
+      run: |
+        export NAMESPACE="c0cce6-dev"
+        export WORDPRESS_POD_NAME=$(oc get pods -n $NAMESPACE -l app.kubernetes.io/part-of=wp-git-deploy-dev,role=nginx -o jsonpath='{.items[0].metadata.name}')
+        oc wait --for=condition=Ready pod/$WORDPRESS_POD_NAME -n $NAMESPACE --timeout=5m
+        # Wait for the WordPress container to be created
+        while true; do
+          WORDPRESS_CONTAINER_NAME=$(oc get pods -n $NAMESPACE $WORDPRESS_POD_NAME -o jsonpath='{.spec.containers[0].name}')
+          if [ -n "$WORDPRESS_CONTAINER_NAME" ]; then
+            break
+          fi
+          echo "Waiting for WordPress container to be created..."
+          sleep 5
+        done
+        # Add an additional sleep to ensure the container is fully initialized
+        echo "Waiting for WordPress container to be fully initialized..."
+        sleep 30
+        
+#     - name: Import database
+#       run: |
+#         export NAMESPACE="c0cce6-dev"
+#         export MYSQL_POD_NAME=$(oc get pods -n $NAMESPACE -l  app.kubernetes.io/part-of=wp-git-deploy-dev,role=nginx -o jsonpath='{.items[0].metadata.name}')
+#         export MYSQL_CONTAINER_NAME=$(oc get pods -n $NAMESPACE $MYSQL_POD_NAME -o jsonpath='{.spec.containers[0].name}')
+#         oc cp --no-preserve database.sql $NAMESPACE/$MYSQL_POD_NAME:/tmp/database.sql -c $MYSQL_CONTAINER_NAME
+#         oc exec -n $NAMESPACE -c $MYSQL_CONTAINER_NAME $MYSQL_POD_NAME -- mysql -u${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} ${{ secrets.DB_NAME }} < /tmp/database.sql
+#     - name: Install wp-cli
+#       run: |
+#         curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+#         chmod +x wp-cli.phar
+#         sudo mv wp-cli.phar /usr/local/bin/wp
+#         wp --info
+
+    - name: Import WordPress XML file
+      run: |
+        export NAMESPACE="c0cce6-dev"
+        export WORDPRESS_POD_NAME=$(oc get pods -n $NAMESPACE -l  app.kubernetes.io/part-of=wp-git-deploy-dev,role=nginx -o jsonpath='{.items[0].metadata.name}')
+        export WORDPRESS_CONTAINER_NAME=$(oc get pods -n $NAMESPACE $WORDPRESS_POD_NAME -o jsonpath='{.spec.containers[0].name}')
+    
+        # Download wp-cli in the GitHub Actions workspace
+        curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+        chmod +x wp-cli.phar
+
+        # Copy the XML file to the WordPress instance
+        oc cp --no-preserve digitalgovernment.WordPress.2023-04-21.xml $NAMESPACE/$WORDPRESS_POD_NAME:/tmp/wordpress-export.xml -c $WORDPRESS_CONTAINER_NAME
+
+        # Copy wp-cli to the WordPress instance
+        oc cp --no-preserve wp-cli.phar $NAMESPACE/$WORDPRESS_POD_NAME:/tmp/wp-cli.phar -c $WORDPRESS_CONTAINER_NAME
+        oc exec -n $NAMESPACE -c $WORDPRESS_CONTAINER_NAME $WORDPRESS_POD_NAME -- chmod +x /tmp/wp-cli.phar 
+        oc exec -n $NAMESPACE -c $WORDPRESS_CONTAINER_NAME $WORDPRESS_POD_NAME -- php /tmp/wp-cli.phar core install --url=wp-git-deploy-dev.apps.silver.devops.gov.bc.ca --title="digital.gov.bc.ca Testing Framework" --admin_user=secrets.WP_TEST_USER --admin_password=secrets.WP_TEST_PASSWORD --admin_email=info@example.com
+        oc exec -n $NAMESPACE -c $WORDPRESS_CONTAINER_NAME $WORDPRESS_POD_NAME -- php /tmp/wp-cli.phar plugin install wordpress-importer --activate
+        # Run the wp-cli import command
+        oc exec -n $NAMESPACE -c $WORDPRESS_CONTAINER_NAME $WORDPRESS_POD_NAME -- php /tmp/wp-cli.phar import /tmp/wordpress-export.xml --authors=create --allow-root
+
+    - name: Deploy theme
+      run: |
+        export THEME_NAME="bc-gov-x-theme"
+        export NAMESPACE="c0cce6-dev"
+        export WORDPRESS_POD_NAME=$(oc get pods -n $NAMESPACE -l app=wordpress-git-deploy,role=nginx -o jsonpath='{.items[0].metadata.name}')
+        export WORDPRESS_CONTAINER_NAME=$(oc get pods -n $NAMESPACE $WORDPRESS_POD_NAME -o jsonpath='{.spec.containers[0].name}')
+        composer install
+        oc cp --no-preserve . $NAMESPACE/$WORDPRESS_POD_NAME:/var/www/html/wp-content/themes/$THEME_NAME -c $WORDPRESS_CONTAINER_NAME
