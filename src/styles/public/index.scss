@@ -3,10 +3,7 @@
 // SCSS variables for styles
 @import "../variables";
 
-// SCSS variables for specific sites
-@import "./sites/cleanbc/variables";
-
-// Base Public Styles
+// Base site Styles
 @import "./footer";
 @import "./general";
 @import "./header";
@@ -27,7 +24,23 @@
 @import "./blocks/_block-card-breaks";
 @import "../../scripts/admin/blocks/collapse/container";
 
+// Specific Digimod Styles
+@import "./sites/digimod/_digimod_variables";
+@import "./sites/digimod/general";
+@import "./sites/digimod/blocks";
+@import "./sites/digimod/card-containers";
+@import "./sites/digimod/common-components";
+@import "./sites/digimod/communities-of-practice";
+@import "./sites/digimod/footer";
+@import "./sites/digimod/header";
+@import "./sites/digimod/homepage";
+@import "./sites/digimod/mobile";
+@import "./sites/digimod/navigation";
+@import "./sites/digimod/plugins";
+@import "./sites/digimod/sticky-side-navigation";
+
 // Specific CleanBC Pattern Styles
+@import "./sites/cleanbc/variables";
 @import "./sites/cleanbc/_cleanbc--general";
 @import "./sites/cleanbc/_cleanbc--navigation-override";
 @import "./sites/cleanbc/_cleanbc--patterns-banners";

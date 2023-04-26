@@ -113,26 +113,27 @@ const domReady = () => {
         /**
          * Enable fixed or scroll header based on site options.
          */
-        if (
-            null !== nav &&
-            ('fixed' === window.site.headerEffect ||
-                'hides' === window.site.headerEffect)
-        ) {
-            header.style.position = 'fixed';
+        if (header && takeover) {
+            if (
+                null !== nav &&
+                ('fixed' === window.site.headerEffect ||
+                    'hides' === window.site.headerEffect)
+            ) {
+                header.style.position = 'fixed';
+            }
+            if (
+                null !== takeover &&
+                (null === window.site.headerEffect ||
+                    'scroll' === window.site.headerEffect)
+            ) {
+                header.style.position = 'absolute';
+                header.style.overflow = 'hidden';
+                header.style.transform = 'none';
+            }
+            if (null === nav) {
+                body.style.paddingTop = 0;
+            }
         }
-        if (
-            null !== takeover &&
-            (null === window.site.headerEffect ||
-                'scroll' === window.site.headerEffect)
-        ) {
-            header.style.position = 'absolute';
-            header.style.overflow = 'hidden';
-            header.style.transform = 'none';
-        }
-        if (null === nav) {
-            body.style.paddingTop = 0;
-        }
-
         /**
          * Set up scroll to top link.
          */

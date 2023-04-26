@@ -9,6 +9,15 @@ import './print';
 import './takeover-navigation';
 import './ribbon-navigation';
 
+import './sites/digimod/case-studies';
+import './sites/digimod/common-components';
+import './sites/digimod/communities-of-practice';
+import './sites/digimod/continuous-learning';
+import './sites/digimod/flex-cards';
+import './sites/digimod/homepage';
+import './sites/digimod/navigation';
+import './sites/digimod/sticky-side-navigation';
+
 import '../admin/blocks/collapse/app';
 
 import './sites/cleanbc/cleanbc-dom-loader';
