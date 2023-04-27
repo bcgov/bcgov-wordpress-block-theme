@@ -1,6 +1,7 @@
 # Changelog
 ## 1.2.1 April 27, 2023
 - added testing for ButtonEnhanced filter ([DESCW-1062](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1062))
+- added testing for MediaTextEnhanced filter ([DESCW-1061](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1061))
 
 ## 1.2.0 April 17, 2023
 - prefix child pattern groups with parent names in patterns selector ([DESCW-1004](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1004))
