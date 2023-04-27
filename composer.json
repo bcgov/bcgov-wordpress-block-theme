@@ -3,7 +3,7 @@
     "description": "Block Theme for BC Gov",
     "version": "1.2.1",
     "type": "wordpress-theme",
-    "license": "Apache 2.0",
+    "license": "Apache-2.0",
     "repositories": [
         {
             "type": "composer",
@@ -28,9 +28,11 @@
     },
     "scripts": {
         "production": [
+            "composer validate",
             "Bcgov\\Script\\Checklists::postProductionChecks"
         ],
         "checklist": [
+            "composer validate",
             "Bcgov\\Script\\Checklists::postProductionChecks"
         ],
         "phpcs": [
