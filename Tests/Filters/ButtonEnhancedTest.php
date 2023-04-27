@@ -2,7 +2,6 @@
 
 use PHPUnit\Framework\TestCase;
 use Bcgov\Theme\Block\Filters\ButtonEnhanced;
-use \Brain\Monkey;
 
 /**
  * Test placeholder to make the checklist work for now.
