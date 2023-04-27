@@ -1,12 +1,13 @@
 <?php
+namespace Bcgov\Theme\Block\Tests\Filters;
 
-use PHPUnit\Framework\TestCase;
+use Bcgov\Theme\Block\Tests\CommonTestCase;
 use Bcgov\Theme\Block\Filters\ButtonEnhanced;
 
 /**
  * Test placeholder to make the checklist work for now.
  */
-class ButtonEnhancedTest extends TestCase {
+class ButtonEnhancedTest extends CommonTestCase {
     /**
      * The buttonEnhanced instance.
      *
@@ -20,6 +21,7 @@ class ButtonEnhancedTest extends TestCase {
      * @inheritDoc
      */
     public function setUp() :void {
+        parent::setUp();
         $this->button = new ButtonEnhanced();
     }
 
@@ -83,27 +85,4 @@ class ButtonEnhancedTest extends TestCase {
         $this->assertEquals( $expected_results, $this->button->add_button_attributes( $block_content, $block ) );
     }
 
-}
-
-/**
- * Mock function for WordPress wp_parse_args
- *
- * @todo To find a more effective way of mocking WordPress functions
- * @param array $args  The $args to merge into defaults.
- * @param array $defaults  The defaults, for the merge.
- * @return array
- */
-function wp_parse_args( array $args, array $defaults = [] ): array {
-    return array_merge( $defaults, $args );
-}
-
-/**
- * Mock function for WordPress esc_attr
- *
- * @todo To find a more effective way of mocking WordPress functions
- * @param string $attr  The attributes to escape.
- * @return string
- */
-function esc_attr( string $attr ): string {
-    return $attr;
 }
