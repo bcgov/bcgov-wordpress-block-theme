@@ -138,7 +138,7 @@ const domReady = () => {
             // Generate the in-page breadcrumbs.
             const pageTitle = document.title;
             const paths = [
-                { name: 'Common components', url: '/common-components/' },
+                { name: 'Common components', url: '/bcgov-common-components/' },
                 { name: pageTitle },
             ];
 
