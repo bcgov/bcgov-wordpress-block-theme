@@ -1,5 +1,6 @@
 /* stylelint-disable no-descending-specificity */
 /* stylelint-disable selector-class-pattern */
+/* stylelint-disable font-weight-notation */
 
 .aioseo-breadcrumbs {
 	display: flex;
@@ -15,6 +16,10 @@
 
 		a {
 			text-decoration: none;
+		}
+
+		&:last-of-type {
+			font-weight: 700;
 		}
 	}
 }
