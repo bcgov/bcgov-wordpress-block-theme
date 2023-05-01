@@ -6,6 +6,10 @@
 	flex-wrap: wrap;
 	gap: 0.66rem;
 
+	.aioseo-breadcrumb-separator {
+		color: var(--wp--preset--color--foreground);
+	}
+
 	.aioseo-breadcrumb {
 		white-space: nowrap;
 
