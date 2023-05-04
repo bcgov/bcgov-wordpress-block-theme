@@ -16,7 +16,8 @@ body.custom-digitalgov {
 			.bcgov-site-header {
 
 				&.bcgov-header-group {
-					border-bottom: 3px solid var(--wp--preset--color--tertiary);
+					border-bottom: 2px solid var(--wp--preset--color--gray-40);
+					box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.5);
 
 					.wp-block-columns {
 
@@ -31,6 +32,16 @@ body.custom-digitalgov {
 			}
 		}
 	}
+}
+
+
+.bcgov-header-container {
+	position: relative;
+	z-index: 9 !important;
+}
+
+.is-dark a {
+	color: var(--wp--preset--color--foreground) !important;
 }
 
 .utility-nav-container {

@@ -123,6 +123,20 @@ const domReady = () => {
         topLevelNavItems.forEach((item) => {
             highlightMainNavItem(item);
         });
+
+        // MEGA-MENU!!!
+        const menuSubUL = document.querySelectorAll(
+            '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container '
+        );
+        if (menuSubUL) {
+            menuSubUL.forEach((meniItem) => {
+                const parentLI = meniItem.parentNode;
+                const headline = document.createElement('li');
+                headline.classList.add('headline');
+                headline.textContent = parentLI.firstChild.textContent;
+                meniItem.prepend(headline);
+            });
+        }
     }, 0);
 };
 
