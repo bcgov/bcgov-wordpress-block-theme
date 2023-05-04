@@ -125,8 +125,52 @@ const domReady = () => {
         });
 
         // MEGA-MENU!!!
+
+        const primaryMenuListItems = document.querySelectorAll(
+            'header nav > .wp-block-navigation__container > .wp-block-navigation-item.has-child'
+        );
+
+        if (primaryMenuListItems) {
+            primaryMenuListItems.forEach((item) => {
+                const subMenuContainer = item.querySelector(
+                    '.wp-block-navigation__submenu-container'
+                );
+
+                item.addEventListener('pointerenter', () => {
+                    if (subMenuContainer) {
+                        const firstSubMenuItemButton =
+                            subMenuContainer.querySelector(
+                                '.wp-block-navigation-item:first-child button'
+                            );
+                        if (firstSubMenuItemButton) {
+                            if (
+                                firstSubMenuItemButton.getAttribute(
+                                    'aria-expanded'
+                                ) === 'false'
+                            ) {
+                                firstSubMenuItemButton.focus();
+                                firstSubMenuItemButton.click();
+                            }
+                        }
+                    }
+                });
+                item.addEventListener('pointerleave', () => {
+                    const firstSubMenuItemButton =
+                        subMenuContainer.querySelector(
+                            '.wp-block-navigation-item:first-child button'
+                        );
+                    if (firstSubMenuItemButton) {
+                        firstSubMenuItemButton.setAttribute(
+                            'aria-expanded',
+                            'false'
+                        );
+                    }
+                });
+            });
+        }
+
         const menuSubUL = document.querySelectorAll(
-            '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container '
+            '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
         );
         if (menuSubUL) {
             menuSubUL.forEach((meniItem) => {
