@@ -3,6 +3,11 @@
 
 .wp-block-navigation {
 	// MEGA-MENU!!!
+	ol,
+	ul {
+		box-sizing: border-box;
+	}
+
 	&__container {
 		display: none;
 
@@ -50,6 +55,7 @@
 								top: 8px !important;
 								position: absolute;
 								min-width: 100%;
+								height: unset;
 								visibility: hidden;
 								padding: 1.25rem 2.375rem;
 

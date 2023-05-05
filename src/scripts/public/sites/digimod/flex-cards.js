@@ -14,24 +14,22 @@ const domReady = () => {
          * Aggregation: Card setup. Used on Guidance, Policies and standards and other pages.
          */
         const isFlexCards = document.querySelector('.flex-cards');
+        const flexCardGroup = document.querySelectorAll('.flex-card');
 
-        if (isFlexCards) {
-            const flexCardGroup = document.querySelectorAll('.flex-card');
-
+        if (isFlexCards || flexCardGroup) {
             if (flexCardGroup) {
                 flexCardGroup.forEach((group) => {
                     const headline = group.querySelector('.card-title');
                     if (headline) {
                         const headlineLink = headline.querySelector('a');
                         if (headlineLink) {
-                            if (
-                                null !== headlineLink.firstChild &&
-                                '' !== headlineLink.firstChild
-                            ) {
+                            if (headlineLink.firstChild) {
                                 headline.replaceChild(
                                     headlineLink.firstChild,
                                     headlineLink
                                 );
+                            } else {
+                                headline.remove();
                             }
                             const link = headlineLink.getAttribute('href');
                             const linkWrapper = document.createElement('a');

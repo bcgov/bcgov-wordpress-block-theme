@@ -16,15 +16,14 @@ const domReady = () => {
         const primaryMenuListItems = document.querySelectorAll(
             'header nav > .wp-block-navigation__container > .wp-block-navigation-item.has-child'
         );
-        const menuSubUL = document.querySelectorAll(
-            '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
-        );
 
-        if (primaryMenuListItems) {
+        if (primaryMenuListItems.length > 0) {
             primaryMenuListItems.forEach((item) => {
                 const subMenuContainer = item.querySelector(
-                    '.wp-block-navigation__submenu-container'
+                    'header .wp-block-navigation__submenu-container'
                 );
+
+                let isCheckedForHeight = false;
 
                 item.addEventListener('pointerenter', () => {
                     if (subMenuContainer) {
@@ -32,34 +31,35 @@ const domReady = () => {
                             subMenuContainer.querySelector(
                                 '.wp-block-navigation-item:first-child button'
                             );
-                        if (firstSubMenuItemButton) {
-                            if (
-                                firstSubMenuItemButton.getAttribute(
-                                    'aria-expanded'
-                                ) === 'false'
-                            ) {
-                                firstSubMenuItemButton.focus();
-                                firstSubMenuItemButton.click();
-                                firstSubMenuItemButton.blur();
-                            }
+
+                        if (
+                            firstSubMenuItemButton &&
+                            firstSubMenuItemButton.getAttribute(
+                                'aria-expanded'
+                            ) === 'false'
+                        ) {
+                            firstSubMenuItemButton.focus();
+                            firstSubMenuItemButton.click();
+                            firstSubMenuItemButton.blur();
                         }
                     }
+
                     const itemMenuSubUL = item.querySelector(
-                        '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
+                        'header .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
                     );
 
-                    if (itemMenuSubUL) {
+                    if (itemMenuSubUL && !isCheckedForHeight) {
                         const parentULContainer =
                             itemMenuSubUL.parentNode.parentNode;
 
                         if (
-                            parentULContainer.offsetHeight <=
-                            itemMenuSubUL.offsetHeight
+                            parentULContainer.clientHeight <=
+                            itemMenuSubUL.clientHeight
                         ) {
-                            parentULContainer.style.minHeight = `${itemMenuSubUL.offsetHeight}px`;
-                        } else {
-                            itemMenuSubUL.style.minHeight = `${parentULContainer.offsetHeight}px`;
+                            parentULContainer.style.height = `${itemMenuSubUL.clientHeight}px`;
                         }
+
+                        isCheckedForHeight = true;
                     }
                 });
 
@@ -68,6 +68,7 @@ const domReady = () => {
                         subMenuContainer.querySelector(
                             '.wp-block-navigation-item:first-child button'
                         );
+
                     if (firstSubMenuItemButton) {
                         firstSubMenuItemButton.setAttribute(
                             'aria-expanded',
@@ -76,37 +77,49 @@ const domReady = () => {
                     }
                 });
             });
+        }
 
-            if (menuSubUL) {
-                menuSubUL.forEach((menuItem) => {
-                    const parentLI = menuItem.parentNode;
-                    const headline = document.createElement('li');
-                    headline.classList.add('headline');
-                    headline.textContent = parentLI.firstChild.textContent;
-                    menuItem.prepend(headline);
-                    menuItem.style.width = `66vw`;
+        const menuSubUL = document.querySelectorAll(
+            'header .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
+        );
 
-                    parentLI.addEventListener('pointerenter', () => {
-                        const menuItemMenuSubUL = parentLI.querySelector(
-                            '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
-                        );
+        if (menuSubUL.length > 0) {
+            menuSubUL.forEach((menuItem) => {
+                const parentLI = menuItem.parentNode;
+                const headline = document.createElement('li');
+                headline.classList.add('headline');
+                headline.textContent = parentLI.firstChild.textContent;
+                menuItem.prepend(headline);
+                menuItem.style.width = '66vw';
 
-                        menuItemMenuSubUL.style.width = `66vw`;
-                        if (menuItemMenuSubUL) {
-                            const parentULContainer =
-                                menuItemMenuSubUL.parentNode.parentNode;
-                            if (
-                                parentULContainer.offsetHeight <=
-                                menuItemMenuSubUL.offsetHeight
-                            ) {
-                                parentULContainer.style.minHeight = `${menuItemMenuSubUL.offsetHeight}px`;
-                            } else {
-                                menuItemMenuSubUL.style.minHeight = `${parentULContainer.offsetHeight}px`;
-                            }
+                let isSubULCheckedForHeight = false;
+
+                parentLI.addEventListener('pointerenter', () => {
+                    const menuItemMenuSubUL = parentLI.querySelector(
+                        'header .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
+                    );
+
+                    menuItemMenuSubUL.style.width = '66vw';
+
+                    if (menuItemMenuSubUL && !isSubULCheckedForHeight) {
+                        const parentSubULContainer =
+                            menuItemMenuSubUL.parentNode.parentNode;
+                        const mainMenuContainerSize =
+                            parentSubULContainer.clientHeight;
+                        const subMenuListContainerSize =
+                            menuItemMenuSubUL.clientHeight;
+                        if (mainMenuContainerSize < subMenuListContainerSize) {
+                            parentSubULContainer.style.height = `${mainMenuContainerSize}px`;
+                            menuItemMenuSubUL.style.height =
+                                'calc(100% - 3rem)';
+                        } else {
+                            menuItemMenuSubUL.style.height = '100%';
                         }
-                    });
+
+                        isSubULCheckedForHeight = true;
+                    }
                 });
-            }
+            });
         }
     }, 0);
 };
