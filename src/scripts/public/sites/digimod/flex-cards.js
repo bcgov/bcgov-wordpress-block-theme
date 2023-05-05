@@ -24,7 +24,10 @@ const domReady = () => {
                     if (headline) {
                         const headlineLink = headline.querySelector('a');
                         if (headlineLink) {
-                            if (headlineLink.firstChild) {
+                            if (
+                                null !== headlineLink.firstChild &&
+                                '' !== headlineLink.firstChild
+                            ) {
                                 headline.replaceChild(
                                     headlineLink.firstChild,
                                     headlineLink
