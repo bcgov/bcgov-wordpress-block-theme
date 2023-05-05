@@ -125,9 +125,11 @@ const domReady = () => {
         });
 
         // MEGA-MENU!!!
-
         const primaryMenuListItems = document.querySelectorAll(
             'header nav > .wp-block-navigation__container > .wp-block-navigation-item.has-child'
+        );
+        const menuSubUL = document.querySelectorAll(
+            '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
         );
 
         if (primaryMenuListItems) {
@@ -153,7 +155,25 @@ const domReady = () => {
                             }
                         }
                     }
+                    const itemMenuSubUL = item.querySelector(
+                        '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
+                    );
+
+                    if (itemMenuSubUL) {
+                        const parentULContainer =
+                            itemMenuSubUL.parentNode.parentNode;
+
+                        if (
+                            parentULContainer.offsetHeight <=
+                            itemMenuSubUL.offsetHeight
+                        ) {
+                            parentULContainer.style.minHeight = `${itemMenuSubUL.offsetHeight}px`;
+                        } else {
+                            itemMenuSubUL.style.minHeight = `${parentULContainer.offsetHeight}px`;
+                        }
+                    }
                 });
+
                 item.addEventListener('pointerleave', () => {
                     const firstSubMenuItemButton =
                         subMenuContainer.querySelector(
@@ -167,19 +187,35 @@ const domReady = () => {
                     }
                 });
             });
-        }
 
-        const menuSubUL = document.querySelectorAll(
-            '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
-        );
-        if (menuSubUL) {
-            menuSubUL.forEach((meniItem) => {
-                const parentLI = meniItem.parentNode;
-                const headline = document.createElement('li');
-                headline.classList.add('headline');
-                headline.textContent = parentLI.firstChild.textContent;
-                meniItem.prepend(headline);
-            });
+            if (menuSubUL) {
+                menuSubUL.forEach((menuItem) => {
+                    const parentLI = menuItem.parentNode;
+                    const headline = document.createElement('li');
+                    headline.classList.add('headline');
+                    headline.textContent = parentLI.firstChild.textContent;
+                    menuItem.prepend(headline);
+
+                    parentLI.addEventListener('pointerenter', () => {
+                        const menuItemMenuSubUL = parentLI.querySelector(
+                            '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
+                        );
+
+                        if (menuItemMenuSubUL) {
+                            const parentULContainer =
+                                menuItemMenuSubUL.parentNode.parentNode;
+                            if (
+                                parentULContainer.offsetHeight <=
+                                menuItemMenuSubUL.offsetHeight
+                            ) {
+                                parentULContainer.style.minHeight = `${menuItemMenuSubUL.offsetHeight}px`;
+                            } else {
+                                menuItemMenuSubUL.style.minHeight = `${parentULContainer.offsetHeight}px`;
+                            }
+                        }
+                    });
+                });
+            }
         }
     }, 0);
 };
