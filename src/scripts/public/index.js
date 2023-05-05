@@ -16,6 +16,7 @@ import './sites/digimod/continuous-learning';
 import './sites/digimod/flex-cards';
 import './sites/digimod/homepage';
 import './sites/digimod/navigation';
+import './sites/digimod/mega-menu';
 import './sites/digimod/sticky-side-navigation';
 
 import '../admin/blocks/collapse/app';
