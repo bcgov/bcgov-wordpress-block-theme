@@ -24,15 +24,17 @@ const domReady = () => {
                     if (headline) {
                         const headlineLink = headline.querySelector('a');
                         if (headlineLink) {
+                            if (headlineLink.firstChild) {
+                                headline.replaceChild(
+                                    headlineLink.firstChild,
+                                    headlineLink
+                                );
+                            }
                             const link = headlineLink.getAttribute('href');
                             const linkWrapper = document.createElement('a');
                             linkWrapper.href = link;
                             group.parentNode.insertBefore(linkWrapper, group);
                             linkWrapper.appendChild(group);
-                            headline.replaceChild(
-                                headlineLink.firstChild,
-                                headlineLink
-                            );
                             linkWrapper.classList.add('card-title-link');
                         }
                     }
