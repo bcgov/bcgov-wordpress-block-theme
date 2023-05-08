@@ -5,37 +5,78 @@
 	display: inherit;
 }
 
-@media (min-width: 782px) {
+@media (min-width: $breakpoint-md-lg) {
 
 	.mobile-only {
 		display: none;
 	}
 }
 
-#mobile-menu-close {
+body.mm-wrapper--opened .wp-block-site-logo {
+	position: relative;
+	left: 0.5rem;
+	transition: position 0.3s ease;
+	transition-delay: 0.4s;
 
-	a {
-		font-size: 0;
+	@media (min-width: $breakpoint-md-lg) {
+		left: 0;
+	}
 
-		&::before {
-			content: $menu-close;
-			display: block;
-			height: 2rem;
-			width: 2rem;
-		}
+}
+
+#logo-column {
+	flex-basis: 45% !important;
+
+	@media (min-width: $breakpoint-md-lg) {
+		flex-basis: 100% !important;
 	}
 }
 
-#mobile-menu-open {
+#main-menu {
+	flex-basis: 33% !important;
 
-	a {
-		font-size: 0;
+	@media (min-width: $breakpoint-md-lg) {
+		flex-basis: 100% !important;
+	}
+}
 
-		&::before {
-			content: $menu-open;
-			display: block;
-			height: 2rem;
-			width: 2rem;
+#mobile-menu-button {
+	top: -0.5rem;
+	position: relative;
+
+	#mobile-menu-open {
+		display: inherit;
+
+		@media (min-width: $breakpoint-md-lg) {
+			display: none;
+		}
+
+		a {
+			border: 0 solid transparent !important;
+			font-size: 0;
+			height: 1.5rem;
+			width: 1.5rem;
+
+			&::before {
+				content: "";
+				background-image: $menu-open;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				display: block;
+				height: 1.5rem;
+				width: 1.5rem;
+			}
+
+			body.mm-wrapper--opened & {
+
+				&::before {
+					background-image: $menu-close;
+					position: fixed;
+					left: 0.75rem;
+					top: 1.5rem;
+				}
+			}
 		}
 	}
 }

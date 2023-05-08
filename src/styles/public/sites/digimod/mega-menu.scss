@@ -11,7 +11,7 @@
 	&__container {
 		display: none;
 
-		@media (min-width: 1024px) {
+		@media (min-width: $breakpoint-md-lg) {
 			display: inherit;
 		}
 
