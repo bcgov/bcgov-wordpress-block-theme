@@ -11,3 +11,36 @@
 		display: none;
 	}
 }
+
+#mobile-menu-close {
+
+	a {
+		font-size: 0;
+
+		&::before {
+			content: $menu-close;
+			display: block;
+			height: 2rem;
+			width: 2rem;
+		}
+	}
+}
+
+#mobile-menu-open {
+
+	a {
+		font-size: 0;
+
+		&::before {
+			content: $menu-open;
+			display: block;
+			height: 2rem;
+			width: 2rem;
+		}
+	}
+}
+
+nav.mm-menu {
+	border-right: 1px solid var(--wp--preset--color--gray-40);
+	z-index: 9;
+}

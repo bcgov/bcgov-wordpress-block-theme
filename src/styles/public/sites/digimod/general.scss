@@ -87,9 +87,9 @@ body:not(body.wp-admin):not(body.editor-styles-wrapper):not(body.error404) {
 	white-space: normal !important;
 }
 
-ul:not(.in-page-nav) li {
-	list-style-type: disc;
-}
+// ul:not(.in-page-nav) li {
+// 	list-style-type: disc;
+// }
 
 // External classed link icon
 .external::after,
