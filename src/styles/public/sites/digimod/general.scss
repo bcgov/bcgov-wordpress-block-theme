@@ -26,7 +26,6 @@ html {
 
 body {
 	flex-direction: column;
-	overflow-x: hidden;
 
 	.notification {
 		padding: 0.5rem 2rem;
@@ -46,6 +45,7 @@ body:not(body.wp-admin):not(body.editor-styles-wrapper):not(body.error404) {
 	display: flex;
 	place-items: center;
 	min-height: 100vh;
+	overflow-x: hidden;
 }
 
 
