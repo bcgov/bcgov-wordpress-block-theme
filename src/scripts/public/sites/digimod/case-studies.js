@@ -59,11 +59,11 @@ const domReady = () => {
 
         if (isCaseStudy) {
             // Generate the in-page breadcrumbs.
-            const pageTitle = document.title;
+            const pageTitle = document.querySelector('.wp-block-post-title');
             const paths = [
                 { name: 'Learn', url: '/learning/' },
                 { name: 'Case studies', url: '/learning/case-studies/' },
-                { name: pageTitle },
+                { name: pageTitle.textContent },
             ];
 
             const breadcrumbs = createBreadcrumbs(paths);

@@ -127,10 +127,10 @@ const domReady = () => {
             }
 
             // Generate the in-page breadcrumbs.
-            const pageTitle = document.title;
+            const pageTitle = document.querySelector('.wp-block-post-title');
             const paths = [
                 { name: 'Communities', url: '/communities/' },
-                { name: pageTitle },
+                { name: pageTitle.textContent },
             ];
 
             const breadcrumbs = createBreadcrumbs(paths);
