@@ -116,8 +116,11 @@ const domReady = () => {
                             subMenuListContainer.clientHeight
                         ) {
                             mainMenuContainer.style.height = `${subMenuListContainer.clientHeight}px`;
+                            menuItemMenuSubUL.style.height =
+                                'calc(100% - 3rem)';
                         } else {
                             mainMenuContainer.style.height = `${mainMenuContainer.clientHeight}px`;
+                            menuItemMenuSubUL.style.height = '100%';
                         }
 
                         isSubULCheckedForHeight = true;
