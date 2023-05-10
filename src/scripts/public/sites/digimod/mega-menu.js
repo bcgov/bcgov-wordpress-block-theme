@@ -88,7 +88,11 @@ const domReady = () => {
                 const parentLI = menuItem.parentNode;
                 const headline = document.createElement('li');
                 headline.classList.add('headline');
-                headline.textContent = parentLI.firstChild.textContent;
+                const link = document.createElement('a');
+                link.href = parentLI.firstChild.href;
+                link.textContent = parentLI.firstChild.textContent;
+                link.textContent = parentLI.firstChild.textContent;
+                headline.appendChild(link);
                 menuItem.prepend(headline);
                 menuItem.style.width = '66vw';
 
@@ -104,16 +108,16 @@ const domReady = () => {
                     if (menuItemMenuSubUL && !isSubULCheckedForHeight) {
                         const parentSubULContainer =
                             menuItemMenuSubUL.parentNode.parentNode;
-                        const mainMenuContainerSize =
-                            parentSubULContainer.clientHeight;
-                        const subMenuListContainerSize =
-                            menuItemMenuSubUL.clientHeight;
-                        if (mainMenuContainerSize < subMenuListContainerSize) {
-                            parentSubULContainer.style.height = `${mainMenuContainerSize}px`;
-                            menuItemMenuSubUL.style.height =
-                                'calc(100% - 3rem)';
+                        const mainMenuContainer = parentSubULContainer;
+                        const subMenuListContainer = menuItemMenuSubUL;
+
+                        if (
+                            mainMenuContainer.clientHeight <=
+                            subMenuListContainer.clientHeight
+                        ) {
+                            mainMenuContainer.style.height = `${subMenuListContainer.clientHeight}px`;
                         } else {
-                            menuItemMenuSubUL.style.height = '100%';
+                            mainMenuContainer.style.height = `${mainMenuContainer.clientHeight}px`;
                         }
 
                         isSubULCheckedForHeight = true;
