@@ -36,11 +36,11 @@ const domReady = () => {
 
                     if (headlineLink && linkSpan) {
                         const link = headlineLink.getAttribute('href');
-                        linkSpan.innerHTML = `<a href="${link}" class="wp-block-button__link has-secondary-brand-color has-text-color wp-element-button">${linkSpan.innerHTML}</a>`;
+                        linkSpan.innerHTML = `<a href="${link}" class="wp-block-button__link has-secondary-brand-color has-text-color has-small-font-size">${linkSpan.innerHTML}</a>`;
                         linkSpan.classList.remove('value');
                         linkSpan.classList.add(
                             'wp-block-button',
-                            'has-size-regular',
+                            'has-small-font-size',
                             'is-style-underline'
                         );
                         while (linkSpan.parentNode.classList.length > 0) {
