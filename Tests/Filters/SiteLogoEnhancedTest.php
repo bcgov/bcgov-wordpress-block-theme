@@ -35,13 +35,29 @@ class SiteLogoEnhancedTest extends CommonTestCase {
         $this->assertEquals( '', $this->logo->add_site_logo_attributes() );
     }
 
+    /**
+     * Test to see if it is a different block type.
+     *
+     * @return void
+     */
+    public function test_Add_SiteLogo_With_No_Attributes(): void {
+        $block            = [
+            'blockName' => 'core/heading',
+            'attrs'     => [
+                'inverted' => true,
+            ],
+        ];
+        $block_content    = '<div class="wp-block-site-logo"><a href="/"><img src="logo.jpg" /></a></div>';
+        $expected_results = '<div class="wp-block-site-logo"><a href="/"><img src="logo.jpg" /></a></div>';
+        $this->assertEquals( $expected_results, $this->logo->add_site_logo_attributes( $block_content, $block ) );
+    }
 
     /**
      * Test to convert site logo, with no attributes.
      *
      * @return void
      */
-    public function test_Add_SiteLogo_With_No_Attributes(): void {
+    public function test_Block_Name_That_Is_Not_SiteLogo(): void {
         $block            = [
             'blockName' => 'core/site-logo',
             'attrs'     => [],
