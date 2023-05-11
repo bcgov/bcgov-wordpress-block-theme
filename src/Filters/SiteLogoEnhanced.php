@@ -37,10 +37,10 @@ class SiteLogoEnhanced {
 
 			$html = str_replace(
 				[
-					'>',
+					'<img ',
 				],
 				[
-					' ' . $printMode . '>',
+					'<img ' . $printMode . ' ',
 				],
 				$block_content
 			);
