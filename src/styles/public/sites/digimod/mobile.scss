@@ -5,7 +5,7 @@
 	display: inherit;
 }
 
-@media (min-width: $breakpoint-md-lg) {
+@media (min-width: $breakpoint-lg) {
 
 	.mobile-only {
 		display: none;
@@ -18,7 +18,7 @@ body.mm-wrapper--opened .wp-block-site-logo {
 	transition: position 0.3s ease;
 	transition-delay: 0.4s;
 
-	@media (min-width: $breakpoint-md-lg) {
+	@media (min-width: $breakpoint-lg) {
 		left: 0;
 	}
 
@@ -27,7 +27,7 @@ body.mm-wrapper--opened .wp-block-site-logo {
 #logo-column {
 	flex-basis: 45% !important;
 
-	@media (min-width: $breakpoint-md-lg) {
+	@media (min-width: $breakpoint-lg) {
 		flex-basis: 100% !important;
 	}
 }
@@ -35,7 +35,7 @@ body.mm-wrapper--opened .wp-block-site-logo {
 #main-menu {
 	flex-basis: 33% !important;
 
-	@media (min-width: $breakpoint-md-lg) {
+	@media (min-width: $breakpoint-lg) {
 		flex-basis: 100% !important;
 	}
 }
@@ -47,7 +47,7 @@ body.mm-wrapper--opened .wp-block-site-logo {
 	#mobile-menu-open {
 		display: inherit;
 
-		@media (min-width: $breakpoint-md-lg) {
+		@media (min-width: $breakpoint-lg) {
 			display: none;
 		}
 
