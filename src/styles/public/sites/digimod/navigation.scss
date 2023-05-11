@@ -4,12 +4,23 @@
 
 body.custom-digitalgov {
 
-	nav > ul > .current-menu-item {
-		background-color: hsla(0, 0%, 7%, 0.15) !important;
+	nav > ul {
 
-		&.has-secondary-accent-background-color {
-			background-color: $menuAncestorHighlight !important;
-			color: var(--wp--preset--color--white) !important;
+		li {
+
+			&:focus,
+			&:hover {
+				background-color: hsla(0, 0%, 7%, 0.15) !important;
+			}
+		}
+
+		> .current-menu-item {
+			background-color: hsla(0, 0%, 7%, 0.05) !important;
+
+			&.has-secondary-accent-background-color {
+				background-color: $menuAncestorHighlight !important;
+				color: var(--wp--preset--color--white) !important;
+			}
 		}
 	}
 
