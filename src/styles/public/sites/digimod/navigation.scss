@@ -2,10 +2,10 @@
 /* stylelint-disable selector-class-pattern */
 /* stylelint-disable font-weight-notation */
 
-body.has-ribbon-menu {
+body.custom-digitalgov {
 
-	.current-menu-ancestor {
-		background-color: hsla(0, 0%, 7%, 0.33);
+	nav > ul > .current-menu-item {
+		background-color: hsla(0, 0%, 7%, 0.15) !important;
 
 		&.has-secondary-accent-background-color {
 			background-color: $menuAncestorHighlight !important;
@@ -17,8 +17,11 @@ body.has-ribbon-menu {
 	.has-modal-open {
 		width: calc(100vw - 4rem);
 
-		.wp-block-navigation__responsive-dialog {
-			margin: 3rem auto auto;
+		.wp-block-navigation {
+
+			&__responsive-dialog {
+				margin: 3rem auto auto;
+			}
 		}
 
 		.wp-block-navigation__container {
@@ -79,6 +82,32 @@ body.has-ribbon-menu {
 			top: -3.5rem;
 		}
 	}
+
+
+	.wp-block-navigation {
+		justify-content: flex-end !important;
+		padding: 0.75rem !important;
+
+		@media (min-width: 860px) {
+			padding: 0 !important;
+		}
+
+		&__responsive-container {
+			display: none !important;
+
+			@media (min-width: 860px) {
+				display: block !important;
+			}
+		}
+
+		&__responsive-container.is-menu-open {
+			display: block !important;
+		}
+
+		&__submenu-icon {
+			background-color: transparent;
+		}
+	}
 }
 
 .breadcrumbs-container {
@@ -97,26 +126,5 @@ body.home {
 
 	.breadcrumb-navigation-container {
 		display: none;
-	}
-}
-
-.wp-block-navigation {
-	justify-content: flex-end !important;
-	padding: 0.75rem !important;
-
-	@media (min-width: 860px) {
-		padding: 0 !important;
-	}
-
-	&__responsive-container {
-		display: none !important;
-
-		@media (min-width: 860px) {
-			display: block !important;
-		}
-	}
-
-	&__responsive-container.is-menu-open {
-		display: block !important;
 	}
 }
