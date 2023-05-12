@@ -20,26 +20,36 @@
 	isolation: isolate;
 }
 
-body.mm-wrapper--opened {
+body.mm-wrapper--opened.mm-wrapper--position-left {
 
 	overflow: hidden;
 
 	.mm-slideout {
-		transform: translateX(max(440px)) !important;
+		transform: translate(80vw, 0) !important;
+		max-width: 440px;
 
-		&::before {
-			background-image: $menu-close;
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: contain;
-			left: 0.75rem;
-			top: 1.5rem;
-			content: "";
-			display: block;
-			position: fixed;
-			z-index: 999;
-			height: 1.5rem;
-			width: 1.5rem;
+		@media (min-width: $breakpoint-xs) {
+			transform: translate3d(var(--mm-translate-horizontal), 0, 0) !important;
+			max-width: inherit;
+		}
+
+
+		&.mm-wrapper {
+
+			&__blocker::before {
+				background-image: $menu-close;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				left: 0.75rem;
+				top: 1.5rem;
+				content: "";
+				display: block;
+				position: fixed;
+				z-index: 999;
+				height: 1.5rem;
+				width: 1.5rem;
+			}
 		}
 	}
 
