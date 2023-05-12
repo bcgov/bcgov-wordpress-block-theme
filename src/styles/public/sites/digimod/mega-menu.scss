@@ -31,8 +31,9 @@
 
 				&__submenu-container {
 					background-color: transparent !important;
-					min-width: 100% !important;
 					min-height: 250px;
+					min-width: 100% !important;
+					padding: 1.5rem 0 2rem;
 
 					li {
 						position: initial !important;
@@ -40,7 +41,7 @@
 						a {
 							min-width: 250px;
 							max-width: 320px;
-							border-right: 4px solid #f6f9fc;
+							border-right: 4px solid $menuAncestorBackground;
 
 							&:hover,
 							&:focus {
@@ -121,8 +122,6 @@
 					a {
 						min-width: 325px;
 					}
-
-					padding: 3rem 0 2rem;
 
 					&::before {
 						isolation: isolate;
