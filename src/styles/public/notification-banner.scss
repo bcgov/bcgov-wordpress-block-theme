@@ -113,7 +113,7 @@ body.wp-admin .notification {
 		display: grid;
 		max-width: 1440px;
 		grid-auto-flow: row;
-		gap: 2rem;
+		gap: 1rem;
 		justify-content: center;
 
 		@media (min-width: $breakpoint-sm) {
