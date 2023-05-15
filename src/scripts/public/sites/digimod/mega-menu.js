@@ -105,12 +105,12 @@ const domReady = () => {
 
                     menuItemMenuSubUL.style.width = '66vw';
 
-                    if (menuItemMenuSubUL && !isSubULCheckedForHeight) {
-                        const parentSubULContainer =
-                            menuItemMenuSubUL.parentNode.parentNode;
-                        const mainMenuContainer = parentSubULContainer;
-                        const subMenuListContainer = menuItemMenuSubUL;
+                    const parentSubULContainer =
+                        menuItemMenuSubUL.parentNode.parentNode;
+                    const mainMenuContainer = parentSubULContainer;
+                    const subMenuListContainer = menuItemMenuSubUL;
 
+                    if (menuItemMenuSubUL && !isSubULCheckedForHeight) {
                         if (
                             mainMenuContainer.clientHeight <=
                             subMenuListContainer.clientHeight
