@@ -17,12 +17,13 @@
 
 		> .wp-block-navigation-item {
 			position: initial;
-			padding: 1rem 0.25rem;
+			padding: 0;
+			cursor: pointer;
 
 			> .wp-block-navigation-item {
 
 				&__content {
-					padding: 0 0.25rem;
+					padding: 1rem 0.5rem;
 
 				}
 			}
