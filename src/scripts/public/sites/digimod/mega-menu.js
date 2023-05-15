@@ -79,34 +79,6 @@ const domReady = () => {
             });
         }
 
-        const onlySecondaryLevelLink = document.querySelectorAll(
-            'header nav.wp-block-navigation > ul.wp-block-navigation__container > li > ul.wp-block-navigation__submenu-container > li.wp-block-navigation-link > a.wp-block-navigation-item__content'
-        );
-        if (onlySecondaryLevelLink) {
-            onlySecondaryLevelLink.forEach((secondaryLink) => {
-                secondaryLink.classList.add('no-sub-menu');
-                secondaryLink.addEventListener('pointerenter', (e) => {
-                    const theLink = e.target;
-                    const topSiblingContainer = theLink.closest('ul');
-                    const topSibling = topSiblingContainer.querySelector('li');
-                    const topSiblingSubmenu = topSibling.querySelector('ul');
-                    if (topSiblingSubmenu) {
-                        topSiblingSubmenu.style.display = 'none';
-                    }
-                });
-
-                secondaryLink.addEventListener('pointerleave', (e) => {
-                    const theLink = e.target;
-                    const topSiblingContainer = theLink.closest('ul');
-                    const topSibling = topSiblingContainer.querySelector('li');
-                    const topSiblingSubmenu = topSibling.querySelector('ul');
-                    if (topSiblingSubmenu) {
-                        topSiblingSubmenu.style.display = 'block';
-                    }
-                });
-            });
-        }
-
         const menuSubUL = document.querySelectorAll(
             'header .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
         );
@@ -156,6 +128,40 @@ const domReady = () => {
                 });
             });
         }
+
+        setTimeout(function () {
+            const onlySecondaryLevelLink = document.querySelectorAll(
+                'header nav.wp-block-navigation > ul.wp-block-navigation__container > li > ul.wp-block-navigation__submenu-container > li.wp-block-navigation-link > a.wp-block-navigation-item__content'
+            );
+            if (onlySecondaryLevelLink) {
+                onlySecondaryLevelLink.forEach((secondaryLink) => {
+                    secondaryLink.classList.add('no-sub-menu');
+                    secondaryLink.addEventListener('pointerenter', (e) => {
+                        const theLink = e.target;
+                        const topSiblingContainer = theLink.closest('ul');
+                        const topSibling =
+                            topSiblingContainer.querySelector('li');
+                        const topSiblingSubmenu =
+                            topSibling.querySelector('ul');
+                        if (topSiblingSubmenu) {
+                            topSiblingSubmenu.style.display = 'none';
+                        }
+                    });
+
+                    secondaryLink.addEventListener('pointerleave', (e) => {
+                        const theLink = e.target;
+                        const topSiblingContainer = theLink.closest('ul');
+                        const topSibling =
+                            topSiblingContainer.querySelector('li');
+                        const topSiblingSubmenu =
+                            topSibling.querySelector('ul');
+                        if (topSiblingSubmenu) {
+                            topSiblingSubmenu.style.display = 'block';
+                        }
+                    });
+                });
+            }
+        }, 50);
     }, 0);
 };
 
