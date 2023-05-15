@@ -151,4 +151,8 @@ body.home {
 	.breadcrumb-navigation-container {
 		display: none;
 	}
+
+	#post-content > div:first-of-type {
+		border-top-width: 0;
+	}
 }
