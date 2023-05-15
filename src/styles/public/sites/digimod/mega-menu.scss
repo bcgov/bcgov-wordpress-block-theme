@@ -10,6 +10,7 @@
 
 	&__container {
 		display: none;
+		gap: 0;
 
 		@media (min-width: $breakpoint-lg) {
 			display: inherit;
@@ -20,10 +21,16 @@
 			padding: 0;
 			cursor: pointer;
 
+			> button {
+				position: relative;
+				right: 1rem;
+			}
+
 			> .wp-block-navigation-item {
 
+
 				&__content {
-					padding: 1rem 0.5rem;
+					padding: 1rem;
 
 				}
 			}
@@ -51,6 +58,8 @@
 								color: var(--wp--preset--color--secondary-brand) !important;
 								font-weight: bold;
 							}
+
+
 						}
 
 						button {
@@ -84,6 +93,7 @@
 										border-right: none;
 										padding: 0.25rem;
 										text-decoration: none;
+										max-width: 100%;
 
 										&:hover,
 										&:focus {
@@ -106,6 +116,7 @@
 											padding: 0;
 											background-color: transparent;
 											border-right: none;
+											max-width: 100%;
 
 											&:hover,
 											&:focus {
