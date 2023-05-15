@@ -90,11 +90,7 @@ const domReady = () => {
                     const topSiblingContainer = theLink.closest('ul');
                     const topSibling = topSiblingContainer.querySelector('li');
                     const topSiblingSubmenu = topSibling.querySelector('ul');
-                    if (
-                        topSiblingContainer &&
-                        topSibling &&
-                        topSiblingSubmenu
-                    ) {
+                    if (topSiblingSubmenu) {
                         topSiblingSubmenu.style.display = 'none';
                     }
                 });
@@ -104,11 +100,7 @@ const domReady = () => {
                     const topSiblingContainer = theLink.closest('ul');
                     const topSibling = topSiblingContainer.querySelector('li');
                     const topSiblingSubmenu = topSibling.querySelector('ul');
-                    if (
-                        topSiblingContainer &&
-                        topSibling &&
-                        topSiblingSubmenu
-                    ) {
+                    if (topSiblingSubmenu) {
                         topSiblingSubmenu.style.display = 'block';
                     }
                 });

@@ -37,12 +37,6 @@ body {
 	}
 }
 
-body .bcgov-body-content ol:not(.is-style-custom) li {
-	font-size: clamp(1rem, 0.25rem + 3.3333vw, 1.25rem);
-	line-height: 1.5;
-	min-height: 0;
-}
-
 body:not(body.wp-admin):not(body.editor-styles-wrapper):not(body.error404) {
 	padding: 0;
 	margin: 0;
