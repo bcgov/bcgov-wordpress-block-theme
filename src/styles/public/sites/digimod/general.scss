@@ -57,6 +57,12 @@ body:not(body.wp-admin):not(body.editor-styles-wrapper):not(body.error404) {
 	}
 }
 
+.box-shadow,
+.drop-shadow,
+.dropshadow {
+	box-shadow: var(--box-shadow);
+}
+
 #post-content {
 	isolation: isolate;
 }
