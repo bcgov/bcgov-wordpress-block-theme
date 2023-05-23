@@ -2,7 +2,7 @@
 ## 1.2.2 May 23, 2023
 - added testing for SiteLogoEnhanced filter ([DESCW-1063](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1063))
 - Fixed issue with SiteLogoEnhanced added data-print attribute in closing div tags.
-- - added testing for Pattern Settings action ([DESCW-1059](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1059))
+- added testing for Pattern Settings action ([DESCW-1059](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1059))
 
 ## 1.2.1 April 27, 2023
 - added testing for ButtonEnhanced filter ([DESCW-1062](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1062))

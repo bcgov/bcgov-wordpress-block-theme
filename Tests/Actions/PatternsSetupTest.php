@@ -8,7 +8,7 @@ use \Brain\Monkey;
 /**
  * Testing for PatternsSetup.
  */
-class PatternSetupTest extends CommonTestCase {
+class PatternsSetupTest extends CommonTestCase {
     /**
      * The PatternsSetup instance.
      *
