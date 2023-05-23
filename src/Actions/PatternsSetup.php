@@ -20,8 +20,110 @@ class PatternsSetup {
 	 */
 	public function bcgov_blocks_theme_register_block_patterns() {
 
+		foreach ( $this->get_block_pattern_categories() as $name => $properties ) {
+			register_block_pattern_category( $name, $properties );
+		}
+
+		if ( function_exists( 'register_block_pattern' ) ) {
+
+			// Register in-theme "global" patterns.
+			foreach ( $this->get_block_patterns() as $block_pattern ) {
+				register_block_pattern(
+					'bcgov-wordpress-block-theme/' . $block_pattern,
+					require get_template_directory() . '/inc/core/patterns/' . $block_pattern . '.php'
+				);
+			}
+
+			// Register custom post type patterns.
+			$args = array(
+				'post_type'      => 'custom-pattern',
+				'posts_per_page' => -1,
+				'orderby'        => 'name',
+			);
+
+			$query = new \WP_Query( $args );
+
+			if ( ! taxonomy_exists( 'pattern-groups' ) ) {
+				register_taxonomy( 'pattern-groups', 'custom-pattern', array( 'label' => 'Pattern Groups' ) );
+			}
+
+			if ( ! taxonomy_exists( 'pattern-keywords' ) ) {
+				register_taxonomy( 'pattern-keywords', 'custom-pattern', array( 'label' => 'Related Search Terms' ) );
+			}
+
+			while ( $query->have_posts() ) {
+				$query->the_post();
+
+				$id                 = get_the_ID();
+				$title              = get_the_title();
+				$categories         = get_the_terms( $id, 'pattern-groups' );
+				$search_keywords    = get_terms(
+					[
+						'taxonomy'   => 'pattern-keywords',
+						'hide_empty' => false,
+					]
+				);
+				$content            = get_the_content();
+				$block_pattern_slug = get_post_field( 'post_name', get_post() );
+				$keywords           = [];
+
+				if ( ! empty( $categories ) ) {
+					// Register patterns.
+					foreach ( $categories as $category ) {
+						$block_pattern_name = 'bcgov_blocks_theme-' . $category->slug;
+
+						if ( ! \WP_Block_Patterns_Registry::get_instance()->is_registered( 'bcgov_blocks_theme-' . $category->slug ) ) {
+							register_block_pattern_category(
+                                'bcgov_blocks_theme-' . $category->slug,
+								[
+									'label' => trim(
+                                        get_term_parents_list(
+                                            $category->term_id,
+                                            'pattern-groups',
+                                            [
+												'link' => false,
+												'separator' => '//',
+											]
+                                        ),
+                                        '/'
+                                    ),
+								]
+							);
+						}
+
+						if ( ! empty( $search_keywords ) ) {
+							foreach ( $search_keywords as $keyword ) {
+								$keywords[] = $keyword->name;
+							}
+						}
+
+						register_block_pattern(
+							'bcgov-wordpress-block-theme/' . $block_pattern_slug,
+							[
+								/* translators: %s: pattern title */
+								'title'      => 'bcgov_blocks_theme ' . $title,
+								'categories' => [ 'bcgov_blocks_theme-' . $category->slug ],
+								'keywords'   => $keywords,
+								'content'    => $content,
+							]
+						);
+					}
+				}
+			}
+
+			wp_reset_postdata();
+		}
+
+	}
+
+	/**
+	 * Gets the block pattern categories depending on options and filters.
+	 *
+	 * @return array
+	 */
+	public function get_block_pattern_categories(): array {
 		/**
-		 *  BCGov Blocks Theme general use patterns.
+		 * BCGov Blocks Theme general use patterns.
 		 *
 		 * Initialises pattern categories specific to the theme.
 		 *
@@ -30,60 +132,57 @@ class PatternsSetup {
 		 * @package Bcgov/Theme/Block
 		 */
 
-		$block_pattern_categories = [
-			'bcgov-blocks-theme-general'       => [ 'label' => __( 'BCGov: General', 'bcgov_blocks_theme' ) ],
-			'bcgov-blocks-theme-header-footer' => [ 'label' => __( 'BCGov: Header/Footer', 'bcgov_blocks_theme' ) ],
-			'bcgov-blocks-theme-page-layouts'  => [ 'label' => __( 'BCGov: Page Layouts', 'bcgov_blocks_theme' ) ],
-			'bcgov-blocks-theme-query'         => [ 'label' => __( 'BCGov: Post Query', 'bcgov_blocks_theme' ) ],
-		];
+		 $block_pattern_categories = [
+			 'bcgov-blocks-theme-general'       => [ 'label' => __( 'BCGov: General', 'bcgov_blocks_theme' ) ],
+			 'bcgov-blocks-theme-header-footer' => [ 'label' => __( 'BCGov: Header/Footer', 'bcgov_blocks_theme' ) ],
+			 'bcgov-blocks-theme-page-layouts'  => [ 'label' => __( 'BCGov: Page Layouts', 'bcgov_blocks_theme' ) ],
+			 'bcgov-blocks-theme-query'         => [ 'label' => __( 'BCGov: Post Query', 'bcgov_blocks_theme' ) ],
+		 ];
 
-		/*
-		* CleanBC site specific pattern catergories.
-		*/
-		if ( \Bcgov\Theme\Block\CLEANBC || 'true' === get_option( 'enable_all_styles' ) ) {
-
-			$block_pattern_categories['cleanbc-patterns-general']      = [
-				'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ),
-			];
-			$block_pattern_categories['cleanbc-patterns-banners']      = [
-				'label' => __( 'CleanBC: Banners', 'bcgov_blocks_theme' ),
-			];
-			$block_pattern_categories['cleanbc-patterns-page-layouts'] = [
-				'label' => __( 'CleanBC: Page Layouts', 'bcgov_blocks_theme' ),
-			];
-			$block_pattern_categories['cleanbc-patterns-query']        = [
-				'label' => __( 'CleanBC: Post Query', 'bcgov_blocks_theme' ),
-			];
-
-		}
-
-		/**
-		 * BCGov Blocks Theme: Filters the theme block pattern categories.
-		 *
-		 * Site specific patterns: use the project identifier as part of the naming.
-		 * This is reflected in the /inc/core/patterns/[project]/[pattern-name] directory.
-		 * Eg: for CleanBC patterns – 'cleanbc/header'.
-		 *
-		 * @since 1.0.0
-		 *
-		 * @package Bcgov/Theme/Block
-		 *
-		 * @param array[] $block_pattern_categories {
-		 * An associative array of block pattern categories, keyed by category name.
-		 *
-		 *    @type array[] $properties {
-		 *        Array of block category properties.
-		 *
-		 *        @type string $label A human-readable label for the pattern category.
-		 *    }
-		 * }
+		 /*
+		 * CleanBC site specific pattern categories.
 		 */
-		$block_pattern_categories = apply_filters( 'bcgov_blocks_theme_block_pattern_categories', $block_pattern_categories );
+		 if ( \Bcgov\Theme\Block\CLEANBC || 'true' === get_option( 'enable_all_styles' ) ) {
+			 $cleanbc_block_pattern_categories = [
+				 'cleanbc-patterns-general'      => [ 'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ) ],
+				 'cleanbc-patterns-banners'      => [ 'label' => __( 'CleanBC: Banners', 'bcgov_blocks_theme' ) ],
+				 'cleanbc-patterns-page-layouts' => [ 'label' => __( 'CleanBC: Page Layouts', 'bcgov_blocks_theme' ) ],
+				 'cleanbc-patterns-query'        => [ 'label' => __( 'CleanBC: Post Query', 'bcgov_blocks_theme' ) ],
+			 ];
+			 $block_pattern_categories         = array_merge( $block_pattern_categories, $cleanbc_block_pattern_categories );
 
-		foreach ( $block_pattern_categories as $name => $properties ) {
-			register_block_pattern_category( $name, $properties );
-		}
+		 }
 
+		 /**
+		  * BCGov Blocks Theme: Filters the theme block pattern categories.
+		  *
+		  * Site specific patterns: use the project identifier as part of the naming.
+		  * This is reflected in the /inc/core/patterns/[project]/[pattern-name] directory.
+		  * Eg: for CleanBC patterns – 'cleanbc/header'.
+		  *
+		  * @since 1.0.0
+		  *
+		  * @package Bcgov/Theme/Block
+		  *
+		  * @param array[] $block_pattern_categories {
+		  * An associative array of block pattern categories, keyed by category name.
+		  *
+		  *    @type array[] $properties {
+		  *        Array of block category properties.
+		  *
+		  *        @type string $label A human-readable label for the pattern category.
+		  *    }
+		  * }
+		  */
+		 return apply_filters( 'bcgov_blocks_theme_block_pattern_categories', $block_pattern_categories );
+	}
+
+	/**
+	 * Gets the block pattern categories.
+	 *
+	 * @return array
+	 */
+	public function get_block_patterns(): array {
 		$block_patterns = [
 
 			/*
@@ -178,97 +277,6 @@ class PatternsSetup {
 		 *
 		 * @param $block_patterns array List of block patterns by name.
 		 */
-		$block_patterns = apply_filters( 'bcgov_blocks_theme_block_patterns', $block_patterns );
-
-		if ( function_exists( 'register_block_pattern' ) ) {
-
-			// Register in-theme "global" patterns.
-			foreach ( $block_patterns as $block_pattern ) {
-				register_block_pattern(
-					'bcgov-wordpress-block-theme/' . $block_pattern,
-					require get_template_directory() . '/inc/core/patterns/' . $block_pattern . '.php'
-				);
-			}
-
-			// Register custom post type patterns.
-			$args = array(
-				'post_type'      => 'custom-pattern',
-				'posts_per_page' => -1,
-				'orderby'        => 'name',
-			);
-
-			$query = new \WP_Query( $args );
-
-			if ( ! taxonomy_exists( 'pattern-groups' ) ) {
-				register_taxonomy( 'pattern-groups', 'custom-pattern', array( 'label' => 'Pattern Groups' ) );
-			}
-
-			if ( ! taxonomy_exists( 'pattern-keywords' ) ) {
-				register_taxonomy( 'pattern-keywords', 'custom-pattern', array( 'label' => 'Related Search Terms' ) );
-			}
-
-			while ( $query->have_posts() ) {
-				$query->the_post();
-
-				$id                 = get_the_ID();
-				$title              = get_the_title();
-				$categories         = get_the_terms( $id, 'pattern-groups' );
-				$search_keywords    = get_terms(
-					[
-						'taxonomy'   => 'pattern-keywords',
-						'hide_empty' => false,
-					]
-				);
-				$content            = get_the_content();
-				$block_pattern_slug = get_post_field( 'post_name', get_post() );
-				$keywords           = [];
-
-				if ( ! empty( $categories ) ) {
-					// Register patterns.
-					foreach ( $categories as $category ) {
-						$block_pattern_name = 'bcgov_blocks_theme-' . $category->slug;
-
-						if ( ! \WP_Block_Patterns_Registry::get_instance()->is_registered( 'bcgov_blocks_theme-' . $category->slug ) ) {
-							register_block_pattern_category(
-                                'bcgov_blocks_theme-' . $category->slug,
-								[
-									'label' => trim(
-                                        get_term_parents_list(
-                                            $category->term_id,
-                                            'pattern-groups',
-                                            [
-												'link' => false,
-												'separator' => '//',
-											]
-                                        ),
-                                        '/'
-                                    ),
-								]
-							);
-						}
-
-						if ( ! empty( $search_keywords ) ) {
-							foreach ( $search_keywords as $keyword ) {
-								$keywords[] = $keyword->name;
-							}
-						}
-
-						register_block_pattern(
-							'bcgov-wordpress-block-theme/' . $block_pattern_slug,
-							[
-								/* translators: %s: pattern title */
-								'title'      => 'bcgov_blocks_theme ' . $title,
-								'categories' => [ 'bcgov_blocks_theme-' . $category->slug ],
-								'keywords'   => $keywords,
-								'content'    => $content,
-							]
-						);
-					}
-				}
-			}
-
-			wp_reset_postdata();
-		}
-
+		return apply_filters( 'bcgov_blocks_theme_block_patterns', $block_patterns );
 	}
 }
