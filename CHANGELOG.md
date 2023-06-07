@@ -1,4 +1,8 @@
 # Changelog
+
+## 1.2.3 June 7, 2023
+- Fixed bug when multiple Collapse Containers exist on the same page ([DESCW-1131](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1131))
+
 ## 1.2.2 May 23, 2023
 - added testing for SiteLogoEnhanced filter ([DESCW-1063](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1063))
 - Fixed issue with SiteLogoEnhanced added data-print attribute in closing div tags.

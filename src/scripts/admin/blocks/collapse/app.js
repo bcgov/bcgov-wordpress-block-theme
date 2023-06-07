@@ -18,8 +18,14 @@ const domReady = () => {
         );
         const collapseItemLinks =
             document.querySelectorAll('.collapse-close a');
-        const collapseAllButton = document.querySelector(
+
+        // Select all Collapse All buttons, used to initialize closed states.
+        const collapseAlls = document.querySelectorAll(
             '.collapse-collapse-all'
+        );
+        // Select all first Collapse Items in each Collapse Container, used to initialize open states.
+        const firstCollapseItems = document.querySelectorAll(
+            '.wp-block-bcgov-block-theme-collapse > div:nth-child(2) button'
         );
 
         if (collapseAllButtons.length) {
@@ -36,8 +42,8 @@ const domReady = () => {
             });
 
             // initialise load state
-            triggerClick(collapseAllButton);
-            triggerClick(collapseItemButtons[0]);
+            collapseAlls.forEach(triggerClick);
+            firstCollapseItems.forEach(triggerClick);
         }
     }, 0);
 };
