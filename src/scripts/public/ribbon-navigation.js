@@ -159,7 +159,7 @@ const domReady = () => {
                             class: 'wp-block-navigation__submenu-container',
                         });
                         currentUl.appendChild(ul3);
-                        currentUl = ul3; //?
+                        currentUl = ul3;
                     }
 
                     const a2 = createElement('a', {
