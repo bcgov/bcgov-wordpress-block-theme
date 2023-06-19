@@ -22,7 +22,7 @@ body:not(body.wp-admin):not(body.editor-styles-wrapper):not(body.error404) {
 .bcgov-header-group.bcgov-site-header {
 
 	border-bottom: 3px solid var(--wp--preset--color--accent);
-	width: 100vw;
+	width: 100%;
 	z-index: auto;
 	top: 0;
 }

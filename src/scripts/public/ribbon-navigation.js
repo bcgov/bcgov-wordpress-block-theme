@@ -15,6 +15,11 @@ const domReady = () => {
             setTimeout(function () {
                 const container = targetEl;
                 const childContainer = qs('ul', container);
+                const subChildContainer = qs(
+                    '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container',
+                    container
+                );
+                const languageChildContainer = qs('.language_switcher_options');
 
                 let bounding = null;
                 const parentBounding = container.getBoundingClientRect();
@@ -33,29 +38,17 @@ const domReady = () => {
                         childContainer.style.left =
                             'calc(' + parentBounding.width + 'px - 185%)';
                         childContainer.style.right = 'auto';
-                        childContainer.style.top = '20%';
+                        childContainer.style.top = '100%';
+                        if (null !== subChildContainer) {
+                            subChildContainer.style.top = '20%';
+                        }
+                        if (null !== languageChildContainer) {
+                            languageChildContainer.style.top = '100%';
+                        }
                         childContainer.style.position = 'absolute';
                     }
                 }
             }, 0);
-        }
-
-        if (qsa('li.wp-block-navigation-item').length) {
-            const elem = qsa('li.wp-block-navigation-item');
-
-            elem.forEach((i) => {
-                i.addEventListener(
-                    'pointerover',
-                    (e) => {
-                        let target = e.target;
-                        if (target.tagName !== 'LI') {
-                            target = target.closest('li');
-                        }
-                        doBoundsCheck(target);
-                    },
-                    { capture: false }
-                );
-            });
         }
 
         /*
@@ -166,7 +159,7 @@ const domReady = () => {
                             class: 'wp-block-navigation__submenu-container',
                         });
                         currentUl.appendChild(ul3);
-                        currentUl = ul3;
+                        currentUl = ul3; //?
                     }
 
                     const a2 = createElement('a', {
@@ -240,6 +233,24 @@ const domReady = () => {
                     ulLanguageOptions.appendChild(li);
                 });
             }
+        }
+
+        if (qsa('li.wp-block-navigation-item').length) {
+            const elem = qsa('li.wp-block-navigation-item');
+
+            elem.forEach((i) => {
+                i.addEventListener(
+                    'pointerover',
+                    (e) => {
+                        let target = e.target;
+                        if (target.tagName !== 'LI') {
+                            target = target.closest('li');
+                        }
+                        doBoundsCheck(target);
+                    },
+                    { capture: false }
+                );
+            });
         }
     }
 };
