@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.4 June 16, 2023
+- Fixed horizontal scrolling due to uncorrected vw width ([DESCW-1226](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1226))
+- Fixed right aligned ribbon navigation sub menu placement offset. Added a check for language switcher sythesised menu in ribbon state. ([DESCW-1225](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1225))
+
+
 ## 1.2.3 June 7, 2023
 - Fixed bug when multiple Collapse Containers exist on the same page ([DESCW-1131](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1131))
 
