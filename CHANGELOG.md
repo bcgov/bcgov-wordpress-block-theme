@@ -1,7 +1,7 @@
 # Changelog
 
-## 1.2.4 June 16, 2023
-- Fixed horizontal scrolling due to uncorrected 100vw width ([DESCW-1226](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1226))
+## 1.2.4 June 26, 2023
+- Fixed horizontal scrolling due to uncorrected 100vw width. Added horizontal overflow supression for alignful conditions that cause side scrolling on some small desktop resolutions. ([DESCW-1226](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1226))
 - Fixed right aligned ribbon navigation sub menu placement offset. Added a check for language switcher synthesised menu in ribbon state. ([DESCW-1225](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1225))
 
 
