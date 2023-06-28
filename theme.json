@@ -1,4 +1,5 @@
 {
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"title": "BCGov Default",
 	"patterns": [
@@ -321,18 +322,15 @@
 		},
 		"spacing": {
 			"blockGap": null,
-			"spacing": {
-				"blockGap": null,
-				"customSpacingSize": true,
-				"spacingScale": {
-					"operator": "*",
-					"increment": 1.75,
-					"steps": 9,
-					"mediumStep": 1.5,
-					"unit": "rem"
-				}
+			"customSpacingSize": true,
+			"spacingScale": {
+				"operator": "*",
+				"increment": 1.75,
+				"steps": 9,
+				"mediumStep": 1.5,
+				"unit": "rem"
 			}
-		},		
+		},
 		"typography": {
 			"fluid": true,
 			"fontSizes": [
@@ -387,6 +385,26 @@
 		"custom": {}
 	},
 	"styles": {
+		"blocks": {
+			"core/list-item": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/navigation": {
+				"css": "& li { font-size: var(--wp--preset--font-size--normal); }"
+			},
+			"core/paragraph": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/pullquote": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/quote": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/site-title": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			}
+		},
 		"color": {
 			"background": "var(--wp--preset--color--background)",
 			"text": "var(--wp--preset--color--foreground)"
