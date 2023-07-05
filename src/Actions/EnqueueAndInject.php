@@ -120,6 +120,7 @@ class EnqueueAndInject {
 			'networkBannerType'       => esc_attr( get_site_option( 'bcgov_notification_banner_banner_type' ) ),
 			'networkBannerContent'    => esc_html( get_site_option( 'bcgov_notification_banner_banner_content' ) ),
 			'networkBannerUtm'        => esc_attr( get_site_option( 'bcgov_notification_banner_utm_campaign' ) ),
+			'externalLinkIcons'       => esc_attr( get_option( 'bcgov_external_link_icons_settings' )['show_external_link_icons'] ?? 0 ),
 		];
 
 		return $javascript_variables;
