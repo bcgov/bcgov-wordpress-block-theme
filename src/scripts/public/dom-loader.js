@@ -152,59 +152,65 @@ const domReady = () => {
                 links.forEach((link) => {
                     const href = link.getAttribute('href');
 
-                    // Check if the link is an anchor link or a relative link
-                    if (
-                        href.startsWith('#') ||
-                        href.startsWith('/') ||
-                        href.startsWith('./') ||
-                        href.startsWith('../')
-                    ) {
-                        return;
-                    }
+                    if (null !== href) {
+                        // Check if the link is an anchor link or a relative link
+                        if (
+                            href.startsWith('#') ||
+                            href.startsWith('/') ||
+                            href.startsWith('./') ||
+                            href.startsWith('../') ||
+                            href.startsWith('?')
+                        ) {
+                            return;
+                        }
 
-                    // Get the current domain
-                    const currentDomain = window.location.hostname;
+                        // Get the current domain
+                        const currentDomain = window.location.hostname;
 
-                    // Extract the domain from the link's href
-                    const linkDomain = href.match(
-                        /^(?:https?:)?(?:\/\/)?([^\/\?]+)/i
-                    )[1];
+                        // Extract the domain from the link's href
+                        const linkDomain = href.match(
+                            /^(?:https?:)?(?:\/\/)?([^\/\?]+)/i
+                        )[1];
 
-                    // Check if the domains don't match
-                    if (linkDomain !== currentDomain) {
-                        link.classList.add('external');
+                        // Check if the domains don't match
+                        if (linkDomain !== currentDomain) {
+                            link.classList.add('external');
 
-                        const svg = document.createElementNS(
-                            'http://www.w3.org/2000/svg',
-                            'svg'
-                        );
-                        svg.setAttribute('class', 'external-link-icon');
-                        svg.setAttribute('version', '1.1');
-                        svg.setAttribute('id', 'Layer_1');
-                        svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-                        svg.setAttribute(
-                            'xmlns:xlink',
-                            'http://www.w3.org/1999/xlink'
-                        );
-                        svg.setAttribute('x', '0px');
-                        svg.setAttribute('y', '0px');
-                        svg.setAttribute('viewBox', '0 0 18 18');
-                        svg.setAttribute(
-                            'style',
-                            'enable-background:new 0 0 18 18;'
-                        );
-                        svg.setAttribute('xml:space', 'preserve');
-                        svg.innerHTML =
-                            '<path class="st0" d="M9.7,3.9c0-0.1-0.1-0.3-0.2-0.4C9.4,3.4,9.3,3.4,9.2,3.4H1.7c-0.4,0-0.9,0.2-1.2,0.5C0.2,4.2,0,4.6,0,5.1v11.2c0,0.4,0.2,0.9,0.5,1.2C0.8,17.8,1.2,18,1.7,18h11.2c0.4,0,0.9-0.2,1.2-0.5c0.3-0.3,0.5-0.7,0.5-1.2V8.8c0-0.1-0.1-0.3-0.2-0.4 c-0.1-0.1-0.2-0.2-0.4-0.2c-0.1,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.2-0.2,0.4v7.5c0,0.1-0.1,0.3-0.2,0.4c-0.1,0.1-0.2,0.2-0.4,0.2 H1.7c-0.1,0-0.3-0.1-0.4-0.2c-0.1-0.1-0.2-0.2-0.2-0.4V5.1c0-0.1,0.1-0.3,0.2-0.4c0.1-0.1,0.2-0.2,0.4-0.2h7.5 c0.1,0,0.3-0.1,0.4-0.2C9.7,4.2,9.7,4.1,9.7,3.9z"/><path class="st0" d="M18,0.6c0-0.1-0.1-0.3-0.2-0.4C17.7,0.1,17.6,0,17.4,0h-5.6c-0.1,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.2-0.2,0.4 s0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2h4.3l-9.2,9.2c-0.1,0.1-0.1,0.1-0.1,0.2c0,0.1,0,0.1,0,0.2s0,0.1,0,0.2c0,0.1,0.1,0.1,0.1,0.2C7,11.1,7,11.2,7.1,11.2c0.1,0,0.1,0,0.2,0c0.1,0,0.1,0,0.2,0s0.1-0.1,0.2-0.1l9.2-9.2v4.3c0,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2c0.1,0,0.3-0.1,0.4-0.2C17.9,6.5,18,6.3,18,6.2V0.6z"/>';
+                            const svg = document.createElementNS(
+                                'http://www.w3.org/2000/svg',
+                                'svg'
+                            );
+                            svg.setAttribute('class', 'external-link-icon');
+                            svg.setAttribute('version', '1.1');
+                            svg.setAttribute('id', 'Layer_1');
+                            svg.setAttribute(
+                                'xmlns',
+                                'http://www.w3.org/2000/svg'
+                            );
+                            svg.setAttribute(
+                                'xmlns:xlink',
+                                'http://www.w3.org/1999/xlink'
+                            );
+                            svg.setAttribute('x', '0px');
+                            svg.setAttribute('y', '0px');
+                            svg.setAttribute('viewBox', '0 0 18 18');
+                            svg.setAttribute(
+                                'style',
+                                'enable-background:new 0 0 18 18;'
+                            );
+                            svg.setAttribute('xml:space', 'preserve');
+                            svg.innerHTML =
+                                '<path class="st0" d="M9.7,3.9c0-0.1-0.1-0.3-0.2-0.4C9.4,3.4,9.3,3.4,9.2,3.4H1.7c-0.4,0-0.9,0.2-1.2,0.5C0.2,4.2,0,4.6,0,5.1v11.2c0,0.4,0.2,0.9,0.5,1.2C0.8,17.8,1.2,18,1.7,18h11.2c0.4,0,0.9-0.2,1.2-0.5c0.3-0.3,0.5-0.7,0.5-1.2V8.8c0-0.1-0.1-0.3-0.2-0.4 c-0.1-0.1-0.2-0.2-0.4-0.2c-0.1,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.2-0.2,0.4v7.5c0,0.1-0.1,0.3-0.2,0.4c-0.1,0.1-0.2,0.2-0.4,0.2 H1.7c-0.1,0-0.3-0.1-0.4-0.2c-0.1-0.1-0.2-0.2-0.2-0.4V5.1c0-0.1,0.1-0.3,0.2-0.4c0.1-0.1,0.2-0.2,0.4-0.2h7.5 c0.1,0,0.3-0.1,0.4-0.2C9.7,4.2,9.7,4.1,9.7,3.9z"/><path class="st0" d="M18,0.6c0-0.1-0.1-0.3-0.2-0.4C17.7,0.1,17.6,0,17.4,0h-5.6c-0.1,0-0.3,0.1-0.4,0.2c-0.1,0.1-0.2,0.2-0.2,0.4 s0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2h4.3l-9.2,9.2c-0.1,0.1-0.1,0.1-0.1,0.2c0,0.1,0,0.1,0,0.2s0,0.1,0,0.2c0,0.1,0.1,0.1,0.1,0.2C7,11.1,7,11.2,7.1,11.2c0.1,0,0.1,0,0.2,0c0.1,0,0.1,0,0.2,0s0.1-0.1,0.2-0.1l9.2-9.2v4.3c0,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.2c0.1,0,0.3-0.1,0.4-0.2C17.9,6.5,18,6.3,18,6.2V0.6z"/>';
 
-                        const computedStyle = window.getComputedStyle(link);
-                        const fontSize = computedStyle.fontSize;
+                            const computedStyle = window.getComputedStyle(link);
+                            const fontSize = computedStyle.fontSize;
 
-                        // Set the font size for the SVG
-                        svg.style.width = fontSize;
-                        svg.style.height = fontSize;
+                            // Set the font size for the SVG
+                            svg.style.width = fontSize;
+                            svg.style.height = fontSize;
 
-                        link.appendChild(svg);
+                            link.appendChild(svg);
+                        }
                     }
                 });
             }
