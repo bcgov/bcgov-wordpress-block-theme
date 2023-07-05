@@ -400,3 +400,21 @@
 	}
 
 }
+
+a.external {
+
+	svg.external-link-icon {
+		fill: currentcolor;
+		margin-left: 0.33rem;
+		top: 0.1rem;
+		position: relative;
+
+		path {
+			fill: currentcolor;
+		}
+	}
+
+	img + svg {
+		display: none;
+	}
+}
