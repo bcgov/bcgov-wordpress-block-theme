@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.6 July 20, 2023
+- Fixed issue related to element references in the CleanBC actions toggle. Related to development of a CleanBC frontend plugin. ([DESCW-1372](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1372))
+
 ## 1.2.5 July 5, 2023
 - External link icons addition and admin setting option ([DESCW-1298](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1298))
 
