@@ -161,13 +161,16 @@ const domReady = () => {
             item.classList.remove('hidden');
             const queryGroup = qsa('.active-group', item);
             queryGroup.forEach((group) => {
-                const childItem = qs('.wp-block-group.project', group);
+                const childItem = group.querySelector(
+                    '.wp-block-group.project'
+                );
 
                 if (null !== childItem) {
-                    const childCount = qsa('.wp-block-columns', childItem);
+                    const childCount =
+                        childItem.querySelectorAll('.wp-block-columns');
                     const headingCounter = childItem
                         .closest('.wp-block-bcgov-block-theme-collapse-item')
-                        .qs('.collapse-header .collapse-title');
+                        .querySelector('.collapse-header .collapse-title');
                     const headingCounterContainer = qs(
                         '.count',
                         headingCounter
