@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.7 July 21, 2023
+- Updated dependency vulnerabilities flagged by Dependabot: tough-cookie to 4.1.3 and word-wrap to 1.2.6 ([DESCW-1314](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1314))
+
 ## 1.2.6 July 20, 2023
 - Fixed issue related to element references in the CleanBC actions toggle. Related to development of a CleanBC frontend plugin. ([DESCW-1372](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1372))
 
