@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.8 July 28, 2023
+- Upgraded BC Sans font to 2.0 ([DESCW-1234](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1234))
+
 ## 1.2.7 July 21, 2023
 - Updated dependency vulnerabilities flagged by Dependabot: tough-cookie to 4.1.3 and word-wrap to 1.2.6 ([DESCW-1314](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1314))
 
