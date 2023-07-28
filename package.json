@@ -19,7 +19,7 @@
   },
   "main": "index.js",
   "devDependencies": {
-    "@bcgov/bc-sans": "^1.0.1",
+    "@bcgov/bc-sans": "^2.0.0",
     "@bcgov/webpack-wordpress": "git+https://apps.itsm.gov.bc.ca/bitbucket/scm/wp/bcgov-webpack-wordpress.git#semver:1.x",
     "@wordpress/scripts": "^25.4.0",
     "classnames": "^2.3.1",
