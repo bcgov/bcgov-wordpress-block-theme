@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.9 Aug 5, 2023
+- Added Google Site Name structured content injection and custom site name settings ([DESCW-1412](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1412))
+
 ## 1.2.8 July 28, 2023
 - Upgraded BC Sans font to 2.0 ([DESCW-1234](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1234))
 
