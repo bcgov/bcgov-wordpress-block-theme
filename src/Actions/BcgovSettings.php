@@ -9,6 +9,7 @@ namespace Bcgov\Theme\Block\Actions;
  */
 class BcgovSettings {
 
+
     /**
      * Constructor.
      */
@@ -42,10 +43,26 @@ class BcgovSettings {
      * @return void
      */
     public function bcgov_settings_page() {
-        // Must check that the user has the required capability.
+         // Must check that the user has the required capability.
         if ( ! current_user_can( 'manage_options' ) ) {
             die( esc_html( __( 'You do not have sufficient permissions to access this page.' ) ) );
         }
+
+		// Check if the nonce field is set in the $_POST data.
+		if ( isset( $_POST['bcgov_google_site_name_nonce'] ) ) {
+
+			if ( wp_verify_nonce( $nonce, 'bcgov_google_site_name_nonce' ) ) {
+				if ( isset( $_POST['bcgov_google_site_name'] ) ) {
+					$google_site_name = sanitize_text_field( $_POST['bcgov_google_site_name'] );
+					update_option( 'bcgov_google_site_name_settings', $google_site_name );
+				}
+			}
+		}
+
+        // Get the current Google Site Name setting.
+        $google_site_name = get_option( 'bcgov_google_site_name_settings', '' );
+
+        $nonce = wp_create_nonce( 'bcgov_google_site_name_nonce' );
 
         // Now display the settings editing screen.
         echo '<div class="wrap">';
@@ -58,6 +75,7 @@ class BcgovSettings {
         settings_fields( 'bcgov-settings-group' );
         do_settings_sections( 'bcgov-theme-settings' );
 
+        echo '<input type="hidden" name="bcgov_google_site_name_nonce" value="<?php echo esc_attr( $nonce ); ?>">';
         echo '<p class="submit">';
         echo '<input type="submit" name="Submit" class="button-primary" value="Save Changes" /> &nbsp;&nbsp;&nbsp;Please press "Save Changes" to update the settings.';
         echo '</p>';
@@ -67,6 +85,7 @@ class BcgovSettings {
     }
 
 
+
     /**
      * Registers BCGov Block Theme settings and sanitizes user input.
      *
@@ -74,7 +93,7 @@ class BcgovSettings {
      * @return void
      */
     public function bcgov_register_settings() {
-        // Register callbacks to sanitize user input:
+         // Register callbacks to sanitize user input:
         // For BCGov Admin Notification settings.
         register_setting(
             'bcgov-settings-group',
@@ -94,6 +113,13 @@ class BcgovSettings {
             'bcgov-settings-group',
             'bcgov_external_link_icons_settings',
             [ $this, 'sanitize_bcgov_external_link_icons_settings' ]
+        );
+
+        // Add the Google Site Name setting.
+        register_setting(
+            'bcgov-settings-group',
+            'bcgov_google_site_name_settings',
+            [ $this, 'sanitize_bcgov_google_site_name_settings' ]
         );
 
         // Add settings sections:
@@ -118,6 +144,14 @@ class BcgovSettings {
             'bcgov_external_link_icons_settings',
             'Show External Link Icons',
             [ $this, 'bcgov_external_link_icons_settings' ],
+            'bcgov-theme-settings'
+        );
+
+        // For Google Site Name setting.
+        add_settings_section(
+            'bcgov_google_site_name_settings',
+            'Google Site Name',
+            [ $this, 'bcgov_google_site_name_settings' ],
             'bcgov-theme-settings'
         );
     }
@@ -159,6 +193,22 @@ class BcgovSettings {
     }
 
     /**
+     * Sanitize and save the Google Site Name text value.
+     *
+     * @param array $input The settings input.
+     * @return array The sanitized input.
+     */
+    public function sanitize_bcgov_google_site_name_settings( $input ) {
+        // Sanitize the text field value.
+        $google_site_name = sanitize_text_field( $input );
+
+        return $google_site_name;
+    }
+
+
+
+
+    /**
      * Displays the Admin Custom Notification settings section description.
      * Includes a checkbox for enabling/disabling the display of Admin Custom Notifications.
      *
@@ -182,8 +232,8 @@ class BcgovSettings {
      * @return void
      */
     public function bcgov_custom_patterns_settings() {
-        $value                = get_option( 'bcgov_custom_patterns_settings' ) ?? [];
-        $show_custom_patterns = isset( $value['show_custom_patterns'] ) ? $value['show_custom_patterns'] : 0;
+         $value                = get_option( 'bcgov_custom_patterns_settings' ) ?? [];
+         $show_custom_patterns = isset( $value['show_custom_patterns'] ) ? $value['show_custom_patterns'] : 0;
 		?>
         <input type="checkbox" name="bcgov_custom_patterns_settings[show_custom_patterns]" id="bcgov_custom_patterns" value="1" <?php checked( $show_custom_patterns, 1 ); ?> />
         <label for="bcgov_custom_patterns">Check to show Custom Patterns in the admin</label>
@@ -192,13 +242,13 @@ class BcgovSettings {
     }
 
 
-     /**
-      * Enables the display of external links with an icon. Works in tandem with dom-loader.js frontend script.
-      * Includes a checkbox for enabling/disabling the display of an icon with inline or button based links.
-      *
-      * @since 1.2.5
-      * @return void
-      */
+    /**
+     * Enables the display of external links with an icon. Works in tandem with dom-loader.js frontend script.
+     * Includes a checkbox for enabling/disabling the display of an icon with inline or button based links.
+     *
+     * @since 1.2.5
+     * @return void
+     */
     public function bcgov_external_link_icons_settings() {
         $value                    = get_option( 'bcgov_external_link_icons_settings' ) ?? [];
         $show_external_link_icons = isset( $value['show_external_link_icons'] ) ? $value['show_external_link_icons'] : 0;
@@ -206,6 +256,46 @@ class BcgovSettings {
         <input type="checkbox" name="bcgov_external_link_icons_settings[show_external_link_icons]" id="bcgov_external_link_icons" value="1" <?php checked( $show_external_link_icons, 1 ); ?> />
         <label for="bcgov_external_link_icons">Check to show external links with an icon on the visitor facing website.</label>
         <p>Note: "External Links" are any link (whether inline or using the buttons block) in the content region of the website that point to an external domain.</p>
+		<?php
+    }
+
+    /**
+     * Sets the Google Site Name.
+     *
+     * @since 1.2.9
+     * @return void
+     */
+    public function bcgov_google_site_name_settings() {
+        if ( isset( $_POST['bcgov_google_site_name_nonce'] ) ) {
+
+			if ( wp_verify_nonce( $nonce, 'bcgov_google_site_name_nonce' ) ) {
+				if ( isset( $_POST['bcgov_google_site_name'] ) ) {
+					$google_site_name = sanitize_text_field( $_POST['bcgov_google_site_name'] );
+					update_option( 'bcgov_google_site_name', $google_site_name );
+				}
+			}
+		}
+
+        // Get the current Google Site Name setting.
+        $google_site_name = get_option( 'bcgov_google_site_name_settings', '' );
+
+        if ( is_array( $google_site_name ) ) {
+            $google_site_name = implode( ' ', $google_site_name );
+        } else {
+            $google_site_name = (string) $google_site_name;
+        }
+
+        // Get the default Site Name from WordPress settings.
+        $default_site_name = get_bloginfo( 'name' );
+
+        // If the Google Site Name is not set, use the default Site Name as the default value.
+        if ( empty( $google_site_name ) ) {
+            $google_site_name = $default_site_name;
+        }
+		?>
+        <input type="text" name="bcgov_google_site_name_settings" value="<?php echo esc_attr( $google_site_name ); ?>" placeholder="Enter your Google Site Name here" style="width: 320px" />
+
+        <p class="description">This value will be used in the JSON-LD script for the Google Site Name. Defaults to WordPress site settings but can be used for finer control of the Google Site Name required to differentiate the site from the inferred Gov.bc.ca site naming in Google organic search results.</p>
 		<?php
     }
 }
