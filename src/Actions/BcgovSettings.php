@@ -292,10 +292,13 @@ class BcgovSettings {
         if ( empty( $google_site_name ) ) {
             $google_site_name = $default_site_name;
         }
+
+        $domain = wp_parse_url( get_site_url() );
+
 		?>
         <input type="text" name="bcgov_google_site_name_settings" value="<?php echo esc_attr( $google_site_name ); ?>" placeholder="Enter your Google Site Name here" style="width: 320px" />
 
-        <p class="description">This value will be used in the JSON-LD script for the Google Site Name. Defaults to WordPress site settings but can be used for finer control of the Google Site Name required to differentiate the site from the inferred Gov.bc.ca site naming in Google organic search results.</p>
+        <p class="description" style="max-width: 120ch;">This value will be used to tell the Google Search index the preferred Site Name. The name default is the Site Title in the WordPress site settings but can be overridden here for finer control of the Google Site Name required to differentiate the site from the inferred Gov.bc.ca site naming in Google organic search results. Note this feature provides an Alternate Site Name of <strong><?php echo esc_html( $domain['host'] ); ?></strong> so it is not necessary to use the domain as the preferred Site&nbsp;Name.</p>
 		<?php
     }
 }
