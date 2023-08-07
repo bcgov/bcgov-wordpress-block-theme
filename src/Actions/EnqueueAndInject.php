@@ -147,12 +147,15 @@ class EnqueueAndInject {
 			$google_site_name = $default_site_name;
 		}
 
+		$domain = wp_parse_url( get_site_url() );
+
 		// Prepare the JSON data.
 		$json_data = array(
-			'@context' => 'https://schema.org',
-			'@type'    => 'WebSite',
-			'name'     => $google_site_name,
-			'url'      => home_url(),
+			'@context'      => 'https://schema.org',
+			'@type'         => 'WebSite',
+			'name'          => $google_site_name,
+			'alternateName' => [ $domain['host'] ],
+			'url'           => home_url(),
 		);
 
 		// Output the inline script.
