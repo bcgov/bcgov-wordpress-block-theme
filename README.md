@@ -30,14 +30,14 @@ This adds some housekeeping for the theme developers, which include touchpoints 
 
 To turn off and on certain features, PHP constants are defined in the functions file. The following examples will use the CleanBC project constants which are defined as CleanBC.
 
-The \Bcgov\Theme\Block\CLEANBC constant is used in the following locations:
+The \Bcgov\Theme\Block\OPTIONAL constant is used in the following locations:
 - Set in [Setup.php](src/Setup.php)
 - Used for allowing site specific patterns: inc/core/theme-block-patterns.php
 
 This can be done using the check:
 
 ```bash
-if ( \Bcgov\Theme\Block\CLEANBC ) {
+if ( \Bcgov\Theme\Block\OPTIONAL ) {
 ```
 
 
@@ -50,7 +50,7 @@ To enable/disable Javascript based features such as Block Filters, a global Java
 An example of the check can be done in any JS file using the window scope and can be found in: [button-enhanced.js](src/scripts/admin/filters/button-enhanced.js) :
 
 ```bash
-if ('cleanbc' === window.site.siteName || window.site.allSiteStyles.length) {
+if ('optional' === window.site.siteName || window.site.allSiteStyles.length) {
 ```
 
 The `window.site.allSiteStyles` array length check is used to determine if the admin has enabled access to site styles or features that are not specifically used by the site settings they chose. For example if they admin selects Buy BC styling but also chooses 'Enable all styles' in the theme options, this check will allow this code block to run.
@@ -66,7 +66,7 @@ Use the 'Custom Post Type UI' (CPT UI) in conjunction with the 'Advanced Custom 
 When registering new Block Paterns use the [SITE] constant check. Eg:
 
 ```bash
-if ( \Bcgov\Theme\Block\CLEANBC ) {
+if ( \Bcgov\Theme\Block\OPTIONAL ) {
 ```
 
 Add any site specific patterns to the $block_patterns array. The reasoning for this using a pattern specific check is that while Custom Post Types, taxonomies, block filters and more may need to be suppressed for a site, the patterns developed for previous sites can be left available to site owners for use in page building and rapid prototyping layouts.

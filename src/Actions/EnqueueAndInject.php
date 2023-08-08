@@ -100,7 +100,7 @@ class EnqueueAndInject {
 
 		$javascript_variables = [
 			'domain'                  => home_url(),
-			'siteName'                => esc_attr( get_option( 'active_site_pattern_styles' ) ),
+			'siteName'                => ( '' !== get_option( 'active_site_pattern_styles' ) ? esc_attr( get_option( 'active_site_pattern_styles' ) ) : 'bcgov' ),
 			'templateDir'             => get_template_directory_uri(),
 			'headerEffect'            => esc_attr( get_option( 'header_effect' ) ),
 			'allSiteStyles'           => esc_attr( get_option( 'enable_all_styles' ) ),

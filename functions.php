@@ -38,8 +38,8 @@ if ( class_exists( 'Bcgov\\Theme\\Block\\Setup' ) ) {
  *
  * @since 1.0.3
  */
-if ( 'cleanbc' === get_option( 'active_site_pattern_styles' ) ) {
-	define( __NAMESPACE__ . '\CLEANBC', true );
+if ( 'optional' === get_option( 'active_site_pattern_styles' ) ) {
+	define( __NAMESPACE__ . '\OPTIONAL', true );
 } else {
-	define( __NAMESPACE__ . '\CLEANBC', false );
+	define( __NAMESPACE__ . '\OPTIONAL', false );
 }

@@ -130,13 +130,13 @@ class OptionsAdminPage {
 						</div> <!-- /Getting started -->
 
 						<div class="bcgov-block-theme-grid-content card">
-							<h3 id="active-pattern">Active Site Pattern Styles</h3>
+							<h3 id="active-pattern">Active Site Pattern Styles | DEPRECATED</h3>
 							
-							<p class="description">Choose the active site – this choice will impact how certain patterns display and which patterns and blocks may or may not be available.</p>
+							<p class="description">Previously used to choose the active site styling – this choice will impact how certain patterns display and which patterns and blocks may or may not be available. This is now handled by the Full Site Editor stles. It is highly recommended to keep this on <strong>Default (BC Government Palette).</strong></p>
 
 							<p><select id="active_site_pattern_styles" name="active_site_pattern_styles">
 								<option value="bcgov" <?php if ( 'bcgov' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Default (BC Government Palette)</option>
-								<option value="cleanbc" <?php if ( 'cleanbc' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Option 1 (CleanBC Brand Palette)</option>
+								<option value="optional" <?php if ( 'optional' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Option 1 (Optional Palette)</option>
 								<!--option value="buybc" <?php if ( 'buybc' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Option 2 (BuyBC)</option-->
 							</select></p>
 
@@ -162,7 +162,7 @@ class OptionsAdminPage {
 
 							<h3 id="styles-patterns">Styles and patterns</h3>
 
-							<p class="description">Gain access to all available styles and patterns regardless of chosen site styles. Ie: choosing this option means if you have selected Buy BC as your Active Site you will also see CleanBC styles and patterns.</p>
+							<p class="description">Gain access to all available styles and patterns regardless of chosen site styles. Ie: choosing this option means you will see optional styles and patterns.</p>
 
 							<ul>
 								<li><label class="selected">
