@@ -226,7 +226,7 @@ class InfoAdminPage {
 							/*
 							* CleanBC site specific patterns.
 							*/
-							if ( \Bcgov\Theme\Block\CLEANBC ) :
+							if ( \Bcgov\Theme\Block\OPTIONAL ) :
 								?>
 
 								<hr />
@@ -278,7 +278,7 @@ class InfoAdminPage {
 							/*
 							* CleanBC site specific patterns.
 							*/
-							if ( \Bcgov\Theme\Block\CLEANBC ) :
+							if ( \Bcgov\Theme\Block\OPTIONAL ) :
 								?>
 
 								<hr />

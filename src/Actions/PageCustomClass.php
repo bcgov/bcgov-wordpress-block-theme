@@ -78,9 +78,13 @@ class PageCustomClass {
 	 * @return array The modified array of classes with the custom class added, if applicable.
      */
 	public function add_custom_class_to_body( $classes ) {
-		$class_name = get_post_meta( get_the_ID(), '_custom_page_class', true );
+		$class_name             = get_post_meta( get_the_ID(), '_custom_page_class', true );
+		$custom_body_class_name = esc_attr( get_option( 'custom_body_class' ) );
 		if ( $class_name ) {
 			$classes[] = $class_name;
+		}
+		if ( $custom_body_class_name ) {
+			$classes[] = $custom_body_class_name;
 		}
 		return $classes;
 	}

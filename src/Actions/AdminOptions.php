@@ -112,7 +112,7 @@ class AdminOptions {
 		if ( function_exists( 'acf_register_block_type' ) ) {
 
 			// Load blocks only meant for CleanBC.
-			if ( \Bcgov\Theme\Block\CLEANBC ) {
+			if ( \Bcgov\Theme\Block\OPTIONAL ) {
 				require_once get_template_directory() . '/inc/core/acf_blocks/sites/cleanbc/cleanbc-block-loader.php';
 			}
 		}

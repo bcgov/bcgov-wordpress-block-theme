@@ -24,7 +24,7 @@ const styles = [
 
 styles.forEach((style) => registerBlockStyle('core/button', style));
 
-if ('cleanbc' === window.site.siteName || window.site.allSiteStyles.length) {
+if ('optional' === window.site.siteName || window.site.allSiteStyles.length) {
     registerBlockStyle('core/button', { name: 'icon', label: 'Icon' });
 }
 

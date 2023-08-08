@@ -33,7 +33,7 @@ class PatternsSetupTest extends CommonTestCase {
      * @return void
      */
     public function test_Register_Block_Pattern_Categories_Standard(): void {
-        define( 'Bcgov\Theme\Block\CLEANBC', false );
+        define( 'Bcgov\Theme\Block\OPTIONAL', false );
         $expected = $this->get_base_patterns();
         $this->assertEquals( $expected, $this->pattern->get_block_pattern_categories() );
     }
@@ -76,12 +76,11 @@ class PatternsSetupTest extends CommonTestCase {
         $this->assertContains( 'bcgov-detail-card-with-icons', $patterns );
         $this->assertContains( 'general-hero', $patterns );
         $this->assertContains( 'bcgov-page-layout-example', $patterns );
-        $this->assertNotContains( 'cleanbc/banners/cleanbc-info-cover-banner', $patterns );
-        $this->assertNotContains( 'cleanbc/active-site-only/cleanbc-actions-toggle-query', $patterns );
+        $this->assertNotContains( 'optional/banners/optional-info-cover-banner', $patterns );
     }
 
     /**
-     * Test the block pattern standard configuration with option to select all, but not CLEANBC flag.
+     * Test the block pattern standard configuration with option to select all, but not OPTIONAL flag.
      *
      * @return void
      */
@@ -92,8 +91,7 @@ class PatternsSetupTest extends CommonTestCase {
         $this->assertContains( 'bcgov-detail-card-with-icons', $patterns );
         $this->assertContains( 'general-hero', $patterns );
         $this->assertContains( 'bcgov-page-layout-example', $patterns );
-        $this->assertContains( 'cleanbc/banners/cleanbc-info-cover-banner', $patterns );
-        $this->assertNotContains( 'cleanbc/active-site-only/cleanbc-actions-toggle-query', $patterns );
+        $this->assertContains( 'optional/banners/optional-info-cover-banner', $patterns );
     }
 
 
@@ -113,8 +111,7 @@ class PatternsSetupTest extends CommonTestCase {
         $this->assertContains( 'test-2', $patterns );
         $this->assertNotContains( 'general-hero', $patterns );
         $this->assertNotContains( 'bcgov-page-layout-example', $patterns );
-        $this->assertNotContains( 'cleanbc/banners/cleanbc-info-cover-banner', $patterns );
-        $this->assertNotContains( 'cleanbc/active-site-only/cleanbc-actions-toggle-query', $patterns );
+        $this->assertNotContains( 'optional/banners/optional-info-cover-banner', $patterns );
     }
 
     /**
@@ -138,10 +135,8 @@ class PatternsSetupTest extends CommonTestCase {
      */
     private function get_cleanbc_patterns(): array {
         return [
-            'cleanbc-patterns-general'      => [ 'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ) ],
-			'cleanbc-patterns-banners'      => [ 'label' => __( 'CleanBC: Banners', 'bcgov_blocks_theme' ) ],
-			'cleanbc-patterns-page-layouts' => [ 'label' => __( 'CleanBC: Page Layouts', 'bcgov_blocks_theme' ) ],
-			'cleanbc-patterns-query'        => [ 'label' => __( 'CleanBC: Post Query', 'bcgov_blocks_theme' ) ],
+            'optional-patterns-general' => [ 'label' => __( 'Optional: General', 'bcgov_blocks_theme' ) ],
+			'optional-patterns-banners' => [ 'label' => __( 'Optional: Banners', 'bcgov_blocks_theme' ) ],
         ];
     }
 

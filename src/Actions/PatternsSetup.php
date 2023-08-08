@@ -142,12 +142,10 @@ class PatternsSetup {
 		 /*
 		 * CleanBC site specific pattern categories.
 		 */
-		 if ( \Bcgov\Theme\Block\CLEANBC || 'true' === get_option( 'enable_all_styles' ) ) {
+		 if ( \Bcgov\Theme\Block\OPTIONAL || 'true' === get_option( 'enable_all_styles' ) ) {
 			 $cleanbc_block_pattern_categories = [
-				 'cleanbc-patterns-general'      => [ 'label' => __( 'CleanBC: General', 'bcgov_blocks_theme' ) ],
-				 'cleanbc-patterns-banners'      => [ 'label' => __( 'CleanBC: Banners', 'bcgov_blocks_theme' ) ],
-				 'cleanbc-patterns-page-layouts' => [ 'label' => __( 'CleanBC: Page Layouts', 'bcgov_blocks_theme' ) ],
-				 'cleanbc-patterns-query'        => [ 'label' => __( 'CleanBC: Post Query', 'bcgov_blocks_theme' ) ],
+				 'optional-patterns-general' => [ 'label' => __( 'Optional: General', 'bcgov_blocks_theme' ) ],
+				 'optional-patterns-banners' => [ 'label' => __( 'Optional: Banners', 'bcgov_blocks_theme' ) ],
 			 ];
 			 $block_pattern_categories         = array_merge( $block_pattern_categories, $cleanbc_block_pattern_categories );
 
@@ -220,52 +218,36 @@ class PatternsSetup {
 		/*
 		* Load CleanBC site patterns for CleanBC or sites enabling all styles and patterns.
 		*/
-		if ( \Bcgov\Theme\Block\CLEANBC || 'true' === get_option( 'enable_all_styles' ) ) {
+		if ( \Bcgov\Theme\Block\OPTIONAL || 'true' === get_option( 'enable_all_styles' ) ) {
 			// CleanBC Page Banners (and footers) patterns.
-			$block_patterns[] = 'cleanbc/banners/cleanbc-info-cover-banner';
-			$block_patterns[] = 'cleanbc/banners/cleanbc-landing-cover-banner';
-			$block_patterns[] = 'cleanbc/banners/cleanbc-level-3-dark-banner';
-			$block_patterns[] = 'cleanbc/banners/cleanbc-level-4-light-banner';
-			$block_patterns[] = 'cleanbc/banners/cleanbc-on-this-page';
-			$block_patterns[] = 'cleanbc/banners/cleanbc-scroll-link-banner';
+			$block_patterns[] = 'optional/banners/optional-info-cover-banner';
+			$block_patterns[] = 'optional/banners/optional-landing-cover-banner';
+			$block_patterns[] = 'optional/banners/optional-level-3-dark-banner';
+			$block_patterns[] = 'optional/banners/optional-level-4-light-banner';
+			$block_patterns[] = 'optional/banners/optional-on-this-page';
+			$block_patterns[] = 'optional/banners/optional-scroll-link-banner';
 
 			// CleanBC general patterns.
-			$block_patterns[] = 'cleanbc/general/cleanbc-advisory-tag';
-			$block_patterns[] = 'cleanbc/general/cleanbc-alternating-home-cards';
-			$block_patterns[] = 'cleanbc/general/cleanbc-four-up-cover-card-feature';
-			$block_patterns[] = 'cleanbc/general/cleanbc-full-width-constrained-bordered-section';
-			$block_patterns[] = 'cleanbc/general/cleanbc-full-width-constrained-floating-section';
-			$block_patterns[] = 'cleanbc/general/cleanbc-full-width-constrained-section';
-			$block_patterns[] = 'cleanbc/general/cleanbc-graph-card-feature';
-			$block_patterns[] = 'cleanbc/general/cleanbc-hazards-section';
-			$block_patterns[] = 'cleanbc/general/cleanbc-in-page-cloud-banner';
-			$block_patterns[] = 'cleanbc/general/cleanbc-in-page-impact-banner';
-			$block_patterns[] = 'cleanbc/general/cleanbc-in-page-level-4-top-banner';
-			$block_patterns[] = 'cleanbc/general/cleanbc-in-page-sections-sector-cards';
-			$block_patterns[] = 'cleanbc/general/cleanbc-in-page-strategies-banner';
-			$block_patterns[] = 'cleanbc/general/cleanbc-small-three-up-card-feature';
-			$block_patterns[] = 'cleanbc/general/cleanbc-info-cards';
-			$block_patterns[] = 'cleanbc/general/cleanbc-three-up-card-feature';
-			$block_patterns[] = 'cleanbc/general/cleanbc-two-up-card-feature-wide';
-			$block_patterns[] = 'cleanbc/general/cleanbc-two-up-card-feature';
-			$block_patterns[] = 'cleanbc/general/cleanbc-video-feature';
-			$block_patterns[] = 'cleanbc/general/cleanbc-warning-section';
-		}
-		// Load only for CleanBC patterns.
-		if ( \Bcgov\Theme\Block\CLEANBC ) {
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-actions-toggle-query';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-dual-warning-section';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-footer-01';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-three-up-icon-items';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-programs';
-			// CleanBC query patterns.
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-actions-query';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-projects-accordion-query';
-			// CleanBC full page patterns.
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-homepage';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-impacts';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-level-3';
-			$block_patterns[] = 'cleanbc/active-site-only/cleanbc-page-layout-level-4';
+			$block_patterns[] = 'optional/general/optional-advisory-tag';
+			$block_patterns[] = 'optional/general/optional-alternating-home-cards';
+			$block_patterns[] = 'optional/general/optional-four-up-cover-card-feature';
+			$block_patterns[] = 'optional/general/optional-full-width-constrained-bordered-section';
+			$block_patterns[] = 'optional/general/optional-full-width-constrained-floating-section';
+			$block_patterns[] = 'optional/general/optional-full-width-constrained-section';
+			$block_patterns[] = 'optional/general/optional-graph-card-feature';
+			$block_patterns[] = 'optional/general/optional-hazards-section';
+			$block_patterns[] = 'optional/general/optional-in-page-cloud-banner';
+			$block_patterns[] = 'optional/general/optional-in-page-impact-banner';
+			$block_patterns[] = 'optional/general/optional-in-page-level-4-top-banner';
+			$block_patterns[] = 'optional/general/optional-in-page-sections-sector-cards';
+			$block_patterns[] = 'optional/general/optional-in-page-strategies-banner';
+			$block_patterns[] = 'optional/general/optional-small-three-up-card-feature';
+			$block_patterns[] = 'optional/general/optional-info-cards';
+			$block_patterns[] = 'optional/general/optional-three-up-card-feature';
+			$block_patterns[] = 'optional/general/optional-two-up-card-feature-wide';
+			$block_patterns[] = 'optional/general/optional-two-up-card-feature';
+			$block_patterns[] = 'optional/general/optional-video-feature';
+			$block_patterns[] = 'optional/general/optional-warning-section';
 		}
 
 		/**
