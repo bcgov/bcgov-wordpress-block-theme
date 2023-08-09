@@ -286,63 +286,7 @@ const domReady = () => {
             }
         };
 
-        /**
-         * Manage events after page load.
-         */
-        const windowLoad = () => {
-            windowResize();
-        };
-
-        /**
-         * Manage events after window resize.
-         */
-        const windowResize = () => {
-            /**
-             * Set orientation helper classes on body.
-             */
-            const height = window.innerHeight;
-            const width = document.body.clientWidth;
-            if (width > height) {
-                // Landscape
-                document.body.classList.remove('portrait');
-                document.body.classList.add('landscape');
-            } else {
-                // Portrait
-                document.body.classList.remove('landscape');
-                document.body.classList.add('portrait');
-            }
-            /**
-             * Set device size helper classes on body.
-             * Needed for overriding WordPress specific block size !important.
-             * eg: .wp-block-media-text.is-stacked-on-mobile for small breakpoint.
-             */
-            if (width <= 782) {
-                /**
-                 * Mobile or small breakpoint: $breakpoint-sm
-                 */
-                document.body.classList.remove('largeScreen');
-                document.body.classList.remove('tablet');
-                document.body.classList.add('mobile');
-            } else if (width <= 1199) {
-                /**
-                 * Tablet or large breakpoint for mid-sized resolution changes: $breakpoint-lg
-                 */
-                document.body.classList.remove('mobile');
-                document.body.classList.add('tablet');
-                document.body.classList.remove('largeScreen');
-            } else {
-                /**
-                 * Desktop or wider than large breakpoint
-                 */
-                document.body.classList.remove('mobile');
-                document.body.classList.remove('tablet');
-                document.body.classList.add('largeScreen');
-            }
-        };
-
-        document.addEventListener('scroll', windowScroll);
-        addSafeEventListener('resize', windowResize);
-        addSafeEventListener('load', windowLoad);
+        addSafeEventListener(document, 'scroll', windowScroll);
     }, 0);
 };
 
@@ -351,3 +295,62 @@ if ('complete' === document.readyState) {
 } else {
     document.addEventListener('DOMContentLoaded', domReady);
 }
+
+/**
+ * Window event functions
+ *
+ * Manage events after page load.
+ */
+const windowLoad = () => {
+    windowResize();
+};
+
+/**
+ * Manage events after window resize.
+ */
+const windowResize = () => {
+    /**
+     * Set orientation helper classes on body.
+     */
+    const height = window.innerHeight;
+    const width = document.body.clientWidth;
+    if (width > height) {
+        // Landscape
+        document.body.classList.remove('portrait');
+        document.body.classList.add('landscape');
+    } else {
+        // Portrait
+        document.body.classList.remove('landscape');
+        document.body.classList.add('portrait');
+    }
+    /**
+     * Set device size helper classes on body.
+     * Needed for overriding WordPress specific block size !important.
+     * eg: .wp-block-media-text.is-stacked-on-mobile for small breakpoint.
+     */
+    if (width <= 782) {
+        /**
+         * Mobile or small breakpoint: $breakpoint-sm
+         */
+        document.body.classList.remove('largeScreen');
+        document.body.classList.remove('tablet');
+        document.body.classList.add('mobile');
+    } else if (width <= 1199) {
+        /**
+         * Tablet or large breakpoint for mid-sized resolution changes: $breakpoint-lg
+         */
+        document.body.classList.remove('mobile');
+        document.body.classList.add('tablet');
+        document.body.classList.remove('largeScreen');
+    } else {
+        /**
+         * Desktop or wider than large breakpoint
+         */
+        document.body.classList.remove('mobile');
+        document.body.classList.remove('tablet');
+        document.body.classList.add('largeScreen');
+    }
+};
+
+addSafeEventListener(window, 'resize', windowResize);
+addSafeEventListener(window, 'load', windowLoad);
