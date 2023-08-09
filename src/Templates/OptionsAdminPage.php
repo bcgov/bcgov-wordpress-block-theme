@@ -132,7 +132,7 @@ class OptionsAdminPage {
 						<div class="bcgov-block-theme-grid-content card">
 							<h3 id="active-pattern">Active Site Pattern Styles | DEPRECATED</h3>
 							
-							<p class="description">Previously used to choose the active site styling – this choice will impact how certain patterns display and which patterns and blocks may or may not be available. This is now handled by the Full Site Editor stles. It is highly recommended to keep this on <strong>Default (BC Government Palette).</strong></p>
+							<p class="description">Previously used to choose the active site styling – this choice will impact how certain patterns display and which patterns and blocks may or may not be available. This is now handled by the Full Site Editor styles. It is highly recommended to keep this on <strong>Default (BC Government Palette).</strong></p>
 
 							<p><select id="active_site_pattern_styles" name="active_site_pattern_styles">
 								<option value="bcgov" <?php if ( 'bcgov' === $active_site_pattern_styles ) { echo ' selected="selected"';} ?>>Default (BC Government Palette)</option>
