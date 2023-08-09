@@ -1,8 +1,9 @@
 # Changelog
 
-## 1.2.10 Aug 8, 2023
+## 1.2.10 Aug 9, 2023
 - First stage removal of CleanBC dependencies from Block Theme related to Clean BC site header and navigation changes. ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
 - CleanBC content moved from the BCGov Block Theme to the BCGov Frontend Supplemental: CleanBC plugin ([bcgov-plugin-cleanbc](https://apps.itsm.gov.bc.ca/bitbucket/projects/WPP/repos/bcgov-plugin-cleanbc/browse))
+- Added a safe event listener utility function (and related tests) to avoid collision with Vue lifecycle. ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
 
 ## 1.2.9 Aug 5, 2023
 - Added Google Site Name structured content injection and custom site name settings ([DESCW-1412](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1412))

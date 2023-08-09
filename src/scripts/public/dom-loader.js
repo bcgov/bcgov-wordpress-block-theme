@@ -1,4 +1,4 @@
-import { qs, unEscapeCSS } from './utils';
+import { qs, unEscapeCSS, addSafeEventListener } from './utils';
 
 /**
  * General Block Theme window event management and DOM manipulation.
@@ -243,13 +243,12 @@ const domReady = () => {
         );
         backToTopBtn.append(backToTopImage);
 
-        /**
-         * Manage events after page scroll.
-         */
-
         let lastScrollTop = 0;
         const scrollTopPadding = 100;
 
+        /**
+         * Manage events after page scroll.
+         */
         const windowScroll = () => {
             /**
              * Set back to top link visible when close to bottom of window.
@@ -341,9 +340,9 @@ const domReady = () => {
             }
         };
 
-        window.addEventListener('resize', windowResize);
-        window.addEventListener('scroll', windowScroll);
-        window.addEventListener('load', windowLoad);
+        document.addEventListener('scroll', windowScroll);
+        addSafeEventListener('resize', windowResize);
+        addSafeEventListener('load', windowLoad);
     }, 0);
 };
 

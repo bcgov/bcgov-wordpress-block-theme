@@ -133,3 +133,27 @@ export function unEscapeCSS(cssStr) {
     cssStr = cssStr.replace(/&amp;/g, '&');
     return cssStr;
 }
+
+/**
+ * Safely adds an event listener to a target element.
+ *
+ * @param {EventTarget | object} target - The target element to which the event listener will be added.
+ * @param {string} type - A string representing the event type to listen for (e.g., 'click', 'resize').
+ * @param {Function | object} listener - The event listener function or object.
+ * @param {boolean | object} [options] - An optional object specifying options for the event listener.
+ * @throws {Error} Throws an error if the target is not a valid element or if it doesn't support addEventListener.
+ */
+export function addSafeEventListener(target, type, listener, options) {
+    if (
+        !target ||
+        (typeof target.addEventListener !== 'function' &&
+            typeof target.on !== 'function')
+    )
+        return;
+
+    if (typeof target.addEventListener === 'function') {
+        target.addEventListener(type, listener, options);
+    } else if (typeof target.on === 'function') {
+        target.on(type, listener);
+    }
+}
