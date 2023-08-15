@@ -54,7 +54,7 @@ class OptionsAdminPage {
 	 */
 	private function remove_csp_keywords( $directives ) {
 		$directives         = strtolower( $directives );
-		$substringsToRemove = [ 'data', 'none', 'self', 'unsafe-inline', 'unsafe-eval', ':' ];
+		$substringsToRemove = [ 'data', 'none', 'self', 'unsafe-inline', 'unsafe-eval' ];
 		$directives         = str_replace( $substringsToRemove, '', html_entity_decode( $directives, ENT_QUOTES ) );
 		$directives         = trim( $directives );
 		$directives         = preg_replace( '/x\d+x\d+_\d+x_/ ', '', $directives );
