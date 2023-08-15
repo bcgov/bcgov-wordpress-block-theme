@@ -5,7 +5,7 @@
 - CleanBC content moved from the BCGov Block Theme to the BCGov Frontend Supplemental: CleanBC plugin ([bcgov-plugin-cleanbc](https://apps.itsm.gov.bc.ca/bitbucket/projects/WPP/repos/bcgov-plugin-cleanbc/browse))
 - Added a safe event listener utility function (and related tests) to avoid collision with Vue lifecycle. ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
 - Window event functions updated to reference safe event listener and moved out of ready state. ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
-- Ribbon navigation padding update. ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
+- Ribbon navigation padding update and CSP update to allow for WP6.3 blob. ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
 
 ## 1.2.9 Aug 5, 2023
 - Added Google Site Name structured content injection and custom site name settings ([DESCW-1412](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1412))
