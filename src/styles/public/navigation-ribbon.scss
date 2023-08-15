@@ -113,6 +113,10 @@ body.has-ribbon-menu {
 
 		&__container {
 
+			.has-background {
+				padding: 0;
+			}
+
 			.wp-block-navigation {
 
 				&-submenu {
@@ -124,5 +128,10 @@ body.has-ribbon-menu {
 				}
 			}
 		}
+	}
+
+	ol.has-background:is(.is-style-ribbon-menu),
+	ul.has-background:is(.is-style-ribbon-menu) {
+		padding: 0;
 	}
 }
