@@ -14,35 +14,35 @@ const domReady = () => {
         function doBoundsCheck(targetEl) {
             setTimeout(function () {
                 const container = targetEl;
-                const childContainer = qs('ul', container);
-                const subChildContainer = qs(
-                    '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container',
-                    container
+                const childContainer = container.querySelector('ul');
+                const subChildContainer = container.querySelector(
+                    '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
                 );
-                const languageChildContainer = qs('.language_switcher_options');
+                const languageChildContainer = container.querySelector(
+                    '.language_switcher_options'
+                );
 
                 let bounding = null;
-                const parentBounding = container.getBoundingClientRect();
 
-                if (null !== childContainer) {
+                if (childContainer !== null) {
                     bounding = childContainer.getBoundingClientRect();
                 }
-                if (
-                    null !== bounding &&
-                    bounding.right >
-                        (window.innerWidth ||
-                            document.documentElement.clientWidth)
-                ) {
-                    if (null !== childContainer) {
+
+                const windowWidth =
+                    window.innerWidth || document.documentElement.clientWidth;
+
+                if (bounding !== null) {
+                    if (subChildContainer !== null) {
+                        subChildContainer.style.top = '0.85rem';
+                    }
+
+                    if (bounding.right > windowWidth) {
                         childContainer.classList.add('is-offscreen');
-                        childContainer.style.left =
-                            'calc(' + parentBounding.width + 'px - 185%)';
+                        childContainer.style.left = `calc(4px - ${childContainer.parentNode.parentNode.offsetWidth}px)`;
                         childContainer.style.right = 'auto';
                         childContainer.style.top = '100%';
-                        if (null !== subChildContainer) {
-                            subChildContainer.style.top = '20%';
-                        }
-                        if (null !== languageChildContainer) {
+
+                        if (languageChildContainer !== null) {
                             languageChildContainer.style.top = '100%';
                         }
                         childContainer.style.position = 'absolute';
