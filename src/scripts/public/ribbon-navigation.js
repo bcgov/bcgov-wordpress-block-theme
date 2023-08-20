@@ -14,25 +14,27 @@ const domReady = () => {
         function doBoundsCheck(targetEl) {
             setTimeout(function () {
                 const container = targetEl;
-                const childContainer = container.querySelector('ul');
-                const subChildContainer = container.querySelector(
-                    '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container'
+                const childContainer = qs('ul', container);
+                const subChildContainer = qs(
+                    '.wp-block-navigation__submenu-container .wp-block-navigation__submenu-container',
+                    container
                 );
-                const languageChildContainer = container.querySelector(
-                    '.language_switcher_options'
+                const languageChildContainer = qs(
+                    '.language_switcher_options',
+                    container
                 );
 
                 let bounding = null;
 
-                if (childContainer !== null) {
+                if (null !== childContainer) {
                     bounding = childContainer.getBoundingClientRect();
                 }
 
                 const windowWidth =
                     window.innerWidth || document.documentElement.clientWidth;
 
-                if (bounding !== null) {
-                    if (subChildContainer !== null) {
+                if (null !== bounding) {
+                    if (null !== subChildContainer) {
                         subChildContainer.style.top = '0.85rem';
                     }
 
@@ -42,7 +44,7 @@ const domReady = () => {
                         childContainer.style.right = 'auto';
                         childContainer.style.top = '100%';
 
-                        if (languageChildContainer !== null) {
+                        if (null !== languageChildContainer) {
                             languageChildContainer.style.top = '100%';
                         }
                         childContainer.style.position = 'absolute';
