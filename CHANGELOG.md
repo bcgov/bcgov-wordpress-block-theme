@@ -7,7 +7,7 @@
 - Window event functions updated to reference safe event listener and moved out of ready state. ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
 - Ribbon navigation padding update and CSP update to allow for WP6.3 blob. ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
 - Minor positioning styles for ribbon navigation right-side submenu wrap when contact is made with window edge ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
-- Ribbon navigation right-side submenu wrap general positioning fix ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
+- Ribbon navigation right-side submenu wrap general positioning fix. Modified load priority of external link icon check to accommodate query loop. ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
 
 ## 1.2.9 Aug 5, 2023
 - Added Google Site Name structured content injection and custom site name settings ([DESCW-1412](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1412))
