@@ -229,7 +229,7 @@ const doExternalLinkCheck = () => {
      */
 
     if ('1' === window.site.externalLinkIcons) {
-        const links = document.querySelectorAll('#post-content a');
+        const links = document.querySelectorAll('.post-content a');
 
         if (links) {
             links.forEach((link) => {

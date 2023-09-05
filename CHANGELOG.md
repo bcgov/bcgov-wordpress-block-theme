@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.11 Sept 5, 2023
+- Updated external link processing to use post-content class rather than ID to allow footer link handling. Removed overrides for fullwidth margins to work with updated WordPress core. ([DESCW-1478](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1478))
+
 ## 1.2.10 Aug 18, 2023
 - First stage removal of CleanBC dependencies from Block Theme related to Clean BC site header and navigation changes. ([DESCW-1390](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1390))
 - CleanBC content moved from the BCGov Block Theme to the BCGov Frontend Supplemental: CleanBC plugin ([bcgov-plugin-cleanbc](https://apps.itsm.gov.bc.ca/bitbucket/projects/WPP/repos/bcgov-plugin-cleanbc/browse))

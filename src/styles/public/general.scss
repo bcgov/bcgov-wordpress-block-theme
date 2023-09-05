@@ -158,17 +158,9 @@ main,
 	isolation: isolate;
 	z-index: 0;
 
-	@media (max-width: $breakpoint-xl) {
-		margin-left: 2rem;
-		margin-right: 2rem;
-	}
-
 	.alignfull {
-
-		@media (max-width: $breakpoint-xl) {
-			margin-left: -2rem !important;
-			width: 100vw;
-		}
+		margin-left: 0;
+		width: 100%;
 	}
 }
 
