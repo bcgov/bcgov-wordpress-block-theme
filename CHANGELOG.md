@@ -1,6 +1,7 @@
 # Changelog
 
-## 1.2.11 Sept 5, 2023
+## 1.2.11 Sept 10, 2023
+- Added a Navigation Menu Management feature so that Editors without access to the Full Site Editor are able to easily manage existing or new menus. Maintains a single post for this feature by cleaning up and removing draft or trashed posts. (Ticket unavailable)
 - Updated external link processing to use post-content class rather than ID to allow footer link handling. Removed overrides for fullwidth margins to work with updated WordPress core. ([DESCW-1478](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1478))
 
 ## 1.2.10 Aug 18, 2023
