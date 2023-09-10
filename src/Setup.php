@@ -5,6 +5,7 @@ namespace Bcgov\Theme\Block;
 use Bcgov\Theme\Block\Actions\{
     ThemeSupports,
     AdminMenus,
+	MenuEditor,
     AdminOptions,
 	BcgovSettings,
     Dependencies,
@@ -39,6 +40,7 @@ class Setup {
 		// Actions.
 		$theme_supports                 = new ThemeSupports();
 		$theme_admin_menus              = new AdminMenus();
+		$theme_menu_editor              = new MenuEditor();
 		$theme_admin_options            = new AdminOptions();
 		$theme_bcgov_settings           = new BcgovSettings();
 		$theme_dependencies             = new Dependencies();
@@ -67,6 +69,9 @@ class Setup {
 		add_action( 'wp_head', [ $theme_enqueue_and_inject, 'bcgov_block_theme_generate_google_ld_json' ] );
 
 		add_action( 'init', [ $theme_register_block_patterns, 'bcgov_blocks_theme_register_block_patterns' ], 9 );
+		add_action( 'init', [ $theme_menu_editor, 'menu_manager_post_type' ], 9 );
+		add_action( 'init', [ $theme_menu_editor, 'create_initial_menu_manager_post' ] );
+		add_action( 'wp_trash_post', [ $theme_menu_editor, 'remove_unused_menu_manager_post_type' ] );
 
 		// Custom Page Class combined Action & Filter hooks into Actions Class.
 		add_action( 'add_meta_boxes', [ $theme_page_custom_class, 'custom_page_meta_boxes' ], 10, 2 );
