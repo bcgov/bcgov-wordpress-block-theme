@@ -197,7 +197,7 @@ class MenuEditor {
      * @since 1.2.11
      */
     public function add_editor_menu_capabilities() {
-        
+
         if ( current_user_can( 'editor' ) ) {
             $editor_role = get_role( 'editor' );
 
