@@ -198,7 +198,10 @@ class MenuEditor {
      */
     public function add_editor_menu_capabilities() {
 
-        if ( current_user_can( 'editor' ) ) {
+        $current_user = wp_get_current_user();
+
+        if ( current_user_can( 'editor' ) && ( ! $current_user->caps['administrator'] ) ) {
+
             $editor_role = get_role( 'editor' );
 
             $editor_role->add_cap( 'edit_theme_options' );
@@ -218,7 +221,10 @@ class MenuEditor {
      * @since 1.2.11
      */
     public function hide_appearance_menu_for_editor() {
-        if ( current_user_can( 'editor' ) ) {
+
+        $current_user = wp_get_current_user();
+
+        if ( current_user_can( 'editor' ) && ( ! $current_user->caps['administrator'] ) ) {
             remove_menu_page( 'themes.php' );
             remove_menu_page( 'tools.php' );
         }
