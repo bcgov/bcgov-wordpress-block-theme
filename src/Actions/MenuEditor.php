@@ -200,17 +200,12 @@ class MenuEditor {
 
         $current_user = wp_get_current_user();
 
-        if ( current_user_can( 'editor' ) && ( ! $current_user->caps['administrator'] ) ) {
+        if ( current_user_can( 'editor' ) && ( $current_user->caps['editor'] ) ) {
 
             $editor_role = get_role( 'editor' );
 
             $editor_role->add_cap( 'edit_theme_options' );
             $editor_role->add_cap( 'edit_navigation_block' );
-            $editor_role->remove_cap( 'edit_nav_menus' );
-            $editor_role->remove_cap( 'manage_sites' );
-            $editor_role->remove_cap( 'edit_themes' );
-            $editor_role->remove_cap( 'manage_options' );
-            $editor_role->remove_cap( 'switch_themes' );
 
         }
     }
@@ -224,9 +219,11 @@ class MenuEditor {
 
         $current_user = wp_get_current_user();
 
-        if ( current_user_can( 'editor' ) && ( ! $current_user->caps['administrator'] ) ) {
+        if ( current_user_can( 'editor' ) && ( $current_user->caps['editor'] ) ) {
+
             remove_menu_page( 'themes.php' );
             remove_menu_page( 'tools.php' );
+
         }
     }
 

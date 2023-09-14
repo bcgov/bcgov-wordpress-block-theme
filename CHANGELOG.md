@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.12 Sept 14, 2023
+- Bug fix for Menu Manager feature Editor role notice. (Ticket unavailable)
+
 ## 1.2.11 Sept 13, 2023
 - Updated admin menu check for Menu Manager feature. (Ticket unavailable)
 - Added a Navigation Menu Management feature so that Editors without access to the Full Site Editor are able to easily manage existing or new menus. Maintains a single post for this feature by cleaning up and removing draft or trashed posts. (Ticket unavailable)
