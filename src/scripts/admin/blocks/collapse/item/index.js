@@ -1,25 +1,14 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks, RichText } from '@wordpress/block-editor';
+import { attributes } from './attributes';
+import { deprecated } from './deprecated';
 
 registerBlockType('bcgov-block-theme/collapse-item', {
     title: __('Collapse Item', 'bcgov-blocks'),
     icon: 'welcome-add-page',
     category: 'layout',
-    attributes: {
-        title: {
-            type: 'string',
-            selector: '.bcgov-collapse-title',
-        },
-        itemId: {
-            type: 'string',
-            default: '',
-        },
-        headingId: {
-            type: 'string',
-            default: '',
-        },
-    },
+    attributes,
     example: {},
     edit: (props) => {
         const {
@@ -63,6 +52,7 @@ registerBlockType('bcgov-block-theme/collapse-item', {
             </div>
         );
     },
+    deprecated,
     save: (props) => {
         const {
             attributes: { title, itemId, headingId },
@@ -86,7 +76,7 @@ registerBlockType('bcgov-block-theme/collapse-item', {
                         </button>
                     </h3>
                 </div>
-                <div className="collapse collapse-container" id={itemId}>
+                <div className="collapse collapse-container hide" id={itemId}>
                     <div className="collapse-body">
                         <InnerBlocks.Content />
                         <div className="collapse-close">

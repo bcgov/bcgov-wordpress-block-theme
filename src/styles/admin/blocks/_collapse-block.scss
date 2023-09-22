@@ -1,0 +1,49 @@
+/* stylelint-disable no-descending-specificity */
+
+/** Admin styles **/
+html body.wp-admin .editor-styles-wrapper {
+
+	*[data-type="bcgov/collapse"]:not(.is-style-bcgov) {
+		padding-top: 2rem;
+		margin: 1rem 0 0.5rem;
+		background-color: var(--wp--preset--color--background);
+
+		&::before {
+			content: "Collapse Container";
+			position: absolute;
+			color: var(--wp--preset--color--white);
+			top: 0.2rem;
+			left: 0.25rem;
+			font-size: 0.8rem;
+		}
+
+		.wp-block-bcgov-collapse,
+		.wp-block-bcgov-block-theme-collapse {
+			background-color: rgba(255, 255, 255, 0.7);
+			list-style: none !important;
+			padding: 0 !important;
+			margin: 0 0.5rem 2rem !important;
+		}
+
+		*[data-type="bcgov/collapse-item"] {
+			background-color: rgba(255, 255, 255, 0.9);
+			border-bottom-width: 3px;
+
+			&.block-editor-block-list {
+
+				&__layout {
+
+					&.block-editor-block-list {
+
+						&__block {
+
+							&.is-focus-mode:not(.is-multi-selected):not(.is-focused) {
+								background-color: var(--wp--preset--color--white);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

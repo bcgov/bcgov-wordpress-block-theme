@@ -18,14 +18,13 @@
 @import "./notification-banner";
 
 // Specific Block Styles
-@import "./blocks/accordion-collapse-block";
+@import "./blocks/collapse-block";
 @import "./blocks/buttons-block";
 @import "./blocks/cards-block";
 @import "./blocks/columns-block";
 @import "./blocks/images-block";
 @import "./blocks/media-text-block";
 @import "./blocks/_block-card-breaks";
-@import "../../scripts/admin/blocks/collapse/container";
 
 // Specific CleanBC Pattern Styles
 @import "./sites/cleanbc/_cleanbc--general";
