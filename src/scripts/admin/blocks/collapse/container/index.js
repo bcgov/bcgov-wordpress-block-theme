@@ -1,11 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType, registerBlockStyle } from '@wordpress/blocks';
-import { InnerBlocks } from '@wordpress/block-editor';
-import {
-    InspectorControls,
-    PanelBody,
-    ToggleControl,
-} from '@wordpress/components';
+import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, ToggleControl } from '@wordpress/components';
 import { attributes } from './attributes';
 import { deprecated } from './deprecated';
 
@@ -31,15 +27,15 @@ registerBlockType('bcgov-block-theme/collapse', {
             clientId,
         } = props;
 
+        const toggleOpenFirstItem = () => {
+            props.setAttributes({ openFirstItem: !openFirstItem });
+        };
+
         const ALLOWED_BLOCKS = ['bcgov-block-theme/collapse-item'];
 
         props.setAttributes({
             collapseId: `collapse-container-${clientId}`,
         });
-
-        const toggleOpenFirstItem = () => {
-            props.setAttributes({ openFirstItem: !openFirstItem });
-        };
 
         return (
             <div className={className} id={collapseId}>
