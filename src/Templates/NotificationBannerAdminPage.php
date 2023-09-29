@@ -233,7 +233,6 @@ class NotificationBannerAdminPage {
 									<div class="input">
 										<div class="input-wrap"><input type="text" id="notification_button_label" name="notification_button_label"
 										placeholder="Learn more"
-										required
 										value="<?php if ( ! empty( $notification_button_label ) ) { echo esc_attr( $notification_button_label ); } ?>" maxlength="32"></div>
 									</div>
 								</div>

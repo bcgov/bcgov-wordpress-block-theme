@@ -1,4 +1,8 @@
 # Changelog
+
+## 1.2.14 Sept 29, 2023
+- Removed the required attribute from the button label input in the Custom Notice Banner Settings ([DESCW-1544](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1544))
+
 ## 1.2.13 Sept 22, 2023
 - Collapse block updated to add BC Gov styling option. Also added ability to toggle the fiirst item open as an option. Deprecated version added to provide better experience for existing content. Includes Menu Manager isset check.  ([DESCW-1489](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1489))
 
