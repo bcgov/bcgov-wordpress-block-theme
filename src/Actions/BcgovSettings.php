@@ -122,6 +122,13 @@ class BcgovSettings {
             [ $this, 'sanitize_bcgov_google_site_name_settings' ]
         );
 
+        // Add the Google Verify ownership setting.
+        register_setting(
+            'bcgov-settings-group',
+            'bcgov_google_verify_settings',
+            [ $this, 'sanitize_bcgov_google_verify_settings' ]
+        );
+
         // Add settings sections:
         // For BCGov Admin Notification settings.
         add_settings_section(
@@ -152,6 +159,14 @@ class BcgovSettings {
             'bcgov_google_site_name_settings',
             'Google Site Name',
             [ $this, 'bcgov_google_site_name_settings' ],
+            'bcgov-theme-settings'
+        );
+
+        // For Google Site Name setting.
+        add_settings_section(
+            'bcgov_google_verify_settings',
+            'Google Verification Code',
+            [ $this, 'bcgov_google_verify_settings' ],
             'bcgov-theme-settings'
         );
     }
@@ -205,7 +220,18 @@ class BcgovSettings {
         return $google_site_name;
     }
 
+    /**
+     * Sanitize and save the Google Verify text value.
+     *
+     * @param array $input The settings input.
+     * @return array The sanitized input.
+     */
+    public function sanitize_bcgov_google_verify_settings( $input ) {
+        // Sanitize the text field value.
+        $google_verify = sanitize_text_field( $input );
 
+        return $google_verify;
+    }
 
 
     /**
@@ -301,4 +327,34 @@ class BcgovSettings {
         <p class="description" style="max-width: 120ch;">This value will be used to tell the Google Search index the preferred Site Name. The name default is the Site Title in the WordPress site settings but can be overridden here for finer control of the Google Site Name required to differentiate the site from the inferred Gov.bc.ca site naming in Google organic search results. Note this feature provides an Alternate Site Name of <strong><?php echo esc_html( $domain['host'] ); ?></strong> so it is not necessary to use the domain as the preferred Site&nbsp;Name.</p>
 		<?php
     }
+
+    /**
+     * Sets the Google Search Console verification code.
+     *
+     * @since 1.2.15
+     * @return void
+     */
+    public function bcgov_google_verify_settings() {
+        $google_verify = ''; // Initialize the variable to an empty string.
+
+        if ( isset( $_POST['bcgov_google_verify_nonce'] ) && wp_verify_nonce( $_POST['bcgov_google_verify_nonce'], 'bcgov_google_verify_nonce' ) ) {
+            if ( isset( $_POST['bcgov_google_verify'] ) ) {
+                $google_verify = sanitize_text_field( $_POST['bcgov_google_verify'] );
+                update_option( 'bcgov_google_verify_settings', $google_verify );
+            }
+        }
+
+        // Get the current Google Site Name setting.
+        $google_verify = get_option( 'bcgov_google_verify_settings', $google_verify ); // Retrieve the saved value or use the default value.
+
+        ?>
+        <input type="text" name="bcgov_google_verify_settings" value="<?php echo esc_attr( $google_verify ); ?>" placeholder="Enter your Google Verification Code here" style="width: 320px" />
+
+        <p class="description" style="max-width: 120ch;">This value will be used to add a meta tag to your site's homepage, which is needed to verify ownership of the domain with Google. To get this code, you will need to go to the Welcome to <a target="external" href="https://search.google.com/search-console/welcome">Google Search Console page</a> and use the URL prefix tool. Once in the URL prefix tool, open the <strong>HTML tag</strong> option and copy the meta tag code provided. You must extract just the value of the "content" attribute and paste it into the field above. Once you have done that, press Save Changes below, and then go back to Google Search Console and click the <strong>Verify</strong> button.</p>
+        <p class="description" style="max-width: 120ch;">For example, if the HTML tag is:</p>
+        <p class="description" style="max-width: 120ch;">&lt;meta name="google-site-verification" content="<strong>XKEhZ_JE714ViwiTJ_Ok1-IaaCm52CG-6vWmW2g3fpE</strong>" /&gt;</p>
+        <p class="description" style="max-width: 120ch;">...you will only copy/paste the bolded portion of the string (without the surrounding quotes).</p>
+        <?php
+    }
+
 }

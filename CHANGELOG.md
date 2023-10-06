@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.15 Oct 6, 2023
+- Added a Google Site Verification meta tag to the home page by way of the Block Theme options: eg: <meta name="google-site-verification" content="GOOGLE_PROVIDIED_CODE" /> (Community contribution)
+
 ## 1.2.14 Sept 29, 2023
 - Removed the required attribute from the button label input in the Custom Notice Banner Settings ([DESCW-1544](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1544))
 

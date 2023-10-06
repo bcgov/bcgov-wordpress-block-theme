@@ -162,4 +162,22 @@ class EnqueueAndInject {
 		echo '<script type="application/ld+json">' . wp_json_encode( $json_data ) . '</script>';
 	}
 
+	/**
+     * Generates and outputs the meta verification tag for Google Search Console.
+     *
+     * Required by Google for better representation in organic search results.
+     *
+     * @since 1.2.15
+     * @return void
+     */
+	public function bcgov_block_theme_generate_google_search_meta_tag() {
+		// Get the current Google Verification code setting.
+		$google_verify = get_option( 'bcgov_google_verify_settings', '' );
+
+		if ( ! empty( $google_verify ) ) {
+			// Output the meta tag if a verified code is available.
+			echo '<meta name="google-site-verification" content="' . esc_attr( $google_verify ) . '" />';
+		}
+	}
+
 }
