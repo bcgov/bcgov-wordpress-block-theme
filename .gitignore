@@ -11,3 +11,5 @@ tests/_output
 dist/scripts/*.php
 coverage
 .idea
+.temp
+.cache
