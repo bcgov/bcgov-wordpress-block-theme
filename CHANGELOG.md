@@ -1,4 +1,7 @@
 # Changelog
+## 1.2.15 Oct 27, 2023
+- Upgraded WordPress coding standards in wordpress-scripts to 2.0 ([DESCW-1588](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1588))
+  - Includes a few minor refactors to bring code up to the new standards.
 
 ## 1.2.14 Sept 29, 2023
 - Removed the required attribute from the button label input in the Custom Notice Banner Settings ([DESCW-1544](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1544))

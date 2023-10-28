@@ -1,7 +1,4 @@
 <?php
-
-namespace Bcgov\Theme\Block;
-
 /**
  * General Alternating Cards block pattern.
  *
@@ -9,6 +6,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
+
+ namespace Bcgov\Theme\Block;
+
 return [
 	'title'      => __( 'Alternating Cards', 'bcgov_blocks_theme' ),
 	'categories' => [ 'bcgov-blocks-theme-general' ],

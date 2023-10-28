@@ -1,7 +1,4 @@
 <?php
-
-namespace Bcgov\Theme\Block;
-
 /**
  * Default header block pattern.
  *
@@ -9,6 +6,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
+
+namespace Bcgov\Theme\Block;
+
 return [
 	'title'      => __( 'Default header', 'bcgov_blocks_theme' ),
 	'categories' => [ 'bcgov-blocks-theme-header-footer' ],

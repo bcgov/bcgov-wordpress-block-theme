@@ -1,7 +1,4 @@
 <?php
-
-namespace Bcgov\Theme\Block;
-
 /**
  * General Card with two images pattern.
  *
@@ -9,6 +6,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
+
+namespace Bcgov\Theme\Block;
+
 return [
 	'title'      => __( 'Card with two images', 'bcgov_blocks_theme' ),
 	'categories' => [ 'bcgov-blocks-theme-general' ],

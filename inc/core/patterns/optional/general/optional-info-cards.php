@@ -1,7 +1,4 @@
 <?php
-
-namespace Bcgov\Theme\Block;
-
 /**
  * CleanBC Info Cards block pattern.
  *
@@ -9,6 +6,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
+
+namespace Bcgov\Theme\Block;
+
 return [
 	'title'      => __( 'CleanBC Info Cards', 'bcgov_blocks_theme' ),
 	'categories' => [ 'optional-patterns-general' ],

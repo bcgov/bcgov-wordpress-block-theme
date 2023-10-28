@@ -3,7 +3,7 @@ namespace Bcgov\Theme\Block\Tests\Filters;
 
 use Bcgov\Theme\Block\Tests\CommonTestCase;
 use Bcgov\Theme\Block\Actions\PatternsSetup;
-use \Brain\Monkey;
+use Brain\Monkey;
 
 /**
  * Testing for PatternsSetup.
@@ -21,7 +21,7 @@ class PatternsSetupTest extends CommonTestCase {
      *
      * @inheritDoc
      */
-    public function setUp() :void {
+    public function setUp(): void {
         parent::setUp();
         $this->pattern = new PatternsSetup();
     }
@@ -139,5 +139,4 @@ class PatternsSetupTest extends CommonTestCase {
 			'optional-patterns-banners' => [ 'label' => __( 'Optional: Banners', 'bcgov_blocks_theme' ) ],
         ];
     }
-
 }

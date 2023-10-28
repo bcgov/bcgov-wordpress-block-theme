@@ -1,9 +1,9 @@
 <?php
 namespace Bcgov\Theme\Block\Tests;
 
-use \PHPUnit\Framework\TestCase;
-use \Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
-use \Brain\Monkey;
+use PHPUnit\Framework\TestCase;
+use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
+use Brain\Monkey;
 
 /**
  * An abstraction over WP_Mock to do things fast

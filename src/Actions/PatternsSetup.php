@@ -113,7 +113,6 @@ class PatternsSetup {
 
 			wp_reset_postdata();
 		}
-
 	}
 
 	/**

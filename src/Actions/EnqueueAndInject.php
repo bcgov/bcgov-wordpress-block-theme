@@ -161,5 +161,4 @@ class EnqueueAndInject {
 		// Output the inline script.
 		echo '<script type="application/ld+json">' . wp_json_encode( $json_data ) . '</script>';
 	}
-
 }
