@@ -1,7 +1,4 @@
 <?php
-
-namespace Bcgov\Theme\Block;
-
 /**
  * General Accordion with Media Text block pattern.
  *
@@ -9,6 +6,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
+
+ namespace Bcgov\Theme\Block;
+
 return [
 	'title'      => __( 'Accordion with Media Text', 'bcgov_blocks_theme' ),
 	'categories' => [ 'bcgov-blocks-theme-general' ],

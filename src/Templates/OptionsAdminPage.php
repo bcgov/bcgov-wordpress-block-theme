@@ -29,19 +29,19 @@ class OptionsAdminPage {
 	/**
 	 * Ensures custom class name is valid.
 	 *
-	 * @param string $class input custom class name.
+	 * @param string $class_name input custom class name.
 	 *
 	 * @since 1.0.4
 	 * @return string
 	 */
-	private function make_class_safe( $class ) {
-		$class = str_replace( ' ', '-', $class );
-		$class = preg_replace( '~[^\\pL0-9_]+~u', '-', $class );
-		$class = trim( $class, '-' );
-		$class = iconv( 'utf-8', 'us-ascii//TRANSLIT', $class );
-		$class = strtolower( $class );
-		$class = preg_replace( '~[^-a-z0-9_]+~', '', $class );
-		return $class;
+	private function make_class_safe( $class_name ) {
+		$class_name = str_replace( ' ', '-', $class_name );
+		$class_name = preg_replace( '~[^\\pL0-9_]+~u', '-', $class_name );
+		$class_name = trim( $class_name, '-' );
+		$class_name = iconv( 'utf-8', 'us-ascii//TRANSLIT', $class_name );
+		$class_name = strtolower( $class_name );
+		$class_name = preg_replace( '~[^-a-z0-9_]+~', '', $class_name );
+		return $class_name;
 	}
 
 	/**

@@ -1,7 +1,4 @@
 <?php
-
-namespace Bcgov\Theme\Block;
-
 /**
  * CleanBC In-page Cloud Banner block pattern.
  *
@@ -9,6 +6,9 @@ namespace Bcgov\Theme\Block;
  *
  * @package Bcgov/Theme/Block
  */
+
+namespace Bcgov\Theme\Block;
+
 return [
 	'title'      => __( 'In-page Cloud Banner', 'bcgov_blocks_theme' ),
 	'categories' => [ 'optional-patterns-general' ],

@@ -20,7 +20,7 @@ class MediaTextEnhancedTest extends CommonTestCase {
      *
      * @inheritDoc
      */
-    public function setUp() :void {
+    public function setUp(): void {
         parent::setUp();
         $this->media = new MediaTextEnhanced();
     }
@@ -84,5 +84,4 @@ class MediaTextEnhancedTest extends CommonTestCase {
         $expected_results = '<img  data-print="true" data-print-width="25" src="https://gov.bc.ca/test.jpg" />';
         $this->assertEquals( $expected_results, $this->media->add_media_text_attributes( $block_content, $block ) );
     }
-
 }

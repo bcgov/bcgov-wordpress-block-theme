@@ -66,5 +66,4 @@ class ButtonEnhanced {
 
 		return $block_content;
 	}
-
 }

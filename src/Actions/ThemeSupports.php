@@ -53,7 +53,6 @@ class ThemeSupports {
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
-
 	}
 
 

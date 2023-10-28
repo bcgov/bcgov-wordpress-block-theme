@@ -200,7 +200,7 @@ class MenuEditor {
 
         $current_user = wp_get_current_user();
 
-        if ( current_user_can( 'editor' ) && ( isset( $current_user->caps['editor'] ) ) ) {
+        if ( in_array( 'editor', (array) $current_user->roles, true ) && ( isset( $current_user->caps['editor'] ) ) ) {
 
             $editor_role = get_role( 'editor' );
 
@@ -219,12 +219,11 @@ class MenuEditor {
 
         $current_user = wp_get_current_user();
 
-        if ( current_user_can( 'editor' ) && ( isset( $current_user->caps['editor'] ) ) ) {
+        if ( in_array( 'editor', (array) $current_user->roles, true ) && ( isset( $current_user->caps['editor'] ) ) ) {
 
             remove_menu_page( 'themes.php' );
             remove_menu_page( 'tools.php' );
 
         }
     }
-
 }

@@ -54,7 +54,6 @@ class AdminMenus {
 				[ $this, 'bcgov_block_theme_notification_banner_display' ]
 			);
 		}
-
 	}
 
 	/**
@@ -67,7 +66,6 @@ class AdminMenus {
 	public function bcgov_block_theme_documentation_display() {
 
 		new InfoAdminPage();
-
 	}
 
 	/**
@@ -80,7 +78,6 @@ class AdminMenus {
 	public function bcgov_block_theme_options_display() {
 
 		new OptionsAdminPage();
-
 	}
 
 	/**
@@ -93,6 +90,5 @@ class AdminMenus {
 	public function bcgov_block_theme_notification_banner_display() {
 
 		new NotificationBannerAdminPage();
-
 	}
 }

@@ -75,7 +75,6 @@ class AdminOptions {
 		if ( ! get_option( 'custom_body_class' ) ) {
 			update_option( 'custom_body_class', 'default' );
 		}
-
 	}
 
 	/**

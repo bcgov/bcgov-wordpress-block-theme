@@ -20,7 +20,7 @@ class SiteLogoEnhancedTest extends CommonTestCase {
      *
      * @inheritDoc
      */
-    public function setUp() :void {
+    public function setUp(): void {
         parent::setUp();
         $this->logo = new SiteLogoEnhanced();
     }
@@ -84,5 +84,4 @@ class SiteLogoEnhancedTest extends CommonTestCase {
         $expected_results = '<div class="wp-block-site-logo"><a href="/"><img data-print="inverted" src="logo.jpg" /></a></div>';
         $this->assertEquals( $expected_results, $this->logo->add_site_logo_attributes( $block_content, $block ) );
     }
-
 }

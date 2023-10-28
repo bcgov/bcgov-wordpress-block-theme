@@ -20,7 +20,7 @@ class ButtonEnhancedTest extends CommonTestCase {
      *
      * @inheritDoc
      */
-    public function setUp() :void {
+    public function setUp(): void {
         parent::setUp();
         $this->button = new ButtonEnhanced();
     }
@@ -84,5 +84,4 @@ class ButtonEnhancedTest extends CommonTestCase {
         $expected_results = '<div class="wp-block-button has-size-regular"><a tabindex="0" aria-label="There is a label here" class="wp-block-button__link">my_link</a></div>';
         $this->assertEquals( $expected_results, $this->button->add_button_attributes( $block_content, $block ) );
     }
-
 }
