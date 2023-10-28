@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-8daa1a0e","path":"/","title":"WordPress Block Theme Documentation","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1698179934000,"contributors":[{"name":"cdeakin","email":"chris.deakin@gov.bc.ca","commits":1}]},"filePathRelative":"README.md"}');export{e as data};
