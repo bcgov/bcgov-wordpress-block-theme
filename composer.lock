@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "509188934a59f1278719f1acd316feda",
+    "content-hash": "49addb40ab7710e343122e50f4847820",
     "packages": [],
     "packages-dev": [
         {
@@ -57,17 +57,17 @@
         },
         {
             "name": "bcgov/wordpress-scripts",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://apps.itsm.gov.bc.ca/bitbucket/scm/wp/wordpress-scripts.git",
-                "reference": "fbbff11d03db7efac41a65b1e06b6feed7acef61"
+                "reference": "ae98c0b6fb4c093baaef795825b6d0aa9c2085f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://apps.itsm.gov.bc.ca/satis/dist/bcgov/wordpress-scripts/bcgov-wordpress-scripts-2.0.0-4f7066.zip",
-                "reference": "fbbff11d03db7efac41a65b1e06b6feed7acef61",
-                "shasum": "6664e1c2022a0d3b72357555c61b98a94661a8a2"
+                "url": "https://apps.itsm.gov.bc.ca/satis/dist/bcgov/wordpress-scripts/bcgov-wordpress-scripts-2.0.1-a72854.zip",
+                "reference": "ae98c0b6fb4c093baaef795825b6d0aa9c2085f6",
+                "shasum": "0f813bfd7eb31dc966520824897fecbbfbe3ba4b"
             },
             "require": {
                 "brain/monkey": "^2.6",
@@ -103,7 +103,7 @@
                     "Bcgov\\Script\\Checklists::postProductionChecksForScripts"
                 ]
             },
-            "time": "2023-10-13T15:05:13+00:00"
+            "time": "2023-10-25T20:16:24+00:00"
         },
         {
             "name": "brain/monkey",
