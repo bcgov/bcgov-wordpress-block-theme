@@ -1,4 +1,8 @@
 # Changelog
+
+## 1.2.16 Oct 31, 2023
+- Upgraded @wordpress/scripts to fix vulnerability with @babel/traverse ([DESCW-1629](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1629))
+
 ## 1.2.15 Oct 27, 2023
 - Upgraded WordPress coding standards in wordpress-scripts to 2.0 ([DESCW-1588](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1588))
   - Includes a few minor refactors to bring code up to the new standards.
