@@ -1,4 +1,7 @@
 # Changelog
+## 1.2.17 Nov 02, 2023
+- Updated node dev-dependencies and dependencies to latest versions ([DESCW-1560](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1560))
+
 
 ## 1.2.16 Oct 31, 2023
 - Upgraded @wordpress/scripts to fix vulnerability with @babel/traverse ([DESCW-1629](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1629))

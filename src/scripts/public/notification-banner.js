@@ -8,8 +8,8 @@ const domReady = () => {
     /*
      * SafarIE bug requires 0ms timeout.
      */
-    setTimeout(function () {
-        const body = qs('body');
+    setTimeout( function () {
+        const body = qs( 'body' );
         let notificationEnabled =
             '1' === window.site.noticeEnabled ? true : false;
         const notificationHomepageOnly =
@@ -33,18 +33,21 @@ const domReady = () => {
         const networkNotificationButtonUtmCampaign =
             window.site.networkBannerUtm;
 
-        if (notificationEnabled && notificationHomepageOnly) {
-            notificationEnabled = body.classList.contains('home')
+        if ( notificationEnabled && notificationHomepageOnly ) {
+            notificationEnabled = body.classList.contains( 'home' )
                 ? true
                 : false;
         }
         const currentPage = window.location.href;
-        if (notificationEnabled && notificationButtonLink === currentPage) {
+        if ( notificationEnabled && notificationButtonLink === currentPage ) {
             notificationEnabled = false;
         }
 
         // Use Network banner content if enabled and not overidden by local banner.
-        if (networkNotificationBannerNetworkEnabled && !notificationEnabled) {
+        if (
+            networkNotificationBannerNetworkEnabled &&
+            ! notificationEnabled
+        ) {
             notificationEnabled = true;
             notificationButtonEnabled = false;
             notificationContent = networkNotificationContent;
@@ -53,29 +56,29 @@ const domReady = () => {
                 networkNotificationButtonUtmCampaign;
         }
 
-        if (notificationEnabled) {
-            const notificationContainer = createElement('div', {
-                class: `notice notification ${notificationStatus}`,
+        if ( notificationEnabled ) {
+            const notificationContainer = createElement( 'div', {
+                class: `notice notification ${ notificationStatus }`,
                 role: 'alert',
                 'aria-live': 'assertive',
-            });
+            } );
 
-            const notificationContentInnerContainer = createElement('div', {
+            const notificationContentInnerContainer = createElement( 'div', {
                 class: 'inner-container',
-            });
+            } );
 
-            const notificationContentInner = createElement('p', {
-                class: `${notificationLabelBold ? 'bold' : ''} ${
+            const notificationContentInner = createElement( 'p', {
+                class: `${ notificationLabelBold ? 'bold' : '' } ${
                     notificationLabelBig ? 'big' : ''
                 }`,
-                html: `${notificationContent}`,
-            });
+                html: `${ notificationContent }`,
+            } );
 
-            const notfificationBtnContainer = createElement('div', {
+            const notfificationBtnContainer = createElement( 'div', {
                 class: 'btn-container',
-            });
+            } );
 
-            const notfificationBtn = createElement('button', {
+            const notfificationBtn = createElement( 'button', {
                 'aria-label': `${
                     notificationButtonAriaLabel
                         ? notificationButtonAriaLabel
@@ -83,33 +86,35 @@ const domReady = () => {
                           ' – ' +
                           notificationButtonLabel
                 }`,
-                class: `${notificationLabelBold ? 'bold' : ''} ${
+                class: `${ notificationLabelBold ? 'bold' : '' } ${
                     notificationLabelBig ? 'big' : ''
                 }`,
-                text: `${notificationButtonLabel}`,
-                onclick: `location.href="${notificationButtonLink}${
+                text: `${ notificationButtonLabel }`,
+                onclick: `location.href="${ notificationButtonLink }${
                     notificationButtonUtmCampaign
                         ? '?utm_campaign=' + notificationButtonUtmCampaign
                         : ''
                 }"`,
-            });
+            } );
 
             // Assemble the Notification banner.
-            document.body.prepend(notificationContainer);
-            if (notificationButtonEnabled) {
-                notificationContainer.prepend(notfificationBtnContainer);
-                notificationContentInnerContainer.prepend(notfificationBtn);
+            document.body.prepend( notificationContainer );
+            if ( notificationButtonEnabled ) {
+                notificationContainer.prepend( notfificationBtnContainer );
+                notificationContentInnerContainer.prepend( notfificationBtn );
             } else {
-                notificationContentInnerContainer.classList.add('no-btn');
+                notificationContentInnerContainer.classList.add( 'no-btn' );
             }
-            notificationContainer.prepend(notificationContentInnerContainer);
-            notificationContentInnerContainer.prepend(notificationContentInner);
+            notificationContainer.prepend( notificationContentInnerContainer );
+            notificationContentInnerContainer.prepend(
+                notificationContentInner
+            );
         }
-    }, 0);
+    }, 0 );
 };
 
-if ('complete' === document.readyState) {
+if ( 'complete' === document.readyState ) {
     domReady();
 } else {
-    document.addEventListener('DOMContentLoaded', domReady);
+    document.addEventListener( 'DOMContentLoaded', domReady );
 }

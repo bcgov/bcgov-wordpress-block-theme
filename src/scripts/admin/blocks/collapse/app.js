@@ -9,7 +9,7 @@ import {
 } from './container/public';
 
 const domReady = () => {
-    setTimeout(function () {
+    setTimeout( function () {
         const collapseAllButtons = document.querySelectorAll(
             '.collapse-container-nav button'
         );
@@ -17,7 +17,7 @@ const domReady = () => {
             '.collapse-header button'
         );
         const collapseItemLinks =
-            document.querySelectorAll('.collapse-close a');
+            document.querySelectorAll( '.collapse-close a' );
 
         // Select all Collapse All buttons, used to initialize closed states.
         const collapseAlls = document.querySelectorAll(
@@ -28,26 +28,26 @@ const domReady = () => {
             '.wp-block-bcgov-block-theme-collapse > div:nth-child(2) button'
         );
 
-        if (collapseAllButtons.length) {
-            collapseAllButtons.forEach((item) => {
-                item.addEventListener('click', collapseControlsClick);
-            });
+        if ( collapseAllButtons.length ) {
+            collapseAllButtons.forEach( ( item ) => {
+                item.addEventListener( 'click', collapseControlsClick );
+            } );
 
-            collapseItemButtons.forEach((item) => {
-                item.addEventListener('click', collapseItemsButtonClick);
-            });
+            collapseItemButtons.forEach( ( item ) => {
+                item.addEventListener( 'click', collapseItemsButtonClick );
+            } );
 
-            collapseItemLinks.forEach((item) => {
-                item.addEventListener('click', collapseItemsLinkClick);
-            });
+            collapseItemLinks.forEach( ( item ) => {
+                item.addEventListener( 'click', collapseItemsLinkClick );
+            } );
 
             // initialise load state
-            collapseAlls.forEach(triggerClick);
-            firstCollapseItemsButton.forEach((item) => {
+            collapseAlls.forEach( triggerClick );
+            firstCollapseItemsButton.forEach( ( item ) => {
                 const parentCollapseItem = item.closest(
                     '.wp-block-bcgov-block-theme-collapse'
                 );
-                if (!parentCollapseItem) return;
+                if ( ! parentCollapseItem ) return;
 
                 const openFirstItemValue = parentCollapseItem.getAttribute(
                     'data-open-first-item'
@@ -59,13 +59,13 @@ const domReady = () => {
                 ) {
                     item.click();
                 }
-            });
+            } );
         }
-    }, 0);
+    }, 0 );
 };
 
-if ('complete' === document.readyState) {
+if ( 'complete' === document.readyState ) {
     domReady();
 } else {
-    document.addEventListener('DOMContentLoaded', domReady);
+    document.addEventListener( 'DOMContentLoaded', domReady );
 }

@@ -5,22 +5,22 @@ import { PanelBody, ToggleControl } from '@wordpress/components';
 import { attributes } from './attributes';
 import { deprecated } from './deprecated';
 
-const styles = [{ name: 'bcgov', label: 'BCGov' }];
+const styles = [ { name: 'bcgov', label: 'BCGov' } ];
 
-styles.forEach((style) =>
-    registerBlockStyle('bcgov-block-theme/collapse', style)
+styles.forEach( ( style ) =>
+    registerBlockStyle( 'bcgov-block-theme/collapse', style )
 );
 
-registerBlockType('bcgov-block-theme/collapse', {
-    title: __('Collapse Container', 'bcgov-blocks'),
+registerBlockType( 'bcgov-block-theme/collapse', {
+    title: __( 'Collapse Container', 'bcgov-blocks' ),
     icon: 'admin-page',
     category: 'layout',
     attributes,
     supports: {
-        align: ['wide'],
+        align: [ 'wide' ],
     },
     example: {},
-    edit: (props) => {
+    edit: ( props ) => {
         const {
             attributes: { collapseId, openFirstItem },
             className,
@@ -28,54 +28,54 @@ registerBlockType('bcgov-block-theme/collapse', {
         } = props;
 
         const toggleOpenFirstItem = () => {
-            props.setAttributes({ openFirstItem: !openFirstItem });
+            props.setAttributes( { openFirstItem: ! openFirstItem } );
         };
 
-        const ALLOWED_BLOCKS = ['bcgov-block-theme/collapse-item'];
+        const ALLOWED_BLOCKS = [ 'bcgov-block-theme/collapse-item' ];
 
-        props.setAttributes({
-            collapseId: `collapse-container-${clientId}`,
-        });
+        props.setAttributes( {
+            collapseId: `collapse-container-${ clientId }`,
+        } );
 
         return (
-            <div className={className} id={collapseId}>
+            <div className={ className } id={ collapseId }>
                 <InspectorControls>
-                    <PanelBody title={__('Collapse Settings')}>
+                    <PanelBody title={ __( 'Collapse Settings' ) }>
                         <ToggleControl
-                            label={__('Open First Item')}
-                            checked={openFirstItem}
-                            onChange={toggleOpenFirstItem}
+                            label={ __( 'Open First Item' ) }
+                            checked={ openFirstItem }
+                            onChange={ toggleOpenFirstItem }
                         />
                     </PanelBody>
                 </InspectorControls>
 
-                <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+                <InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
             </div>
         );
     },
     deprecated,
-    save: (props) => {
+    save: ( props ) => {
         const {
             attributes: { collapseId, openFirstItem },
         } = props;
 
         return (
-            <div id={collapseId} data-open-first-item={openFirstItem}>
+            <div id={ collapseId } data-open-first-item={ openFirstItem }>
                 <div className="collapse-container-nav">
                     <span>
                         <button
-                            data-target={`#${collapseId}`}
+                            data-target={ `#${ collapseId }` }
                             className="collapse-expand-all"
                         >
-                            {__('Expand all')}
+                            { __( 'Expand all' ) }
                         </button>
                     </span>
                     <span>
                         <button
-                            data-target={`#${collapseId}`}
+                            data-target={ `#${ collapseId }` }
                             className="collapse-collapse-all"
                         >
-                            {__('Collapse all')}
+                            { __( 'Collapse all' ) }
                         </button>
                     </span>
                 </div>
@@ -84,4 +84,4 @@ registerBlockType('bcgov-block-theme/collapse', {
             </div>
         );
     },
-});
+} );

@@ -7,32 +7,32 @@ const domReady = () => {
     /*
      * SafarIE bug requires 0ms timeout.
      */
-    setTimeout(function () {
-        const body = qs('body');
-        const wpCustomiser = body.classList.contains('wp-customizer');
+    setTimeout( function () {
+        const body = qs( 'body' );
+        const wpCustomiser = body.classList.contains( 'wp-customizer' );
 
-        if (!wpCustomiser) return;
+        if ( ! wpCustomiser ) return;
 
-        const wpAdditionalCSSArea = qs('#sub-accordion-section-custom_css');
+        const wpAdditionalCSSArea = qs( '#sub-accordion-section-custom_css' );
         const wpAdditionalCSSHeadline = qs(
             'h3 .customize-action',
             wpAdditionalCSSArea
         );
 
-        if (null !== wpAdditionalCSSArea) {
+        if ( null !== wpAdditionalCSSArea ) {
             if (
                 null !== wpAdditionalCSSHeadline &&
                 null !== window.site.customBodyClass &&
                 '' !== window.site.customBodyClass
             ) {
-                wpAdditionalCSSHeadline.innerHTML = `Custom class: <strong>body.custom-${window.site.customBodyClass}</strong>`;
+                wpAdditionalCSSHeadline.innerHTML = `Custom class: <strong>body.custom-${ window.site.customBodyClass }</strong>`;
             }
         }
-    }, 0);
+    }, 0 );
 };
 
-if ('complete' === document.readyState) {
+if ( 'complete' === document.readyState ) {
     domReady();
 } else {
-    document.addEventListener('DOMContentLoaded', domReady);
+    document.addEventListener( 'DOMContentLoaded', domReady );
 }
