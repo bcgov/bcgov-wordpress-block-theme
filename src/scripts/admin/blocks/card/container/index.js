@@ -7,8 +7,8 @@ import { attributes } from './attributes';
 import { deprecated } from './deprecated';
 import { allowedColors, defaults } from '../../../utils/common';
 
-registerBlockType('bcgov/card-container', {
-    title: __('Basic Card Container', 'basic-card-container'),
+registerBlockType( 'bcgov/card-container', {
+    title: __( 'Basic Card Container', 'basic-card-container' ),
     icon: 'images-alt',
     category: 'media',
     attributes,
@@ -21,58 +21,62 @@ registerBlockType('bcgov/card-container', {
         align: true,
     },
     example: {},
-    edit: (props) => {
+    edit: ( props ) => {
         const {
             attributes: { cardId, backgroundColor, firstBreakColumns },
             className,
             clientId,
         } = props;
-        const ALLOWED_BLOCKS = ['bcgov/card', 'bcgov/fancy-button'];
+        const ALLOWED_BLOCKS = [ 'bcgov/card', 'bcgov/fancy-button' ];
 
-        props.setAttributes({ cardId: `card-container-${clientId}` });
+        props.setAttributes( { cardId: `card-container-${ clientId }` } );
 
-        const onChangeBackgroundColor = (color) => {
-            props.setAttributes({
-                backgroundColor: defaults(color, 'transparent'),
-            });
+        const onChangeBackgroundColor = ( color ) => {
+            props.setAttributes( {
+                backgroundColor: defaults( color, 'transparent' ),
+            } );
         };
 
-        const RangeControlFirstBreak = withState({
+        const RangeControlFirstBreak = withState( {
             column: firstBreakColumns,
-        })(({ column, setState }) => (
+        } )( ( { column, setState } ) => (
             <RangeControl
-                label={__('Columns')}
-                value={column}
+                label={ __( 'Columns' ) }
+                value={ column }
                 initialPosition="3"
-                onChange={(val) => {
-                    props.setAttributes({ firstBreakColumns: val });
-                    setState({ column });
-                }}
-                min={1}
-                max={6}
+                onChange={ ( val ) => {
+                    props.setAttributes( { firstBreakColumns: val } );
+                    setState( { column } );
+                } }
+                min={ 1 }
+                max={ 6 }
             />
-        ));
+        ) );
 
         return (
-            <ul className={className} style={{ backgroundColor }} id={cardId}>
+            <ul
+                className={ className }
+                style={ { backgroundColor } }
+                id={ cardId }
+            >
                 <InspectorControls>
-                    <PanelBody title={__('Background Colour')}>
+                    <PanelBody title={ __( 'Background Colour' ) }>
                         <ColorPalette
-                            colors={allowedColors}
-                            value={backgroundColor}
-                            onChange={onChangeBackgroundColor}
+                            colors={ allowedColors }
+                            value={ backgroundColor }
+                            onChange={ onChangeBackgroundColor }
                         />
                     </PanelBody>
-                    <PanelBody title={__('Desktop Columns')}>
+                    <PanelBody title={ __( 'Desktop Columns' ) }>
                         <RangeControlFirstBreak />
                     </PanelBody>
                 </InspectorControls>
-                <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+                <InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
             </ul>
         );
     },
     deprecated,
-    save: (props) => {
+    save: ( props ) => {
         const {
             attributes: { cardId, backgroundColor, firstBreakColumns },
             className,
@@ -80,12 +84,12 @@ registerBlockType('bcgov/card-container', {
 
         return (
             <ul
-                className={`${className} lg-break-${firstBreakColumns}`}
-                id={cardId}
-                style={{ backgroundColor }}
+                className={ `${ className } lg-break-${ firstBreakColumns }` }
+                id={ cardId }
+                style={ { backgroundColor } }
             >
                 <InnerBlocks.Content />
             </ul>
         );
     },
-});
+} );

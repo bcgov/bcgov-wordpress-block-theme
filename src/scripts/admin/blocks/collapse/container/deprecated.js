@@ -12,48 +12,48 @@ export const deprecated = [
             },
         },
         supports: {
-            align: ['wide'],
+            align: [ 'wide' ],
         },
         example: {},
-        edit: (props) => {
+        edit: ( props ) => {
             const {
                 attributes: { collapseId },
                 className,
                 clientId,
             } = props;
-            const ALLOWED_BLOCKS = ['bcgov-block-theme/collapse-item'];
-            props.setAttributes({
-                collapseId: `collapse-container-${clientId}`,
-            });
+            const ALLOWED_BLOCKS = [ 'bcgov-block-theme/collapse-item' ];
+            props.setAttributes( {
+                collapseId: `collapse-container-${ clientId }`,
+            } );
 
             return (
-                <div className={className} id={collapseId}>
-                    <InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+                <div className={ className } id={ collapseId }>
+                    <InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
                 </div>
             );
         },
-        save: (props) => {
+        save: ( props ) => {
             const {
                 attributes: { collapseId },
             } = props;
 
             return (
-                <div id={collapseId}>
+                <div id={ collapseId }>
                     <div className="collapse-container-nav">
                         <span>
                             <button
-                                data-target={`#${collapseId}`}
+                                data-target={ `#${ collapseId }` }
                                 className="collapse-expand-all"
                             >
-                                {__('Expand all')}
+                                { __( 'Expand all' ) }
                             </button>
                         </span>
                         <span>
                             <button
-                                data-target={`#${collapseId}`}
+                                data-target={ `#${ collapseId }` }
                                 className="collapse-collapse-all"
                             >
-                                {__('Collapse all')}
+                                { __( 'Collapse all' ) }
                             </button>
                         </span>
                     </div>

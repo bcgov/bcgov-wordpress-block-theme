@@ -22,15 +22,15 @@ const styles = [
     { name: 'underline', label: 'Underline' },
 ];
 
-styles.forEach((style) => registerBlockStyle('core/button', style));
+styles.forEach( ( style ) => registerBlockStyle( 'core/button', style ) );
 
-if ('optional' === window.site.siteName || window.site.allSiteStyles.length) {
-    registerBlockStyle('core/button', { name: 'icon', label: 'Icon' });
+if ( 'optional' === window.site.siteName || window.site.allSiteStyles.length ) {
+    registerBlockStyle( 'core/button', { name: 'icon', label: 'Icon' } );
 }
 
-wp.domReady(() => {
-    unregisterBlockStyle('core/button', 'default');
-});
+wp.domReady( () => {
+    unregisterBlockStyle( 'core/button', 'default' );
+} );
 
 /**
  * Add Size attribute to Button block.
@@ -40,10 +40,10 @@ wp.domReady(() => {
  *
  * @return {Object} Filtered block settings
  */
-function addAttributes(settings, name) {
-    if (name === 'core/button') {
-        return assign({}, settings, {
-            attributes: merge(settings.attributes, {
+function addAttributes( settings, name ) {
+    if ( name === 'core/button' ) {
+        return assign( {}, settings, {
+            attributes: merge( settings.attributes, {
                 size: {
                     type: 'string',
                     default: 'regular',
@@ -64,8 +64,8 @@ function addAttributes(settings, name) {
                     type: 'string',
                     default: '',
                 },
-            }),
-        });
+            } ),
+        } );
     }
     return settings;
 }
@@ -79,36 +79,36 @@ addFilter(
 /**
  * Add Size and Icons control to Button block.
  */
-const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
-    return (props) => {
+const addInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
+    return ( props ) => {
         const { size, svgIcon, iconsList, clickFlag, label } = props.attributes;
         const { setAttributes } = props;
         const { name } = props;
 
-        if (name !== 'core/button') {
-            return <BlockEdit {...props} />;
+        if ( name !== 'core/button' ) {
+            return <BlockEdit { ...props } />;
         }
 
         const handleClick = () => {
-            setAttributes({ clickFlag: true });
+            setAttributes( { clickFlag: true } );
         };
 
         return (
             <Fragment>
-                <BlockEdit {...props} />
+                <BlockEdit { ...props } />
                 <InspectorControls>
                     <PanelBody
-                        title={__('Icon options', 'bcgov-block-theme')}
-                        initialOpen={false}
+                        title={ __( 'Icon options', 'bcgov-block-theme' ) }
+                        initialOpen={ false }
                     >
-                        {clickFlag ? (
+                        { clickFlag ? (
                             <SelectControl
-                                label={__('Icon', 'bcgov-block-theme')}
-                                value={svgIcon}
-                                options={iconsList}
-                                onChange={(value) => {
-                                    setAttributes({ svgIcon: value });
-                                }}
+                                label={ __( 'Icon', 'bcgov-block-theme' ) }
+                                value={ svgIcon }
+                                options={ iconsList }
+                                onChange={ ( value ) => {
+                                    setAttributes( { svgIcon: value } );
+                                } }
                             />
                         ) : (
                             <>
@@ -118,48 +118,48 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
                                     Color ▶ Background setting below.
                                 </p>
                                 <p>
-                                    Note that the{' '}
+                                    Note that the{ ' ' }
                                     <em>
                                         icon color change will only work with
                                         the Theme palette
-                                    </em>{' '}
+                                    </em>{ ' ' }
                                     of colours.
                                 </p>
                                 <p>
-                                    <strong>Enable the Icon style</strong>{' '}
+                                    <strong>Enable the Icon style</strong>{ ' ' }
                                     button to use list of icon options.
                                 </p>
-                                <button onClick={handleClick}>
+                                <button onClick={ handleClick }>
                                     Show icons
                                 </button>
                             </>
-                        )}
+                        ) }
                     </PanelBody>
-                    <PanelBody title="Size options" initialOpen={true}>
+                    <PanelBody title="Size options" initialOpen={ true }>
                         <SelectControl
                             label="Size"
-                            value={size}
-                            options={[
+                            value={ size }
+                            options={ [
                                 {
-                                    label: __('Default', 'bcgov-block-theme'),
+                                    label: __( 'Default', 'bcgov-block-theme' ),
                                     value: 'regular',
                                 },
                                 {
-                                    label: __('Large', 'bcgov-block-theme'),
+                                    label: __( 'Large', 'bcgov-block-theme' ),
                                     value: 'large',
                                 },
-                            ]}
-                            onChange={(value) => {
-                                setAttributes({ size: value });
-                            }}
+                            ] }
+                            onChange={ ( value ) => {
+                                setAttributes( { size: value } );
+                            } }
                         />
                     </PanelBody>
-                    <PanelBody title="Accessibility" initialOpen={false}>
+                    <PanelBody title="Accessibility" initialOpen={ false }>
                         <TextControl
                             label="ARIA Label"
-                            value={label}
-                            onChange={(value) =>
-                                setAttributes({ label: value })
+                            value={ label }
+                            onChange={ ( value ) =>
+                                setAttributes( { label: value } )
                             }
                         />
                     </PanelBody>
@@ -167,7 +167,7 @@ const addInspectorControl = createHigherOrderComponent((BlockEdit) => {
             </Fragment>
         );
     };
-}, 'withInspectorControl');
+}, 'withInspectorControl' );
 
 addFilter(
     'editor.BlockEdit',
@@ -179,29 +179,29 @@ addFilter(
 	
 	Add additional classes to the block in the editor.
 	*/
-const addClassesToEditor = createHigherOrderComponent((BlockListBlock) => {
-    return (props) => {
+const addClassesToEditor = createHigherOrderComponent( ( BlockListBlock ) => {
+    return ( props ) => {
         const {
             attributes: { size, svgIcon },
             className,
             name,
         } = props;
 
-        if (name !== 'core/button') {
-            return <BlockListBlock {...props} />;
+        if ( name !== 'core/button' ) {
+            return <BlockListBlock { ...props } />;
         }
 
         return (
             <BlockListBlock
-                {...props}
-                className={classnames(className, {
-                    [size]: size,
-                    [svgIcon]: svgIcon,
-                })}
+                { ...props }
+                className={ classnames( className, {
+                    [ size ]: size,
+                    [ svgIcon ]: svgIcon,
+                } ) }
             />
         );
     };
-}, 'addClassesToEditor');
+}, 'addClassesToEditor' );
 
 addFilter(
     'editor.BlockListBlock',

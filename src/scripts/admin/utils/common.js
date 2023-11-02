@@ -22,8 +22,8 @@ export const mediaQueries = [
     { value: 0, label: 'None' },
 ];
 
-export const defaults = (value, defaultValue) => {
-    if (undefined === value) {
+export const defaults = ( value, defaultValue ) => {
+    if ( undefined === value ) {
         value = defaultValue;
     }
     return value;
@@ -35,12 +35,12 @@ export const defaults = (value, defaultValue) => {
  * @param {Element} el  the element to simulate a click on
  */
 /* eslint-disable no-unused-vars */
-export const triggerClick = (el) => {
-    const evt = new window.MouseEvent('click', {
+export const triggerClick = ( el ) => {
+    const evt = new window.MouseEvent( 'click', {
         bubbles: true,
         cancelable: true,
         view: window,
-    });
-    const canceled = !el.dispatchEvent(evt);
+    } );
+    const canceled = ! el.dispatchEvent( evt );
 };
 /* eslint-disable no-unused-vars */

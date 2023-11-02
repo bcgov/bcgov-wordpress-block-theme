@@ -16,6 +16,6 @@ const styles = [
     },
 ];
 
-styles.forEach((style) => {
-    registerBlockStyle('core/navigation', style);
-});
+styles.forEach( ( style ) => {
+    registerBlockStyle( 'core/navigation', style );
+} );
