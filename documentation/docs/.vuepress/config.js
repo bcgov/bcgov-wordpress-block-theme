@@ -11,7 +11,13 @@ export default defineUserConfig({
     // all pages will use the same sidebar
     sidebar: [
       // SidebarItem
-
+      {
+        text: "BCGov Block Theme",
+        collapsible: true,
+        children: [
+          "/Using-BCGov-Block-Theme.md",
+        ]
+      }, 
       // string - page file path
     ],
   }),
