@@ -11,7 +11,7 @@ export default defineUserConfig({
   theme: defaultTheme({
     editLink: false,
     lastUpdated: true,
-    repo: 'https://github.com/bcgov/des-training',
+    repo: 'https://github.com/bcgov/bcgov-wordpress-block-theme',
     repoLabel: 'Github',
     navbar: [
       {
