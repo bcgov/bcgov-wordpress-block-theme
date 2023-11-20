@@ -9,9 +9,21 @@ export default defineUserConfig({
   theme: defaultTheme({
     // sidebar array
     // all pages will use the same sidebar
+    navbar: [
+      {
+        text: 'Home',
+        link: '/',
+      },
+    ],
     sidebar: [
       // SidebarItem
-
+      {
+        collapsable:true,
+        children: [
+          "/wp-creating-pages.md",
+          "/html-editor.md",
+        ]
+      },
       // string - page file path
     ],
   }),
