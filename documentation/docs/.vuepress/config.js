@@ -2,9 +2,7 @@ import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
-import { getDirname, path } from '@vuepress/utils'
 
-console.error(__dirname)
 export default defineUserConfig({
   base: "/bcgov-wordpress-block-theme/",
   lang: "en-US",
@@ -44,10 +42,5 @@ export default defineUserConfig({
         tasklist: true,
       }),
     ],
-    alias: {
-      //'@public': path.resolve(getDirname(import.meta.url), './public'),
-    }
-   
-    
   }),
 });

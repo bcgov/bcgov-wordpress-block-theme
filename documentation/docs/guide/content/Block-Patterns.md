@@ -26,7 +26,8 @@ Many patterns are available for use as part of the default BCGov base theme. The
 
 <img src="/bcgov-wordpress-block-theme/patterns-admin-menu.png" align="right" height="175" hspace="15">
 
-Enabling printing of an imageIn the site admin click on "Patterns", this will bring up the list of custom patterns currently in your site, or it will be empty if starting new.
+## Enabling printing of an image
+In the site admin click on "Patterns", this will bring up the list of custom patterns currently in your site, or it will be empty if starting new.
 
 Use the "Add new" button to begin building a custom pattern. Enter a name for the pattern and then build it as you would any other layout using the blocks or elements you want to include in your custom pattern.
 
@@ -39,7 +40,8 @@ To add your custom pattern to the Pattern chooser, you need to add a new or exis
 
 <img src="/bcgov-wordpress-block-theme/pattern-settings.png" align="right" height="300" hspace="15">
 
-Enabling printing of an imageIf creating a new group enter a "New Pattern Group Name" for your new pattern group and select the group option you just created.
+## Enabling printing of an image
+If creating a new group enter a "New Pattern Group Name" for your new pattern group and select the group option you just created.
 
 Click on the "Publish" button to save your new pattern category.
 
