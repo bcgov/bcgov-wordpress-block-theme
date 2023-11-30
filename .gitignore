@@ -13,3 +13,4 @@ coverage
 .idea
 .temp
 .cache
+/documentation/docs/.vuepress/dist/**
