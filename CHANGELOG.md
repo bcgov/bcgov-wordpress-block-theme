@@ -1,9 +1,10 @@
 # Changelog
-## 1.2.17 Nov 29, 2023
+
+## 1.2.17 Nov 30, 2023
+- Fix dependencies for vuepress builds
+- added template and admin documentation ([DESCW-1654](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1654))
 - Added documentation to vuepress for theme options ([DESCW-1652](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1652))
 - axios upgrade ([DESCW-1733](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1733))
-
-## 1.2.17 Nov 02, 2023
 - Updated node dev-dependencies and dependencies to latest versions ([DESCW-1560](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1560))
 
 

@@ -1,7 +1,7 @@
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 import { searchPlugin } from "@vuepress/plugin-search";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+
 
 export default defineUserConfig({
   base: "/bcgov-wordpress-block-theme/",
@@ -46,9 +46,6 @@ export default defineUserConfig({
     ],
     plugins: [
       searchPlugin({/* options*/}),
-      mdEnhancePlugin({
-        tasklist: true,
-      }),
     ],
   }),
 });
