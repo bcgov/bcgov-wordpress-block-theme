@@ -1,9 +1,3 @@
 {
-    "extends": "@bcgov/webpack-wordpress/.stylelintrc",
-    "ignoreFontFamilies": [ "BCSans" ],
-    "rules" : {
-        "max-line-length": null,
-        "font-weight-notation": "named-where-possible",
-        "selector-id-pattern": null
-    }
+    "extends": "@bcgov/wordpress-stylelintrc/.stylelintrc",
 }
