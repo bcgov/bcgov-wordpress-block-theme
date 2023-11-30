@@ -1,6 +1,12 @@
 # Patterns
 
+::: warning
+WordPress 6.3 renamed Reusable Blocks to Patterns.
+:::
+
 WordPress block patterns are a collection of pre-made design elements that you can use for creating custom content layouts faster. These patterns include items like pre-built multi-column layouts, media and text patterns, call-to-action patterns, headers, buttons, and more.
+
+Patterns may also be synced. Editing a synced pattern will update it anywhere it is used within the site. After creating a synced pattern, it can be detached back to a regular block. Doing this allows you to make changes to that one block. Updates to the synced pattern will have no impact on the detached pattern.
 
 <img src="../../.vuepress/public/add-block-icon.png" align="left" height="50" hspace="15">
 
@@ -15,6 +21,22 @@ You can also view BCGov specific block patterns in different categories like gen
 - Patterns are usually contained in a Group block at its top most level when using the List View.
 - Pre-defined styling can be changed by moving or altering pattern structure while others may cause design failures.
 - Be very cautious moving patterns into other patterns.
+
+## Page Layout Patterns
+There are pre-installed patterns available to get you started with page layout. The categories of patterns available are,
+
+- All Patterns
+- General
+- Page Header/Footer
+- Page Layouts
+- Post Query
+
+::: tip
+There are two optional pattern groups available. To enable them you must go to the **WP Admin panel > Appearance > Theme Options**. Toggle 'Enable all styles' in the Styles and Patterns section.
+- Optional Banners
+- Optional General
+::: 
+
 
 ## BCGov Block Patterns
 
