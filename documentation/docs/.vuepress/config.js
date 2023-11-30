@@ -1,7 +1,7 @@
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 import { searchPlugin } from "@vuepress/plugin-search";
-import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
+
 
 export default defineUserConfig({
   base: "/bcgov-wordpress-block-theme/",
@@ -11,12 +11,16 @@ export default defineUserConfig({
   theme: defaultTheme({
     editLink: false,
     lastUpdated: true,
-    repo: 'https://github.com/bcgov/des-training',
+    repo: 'https://github.com/bcgov/bcgov-wordpress-block-theme',
     repoLabel: 'Github',
     navbar: [
       {
         text: 'Home',
         link: '/',
+      },
+      {
+        text: 'Templates',
+        link: '/guide/content/wp-templates.md',
       },
       {
         text: 'Settings',
@@ -34,13 +38,14 @@ export default defineUserConfig({
           '/guide/content/Printing.md',
           '/guide/content/Accessibility.md'
         ]
-      }
+      },
+      {
+        text: 'Admin Pages',
+        link: '/guide/content/wp-admin.md'
+      },
     ],
     plugins: [
       searchPlugin({/* options*/}),
-      mdEnhancePlugin({
-        tasklist: true,
-      }),
     ],
   }),
 });

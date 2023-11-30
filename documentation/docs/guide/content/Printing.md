@@ -2,7 +2,7 @@
 
 ## Enabling images to print
 
-<img src="/image-print-settings.png" align="right" hspace="15">
+<img src="../../.vuepress/public/image-print-settings.png" align="right" hspace="15">
 
 To show an image when printing, or set the width of the image on a printed page, follow these steps:
 

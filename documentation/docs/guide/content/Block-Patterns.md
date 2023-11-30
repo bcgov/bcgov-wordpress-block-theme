@@ -1,8 +1,14 @@
 # Patterns
 
+::: warning
+WordPress 6.3 renamed Reusable Blocks to Patterns.
+:::
+
 WordPress block patterns are a collection of pre-made design elements that you can use for creating custom content layouts faster. These patterns include items like pre-built multi-column layouts, media and text patterns, call-to-action patterns, headers, buttons, and more.
 
-<img src="/add-block-icon.png" align="left" height="50" hspace="15">
+Patterns may also be synced. Editing a synced pattern will update it anywhere it is used within the site. After creating a synced pattern, it can be detached back to a regular block. Doing this allows you to make changes to that one block. Updates to the synced pattern will have no impact on the detached pattern.
+
+<img src="../../.vuepress/public/add-block-icon.png" align="left" height="50" hspace="15">
 
 To use block patterns, you need to edit the WordPress post or page where you want to use the block pattern. On the page/post edit screen, click on the Add Block button to open the block inserter. From there, switch to the Patterns tab to view available block patterns.
 
@@ -16,6 +22,22 @@ You can also view BCGov specific block patterns in different categories like gen
 - Pre-defined styling can be changed by moving or altering pattern structure while others may cause design failures.
 - Be very cautious moving patterns into other patterns.
 
+## Page Layout Patterns
+There are pre-installed patterns available to get you started with page layout. The categories of patterns available are,
+
+- All Patterns
+- General
+- Page Header/Footer
+- Page Layouts
+- Post Query
+
+::: tip
+There are two optional pattern groups available. To enable them you must go to the **WP Admin panel > Appearance > Theme Options**. Toggle 'Enable all styles' in the Styles and Patterns section.
+- Optional Banners
+- Optional General
+::: 
+
+
 ## BCGov Block Patterns
 
 Patterns are separated into different categories such as General, Banners, Header/Footer, Page Layout, Post Queries, etc. These categories are used to separate intended purpose and also keep the list of patterns from getting too large and inhibit browsing. Should you know the name of a pattern you can use the search tool in the Block Inserter to filter and find the one you need.
@@ -24,7 +46,7 @@ Many patterns are available for use as part of the default BCGov base theme. The
 
 ## Creating Custom Patterns
 
-<img src="/patterns-admin-menu.png" align="right" height="175" hspace="15">
+<img src="../../.vuepress/public/patterns-admin-menu.png" align="right" height="175" hspace="15">
 
 ## Enabling printing of an image
 In the site admin click on "Patterns", this will bring up the list of custom patterns currently in your site, or it will be empty if starting new.
@@ -38,7 +60,7 @@ Once you've arranged the blocks to your liking, click on the "Publish" button to
 
 To add your custom pattern to the Pattern chooser, you need to add a new or existing "Pattern Group" located on the Custom Pattern tab of the block inspector area. Click on the "Add New Pattern Group" link or choose from any of the options listed.
 
-<img src="/pattern-settings.png" align="right" height="300" hspace="15">
+<img src="../../.vuepress/public/pattern-settings.png" align="right" height="300" hspace="15">
 
 ## Enabling printing of an image
 If creating a new group enter a "New Pattern Group Name" for your new pattern group and select the group option you just created.

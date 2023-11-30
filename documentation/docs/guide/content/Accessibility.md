@@ -2,7 +2,7 @@
 
 ## Adding Aria Labels to Buttons
 
-<img src="/aria-labels.png" align="right" height="125" alt="Shows input control to add aria label">
+<img src="../../.vuepress/public/aria-labels.png" align="right" height="125" alt="Shows input control to add aria label">
 
 Aria labels, or Accessible Rich Internet Applications (ARIA) labels, should be used to enhance the accessibility of web content for users with disabilities. To this end when using buttons an option to add an Aria label is available in the Block Inspector panel.
 
