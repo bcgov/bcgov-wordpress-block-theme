@@ -2,7 +2,7 @@
 
 WordPress block patterns are a collection of pre-made design elements that you can use for creating custom content layouts faster. These patterns include items like pre-built multi-column layouts, media and text patterns, call-to-action patterns, headers, buttons, and more.
 
-<img src="/add-block-icon.png" align="left" height="50" hspace="15">
+<img src="../../.vuepress/public/add-block-icon.png" align="left" height="50" hspace="15">
 
 To use block patterns, you need to edit the WordPress post or page where you want to use the block pattern. On the page/post edit screen, click on the Add Block button to open the block inserter. From there, switch to the Patterns tab to view available block patterns.
 
@@ -24,7 +24,7 @@ Many patterns are available for use as part of the default BCGov base theme. The
 
 ## Creating Custom Patterns
 
-<img src="/patterns-admin-menu.png" align="right" height="175" hspace="15">
+<img src="../../.vuepress/public/patterns-admin-menu.png" align="right" height="175" hspace="15">
 
 ## Enabling printing of an image
 In the site admin click on "Patterns", this will bring up the list of custom patterns currently in your site, or it will be empty if starting new.
@@ -38,7 +38,7 @@ Once you've arranged the blocks to your liking, click on the "Publish" button to
 
 To add your custom pattern to the Pattern chooser, you need to add a new or existing "Pattern Group" located on the Custom Pattern tab of the block inspector area. Click on the "Add New Pattern Group" link or choose from any of the options listed.
 
-<img src="/pattern-settings.png" align="right" height="300" hspace="15">
+<img src="../../.vuepress/public/pattern-settings.png" align="right" height="300" hspace="15">
 
 ## Enabling printing of an image
 If creating a new group enter a "New Pattern Group Name" for your new pattern group and select the group option you just created.

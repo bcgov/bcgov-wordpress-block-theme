@@ -2,7 +2,7 @@
 
 ## Top Admin Bar
 
-<img src="./md-assets/top-admin-bar.png" width="75%">
+<img src="../../.vuepress/public/top-admin-bar.png" />
 
 Key Navigation / Shortcut Icons
 
@@ -18,7 +18,7 @@ After logging in to the site, the initial main menu is visible.
 
 ## Admin Sidebar
 
-<img src="./md-assets/admin-sidebar.png" align="left" hspace="10">
+<img src="../../.vuepress/public/admin-sidebar.png" align="left" hspace="10">
 
 
 **Dashboard** – Displays an overview of site health, content changes, etc. Info boxes can be arranged to your liking.
@@ -62,8 +62,8 @@ To view all the Posts in your site:
 - Log in to your WordPress admin screen.
 - Click Posts in the left sidebar. This will show the Posts screen with a list of all the pages you have in your site.
  
-<img src="./md-assets/posts-admin.png" >
-<img src="./md-assets/pages-admin.png" >
+<img src="../../.vuepress/public/posts-admin.png" >
+<img src="../../.vuepress/public/pages-admin.png" >
 
 1. Search for content based on the Post Title.
 2. Perform Bulk actions > Edit or Move to Trash by selecting multiple Posts/Pages from the list.
@@ -74,4 +74,4 @@ To view all the Posts in your site:
 
 An example of the quick edit options screen.
 
-<img src="./md-assets/quick-edit.png" >
+<img src="../../.vuepress/public/quick-edit.png" >

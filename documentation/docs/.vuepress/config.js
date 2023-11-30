@@ -19,6 +19,10 @@ export default defineUserConfig({
         link: '/',
       },
       {
+        text: 'Templates',
+        link: '/guide/content/wp-templates.md',
+      },
+      {
         text: 'Settings',
         children: [
           '/guide/setting/Using-BCGov-Block-Theme.md',
@@ -34,7 +38,11 @@ export default defineUserConfig({
           '/guide/content/Printing.md',
           '/guide/content/Accessibility.md'
         ]
-      }
+      },
+      {
+        text: 'Admin Pages',
+        link: '/guide/content/wp-admin.md'
+      },
     ],
     plugins: [
       searchPlugin({/* options*/}),
