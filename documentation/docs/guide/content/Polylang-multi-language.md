@@ -13,15 +13,15 @@ With the Language switcher block in place choose the display options that best s
 
  **Note the 'Displays as a dropdown' option must be deactivated to behave as a menu rather than a select box in sites that use the 'ribbon navigation' template part.** 
 
-<img src="/bcgov-wordpress-block-theme/ls-block-list.png" height="250">
-<img src="/bcgov-wordpress-block-theme/ls-block-options.png" height="250" hspace="15">
-<img src="/bcgov-wordpress-block-theme/ls-block-options-2.png" height="250">
+<img src="/ls-block-list.png" height="250">
+<img src="/ls-block-options.png" height="250" hspace="15">
+<img src="/ls-block-options-2.png" height="250">
 
 ### Polylang translation of template parts
 
 On sites where you wish to translate page elements in the header, footer or menus, if they are based on template parts, you will need to decouple (or detach) them from the template part system prior to adding a translation.
 
-<img src="/bcgov-wordpress-block-theme/detach-template-part.png" height="500">
+<img src="/detach-template-part.png" height="500">
 
 Detach the template part prior to translation – this is typically done in the Full Site Editor area under  **Appearance > Editor (beta).** 
 

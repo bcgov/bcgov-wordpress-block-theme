@@ -14,15 +14,15 @@ More detail on these features can be found on the  **Appearance > Theme Options*
 
 Some features will need to be turned on to become available to the admin environment. These include the Custom Notice Banner feature and the Custom Patterns. Such available options will change over time, so be sure to review this area to determine the latest settings available to the BCGov Block Theme environment. These will be turned off by default in a new installation. For more information on these options see their respective sections below.
 
-<img height="150" src="/bcgov-wordpress-block-theme/settings-admin-menu.png">
-<img height="150" src="/bcgov-wordpress-block-theme/bcgov-block-theme-settings.png">
+<img height="150" src="/settings-admin-menu.png">
+<img height="150" src="/bcgov-block-theme-settings.png">
 
 Other settings for admin enabling options in the Block Theme can be found on the  **BCGov Block Theme Settings**  page
 
 ## General editing and layout
 ### Understanding the role of margins and padding in the WordPress editor
 
-<img src="/bcgov-wordpress-block-theme/padding-margin-settings.png" align="right" height="500" hspace="30" title="Using sliders to set padding and margin">
+<img src="/padding-margin-settings.png" align="right" height="500" hspace="30" title="Using sliders to set padding and margin">
 
 The WordPress environment allows for responsive padding and margins by using the slider mechanism.
 
@@ -41,7 +41,7 @@ The link sides icon allows you to choose to apply the same settings to all sides
 
 ### Fluid Typography
 
-<img src="/bcgov-wordpress-block-theme/fluid-typography.png" align="right" height="125">
+<img src="/fluid-typography.png" align="right" height="125">
 
 This feature enables font sizes to adapt to changes in screen size, for example, by growing larger as the viewport width increases, or smaller as it decreases. You will find this control in most text based block inspector options.
 
@@ -64,16 +64,16 @@ Buttons are used extensively as key drivers of linking to other pages and conten
 
 Colour palettes for the BCGov Block Theme are made up of 24 predefined colours. Any additional Active Site options will also include a palette with an equivalent number of colours in order to make the patterns usable across sites. An associated group of Gradients based on the 16 essential custom colours in the colour palette are also available.
 
-<img src="/bcgov-wordpress-block-theme/BCGOV-Colour-Palette-Swatches.jpg" height="300">
-<img src="/bcgov-wordpress-block-theme/BCGOV-Gradients-Swatches.jpg" height="300">
-<img src="/bcgov-wordpress-block-theme/CleanBC-Colour-Palette-Swatches.jpg" height="300">
-<img src="/bcgov-wordpress-block-theme/CleanBC-Gradients-Swatches.jpg" height="300">
+<img src="/BCGOV-Colour-Palette-Swatches.jpg" height="300">
+<img src="/BCGOV-Gradients-Swatches.jpg" height="300">
+<img src="/CleanBC-Colour-Palette-Swatches.jpg" height="300">
+<img src="/CleanBC-Gradients-Swatches.jpg" height="300">
 
 It should be noted that most blocks and patterns can be modified in the editor to override colour or gradient palette options to accommodate specific customisation needs.
 
 ### Instructions
 
-<img src="/bcgov-wordpress-block-theme/style-icon.png" align="left" height="50" hspace="15">
+<img src="/style-icon.png" align="left" height="50" hspace="15">
 
 Global Styles Switcher allows users to switch the theme defaults to alternate colour palettes. Open Appearance > Editor in the admin. You should see the theme variations in the global styles switcher by clicking on the styles icon in the top right corner.
 

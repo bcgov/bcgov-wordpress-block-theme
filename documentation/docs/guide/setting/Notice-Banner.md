@@ -4,7 +4,7 @@ A notification banner on a website is a useful tool that can serve various purpo
 
 The Custom Notice Banner can be enabled in the BCGov Block Theme Settings page and is to be used when a notification banner is required to relay a message of some importance. When enabling the notification banner on the website, it is essential to ensure that the message is clear and concise and does not detract from the overall purpose of the site itself.
 
-<img src="/bcgov-wordpress-block-theme/notice-settings.png">
+<img src="/notice-settings.png">
 
 Settings for the custom notice banner
 
