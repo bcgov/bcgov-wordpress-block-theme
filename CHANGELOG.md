@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.18 Dec 06, 2023
+- Fix documentation page redirect ([DESCW-1783](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1783))
+
 ## 1.2.17 Nov 30, 2023
 - Fix dependencies for vuepress builds
 - added template and admin documentation ([DESCW-1654](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1654))
