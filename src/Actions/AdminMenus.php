@@ -64,8 +64,10 @@ class AdminMenus {
 	 * @return void
 	 */
 	public function bcgov_block_theme_documentation_display() {
-		wp_safe_redirect( 'https://bcgov.github.io/bcgov-wordpress-block-theme/' );
-		exit;
+		?>
+		<h2>BCGov Block Theme</h2>
+		<a href="https://bcgov.github.io/bcgov-wordpress-block-theme/" class="button button-primary button-hero" style="text-decoration: none;" target="_blank">View Documentation</a>
+		<?php
 	}
 
 	/**

@@ -20,8 +20,7 @@ use Bcgov\Theme\Block\Filters\{
     ButtonEnhanced,
     ImageEnhanced,
     MediaTextEnhanced,
-    SiteLogoEnhanced,
-    AllowedHosts
+    SiteLogoEnhanced
 };
 
 
@@ -56,7 +55,6 @@ class Setup {
         $filter_image_enhanced     = new ImageEnhanced();
         $filter_mediatext_enhanced = new MediaTextEnhanced();
         $filter_sitelogo_enhanced  = new SiteLogoEnhanced();
-        $filter_redirect_hosts     = new AllowedHosts();
 
         add_action( 'acf/init', [ $theme_admin_options, 'bcgov_block_theme_acf_init_block_types' ] );
         add_action( 'admin_enqueue_scripts', [ $theme_enqueue_and_inject, 'bcgov_block_theme_enqueue_admin_scripts' ] );
@@ -87,7 +85,6 @@ class Setup {
         add_filter( 'render_block', [ $filter_image_enhanced, 'add_image_attributes' ], 10, 2 );
         add_filter( 'render_block', [ $filter_mediatext_enhanced, 'add_media_text_attributes' ], 10, 2 );
         add_filter( 'render_block', [ $filter_sitelogo_enhanced, 'add_site_logo_attributes' ], 10, 2 );
-        add_filter( 'allowed_redirect_hosts', [ $filter_redirect_hosts, 'add_allowed_redirect_hosts' ], 10, 2 );
 
         remove_theme_support( 'core-block-patterns' );
     }
