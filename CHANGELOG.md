@@ -1,4 +1,6 @@
 # Changelog
+## 1.2.19 Jan 02, 2023
+- Add menu item for documentation visible to users with 'edit_posts' capability ([DESCW-1859](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1859))
 
 ## 1.2.18 Dec 06, 2023
 - Fix documentation page redirect ([DESCW-1783](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1783))
@@ -9,7 +11,6 @@
 - Added documentation to vuepress for theme options ([DESCW-1652](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1652))
 - axios upgrade ([DESCW-1733](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1733))
 - Updated node dev-dependencies and dependencies to latest versions ([DESCW-1560](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1560))
-
 
 ## 1.2.16 Oct 31, 2023
 - Upgraded @wordpress/scripts to fix vulnerability with @babel/traverse ([DESCW-1629](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1629))
