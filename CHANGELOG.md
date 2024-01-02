@@ -1,6 +1,6 @@
 # Changelog
 ## 1.2.19 Jan 02, 2023
-- Add menu item for documentation visible to users with 'edit_others_posts' capability ([DESCW-1859](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1859))
+- Add menu item for documentation visible to users with 'edit_posts' capability ([DESCW-1859](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1859))
 
 ## 1.2.18 Dec 06, 2023
 - Fix documentation page redirect ([DESCW-1783](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1783))

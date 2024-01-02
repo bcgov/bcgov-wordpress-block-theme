@@ -28,7 +28,7 @@ class AdminMenus {
         add_menu_page(
             __( 'Using BCGov Block Theme', 'bcgov-block-theme' ),
             __( 'Using the BCGov Block Theme', 'bcgov-block-theme' ),
-            'edit_others_posts',
+            'edit_posts',
             'bcgov-block-theme-docs',
             [ $this, 'bcgov_block_theme_documentation_display' ],
             'dashicons-welcome-learn-more'
