@@ -1,14 +1,14 @@
-import { qs, qsa } from './utils';
+import { qs, qsa, addSafeEventListener } from './utils';
 
 /**
  * Accessibility DOM manipulation.
  * [@return](https://github.com/return) {void}
  */
-const domReady = () => {
+const bcgovBlockThemeAccessibility = () => {
     /*
-     * SafarIE bug requires 0ms timeout.
+     * SafarIE iOS requires window.requestAnimationFrame update.
      */
-    setTimeout( function () {
+    window.requestAnimationFrame( () => {
         const bodyInsertion = qs( 'body' ).firstChild;
         const skipNav = qs( '.skip-nav-menu' );
 
@@ -79,11 +79,15 @@ const domReady = () => {
                 observer.observe( mainMenu, config );
             }
         }
-    }, 0 );
+    } );
 };
 
 if ( 'complete' === document.readyState ) {
-    domReady();
+    bcgovBlockThemeAccessibility();
 } else {
-    document.addEventListener( 'DOMContentLoaded', domReady );
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemeAccessibility()
+    );
 }

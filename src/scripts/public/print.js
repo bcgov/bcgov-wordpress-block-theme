@@ -1,14 +1,14 @@
-import { createElement, qs, qsa } from './utils';
+import { createElement, qs, qsa, addSafeEventListener } from './utils';
 
 /**
  * Print mode manipulation.
  * [@return](https://github.com/return) {void}
  */
-const domReady = () => {
+const bcgovBlockThemePrint = () => {
     /*
-     * SafarIE bug requires 0ms timeout.
+     * SafarIE iOS requires window.requestAnimationFrame update.
      */
-    setTimeout( function () {
+    window.requestAnimationFrame( () => {
         const siteLogo = qs( '.wp-block-site-logo img' );
         const siteName = qs( '.wp-block-site-title' );
 
@@ -98,11 +98,15 @@ const domReady = () => {
 
         // Initial check
         handlePrintChange( printMediaQuery );
-    }, 0 );
+    } );
 };
 
 if ( 'complete' === document.readyState ) {
-    domReady();
+    bcgovBlockThemePrint();
 } else {
-    document.addEventListener( 'DOMContentLoaded', domReady );
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemePrint()
+    );
 }

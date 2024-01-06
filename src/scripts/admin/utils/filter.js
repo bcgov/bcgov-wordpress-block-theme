@@ -1,13 +1,13 @@
-import { qs } from '../../public/utils';
+import { qs, addSafeEventListener } from '../../public/utils';
 
 /**
  * WordPress Admin DOM manipulation.
  */
-const domReady = () => {
+const bcgovBlockThemeFilter = () => {
     /*
-     * SafarIE bug requires 0ms timeout.
+     * SafarIE iOS requires window.requestAnimationFrame update.
      */
-    setTimeout( function () {
+    window.requestAnimationFrame( () => {
         const body = qs( 'body' );
         const wpCustomiser = body.classList.contains( 'wp-customizer' );
 
@@ -28,11 +28,15 @@ const domReady = () => {
                 wpAdditionalCSSHeadline.innerHTML = `Custom class: <strong>body.custom-${ window.site.customBodyClass }</strong>`;
             }
         }
-    }, 0 );
+    } );
 };
 
 if ( 'complete' === document.readyState ) {
-    domReady();
+    bcgovBlockThemeFilter();
 } else {
-    document.addEventListener( 'DOMContentLoaded', domReady );
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemeFilter()
+    );
 }

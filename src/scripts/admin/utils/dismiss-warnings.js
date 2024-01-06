@@ -1,4 +1,4 @@
-import { qsa } from '../../public/utils';
+import { qsa, addSafeEventListener } from '../../public/utils';
 
 /**
  * Admin code for dismissing notifications.
@@ -11,7 +11,7 @@ import { qsa } from '../../public/utils';
  */
 ( function () {
     'use strict';
-    document.addEventListener( 'DOMContentLoaded', function () {
+    addSafeEventListener( document, 'DOMContentLoaded', function () {
         const notices = qsa( '.bcgov-block-theme-notice' );
         notices.forEach( function ( notice ) {
             notice.addEventListener( 'click', function ( event ) {

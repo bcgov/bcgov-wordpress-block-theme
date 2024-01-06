@@ -1,20 +1,21 @@
-import { qs, qsa } from '../../utils';
+import { qs, qsa, addSafeEventListener } from '../../utils';
 
 /**
- * General CleanBC DOM manipulation.
+ * CleanBC General DOM manipulation.
+ * [@return](https://github.com/return) {void}
  */
-const domReady = () => {
-    // Only run for CleanBC or sites that use all styles.
-    // window.pluginCleanbc is injected by the BCGov Frontend Supplemental: CleanBC plugin
-    if ( undefined !== window.pluginCleanbc ) {
-        if (
-            'optional' === window.pluginCleanbc.siteName ||
-            window.site.allSiteStyles
-        ) {
-            /*
-             * SafarIE bug requires 0ms timeout.
-             */
-            setTimeout( function () {
+const bcgovBlockThemeCleanbcDomLoader = () => {
+    /*
+     * SafarIE iOS requires window.requestAnimationFrame update.
+     */
+    window.requestAnimationFrame( () => {
+        // Only run for CleanBC or sites that use all styles.
+        // window.pluginCleanbc is injected by the BCGov Frontend Supplemental: CleanBC plugin
+        if ( undefined !== window.pluginCleanbc ) {
+            if (
+                'optional' === window.pluginCleanbc.siteName ||
+                window.site.allSiteStyles
+            ) {
                 // CleanBC Icon Buttons
                 const iconButtons = qsa( 'a.icon' );
                 if ( iconButtons.length ) {
@@ -48,13 +49,17 @@ const domReady = () => {
                     // Do nothing for now – will remove if not needed.
                 };
                 window.addEventListener( 'scroll', cleanbcWindowScroll );
-            }, 0 );
+            }
         }
-    }
+    } );
 };
 
 if ( 'complete' === document.readyState ) {
-    domReady();
+    bcgovBlockThemeCleanbcDomLoader();
 } else {
-    document.addEventListener( 'DOMContentLoaded', domReady );
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemeCleanbcDomLoader()
+    );
 }

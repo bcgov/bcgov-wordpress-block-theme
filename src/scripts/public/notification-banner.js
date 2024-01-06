@@ -1,14 +1,14 @@
-import { createElement, qs } from './utils';
+import { createElement, qs, addSafeEventListener } from './utils';
 
 /**
- * General Block Theme window event management and DOM manipulation.
+ * General Block Theme Notification banner DOM manipulation.
  * [@return](https://github.com/return) {void}
  */
-const domReady = () => {
+const bcgovBlockThemeNotificationBanner = () => {
     /*
-     * SafarIE bug requires 0ms timeout.
+     * SafarIE iOS requires window.requestAnimationFrame update.
      */
-    setTimeout( function () {
+    window.requestAnimationFrame( () => {
         const body = qs( 'body' );
         let notificationEnabled =
             '1' === window.site.noticeEnabled ? true : false;
@@ -110,11 +110,15 @@ const domReady = () => {
                 notificationContentInner
             );
         }
-    }, 0 );
+    } );
 };
 
 if ( 'complete' === document.readyState ) {
-    domReady();
+    bcgovBlockThemeNotificationBanner();
 } else {
-    document.addEventListener( 'DOMContentLoaded', domReady );
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemeNotificationBanner()
+    );
 }

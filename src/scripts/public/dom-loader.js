@@ -4,11 +4,11 @@ import { qs, unEscapeCSS, addSafeEventListener } from './utils';
  * General Block Theme window event management and DOM manipulation.
  * [@return](https://github.com/return) {void}
  */
-const domReady = () => {
+const bcgovBlockThemeDomLoader = () => {
     /*
-     * SafarIE bug requires 0ms timeout.
+     * SafarIE iOS requires window.requestAnimationFrame update.
      */
-    setTimeout( function () {
+    window.requestAnimationFrame( () => {
         /**
          * Add siteName body classes and modify DOM placement of breadcrumb after first banner.
          */
@@ -18,7 +18,8 @@ const domReady = () => {
         if ( wpAdmin ) return;
 
         const home = body.classList.contains( 'home' );
-        const header = qs( '.bcgov-site-header' );
+        const headerGroup = qs( 'header' );
+        const header = qs( '.bcgov-header-group' );
         const isGovLogo = qs( '.wp-block-site-logo' );
         const footer = qs( 'footer' );
         const postContent = qs( '.wp-block-post-content' );
@@ -28,14 +29,30 @@ const domReady = () => {
             customCSS.innerText = unEscapeCSS( customCSS.innerText );
         }
 
-        /*
-         * Set the scroll padding to the height of the header
-         */
-        const headerHeight = header.offsetHeight;
-        document.documentElement.style.setProperty(
-            '--scroll-padding',
-            headerHeight + 'px'
-        );
+        window.requestAnimationFrame( () => {
+            /*
+             * Set the scroll padding to the height of the header
+             */
+            document.documentElement.style.setProperty(
+                '--scroll-padding',
+                headerGroup + 'px'
+            );
+            const headerGroupHeight = window
+                .getComputedStyle( headerGroup )
+                .getPropertyValue( 'height' );
+            const headerHeight = window
+                .getComputedStyle( header )
+                .getPropertyValue( 'height' );
+
+            if (
+                ( headerGroupHeight === '0px' ) === '0px' &&
+                headerHeight !== '0px'
+            ) {
+                body.style.paddingTop = headerGroupHeight;
+            } else if ( headerGroupHeight === '0px' ) {
+                body.style.paddingTop = headerHeight;
+            }
+        } );
 
         let bannerElement = null;
         if ( null !== postContent ) {
@@ -212,13 +229,17 @@ const domReady = () => {
         };
 
         addSafeEventListener( document, 'scroll', windowScroll );
-    }, 0 );
+    } );
 };
 
 if ( 'complete' === document.readyState ) {
-    domReady();
+    bcgovBlockThemeDomLoader();
 } else {
-    document.addEventListener( 'DOMContentLoaded', domReady );
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemeDomLoader()
+    );
 }
 
 /* Helper functions */
