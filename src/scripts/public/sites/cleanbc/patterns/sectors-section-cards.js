@@ -1,14 +1,15 @@
-import { qs, qsa } from '../../../utils';
+import { qs, qsa, addSafeEventListener } from '../../../utils';
 
 /**
- * Actions Accordion manipulation.
+ * CleanBC Sectors captions and link manipulation.
+ * [@return](https://github.com/return) {void}
  */
-const domReady = () => {
+const bcgovBlockThemeCleanbcSectorsSectionCards = () => {
     /*
-     * SafarIE bug requires 0ms timeout.
+     * SafarIE iOS requires window.requestAnimationFrame update.
      */
-    if ( qs( '.in-page-sectors-section' ) ) {
-        setTimeout( function () {
+    window.requestAnimationFrame( () => {
+        if ( qs( '.in-page-sectors-section' ) ) {
             const elCaptionContainers = qsa(
                 '.in-page-sectors-section .wp-block-column'
             );
@@ -36,12 +37,16 @@ const domReady = () => {
                     } );
                 }
             } );
-        }, 0 );
-    }
+        }
+    } );
 };
 
 if ( 'complete' === document.readyState ) {
-    domReady();
+    bcgovBlockThemeCleanbcSectorsSectionCards();
 } else {
-    document.addEventListener( 'DOMContentLoaded', domReady );
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemeCleanbcSectorsSectionCards()
+    );
 }

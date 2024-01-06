@@ -1,14 +1,15 @@
-import { qs, qsa } from '../../../utils';
+import { qs, qsa, addSafeEventListener } from '../../../utils';
 import { triggerClick } from '../../../../admin/utils/common';
 
 /**
- * Actions Toggle manipulation.
+ * CleanBC Actions Toggle manipulation.
+ * [@return](https://github.com/return) {void}
  */
-const domReady = () => {
+const bcgovBlockThemeCleanbcActionsToggle = () => {
     /*
-     * SafarIE bug requires 0ms timeout.
+     * SafarIE iOS requires window.requestAnimationFrame update.
      */
-    setTimeout( function () {
+    window.requestAnimationFrame( () => {
         const elActionToggleButtons = qsa(
             '.actions-toggle-buttons .wp-block-button'
         );
@@ -154,7 +155,7 @@ const domReady = () => {
                 }
             } );
         }
-    }, 0 );
+    } );
 
     function countActiveProjects() {
         const elAccordionItems = qsa(
@@ -222,7 +223,11 @@ const domReady = () => {
 };
 
 if ( 'complete' === document.readyState ) {
-    domReady();
+    bcgovBlockThemeCleanbcActionsToggle();
 } else {
-    document.addEventListener( 'DOMContentLoaded', domReady );
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemeCleanbcActionsToggle()
+    );
 }

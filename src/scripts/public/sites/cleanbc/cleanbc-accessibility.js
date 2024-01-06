@@ -1,13 +1,14 @@
-import { qs, qsa } from '../../utils';
+import { qs, qsa, addSafeEventListener } from '../../utils';
 
 /**
- * Accessibility DOM manipulation.
+ * CleanBC Accessibility DOM manipulation.
+ * [@return](https://github.com/return) {void}
  */
-const domReady = () => {
+const bcgovBlockThemeCleanBCAccessibility = () => {
     /*
-     * SafarIE bug requires 0ms timeout.
+     * SafarIE iOS requires window.requestAnimationFrame update.
      */
-    setTimeout( function () {
+    window.requestAnimationFrame( () => {
         if ( qs( '.actions-accordion-header' ) ) {
             const getSiblings = function ( elem ) {
                 // Setup siblings array and get the first sibling
@@ -39,11 +40,15 @@ const domReady = () => {
                 label.remove();
             } );
         }
-    }, 0 );
+    } );
 };
 
 if ( 'complete' === document.readyState ) {
-    domReady();
+    bcgovBlockThemeCleanBCAccessibility();
 } else {
-    document.addEventListener( 'DOMContentLoaded', domReady );
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemeCleanBCAccessibility()
+    );
 }

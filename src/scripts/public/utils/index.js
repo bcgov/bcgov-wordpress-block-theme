@@ -143,23 +143,21 @@ export function unEscapeCSS( cssStr ) {
 /**
  * Safely adds an event listener to a target element.
  *
- * @param {EventTarget | object} target - The target element to which the event listener will be added.
- * @param {string} type - A string representing the event type to listen for (e.g., 'click', 'resize').
- * @param {Function | object} listener - The event listener function or object.
+ * @param {EventTarget | object} el - The target element to which the event listener will be added.
+ * @param {string} event - A string representing the event type to listen for (e.g., 'click', 'resize').
+ * @param {Function | object} handler - The event listener function or object.
  * @param {boolean | object} [options] - An optional object specifying options for the event listener.
  * @throws {Error} Throws an error if the target is not a valid element or if it doesn't support addEventListener.
  */
-export function addSafeEventListener( target, type, listener, options ) {
-    if (
-        ! target ||
-        ( typeof target.addEventListener !== 'function' &&
-            typeof target.on !== 'function' )
-    )
-        return;
-
-    if ( typeof target.addEventListener === 'function' ) {
-        target.addEventListener( type, listener, options );
-    } else if ( typeof target.on === 'function' ) {
-        target.on( type, listener );
+export function addSafeEventListener( el, event, handler, options ) {
+    if ( el && typeof el.addEventListener === 'function' ) {
+        // Call the original function
+        el.addEventListener( event, handler, options );
+    } else {
+        /* eslint-disable no-console */
+        console.warn(
+            'el is not a valid EventTarget or does not support addEventListener'
+        );
+        /* eslint-enable no-console */
     }
 }

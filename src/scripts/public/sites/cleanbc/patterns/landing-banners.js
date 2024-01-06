@@ -1,13 +1,14 @@
-import { qsa } from '../../../utils';
+import { qsa, addSafeEventListener } from '../../../utils';
 
 /**
- * Landing banners manipulation.
+ * CleanBC Landing banners manipulation.
+ * [@return](https://github.com/return) {void}
  */
-const domReady = () => {
+const bcgovBlockThemeLandingBanners = () => {
     /*
-     * SafarIE bug requires 0ms timeout.
+     * SafarIE iOS requires window.requestAnimationFrame update.
      */
-    setTimeout( function () {
+    window.requestAnimationFrame( () => {
         /*
          * Add a clip path SVG to create a mask on landing banner ::before elements.
          * Works in conjuction with .landing-cover-banner styles in _cleanbc--patterns-banners.scss.
@@ -45,11 +46,15 @@ const domReady = () => {
             clipElementDefs.appendChild( clipElementClipPath );
             clipElementClipPath.appendChild( clipElementPath );
         }
-    }, 0 );
+    } );
 };
 
 if ( 'complete' === document.readyState ) {
-    domReady();
+    bcgovBlockThemeLandingBanners();
 } else {
-    document.addEventListener( 'DOMContentLoaded', domReady );
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemeLandingBanners()
+    );
 }
