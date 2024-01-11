@@ -1,4 +1,7 @@
 # Changelog
+## 1.2.20 Jan 11, 2024
+- Add setting for adding site specific documentation which will show on the 'Using the BCGov Block Theme' page if set. ([DESCW-1802](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1802))
+
 ## 1.2.19 Jan 05, 2024
 - Update front end scripts to utilise unique arrow function naming and window.requestAnimationFrame execution – removing previous setTimeout 0 – to modify the DOM and align with the browser's rendering cycle. Brings Block Theme scripts inline with BuyBC and ClenBC Block Theme plugin methods. ([ENG-109](https://apps.itsm.gov.bc.ca/jira/browse/ENG-109))
 - Includes a new addSafeEventListener utility function update and related tests used to fix external links icon issues and fixes outstanding body and navigation padding issues. ([CLEANBC-154](https://apps.nrs.gov.bc.ca/int/jira/browse/CLEANBC-154))
