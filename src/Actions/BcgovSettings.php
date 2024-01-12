@@ -140,7 +140,7 @@ class BcgovSettings {
         register_setting(
             'bcgov-settings-group',
             'bcgov_documentation_url_settings',
-            [ $this, 'sanitize_text_field' ]
+            'sanitize_text_field'
         );
 
         // Add settings sections:
