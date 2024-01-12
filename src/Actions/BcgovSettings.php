@@ -48,7 +48,7 @@ class BcgovSettings {
             die( esc_html( __( 'You do not have sufficient permissions to access this page.' ) ) );
         }
 
-		// Check if the nonce field is set in the $_POST data.
+		// Check if the site name nonce field is set in the $_POST data.
 		if ( isset( $_POST['bcgov_google_site_name_nonce'] ) ) {
 
 			if ( wp_verify_nonce( $nonce, 'bcgov_google_site_name_nonce' ) ) {
@@ -59,10 +59,24 @@ class BcgovSettings {
 			}
 		}
 
+        // Check if the documentation url nonce field is set in the $_POST data.
+		if ( isset( $_POST['bcgov_documentation_url_nonce'] ) ) {
+
+			if ( wp_verify_nonce( $doc_nonce, 'bcgov_documentation_url_nonce' ) ) {
+				if ( isset( $_POST['bcgov_documentation_url'] ) ) {
+					$documentation_url = sanitize_text_field( $_POST['bcgov_documentation_url'] );
+					update_option( 'bcgov_documentation_url_settings', $documentation_url );
+				}
+			}
+		}
+
         // Get the current Google Site Name setting.
         $google_site_name = get_option( 'bcgov_google_site_name_settings', '' );
 
         $nonce = wp_create_nonce( 'bcgov_google_site_name_nonce' );
+
+        // Get the current Site Documentation URL setting.
+        $documentation_url = get_option( 'bcgov_documentation_url_settings', '' );
 
         // Now display the settings editing screen.
         echo '<div class="wrap">';
@@ -122,6 +136,13 @@ class BcgovSettings {
             [ $this, 'sanitize_bcgov_google_site_name_settings' ]
         );
 
+        // Add the Documentation URL setting.
+        register_setting(
+            'bcgov-settings-group',
+            'bcgov_documentation_url_settings',
+            'sanitize_text_field'
+        );
+
         // Add settings sections:
         // For BCGov Admin Notification settings.
         add_settings_section(
@@ -152,6 +173,14 @@ class BcgovSettings {
             'bcgov_google_site_name_settings',
             'Google Site Name',
             [ $this, 'bcgov_google_site_name_settings' ],
+            'bcgov-theme-settings'
+        );
+
+        // For Site Documentation URL setting.
+        add_settings_section(
+            'bcgov_documentation_url_settings',
+            'Site Documentation URL',
+            [ $this, 'bcgov_documentation_url_settings' ],
             'bcgov-theme-settings'
         );
     }
@@ -204,9 +233,6 @@ class BcgovSettings {
 
         return $google_site_name;
     }
-
-
-
 
     /**
      * Displays the Admin Custom Notification settings section description.
@@ -300,5 +326,20 @@ class BcgovSettings {
 
         <p class="description" style="max-width: 120ch;">This value will be used to tell the Google Search index the preferred Site Name. The name default is the Site Title in the WordPress site settings but can be overridden here for finer control of the Google Site Name required to differentiate the site from the inferred Gov.bc.ca site naming in Google organic search results. Note this feature provides an Alternate Site Name of <strong><?php echo esc_html( $domain['host'] ); ?></strong> so it is not necessary to use the domain as the preferred Site&nbsp;Name.</p>
 		<?php
+    }
+
+    /**
+     * Sets the Site Documentation URL.
+     *
+     * @since 1.3.0
+     * @return void
+     */
+    public function bcgov_documentation_url_settings() {
+        // Get the current Site Documentation URL setting.
+        $documentation_url = get_option( 'bcgov_documentation_url_settings', '' );
+		?>
+        <input type="text" name="bcgov_documentation_url_settings" value="<?php echo esc_attr( $documentation_url ); ?>" placeholder="Enter your Site Documentation URL here" style="width: 320px" />
+        <?php
+        echo '<p class="description" style="max-width: 120ch;">' . esc_attr__( 'This value will be used to generate a link to your site-specific documentation URL. If it is set, the link will appear on the "Using the BCGov Block Theme" page.' ) . '</p>';
     }
 }
