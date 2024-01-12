@@ -1,5 +1,5 @@
 # Changelog
-## 1.2.20 Jan 11, 2024
+## 1.3.0 Jan 11, 2024
 - Add setting for adding site specific documentation which will show on the 'Using the BCGov Block Theme' page if set. ([DESCW-1802](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1802))
 
 ## 1.2.19 Jan 05, 2024

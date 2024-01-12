@@ -78,8 +78,6 @@ class BcgovSettings {
         // Get the current Site Documentation URL setting.
         $documentation_url = get_option( 'bcgov_documentation_url_settings', '' );
 
-        $doc_nonce = wp_create_nonce( 'bcgov_documentation_url_nonce' );
-
         // Now display the settings editing screen.
         echo '<div class="wrap">';
 
@@ -92,7 +90,6 @@ class BcgovSettings {
         do_settings_sections( 'bcgov-theme-settings' );
 
         echo '<input type="hidden" name="bcgov_google_site_name_nonce" value="<?php echo esc_attr( $nonce ); ?>">';
-        echo '<input type="hidden" name="bcgov_documentation_url_nonce" value="<?php echo esc_attr( $doc_nonce ); ?>">';
         echo '<p class="submit">';
         echo '<input type="submit" name="Submit" class="button-primary" value="Save Changes" /> &nbsp;&nbsp;&nbsp;Please press "Save Changes" to update the settings.';
         echo '</p>';
@@ -143,7 +140,7 @@ class BcgovSettings {
         register_setting(
             'bcgov-settings-group',
             'bcgov_documentation_url_settings',
-            [ $this, 'sanitize_bcgov_documentation_url_settings' ]
+            [ $this, 'sanitize_text_field' ]
         );
 
         // Add settings sections:
@@ -236,20 +233,6 @@ class BcgovSettings {
 
         return $google_site_name;
     }
-
-    /**
-     * Sanitize and save the Site Documentation URL text value.
-     *
-     * @param array $input The settings input.
-     * @return array The sanitized input.
-     */
-    public function sanitize_bcgov_documentation_url_settings( $input ) {
-        // Sanitize the text field value.
-        $documentation_url = sanitize_text_field( $input );
-
-        return $documentation_url;
-    }
-
 
     /**
      * Displays the Admin Custom Notification settings section description.
@@ -348,37 +331,12 @@ class BcgovSettings {
     /**
      * Sets the Site Documentation URL.
      *
-     * @since 1.2.20
+     * @since 1.3.0
      * @return void
      */
     public function bcgov_documentation_url_settings() {
-        if ( isset( $_POST['bcgov_documentation_url_nonce'] ) ) {
-
-			if ( wp_verify_nonce( $doc_nonce, 'bcgov_documentation_url_nonce' ) ) {
-				if ( isset( $_POST['bcgov_documentation_url'] ) ) {
-					$documentation_url = sanitize_text_field( $_POST['bcgov_documentation_url'] );
-					update_option( 'bcgov_documentation_url', $documentation_url );
-				}
-			}
-		}
-
         // Get the current Site Documentation URL setting.
         $documentation_url = get_option( 'bcgov_documentation_url_settings', '' );
-
-        if ( is_array( $documentation_url ) ) {
-            $documentation_url = implode( ' ', $documentation_url );
-        } else {
-            $documentation_url = (string) $documentation_url;
-        }
-
-        // Get the default Site Documentation URL.
-        $default_documentation_url = '';
-
-        // If the Site Documentation URL is not set, use the default URL as the value.
-        if ( empty( $documentation_url ) ) {
-            $documentation_url = $default_documentation_url;
-        }
-
 		?>
         <input type="text" name="bcgov_documentation_url_settings" value="<?php echo esc_attr( $documentation_url ); ?>" placeholder="Enter your Site Documentation URL here" style="width: 320px" />
         <?php
