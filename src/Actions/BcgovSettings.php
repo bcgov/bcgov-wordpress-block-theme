@@ -336,13 +336,7 @@ class BcgovSettings {
 		}
 
         // Get the current Google Site Name setting.
-        $mobile_nav_breakpoint = get_option( 'bcgov_mobile_nav_breakpoint_settings', '' );
-
-        if ( is_array( $mobile_nav_breakpoint ) ) {
-            $mobile_nav_breakpoint = implode( ' ', $mobile_nav_breakpoint );
-        } else {
-            $mobile_nav_breakpoint = (string) $mobile_nav_breakpoint;
-        }
+        $mobile_nav_breakpoint = (string) get_option( 'bcgov_mobile_nav_breakpoint_settings', '' );
 
         // Get the default Site Name from WordPress settings.
         $default_mobile_nav_breakpoint = '600';
