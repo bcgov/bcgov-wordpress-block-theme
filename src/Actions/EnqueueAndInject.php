@@ -161,4 +161,36 @@ class EnqueueAndInject {
 		// Output the inline script.
 		echo '<script type="application/ld+json">' . wp_json_encode( $json_data ) . '</script>';
 	}
+
+	/**
+     * Generates and outputs the CSS defined by the options.
+     *
+     * Retrieves the mobile breakpoint setting and generates the CSS variable required to enable a custom breakpoint.
+     *
+     * @since 1.3.1
+     * @return void
+     */
+	public function bcgov_block_theme_css_settings() {
+		// Get the current mobile nav breakpoint setting.
+		$mobile_nav_breakpoint = get_option( 'bcgov_mobile_nav_breakpoint_settings', '' );
+
+		// If the breakpoint is not set, use the default value.
+		if ( empty( $mobile_nav_breakpoint ) ) {
+			$mobile_nav_breakpoint = '600';
+		}
+
+		// Output the inline style.
+		echo '<style> /* WordPress hamburger menu override */
+			@media (min-width: ' . esc_attr( $mobile_nav_breakpoint ) . 'px) {
+				.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) { display: block; width: 100%; position: relative; z-index: auto; background-color: inherit; }
+				.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__responsive-container-close { display: none; }
+				.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container { left:  0; }
+				.wp-block-navigation__responsive-container-open:not(.always-shown) { display: none; }
+			}
+			@media (max-width: calc(' . esc_attr( $mobile_nav_breakpoint ) . 'px - 1px)) {
+				.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) { display: none; }
+				.wp-block-navigation__responsive-container-open:not(.always-shown) { display: flex; }
+				.is-style-ribbon-menu nav.wp-block-navigation { justify-content: flex-end; padding: 0.75rem 2rem; }
+			} </style>';
+	}
 }

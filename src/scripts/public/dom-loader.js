@@ -31,12 +31,8 @@ const bcgovBlockThemeDomLoader = () => {
 
         window.requestAnimationFrame( () => {
             /*
-             * Set the scroll padding to the height of the header
+             * Determine padding for body based on header height.
              */
-            document.documentElement.style.setProperty(
-                '--scroll-padding',
-                headerGroup + 'px'
-            );
             const headerGroupHeight = window
                 .getComputedStyle( headerGroup )
                 .getPropertyValue( 'height' );
@@ -51,6 +47,13 @@ const bcgovBlockThemeDomLoader = () => {
                 body.style.paddingTop = headerGroupHeight;
             } else if ( headerGroupHeight === '0px' ) {
                 body.style.paddingTop = headerHeight;
+                /*
+                 * Set the scroll padding to the height of the fixed header.
+                 */
+                document.documentElement.style.setProperty(
+                    '--scroll-padding',
+                    headerGroup.clientHeight + 'px'
+                );
             }
         } );
 

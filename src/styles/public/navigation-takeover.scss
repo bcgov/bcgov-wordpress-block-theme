@@ -77,17 +77,6 @@ html body.wp-admin .editor-styles-wrapper {
 
 			}
 
-			.wp-block-navigation {
-
-				&__responsive-container-close {
-					top: 0;
-					right: 1.25rem;
-
-					@media (min-width: calc($breakpoint-xl + 1rem)) {
-						right: 0;
-					}
-				}
-			}
 		}
 
 		&__responsive-dialog {
@@ -342,6 +331,15 @@ html body.wp-admin .editor-styles-wrapper {
 				}
 			}
 		}
+
+		&__responsive-container-close {
+			top: 2rem;
+			right: 2rem;
+
+			@media (min-width: calc($breakpoint-xl + 1rem)) {
+				right: 0;
+			}
+		}
 	}
 }
 
@@ -353,7 +351,7 @@ html body.wp-admin .editor-styles-wrapper {
 		@media (max-width: 599px) {
 			justify-content: flex-end;
 			padding-right: 2rem;
-			width: 100%;
+			width: auto;
 		}
 	}
 
