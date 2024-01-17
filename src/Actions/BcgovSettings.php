@@ -319,9 +319,9 @@ class BcgovSettings {
     }
 
 	/**
-     * Sets the Google Site Name.
+     * Sets the Custom Mobile Menu Breakpoint.
      *
-     * @since 1.2.9
+     * @since 1.3.1
      * @return void
      */
     public function bcgov_mobile_nav_breakpoint_settings() {
