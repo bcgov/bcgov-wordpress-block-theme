@@ -75,6 +75,11 @@ class BcgovSettings {
 
         $nonce = wp_create_nonce( 'bcgov_google_site_name_nonce' );
 
+        // Get the current Google Site Name setting.
+        $google_site_name = get_option( 'bcgov_google_site_name_settings', '' );
+
+        $nonce = wp_create_nonce( 'bcgov_google_site_name_nonce' );
+
         // Get the current Site Documentation URL setting.
         $documentation_url = get_option( 'bcgov_documentation_url_settings', '' );
 
@@ -129,6 +134,13 @@ class BcgovSettings {
             [ $this, 'sanitize_bcgov_external_link_icons_settings' ]
         );
 
+        // Add the Custom Mobile Menu Breakpoint setting.
+        register_setting(
+            'bcgov-settings-group',
+            'bcgov_mobile_nav_breakpoint_settings',
+            [ $this, 'sanitize_bcgov_mobile_nav_breakpoint_settings' ]
+        );
+
         // Add the Google Site Name setting.
         register_setting(
             'bcgov-settings-group',
@@ -165,6 +177,14 @@ class BcgovSettings {
             'bcgov_external_link_icons_settings',
             'Show External Link Icons',
             [ $this, 'bcgov_external_link_icons_settings' ],
+            'bcgov-theme-settings'
+        );
+
+        // For Custom Mobile Menu Breakpoint setting.
+        add_settings_section(
+            'bcgov_mobile_nav_breakpoint_settings',
+            'Custom Mobile Menu Breakpoint',
+            [ $this, 'bcgov_mobile_nav_breakpoint_settings' ],
             'bcgov-theme-settings'
         );
 
@@ -219,6 +239,19 @@ class BcgovSettings {
         // Sanitize the checkbox value.
         $input['show_external_link_icons'] = isset( $input['show_external_link_icons'] ) ? 1 : 0;
         return $input;
+    }
+
+    /**
+     * Sanitize and save the Custom Mobile Menu Breakpoint text value.
+     *
+     * @param array $input The settings input.
+     * @return array The sanitized input.
+     */
+    public function sanitize_bcgov_mobile_nav_breakpoint_settings( $input ) {
+        // Sanitize the text field value.
+        $mobile_nav_breakpoint = sanitize_text_field( $input );
+
+        return $mobile_nav_breakpoint;
     }
 
     /**
@@ -282,6 +315,49 @@ class BcgovSettings {
         <input type="checkbox" name="bcgov_external_link_icons_settings[show_external_link_icons]" id="bcgov_external_link_icons" value="1" <?php checked( $show_external_link_icons, 1 ); ?> />
         <label for="bcgov_external_link_icons">Check to show external links with an icon on the visitor facing website.</label>
         <p>Note: "External Links" are any link (whether inline or using the buttons block) in the content region of the website that point to an external domain.</p>
+		<?php
+    }
+
+	/**
+     * Sets the Google Site Name.
+     *
+     * @since 1.2.9
+     * @return void
+     */
+    public function bcgov_mobile_nav_breakpoint_settings() {
+        if ( isset( $_POST['bcgov_mobile_nav_breakpoint_nonce'] ) ) {
+
+			if ( wp_verify_nonce( $nonce, 'bcgov_mobile_nav_breakpoint_nonce' ) ) {
+				if ( isset( $_POST['bcgov_mobile_nav_breakpoint'] ) ) {
+					$mobile_nav_breakpoint = sanitize_text_field( $_POST['bcgov_mobile_nav_breakpoint'] );
+					update_option( 'bcgov_mobile_nav_breakpoint', $mobile_nav_breakpoint );
+				}
+			}
+		}
+
+        // Get the current Google Site Name setting.
+        $mobile_nav_breakpoint = get_option( 'bcgov_mobile_nav_breakpoint_settings', '' );
+
+        if ( is_array( $mobile_nav_breakpoint ) ) {
+            $mobile_nav_breakpoint = implode( ' ', $mobile_nav_breakpoint );
+        } else {
+            $mobile_nav_breakpoint = (string) $mobile_nav_breakpoint;
+        }
+
+        // Get the default Site Name from WordPress settings.
+        $default_mobile_nav_breakpoint = '600';
+
+        // If the Google Site Name is not set, use the default Site Name as the default value.
+        if ( empty( $mobile_nav_breakpoint ) ) {
+            $mobile_nav_breakpoint = $default_mobile_nav_breakpoint;
+        }
+
+        $domain = wp_parse_url( get_site_url() );
+
+		?>
+        <input type="number" name="bcgov_mobile_nav_breakpoint_settings" value="<?php echo esc_attr( $mobile_nav_breakpoint ); ?>" placeholder="" style="width: 10ch" />&nbsp;px
+
+        <p class="description" style="max-width: 120ch;">This value will be used to change the default breakpoint (600px) for when the the mobile hamburger menu is replaced by the ribbon navigation.</p>
 		<?php
     }
 

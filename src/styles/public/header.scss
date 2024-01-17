@@ -55,7 +55,8 @@ header {
 
 					gap: 1.5rem;
 					justify-content: space-between;
-					margin: 0 auto -2rem;
+					margin: auto;
+					padding: 0.2rem 0 1rem;
 
 					@media (min-width: $breakpoint-sm) {
 						margin: auto;

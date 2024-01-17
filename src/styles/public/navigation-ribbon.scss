@@ -130,8 +130,53 @@ body.has-ribbon-menu {
 		}
 	}
 
-	ol.has-background,
-	ul.has-background {
-		padding: 0;
+	.is-style-ribbon-menu {
+
+		.wp-block-navigation {
+
+			&__responsive-container:not(.has-modal-open) {
+
+				ol.has-background,
+				ul.has-background {
+					padding: 0;
+				}
+			}
+
+			&__responsive-container {
+
+				&.has-modal-open.is-menu-open {
+
+					@media (max-width: $breakpoint-md) {
+
+						.wp-block-navigation {
+
+							&__responsive-container-content {
+								width: 100%;
+							}
+
+							&__container {
+								gap: 0.5rem !important;
+								width: 100%;
+								margin-inline: 2rem;
+								position: relative;
+								top: 2rem;
+
+								> .wp-block-navigation-item {
+
+									max-width: 100% !important;
+									min-width: 100%;
+
+									a {
+										width: calc(100% - 2rem);
+										padding: 0.5rem 1rem;
+										display: inline-block;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
