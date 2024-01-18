@@ -19,6 +19,40 @@ Some features will need to be turned on to become available to the admin environ
 
 Other settings for admin enabling options in the Block Theme can be found on the  **BCGov Block Theme Settings**  page
 
+### Custom Notice Banner
+
+The Custom Notice Banner feature utilizes a checkbox to activate the Custom Notice Banner tool on the website. Enabling this tool allows the addition of a customizable banner to the site, offering various features such as the option to display the banner exclusively on the homepage. Users can further personalize the banner by selecting from a range of color options and accessing additional content settings. This feature proves valuable for prominently conveying important messages, promotions, or announcements to visitors, enhancing the overall user experience with a visually appealing and informative element.
+
+Once enabled the admin panel for it can be found under the admin menu Appearance > Custom Notice Banner.
+
+### Patterns
+
+The custom Patterns feature is controlled by a checkbox that determines whether Custom Patterns are displayed in the admin interface. It's important to note that toggling this checkbox does not disable or remove any custom patterns that have already been added to the site. This setting allows administrators and other editors to manage and organize patterns efficiently, offering flexibility in design and content structuring. Custom Patterns provide a way to maintain consistency across various sections of the website, ensuring a cohesive and polished appearance while streamlining the content creation process.
+
+Once enabled the admin panel for it can be found in the admin menu Patterns, directly below the Pages menu item.
+
+### Show External Link Icons
+
+By enabling Show External Link Icons the display of external links will be altered with a distinctive icon on the visitor-facing side of the website. This setting is specifically designed for links that direct users to external domains, whether these links are integrated inline or implemented using the buttons block within the content region of the site. By enabling this checkbox, website administrators enhance user transparency, indicating when a link will lead visitors outside the current domain. This visual cue contributes to a better user experience, helping users distinguish between internal and external links, and potentially reducing the risk of unintentional navigation away from the site.
+
+### Setting the Mobile Menu breakpoint
+
+WordPress transitions from the ribbon style to the hamburger mobile menu at a screen width of 600px. This can cause wrapping of the navigation menu at resolutions smaller than standard desktop display widths, so often it is prefereble to change this setting or "breakpoint" to something that works with the specific length of the desktop menu.
+
+It is possible to set a custom mobile menu breakpoint using the "Custom Mobile Menu Breakpoint" setting in this area. This setting is designed to control the point at which the default mobile hamburger menu transitions to the ribbon navigation. Enter the desired pixel value that you want to use as the new breakpoint. This value represents the screen width at which the mobile menu will switch from the hamburger icon to the ribbon navigation.
+
+If the initial breakpoint value doesn't provide the desired user experience, you can return to the "Custom Mobile Menu Breakpoint" setting and make further adjustments until you achieve the desired result.
+
+### Google Site Name (optional)
+
+***Note that for sites using the All-in-one SEO (AIOSEO) plugin, this setting is superfluous and can be left alone.***
+
+This setting serves a crucial role in conveying to the Google Search index the preferred name for a website. By default, it aligns with the Site Title specified in the WordPress site settings. However, this setting offers a granular level of control over the Google Site Name, allowing users to override the default Site Title if desired. This capability becomes particularly relevant when aiming to differentiate a site from the assumed naming conventions associated with Gov.bc.ca in Google organic search results.
+
+It's important to note that this feature provides an additional layer of flexibility by offering an "Alternate Site Name." This nuanced control empowers administrators to tailor the presentation of their site's identity in Google search results, ensuring clarity and distinctiveness, especially when navigating the complexities of search engine optimization and site differentiation within specific contexts, such as government-related searches.
+
+Adhering to Google's Site Name requirement is an essential practice for optimizing search visibility and ensuring that a website's identity aligns accurately with the owner's preferences and branding strategy.
+
 ## General editing and layout
 ### Understanding the role of margins and padding in the WordPress editor
 
