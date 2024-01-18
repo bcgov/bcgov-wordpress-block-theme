@@ -1,6 +1,6 @@
 # Changelog
-## 1.3.1 Jan 11, 2024
-- Update ribbon navigation and header styling to prevent hamburger and mobile breakpoint display issues. Enabled a custom mobile menu breakpoint width to fix ribbon navigation wrapping prior to the hamburger displaying. ([DESCW-1917](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1917))
+## 1.3.1 Jan 17, 2024
+- Update ribbon navigation and header styling to prevent hamburger and mobile breakpoint display issues. Enabled a custom mobile menu breakpoint width to fix ribbon navigation wrapping prior to the hamburger displaying. Added documentation for the core features found on the "BCGov Block Theme Settings" admin page, including the new menu breakpoint option. ([DESCW-1917](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1917))
 
 ## 1.3.0 Jan 11, 2024
 - Add setting for adding site specific documentation which will show on the 'Using the BCGov Block Theme' page if set. ([DESCW-1802](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1802))
