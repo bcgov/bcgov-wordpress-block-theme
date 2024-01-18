@@ -23,13 +23,17 @@ Other settings for admin enabling options in the Block Theme can be found on the
 
 The Custom Notice Banner feature utilizes a checkbox to activate the Custom Notice Banner tool on the website. Enabling this tool allows the addition of a customizable banner to the site, offering various features such as the option to display the banner exclusively on the homepage. Users can further personalize the banner by selecting from a range of color options and accessing additional content settings. This feature proves valuable for prominently conveying important messages, promotions, or announcements to visitors, enhancing the overall user experience with a visually appealing and informative element.
 
-Once enabled the admin panel for it can be found under the admin menu Appearance > Custom Notice Banner.
+Once enabled the admin panel for it can be found under the admin menu Appearance > Custom Notice Banner. 
+
+For detailed feature information please see the [Settings > Notice Banner](./Notice-Banner.html) page.
 
 ### Patterns
 
 The custom Patterns feature is controlled by a checkbox that determines whether Custom Patterns are displayed in the admin interface. It's important to note that toggling this checkbox does not disable or remove any custom patterns that have already been added to the site. This setting allows administrators and other editors to manage and organize patterns efficiently, offering flexibility in design and content structuring. Custom Patterns provide a way to maintain consistency across various sections of the website, ensuring a cohesive and polished appearance while streamlining the content creation process.
 
 Once enabled the admin panel for it can be found in the admin menu Patterns, directly below the Pages menu item.
+
+For detailed feature information please see the [Content > Patterns](../content/Block-Patterns.html) page.
 
 ### Show External Link Icons
 

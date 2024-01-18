@@ -48,7 +48,6 @@ Many patterns are available for use as part of the default BCGov base theme. The
 
 <img src="../../.vuepress/public/patterns-admin-menu.png" align="right" height="175" hspace="15">
 
-## Enabling printing of an image
 In the site admin click on "Patterns", this will bring up the list of custom patterns currently in your site, or it will be empty if starting new.
 
 Use the "Add new" button to begin building a custom pattern. Enter a name for the pattern and then build it as you would any other layout using the blocks or elements you want to include in your custom pattern.
@@ -57,12 +56,10 @@ Once you've arranged the blocks to your liking, click on the "Publish" button to
 
 ## Adding custom patterns to the pattern chooser
 
-
 To add your custom pattern to the Pattern chooser, you need to add a new or existing "Pattern Group" located on the Custom Pattern tab of the block inspector area. Click on the "Add New Pattern Group" link or choose from any of the options listed.
 
 <img src="../../.vuepress/public/pattern-settings.png" align="right" height="300" hspace="15">
 
-## Enabling printing of an image
 If creating a new group enter a "New Pattern Group Name" for your new pattern group and select the group option you just created.
 
 Click on the "Publish" button to save your new pattern category.
