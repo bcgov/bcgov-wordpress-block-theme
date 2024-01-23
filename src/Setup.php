@@ -20,7 +20,8 @@ use Bcgov\Theme\Block\Filters\{
     ButtonEnhanced,
     ImageEnhanced,
     MediaTextEnhanced,
-    SiteLogoEnhanced
+    SiteLogoEnhanced,
+    GravityFormsStyles,
 };
 
 
@@ -51,10 +52,11 @@ class Setup {
         $theme_page_custom_class        = new PageCustomClass();
 
         // Filters.
-        $filter_button_enhanced    = new ButtonEnhanced();
-        $filter_image_enhanced     = new ImageEnhanced();
-        $filter_mediatext_enhanced = new MediaTextEnhanced();
-        $filter_sitelogo_enhanced  = new SiteLogoEnhanced();
+        $filter_button_enhanced      = new ButtonEnhanced();
+        $filter_image_enhanced       = new ImageEnhanced();
+        $filter_mediatext_enhanced   = new MediaTextEnhanced();
+        $filter_sitelogo_enhanced    = new SiteLogoEnhanced();
+        $filter_gravity_forms_styles = new GravityFormsStyles();
 
         add_action( 'acf/init', [ $theme_admin_options, 'bcgov_block_theme_acf_init_block_types' ] );
         add_action( 'admin_enqueue_scripts', [ $theme_enqueue_and_inject, 'bcgov_block_theme_enqueue_admin_scripts' ] );
@@ -81,6 +83,7 @@ class Setup {
 
         add_filter( 'get_custom_logo', [ $theme_supports, 'bcgov_block_theme_custom_logo' ] );
         add_filter( 'wp_headers', [ $theme_admin_options, 'bcgov_block_theme_wp_headers' ] );
+        add_filter( 'gform_default_styles', [ $filter_gravity_forms_styles, 'add_gravity_forms_default_styles' ] );
 
         add_filter( 'render_block', [ $filter_button_enhanced, 'add_button_attributes' ], 10, 2 );
         add_filter( 'render_block', [ $filter_image_enhanced, 'add_image_attributes' ], 10, 2 );
