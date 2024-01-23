@@ -1,4 +1,7 @@
 # Changelog
+## 1.4.1 Jan 23, 2024
+- Added default styling for Gravity Forms that aligns with BC Government design system ([DESCW-1915](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1915))
+
 ## 1.3.1 Jan 17, 2024
 - Update ribbon navigation and header styling to prevent hamburger and mobile breakpoint display issues. Enabled a custom mobile menu breakpoint width to fix ribbon navigation wrapping prior to the hamburger displaying. Added documentation for the core features found on the "BCGov Block Theme Settings" admin page, including the new menu breakpoint option. ([DESCW-1917](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1917))
 
