@@ -1,5 +1,5 @@
 # Changelog
-## 1.4.1 Jan 23, 2024
+## 1.4.0 Jan 23, 2024
 - Added default styling for Gravity Forms that aligns with BC Government design system ([DESCW-1915](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1915))
 
 ## 1.3.1 Jan 17, 2024

@@ -2,7 +2,7 @@
 /**
  * Sets the default styling for Gravity Forms
  *
- * @since 1.4.1
+ * @since 1.4.0
  *
  * @package Bcgov/Theme/Block
  */
@@ -13,7 +13,7 @@ namespace Bcgov\Theme\Block\Filters;
  * This class allows you to set the default style options for Gravity Forms. By default, these are set to use values that
  * are consistent with BC Gov styling. These values can be changed as needed.
  *
- * @since 1.4.1
+ * @since 1.4.0
  */
 class GravityFormsStyles {
 
@@ -29,15 +29,15 @@ class GravityFormsStyles {
             'inputSize'                    => 'md',
             'inputBorderRadius'            => '5',
             'inputBorderColor'             => '#656565',
-            'inputBackgroundColor'         => '#fff',
-            'inputColor'                   => '#111111',
+            'inputBackgroundColor'         => '#ffffff',
+            'inputColor'                   => '#313132',
             'inputPrimaryColor'            => '#3B5A94',
-            'labelFontSize'                => '18',
-            'labelColor'                   => '#111111',
-            'descriptionFontSize'          => '16',
-            'descriptionColor'             => '#656565',
-            'buttonPrimaryBackgroundColor' => '#3B5A94',
-            'buttonPrimaryColor'           => '#fff',
+            'labelFontSize'                => '16',
+            'labelColor'                   => '#313132',
+            'descriptionFontSize'          => '14',
+            'descriptionColor'             => '#606060',
+            'buttonPrimaryBackgroundColor' => '#003366',
+            'buttonPrimaryColor'           => '#ffffff',
 		];
         if ( $styles ) {
             // If styles are supplied in the argument, merge those styles with ours, prioritizing ours, then return the result as JSON.
