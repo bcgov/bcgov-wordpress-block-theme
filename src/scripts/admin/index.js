@@ -1,3 +1,4 @@
+import "@bcgov/design-tokens/css-prefixed/variables.css";
 import '../../styles/admin/index.scss';
 
 /**

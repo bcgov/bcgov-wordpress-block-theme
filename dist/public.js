@@ -1269,6 +1269,18 @@ function addSafeEventListener(el, event, handler, options) {
 
 /***/ }),
 
+/***/ "./node_modules/@bcgov/design-tokens/css-prefixed/variables.css":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@bcgov/design-tokens/css-prefixed/variables.css ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/styles/public/index.scss":
 /*!**************************************!*\
   !*** ./src/styles/public/index.scss ***!
@@ -1389,15 +1401,17 @@ var __webpack_exports__ = {};
   !*** ./src/scripts/public/index.js ***!
   \*************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _styles_public_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/public/index.scss */ "./src/styles/public/index.scss");
-/* harmony import */ var _assets_images_bc_gov_logo_transparent_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../assets/images/bc_gov_logo_transparent.png */ "./assets/images/bc_gov_logo_transparent.png");
-/* harmony import */ var _dom_loader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dom-loader */ "./src/scripts/public/dom-loader.js");
-/* harmony import */ var _accessibility__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./accessibility */ "./src/scripts/public/accessibility.js");
-/* harmony import */ var _notification_banner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./notification-banner */ "./src/scripts/public/notification-banner.js");
-/* harmony import */ var _print__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./print */ "./src/scripts/public/print.js");
-/* harmony import */ var _takeover_navigation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./takeover-navigation */ "./src/scripts/public/takeover-navigation.js");
-/* harmony import */ var _ribbon_navigation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ribbon-navigation */ "./src/scripts/public/ribbon-navigation.js");
-/* harmony import */ var _admin_blocks_collapse_app__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../admin/blocks/collapse/app */ "./src/scripts/admin/blocks/collapse/app.js");
+/* harmony import */ var _bcgov_design_tokens_css_prefixed_variables_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @bcgov/design-tokens/css-prefixed/variables.css */ "./node_modules/@bcgov/design-tokens/css-prefixed/variables.css");
+/* harmony import */ var _styles_public_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../styles/public/index.scss */ "./src/styles/public/index.scss");
+/* harmony import */ var _assets_images_bc_gov_logo_transparent_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../assets/images/bc_gov_logo_transparent.png */ "./assets/images/bc_gov_logo_transparent.png");
+/* harmony import */ var _dom_loader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dom-loader */ "./src/scripts/public/dom-loader.js");
+/* harmony import */ var _accessibility__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./accessibility */ "./src/scripts/public/accessibility.js");
+/* harmony import */ var _notification_banner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./notification-banner */ "./src/scripts/public/notification-banner.js");
+/* harmony import */ var _print__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./print */ "./src/scripts/public/print.js");
+/* harmony import */ var _takeover_navigation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./takeover-navigation */ "./src/scripts/public/takeover-navigation.js");
+/* harmony import */ var _ribbon_navigation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ribbon-navigation */ "./src/scripts/public/ribbon-navigation.js");
+/* harmony import */ var _admin_blocks_collapse_app__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../admin/blocks/collapse/app */ "./src/scripts/admin/blocks/collapse/app.js");
+
 
 
 
