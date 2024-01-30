@@ -1,4 +1,7 @@
 # Changelog
+## 1.4.1 Jan 26, 2024
+- Updated Vuepress to version 2.0.0-rc.0 in Documentation folder. ([DESCW-1925](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1925))
+
 ## 1.4.0 Jan 23, 2024
 - Added default styling for Gravity Forms that aligns with BC Government design system ([DESCW-1915](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1915))
 
