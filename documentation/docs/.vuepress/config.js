@@ -1,6 +1,7 @@
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
 import { searchPlugin } from "@vuepress/plugin-search";
+import { viteBundler } from "@vuepress/bundler-vite";
 
 
 export default defineUserConfig({
@@ -8,6 +9,7 @@ export default defineUserConfig({
   lang: "en-US",
   title: "BCGov Block Theme",
   description: "BCGov Block Theme Documentation",
+  bundler: viteBundler({}),
   theme: defaultTheme({
     editLink: false,
     lastUpdated: true,
