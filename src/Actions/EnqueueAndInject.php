@@ -105,6 +105,7 @@ class EnqueueAndInject {
 			'headerEffect'            => esc_attr( get_option( 'header_effect' ) ),
 			'allSiteStyles'           => esc_attr( get_option( 'enable_all_styles' ) ),
 			'customBodyClass'         => esc_attr( get_option( 'custom_body_class' ) ),
+			'mobile_nav_breakpoint'   => esc_attr( get_option( 'bcgov_mobile_nav_breakpoint_settings', '' ) ),
 			'noticeEnabled'           => esc_attr( get_option( 'notification_enabled' ) ),
 			'noticeHomepageOnly'      => esc_attr( get_option( 'notification_homepage_only' ) ),
 			'noticeLabelBold'         => esc_attr( get_option( 'notification_label_bold' ) ),
@@ -182,12 +183,16 @@ class EnqueueAndInject {
 		// Output the inline style.
 		echo '<style> /* WordPress hamburger menu override */
 			@media (min-width: ' . esc_attr( $mobile_nav_breakpoint ) . 'px) {
+				body.has-ribbon-menu .wp-block-navigation:not(.has-modal-open) .has-child .wp-block-navigation__submenu-container.wp-block-navigation__submenu-container { box-shadow: var(--bcds-surface-shadow-small) !important; }
 				.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) { display: block; width: 100%; position: relative; z-index: auto; background-color: inherit; }
 				.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__responsive-container-close { display: none; }
 				.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container { left:  0; }
 				.wp-block-navigation__responsive-container-open:not(.always-shown) { display: none; }
 			}
 			@media (max-width: calc(' . esc_attr( $mobile_nav_breakpoint ) . 'px - 1px)) {
+				body.alpha-v3 .is-style-ribbon-menu { padding: 2rem 0; }
+				body.has-ribbon-menu .wp-block-navigation.has-modal-open .has-child .wp-block-navigation__submenu-container.wp-block-navigation__submenu-container { box-shadow: none !important; }
+				body.has-ribbon-menu  .has-modal-open .wp-block-navigation__container > .wp-block-navigation-item { margin: 0; }
 				.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) { display: none; }
 				.wp-block-navigation__responsive-container-open:not(.always-shown) { display: flex; }
 				.is-style-ribbon-menu nav.wp-block-navigation { justify-content: flex-end; padding: 0.75rem 2rem; }

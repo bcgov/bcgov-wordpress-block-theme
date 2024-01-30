@@ -7,205 +7,123 @@
 			"palette": [
 				{
 					"slug": "primary-brand",
-					"color": "var(--bcds-surface-secondary-default)",
-					"name": "River 1 – Primary (Brand)"
+					"color": "var(--bcds-surface-primary-default)",
+					"name": "Alpha Gov Brand"
 				},
 				{
 					"slug": "secondary-brand",
-					"color": "var(--bcds-surface-primary-default)",
-					"name": "River 2 – Secondary (Brand)"
+					"color": "var(--bcds-surface-brand-gold-60)",
+					"name": "Alpha Gov Secondary Brand"
 				},
 				{
 					"slug": "accent",
-					"color": "var(--bcds-surface-tertiary-default)",
-					"name": "Leaf Green – Accent (Brand)"
+					"color": "var(--bcds-surface-secondary-default)",
+					"name": "Alpha Gov Accent"
 				},
 				{
 					"slug": "secondary-accent",
-					"color": "#61A744",
-					"name": "Douglas Fir – Secondary Accent"
+					"color": "var(--bcds-surface-tertiary-active)",
+					"name": "Alpha Gov Secondary Accent"
 				},
 				{
 					"slug": "headline-color",
-					"color": "#002A4F",
+					"color": "var(--bcds-surface-brand-blue-100)",
 					"name": "Headline Colour"
 				},
 				{
 					"slug": "text-color",
-					"color": "#111111",
+					"color": "var(--bcds-typography-color-primary)",
 					"name": "Text Colour"
 				},
 				{
 					"slug": "tertiary",
-					"color": "#008FB4",
-					"name": "Sky – Tertiary"
+					"color": "var(--bcds-typography-color-link)",
+					"name": "Link – Tertiary"
 				},
 				{
 					"slug": "quarternary",
-					"color": "#80946D",
+					"color": "var(--bcds-surface-primary-active)",
 					"name": "Public Sector – Quarternary"
 				},
 				{
 					"slug": "quinary",
-					"color": "#fdb813",
+					"color": "var(--bcds-surface-brand-gold-50)",
 					"name": "BC Yellow – Quinary"
 				},
 				{
 					"slug": "senary",
-					"color": "#ED3F45",
-					"name": "Personal Travel – Senary"
+					"color": "var(--bcds-surface-icons-danger)",
+					"name": "Danger – Senary"
 				},
 				{
 					"slug": "septenary",
-					"color": "#148B61",
-					"name": "Low Carbon Energy – Septenary"
+					"color": "var(--bcds-surface-icons-success)",
+					"name": "Success – Septenary"
 				},
 				{
 					"slug": "octonary",
-					"color": "#23A0A8",
-					"name": "Circular Economy – Octonary"
+					"color": "var(--bcds-surface-icons-warning)",
+					"name": "Warning – Octonary"
 				},
 				{
 					"slug": "nonary",
-					"color": "#F79F31",
-					"name": "Communities – Nonary"
+					"color": "var(--bcds-icons-icons-primary)",
+					"name": "Icons primary – Nonary"
 				},
 				{
 					"slug": "denary",
-					"color": "#EB7D3B",
-					"name": "Electricity – Denary"
+					"color": "var(--bcds-icons-icons-secondary)",
+					"name": "Icons secondary – Denary"
 				},
 				{
 					"slug": "ondenary",
-					"color": "#833238",
-					"name": "Forest Bioeconomy – Ondenary"
+					"color": "var(--bcds-icons-icons-info)",
+					"name": "Icons info – Ondenary"
 				},
 				{
 					"slug": "duodenary",
-					"color": "#7C7E81",
-					"name": "Buildings – Duodenary"
+					"color": "var(--bcds-icons-icons-disabled)",
+					"name": "Icons disabled – Duodenary"
 				},
 				{
 					"slug": "tridenary",
-					"color": "#903E88",
-					"name": "Negative Emissions Tech – Tridenary"
+					"color": "var(--bcds-surface-overlay-default)",
+					"name": "Dark overlay – Tridenary"
 				},
 				{
 					"slug": "quadenary",
-					"color": "#185282",
-					"name": "Industry Oil and Gas – Quadenary"
+					"color": "var(--bcds-typography-color-secondary-invert)",
+					"name": "Inverted text (non-white) – Quadenary"
 				},
 				{
 					"slug": "gray-80",
-					"color": "#656565",
+					"color": "var(--bcds-surface-brand-gray-80)",
 					"name": "Gray 80"
 				},
 				{
-					"slug": "gray-60",
-					"color": "#A1A1A1",
-					"name": "Gray 60"
+					"slug": "gray-30",
+					"color": "var(--bcds-surface-brand-gray-30)",
+					"name": "Gray 30"
 				},
 				{
-					"slug": "gray-40",
-					"color": "#C7C7C7",
-					"name": "Gray 40"
+					"slug": "gray-10",
+					"color": "var(--bcds-surface-brand-gray-10)",
+					"name": "Gray 10"
 				},
 				{
 					"slug": "foreground",
-					"color": "#222222",
+					"color": "var(--bcds-typography-color-primary)",
 					"name": "Foreground"
 				},
 				{
 					"slug": "background",
-					"color": "#ffffff",
+					"color": "var(--bcds-surface-background-white)",
 					"name": "Background"
 				},
 				{
 					"slug": "transparent",
 					"color": "transparent",
 					"name": "Transparent"
-				}
-			],
-			"gradients": [
-				{
-					"name": "Primary (Brand) Opacity",
-					"slug": "primary-brand-opacity",
-					"gradient": "linear-gradient(0deg, rgba(0,42,78,0.12) 0%, rgba(0,42,78,0.36) 100%)"
-				},
-				{
-					"name": "Secondary (Brand) Opacity",
-					"slug": "secondary-brand-opacity",
-					"gradient": "linear-gradient(0deg, rgba(0,92,151,0.12) 0%, rgba(0,92,151,0.36) 100%)"
-				},
-				{
-					"name": "Leaf Green Accent (Brand) Opacity",
-					"slug": "accent-brand-opacity",
-					"gradient": "linear-gradient(0deg, rgba(127, 188, 66,0.12) 0%, rgba(127, 188, 66,0.36) 100%)"
-				},
-				{
-					"name": "Douglas Fir Secondary Accent Opacity",
-					"slug": "secondary-accent-opacity",
-					"gradient": "linear-gradient(0deg, rgba(97, 167, 68,0.12) 0%, rgba(97, 167, 68,0.36) 100%)"
-				},
-				{
-					"name": "Sky Opacity",
-					"slug": "tertiary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(0,143,180,0.12) 0%, rgba(0,143,180,0.36) 100%)"
-				},
-				{
-					"name": "Public Sector Opacity",
-					"slug": "quarternary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(128, 148, 109,0.12) 0%, rgba(128, 148, 109,0.36) 100%)"
-				},
-				{
-					"name": "BC Yellow Opacity",
-					"slug": "quinary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(145,173,250,0.12) 0%, rgba(145,173,250,0.36) 100%)"
-				},
-				{
-					"name": "Personal Travel Opacity",
-					"slug": "senary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(237,63,69,0.12) 0%, rgba(237,63,69,0.36) 100%)"
-				},
-				{
-					"name": "Low Carbon Energy Opacity",
-					"slug": "septenary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(20,139,97,0.12) 0%, rgba(20,139,97,0.36) 100%)"
-				},
-				{
-					"name": "Circular Economy Opacity",
-					"slug": "octonary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(35,160,168,0.12) 0%, rgba(35,160,168,0.36) 100%)"
-				},
-				{
-					"name": "Communities Opacity",
-					"slug": "nonary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(247,159,49,0.12) 0%, rgba(247,159,49,0.36) 100%)"
-				},
-				{
-					"name": "Electricity Opacity",
-					"slug": "denary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(235,125,59,0.12) 0%, rgba(235,125,59,0.36) 100%)"
-				},
-				{
-					"name": "Forest Bioeconomy Opacity",
-					"slug": "ondenary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(131,50,56,0.12) 0%, rgba(131,50,56,0.36) 100%)"
-				},
-				{
-					"name": "Buildings Opacity",
-					"slug": "duodenary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(124,126,129,0.12) 0%, rgba(124,126,129,0.36) 100%)"
-				},
-				{
-					"name": "Negative Emissions Tech Opacity",
-					"slug": "tridenary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(144,62,136,0.12) 0%, rgba(144,62,136,0.36) 100%)"
-				},
-				{
-					"name": "Industry Oil and Gas Opacity",
-					"slug": "quadenary-opacity",
-					"gradient": "linear-gradient(0deg, rgba(24,82,130,0.12) 0%, rgba(24,82,130,0.36) 100%)"
 				}
 			]
 		},
@@ -245,6 +163,26 @@
 		"custom": {}
 	},
 	"styles": {
+		"blocks": {
+			"core/list-item": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/navigation": {
+				"css": "& li { font-size: var(--wp--preset--font-size--normal); }"
+			},
+			"core/paragraph": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/pullquote": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/quote": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/site-title": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			}
+		},
 		"color": {
 			"background": "var(--wp--preset--color--background)",
 			"text": "var(--wp--preset--color--foreground)"
@@ -252,22 +190,22 @@
 		"elements": {
 			"h1": {
 				"color": {
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--wp--preset--color--headline-color)"
 				}
 			},
 			"h2": {
 				"color": {
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--wp--preset--color--headline-color)"
 				}
 			},
 			"h3": {
 				"color": {
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--wp--preset--color--headline-color)"
 				}
 			},
 			"h4": {
 				"color": {
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--wp--preset--color--headline-color)"
 				}
 			},
 			"h5": {
@@ -282,7 +220,7 @@
 			},
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--wp--preset--color--tertiary)"
 				}
 			}
 		}

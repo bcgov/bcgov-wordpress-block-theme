@@ -1,4 +1,4 @@
-import "@bcgov/design-tokens/css-prefixed/variables.css";
+import '@bcgov/design-tokens/css-prefixed/variables.css';
 import '../../styles/public/index.scss';
 import '../../../assets/images/bc_gov_logo_transparent.png';
 
@@ -9,6 +9,8 @@ import './print';
 
 import './takeover-navigation';
 import './ribbon-navigation';
+
+import './alpha-v3/search';
 
 import '../admin/blocks/collapse/app';
 

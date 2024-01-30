@@ -58,26 +58,38 @@ class ThemeSupports {
 
 	/**
 	 * Filter the results of get_custom_logo() if no custom logo has been chosen by injecting a default image.
-	 * <-- wp:site-logo --> uses this result internally, and so can be easily used with or without choosing a custom logo.
+	 * <-- wp:site-logo --> uses this result internally, and can be easily used with or without choosing a custom logo.
+	 * Checks for Alpha v3 tokens to determine which default logo variation to use.
 	 *
 	 * @param string $html Markup from original get_custom_logo call.
 	 * @since 1.0.0
 	 *
-	 * @return string
+	 * @return string Filtered HTML containing the custom logo or a default image based on site settings.
 	 */
 	public function bcgov_block_theme_custom_logo( $html ) {
 		// If the site owner has selected a site logo using the theme customizer, use it.
 		if ( has_custom_logo() ) {
 			return $html;
 		}
-		// Otherwise, inject a default logo markup for use in wp-site-logo blocks.
-		$image = '<img class="bcgov-logo" src="' . get_stylesheet_directory_uri() . '/assets/images/bc_gov_logo_transparent.svg">';
-		$html  = sprintf(
+
+        $variations = wp_get_global_stylesheet( [ 'variables' ] );
+
+		$image = '<img class="bcgov-logo" src="' . get_stylesheet_directory_uri();
+
+		// If "--bcds" is present Alpha v3 styles have been set.
+		if ( strpos( $variations, '--bcds' ) !== false ) {
+			$image .= '/assets/images/bc_gov_logo_reverse.svg">';
+		} else {
+			$image .= '/assets/images/bc_gov_logo_transparent.svg">';
+		}
+
+		$html = sprintf(
 			'<a href="%1$s" class="custom-logo-link" rel="home"%2$s>%3$s</a>',
 			esc_url( home_url( '/' ) ),
 			is_front_page() && ! is_paged() ? ' aria-current="page"' : '',
 			$image
 		);
+
 		return $html;
 	}
 }

@@ -3,8 +3,12 @@
 // SCSS variables for styles
 @import "../variables";
 
-// SCSS variables for specific sites
+// SCSS variables for site specific additions (deprecated)
 @import "./sites/cleanbc/variables";
+
+// SCSS variables for Alpha v3 design system
+@import "./alpha-v3/header-and-navigation";
+@import "./alpha-v3/footer";
 
 // Base Public Styles
 @import "./footer";

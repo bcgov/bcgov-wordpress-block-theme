@@ -1,0 +1,12 @@
+body.alpha-v3 {
+
+	.icon {
+		border: 1px solid var(--wp--preset--color--nonary);
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+
+		a.wp-block-social-link-anchor {
+			padding: 0.85rem;
+		}
+	}
+}

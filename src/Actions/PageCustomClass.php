@@ -72,6 +72,7 @@ class PageCustomClass {
 
 	/**
 	 * Adds a custom class to the body tag of the current page/post if one has been set.
+	 * Checks for Alpha v3 styles and adds body class if present.
 	 *
 	 * @since 1.1.2
 	 * @param array $classes An array of existing classes for the body tag.
@@ -80,6 +81,13 @@ class PageCustomClass {
 	public function add_custom_class_to_body( $classes ) {
 		$class_name             = get_post_meta( get_the_ID(), '_custom_page_class', true );
 		$custom_body_class_name = esc_attr( get_option( 'custom_body_class' ) );
+
+		$variations = wp_get_global_stylesheet( [ 'variables' ] );
+		// If "--bcds" is present Alpha v3 styles have been set.
+		if ( strpos( $variations, '--bcds' ) !== false ) {
+			$classes[] = 'alpha-v3';
+		}
+
 		if ( $class_name ) {
 			$classes[] = $class_name;
 		}
