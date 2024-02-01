@@ -13,7 +13,8 @@ use Bcgov\Theme\Block\Actions\{
     EnqueueAndInject,
     ExportOptions,
     PatternsSetup,
-    PageCustomClass
+    PageCustomClass,
+    SetDefaultFavicon,
 };
 
 use Bcgov\Theme\Block\Filters\{
@@ -50,6 +51,7 @@ class Setup {
         $theme_exports                  = new ExportOptions();
         $theme_register_block_patterns  = new PatternsSetup();
         $theme_page_custom_class        = new PageCustomClass();
+        $theme_set_default_favicon      = new SetDefaultFavicon();
 
         // Filters.
         $filter_button_enhanced      = new ButtonEnhanced();
@@ -78,6 +80,7 @@ class Setup {
         add_action( 'wp_head', [ $theme_enqueue_and_inject, 'bcgov_block_theme_css_settings' ] );
         add_action( 'wp_trash_post', [ $theme_menu_editor, 'remove_unused_menu_manager_post_type' ] );
         add_action( 'save_post', [ $theme_page_custom_class, 'custom_save_page_meta' ] );
+        add_action( 'wp_head', [ $theme_set_default_favicon, 'add_favicon_to_head' ] );
 
         add_filter( 'body_class', [ $theme_page_custom_class, 'add_custom_class_to_body' ] );
 

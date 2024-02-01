@@ -1,4 +1,7 @@
 # Changelog
+## 1.5.0 Feb 1, 2024
+- Added default favicon to theme and included instructions for updating the favicon in the documentation. ([DESCW-1929](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1929))
+
 ## 1.4.1 Jan 26, 2024
 - Updated Vuepress to version 2.0.0-rc.0 in Documentation folder. ([DESCW-1925](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1925))
 
