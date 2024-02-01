@@ -146,6 +146,31 @@ Template parts are used to organise a theme in smaller reusable structural parts
 
 The Site Editor’s Template Parts section displays a list of all template parts. You can create template parts using the Add New button. In this view, you can also clear customizations from theme template parts and delete user-created template parts should an error be made while editing inside the editor.
 
+## Customisable Site Identity
+
+Elements of the site's identity can be modified, including:
+
+- **Site Title**  the title of your site as it appears in Google search results
+- **Tagline**  the tagline for your site as it appears in Google search results
+- **Site Icon**  the icon that displays in the browser tab when your website is loaded, and beside a browser bookmark for your website
+
+Be mindful of editing the site title and tagline if you are currently using the AIOSEO (All-in-One Search Engine Optimization) plugin. It may be handling these values automatically. If you are not sure if the AIOSEO plugin is being used, it's best to leave the values alone.
+
+By default, the BC Government site icon will be applied to your website. If you wish to use your own icon, there are a few things to keep in mind.
+
+- The icon should have a 1:1 aspect ratio and be 48 pixels by 48 pixels in size
+- The icon should be in .png format and have a transparent background
+- The icon should be renamed to favicon.ico
+- The icon should be relevant to the content of your website
+
+### Instructions
+
+If you wish to replace your favicon and you have already made the above considerations, you can upload your icon to the WordPress Media Library by navigating to Media > Library from the Wordpress Dashboard. Then go to "Add New Media File" and either drop a file into the box or select a file.
+
+To get to the Site Identity options, navigate to Appearance > Theme Options. On the Theme Options page, search for a blue link named "Additional CSS". This will navigate you to the site Editor. Then, select "Site Identity" from the list. You will have the option to edit Site Title, Tagline, or Site Icon.
+
+If changing the site icon, you will be able to select an image from your Media Library. You will also have the chance to crop the image.
+
 
 
 
