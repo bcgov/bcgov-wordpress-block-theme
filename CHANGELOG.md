@@ -1,5 +1,7 @@
 # Changelog
+
 ## 1.5.0 Feb 1, 2024
+- Added Alpha v3 header and footer including alpha.json theme styles using BC Government design system tokens. Includes various touch points such as: alpha.json styles using Alpha v3 design system tokens; theme.json addition of header/footer and search bar templates; new default logo asset for alpha style header; various and extensive styles to drive new templating options; search.js to drive toggle interaction; hooks to augment: default site logo for Alpha design, body class to enable Alpha specific styling, additional injected styles for mobile breakpoint menu styling. ([DESCW-1879](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1879))
 - Added default favicon to theme and included instructions for updating the favicon in the documentation. ([DESCW-1929](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1929))
 
 ## 1.4.1 Jan 26, 2024

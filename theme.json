@@ -50,6 +50,16 @@
 			"area": "header"
 		},
 		{
+			"title": "Alpha v3 Header with ribbon nav and search",
+			"name": "header-alpha-v3-ribbon",
+			"area": "header"
+		},
+		{
+			"title": "Alpha v3 Footer",
+			"name": "footer-alpha-v3",
+			"area": "footer"
+		},
+		{
 			"title": "Main Menu",
 			"name": "navigation",
 			"area": "header"
@@ -65,8 +75,13 @@
 			"area": "header"
 		},
 		{
-			"title": "Search Field",
+			"title": "Search Field – default",
 			"name": "search-field",
+			"area": "header"
+		},
+		{
+			"title": "Search Field – Alpha v3",
+			"name": "search-field-alpha-v3",
 			"area": "header"
 		},
 		{

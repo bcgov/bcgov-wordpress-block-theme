@@ -1,0 +1,228 @@
+{
+	"version": 2,
+	"title": "Alpha v3",
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"palette": [
+				{
+					"slug": "primary-brand",
+					"color": "var(--bcds-surface-primary-default)",
+					"name": "Alpha Gov Brand"
+				},
+				{
+					"slug": "secondary-brand",
+					"color": "var(--bcds-surface-brand-gold-60)",
+					"name": "Alpha Gov Secondary Brand"
+				},
+				{
+					"slug": "accent",
+					"color": "var(--bcds-surface-secondary-default)",
+					"name": "Alpha Gov Accent"
+				},
+				{
+					"slug": "secondary-accent",
+					"color": "var(--bcds-surface-tertiary-active)",
+					"name": "Alpha Gov Secondary Accent"
+				},
+				{
+					"slug": "headline-color",
+					"color": "var(--bcds-surface-brand-blue-100)",
+					"name": "Headline Colour"
+				},
+				{
+					"slug": "text-color",
+					"color": "var(--bcds-typography-color-primary)",
+					"name": "Text Colour"
+				},
+				{
+					"slug": "tertiary",
+					"color": "var(--bcds-typography-color-link)",
+					"name": "Link – Tertiary"
+				},
+				{
+					"slug": "quarternary",
+					"color": "var(--bcds-surface-primary-active)",
+					"name": "Public Sector – Quarternary"
+				},
+				{
+					"slug": "quinary",
+					"color": "var(--bcds-surface-brand-gold-50)",
+					"name": "BC Yellow – Quinary"
+				},
+				{
+					"slug": "senary",
+					"color": "var(--bcds-surface-icons-danger)",
+					"name": "Danger – Senary"
+				},
+				{
+					"slug": "septenary",
+					"color": "var(--bcds-surface-icons-success)",
+					"name": "Success – Septenary"
+				},
+				{
+					"slug": "octonary",
+					"color": "var(--bcds-surface-icons-warning)",
+					"name": "Warning – Octonary"
+				},
+				{
+					"slug": "nonary",
+					"color": "var(--bcds-icons-icons-primary)",
+					"name": "Icons primary – Nonary"
+				},
+				{
+					"slug": "denary",
+					"color": "var(--bcds-icons-icons-secondary)",
+					"name": "Icons secondary – Denary"
+				},
+				{
+					"slug": "ondenary",
+					"color": "var(--bcds-icons-icons-info)",
+					"name": "Icons info – Ondenary"
+				},
+				{
+					"slug": "duodenary",
+					"color": "var(--bcds-icons-icons-disabled)",
+					"name": "Icons disabled – Duodenary"
+				},
+				{
+					"slug": "tridenary",
+					"color": "var(--bcds-surface-overlay-default)",
+					"name": "Dark overlay – Tridenary"
+				},
+				{
+					"slug": "quadenary",
+					"color": "var(--bcds-typography-color-secondary-invert)",
+					"name": "Inverted text (non-white) – Quadenary"
+				},
+				{
+					"slug": "gray-80",
+					"color": "var(--bcds-surface-brand-gray-80)",
+					"name": "Gray 80"
+				},
+				{
+					"slug": "gray-30",
+					"color": "var(--bcds-surface-brand-gray-30)",
+					"name": "Gray 30"
+				},
+				{
+					"slug": "gray-10",
+					"color": "var(--bcds-surface-brand-gray-10)",
+					"name": "Gray 10"
+				},
+				{
+					"slug": "foreground",
+					"color": "var(--bcds-typography-color-primary)",
+					"name": "Foreground"
+				},
+				{
+					"slug": "background",
+					"color": "var(--bcds-surface-background-white)",
+					"name": "Background"
+				},
+				{
+					"slug": "transparent",
+					"color": "transparent",
+					"name": "Transparent"
+				}
+			]
+		},
+		"spacing": {
+			"blockGap": null
+		},
+		"typography": {
+			"fontSizes": [
+				{
+					"slug": "extra-small",
+					"size": "1rem",
+					"name": "Extra small"
+				},
+				{
+					"slug": "small",
+					"size": "1.125rem",
+					"name": "Small"
+				},
+				{
+					"slug": "normal",
+					"size": "1.25rem",
+					"name": "Normal"
+				},
+				{
+					"slug": "large",
+					"size": "1.5rem",
+					"name": "Large"
+				},
+				{
+					"slug": "extra-large",
+					"size": "2rem",
+					"name": "Extra large"
+				}
+			],
+			"fontFamilies": []
+		},
+		"custom": {}
+	},
+	"styles": {
+		"blocks": {
+			"core/list-item": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/navigation": {
+				"css": "& li { font-size: var(--wp--preset--font-size--normal); }"
+			},
+			"core/paragraph": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/pullquote": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/quote": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			},
+			"core/site-title": {
+				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+			}
+		},
+		"color": {
+			"background": "var(--wp--preset--color--background)",
+			"text": "var(--wp--preset--color--foreground)"
+		},
+		"elements": {
+			"h1": {
+				"color": {
+					"text": "var(--wp--preset--color--headline-color)"
+				}
+			},
+			"h2": {
+				"color": {
+					"text": "var(--wp--preset--color--headline-color)"
+				}
+			},
+			"h3": {
+				"color": {
+					"text": "var(--wp--preset--color--headline-color)"
+				}
+			},
+			"h4": {
+				"color": {
+					"text": "var(--wp--preset--color--headline-color)"
+				}
+			},
+			"h5": {
+				"color": {
+					"text": "var(--wp--preset--color--foreground)"
+				}
+			},
+			"h6": {
+				"color": {
+					"text": "var(--wp--preset--color--foreground)"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "var(--wp--preset--color--tertiary)"
+				}
+			}
+		}
+	}
+}
