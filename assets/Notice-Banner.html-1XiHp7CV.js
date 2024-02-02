@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-34a8b1c3","path":"/guide/setting/Notice-Banner.html","title":"Notice Banner","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":1706889377000,"contributors":[{"name":"Nate King","email":"codewisenate@users.noreply.github.com","commits":1}]},"filePathRelative":"guide/setting/Notice-Banner.md"}');export{e as data};
