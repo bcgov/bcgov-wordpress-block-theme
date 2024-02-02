@@ -166,7 +166,7 @@ The Site Editor’s Template Parts section displays a list of all template parts
 
 **Note: If you wish to use the Alpha V3 look, make sure you have enabled the Alpha V3 styles. This can be found from the dashboard under Appearance > Editor. From the Editor, select Styles from the list, then select Alpha V3.**
 
-**Note: If you are making a custom header or footer, make sure the template parts are placed within a global container.**
+**Note: If you are making a custom header or footer, make sure to place your edits into the Global Header or Global Footer container respectively. This will ensure that your customisations are picked up across all templates without having to edit them individually.**
 
 ## Customisable Site Identity
 
