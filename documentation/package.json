@@ -1,6 +1,6 @@
 {
   "name": "developer-documentation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Developer and End-user documentation",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,9 @@
   "author": "DESCW",
   "license": "ISC",
   "devDependencies": {
-    "@vuepress/plugin-search": "^2.0.0-rc",
-    "vuepress": "^2.0.0-rc"
+    "@vuepress/plugin-search": "^2.0.0-rc.0",
+    "@vuepress/theme-default": "^2.0.0-rc.0",
+    "@vuepress/bundler-vite": "^2.0.0-rc.0",
+    "vuepress": "^2.0.0-rc.0"
   }
 }
