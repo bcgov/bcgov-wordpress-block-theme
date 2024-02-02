@@ -134,17 +134,39 @@ The theme editor allows for the customization of the BCGov WordPress theme witho
 
 ## Customisable Template Parts
 
-- **BCGov Header (Standard)**  adds typical BC Gov blue header with site logo, title, navigation and search
-- **Navigation:**  adds menu navigation to the header
-- **Search Field:**  adds search field to the header
+### Complete Header Parts
+
+- **Global Header Container:**  adds a container in which the other header template parts can be placed
+- **General Header with ribbon nav:**  adds a dark-blue header with traditional ribbon navigation
+- **General Header with Polylang ribbon nav:**  adds a dark-blue header with traditional ribbon nav, including polylang support
+- **General Header with fullscreen nav:**  adds a dark-blue header with modern fullscreen navigation
+- **Alpha v3 Header with ribbon nav and search:**  adds a header with the Alpha v3 design system, including ribbon nav and a search box
+
+### Header Add-on Parts
+
+- **Ribbon Menu (Main):**  adds the ribbon menu portion with no header
+- **Takeover Menu (Main):**  adds the takeover (fullscreen) menu with no header
+- **Accessibility Skip Nav:** Adds skip navigation for people with accessibility needs
+- **Main Menu:**  allows you to change the structure and items in your main menu
+- **Search Field - default:**  adds a search field with classic BC Gov styling
+- **Search Field - Alpha v3:**  adds a search field with Alpha v3 styling
 - **Breadcrumb Nav:**  adds breadcrumb navigation, requires AIOSEO plugin activation
-- **BCGov Footer (Standard):**  adds typical BC Gov blue footer
+
+### Footer Parts
+
+- **Global Footer Container:**  adds a container in which the other footer template parts can be placed
+- **BCGov Footer:**  adds a minimalistic dark-blue footer
+- **Alpha v3 Footer:**  adds a larger footer that uses the Alpha v3 design system
 
 ### Instructions
 
 Template parts are used to organise a theme in smaller reusable structural parts. They are commonly used for site headers and site footers. Just like templates, the theme editor allows for the customization of the BCGov WordPress theme without writing any code and this includes modifying template parts.
 
 The Site Editor’s Template Parts section displays a list of all template parts. You can create template parts using the Add New button. In this view, you can also clear customizations from theme template parts and delete user-created template parts should an error be made while editing inside the editor.
+
+**Note: If you wish to use the Alpha V3 look, make sure you have enabled the Alpha V3 styles. This can be found from the dashboard under Appearance > Editor. From the Editor, select Styles from the list, then select Alpha V3.**
+
+**Note: If you are making a custom header or footer, make sure the template parts are placed within a global container.**
 
 ## Customisable Site Identity
 
