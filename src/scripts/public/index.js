@@ -13,6 +13,7 @@ import '../../styles/public/index.scss';
 import '../../../assets/images/bc_gov_logo_transparent.png';
 
 import './dom-loader';
+import './single';
 import './accessibility';
 import './notification-banner';
 import './print';
