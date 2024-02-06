@@ -13,6 +13,7 @@ const bcgovBlockThemeDomLoader = () => {
          * Add siteName body classes and modify DOM placement of breadcrumb after first banner.
          */
         const body = qs( 'body' );
+
         // Guard against being in the WordPress admin area.
         const wpAdmin = body.classList.contains( 'wp-admin' );
         if ( wpAdmin ) return;
@@ -54,6 +55,22 @@ const bcgovBlockThemeDomLoader = () => {
                     '--scroll-padding',
                     headerGroup.clientHeight + 'px'
                 );
+            }
+
+            /**
+             * Check if the current page is a single post.
+             */
+            const postBody = qs( '.single-post' );
+            if ( postBody ) {
+                /**
+                 * Make sure header and content elements exist, create min-height calc expression for CSS.
+                 */
+                const postHeaderGroup = qs( '.bcgov-header-container' );
+                const content = qs( '.bcgov-body-content' );
+                if ( postHeaderGroup && content ) {
+                    content.style.minHeight =
+                        'calc(100dvh - ' + headerGroupHeight + ')';
+                }
             }
         } );
 
