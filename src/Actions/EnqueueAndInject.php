@@ -20,7 +20,6 @@ class EnqueueAndInject {
 	 */
 	public function bcgov_block_theme_enqueue_scripts(): void {
 		$public_assets  = require_once get_template_directory() . '/dist/public.asset.php';
-		$font_assets    = require_once get_template_directory() . '/dist/font.asset.php';
 		$public_version = $public_assets['version'] ?? wp_get_theme()->get( 'Version' );
 		$font_version   = $font_assets['version'] ?? wp_get_theme()->get( 'Version' );
 
@@ -40,12 +39,6 @@ class EnqueueAndInject {
 			get_template_directory_uri() . '/dist/public.css',
 			[],
 			$public_version
-		);
-		wp_enqueue_style(
-			'bcgov-block-theme-font',
-			get_template_directory_uri() . '/dist/font.css',
-			[],
-			$font_version
 		);
 	}
 
