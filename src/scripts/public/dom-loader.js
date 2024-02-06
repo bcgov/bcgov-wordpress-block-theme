@@ -56,21 +56,12 @@ const bcgovBlockThemeDomLoader = () => {
                     headerGroup.clientHeight + 'px'
                 );
             }
-
             /**
-             * Check if the current page is a single post.
+             * Make sure header and content elements exist, create min-height calc expression for CSS.
              */
-            const postBody = qs( '.single-post' );
-            if ( postBody ) {
-                /**
-                 * Make sure header and content elements exist, create min-height calc expression for CSS.
-                 */
-                const postHeaderGroup = qs( '.bcgov-header-container' );
-                const content = qs( '.bcgov-body-content' );
-                if ( postHeaderGroup && content ) {
-                    content.style.minHeight =
-                        'calc(100dvh - ' + headerGroupHeight + ')';
-                }
+            if ( headerGroup && postContent ) {
+                postContent.style.minHeight =
+                    'calc(100dvh - ' + headerGroupHeight + ')';
             }
         } );
 
