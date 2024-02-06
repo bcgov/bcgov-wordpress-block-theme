@@ -28,7 +28,7 @@
     "lodash": "^4.17.21"
   },
   "scripts": {
-    "build": "wp-scripts build src/scripts/admin src/scripts/public --output-path=dist",
+    "build": "wp-scripts build src/scripts/admin src/scripts/public src/scripts/public/font.js --output-path=dist",
     "build:production": "npm ci && npm run fix:js && npm run lint:js && npm run fix:css && npm run lint:css && npm run test:unit && npm run build",
     "lint:css": "wp-scripts lint-style src/styles",
     "fix:css": "wp-scripts lint-style --fix --config @wordpress/stylelint-config/scss src/styles",

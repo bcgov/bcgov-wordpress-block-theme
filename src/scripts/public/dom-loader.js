@@ -25,6 +25,8 @@ const bcgovBlockThemeDomLoader = () => {
         const footer = qs( 'footer' );
         const postContent = qs( '.wp-block-post-content' );
         const customCSS = qs( '#wp-custom-css' );
+        const postSingleHeaderGroup = qs( '.bcgov-header-container' );
+        const postSingleContent = qs( '.bcgov-body-content' );
 
         if ( null !== customCSS ) {
             customCSS.innerText = unEscapeCSS( customCSS.innerText );
@@ -59,8 +61,8 @@ const bcgovBlockThemeDomLoader = () => {
             /**
              * Make sure header and content elements exist, create min-height calc expression for CSS.
              */
-            if ( headerGroup && postContent ) {
-                postContent.style.minHeight =
+            if ( postSingleHeaderGroup && postSingleContent ) {
+                postSingleContent.style.minHeight =
                     'calc(100dvh - ' + headerGroupHeight + ')';
             }
         } );
