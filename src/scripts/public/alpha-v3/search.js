@@ -90,18 +90,12 @@ const bcgovBlockThemeSearch = () => {
     } );
 };
 
-const isCleanBCPluginActive =
-    qs( 'script[src*="/plugins/bcgov-plugin-cleanbc/dist/assets/public"]' ) !==
-    null;
-
-if ( ! isCleanBCPluginActive ) {
-    if ( 'complete' === document.readyState ) {
-        bcgovBlockThemeSearch();
-    } else {
-        addSafeEventListener(
-            document,
-            'DOMContentLoaded',
-            bcgovBlockThemeSearch()
-        );
-    }
+if ( 'complete' === document.readyState ) {
+    bcgovBlockThemeSearch();
+} else {
+    addSafeEventListener(
+        document,
+        'DOMContentLoaded',
+        bcgovBlockThemeSearch()
+    );
 }
