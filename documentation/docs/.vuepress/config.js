@@ -20,6 +20,12 @@ export default defineUserConfig({
         text: 'Home',
         link: '/',
       },
+	  {
+        text: 'Tutorials',
+        children: [
+			'/guide/content/using-alpha-3-styling.md',
+		]
+      },
       {
         text: 'Templates',
         link: '/guide/content/wp-templates.md',
