@@ -36,12 +36,16 @@ const bcgovBlockThemeDomLoader = () => {
             /*
              * Determine padding for body based on header height.
              */
-            const headerGroupHeight = window
-                .getComputedStyle( headerGroup )
-                .getPropertyValue( 'height' );
-            const headerHeight = window
-                .getComputedStyle( header )
-                .getPropertyValue( 'height' );
+            let headerGroupHeight = null;
+            let headerHeight = null;
+            if ( headerGroup && header ) {
+                headerGroupHeight = window
+                    .getComputedStyle( headerGroup )
+                    .getPropertyValue( 'height' );
+                headerHeight = window
+                    .getComputedStyle( header )
+                    .getPropertyValue( 'height' );
+            }
 
             if (
                 ( headerGroupHeight === '0px' ) === '0px' &&
@@ -53,17 +57,29 @@ const bcgovBlockThemeDomLoader = () => {
                 /*
                  * Set the scroll padding to the height of the fixed header.
                  */
-                document.documentElement.style.setProperty(
-                    '--scroll-padding',
-                    headerGroup.clientHeight + 'px'
-                );
+                if ( headerGroup ) {
+                    document.documentElement.style.setProperty(
+                        '--scroll-padding',
+                        headerGroup.clientHeight + 'px'
+                    );
+                }
             }
             /**
              * Make sure header and content elements exist, create min-height calc expression for CSS.
              */
+            let footerHeight = '0px';
+            if ( footer ) {
+                footerHeight = window
+                    .getComputedStyle( footer )
+                    .getPropertyValue( 'height' );
+            }
             if ( postSingleHeaderGroup && postSingleContent ) {
                 postSingleContent.style.minHeight =
-                    'calc(100dvh - ' + headerGroupHeight + ')';
+                    'calc(100dvh - (' +
+                    headerGroupHeight +
+                    ' + ' +
+                    footerHeight +
+                    '))';
             }
         } );
 
