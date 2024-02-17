@@ -29,6 +29,8 @@ The latest iteration of the BC Design System is Alpha 3. From the Alpha Gov webs
 
 > Based on our research and the latest best practices, the new design is less cluttered, with information better organized for end users. In addition, it features a strong vertical layout, optimized for mobile.
 
+The Block Theme will continue to evolve to better match the design system, as updates are ongoing.
+
 **Note: Alpha 3 is a working name and may change in the future.**
 
 ### Examples
