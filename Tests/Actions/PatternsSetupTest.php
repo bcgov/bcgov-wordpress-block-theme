@@ -125,6 +125,7 @@ class PatternsSetupTest extends CommonTestCase {
 			'bcgov-blocks-theme-header-footer' => [ 'label' => __( 'BCGov: Header/Footer', 'bcgov_blocks_theme' ) ],
 			'bcgov-blocks-theme-page-layouts'  => [ 'label' => __( 'BCGov: Page Layouts', 'bcgov_blocks_theme' ) ],
 			'bcgov-blocks-theme-query'         => [ 'label' => __( 'BCGov: Post Query', 'bcgov_blocks_theme' ) ],
+			'bcgov-blocks-theme-alpha-v3'      => [ 'label' => __( 'BCGov: Alpha V3', 'bcgov_blocks_theme' ) ],
 		];
     }
 
