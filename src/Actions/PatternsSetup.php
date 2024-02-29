@@ -136,6 +136,7 @@ class PatternsSetup {
 			 'bcgov-blocks-theme-header-footer' => [ 'label' => __( 'BCGov: Header/Footer', 'bcgov_blocks_theme' ) ],
 			 'bcgov-blocks-theme-page-layouts'  => [ 'label' => __( 'BCGov: Page Layouts', 'bcgov_blocks_theme' ) ],
 			 'bcgov-blocks-theme-query'         => [ 'label' => __( 'BCGov: Post Query', 'bcgov_blocks_theme' ) ],
+			 'bcgov-blocks-theme-alpha-v3'      => [ 'label' => __( 'BCGov: Alpha V3', 'bcgov_blocks_theme' ) ],
 		 ];
 
 		 /*
@@ -192,8 +193,19 @@ class PatternsSetup {
 			'footer-default',
 
 			// General patterns: not site specific.
+			'bcgov-2x2-picture-and-text-grid',
 			'bcgov-accordion-with-media-text',
 			'bcgov-accordion-with-tables',
+			'bcgov-alpha3-1x3-call-to-action',
+			'bcgov-alpha3-2x2-descriptive-links',
+			'bcgov-alpha3-2x3-instructions',
+			'bcgov-alpha3-3x3-questions-answers',
+			'bcgov-alpha3-front-page',
+			'bcgov-alpha3-heading-1',
+			'bcgov-alpha3-heading-2',
+			'bcgov-alpha3-hero-image',
+			'bcgov-alpha3-large-call-to-action',
+			'bcgov-alpha3-title-and-links-video-bkgd',
 			'bcgov-alternating-cards',
 			'bcgov-card-image-overlay',
 			'bcgov-card-image-under-2-up',
@@ -206,6 +218,7 @@ class PatternsSetup {
 			'bcgov-quote',
 			'bcgov-small-quote-image',
 			'bcgov-sequence-steps',
+			'bcgov-story-with-dark-bg',
 			'general-breadcrumb-nav',
 			'general-hero',
 			'query-grid',
