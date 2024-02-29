@@ -29,7 +29,7 @@ return [
 	<div class="wp-block-columns is-style-constrained is-triple-card-layout"><!-- wp:column {"className":"is-style-default"} -->
 	<div class="wp-block-column is-style-default"><!-- wp:group {"style":{"spacing":{"padding":{"right":"0rem","left":"0rem"}}},"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group" style="padding-right:0rem;padding-left:0rem"><!-- wp:image {"id":1377,"aspectRatio":"16/9","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"5px"}}} -->
-	<figure class="wp-block-image size-full has-custom-border"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_01.jpg" alt="Pear" class="wp-image-1377" style="border-radius:5px;aspect-ratio:16/9;object-fit:cover" title=""/></figure>
+	<figure class="wp-block-image size-full has-custom-border"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_piggy_back_ride.jpg" alt="Piggy Back Ride" class="wp-image-1377" style="border-radius:5px;aspect-ratio:16/9;object-fit:cover" title=""/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:heading {"style":{"color":{"text":"#1a5a96"},"elements":{"link":{"color":{"text":"#1a5a96"}}},"typography":{"fontStyle":"normal","fontWeight":"700"}},"className":"has-no-underline","fontSize":"small"} -->
@@ -45,7 +45,7 @@ return [
 	<!-- wp:column -->
 	<div class="wp-block-column"><!-- wp:group {"style":{"spacing":{"padding":{"right":"0rem","left":"0rem"}}},"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group" style="padding-right:0rem;padding-left:0rem"><!-- wp:image {"id":197,"aspectRatio":"16/9","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"5px"}}} -->
-	<figure class="wp-block-image size-full has-custom-border"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_10.jpg" alt="Avocado" class="wp-image-197" style="border-radius:5px;aspect-ratio:16/9;object-fit:cover" title=""/></figure>
+	<figure class="wp-block-image size-full has-custom-border"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_sunset_get_together.jpg" alt="Sunset Get Together" class="wp-image-197" style="border-radius:5px;aspect-ratio:16/9;object-fit:cover" title=""/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:heading {"style":{"elements":{"link":{"color":{"text":"#1a5a96"}}},"color":{"text":"#1a5a96"},"typography":{"fontStyle":"normal","fontWeight":"700"}},"className":"has-no-underline","fontSize":"small"} -->
@@ -61,7 +61,7 @@ return [
 	<!-- wp:column {"style":{"spacing":{"padding":{"right":"0","left":"0"}}}} -->
 	<div class="wp-block-column" style="padding-right:0;padding-left:0"><!-- wp:group {"style":{"spacing":{"padding":{"right":"0rem","left":"0rem"}}},"layout":{"type":"default"}} -->
 	<div class="wp-block-group" style="padding-right:0rem;padding-left:0rem"><!-- wp:image {"id":202,"aspectRatio":"16/9","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"5px"}}} -->
-	<figure class="wp-block-image size-full has-custom-border"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_05.jpg" alt="banana" class="wp-image-202" style="border-radius:5px;aspect-ratio:16/9;object-fit:cover" title=""/></figure>
+	<figure class="wp-block-image size-full has-custom-border"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_playing_with_abacus.jpg" alt="Playing with Abacus" class="wp-image-202" style="border-radius:5px;aspect-ratio:16/9;object-fit:cover" title=""/></figure>
 	<!-- /wp:image -->
 	
 	<!-- wp:heading {"style":{"color":{"text":"#1a5a96"},"elements":{"link":{"color":{"text":"#1a5a96"}}},"typography":{"fontStyle":"normal","fontWeight":"700"}},"className":"has-no-underline","fontSize":"small"} -->

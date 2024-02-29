@@ -27,6 +27,6 @@ return [
 	<div class="wp-block-button has-custom-font-size is-style-fill has-small-font-size"><a class="wp-block-button__link has-custom-color-5-color has-custom-color-1-background-color has-text-color has-background wp-element-button" href="https://www.yourlinkhere.ca"><strong>Call-to-Action</strong></a></div>
 	<!-- /wp:button --></div>
 	<!-- /wp:buttons --></div>
-	<!-- /wp:group --></div><figure class="wp-block-media-text__media"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_01.jpg" alt="" class="wp-image-2557 size-full"/></figure></div>
+	<!-- /wp:group --></div><figure class="wp-block-media-text__media"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/block-theme/default_five_people_smiling.jpg" alt="" class="wp-image-2557 size-full"/></figure></div>
 	<!-- /wp:media-text -->',
 ];

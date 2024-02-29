@@ -18,8 +18,8 @@ return [
 	<h3 class="wp-block-heading has-primary-brand-color has-text-color has-link-color has-extra-large-font-size">Your questions, answered.</h3>
 	<!-- /wp:heading -->
 	
-	<!-- wp:columns {"className":"faq-columns"} -->
-	<div class="wp-block-columns faq-columns"><!-- wp:column {"className":"faq"} -->
+	<!-- wp:columns -->
+	<div class="wp-block-columns"><!-- wp:column -->
 	<div class="wp-block-column faq"><!-- wp:group {"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-brand"}}}},"textColor":"primary-brand","fontSize":"small"} -->
 	<h4 class="wp-block-heading has-primary-brand-color has-text-color has-link-color has-small-font-size">Q: What is question 1?</h4>
@@ -74,8 +74,8 @@ return [
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->
 	
-	<!-- wp:columns {"className":"faq-columns"} -->
-	<div class="wp-block-columns faq-columns"><!-- wp:column {"className":"faq"} -->
+	<!-- wp:columns -->
+	<div class="wp-block-columns"><!-- wp:column {"className":"faq"} -->
 	<div class="wp-block-column faq"><!-- wp:group {"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-brand"}}}},"textColor":"primary-brand","fontSize":"small"} -->
 	<h4 class="wp-block-heading has-primary-brand-color has-text-color has-link-color has-small-font-size">Q: What is question 4?</h4>
@@ -130,8 +130,8 @@ return [
 	<!-- /wp:column --></div>
 	<!-- /wp:columns -->
 	
-	<!-- wp:columns {"className":"faq-columns"} -->
-	<div class="wp-block-columns faq-columns"><!-- wp:column {"className":"faq"} -->
+	<!-- wp:columns -->
+	<div class="wp-block-columns"><!-- wp:column {"className":"faq"} -->
 	<div class="wp-block-column faq"><!-- wp:group {"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group"><!-- wp:heading {"level":4,"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary-brand"}}}},"textColor":"primary-brand","fontSize":"small"} -->
 	<h4 class="wp-block-heading has-primary-brand-color has-text-color has-link-color has-small-font-size">Q: What is question 7?</h4>
