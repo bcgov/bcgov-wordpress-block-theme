@@ -6,7 +6,7 @@ Welcome to this tutorial on using custom post types with the Block Theme. The go
 
 ### Introduction
 
-A custom post type is used when the regular WordPress posting system is not suitable for a task. The regular WordPress posting system allows you to create news/blog posts and organize/manage them from the WordPress Dashboard. On the public side of your website, these posts can then be displayed to the user as a feed. This functionality is ideal for simple scenarios where you wish to keep users up to date. However, maybe you require an events calendar that sorts by event date, or a product catalogue. Perhaps you would like to use the regular posting system for news/blog updates but need a different post type for a different purpose. This is when custom post types become useful.
+A custom post type is used when the regular WordPress posting system is not suitable for a task. The regular WordPress posting system allows you to create news/blog posts and organize/manage them from the WordPress Dashboard. On the public side of your website, these posts can then be displayed to the user as a feed. This functionality is ideal for simple scenarios where you wish to keep users up to date. However, you may require an events calendar that sorts by event date, or a product catalogue. Perhaps you would like to use the regular posting system for news/blog updates but need a different post type for a different purpose. This is where custom post types become useful.
 
 ### Custom Post Type UI
 
@@ -25,7 +25,7 @@ In addition to creating and managing custom post types, you can also create and 
 
 For the purposes of this tutorial, we will pretend that we are creating an environmental protection website. On this website, we need a regular news feed to inform the public of our progress and a separate alert feed with important updates about environmental disasters and missing animals. The alert feed will show up higher on the homepage, with bold colours that inform the page visitor of its importance.
 
-Note: The block theme includes a banner feature that can be used to show a single alert as a banner at the top of your homepage. However, if you wish to show multiple alerts at once, this method would be a good solution.
+Note: The block theme includes a banner feature that can be used to show a single alert as a banner at the top of your homepage. However, if you wish to show multiple alerts at once, this tutorial offers a solution.
 
 ### 2. Creating the post type
 

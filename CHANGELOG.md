@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.8.0 Feb 27, 2024
+## 1.7.1 Feb 27, 2024
 - Added custom post type tutorial to documentation. ([DESCW-2049](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2049)
 
 ## 1.7.0 Feb 27, 2024
