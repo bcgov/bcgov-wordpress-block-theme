@@ -1,6 +1,6 @@
 {
   "name": "developer-documentation",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Developer and End-user documentation",
   "main": "index.js",
   "scripts": {

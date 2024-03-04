@@ -1,4 +1,8 @@
 # Changelog
+
+## 1.8.0 Feb 27, 2024
+- Added custom post type tutorial to documentation. ([DESCW-2049](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2049)
+
 ## 1.7.0 Feb 27, 2024
 - Modified default post sizing to handle footer in min-height calculation to remove excess empty space on posts with minimal body content. ([DESCW-1879](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1879))
 - Updated documentation with Tutorials section and a tutorial on using Alpha v3 styles. ([DESCW-1990](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1990)
