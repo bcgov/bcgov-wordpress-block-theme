@@ -27,17 +27,19 @@ const bcgovBlockThemeDomLoader = () => {
         const customCSS = qs( '#wp-custom-css' );
         const postSingleHeaderGroup = qs( '.bcgov-header-container' );
         const postSingleContent = qs( '.bcgov-body-content' );
+        const adminBar = qs( '#wpadminbar' );
+        const searchFieldContainer = qs( '#search-field-container' );
 
         if ( null !== customCSS ) {
             customCSS.innerText = unEscapeCSS( customCSS.innerText );
         }
 
         window.requestAnimationFrame( () => {
-            /*
-             * Determine padding for body based on header height.
-             */
+            // Define height variables with null values.
             let headerGroupHeight = null;
             let headerHeight = null;
+            let adminBarHeight = null;
+            // Check if the header and header group are present. If so, get their computed heights.
             if ( headerGroup && header ) {
                 headerGroupHeight = window
                     .getComputedStyle( headerGroup )
@@ -46,27 +48,27 @@ const bcgovBlockThemeDomLoader = () => {
                     .getComputedStyle( header )
                     .getPropertyValue( 'height' );
             }
-
-            if (
-                ( headerGroupHeight === '0px' ) === '0px' &&
-                headerHeight !== '0px'
-            ) {
-                body.style.paddingTop = headerGroupHeight;
-            } else if ( headerGroupHeight === '0px' ) {
-                body.style.paddingTop = headerHeight;
-                /*
-                 * Set the scroll padding to the height of the fixed header.
-                 */
-                if ( headerGroup ) {
-                    document.documentElement.style.setProperty(
-                        '--scroll-padding',
-                        headerGroup.clientHeight + 'px'
-                    );
-                }
+            // Check if the admin bar is present. If so, get its computed height.
+            if ( adminBar ) {
+                adminBarHeight = window
+                    .getComputedStyle( adminBar )
+                    .getPropertyValue( 'height' );
             }
-            /**
-             * Make sure header and content elements exist, create min-height calc expression for CSS.
-             */
+            // If the header is fixed...
+            if ( headerGroupHeight === '0px' ) {
+                // Add padding to the body equal to header height.
+                body.style.paddingTop = headerHeight;
+                // Compensate for WP admin bar by adding padding to the header.
+                header.style.paddingTop = adminBarHeight
+                    ? adminBarHeight
+                    : header.style.paddingTop;
+                // Set the scroll padding to the clientHeight of the header group.
+                // clientHeight is height + padding, excluding borders and margins.
+                document.documentElement.style.scrollPadding =
+                    headerGroup.clientHeight + 'px';
+            }
+
+            // Make sure header and content elements exist, create min-height calc expression for CSS.
             let footerHeight = '0px';
             if ( footer ) {
                 footerHeight = window
@@ -173,6 +175,7 @@ const bcgovBlockThemeDomLoader = () => {
                 'hides' === window.site.headerEffect )
         ) {
             header.style.position = 'fixed';
+            searchFieldContainer.style.position = 'fixed';
         }
         if (
             null !== takeover &&
@@ -248,10 +251,20 @@ const bcgovBlockThemeDomLoader = () => {
                     if ( scrollTopPosition > scrollTopPadding ) {
                         header.style.opacity = '1';
                         header.style.transform = 'translateY(0%)';
+                        if ( searchFieldContainer ) {
+                            searchFieldContainer.style.opacity = '1';
+                            searchFieldContainer.style.transform =
+                                'translateY(0%)';
+                        }
                     }
                 } else if ( scrollTopPosition > scrollTopPadding ) {
                     header.style.opacity = '0';
                     header.style.transform = 'translateY(-100%)';
+                    if ( searchFieldContainer ) {
+                        searchFieldContainer.style.opacity = '0';
+                        searchFieldContainer.style.transform =
+                            'translateY(-100%)';
+                    }
                 }
                 lastScrollTop = scrollTopPosition <= 0 ? 0 : scrollTopPosition;
             }
