@@ -34,6 +34,12 @@ class PatternsSetup {
 				);
 			}
 
+			// The loop below will setup the global $post with the post it finds, subsequently the call to wp_reset_postdata() will NOT reset the global $post back to null because
+			// https://developer.wordpress.org/reference/classes/wp_query/reset_postdata/ shows that it only resets the $post if !empty(), and null is not empty, so the global $post will never get reset back to null, we must do it.
+			// if we dont, there is an issue with get_post( 0 ) that will have it return the global $post which is of course wrong; media upload makes use of get_post(0) which causes the media to be incorrectly uploaded to the wrong folder if a global $post is set.
+			global $post;
+			$global_post_was_null = ( null === $post );  // Limit our code to only if the global post was null, otherwise make sure we dont touch it and let WP handle resetting it later below.
+
 			// Register custom post type patterns.
 			$args = array(
 				'post_type'      => 'custom-pattern',
@@ -51,67 +57,74 @@ class PatternsSetup {
 				register_taxonomy( 'pattern-keywords', 'custom-pattern', array( 'label' => 'Related Search Terms' ) );
 			}
 
-			while ( $query->have_posts() ) {
-				$query->the_post();
+			if ( $query->have_posts() ) {
+				while ( $query->have_posts() ) {
+					$query->the_post();
 
-				$id                 = get_the_ID();
-				$title              = get_the_title();
-				$categories         = get_the_terms( $id, 'pattern-groups' );
-				$search_keywords    = get_terms(
-					[
-						'taxonomy'   => 'pattern-keywords',
-						'hide_empty' => false,
-					]
-				);
-				$content            = get_the_content();
-				$block_pattern_slug = get_post_field( 'post_name', get_post() );
-				$keywords           = [];
+					$id                 = get_the_ID();
+					$title              = get_the_title();
+					$categories         = get_the_terms( $id, 'pattern-groups' );
+					$search_keywords    = get_terms(
+						[
+							'taxonomy'   => 'pattern-keywords',
+							'hide_empty' => false,
+						]
+					);
+					$content            = get_the_content();
+					$block_pattern_slug = get_post_field( 'post_name', get_post() );
+					$keywords           = [];
 
-				if ( ! empty( $categories ) ) {
-					// Register patterns.
-					foreach ( $categories as $category ) {
-						$block_pattern_name = 'bcgov_blocks_theme-' . $category->slug;
+					if ( ! empty( $categories ) ) {
+						// Register patterns.
+						foreach ( $categories as $category ) {
+							$block_pattern_name = 'bcgov_blocks_theme-' . $category->slug;
 
-						if ( ! \WP_Block_Patterns_Registry::get_instance()->is_registered( 'bcgov_blocks_theme-' . $category->slug ) ) {
-							register_block_pattern_category(
-                                'bcgov_blocks_theme-' . $category->slug,
+							if ( ! \WP_Block_Patterns_Registry::get_instance()->is_registered( 'bcgov_blocks_theme-' . $category->slug ) ) {
+								register_block_pattern_category(
+									'bcgov_blocks_theme-' . $category->slug,
+									[
+										'label' => trim(
+											get_term_parents_list(
+												$category->term_id,
+												'pattern-groups',
+												[
+													'link' => false,
+													'separator' => '//',
+												]
+											),
+											'/'
+										),
+									]
+								);
+							}
+
+							if ( ! empty( $search_keywords ) ) {
+								foreach ( $search_keywords as $keyword ) {
+									$keywords[] = $keyword->name;
+								}
+							}
+
+							register_block_pattern(
+								'bcgov-wordpress-block-theme/' . $block_pattern_slug,
 								[
-									'label' => trim(
-                                        get_term_parents_list(
-                                            $category->term_id,
-                                            'pattern-groups',
-                                            [
-												'link' => false,
-												'separator' => '//',
-											]
-                                        ),
-                                        '/'
-                                    ),
+									/* translators: %s: pattern title */
+									'title'      => 'bcgov_blocks_theme ' . $title,
+									'categories' => [ 'bcgov_blocks_theme-' . $category->slug ],
+									'keywords'   => $keywords,
+									'content'    => $content,
 								]
 							);
 						}
-
-						if ( ! empty( $search_keywords ) ) {
-							foreach ( $search_keywords as $keyword ) {
-								$keywords[] = $keyword->name;
-							}
-						}
-
-						register_block_pattern(
-							'bcgov-wordpress-block-theme/' . $block_pattern_slug,
-							[
-								/* translators: %s: pattern title */
-								'title'      => 'bcgov_blocks_theme ' . $title,
-								'categories' => [ 'bcgov_blocks_theme-' . $category->slug ],
-								'keywords'   => $keywords,
-								'content'    => $content,
-							]
-						);
 					}
 				}
-			}
 
-			wp_reset_postdata();
+				if ( $global_post_was_null ) {  // Global $post was null, lets put it back (wp_reset_postdata() wont put back null global $post).
+					$post = null; //phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+
+				} else {  // There was a global post before we ran, let WP set it back.
+					wp_reset_postdata();
+				}
+			}
 		}
 	}
 

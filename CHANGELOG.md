@@ -1,13 +1,16 @@
 # Changelog
 
+## 1.7.2 Mar 8, 2024
+- Fix issue with PatternsSetup leaving a global $post when it was previously null. Caused issue with core media upload. ([DESCW-2154](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2154))
+
 ## 1.7.1 Feb 27, 2024
-- Added custom post type tutorial to documentation. ([DESCW-2049](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2049)
-- Adjusted styling and logic of main nav and search bar to account for presence of wp admin bar. ([DESCW-2028](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2028)
+- Added custom post type tutorial to documentation. ([DESCW-2049](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2049))
+- Adjusted styling and logic of main nav and search bar to account for presence of wp admin bar. ([DESCW-2028](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2028))
 
 ## 1.7.0 Feb 27, 2024
 - Modified default post sizing to handle footer in min-height calculation to remove excess empty space on posts with minimal body content. ([DESCW-1879](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1879))
-- Updated documentation with Tutorials section and a tutorial on using Alpha v3 styles. ([DESCW-1990](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1990)
-- Added several alpha v3 design system patterns. ([DESCW-2029](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2029)
+- Updated documentation with Tutorials section and a tutorial on using Alpha v3 styles. ([DESCW-1990](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1990))
+- Added several alpha v3 design system patterns. ([DESCW-2029](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2029))
 
 ## 1.6.0 Feb 5, 2024
 - Added default styling for posts. ([DESCW-1942](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-1942))
