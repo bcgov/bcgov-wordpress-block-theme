@@ -44,9 +44,6 @@
         "test": [
             "Bcgov\\Script\\Tests::phpunit"
         ],
-        "test-e2e": [
-            "Bcgov\\Script\\Tests::e2e"
-        ],
         "coverage": [
             "./vendor/bin/phpunit --coverage-html ./coverage/php/"
         ]
