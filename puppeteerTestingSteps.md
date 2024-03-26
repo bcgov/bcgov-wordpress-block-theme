@@ -90,6 +90,11 @@ drwxr-xr-x@ 48 robrien  staff    1536 25 Mar 17:56 ..
 ```
 
 ### Documentation for writing tests:
+- [working test from the puppeteer website: https://pptr.dev ](https://pptr.dev/#example)
+  - searches developer.chrome.com for blog posts with text "automate beyond recorder"
+  - clicks on the first result
+  - and print the full title of the blog post
+
 - [Jest-Puppeteer (used by wordpress-scripts to provide an API for writing Jest-based tests for e2e testing ) ](https://github.com/argos-ci/jest-puppeteer#jest-puppeteerconfigjs)
 - [Puppeteer API documentation](https://github.com/puppeteer/puppeteer/blob/v1.18.0/docs/api.md)
 - [Puppeteer Examples (need to work through setup instructions)](https://github.com/puppeteer/puppeteer/tree/main/examples)
@@ -97,9 +102,67 @@ drwxr-xr-x@ 48 robrien  staff    1536 25 Mar 17:56 ..
 ---
 
 ## 3) Include extra steps for automation, such clicking elements
-- see https://docs.cypress.io/guides/end-to-end-testing/writing-your-first-end-to-end-test#Step-3-Click-an-element
-- before trying this, please walk through the above steps, looking at the digimod example config and spec.
-- The cypress docs tutorial on getting started will help open a running version of cypress.
-  - Follow these steps:
-  1) https://docs.cypress.io/guides/getting-started/opening-the-app
-  2) https://docs.cypress.io/guides/end-to-end-testing/writing-your-first-end-to-end-test
+- see https://pptr.dev/#example for a great use of browser automation to get expected outputs.
+### example (working) test
+```javaScript
+const puppeteer = require( 'puppeteer' );
+
+describe( 'Basic Page Tests', () => {
+    beforeAll( async () => {
+        await page.goto( 'https://google.com' );
+    } );
+
+    it( 'should be titled "Google"', async () => {
+        await expect( page.title() ).resolves.toMatch( 'Google' );
+    } );
+
+    it( 'should open a new page', async () => {
+        const page = await browser.newPage();
+        await page.goto( 'https://google.com' );
+    } );
+
+    it( 'should have lorem ipsum', async () => {
+        const browser = await puppeteer.launch( { headless: false } );
+        const page = await browser.newPage();
+        await page.goto( 'https://localhost' );
+        await expect( page ).toMatchTextContent(
+            'Ullamcorper Ultricies Ridiculus Consectetur Ligula'
+        );
+        await browser.close();
+    } );
+
+    it( `should search developer.chrome.com for blog posts with text "automate beyond recorder,
+    click on the first result, and print the full title of the blog post`, async () => {
+        // Launch the browser and open a new blank page
+        const browser = await puppeteer.launch({ headless: false }); // show browser - default: true
+        const page = await browser.newPage();
+
+        // Navigate the page to a URL
+        await page.goto( 'https://developer.chrome.com/' );
+
+        // Set screen size
+        await page.setViewport( { width: 1080, height: 1024 } );
+
+        // Type into search box
+        await page.type( '.devsite-search-field', 'automate beyond recorder' );
+
+        // Wait and click on first result
+        const searchResultSelector = '.devsite-result-item-link';
+        await page.waitForSelector( searchResultSelector );
+        await page.click( searchResultSelector );
+
+        // Locate the full title with a unique string
+        const textSelector = await page.waitForSelector(
+            'text/Customize and automate'
+        );
+        const fullTitle = await textSelector?.evaluate(
+            ( el ) => el.textContent
+        );
+
+        // Print the full title
+        console.log( 'The title of this blog post is "%s".', fullTitle );
+
+        await browser.close(); // the 'headless' browser won't be dismissed otherwise.
+    } );
+} );
+```
