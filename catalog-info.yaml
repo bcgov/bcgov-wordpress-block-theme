@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: gdx-widget-3
+  title: GDX Widget 3
+  description: glbahglksdg
+  annotations:
+    github.com/project-slug: bcgov/bcgov-wordpress-block-theme
+    backstage.io/techdocs-ref: dir:.
+    bcgovpubcode.gov.bc.ca/ministry: CITZ
+    developer.gov.bc.ca/source_template: default/docs-template-pr
+spec:
+  type: documentation
+  lifecycle: experimental
+  owner: group:default/digital-engagement-solutions-custom-web

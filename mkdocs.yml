@@ -1,0 +1,16 @@
+site_name: "GDX Widget 3"
+site_description: "glbahglksdg"
+docs_dir: "documentation /docs"
+repo_url: "https://github.com/bcgov/bcgov-wordpress-block-theme"
+edit_uri: edit/development/documentation /docs
+nav:
+    - Introduction: index.md
+    - Getting started: getting-started.md
+    - Configuration: configuration.md
+    - Tips and tricks: tips-and-tricks.md
+    - About us: about-us.md
+plugins:
+    - techdocs-core
+    - git-revision-date-localized
+markdown_extensions:
+    - md_in_html
