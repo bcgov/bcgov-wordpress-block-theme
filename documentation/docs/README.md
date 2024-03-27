@@ -3,7 +3,7 @@ home: true
 title: BCGov Block Theme
 actions:
 - text: Quick Start →
-  link: /guide/setting/Using-BCGov-Block-Theme.md
+  link: /guide/content/getting-started.md
   type: primary
 # - text: Patterns
 #   link: /guide/Block-Patterns.md

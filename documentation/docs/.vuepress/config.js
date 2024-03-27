@@ -23,6 +23,7 @@ export default defineUserConfig({
 	  {
         text: 'Tutorials',
         children: [
+			'/guide/content/getting-started.md',
 			'/guide/content/using-alpha-3-styling.md',
 			'/guide/content/using-custom-post-types.md',
 		]
