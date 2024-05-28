@@ -134,27 +134,27 @@
 			"fontSizes": [
 				{
 					"slug": "extra-small",
-					"size": "1rem",
+					"size": "clamp(1rem, 1rem, 1rem)",
 					"name": "Extra small"
 				},
 				{
 					"slug": "small",
-					"size": "1.125rem",
+					"size": "clamp(1.125rem, 1.125rem, 1.125rem)",
 					"name": "Small"
 				},
 				{
 					"slug": "normal",
-					"size": "1.25rem",
+					"size": "clamp(1.25rem, 1.25rem, 1.25rem)",
 					"name": "Normal"
 				},
 				{
 					"slug": "large",
-					"size": "1.5rem",
+					"size": "clamp(1.5rem, 1.5rem, 1.5rem)",
 					"name": "Large"
 				},
 				{
 					"slug": "extra-large",
-					"size": "2rem",
+					"size": "clamp(2rem, 2rem, 2rem)",
 					"name": "Extra large"
 				}
 			],
@@ -168,7 +168,7 @@
 				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
 			},
 			"core/navigation": {
-				"css": "& li { font-size: var(--wp--preset--font-size--normal); }"
+				"css": "& li { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
 			},
 			"core/paragraph": {
 				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
@@ -190,32 +190,32 @@
 		"elements": {
 			"h1": {
 				"color": {
-					"text": "var(--wp--preset--color--headline-color)"
+					"text": "var(--bcds-typography-color-primary)"
 				}
 			},
 			"h2": {
 				"color": {
-					"text": "var(--wp--preset--color--headline-color)"
+					"text": "var(--bcds-typography-color-primary)"
 				}
 			},
 			"h3": {
 				"color": {
-					"text": "var(--wp--preset--color--headline-color)"
+					"text": "var(--bcds-typography-color-primary)"
 				}
 			},
 			"h4": {
 				"color": {
-					"text": "var(--wp--preset--color--headline-color)"
+					"text": "var(--bcds-typography-color-primary)"
 				}
 			},
 			"h5": {
 				"color": {
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--bcds-typography-color-primary)"
 				}
 			},
 			"h6": {
 				"color": {
-					"text": "var(--wp--preset--color--foreground)"
+					"text": "var(--bcds-typography-color-primary)"
 				}
 			},
 			"link": {
