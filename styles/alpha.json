@@ -134,27 +134,27 @@
 			"fontSizes": [
 				{
 					"slug": "extra-small",
-					"size": "var(--wp--preset--font-size--extra-small)",
+					"size": "0.75rem",
 					"name": "Extra small"
 				},
 				{
 					"slug": "small",
-					"size": "var(--wp--preset--font-size--small)",
+					"size": "var(-—bcds-typography-font-size-label)",
 					"name": "Small"
 				},
 				{
 					"slug": "normal",
-					"size": "var(--wp--preset--font-size--normal)",
+					"size": "var(-—bcds-typography-font-size-body)",
 					"name": "Normal"
 				},
 				{
 					"slug": "large",
-					"size": "var(--wp--preset--font-size--large)",
+					"size": "var(-—bcds-typography-font-size-large-body)",
 					"name": "Large"
 				},
 				{
 					"slug": "extra-large",
-					"size": "var(--wp--preset--font-size--extra-large)",
+					"size": "var(-—bcds-typography-font-size-h5)",
 					"name": "Extra large"
 				}
 			],
