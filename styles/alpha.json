@@ -165,22 +165,22 @@
 	"styles": {
 		"blocks": {
 			"core/list-item": {
-				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+				"css": "& { font-size: 1rem }"
 			},
 			"core/navigation": {
-				"css": "& li { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+				"css": "& li { font-size: 1rem }"
 			},
 			"core/paragraph": {
-				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+				"css": "& { font-size: 1rem }"
 			},
 			"core/pullquote": {
-				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+				"css": "& { font-size: 1rem }"
 			},
 			"core/quote": {
-				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+				"css": "& { font-size: 1rem }"
 			},
 			"core/site-title": {
-				"css": "& { font-size: clamp(var(--wp--preset--font-size--normal), 1rem + ((1vw - 0.48rem) * 0.481), 1.25rem); }"
+				"css": "& { font-size: 1rem }"
 			}
 		},
 		"color": {

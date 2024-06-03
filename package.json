@@ -20,7 +20,7 @@
   "main": "index.js",
   "devDependencies": {
     "@bcgov/bc-sans": "^2.1.0",
-    "@bcgov/design-tokens": "^2.0.1",
+    "@bcgov/design-tokens": "^3.0.0",
     "@bcgov/wordpress-eslint": "git+https://apps.itsm.gov.bc.ca/bitbucket/scm/wp/bcgov-wordpress-eslint.git#semver:1.x",
     "@bcgov/wordpress-stylelintrc": "git+https://apps.itsm.gov.bc.ca/bitbucket/scm/wp/bcgov-wordpress-stylelintrc.git#semver:1.x",
     "@wordpress/scripts": "^27.2.0",
