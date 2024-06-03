@@ -1,9 +1,9 @@
 # Changelog
 
-## 1.8.3 May 28, 2024
+## 1.8.3 June 03, 2024
 
--   ([DESCW-2393](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2393))
-    -   Update font sizes to use clamping so that they don't scale with viewport width.
+-   ([DESCW-2344](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2344))
+    -   Update design tokens to use v3.0.0.
     -   Update header colors to use --bcds-typography-color-primary.
 -   Update alpha footer template to match gov.bc.ca text ([DESCW-2393](https://apps.itsm.gov.bc.ca/jira/browse/DESCW-2393))
 
