@@ -12,22 +12,22 @@
 				},
 				{
 					"slug": "secondary-brand",
-					"color": "var(--bcds-surface-brand-gold-60)",
+					"color": "var(--bcds-surface-brand-gold-90)",
 					"name": "Alpha Gov Secondary Brand"
 				},
 				{
 					"slug": "accent",
-					"color": "var(--bcds-surface-secondary-default)",
+					"color": "var(--bcds-surface-color-background-white)",
 					"name": "Alpha Gov Accent"
 				},
 				{
 					"slug": "secondary-accent",
-					"color": "var(--bcds-surface-tertiary-active)",
+					"color": "var(--bcds-surface-color-border-active)",
 					"name": "Alpha Gov Secondary Accent"
 				},
 				{
 					"slug": "headline-color",
-					"color": "var(--bcds-surface-brand-blue-100)",
+					"color": "var(--bcds-surface-color-background-dark-blue)",
 					"name": "Headline Colour"
 				},
 				{
@@ -42,52 +42,52 @@
 				},
 				{
 					"slug": "quarternary",
-					"color": "var(--bcds-surface-primary-active)",
+					"color": "var(--bcds-surface-color-border-active)",
 					"name": "Public Sector – Quarternary"
 				},
 				{
 					"slug": "quinary",
-					"color": "var(--bcds-surface-brand-gold-50)",
+					"color": "var(--bcds-theme-gold-80)",
 					"name": "BC Yellow – Quinary"
 				},
 				{
 					"slug": "senary",
-					"color": "var(--bcds-surface-icons-danger)",
+					"color": "var(--bcds-icons-color-danger)",
 					"name": "Danger – Senary"
 				},
 				{
 					"slug": "septenary",
-					"color": "var(--bcds-surface-icons-success)",
+					"color": "var(--bcds-icons-color-success)",
 					"name": "Success – Septenary"
 				},
 				{
 					"slug": "octonary",
-					"color": "var(--bcds-surface-icons-warning)",
+					"color": "var(--bcds-icons-color-warning)",
 					"name": "Warning – Octonary"
 				},
 				{
 					"slug": "nonary",
-					"color": "var(--bcds-icons-icons-primary)",
+					"color": "var(--bcds-icons-color-primary)",
 					"name": "Icons primary – Nonary"
 				},
 				{
 					"slug": "denary",
-					"color": "var(--bcds-icons-icons-secondary)",
+					"color": "var(--bcds-icons-color-secondary)",
 					"name": "Icons secondary – Denary"
 				},
 				{
 					"slug": "ondenary",
-					"color": "var(--bcds-icons-icons-info)",
+					"color": "var(--bcds-icons-color-info)",
 					"name": "Icons info – Ondenary"
 				},
 				{
 					"slug": "duodenary",
-					"color": "var(--bcds-icons-icons-disabled)",
+					"color": "var(--bcds-icons-color-disabled)",
 					"name": "Icons disabled – Duodenary"
 				},
 				{
 					"slug": "tridenary",
-					"color": "var(--bcds-surface-overlay-default)",
+					"color": "var(--bcds-surface-color-overlay-default)",
 					"name": "Dark overlay – Tridenary"
 				},
 				{
@@ -97,17 +97,17 @@
 				},
 				{
 					"slug": "gray-80",
-					"color": "var(--bcds-surface-brand-gray-80)",
+					"color": "var(--bcds-theme-gray-80)",
 					"name": "Gray 80"
 				},
 				{
 					"slug": "gray-30",
-					"color": "var(--bcds-surface-brand-gray-30)",
+					"color": "var(--bcds-theme-gray-30)",
 					"name": "Gray 30"
 				},
 				{
 					"slug": "gray-10",
-					"color": "var(--bcds-surface-brand-gray-10)",
+					"color": "var(--bcds-theme-gray-10)",
 					"name": "Gray 10"
 				},
 				{
@@ -117,7 +117,7 @@
 				},
 				{
 					"slug": "background",
-					"color": "var(--bcds-surface-background-white)",
+					"color": "var(--bcds-surface-color-background-white)",
 					"name": "Background"
 				},
 				{
