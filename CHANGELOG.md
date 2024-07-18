@@ -1,4 +1,7 @@
 # Changelog
+## 1.12.0 July 18, 2024
+-([DESCW-2479](https://citz-gdx.atlassian.net/browse/DESCW-2479)) fixing dependabot error.
+
 ## 1.11.00 July 4, 2024
 - ([DESCW-2480](https://citz-gdx.atlassian.net/browse/DESCW-2480)) adding excerpt for pages.
 
