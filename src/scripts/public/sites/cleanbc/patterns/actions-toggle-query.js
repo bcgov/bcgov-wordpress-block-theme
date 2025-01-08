@@ -2,6 +2,24 @@ import { qs, qsa, addSafeEventListener } from '../../../utils';
 import { triggerClick } from '../../../../admin/utils/common';
 
 /**
+ * Escape HTML special characters in a string.
+ * @param {string} str - The string to escape.
+ * @return {string} - The escaped string.
+ */
+function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, function (match) {
+        const escapeMap = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        };
+        return escapeMap[match];
+    });
+}
+
+/**
  * CleanBC Actions Toggle manipulation.
  * [@return](https://github.com/return) {void}
  */
@@ -193,7 +211,7 @@ const bcgovBlockThemeCleanbcActionsToggle = () => {
                             null === headingCounterContainer &&
                             headingCount
                         ) {
-                            headingCounter.innerHTML = `${ headingCounter.innerText } <span class="count">${ headingCount } </span>`;
+                            headingCounter.innerHTML = `${ escapeHtml(headingCounter.innerText) } <span class="count">${ headingCount } </span>`;
                         }
                     }
                 }
