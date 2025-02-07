@@ -7,6 +7,7 @@
 - this also updates the NPM package `@wordpress/scripts` to `^30.8.1`
 - all dependencies to @wordpress/scripts were updated as well to eliminate npm audit alerts.
 - note: @wordpress/scripts is not production code, so any security alerts do not pertain to production code for this theme.
+- Added space around option to block settings.
 
 
 ## 1.13.0

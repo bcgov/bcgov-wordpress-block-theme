@@ -356,7 +356,7 @@
 			"wideSize": "1440px"
 		},
 		"spacing": {
-			"blockGap": null,
+			"blockGap": true,
 			"customSpacingSize": true,
 			"spacingScale": {
 				"operator": "*",
