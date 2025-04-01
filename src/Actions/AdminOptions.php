@@ -129,7 +129,7 @@ class AdminOptions {
             'upgrade-insecure-requests',
             'default-src'     => "'self' gov.bc.ca *.gov.bc.ca data: *.twitter.com *.twimg.com " . ( esc_attr( get_option( 'custom_csp_defaultsrc' ) ) ?? '' ),
             'script-src'      => "'self' 'unsafe-inline' 'unsafe-eval' gov.bc.ca *.gov.bc.ca *.twimg.com *.twitter.com *.flickr.com " . ( esc_attr( get_option( 'custom_csp_scriptsrc' ) ) ?? '' ),
-            'style-src'       => "'self' 'unsafe-inline' *.twitter.com *.twimg.com" . ( esc_attr( get_option( 'custom_csp_stylesrc' ) ) ?? '' ),
+            'style-src'       => "'self' 'unsafe-inline' *.twitter.com *.twimg.com " . ( esc_attr( get_option( 'custom_csp_stylesrc' ) ) ?? '' ),
             'connect-src'     => "'self' gov.bc.ca  *.gov.bc.ca *.flickr.com " . ( esc_attr( get_option( 'custom_csp_connectsrc' ) ) ?? '' ),
             'font-src'        => "'self' 'unsafe-inline' data: " . ( esc_attr( get_option( 'custom_csp_fontsrc' ) ) ?? '' ),
             'img-src'         => "'self' data: gov.bc.ca *.gov.bc.ca *.twimg.com *.twitter.com *.staticflickr.com " . ( esc_attr( get_option( 'custom_csp_imgsrc' ) ) ?? '' ),
