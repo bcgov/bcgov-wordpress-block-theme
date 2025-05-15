@@ -1,34 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="VuePress 2.0.0-rc.2">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.23" />
     <style>
       :root {
-        --c-bg: #fff;
+        --vp-c-bg: #fff;
       }
-      html.dark {
-        --c-bg: #22272e;
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
       }
-      html, body {
-        background-color: var(--c-bg);
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
       }
     </style>
     <script>
-      const userMode = localStorage.getItem('vuepress-color-scheme');
-			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
-				document.documentElement.classList.toggle('dark', true);
-			}
+      const useChoice = localStorage.getItem('vuepress-color-scheme')
+      const systemStatus =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (useChoice === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (useChoice === 'dark' || systemStatus) {
+        document.documentElement.dataset.theme = 'dark'
+      }
     </script>
     <title>BCGov Block Theme</title><meta name="description" content="BCGov Block Theme Documentation">
-    <link rel="preload" href="/bcgov-wordpress-block-theme/assets/style-nNzhilOW.css" as="style"><link rel="stylesheet" href="/bcgov-wordpress-block-theme/assets/style-nNzhilOW.css">
-    <link rel="modulepreload" href="/bcgov-wordpress-block-theme/assets/app-BxIBBeUK.js"><link rel="modulepreload" href="/bcgov-wordpress-block-theme/assets/404.html-DWlaxZmN.js"><link rel="modulepreload" href="/bcgov-wordpress-block-theme/assets/404.html-5sy5zeZP.js">
-    <link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/index.html-BNxU9113.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Accessibility.html-BFQrVTx2.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Block-Patterns.html-Bf0jou-H.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Polylang-multi-language.html-BDNcYOEN.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Printing.html-CuUpuiF4.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/getting-started.html-DylgCYt6.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/using-alpha-3-styling.html-D5RtAgB-.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/using-custom-post-types.html-Da-asJGA.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/wp-admin.html-BQBRZsi9.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/wp-templates.html-DtnDnp-W.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Content-Security-Policy.html-DS0N6hc8.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Notice-Banner.html-uHmgNJa-.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Using-BCGov-Block-Theme.html-BsLzKuFs.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/index.html-z3zn4SPH.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Accessibility.html-BQuA83wV.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Block-Patterns.html-BF2SGXek.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Polylang-multi-language.html-CxtNDe9c.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Printing.html-QJBscsNW.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/getting-started.html-DJzkCCeF.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/using-alpha-3-styling.html-D7mncO5w.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/using-custom-post-types.html-D5kNVwSJ.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/wp-admin.html-CKI-PekG.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/wp-templates.html-C41v7_fR.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Content-Security-Policy.html-DiRzWUA5.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Notice-Banner.html-CofPq_X8.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Using-BCGov-Block-Theme.html-DkkUVw1f.js" as="script">
+    <link rel="preload" href="/bcgov-wordpress-block-theme/assets/style-C7RGzNhy.css" as="style"><link rel="stylesheet" href="/bcgov-wordpress-block-theme/assets/style-C7RGzNhy.css">
+    <link rel="modulepreload" href="/bcgov-wordpress-block-theme/assets/app-CVNdeznN.js"><link rel="modulepreload" href="/bcgov-wordpress-block-theme/assets/404.html-ergGycrS.js">
+    <link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/index.html-z9wTKhmr.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Accessibility.html-CNpV4mU-.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Block-Patterns.html-Cr7HtzqT.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Polylang-multi-language.html-BGomlVQv.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Printing.html-CnfDNWex.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/getting-started.html-DOedoQJO.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/using-alpha-3-styling.html-lNMWPj5z.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/using-custom-post-types.html-D3OE6P-8.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/wp-admin.html-C685JKe7.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/wp-templates.html-9Q84K_P6.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Content-Security-Policy.html-Dek249cs.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Notice-Banner.html-gO9T5gRH.js" as="script"><link rel="prefetch" href="/bcgov-wordpress-block-theme/assets/Using-BCGov-Block-Theme.html-B0pCsJz_.js" as="script">
   </head>
   <body>
-    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>There&#39;s nothing here.</blockquote><a href="/bcgov-wordpress-block-theme/" class="">Take me home</a></div></main></div><!----><!--]--></div>
-    <script type="module" src="/bcgov-wordpress-block-theme/assets/app-BxIBBeUK.js" defer></script>
+    <div id="app"><!--[--><div class="vp-theme-container" vp-container data-v-fb5096b8><main class="page" data-v-fb5096b8><div vp-content data-v-fb5096b8><h1 data-v-fb5096b8>404</h1><blockquote data-v-fb5096b8>There&#39;s nothing here.</blockquote><a class="route-link" href="/bcgov-wordpress-block-theme/" data-v-fb5096b8>Take me home</a></div></main></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/bcgov-wordpress-block-theme/assets/app-CVNdeznN.js" defer></script>
   </body>
 </html>
