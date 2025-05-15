@@ -20,7 +20,6 @@ jobs:
         run: |
           cd documentation
           npm install
-          npm install -D sass-embedded # Install the missing dependency
           npm run docs:build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
