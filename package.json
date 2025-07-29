@@ -21,9 +21,9 @@
   "devDependencies": {
     "@bcgov/bc-sans": "^2.1.0",
     "@bcgov/design-tokens": "2.0.1",
-    "@wordpress/scripts": "^30.8.1",
     "@bcgov/wordpress-eslint": "git+https://github.com/bcgov/wordpress-eslint.git#semver:1.x",
     "@bcgov/wordpress-stylelintrc": "git+https://github.com/bcgov/wordpress-stylelintrc.git#semver:1.x",
+    "@wordpress/scripts": "^30.8.1",
     "classnames": "^2.3.2",
     "lodash": "^4.17.21"
   },
@@ -49,6 +49,8 @@
   },
   "dependencies": {
     "@wordpress/icons": "^10.6.0",
+    "puppeteer": "^18.2.1",
+    "puppeteer-core": "^18.2.1",
     "webpack-dev-server": "^5.2.0"
   }
 }
