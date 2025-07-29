@@ -11,7 +11,7 @@ on:
 jobs:
   run-css:
     permissions:
-      contents: read
+      contents: read # Required to check out repository contents for linting tasks
       pull-requests: read
     runs-on: ubuntu-latest
     steps:
