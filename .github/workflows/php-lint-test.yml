@@ -9,6 +9,9 @@ on:
   workflow_dispatch:
 jobs:
   run-php:
+    permissions:
+      contents: read # Required to read the repository contents and do linting/testing
+      pull-requests: read # Required to read pull request information (use write if you need to post the results on PRs)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,6 +34,6 @@ jobs:
 
       - name: Run phpcs
         run: composer run phpcs
-      
+
       - name: Run phpunit
         run: composer run test
