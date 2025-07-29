@@ -10,7 +10,7 @@ on:
 jobs:
   build-and-deploy:
     permissions:
-      contents: read # Required to read the repository contents
+      contents: write # Required to deploy to GitHub Pages
       pages: write # Required to deploy to GitHub Pages
       id-token: write # Required for authentication with GitHub Pages
     runs-on: ubuntu-latest
