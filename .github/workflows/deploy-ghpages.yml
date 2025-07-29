@@ -9,6 +9,10 @@ on:
   workflow_dispatch:
 jobs:
   build-and-deploy:
+    permissions:
+      contents: write        # Required to push to gh-pages
+      pages: write           # Required to deploy to GitHub Pages
+      id-token: write        # Required for authentication with GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️

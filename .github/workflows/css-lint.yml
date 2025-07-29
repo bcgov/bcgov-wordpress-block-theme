@@ -10,6 +10,9 @@ on:
   workflow_dispatch:
 jobs:
   run-css:
+    permissions:
+      contents: read # Required to check out repository contents for linting tasks
+      pull-requests: read # Required to read pull request metadata for linting associated CSS files
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
