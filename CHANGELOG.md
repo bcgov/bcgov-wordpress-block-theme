@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.17.0
+
+[DESCW-3088](https://citz-gdx.atlassian.net/browse/DESCW-3088)
+- update NPM dependencies to latest (viable) versions
+
 ## 1.16.0
 
 [DESCW-3088](https://citz-gdx.atlassian.net/browse/DESCW-3088)
