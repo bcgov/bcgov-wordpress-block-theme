@@ -89,3 +89,18 @@ Added to the site admin under Appearance > BCGov Block Theme and can be modified
 ```bash
 /inc/core/templates/theme-info-page.php
 ```
+## End-to-End (E2E) Testing
+
+**Note:** The `test:e2e` npm script has been disabled because it requires the `puppeteer-core` package and additional setup for e2e test support. If you wish to enable e2e testing, install `puppeteer-core` as a dev dependency:
+
+```sh
+npm install --save-dev puppeteer-core
+```
+
+Then, add the `test:e2e` script back to your `package.json`:
+
+```json
+"test:e2e": "wp-scripts test-e2e --passWithNoTests"
+```
+
+Make sure your environment is configured for e2e testing with WordPress scripts.
