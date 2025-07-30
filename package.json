@@ -43,7 +43,7 @@
     "test": "npm run test:unit"
   },
   "engines": {
-    "node": "22.17.1"
+    "node": ">=22.17 <23"
   },
   "dependencies": {
     "@wordpress/icons": "10.27.0",
