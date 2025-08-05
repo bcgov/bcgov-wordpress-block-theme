@@ -45,6 +45,9 @@
         ],
         "coverage": [
             "./vendor/bin/phpunit --coverage-html ./coverage/php/"
+        ],
+        "test:e2e": [
+            "npm run test:e2e"
         ]
     },
     "config": {

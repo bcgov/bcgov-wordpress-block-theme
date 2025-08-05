@@ -5,6 +5,12 @@
 [DESCW-3111](https://citz-gdx.atlassian.net/browse/DESCW-3111)
 - add missing CODEOWNERS file
 
+[DESCW-3107](https://citz-gdx.atlassian.net/browse/DESCW-3107)
+- fix issue with test:e2e command not running due to missing puppeteer dependency:
+  - @wordpress/scripts version 30.20.0 has a hardcoded call to require.resolve('puppeteer-core/install')
+  - Modern versions of puppeteer-core (23.x+) no longer include this install script
+  - This causes the module resolution to fail before the script even gets to check for tests
+
 [DESCW-2984](https://citz-gdx.atlassian.net/browse/DESCW-2984)
 - update NPM dependencies to latest (viable) versions
 - remove e2e tests from the build process as they are not currently used (note added to the README.md)
