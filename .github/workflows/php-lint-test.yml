@@ -1,8 +1,6 @@
 name: PHP Lint and Unit Tests
 on:
   pull_request:
-    branches:
-      - "development"
     paths:
       - "**.php"
       - "!dist/**"
@@ -38,5 +36,5 @@ jobs:
       - name: Run phpunit
         run: composer run test
 
-      # - name: Run JS e2e tests
-      #   run: npm run test:e2e
+      - name: Run JS e2e tests
+        run: npm run test:e2e
