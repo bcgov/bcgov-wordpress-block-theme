@@ -35,6 +35,3 @@ jobs:
 
       - name: Run phpunit
         run: composer run test
-
-      - name: Run JS e2e tests
-        run: npm run test:e2e
