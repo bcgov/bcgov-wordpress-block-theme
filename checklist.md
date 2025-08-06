@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Created at 2025-07-31 12:36 pm
-=======
 Created at 2025-08-05 11:46 am
->>>>>>> defa038 (DESCW-3107 fix bug with `test:e2e` workflow puppeteer dependency)
 
 * [yes] Updated version in composer.json
 * [yes] Updated version in style.css or plugin file
