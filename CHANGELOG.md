@@ -2,6 +2,9 @@
 
 ## 1.17.0
 
+[DESCW-3111](https://citz-gdx.atlassian.net/browse/DESCW-3111)
+- add missing CODEOWNERS file
+
 [DESCW-2984](https://citz-gdx.atlassian.net/browse/DESCW-2984)
 - update NPM dependencies to latest (viable) versions
 - remove e2e tests from the build process as they are not currently used (note added to the README.md)
