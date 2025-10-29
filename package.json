@@ -47,7 +47,7 @@
     "node": ">=22.17 <23"
   },
   "dependencies": {
-    "@wordpress/icons": "^11.0.0",
+    "@wordpress/icons": "^11.1.0",
     "webpack-dev-server": "^5.2.2"
   }
 }
