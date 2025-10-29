@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.18.0
+
+[DESCW-3191](https://citz-gdx.atlassian.net/browse/DESCW-3191)
+
+- fix dependabot alerts
+- removed icons package
+- updated vuepress in /documentation to RC.7
+
 ## 1.17.0
 
 [DESCW-3111](https://citz-gdx.atlassian.net/browse/DESCW-3111)
