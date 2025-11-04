@@ -2,6 +2,11 @@
 
 ## 1.18.0
 
+[DESCW-3207](https://citz-gdx.atlassian.net/browse/DESCW-3191)
+
+- clean up more dependabot alerts in /documentation
+- update wordpress-utils to latest
+
 [DESCW-3191](https://citz-gdx.atlassian.net/browse/DESCW-3191)
 
 - fix dependabot alerts
