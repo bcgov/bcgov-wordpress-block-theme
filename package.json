@@ -1,6 +1,6 @@
 {
   "name": "bcgov-wordpress-block-theme",
-  "version": "1.17.0",
+  "version": "1.18.0",
   "description": "Bcgov WordPress Block Theme",
   "author": "govwordpress@gov.bc.ca",
   "license": "Apache-2.0",
@@ -23,7 +23,7 @@
     "@bcgov/design-tokens": "2.0.1",
     "@bcgov/wordpress-eslint": "github:bcgov/wordpress-eslint#semver:1.x",
     "@bcgov/wordpress-stylelintrc": "github:bcgov/wordpress-stylelintrc#semver:1.x",
-    "@wordpress/scripts": "30.20.0",
+    "@wordpress/scripts": "^30.27.0",
     "classnames": "2.5.1",
     "lodash": "4.17.21"
   },
