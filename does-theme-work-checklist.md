@@ -16,7 +16,7 @@
 
 ## WordPress Editor
 - [x] Site Editor opens
-- [x] Can open a template (`page.php`)
+- [x] Can open a template (`templates/page.html`)
 - [x] Can edit a page and save it
 - [x] Can find and insert a BCGov pattern
 
@@ -25,5 +25,5 @@
 
 ## No Dependency Files Have Been Changed
 - [x] Confirm no dependency files have been modified
-  - only ran 'npm i && npm run build`
-  - added a .wp-env.json locally to stand up dev environment for this theme
+  - only ran `npm i && npm run build`
+  - added a `.wp-env.json` locally to stand up dev environment for this theme
