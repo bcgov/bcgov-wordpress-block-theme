@@ -7,8 +7,8 @@
 ![Home Page Loads](home-page-loads.png)
 - [x] BC Sans font still correct
 - [x] Header, footer, menu still work (desktop + mobile)
-- [ ] If you use a notification banner: it still shows
-  - banner doesn't work on test either. not sure what's up with that.
+- [ ] Notification banner (if used): verify it displays
+  - Not verified; banner also not working in test environment.
 - [x] If you use external link icons: they still show
 ![external link and accordion](external-links-and-accordion.png)
   - works with button block (using link style)
