@@ -1,6 +1,6 @@
 # Findings
 
-> everything depends on @wordpress/scripts. I could update that to v33, but it is a breaking change: it would break eslint, which would need to be re-configured to ignore several new rules  that were added to the eslint config inside @wordpress/scripts.
+> Everything depends on `@wordpress/scripts`. Upgrading it to v33 would be a breaking change (it would break ESLint) and would require reconfiguring ESLint to accommodate new rules introduced by `@wordpress/scripts`.
 
 | Dependency of `@wordpress/scripts@30.27.0`? | Package | Why it can’t be fixed by `npm audit fix` or `npm update` |
 |---|---|---|
