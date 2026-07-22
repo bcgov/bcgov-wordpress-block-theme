@@ -1,8 +1,8 @@
-**Checklist — build**
+## Checklist — build
 
 - [x] `npm run build` passes
-**Checklist — front of the website**
 
+## Checklist — front of the website
 - [x] Home page loads
 ![Home Page Loads](home-page-loads.png)
 - [x] BC Sans font still correct
