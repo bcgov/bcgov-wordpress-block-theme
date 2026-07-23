@@ -16,3 +16,4 @@ coverage
 /documentation/docs/.vuepress/dist/**
 .vscode/**
 .wp-env.json
+.github/copilot-instructions.md
