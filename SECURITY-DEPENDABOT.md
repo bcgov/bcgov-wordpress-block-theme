@@ -2,8 +2,11 @@
 
 > Everything depends on `@wordpress/scripts`. Upgrading it to v33 would be a breaking change (it would break ESLint) and would require reconfiguring ESLint to accommodate new rules introduced by `@wordpress/scripts`.
 
+> After `npm audit fix`, the repo still reports 78 vulnerabilities; the automatic update only moved a few patch-level dependencies in `package-lock.json` and did not remove the `@wordpress/scripts`-anchored findings.
+
 | Dependency of `@wordpress/scripts@30.27.0`? | Package | Why it can’t be fixed by `npm audit fix` or `npm update` |
 |---|---|---|
+| Yes (transitive) | `@babel/core` | It is still pulled in by the current `@wordpress/scripts` toolchain; the fixed version requires the newer upstream build-tooling stack that comes with `@wordpress/scripts@33`. |
 | Yes (transitive) | `@opentelemetry/core` | It is pulled in by the current `@wordpress/scripts` toolchain; the fixed version would require a newer upstream build-tooling stack than the current install. |
 | Yes (transitive) | `@opentelemetry/instrumentation-amqplib` | Same dependency chain through `@wordpress/scripts`; no compatible safe update is available from the current package set. |
 | Yes (transitive) | `@opentelemetry/instrumentation-connect` | Same as above. |
@@ -29,6 +32,7 @@
 | Yes (transitive) | `markdown-it` | Same as above. |
 | Yes (transitive) | `markdownlint` | Same as above. |
 | Yes (transitive) | `markdownlint-cli` | Same as above. |
+| Yes (transitive) | `brace-expansion` | It remains in the `eslint`/`markdownlint` dependency graph under `@wordpress/scripts`; the safe fix comes from the same larger toolchain upgrade. |
 | Yes (transitive) | `minimatch` | Same as above. |
 | Yes (transitive) | `serialize-javascript` | It is pulled in by the webpack-related subtree under `@wordpress/scripts`; the patched version needs a broader dependency upgrade. |
 | Yes (transitive) | `sockjs` | It comes from `webpack-dev-server` in the current toolchain; the fix is on a newer major line. |
