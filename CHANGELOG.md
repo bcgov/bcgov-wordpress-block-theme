@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.18.0
+## 1.19.0
+[DDSWP-1017](https://citz-gdx.atlassian.net/browse/DSWP-1017)
+
+- clean up dependabot alerts in / and /documentation
+- full report showing remaining alerts and rationale saved on DSWP-1017 ticket comments
+
+## 1.19.0
 
 [DESCW-3207](https://citz-gdx.atlassian.net/browse/DESCW-3191)
 
