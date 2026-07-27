@@ -1,9 +1,9 @@
-## Checklist — build
+## Full Checklist — build
 
-- [x] `npm run build` passes
+- [x] `npm ci && npm run build` passes
 
-## Checklist — front of the website
-- [x] Home page loads
+## Full Checklist — front of the website
+- [x] Home page, inner page, and a blog post loads 
 ![Home Page Loads](home-page-loads.png)
 - [x] BC Sans font still correct
 - [x] Header, footer, menu still work (desktop + mobile)
@@ -14,13 +14,18 @@
   - works with button block (using link style)
   - works with core/read more block
 - [x] If you have a Collapse/accordion block on a page: it still opens and closes
+- [x] no obvious layout breaks on desktop/mobile
 
-**Checklist — editor**
+**Full Checklist — editor**
 - [x] Site Editor opens
+- [x] Templates & Template Parts open
+- [x] Can Edit and save a page
 - [x] Card block works (add one, save, check front of site)
 - [x] Collapse block works (add one, save, check front of site)
 - [x] Enhanced button block still works
+- [x] One BCGov pattern inserts correctly ()
 - [x] You can save a page/template without errors
 
-**Checklist — admin**
+**Full Checklist — admin**
 - [x] BCGov settings page still loads
+- [x] Theme Options page loads
