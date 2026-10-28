@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.20.0
+[DSWP-1300](https://citz-gdx.atlassian.net/browse/DSWP-1300)
+
+- centralize theme hook registration
+- CI: install Composer dependencies from source in PHP lint/test workflow
+
 ## 1.19.0
 [DDSWP-1017](https://citz-gdx.atlassian.net/browse/DSWP-1017)
 
