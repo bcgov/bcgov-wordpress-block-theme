@@ -12,13 +12,6 @@ namespace Bcgov\Theme\Block\Actions;
 class ThemeSupports {
 
 	/**
-	 * Constructs theme defaults and settings.
-	 */
-	public function __construct() {
-		$this->bcgov_block_theme();
-	}
-
-	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
 	 * @since 1.0.0

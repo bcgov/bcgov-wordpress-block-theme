@@ -10,13 +10,6 @@ namespace Bcgov\Theme\Block\Actions;
 class RegisterCustomPatternsPostType {
 
 	/**
-	 * Constructs a custom patterns post type.
-	 */
-	public function __construct() {
-		$this->bcgov_block_theme_register_custom_pattern();
-	}
-
-	/**
      * Registers a Custom Post Type for  "Custom Patterns".
      *
      * @since 1.1.0

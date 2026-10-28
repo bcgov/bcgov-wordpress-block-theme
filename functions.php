@@ -30,7 +30,8 @@ if ( class_exists( 'Bcgov\\Theme\\Block\\Loader' ) ) {
 }
 
 if ( class_exists( 'Bcgov\\Theme\\Block\\Setup' ) ) {
-    new Setup();
+    $setup = new Setup();
+    $setup->init();
 }
 
 /**

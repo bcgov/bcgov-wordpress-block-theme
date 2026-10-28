@@ -11,13 +11,6 @@ class BcgovSettings {
 
 
     /**
-     * Constructor.
-     */
-    public function __construct() {
-         add_action( 'admin_init', [ $this, 'bcgov_register_settings' ] );
-    }
-
-    /**
      * Adds a top level menu to WordPress admin menu to host BCGov settings.
      *
      * @since 1.1.2

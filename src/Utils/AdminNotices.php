@@ -37,15 +37,13 @@ class AdminNotices {
 	const TYPES = 'error,warning,info,success';
 
 	/**
-	 * Constructor.
-	 * Initializes the admin notices object and adds the `action_admin_notices` function to the `admin_notices` hook.
+	 * Initializes the admin notices object.
 	 */
 	public function __construct() {
 		$this->admin_notices = new \stdClass();
 		foreach ( explode( ',', self::TYPES ) as $type ) {
 			$this->admin_notices->{$type} = [];
 		}
-		add_action( 'admin_notices', [ $this, 'action_admin_notices' ], 99 );
 	}
 
 	/**
