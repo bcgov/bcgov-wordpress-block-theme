@@ -25,21 +25,21 @@ class Dependencies {
 
 		if ( ! function_exists( 'aioseo_breadcrumbs' ) ) {
 
-			$notice = new AdminNotices();
+			$notice = AdminNotices::get_instance();
 			$notice->warning( 'Missing plugin → All in One SEO', 'BCGov Block Theme requires the activation of the All in One SEO plugin to enable breadcrumb navigation and SEO/social sharing. Breadcrumb navigation is set in the page templates.', 'aioseo-breadcrumbs-warning-message' );
 
 		}
 
 		if ( ! function_exists( 'acf_register_block_type' ) ) {
 
-			$notice = new AdminNotices();
+			$notice = AdminNotices::get_instance();
 			$notice->warning( 'Missing plugin → Advanced Custom Fields (or Pro version)', 'BCGov Block Theme requires the activation of the Advanced Custom Fields or ACF Pro plugin to enable theme specific blocks and add custom fields to pages, posts and site specific Custom Post Types.', 'acf-warning-message' );
 
 		}
 
 		if ( ! function_exists( 'cptui_loaded' ) ) {
 
-			$notice = new AdminNotices();
+			$notice = AdminNotices::get_instance();
 			$notice->warning( 'Missing plugin → Custom Post Type UI', 'BCGov Block Theme requires the activation of the Custom Post Type UI plugin to enable to Custom Post Types (CPTs) which allow for customised templating features and aggragation of specific content types using the query loop block.', 'cptui-warning-message' );
 
 		}

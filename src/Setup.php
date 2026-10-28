@@ -24,6 +24,7 @@ use Bcgov\Theme\Block\Filters\{
     SiteLogoEnhanced,
     GravityFormsStyles,
 };
+use Bcgov\Theme\Block\Utils\AdminNotices;
 
 
 /**
@@ -35,9 +36,11 @@ use Bcgov\Theme\Block\Filters\{
  */
 class Setup {
     /**
-     * Constructor.
+     * Initialize theme actions and filters.
+     *
+     * @return void
      */
-    public function __construct() {
+    public function init() {
 
         // Actions.
         $theme_supports                 = new ThemeSupports();
@@ -59,23 +62,26 @@ class Setup {
         $filter_mediatext_enhanced   = new MediaTextEnhanced();
         $filter_sitelogo_enhanced    = new SiteLogoEnhanced();
         $filter_gravity_forms_styles = new GravityFormsStyles();
+        $admin_notices               = AdminNotices::get_instance();
 
         add_action( 'acf/init', [ $theme_admin_options, 'bcgov_block_theme_acf_init_block_types' ] );
         add_action( 'admin_enqueue_scripts', [ $theme_enqueue_and_inject, 'bcgov_block_theme_enqueue_admin_scripts' ] );
         add_action( 'add_meta_boxes', [ $theme_page_custom_class, 'custom_page_meta_boxes' ], 10, 2 );
         add_action( 'admin_init', [ $theme_admin_options, 'bcgov_block_theme_custom_settings' ] );
+        add_action( 'admin_init', [ $theme_bcgov_settings, 'bcgov_register_settings' ] );
         add_action( 'admin_notices', [ $theme_dependencies, 'bcgov_block_theme_dependencies' ] );
         add_action( 'admin_menu', [ $theme_admin_menus, 'bcgov_block_theme_menu' ] );
         add_action( 'admin_menu', [ $theme_bcgov_settings, 'bcgov_add_settings_menu' ] );
         add_action( 'admin_menu', [ $theme_menu_editor, 'hide_appearance_menu_for_editor' ] );
-        add_action( 'after_setup_theme', [ $theme_supports, 'bcgov_block_theme' ] );
+        add_action( 'admin_notices', [ $admin_notices, 'action_admin_notices' ], 99 );
         add_action( 'export_filters', [ $theme_exports, 'bcgov_block_theme_exports' ] );
-        add_action( 'init', [ $theme_register_custom_patterns, 'bcgov_block_theme_register_custom_pattern' ] );
         add_action( 'init', [ $theme_register_block_patterns, 'bcgov_blocks_theme_register_block_patterns' ], 9 );
+        add_action( 'init', [ $theme_register_custom_patterns, 'bcgov_block_theme_register_custom_pattern' ], 8 );
         add_action( 'init', [ $theme_menu_editor, 'add_editor_menu_capabilities' ] );
         add_action( 'init', [ $theme_menu_editor, 'menu_manager_post_type' ], 9 );
-        add_action( 'init', [ $theme_menu_editor, 'create_initial_menu_manager_post' ] );
+        add_action( 'after_setup_theme', [ $theme_supports, 'bcgov_block_theme' ] );
         add_action( 'init', [ $theme_supports, 'bcgov_block_theme_register_block_styles' ] );
+        add_action( 'init', [ $theme_menu_editor, 'create_initial_menu_manager_post' ] );
         add_action( 'wp_enqueue_scripts', [ $theme_enqueue_and_inject, 'bcgov_block_theme_enqueue_scripts' ] );
         add_action( 'wp_head', [ $theme_enqueue_and_inject, 'bcgov_block_theme_generate_google_ld_json' ] );
         add_action( 'wp_head', [ $theme_enqueue_and_inject, 'bcgov_block_theme_css_settings' ] );
