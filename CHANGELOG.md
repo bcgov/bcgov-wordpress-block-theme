@@ -1,6 +1,12 @@
 # Changelog
 
 ## 1.20.0
+
+[DSWP-1301](https://citz-gdx.atlassian.net/browse/DSWP-1301)
+
+- update npm deps to resolve some (non-breaking) dependabot alerts
+- fix @wordpress/block-editor imports
+
 [DSWP-1300](https://citz-gdx.atlassian.net/browse/DSWP-1300)
 
 - centralize theme hook registration
