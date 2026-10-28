@@ -5,7 +5,7 @@ import {
     RichText,
     AlignmentToolbar,
     BlockControls,
-} from '@wordpress/blockEditor';
+} from '@wordpress/block-editor';
 
 registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
     title: __( 'Example: Controls (ESNext)', 'gutenberg-examples' ),

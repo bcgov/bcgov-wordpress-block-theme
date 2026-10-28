@@ -5,7 +5,7 @@ import {
     BlockControls,
     InspectorControls,
     InnerBlocks,
-} from '@wordpress/blockEditor';
+} from '@wordpress/block-editor';
 import { PanelBody, ColorPalette } from '@wordpress/components';
 import { attributes } from './attributes';
 import { allowedColors, defaults } from '../../../utils/common';
