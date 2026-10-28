@@ -76,7 +76,7 @@ class Setup {
         add_action( 'admin_notices', [ $admin_notices, 'action_admin_notices' ], 99 );
         add_action( 'export_filters', [ $theme_exports, 'bcgov_block_theme_exports' ] );
         add_action( 'init', [ $theme_register_block_patterns, 'bcgov_blocks_theme_register_block_patterns' ], 9 );
-        add_action( 'init', [ $theme_register_custom_patterns, 'bcgov_block_theme_register_custom_pattern' ] );
+        add_action( 'init', [ $theme_register_custom_patterns, 'bcgov_block_theme_register_custom_pattern' ], 8 );
         add_action( 'init', [ $theme_menu_editor, 'add_editor_menu_capabilities' ] );
         add_action( 'init', [ $theme_menu_editor, 'menu_manager_post_type' ], 9 );
         add_action( 'after_setup_theme', [ $theme_supports, 'bcgov_block_theme' ] );
